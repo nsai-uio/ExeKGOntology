@@ -13,4 +13,5 @@ The ontologies include
 
 
 [1] Zheng, Z., Zhou, B., Zhou, D., Zheng, X., Cheng, G., Soylu, A. and Kharlamov, E., 2022. Executable knowledge graphs for machine learning: A Bosch case of welding monitoring. In International Semantic Web Conference (pp. 791-809). Springer, Cham.
+
 [2] https://ontocommons.eu/
