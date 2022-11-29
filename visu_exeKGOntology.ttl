@@ -1,0 +1,270 @@
+@prefix : <http://www.semanticweb.org/ontologies/visu#> .
+@prefix ds: <http://www.semanticweb.org/ontologies/ds#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontologies/visu> .
+
+<http://www.semanticweb.org/ontologies/visu> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/visu#intPair
+:intPair rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/visu#allowedDataStructure
+:allowedDataStructure rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Method ;
+                      rdfs:range :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasCanvasMethod
+:hasCanvasMethod rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasVisualMethod ;
+                 rdfs:domain :VisualCanvasTask ;
+                 rdfs:range :VisualCanvasMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasDataSemantics
+:hasDataSemantics rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DataEntity ;
+                  rdfs:range :DataSemantics .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasDataStructure
+:hasDataStructure rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DataEntity ;
+                  rdfs:range :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasDescriptionMethod
+:hasDescriptionMethod rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasVisualMethod ;
+                      rdfs:domain :VisualDescriptionTask ;
+                      rdfs:range :VisualDescriptionMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasInput
+:hasInput rdf:type owl:ObjectProperty ;
+          rdfs:domain :Task ;
+          rdfs:range :DataEntity .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasNextTask
+:hasNextTask rdf:type owl:ObjectProperty ;
+             rdfs:domain  :Task ,
+                         :VisualTask ;
+             rdfs:range :Task .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasOutput
+:hasOutput rdf:type owl:ObjectProperty ;
+           rdfs:domain :Task ;
+           rdfs:range :DataEntity .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasPlotMethod
+:hasPlotMethod rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasVisualMethod ;
+               rdfs:domain :VisualPlotTask ;
+               rdfs:range :VisualBarplotMethod ,
+                          :VisualLineplotMethod ,
+                          :VisualScatterplotMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasStartTask
+:hasStartTask rdf:type owl:ObjectProperty ;
+              rdfs:domain :Pipeline ;
+              rdfs:range :Task .
+
+###  http://www.semanticweb.org/ontologies/visu#hasVisualMethod
+:hasVisualMethod rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasMethod ;
+                 rdfs:domain :VisualTask ;
+                 rdfs:range :VisualMethod .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/visu#hasCanvasName
+:hasCanvasName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :VisualCanvasMethod ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasLayout
+:hasLayout rdf:type owl:DatatypeProperty ;
+           rdfs:domain :VisualCanvasMethod ;
+           rdfs:range :intPair .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasLineStyle
+:hasLineStyle rdf:type owl:DatatypeProperty ;
+              rdfs:domain :VisualLineplotMethod ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasLineWidth
+:hasLineWidth rdf:type owl:DatatypeProperty ;
+              rdfs:domain :VisualLineplotMethod ;
+              rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasScatterSize
+:hasScatterSize rdf:type owl:DatatypeProperty ;
+                rdfs:domain :VisualScatterplotMethod ;
+                rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/ontologies/visu#hasScatterStyle
+:hasScatterStyle rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :VisualScatterplotMethod ;
+                 rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/visu#Array
+:Array rdf:type owl:Class ;
+       rdfs:subClassOf :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/visu#AtomicMethod
+:AtomicMethod rdf:type owl:Class ;
+              rdfs:subClassOf :Method .
+
+
+###  http://www.semanticweb.org/ontologies/visu#AtomicTask
+:AtomicTask rdf:type owl:Class ;
+            rdfs:subClassOf :Task .
+
+
+###  http://www.semanticweb.org/ontologies/visu#Data
+:Data rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/visu#DataEntity
+:DataEntity rdf:type owl:Class ;
+            rdfs:subClassOf :DataSemantics ,
+                            :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/visu#DataSemantics
+:DataSemantics rdf:type owl:Class ;
+               rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/ontologies/visu#DataStructure
+:DataStructure rdf:type owl:Class ;
+               rdfs:subClassOf :Data .
+
+
+
+###  http://www.semanticweb.org/ontologies/visu#Matrix
+:Matrix rdf:type owl:Class ;
+        rdfs:subClassOf :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/visu#Method
+:Method rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/visu#Pipeline
+:Pipeline rdf:type owl:Class ;
+          rdfs:subClassOf :Task .
+
+
+###  http://www.semanticweb.org/ontologies/visu#SingleFeature
+:SingleFeature rdf:type owl:Class ;
+               rdfs:subClassOf :DataEntity .
+
+
+###  http://www.semanticweb.org/ontologies/visu#Task
+:Task rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/visu#TimeSeries
+:TimeSeries rdf:type owl:Class ;
+            rdfs:subClassOf :Array ,
+                            :DataEntity .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualBarplotMethod
+:VisualBarplotMethod rdf:type owl:Class ;
+                     rdfs:subClassOf :AtomicMethod ,
+                                     :VisualPlotMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualCanvasMethod
+:VisualCanvasMethod rdf:type owl:Class ;
+                    rdfs:subClassOf :AtomicMethod ,
+                                    :VisualMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualCanvasTask
+:VisualCanvasTask rdf:type owl:Class ;
+                  rdfs:subClassOf :AtomicTask ,
+                                  :VisualTask .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualDescriptionMethod
+:VisualDescriptionMethod rdf:type owl:Class ;
+                         rdfs:subClassOf :AtomicMethod ,
+                                         :VisualMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualDescriptionTask
+:VisualDescriptionTask rdf:type owl:Class ;
+                       rdfs:subClassOf :AtomicTask ,
+                                       :VisualTask .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualLineplotMethod
+:VisualLineplotMethod rdf:type owl:Class ;
+                      rdfs:subClassOf :AtomicMethod ,
+                                      :VisualPlotMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualMethod
+:VisualMethod rdf:type owl:Class ;
+              rdfs:subClassOf :Method .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualPlotMethod
+:VisualPlotMethod rdf:type owl:Class ;
+                  rdfs:subClassOf :VisualMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualPlotTask
+:VisualPlotTask rdf:type owl:Class ;
+                rdfs:subClassOf :AtomicTask ,
+                                :VisualTask .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualScatterplotMethod
+:VisualScatterplotMethod rdf:type owl:Class ;
+                         rdfs:subClassOf :AtomicMethod ,
+                                         :VisualPlotMethod .
+
+
+###  http://www.semanticweb.org/ontologies/visu#VisualTask
+:VisualTask rdf:type owl:Class ;
+            rdfs:subClassOf :Task .
+
+
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

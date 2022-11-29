@@ -1,0 +1,214 @@
+@prefix : <http://www.semanticweb.org/ontologies/stats#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontologies/stats> .
+
+<http://www.semanticweb.org/ontologies/stats> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/stats#intPair
+:intPair rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/ds#allowedDataStructure
+:allowedDataStructure rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Method ;
+                      rdfs:range :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/ds#hasDataSemantics
+:hasDataSemantics rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DataEntity ;
+                  rdfs:range :DataSemantics .
+
+
+###  http://www.semanticweb.org/ontologies/ds#hasDataStructure
+:hasDataStructure rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DataEntity ;
+                  rdfs:range :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/ds#hasInput
+:hasInput rdf:type owl:ObjectProperty ;
+          rdfs:domain :Task ;
+          rdfs:range :DataEntity .
+
+
+###  http://www.semanticweb.org/ontologies/ds#hasMethod
+:hasMethod rdf:type owl:ObjectProperty ;
+           rdfs:domain :AtomicTask ;
+           rdfs:range :Method .
+
+
+###  http://www.semanticweb.org/ontologies/ds#hasNextTask
+:hasNextTask rdf:type owl:ObjectProperty ;
+             rdfs:domain :AtomicTask ;
+             rdfs:range :AtomicTask .
+
+
+###  http://www.semanticweb.org/ontologies/ds#hasOutput
+:hasOutput rdf:type owl:ObjectProperty ;
+           rdfs:domain :Task ;
+           rdfs:range :DataEntity .
+
+
+###  http://www.semanticweb.org/ontologies/ds#hasStartTask
+:hasStartTask rdf:type owl:ObjectProperty ;
+              rdfs:domain :Pipeline ;
+              rdfs:range :AtomicTask .
+
+###  http://www.semanticweb.org/ontologies/stats#hasStatisticMethod
+:hasStatisticMethod rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasMethod ;
+                    rdfs:domain :AtomicTask ;
+                    rdfs:range :StatisticMethod .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/data-science#Data
+:Data rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/ds#Array
+:Array rdf:type owl:Class ;
+       rdfs:subClassOf :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/ds#AtomicTask
+:AtomicTask rdf:type owl:Class ;
+            rdfs:subClassOf :Task .
+
+
+###  http://www.semanticweb.org/ontologies/ds#DataEntity
+:DataEntity rdf:type owl:Class ;
+            rdfs:subClassOf :DataSemantics ,
+                            :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/ds#DataSemantics
+:DataSemantics rdf:type owl:Class ;
+               rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/ontologies/ds#DataStructure
+:DataStructure rdf:type owl:Class ;
+               rdfs:subClassOf :Data .
+
+
+###  http://www.semanticweb.org/ontologies/ds#Matrix
+:Matrix rdf:type owl:Class ;
+        rdfs:subClassOf :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/ds#Method
+:Method rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/ds#Pipeline
+:Pipeline rdf:type owl:Class ;
+          rdfs:subClassOf :Task .
+
+
+###  http://www.semanticweb.org/ontologies/ds#SingleFeature
+:SingleFeature rdf:type owl:Class ;
+               rdfs:subClassOf :DataEntity ,
+                               :SingleValue .
+
+
+###  http://www.semanticweb.org/ontologies/ds#SingleValue
+:SingleValue rdf:type owl:Class ;
+             rdfs:subClassOf :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/ds#Task
+:Task rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/ds#TimeSeries
+:TimeSeries rdf:type owl:Class ;
+            rdfs:subClassOf :DataSemantics .
+
+
+###  http://www.semanticweb.org/ontologies/ds#Vector
+:Vector rdf:type owl:Class ;
+        rdfs:subClassOf :DataStructure .
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatisticMethod
+:StatisticMethod rdf:type owl:Class ;
+                 rdfs:subClassOf :Method .
+
+
+
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsConcatenationMethod
+:StatsConcatenationMethod rdf:type owl:Class ;
+                          rdfs:subClassOf :StatisticMethod .
+
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsDataSplittingMethod
+:StatsDataSplittingMethod rdf:type owl:Class ;
+                          rdfs:subClassOf :StatisticMethod .
+
+
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsMaximumCalculationMethod
+:StatsMaximumCalculationMethod rdf:type owl:Class ;
+                               rdfs:subClassOf :StatisticMethod .
+
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsMeanCalculationMethod
+:StatsMeanCalculationMethod rdf:type owl:Class ;
+                            rdfs:subClassOf :StatisticMethod .
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsMinimumCalcualtionMethod
+:StatsMinimumCalcualtionMethod rdf:type owl:Class ;
+                               rdfs:subClassOf :StatisticMethod .
+
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsNormalisationMethod
+:StatsNormalisationMethod rdf:type owl:Class ;
+                          rdfs:subClassOf :StatisticMethod .
+
+
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsPerformanceCalculationMethod
+:StatsPerformanceCalculationMethod rdf:type owl:Class ;
+                                   rdfs:subClassOf :StatisticMethod .
+
+
+
+
+###  http://www.semanticweb.org/ontologies/stats#StatsStandardDeviationMethod
+:StatsStandardDeviationMethod rdf:type owl:Class ;
+                              rdfs:subClassOf :StatisticMethod .
+
+
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
