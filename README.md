@@ -2,6 +2,8 @@
 
 This repo contains the ontologies for executable knowledge graph generation [1].
 
+These ontologies are developed under the EU project OntoCommons at University of Oslo, and published under Apache License 2.
+
 The ontologies include 
 > 1. the data science ontology (domain upper ontology for data science)
 > 2. the visual ontology (domain ontology for visual analytics)
