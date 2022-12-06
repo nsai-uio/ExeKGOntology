@@ -1,61 +1,61 @@
-@prefix : <http://www.semanticweb.org/ontologies/exeKG#> .
+@prefix : <http://www.semanticweb.org/ontologies/ds#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/ontologies/exeKG> .
+@base <http://www.semanticweb.org/ontologies/ds> .
 
-<http://www.semanticweb.org/ontologies/exeKG> rdf:type owl:Ontology .
+<http://www.semanticweb.org/ontologies/ds> rdf:type owl:Ontology .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/exeKG#allowedDataStructure
+###  http://www.semanticweb.org/ontologies/ds#allowedDataStructure
 :allowedDataStructure rdf:type owl:ObjectProperty ;
                       rdfs:domain :Method ;
                       rdfs:range :DataStructure .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#hasDataSemantics
+###  http://www.semanticweb.org/ontologies/ds#hasDataSemantics
 :hasDataSemantics rdf:type owl:ObjectProperty ;
                   rdfs:domain :DataEntity ;
                   rdfs:range :DataSemantics .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#hasDataStructure
+###  http://www.semanticweb.org/ontologies/ds#hasDataStructure
 :hasDataStructure rdf:type owl:ObjectProperty ;
                   rdfs:domain :DataEntity ;
                   rdfs:range :DataStructure .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#hasInput
+###  http://www.semanticweb.org/ontologies/ds#hasInput
 :hasInput rdf:type owl:ObjectProperty ;
           rdfs:domain :Task ;
           rdfs:range :DataEntity .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#hasMethod
+###  http://www.semanticweb.org/ontologies/ds#hasMethod
 :hasMethod rdf:type owl:ObjectProperty ;
            rdfs:domain :AtomicTask ;
            rdfs:range :Method .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#hasNextTask
+###  http://www.semanticweb.org/ontologies/ds#hasNextTask
 :hasNextTask rdf:type owl:ObjectProperty ;
              rdfs:domain :AtomicTask ;
              rdfs:range :AtomicTask .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#hasOutput
+###  http://www.semanticweb.org/ontologies/ds#hasOutput
 :hasOutput rdf:type owl:ObjectProperty ;
            rdfs:domain :Task ;
            rdfs:range :DataEntity .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#hasStartTask
+###  http://www.semanticweb.org/ontologies/ds#hasStartTask
 :hasStartTask rdf:type owl:ObjectProperty ;
               rdfs:domain :Pipeline ;
               rdfs:range :AtomicTask .
@@ -66,69 +66,69 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/exeKG#Array
+###  http://www.semanticweb.org/ontologies/ds#Array
 :Array rdf:type owl:Class ;
        rdfs:subClassOf :DataStructure .
 
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#AtomicTask
+###  http://www.semanticweb.org/ontologies/ds#AtomicTask
 :AtomicTask rdf:type owl:Class ;
             rdfs:subClassOf :Task .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#Data
+###  http://www.semanticweb.org/ontologies/ds#Data
 :Data rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#DataEntity
+###  http://www.semanticweb.org/ontologies/ds#DataEntity
 :DataEntity rdf:type owl:Class ;
             rdfs:subClassOf :DataSemantics ,
                             :DataStructure .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#DataSemantics
+###  http://www.semanticweb.org/ontologies/ds#DataSemantics
 :DataSemantics rdf:type owl:Class ;
                rdfs:subClassOf :Data .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#DataStructure
+###  http://www.semanticweb.org/ontologies/ds#DataStructure
 :DataStructure rdf:type owl:Class ;
                rdfs:subClassOf :Data .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#Matrix
+###  http://www.semanticweb.org/ontologies/ds#Matrix
 :Matrix rdf:type owl:Class ;
         rdfs:subClassOf :DataStructure .
 
-###  http://www.semanticweb.org/ontologies/exeKG#Matrix
+###  http://www.semanticweb.org/ontologies/ds#Matrix
 :Vector rdf:type owl:Class ;
         rdfs:subClassOf :DataStructure .
 
-###  http://www.semanticweb.org/ontologies/exeKG#Matrix
+###  http://www.semanticweb.org/ontologies/ds#Matrix
 :SingleValue rdf:type owl:Class ;
         rdfs:subClassOf :DataStructure .
 
-###  http://www.semanticweb.org/ontologies/exeKG#Method
+###  http://www.semanticweb.org/ontologies/ds#Method
 :Method rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#Pipeline
+###  http://www.semanticweb.org/ontologies/ds#Pipeline
 :Pipeline rdf:type owl:Class ;
           rdfs:subClassOf :Task .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#SingleFeature
+###  http://www.semanticweb.org/ontologies/ds#SingleFeature
 :SingleFeature rdf:type owl:Class ;
                rdfs:subClassOf :DataEntity ,
 		         :SingleValue.
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#Task
+###  http://www.semanticweb.org/ontologies/ds#Task
 :Task rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/ontologies/exeKG#TimeSeries
+###  http://www.semanticweb.org/ontologies/ds#TimeSeries
 :TimeSeries rdf:type owl:Class ;
             rdfs:subClassOf :DataSemantics  .
 
