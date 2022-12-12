@@ -1,19 +1,21 @@
-@prefix ml: <http://www.semanticweb.org/ontologies/ml#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ml:   <http://www.semanticweb.org/ontologies/ml#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:  <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.semanticweb.org/ontologies/ml> .
 
-<http://www.semanticweb.org/ontologies/ml> rdf:type owl:Ontology .
+<http://www.semanticweb.org/ontologies/ml>
+    rdf:type owl:Ontology .
 
 #################################################################
 #    Datatypes
 #################################################################
 
 ###  http://www.semanticweb.org/ontologies/ml#intPair
-ml:intPair rdf:type rdfs:Datatype .
+ml:intPair
+    rdf:type rdfs:Datatype .
 
 
 #################################################################
@@ -21,59 +23,67 @@ ml:intPair rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://www.semanticweb.org/ontologies/ds#allowedDataStructure
-ml:allowedDataStructure rdf:type owl:ObjectProperty ;
-                      rdfs:domain ml:Method ;
-                      rdfs:range ml:DataStructure .
+ml:allowedDataStructure
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:Method ;
+    rdfs:range  ml:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasDataSemantics
-ml:hasDataSemantics rdf:type owl:ObjectProperty ;
-                  rdfs:domain ml:DataEntity ;
-                  rdfs:range ml:DataSemantics .
+ml:hasDataSemantics
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:DataEntity ;
+    rdfs:range  ml:DataSemantics .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasDataStructure
-ml:hasDataStructure rdf:type owl:ObjectProperty ;
-                  rdfs:domain ml:DataEntity ;
-                  rdfs:range ml:DataStructure .
+ml:hasDataStructure
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:DataEntity ;
+    rdfs:range  ml:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasInput
-ml:hasInput rdf:type owl:ObjectProperty ;
-          rdfs:domain ml:Task ;
-          rdfs:range ml:DataEntity .
+ml:hasInput
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:Task ;
+    rdfs:range  ml:DataEntity .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasMethod
-ml:hasMethod rdf:type owl:ObjectProperty ;
-           rdfs:domain ml:AtomicTask ;
-           rdfs:range ml:Method .
+ml:hasMethod
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:AtomicTask ;
+    rdfs:range  ml:Method .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasNextTask
-ml:hasNextTask rdf:type owl:ObjectProperty ;
-             rdfs:domain ml:AtomicTask ;
-             rdfs:range ml:AtomicTask .
+ml:hasNextTask
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:AtomicTask ;
+    rdfs:range  ml:AtomicTask .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasOutput
-ml:hasOutput rdf:type owl:ObjectProperty ;
-           rdfs:domain ml:Task ;
-           rdfs:range ml:DataEntity .
+ml:hasOutput
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:Task ;
+    rdfs:range  ml:DataEntity .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasStartTask
-ml:hasStartTask rdf:type owl:ObjectProperty ;
-              rdfs:domain ml:Pipeline ;
-              rdfs:range ml:AtomicTask .
+ml:hasStartTask
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ml:Pipeline ;
+    rdfs:range  ml:AtomicTask .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#hasMLMethod
-ml:hasMLMethod rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf ml:hasMethod ;
-             rdfs:domain ml:AtomicTask;
-             rdfs:range ml:MLMethod .
-
+ml:hasTrainMethod
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ml:hasMethod ;
+    rdfs:domain        ml:Train ;
+    rdfs:range         ml:TrainMethod .
 
 
 #################################################################
@@ -86,124 +96,212 @@ ml:hasMLMethod rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://www.semanticweb.org/ontologies/data-science#Data
-ml:Data rdf:type owl:Class .
+ml:Data
+    rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Array
-ml:Array rdf:type owl:Class ;
-       rdfs:subClassOf ml:DataStructure .
+ml:Array
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#AtomicTask
-ml:AtomicTask rdf:type owl:Class ;
-            rdfs:subClassOf ml:Task .
+ml:AtomicTask
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:Task .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#DataEntity
-ml:DataEntity rdf:type owl:Class ;
-            rdfs:subClassOf ml:DataSemantics ,
-                            ml:DataStructure .
+ml:DataEntity
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:DataSemantics, ml:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#DataSemantics
-ml:DataSemantics rdf:type owl:Class ;
-               rdfs:subClassOf ml:Data .
+ml:DataSemantics
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:Data .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#DataStructure
-ml:DataStructure rdf:type owl:Class ;
-               rdfs:subClassOf ml:Data .
+ml:DataStructure
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:Data .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Matrix
-ml:Matrix rdf:type owl:Class ;
-        rdfs:subClassOf ml:DataStructure .
+ml:Matrix
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Method
-ml:Method rdf:type owl:Class .
+ml:Method
+    rdf:type owl:Class .
 
+###  http://www.semanticweb.org/zhuoxun/ontologies/exeKG#AtomicMethod
+ml:AtomicMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:Method .
 
 ###  http://www.semanticweb.org/ontologies/ds#Pipeline
-ml:Pipeline rdf:type owl:Class ;
-          rdfs:subClassOf ml:Task .
+ml:Pipeline
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:Task .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#SingleFeature
-ml:SingleFeature rdf:type owl:Class ;
-               rdfs:subClassOf ml:DataEntity ,
-                               ml:SingleValue .
+ml:SingleFeature
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:DataEntity, ml:SingleValue .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#SingleValue
-ml:SingleValue rdf:type owl:Class ;
-             rdfs:subClassOf ml:DataStructure .
+ml:SingleValue
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Task
-ml:Task rdf:type owl:Class .
+ml:Task
+    rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#TimeSeries
-ml:TimeSeries rdf:type owl:Class ;
-            rdfs:subClassOf ml:DataSemantics .
+ml:TimeSeries
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:DataSemantics .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Vector
-ml:Vector rdf:type owl:Class ;
-        rdfs:subClassOf ml:DataStructure .
+ml:Vector
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:DataStructure .
 
 
+###  http://www.semanticweb.org/ontologies/ml#KNNTest
+ml:KNNTest
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:TestMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLKNNTest
-ml:MLKNNTest rdf:type owl:Class ;
-           rdfs:subClassOf ml:AtomicMethod ,
-                           ml:MLTestMethod .
+###  http://www.semanticweb.org/ontologies/ml#KNNTrain
+ml:KNNTrain
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:TrainMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLKNNTrain
-ml:MLKNNTrain rdf:type owl:Class ;
-            rdfs:subClassOf ml:MLTrainMethod .
+###  http://www.semanticweb.org/ontologies/ml#LRTest
+ml:LRTest
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:TestMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLLRTest
-ml:MLLRTest rdf:type owl:Class ;
-          rdfs:subClassOf ml:MLTestMethod .
+###  http://www.semanticweb.org/ontologies/ml#LRTrain
+ml:LRTrain
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:TrainMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLLRTrain
-ml:MLLRTrain rdf:type owl:Class ;
-           rdfs:subClassOf ml:MLTrainMethod .
+###  http://www.semanticweb.org/ontologies/ml#MLPTest
+ml:MLPTest
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:TestMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLMLPTest
-ml:MLMLPTest rdf:type owl:Class ;
-           rdfs:subClassOf ml:MLTestMethod .
+###  http://www.semanticweb.org/ontologies/ml#MLPTrain
+ml:MLPTrain
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:TrainMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLMLPTrain
-ml:MLMLPTrain rdf:type owl:Class ;
-            rdfs:subClassOf ml:MLTrainMethod .
-
-
-###  http://www.semanticweb.org/ontologies/ml#MLMethod
-ml:MLMethod rdf:type owl:Class ;
-          rdfs:subClassOf ml:Method .
-
-
-
-###  http://www.semanticweb.org/ontologies/ml#MLTestMethod
-ml:MLTestMethod rdf:type owl:Class ;
-              rdfs:subClassOf ml:MLMethod .
-
-
+###  http://www.semanticweb.org/ontologies/ml#TestMethod
+ml:TestMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:Method .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#MLTrainMethod
-ml:MLTrainMethod rdf:type owl:Class ;
-               rdfs:subClassOf ml:MLMethod .
+ml:TrainMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:Method .
 
+###  http://www.semanticweb.org/ontologies/ml#Test
+ml:Test
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicTask .
+
+###  http://www.semanticweb.org/ontologies/ml#Train
+ml:Train
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicTask .
+
+###  http://www.semanticweb.org/ontologies/ml#Concatenation
+ml:Concatenation
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicTask .
+
+###  http://www.semanticweb.org/ontologies/ml#DataSplitting
+ml:DataSplitting
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicTask .
+
+###  http://www.semanticweb.org/ontologies/ml#PerformanceCalculation
+ml:PerformanceCalculation
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicTask .
+
+###  http://www.semanticweb.org/ontologies/ml#PerformanceCalculationMethod
+ml:PerformanceCalculationMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicMethod .
+
+###  http://www.semanticweb.org/ontologies/ml#ConcatenationMethod
+ml:ConcatenationMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicMethod .
+
+
+###  http://www.semanticweb.org/ontologies/ml#DataSplittingMethod
+ml:DataSplittingMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ml:AtomicMethod .
+
+###  http://www.semanticweb.org/ontologies/ml#hasNormalizationMethod
+ml:hasDataSplittingMethod
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ml:hasMethod ;
+    rdfs:domain        ml:DataSplitting ;
+    rdfs:range         ml:DataSplittingMethod .
+
+###  http://www.semanticweb.org/ontologies/ml#hasConcatenationMethod
+ml:hasConcatenationMethod
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ml:hasMethod ;
+    rdfs:domain        ml:Concatenation ;
+    rdfs:range         ml:ConcatenationMethod .
+
+###  http://www.semanticweb.org/ontologies/ml#hasConcatenationMethod
+ml:hasPerformanceCalculationMethod
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ml:hasMethod ;
+    rdfs:domain        ml:PerformanceCalculation ;
+    rdfs:range         ml:PerformanceCalculationMethod .
+
+###  http://www.semanticweb.org/ontologies/ml#hasTrainMethod
+ml:hasTrainMethod
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ml:hasMethod ;
+    rdfs:domain        ml:Train ;
+    rdfs:range         ml:KNNTrain, ml:MLPTrain, ml:LRTrain .
+
+###  http://www.semanticweb.org/ontologies/ml#hasTestMethod
+ml:hasTestMethod
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ml:hasMethod ;
+    rdfs:domain        ml:Test ;
+    rdfs:range         ml:KNNTest, ml:MLPTest, ml:LRTest .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
