@@ -1,18 +1,18 @@
-@prefix : <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
+@prefix : <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
+@base <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
 
-<https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#> rdf:type owl:Ontology .
 
 #################################################################
 #    Datatypes
 #################################################################
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#intPair
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#intPair
 :intPair rdf:type rdfs:Datatype .
 
 
@@ -20,49 +20,49 @@
 #    Object Properties
 #################################################################
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#allowedDataStructure
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#allowedDataStructure
 :allowedDataStructure rdf:type owl:ObjectProperty ;
                       rdfs:domain :Method ;
                       rdfs:range :DataStructure .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataSemantics
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataSemantics
 :hasDataSemantics rdf:type owl:ObjectProperty ;
                   rdfs:domain :DataEntity ;
                   rdfs:range :DataSemantics .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure
 :hasDataStructure rdf:type owl:ObjectProperty ;
                   rdfs:domain :DataEntity ;
                   rdfs:range :DataStructure .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput
 :hasInput rdf:type owl:ObjectProperty ;
           rdfs:domain :Task ;
           rdfs:range :DataEntity .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod
 :hasMethod rdf:type owl:ObjectProperty ;
            rdfs:domain :AtomicTask ;
            rdfs:range :Method .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasNextTask
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasNextTask
 :hasNextTask rdf:type owl:ObjectProperty ;
              rdfs:domain :AtomicTask ;
              rdfs:range :AtomicTask .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput
 :hasOutput rdf:type owl:ObjectProperty ;
            rdfs:domain :Task ;
            rdfs:range :DataEntity .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasStartTask
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasStartTask
 :hasStartTask rdf:type owl:ObjectProperty ;
               rdfs:domain :Pipeline ;
               rdfs:range :AtomicTask .
@@ -72,7 +72,7 @@
 #    Data properties
 #################################################################
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasSource
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasSource
 :hasSource rdf:type owl:DatatypeProperty ;
            rdfs:domain :Data ;
            rdfs:range xsd:string .
@@ -82,76 +82,76 @@
 #    Classes
 #################################################################
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Array
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Array
 :Array rdf:type owl:Class ;
        rdfs:subClassOf :DataStructure .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
 :AtomicMethod rdf:type owl:Class ;
               rdfs:subClassOf :Method .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask
 :AtomicTask rdf:type owl:Class ;
             rdfs:subClassOf :Task .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Data
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Data
 :Data rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity
 :DataEntity rdf:type owl:Class ;
             rdfs:subClassOf :DataSemantics ,
                             :DataStructure .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#DataSemantics
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataSemantics
 :DataSemantics rdf:type owl:Class ;
                rdfs:subClassOf :Data .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#DataStructure
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataStructure
 :DataStructure rdf:type owl:Class ;
                rdfs:subClassOf :Data .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix
 :Matrix rdf:type owl:Class ;
         rdfs:subClassOf :DataStructure .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Method
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Method
 :Method rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Pipeline
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Pipeline
 :Pipeline rdf:type owl:Class ;
           rdfs:subClassOf :Task .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleFeature
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleFeature
 :SingleFeature rdf:type owl:Class ;
                rdfs:subClassOf :DataEntity ,
                                :SingleValue .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue
 :SingleValue rdf:type owl:Class ;
              rdfs:subClassOf :DataStructure .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Task
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Task
 :Task rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#TimeSeries
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#TimeSeries
 :TimeSeries rdf:type owl:Class ;
             rdfs:subClassOf :DataSemantics .
 
 
-###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector
 :Vector rdf:type owl:Class ;
         rdfs:subClassOf :DataStructure .
 
