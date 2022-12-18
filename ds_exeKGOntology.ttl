@@ -76,6 +76,12 @@ ds:hasStartTask
     rdfs:domain ds:Pipeline ;
     rdfs:range  ds:AtomicTask .
 
+###  http://www.semanticweb.org/ontologies/ds#hasSource
+ds:hasSource
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:domain ds:Data ;
+    rdfs:range  xsd:string .
+
 
 #################################################################
 #    Classes
