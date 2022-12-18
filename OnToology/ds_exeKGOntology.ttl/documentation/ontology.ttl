@@ -69,6 +69,16 @@
 
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasSource
+:hasSource rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Data ;
+           rdfs:range xsd:string .
+
+
+#################################################################
 #    Classes
 #################################################################
 

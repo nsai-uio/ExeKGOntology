@@ -1,9 +1,10 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "ds:Method" "ds:DataSemantics" "ds:DataStructure" "ds:Pipeline" "ds:DataEntity" "ds:AtomicTask" "ds:Task" ; /*classes style*/
+node [shape = rectangle, color="orange"]; "ds:Method" "ds:DataSemantics" "ds:DataStructure" "ds:Pipeline" "ds:DataEntity" "ds:AtomicTask" "ds:Data" "ds:Task" ; /*classes style*/
 	"ds:AtomicTask" -> "ds:Method" [ label = "ds:hasMethod" ];
 	"ds:Pipeline" -> "ds:AtomicTask" [ label = "ds:hasStartTask" ];
+	"ds:Data" -> "xsd:string" [ label = "ds:hasSource" ];
 	"ds:DataEntity" -> "ds:DataSemantics" [ label = "ds:hasDataSemantics" ];
 	"ds:Method" -> "ds:DataStructure" [ label = "ds:allowedDataStructure" ];
 	"ds:Task" -> "ds:DataEntity" [ label = "ds:hasInput" ];
