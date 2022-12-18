@@ -1,0 +1,12 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "stats:ScatteringCalculationTask" "stats:ScatteringCalculationMethod" "stats:TrendCalculationTask" "stats:NormalizationMethod" "stats:TrendCalculationMethod" "stats:NormalizationTask" ; /*classes style*/
+	"stats:hasTrendCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasNormalizationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasScatteringCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:NormalizationTask" -> "stats:NormalizationMethod" [ label = "stats:hasNormalizationMethod" ];
+	"stats:TrendCalculationTask" -> "stats:TrendCalculationMethod" [ label = "stats:hasTrendCalculationMethod" ];
+	"stats:ScatteringCalculationTask" -> "stats:ScatteringCalculationMethod" [ label = "stats:hasScatteringCalculationMethod" ];
+
+}
