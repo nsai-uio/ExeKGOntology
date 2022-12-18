@@ -1,22 +1,22 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "ml:PerformanceCalculation" "ml:TestMethod" "ml:LRTest" "ml:MLPTest" "ml:MLPTrain" "ml:KNNTest" "ml:TrainMethod" "ml:Train" "ml:Concatenation" "ml:LRTrain" "ml:ConcatenationMethod" "ml:PerformanceCalculationMethod" "ml:DataSplitting" "ml:Test" "ml:KNNTrain" "ml:DataSplittingMethod" ; /*classes style*/
-	"ml:TrainMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
-	"ml:KNNTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
-	"ml:PerformanceCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"ml:DataSplittingMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"ml:MLPTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "ml:TrainMethod" "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:MLPTest" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" "ml:LRTest" "ml:KNNTrain" "ml:MLPTrain" "ml:TestMethod" "ml:LRTrain" ; /*classes style*/
 	"ml:DataSplitting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:Test" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:ConcatenationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"ml:PerformanceCalculation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:Concatenation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:KNNTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
 	"ml:Train" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:TestMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
 	"ml:MLPTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
-	"ml:LRTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Concatenation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:MLPTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+	"ml:TrainMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
+	"ml:TestMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
+	"ml:DataSplittingMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNNTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
 	"ml:LRTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNNTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LRTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Test" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:PerformanceCalculation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:ConcatenationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PerformanceCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
 
 }

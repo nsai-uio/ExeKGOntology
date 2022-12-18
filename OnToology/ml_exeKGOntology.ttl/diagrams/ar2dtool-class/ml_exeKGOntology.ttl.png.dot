@@ -1,16 +1,16 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "ml:PerformanceCalculation" "ml:KNNTest" "ml:TrainMethod" "ml:Train" "ml:Concatenation" "ml:ConcatenationMethod" "ml:PerformanceCalculationMethod" "ml:DataSplitting" "ml:Test" "ml:DataSplittingMethod" ; /*classes style*/
-	"ml:hasConcatenationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+node [shape = rectangle, color="orange"]; "ml:TrainMethod" "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" ; /*classes style*/
 	"ml:hasPerformanceCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"ml:hasTrainMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"ml:hasTestMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasDataSplittingMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"ml:Test" -> "ml:KNNTest" [ label = "ml:hasTestMethod" ];
-	"ml:PerformanceCalculation" -> "ml:PerformanceCalculationMethod" [ label = "ml:hasPerformanceCalculationMethod" ];
-	"ml:DataSplitting" -> "ml:DataSplittingMethod" [ label = "ml:hasDataSplittingMethod" ];
+	"ml:hasTestMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasConcatenationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasTrainMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
 	"ml:Concatenation" -> "ml:ConcatenationMethod" [ label = "ml:hasConcatenationMethod" ];
+	"ml:PerformanceCalculation" -> "ml:PerformanceCalculationMethod" [ label = "ml:hasPerformanceCalculationMethod" ];
+	"ml:Test" -> "ml:KNNTest" [ label = "ml:hasTestMethod" ];
 	"ml:Train" -> "ml:TrainMethod" [ label = "ml:hasTrainMethod" ];
+	"ml:DataSplitting" -> "ml:DataSplittingMethod" [ label = "ml:hasDataSplittingMethod" ];
 
 }
