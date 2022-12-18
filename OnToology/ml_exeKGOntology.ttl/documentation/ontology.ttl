@@ -1,0 +1,155 @@
+@prefix : <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#> .
+
+<https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod
+<https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#hasConcatenationMethod
+:hasConcatenationMethod rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+                        rdfs:domain :Concatenation ;
+                        rdfs:range :ConcatenationMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingMethod
+:hasDataSplittingMethod rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+                        rdfs:domain :DataSplitting ;
+                        rdfs:range :DataSplittingMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationMethod
+:hasPerformanceCalculationMethod rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+                                 rdfs:domain :PerformanceCalculation ;
+                                 rdfs:range :PerformanceCalculationMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestMethod
+:hasTestMethod rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+               rdfs:domain :Test ;
+               rdfs:range :KNNTest ,
+                          :LRTest ,
+                          :MLPTest .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod
+:hasTrainMethod rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+                rdfs:domain :Train ;
+                rdfs:range :KNNTrain ,
+                           :LRTrain ,
+                           :MLPTrain ,
+                           :TrainMethod .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
+<https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask
+<https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Method
+<https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Method> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#Concatenation
+:Concatenation rdf:type owl:Class ;
+               rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#ConcatenationMethod
+:ConcatenationMethod rdf:type owl:Class ;
+                     rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting
+:DataSplitting rdf:type owl:Class ;
+               rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod
+:DataSplittingMethod rdf:type owl:Class ;
+                     rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNTest
+:KNNTest rdf:type owl:Class ;
+         rdfs:subClassOf :TestMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNTrain
+:KNNTrain rdf:type owl:Class ;
+          rdfs:subClassOf :TrainMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#LRTest
+:LRTest rdf:type owl:Class ;
+        rdfs:subClassOf :TestMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#LRTrain
+:LRTrain rdf:type owl:Class ;
+         rdfs:subClassOf :TrainMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPTest
+:MLPTest rdf:type owl:Class ;
+         rdfs:subClassOf :TestMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPTrain
+:MLPTrain rdf:type owl:Class ;
+          rdfs:subClassOf :TrainMethod .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#PerformanceCalculation
+:PerformanceCalculation rdf:type owl:Class ;
+                        rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#PerformanceCalculationMethod
+:PerformanceCalculationMethod rdf:type owl:Class ;
+                              rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#Test
+:Test rdf:type owl:Class ;
+      rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#TestMethod
+:TestMethod rdf:type owl:Class ;
+            rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Method> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#Train
+:Train rdf:type owl:Class ;
+       rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+
+
+###  https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod
+:TrainMethod rdf:type owl:Class ;
+             rdfs:subClassOf <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#Method> .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,20 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ds:Method" "ds:DataSemantics" "ds:SingleFeature" "ds:DataStructure" "ds:Pipeline" "ds:Vector" "ds:SingleValue" "ds:DataEntity" "ds:AtomicMethod" "ds:Array" "ds:AtomicTask" "ds:TimeSeries" "ds:Matrix" "ds:Data" "ds:Task" ; /*classes style*/
+	"ds:DataSemantics" -> "ds:Data" [ label = "rdfs:subClassOf" ];
+	"ds:DataEntity" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:DataEntity" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:Pipeline" -> "ds:Task" [ label = "rdfs:subClassOf" ];
+	"ds:TimeSeries" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:SingleFeature" -> "ds:SingleValue" [ label = "rdfs:subClassOf" ];
+	"ds:SingleFeature" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ds:AtomicTask" -> "ds:Task" [ label = "rdfs:subClassOf" ];
+	"ds:Matrix" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:AtomicMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
+	"ds:DataStructure" -> "ds:Data" [ label = "rdfs:subClassOf" ];
+	"ds:Array" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:SingleValue" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:Vector" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+
+}

@@ -1,0 +1,13 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "visu:ScatterplotMethod" "visu:PlotMethod" "visu:LineplotMethod" "visu:CanvasMethod" ; /*classes style*/
+	"visu:ScatterplotMethod" -> "xsd:int" [ label = "visu:hasScatterSize" ];
+	"visu:LineplotMethod" -> "xsd:string" [ label = "visu:hasLineStyle" ];
+	"visu:PlotMethod" -> "xsd:string" [ label = "visu:hasLegendName" ];
+	"visu:CanvasMethod" -> "ds:intPair" [ label = "visu:hasLayout" ];
+	"visu:ScatterplotMethod" -> "xsd:string" [ label = "visu:hasScatterStyle" ];
+	"visu:LineplotMethod" -> "xsd:int" [ label = "visu:hasLineWidth" ];
+	"visu:CanvasMethod" -> "xsd:string" [ label = "visu:hasCanvasName" ];
+
+}
