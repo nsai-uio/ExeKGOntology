@@ -1,16 +1,16 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "stats:ScatteringCalculationTask" "stats:MaximumCalculationMethod" "stats:StandardDeviationMethod" "stats:MinimumCalcualtionMethod" "stats:MeanCalculationMethod" "stats:ScatteringCalculationMethod" "stats:TrendCalculationTask" "stats:NormalizationMethod" "stats:TrendCalculationMethod" "stats:NormalizationTask" ; /*classes style*/
-	"stats:MinimumCalcualtionMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:StandardDeviationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:ScatteringCalculationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"stats:NormalizationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"stats:ScatteringCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:TrendCalculationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "stats:ScatteringCalculationMethod" "stats:StandardDeviationMethod" "stats:TrendCalculationTask" "stats:NormalizationTask" "stats:MinimumCalcualtionMethod" "stats:NormalizationMethod" "stats:ScatteringCalculationTask" "stats:MeanCalculationMethod" "stats:MaximumCalculationMethod" "stats:TrendCalculationMethod" ; /*classes style*/
 	"stats:NormalizationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
 	"stats:TrendCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
 	"stats:MeanCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:TrendCalculationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"stats:NormalizationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"stats:ScatteringCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:StandardDeviationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
 	"stats:MaximumCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:ScatteringCalculationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"stats:MinimumCalcualtionMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
 
 }
