@@ -1,65 +1,80 @@
-@prefix ds: <http://www.semanticweb.org/ontologies/ds#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ds:   <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:  <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/ontologies/ds> .
+@base <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
 
-<http://www.semanticweb.org/ontologies/ds> rdf:type owl:Ontology .
+ds:
+    rdf:type owl:Ontology .
 
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/ml#intPair
+ds:intPair
+    rdf:type rdfs:Datatype .
 
 #################################################################
 #    Object Properties
 #################################################################
 
 ###  http://www.semanticweb.org/ontologies/ds#allowedDataStructure
-ds:allowedDataStructure rdf:type owl:ObjectProperty ;
-                      rdfs:domain ds:Method ;
-                      rdfs:range ds:DataStructure .
+ds:allowedDataStructure
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:Method ;
+    rdfs:range  ds:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasDataSemantics
-ds:hasDataSemantics rdf:type owl:ObjectProperty ;
-                  rdfs:domain ds:DataEntity ;
-                  rdfs:range ds:DataSemantics .
+ds:hasDataSemantics
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:DataEntity ;
+    rdfs:range  ds:DataSemantics .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasDataStructure
-ds:hasDataStructure rdf:type owl:ObjectProperty ;
-                  rdfs:domain ds:DataEntity ;
-                  rdfs:range ds:DataStructure .
+ds:hasDataStructure
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:DataEntity ;
+    rdfs:range  ds:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasInput
-ds:hasInput rdf:type owl:ObjectProperty ;
-          rdfs:domain ds:Task ;
-          rdfs:range ds:DataEntity .
+ds:hasInput
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:Task ;
+    rdfs:range  ds:DataEntity .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasMethod
-ds:hasMethod rdf:type owl:ObjectProperty ;
-           rdfs:domain ds:AtomicTask ;
-           rdfs:range ds:Method .
+ds:hasMethod
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:AtomicTask ;
+    rdfs:range  ds:Method .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasNextTask
-ds:hasNextTask rdf:type owl:ObjectProperty ;
-             rdfs:domain ds:AtomicTask ;
-             rdfs:range ds:AtomicTask .
+ds:hasNextTask
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:AtomicTask ;
+    rdfs:range  ds:AtomicTask .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasOutput
-ds:hasOutput rdf:type owl:ObjectProperty ;
-           rdfs:domain ds:Task ;
-           rdfs:range ds:DataEntity .
+ds:hasOutput
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:Task ;
+    rdfs:range  ds:DataEntity .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#hasStartTask
-ds:hasStartTask rdf:type owl:ObjectProperty ;
-              rdfs:domain ds:Pipeline ;
-              rdfs:range ds:AtomicTask .
-
+ds:hasStartTask
+    rdf:type    owl:ObjectProperty ;
+    rdfs:domain ds:Pipeline ;
+    rdfs:range  ds:AtomicTask .
 
 
 #################################################################
@@ -67,70 +82,85 @@ ds:hasStartTask rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://www.semanticweb.org/ontologies/ds#Array
-ds:Array rdf:type owl:Class ;
-       rdfs:subClassOf ds:DataStructure .
-
+ds:Array
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#AtomicTask
-ds:AtomicTask rdf:type owl:Class ;
-            rdfs:subClassOf ds:Task .
+ds:AtomicTask
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:Task .
 
+###  http://www.semanticweb.org/ontologies/ds#AtomicMethod
+ds:AtomicMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:Method .
 
 ###  http://www.semanticweb.org/ontologies/ds#Data
-ds:Data rdf:type owl:Class .
+ds:Data
+    rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#DataEntity
-ds:DataEntity rdf:type owl:Class ;
-            rdfs:subClassOf ds:DataSemantics ,
-                            ds:DataStructure .
+ds:DataEntity
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataSemantics, ds:DataStructure .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#DataSemantics
-ds:DataSemantics rdf:type owl:Class ;
-               rdfs:subClassOf ds:Data .
+ds:DataSemantics
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:Data .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#DataStructure
-ds:DataStructure rdf:type owl:Class ;
-               rdfs:subClassOf ds:Data .
+ds:DataStructure
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:Data .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Matrix
-ds:Matrix rdf:type owl:Class ;
-        rdfs:subClassOf ds:DataStructure .
+ds:Matrix
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
 
 ###  http://www.semanticweb.org/ontologies/ds#Matrix
-ds:Vector rdf:type owl:Class ;
-        rdfs:subClassOf ds:DataStructure .
+ds:Vector
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
 
 ###  http://www.semanticweb.org/ontologies/ds#Matrix
-ds:SingleValue rdf:type owl:Class ;
-        rdfs:subClassOf ds:DataStructure .
+ds:SingleValue
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
 
 ###  http://www.semanticweb.org/ontologies/ds#Method
-ds:Method rdf:type owl:Class .
+ds:Method
+    rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Pipeline
-ds:Pipeline rdf:type owl:Class ;
-          rdfs:subClassOf ds:Task .
+ds:Pipeline
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:Task .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#SingleFeature
-ds:SingleFeature rdf:type owl:Class ;
-               rdfs:subClassOf ds:DataEntity ,
-		         ds:SingleValue.
+ds:SingleFeature
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity, ds:SingleValue .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#Task
-ds:Task rdf:type owl:Class .
+ds:Task
+    rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/ontologies/ds#TimeSeries
-ds:TimeSeries rdf:type owl:Class ;
-            rdfs:subClassOf ds:DataSemantics  .
+ds:TimeSeries
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,111 +1,22 @@
-@prefix visu: <http://www.semanticweb.org/ontologies/visu#> .
-@prefix ds:   <http://www.semanticweb.org/ontologies/ds#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml:  <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/ontologies/visu> .
+@prefix visu:    <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/visu_exeKGOntology.ttl#> .
+@prefix ds:      <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/baifanzhou/ExeKGOntology/main/visu_exeKGOntology.ttl#> .
 
-<http://www.semanticweb.org/ontologies/visu>
+visu:
     rdf:type owl:Ontology .
 
 #################################################################
 #    Datatypes
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/visu#intPair
-visu:intPair
-    rdf:type rdfs:Datatype .
-
-
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://www.semanticweb.org/ontologies/visu#allowedDataStructure
-visu:allowedDataStructure
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:Method ;
-    rdfs:range  visu:DataStructure .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasCanvasMethod
-visu:hasCanvasMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf visu:hasMethod ;
-    rdfs:domain        visu:CanvasTask ;
-    rdfs:range         visu:CanvasMethod .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasDataSemantics
-visu:hasDataSemantics
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:DataEntity ;
-    rdfs:range  visu:DataSemantics .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasDataStructure
-visu:hasDataStructure
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:DataEntity ;
-    rdfs:range  visu:DataStructure .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasDescriptionMethod
-visu:hasDescriptionMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf visu:hasMethod ;
-    rdfs:domain        visu:DescriptionTask ;
-    rdfs:range         visu:DescriptionMethod .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasInput
-visu:hasInput
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:Task ;
-    rdfs:range  visu:DataEntity .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasSource
-visu:hasSource
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:Data ;
-    rdfs:range  xsd:string .
-
-###  http://www.semanticweb.org/ontologies/visu#hasNextTask
-visu:hasNextTask
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:Task ;
-    rdfs:range  visu:Task .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasOutput
-visu:hasOutput
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:Task ;
-    rdfs:range  visu:DataEntity .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasPlotMethod
-visu:hasPlotMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf visu:hasMethod ;
-    rdfs:domain        visu:PlotTask ;
-    rdfs:range         visu:BarplotMethod, visu:LineplotMethod, visu:ScatterplotMethod .
-
-
-###  http://www.semanticweb.org/ontologies/visu#hasStartTask
-visu:hasStartTask
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:Pipeline ;
-    rdfs:range  visu:Task .
-
-###  http://www.semanticweb.org/ontologies/visu#hasMethod
-visu:hasMethod
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain visu:Task ;
-    rdfs:range  visu:Method .
 
 
 #################################################################
@@ -123,7 +34,7 @@ visu:hasCanvasName
 visu:hasLayout
     rdf:type    owl:DatatypeProperty ;
     rdfs:domain visu:CanvasMethod ;
-    rdfs:range  visu:intPair .
+    rdfs:range  ds:intPair .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#hasLineStyle
@@ -165,133 +76,59 @@ visu:hasLegendName
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/visu#Array
-visu:Array
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:DataStructure .
-
-
-###  http://www.semanticweb.org/ontologies/visu#AtomicMethod
-visu:AtomicMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:Method .
-
-
-###  http://www.semanticweb.org/ontologies/visu#AtomicTask
-visu:AtomicTask
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:Task .
-
-
-###  http://www.semanticweb.org/ontologies/visu#Data
-visu:Data
-    rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/ontologies/visu#DataEntity
-visu:DataEntity
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:DataSemantics, visu:DataStructure .
-
-
-###  http://www.semanticweb.org/ontologies/visu#DataSemantics
-visu:DataSemantics
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:Data .
-
-
-###  http://www.semanticweb.org/ontologies/visu#DataStructure
-visu:DataStructure
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:Data .
-
-
-###  http://www.semanticweb.org/ontologies/visu#Matrix
-visu:Matrix
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:DataStructure .
-
-
-###  http://www.semanticweb.org/ontologies/visu#Method
-visu:Method
-    rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/ontologies/visu#Pipeline
-visu:Pipeline
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:Task .
-
-
-###  http://www.semanticweb.org/ontologies/visu#SingleFeature
-visu:SingleFeature
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:DataEntity .
-
-
-###  http://www.semanticweb.org/ontologies/visu#Task
-visu:Task
-    rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/ontologies/visu#TimeSeries
-visu:TimeSeries
-    rdf:type        owl:Class ;
-    rdfs:subClassOf visu:Array, visu:DataEntity .
-
 
 ###  http://www.semanticweb.org/ontologies/visu#BarplotMethod
 visu:BarplotMethod
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicMethod, visu:PlotMethod .
+    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#CanvasMethod
 visu:CanvasMethod
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicMethod .
+    rdfs:subClassOf ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#CanvasTask
 visu:CanvasTask
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicTask .
+    rdfs:subClassOf ds:AtomicTask .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#DescriptionMethod
 visu:DescriptionMethod
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicMethod .
+    rdfs:subClassOf ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#DescriptionTask
 visu:DescriptionTask
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicTask .
+    rdfs:subClassOf ds:AtomicTask .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#LineplotMethod
 visu:LineplotMethod
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicMethod, visu:PlotMethod .
+    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#PlotMethod
 visu:PlotMethod
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:Method .
+    rdfs:subClassOf ds:Method .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#PlotTask
 visu:PlotTask
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicTask .
+    rdfs:subClassOf ds:AtomicTask .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#ScatterplotMethod
 visu:ScatterplotMethod
     rdf:type        owl:Class ;
-    rdfs:subClassOf visu:AtomicMethod, visu:PlotMethod .
+    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
