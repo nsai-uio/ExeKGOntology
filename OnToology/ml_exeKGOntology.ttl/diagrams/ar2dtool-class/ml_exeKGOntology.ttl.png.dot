@@ -1,7 +1,7 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "ml:TrainMethod" "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" ; /*classes style*/
+node [shape = rectangle, color="orange"]; "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" "ml:KNNTrain" ; /*classes style*/
 	"ml:hasPerformanceCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasDataSplittingMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasTestMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
@@ -10,7 +10,7 @@ node [shape = rectangle, color="orange"]; "ml:TrainMethod" "ml:PerformanceCalcul
 	"ml:Concatenation" -> "ml:ConcatenationMethod" [ label = "ml:hasConcatenationMethod" ];
 	"ml:PerformanceCalculation" -> "ml:PerformanceCalculationMethod" [ label = "ml:hasPerformanceCalculationMethod" ];
 	"ml:Test" -> "ml:KNNTest" [ label = "ml:hasTestMethod" ];
-	"ml:Train" -> "ml:TrainMethod" [ label = "ml:hasTrainMethod" ];
+	"ml:Train" -> "ml:KNNTrain" [ label = "ml:hasTrainMethod" ];
 	"ml:DataSplitting" -> "ml:DataSplittingMethod" [ label = "ml:hasDataSplittingMethod" ];
 
 }
