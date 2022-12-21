@@ -19,14 +19,6 @@ ml:
 #    Object Properties
 #################################################################
 
-
-###  http://www.semanticweb.org/ontologies/ml#hasMLMethod
-ml:hasTrainMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        ml:Train ;
-    rdfs:range         ml:TrainMethod .
-
 ###  http://www.semanticweb.org/ontologies/ml#hasNormalizationMethod
 ml:hasDataSplittingMethod
     rdf:type           owl:ObjectProperty ;
