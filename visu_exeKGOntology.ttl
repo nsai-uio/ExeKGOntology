@@ -18,6 +18,18 @@ visu:
 #    Object Properties
 #################################################################
 
+visu:hasCanvasMethod
+    rdf:type           owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasMethod ;
+    rdfs:domain        visu:CanvasTask ;
+    rdfs:range         visu:CanvasMethod .
+
+visu:hasPlotMethod
+    rdf:type           owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasMethod ;
+    rdfs:domain        visu:PlotTask ;
+    rdfs:range         visu:LineplotMethod, visu:ScatterplotMethod .
+
 
 #################################################################
 #    Data properties
@@ -76,13 +88,6 @@ visu:hasLegendName
 #    Classes
 #################################################################
 
-
-###  http://www.semanticweb.org/ontologies/visu#BarplotMethod
-visu:BarplotMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
-
-
 ###  http://www.semanticweb.org/ontologies/visu#CanvasMethod
 visu:CanvasMethod
     rdf:type        owl:Class ;
@@ -93,24 +98,6 @@ visu:CanvasMethod
 visu:CanvasTask
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
-
-
-###  http://www.semanticweb.org/ontologies/visu#DescriptionMethod
-visu:DescriptionMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod .
-
-
-###  http://www.semanticweb.org/ontologies/visu#DescriptionTask
-visu:DescriptionTask
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
-
-
-###  http://www.semanticweb.org/ontologies/visu#LineplotMethod
-visu:LineplotMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/visu#PlotMethod
@@ -124,9 +111,18 @@ visu:PlotTask
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
+###  http://www.semanticweb.org/ontologies/visu#LineplotMethod
+visu:LineplotMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
 
 ###  http://www.semanticweb.org/ontologies/visu#ScatterplotMethod
 visu:ScatterplotMethod
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
+
+###  http://www.semanticweb.org/ontologies/visu#BarplotMethod
+visu:BarplotMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
 
