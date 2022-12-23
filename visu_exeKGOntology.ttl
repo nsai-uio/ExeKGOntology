@@ -19,13 +19,13 @@ visu:
 #################################################################
 
 visu:hasCanvasMethod
-    rdf:type           owl:DatatypeProperty ;
+    rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        visu:CanvasTask ;
     rdfs:range         visu:CanvasMethod .
 
 visu:hasPlotMethod
-    rdf:type           owl:DatatypeProperty ;
+    rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        visu:PlotTask ;
     rdfs:range         visu:LineplotMethod, visu:ScatterplotMethod .
