@@ -12,8 +12,13 @@
 #    Object Properties
 #################################################################
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> rdf:type owl:ObjectProperty .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasCanvasMethod
 :hasCanvasMethod rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
                  rdfs:domain :CanvasTask ;
                  rdfs:range :CanvasMethod .
 
@@ -26,6 +31,7 @@
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPlotMethod
 :hasPlotMethod rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
                rdfs:domain :PlotTask ;
                rdfs:range :LineplotMethod ,
                           :ScatterplotMethod .
@@ -34,15 +40,6 @@
 #################################################################
 #    Data properties
 #################################################################
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod
-<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> rdf:type owl:DatatypeProperty .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasCanvasMethod
-:hasCanvasMethod rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> .
-
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasCanvasName
 :hasCanvasName rdf:type owl:DatatypeProperty ;
@@ -72,11 +69,6 @@
               rdfs:domain :LineplotMethod ,
                           :ScatterplotMethod ;
               rdfs:range xsd:int .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPlotMethod
-:hasPlotMethod rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasScatterSize
