@@ -56,7 +56,7 @@ ml:hasTestMethod
 
 ml:hasPerformanceCalculationOutput
     rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasOutput  ;
+    rdfs:subPropertyOf ds:hasOutput ;
     rdfs:domain        ml:PerformanceCalculation ;
     rdfs:range         ml:DataOutMLTestErr, ml:DataOutMLTrainErr .
 
@@ -98,37 +98,37 @@ ml:hasTestOutput
 ###  http://www.semanticweb.org/ontologies/ml#KNNTest
 ml:KNNTest
     rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TestMethod .
+    rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#KNNTrain
 ml:KNNTrain
     rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TrainMethod .
+    rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#LRTest
 ml:LRTest
     rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TestMethod .
+    rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#LRTrain
 ml:LRTrain
     rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TrainMethod .
+    rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#MLPTest
 ml:MLPTest
     rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TestMethod .
+    rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#MLPTrain
 ml:MLPTrain
     rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TrainMethod .
+    rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
 
 
 ###  http://www.semanticweb.org/ontologies/ml#TestMethod
