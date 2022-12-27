@@ -82,6 +82,12 @@ ds:hasSource
     rdfs:domain ds:Data ;
     rdfs:range  xsd:string .
 
+###  http://www.semanticweb.org/ontologies/ds#hasReference
+ds:hasReference
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:domain ds:Data ;
+    rdfs:range  ds:DataEntity .
+
 
 #################################################################
 #    Classes
