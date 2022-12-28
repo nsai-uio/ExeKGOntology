@@ -84,6 +84,24 @@ ml:hasTestOutput
     rdfs:domain        ml:Test ;
     rdfs:range         ml:DataOutPredictedValueTest .
 
+ml:hasXInput
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasInput ;
+    rdfs:domain        ml:Train ;
+    rdfs:range         ml:DataInX .
+
+ml:hasYInput
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasInput ;
+    rdfs:domain        ml:Train, ml:Test ;
+    rdfs:range         ml:DataInY .
+
+ml:hasConcatenationInput
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasInput ;
+    rdfs:domain        ml:Concatenation ;
+    rdfs:range         ml:DataInConcatenation .
+
 
 #################################################################
 #    Data properties
@@ -213,6 +231,18 @@ ml:DataOutPredictedValueTest
     rdfs:subClassOf ds:DataEntity .
 
 ml:DataOutPredictedValueTrain
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInX
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInY
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInConcatenation
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
