@@ -1,22 +1,39 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "ml:TrainMethod" "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:MLPTest" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" "ml:LRTest" "ml:KNNTrain" "ml:MLPTrain" "ml:TestMethod" "ml:LRTrain" ; /*classes style*/
+node [shape = rectangle, color="black"]; "ml:DataOutSplittedTrainData" "ml:TrainMethod" "ml:DataOutModel" "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:DataInY" "ml:MLPTest" "ml:DataOutPredictedValueTrain" "ml:DataOutMLTrainErr" "ml:DataOutConcatenatedData" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataInX" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" "ml:DataOutPredictedValueTest" "ml:LRTest" "ml:KNNTrain" "ml:DataOutMLTestErr" "ml:MLPTrain" "ml:TestMethod" "ml:LRTrain" "ml:DataInConcatenation" "ml:DataOutSplittedTestData" ; /*classes style*/
+	"ml:PerformanceCalculation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutMLTestErr" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:LRTrain" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LRTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LRTest" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LRTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutSplittedTrainData" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:ConcatenationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Test" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:DataInConcatenation" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutPredictedValueTest" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutSplittedTestData" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
 	"ml:DataSplitting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:Train" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:MLPTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
-	"ml:Concatenation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:MLPTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DataInY" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:DataSplittingMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutMLTrainErr" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:KNNTest" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNNTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DataInX" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutPredictedValueTrain" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
 	"ml:TrainMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
 	"ml:TestMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
-	"ml:DataSplittingMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"ml:KNNTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
-	"ml:LRTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
-	"ml:KNNTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
-	"ml:LRTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
-	"ml:Test" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:PerformanceCalculation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"ml:ConcatenationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MLPTest" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MLPTest" -> "ml:TestMethod" [ label = "rdfs:subClassOf" ];
 	"ml:PerformanceCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutConcatenatedData" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:DataOutModel" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"ml:Train" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:MLPTrain" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MLPTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Concatenation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:KNNTrain" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNNTrain" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
 
 }
