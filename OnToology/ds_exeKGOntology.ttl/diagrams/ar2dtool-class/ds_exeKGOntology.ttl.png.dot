@@ -3,6 +3,7 @@ rankdir=LR;
 size="1501"
 node [shape = rectangle, color="orange"]; "ds:Data" "ds:Method" "ds:Pipeline" "ds:Task" "ds:DataSemantics" "ds:DataStructure" "ds:AtomicTask" "ds:DataEntity" ; /*classes style*/
 	"ds:DataEntity" -> "ds:DataSemantics" [ label = "ds:hasDataSemantics" ];
+	"ds:Data" -> "ds:DataEntity" [ label = "ds:hasReference" ];
 	"ds:Task" -> "ds:DataEntity" [ label = "ds:hasOutput" ];
 	"ds:Data" -> "xsd:string" [ label = "ds:hasSource" ];
 	"ds:AtomicTask" -> "ds:Method" [ label = "ds:hasMethod" ];

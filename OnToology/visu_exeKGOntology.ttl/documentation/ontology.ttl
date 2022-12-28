@@ -12,6 +12,10 @@
 #    Object Properties
 #################################################################
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> rdf:type owl:ObjectProperty .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> rdf:type owl:ObjectProperty .
 
@@ -35,6 +39,13 @@
                rdfs:domain :PlotTask ;
                rdfs:range :LineplotMethod ,
                           :ScatterplotMethod .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasVectorInput
+:hasVectorInput rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
+                rdfs:domain :PlotTask ;
+                rdfs:range :DataInVector .
 
 
 #################################################################
@@ -95,6 +106,10 @@
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> rdf:type owl:Class .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Method
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Method> rdf:type owl:Class .
 
@@ -117,6 +132,11 @@
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#CanvasTask
 :CanvasTask rdf:type owl:Class ;
             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#DataInVector
+:DataInVector rdf:type owl:Class ;
+              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#LineplotMethod

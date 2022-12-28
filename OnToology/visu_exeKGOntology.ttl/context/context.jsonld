@@ -1,5 +1,8 @@
 {
   "@context" : {
+    "DataInVector" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#DataInVector"
+    },
     "hasScatterStyle" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasScatterStyle",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
@@ -22,11 +25,22 @@
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasCanvasMethod",
       "@type" : "@id"
     },
+    "hasVectorInput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasVectorInput",
+      "@type" : "@id"
+    },
     "PlotTask" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PlotTask"
     },
+    "DataEntity" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"
+    },
     "intPair" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#intPair"
+    },
+    "hasInput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput",
+      "@type" : "@id"
     },
     "CanvasTask" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#CanvasTask"
