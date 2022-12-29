@@ -64,7 +64,8 @@ ml:hasDataSplittingOutput
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasOutput ;
     rdfs:domain        ml:DataSplitting ;
-    rdfs:range         ml:DataOutSplittedTestData, ml:DataOutSplittedTrainData .
+    rdfs:range         ml:DataOutSplittedTestDataX, ml:DataOutSplittedTestDataY, ml:DataOutSplittedTrainDataX,
+                       ml:DataOutSplittedTrainDataY .
 
 ml:hasConcatenationOutput
     rdf:type           owl:ObjectProperty ;
@@ -76,7 +77,7 @@ ml:hasTrainOutput
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasOutput ;
     rdfs:domain        ml:Train ;
-    rdfs:range         ml:DataOutModel, ml:DataOutPredictedValueTrain .
+    rdfs:range         ml:DataOutTrainModel, ml:DataOutPredictedValueTrain .
 
 ml:hasTestOutput
     rdf:type           owl:ObjectProperty ;
@@ -84,29 +85,44 @@ ml:hasTestOutput
     rdfs:domain        ml:Test ;
     rdfs:range         ml:DataOutPredictedValueTest .
 
-ml:hasXInput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        ml:Train ;
-    rdfs:range         ml:DataInX .
-
-ml:hasYInput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        ml:Train, ml:Test ;
-    rdfs:range         ml:DataInY .
-
 ml:hasConcatenationInput
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasInput ;
     rdfs:domain        ml:Concatenation ;
     rdfs:range         ml:DataInConcatenation .
 
+ml:hasPerformanceCalculationInput
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasInput ;
+    rdfs:domain        ml:PerformanceCalculation ;
+    rdfs:range         ml:DataInTrainRealY, ml:DataInTrainPredictedY, ml:DataInTestRealY, ml:DataInTestPredictedY .
+
+ml:hasTrainInput
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasInput ;
+    rdfs:domain        ml:Train ;
+    rdfs:range         ml:DataInTrainX, ml:DataInTrainY .
+
+ml:hasTestInput
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasInput ;
+    rdfs:domain        ml:Test ;
+    rdfs:range         ml:DataInTestX, ml:DataInTestModel .
+
+ml:hasDataSplittingInput
+    rdf:type           owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasInput ;
+    rdfs:domain        ml:DataSplitting ;
+    rdfs:range         ml:DataInDataSplittingX, ml:DataInDataSplittingY .
 
 #################################################################
 #    Data properties
 #################################################################
 
+ml:hasSplitRatio
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:domain ml:DataSplittingMethod ;
+    rdfs:range  xsd:float .
 
 #################################################################
 #    Classes
@@ -202,11 +218,19 @@ ml:DataSplittingMethod
     rdfs:subClassOf ds:AtomicMethod .
 
 
-ml:DataOutSplittedTestData
+ml:DataOutSplittedTestDataX
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
-ml:DataOutSplittedTrainData
+ml:DataOutSplittedTestDataY
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataOutSplittedTrainDataX
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataOutSplittedTrainDataY
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
@@ -214,7 +238,7 @@ ml:DataOutConcatenatedData
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
-ml:DataOutModel
+ml:DataOutTrainModel
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
@@ -234,15 +258,47 @@ ml:DataOutPredictedValueTrain
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
-ml:DataInX
+ml:DataInTrainX
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
-ml:DataInY
+ml:DataInTestX
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInDataSplittingX
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInTrainY
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInDataSplittingY
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInTrainRealY
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInTrainPredictedY
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInTestRealY
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInTestPredictedY
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
 ml:DataInConcatenation
+    rdf:type        owl:Class ;
+    rdfs:subClassOf ds:DataEntity .
+
+ml:DataInTestModel
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:DataEntity .
 
