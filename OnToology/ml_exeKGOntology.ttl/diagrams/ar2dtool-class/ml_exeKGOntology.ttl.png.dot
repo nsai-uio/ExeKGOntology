@@ -1,32 +1,37 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "ml:DataOutModel" "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:DataInY" "ml:DataOutConcatenatedData" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataInX" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" "ml:DataOutPredictedValueTest" "ml:KNNTrain" "ml:DataOutMLTestErr" "ml:DataInConcatenation" "ml:DataOutSplittedTestData" ; /*classes style*/
-	"ml:hasPerformanceCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+node [shape = rectangle, color="orange"]; "ml:DataOutSplittedTestDataX" "ml:PerformanceCalculationMethod" "ml:Concatenation" "ml:ConcatenationMethod" "ml:DataInTrainX" "ml:DataOutConcatenatedData" "ml:DataSplitting" "ml:KNNTest" "ml:Test" "ml:DataInDataSplittingX" "ml:DataSplittingMethod" "ml:Train" "ml:PerformanceCalculation" "ml:DataOutTrainModel" "ml:DataOutPredictedValueTest" "ml:DataInTestX" "ml:KNNTrain" "ml:DataOutMLTestErr" "ml:DataInConcatenation" "ml:DataInTrainRealY" ; /*classes style*/
+	"ml:hasTestInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasDataSplittingOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
-	"ml:hasYInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasTestOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasConcatenationInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasDataSplittingMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasDataSplittingInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasConcatenationOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasTestMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"ml:hasXInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasTrainOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasConcatenationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasTrainInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasTrainMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
 	"ml:hasPerformanceCalculationOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasPerformanceCalculationInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasPerformanceCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
 	"ml:Test" -> "ml:DataOutPredictedValueTest" [ label = "ml:hasTestOutput" ];
 	"ml:Concatenation" -> "ml:DataInConcatenation" [ label = "ml:hasConcatenationInput" ];
-	"ml:Train" -> "ml:DataOutModel" [ label = "ml:hasTrainOutput" ];
+	"ml:Train" -> "ml:DataOutTrainModel" [ label = "ml:hasTrainOutput" ];
 	"ml:PerformanceCalculation" -> "ml:PerformanceCalculationMethod" [ label = "ml:hasPerformanceCalculationMethod" ];
 	"ml:Test" -> "ml:KNNTest" [ label = "ml:hasTestMethod" ];
 	"ml:DataSplitting" -> "ml:DataSplittingMethod" [ label = "ml:hasDataSplittingMethod" ];
 	"ml:PerformanceCalculation" -> "ml:DataOutMLTestErr" [ label = "ml:hasPerformanceCalculationOutput" ];
-	"ml:Train" -> "ml:DataInX" [ label = "ml:hasXInput" ];
+	"ml:Test" -> "ml:DataInTestX" [ label = "ml:hasTestInput" ];
 	"ml:Concatenation" -> "ml:ConcatenationMethod" [ label = "ml:hasConcatenationMethod" ];
-	"ml:DataSplitting" -> "ml:DataOutSplittedTestData" [ label = "ml:hasDataSplittingOutput" ];
+	"ml:DataSplitting" -> "ml:DataOutSplittedTestDataX" [ label = "ml:hasDataSplittingOutput" ];
+	"ml:PerformanceCalculation" -> "ml:DataInTrainRealY" [ label = "ml:hasPerformanceCalculationInput" ];
 	"ml:Train" -> "ml:KNNTrain" [ label = "ml:hasTrainMethod" ];
-	"ml:Train" -> "ml:DataInY" [ label = "ml:hasYInput" ];
+	"ml:DataSplitting" -> "ml:DataInDataSplittingX" [ label = "ml:hasDataSplittingInput" ];
 	"ml:Concatenation" -> "ml:DataOutConcatenatedData" [ label = "ml:hasConcatenationOutput" ];
+	"ml:DataSplittingMethod" -> "xsd:float" [ label = "ml:hasSplitRatio" ];
+	"ml:Train" -> "ml:DataInTrainX" [ label = "ml:hasTrainInput" ];
 
 }

@@ -45,6 +45,14 @@
                         rdfs:range :DataOutConcatenatedData .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingInput
+:hasDataSplittingInput rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
+                       rdfs:domain :DataSplitting ;
+                       rdfs:range :DataInDataSplittingX ,
+                                  :DataInDataSplittingY .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingMethod
 :hasDataSplittingMethod rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
@@ -56,8 +64,20 @@
 :hasDataSplittingOutput rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput> ;
                         rdfs:domain :DataSplitting ;
-                        rdfs:range :DataOutSplittedTestData ,
-                                   :DataOutSplittedTrainData .
+                        rdfs:range :DataOutSplittedTestDataX ,
+                                   :DataOutSplittedTestDataY ,
+                                   :DataOutSplittedTrainDataX ,
+                                   :DataOutSplittedTrainDataY .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationInput
+:hasPerformanceCalculationInput rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
+                                rdfs:domain :PerformanceCalculation ;
+                                rdfs:range :DataInTestPredictedY ,
+                                           :DataInTestRealY ,
+                                           :DataInTrainPredictedY ,
+                                           :DataInTrainRealY .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationMethod
@@ -73,6 +93,14 @@
                                  rdfs:domain :PerformanceCalculation ;
                                  rdfs:range :DataOutMLTestErr ,
                                             :DataOutMLTrainErr .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestInput
+:hasTestInput rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
+              rdfs:domain :Test ;
+              rdfs:range :DataInTestModel ,
+                         :DataInTestX .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestMethod
@@ -91,6 +119,14 @@
                rdfs:range :DataOutPredictedValueTest .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput
+:hasTrainInput rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
+               rdfs:domain :Train ;
+               rdfs:range :DataInTrainX ,
+                          :DataInTrainY .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod
 :hasTrainMethod rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
@@ -104,23 +140,18 @@
 :hasTrainOutput rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput> ;
                 rdfs:domain :Train ;
-                rdfs:range :DataOutModel ,
-                           :DataOutPredictedValueTrain .
+                rdfs:range :DataOutPredictedValueTrain ,
+                           :DataOutTrainModel .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasXInput
-:hasXInput rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
-           rdfs:domain :Train ;
-           rdfs:range :DataInX .
+#################################################################
+#    Data properties
+#################################################################
 
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasYInput
-:hasYInput rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
-           rdfs:domain :Test ,
-                       :Train ;
-           rdfs:range :DataInY .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSplitRatio
+:hasSplitRatio rdf:type owl:DatatypeProperty ;
+               rdfs:domain :DataSplittingMethod ;
+               rdfs:range xsd:float .
 
 
 #################################################################
@@ -158,14 +189,54 @@
                      rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInX
-:DataInX rdf:type owl:Class ;
-         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingX
+:DataInDataSplittingX rdf:type owl:Class ;
+                      rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInY
-:DataInY rdf:type owl:Class ;
-         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingY
+:DataInDataSplittingY rdf:type owl:Class ;
+                      rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestModel
+:DataInTestModel rdf:type owl:Class ;
+                 rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestPredictedY
+:DataInTestPredictedY rdf:type owl:Class ;
+                      rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestRealY
+:DataInTestRealY rdf:type owl:Class ;
+                 rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestX
+:DataInTestX rdf:type owl:Class ;
+             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainPredictedY
+:DataInTrainPredictedY rdf:type owl:Class ;
+                       rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainRealY
+:DataInTrainRealY rdf:type owl:Class ;
+                  rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainX
+:DataInTrainX rdf:type owl:Class ;
+              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainY
+:DataInTrainY rdf:type owl:Class ;
+              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutConcatenatedData
@@ -183,11 +254,6 @@
                    rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutModel
-:DataOutModel rdf:type owl:Class ;
-              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
-
-
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutPredictedValueTest
 :DataOutPredictedValueTest rdf:type owl:Class ;
                            rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
@@ -198,14 +264,29 @@
                             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestData
-:DataOutSplittedTestData rdf:type owl:Class ;
-                         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainData
-:DataOutSplittedTrainData rdf:type owl:Class ;
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataX
+:DataOutSplittedTestDataX rdf:type owl:Class ;
                           rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataY
+:DataOutSplittedTestDataY rdf:type owl:Class ;
+                          rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataX
+:DataOutSplittedTrainDataX rdf:type owl:Class ;
+                           rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataY
+:DataOutSplittedTrainDataY rdf:type owl:Class ;
+                           rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTrainModel
+:DataOutTrainModel rdf:type owl:Class ;
+                   rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting
