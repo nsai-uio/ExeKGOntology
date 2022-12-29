@@ -5,7 +5,7 @@
    <key for="edge" id="d2" yfiles.type="edgegraphics" />
    <key attr.name="description" attr.type="string" for="edge" id="d3" />
    <key for="graphml" id="d4" yfiles.type="resources" />
-   <graph edgedefault="directed" id="G" parse.edges="9" parse.nodes="9" parse.order="free">
+   <graph edgedefault="directed" id="G" parse.edges="10" parse.nodes="9" parse.order="free">
       <node id="nid_ds:DataEntity">
          <data key="d0">
             <y:ShapeNode>
@@ -41,29 +41,6 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_ds:Task">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="70.0" x="0.0" y="0.0" />
-               <y:Fill color="#FFA500" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">ds:Task</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_ds:hasOutput1" source="nid_ds:Task" target="nid_ds:DataEntity">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">ds:hasOutput</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
       <node id="nid_ds:Data">
          <data key="d0">
             <y:ShapeNode>
@@ -76,6 +53,40 @@
          </data>
          <data key="d1" />
       </node>
+    <edge id="eid_ds:hasReference1" source="nid_ds:Data" target="nid_ds:DataEntity">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">ds:hasReference</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_ds:Task">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="70.0" x="0.0" y="0.0" />
+               <y:Fill color="#FFA500" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">ds:Task</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_ds:hasOutput2" source="nid_ds:Task" target="nid_ds:DataEntity">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">ds:hasOutput</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
       <node id="nid_xsd:string">
          <data key="d0">
             <y:ShapeNode>
@@ -88,7 +99,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_ds:hasSource2" source="nid_ds:Data" target="nid_xsd:string">
+    <edge id="eid_ds:hasSource3" source="nid_ds:Data" target="nid_xsd:string">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -123,7 +134,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_ds:hasMethod3" source="nid_ds:AtomicTask" target="nid_ds:Method">
+    <edge id="eid_ds:hasMethod4" source="nid_ds:AtomicTask" target="nid_ds:Method">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -134,7 +145,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_ds:hasInput4" source="nid_ds:Task" target="nid_ds:DataEntity">
+    <edge id="eid_ds:hasInput5" source="nid_ds:Task" target="nid_ds:DataEntity">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -157,7 +168,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_ds:allowedDataStructure5" source="nid_ds:Method" target="nid_ds:DataStructure">
+    <edge id="eid_ds:allowedDataStructure6" source="nid_ds:Method" target="nid_ds:DataStructure">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -168,7 +179,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_ds:hasNextTask6" source="nid_ds:AtomicTask" target="nid_ds:AtomicTask">
+    <edge id="eid_ds:hasNextTask7" source="nid_ds:AtomicTask" target="nid_ds:AtomicTask">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -179,7 +190,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_ds:hasDataStructure7" source="nid_ds:DataEntity" target="nid_ds:DataStructure">
+    <edge id="eid_ds:hasDataStructure8" source="nid_ds:DataEntity" target="nid_ds:DataStructure">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -202,7 +213,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_ds:hasStartTask8" source="nid_ds:Pipeline" target="nid_ds:AtomicTask">
+    <edge id="eid_ds:hasStartTask9" source="nid_ds:Pipeline" target="nid_ds:AtomicTask">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />

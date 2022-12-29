@@ -62,6 +62,12 @@
            rdfs:range :DataEntity .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasReference
+:hasReference rdf:type owl:ObjectProperty ;
+              rdfs:domain :Data ;
+              rdfs:range :DataEntity .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasStartTask
 :hasStartTask rdf:type owl:ObjectProperty ;
               rdfs:domain :Pipeline ;
@@ -71,6 +77,10 @@
 #################################################################
 #    Data properties
 #################################################################
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasReference
+:hasReference rdf:type owl:DatatypeProperty .
+
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasSource
 :hasSource rdf:type owl:DatatypeProperty ;
