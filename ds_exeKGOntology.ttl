@@ -18,6 +18,27 @@ ds:intPair
     rdf:type rdfs:Datatype .
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/ds#hasSource
+ds:hasSource
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:domain ds:Data ;
+    rdfs:range  xsd:string .
+
+###  http://www.semanticweb.org/ontologies/ds#hasReference
+ds:hasReference
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:domain ds:Data ;
+    rdfs:range  ds:DataEntity .
+
+ds:hasInputDataPath
+    rdf:type    owl:DatatypeProperty ;
+    rdfs:domain ds:Pipeline ;
+    rdfs:range  xsd:string .
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -75,19 +96,6 @@ ds:hasStartTask
     rdf:type    owl:ObjectProperty ;
     rdfs:domain ds:Pipeline ;
     rdfs:range  ds:AtomicTask .
-
-###  http://www.semanticweb.org/ontologies/ds#hasSource
-ds:hasSource
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain ds:Data ;
-    rdfs:range  xsd:string .
-
-###  http://www.semanticweb.org/ontologies/ds#hasReference
-ds:hasReference
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain ds:Data ;
-    rdfs:range  ds:DataEntity .
-
 
 #################################################################
 #    Classes
