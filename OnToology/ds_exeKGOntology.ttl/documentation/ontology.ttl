@@ -78,6 +78,12 @@
 #    Data properties
 #################################################################
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInputDataPath
+:hasInputDataPath rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Pipeline ;
+                  rdfs:range xsd:string .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasReference
 :hasReference rdf:type owl:DatatypeProperty .
 

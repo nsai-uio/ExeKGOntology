@@ -9,6 +9,7 @@ node [shape = rectangle, color="orange"]; "ds:Data" "ds:Method" "ds:Pipeline" "d
 	"ds:AtomicTask" -> "ds:Method" [ label = "ds:hasMethod" ];
 	"ds:Task" -> "ds:DataEntity" [ label = "ds:hasInput" ];
 	"ds:Method" -> "ds:DataStructure" [ label = "ds:allowedDataStructure" ];
+	"ds:Pipeline" -> "xsd:string" [ label = "ds:hasInputDataPath" ];
 	"ds:AtomicTask" -> "ds:AtomicTask" [ label = "ds:hasNextTask" ];
 	"ds:DataEntity" -> "ds:DataStructure" [ label = "ds:hasDataStructure" ];
 	"ds:Pipeline" -> "ds:AtomicTask" [ label = "ds:hasStartTask" ];
