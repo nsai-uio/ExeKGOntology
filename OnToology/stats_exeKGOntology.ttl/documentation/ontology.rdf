@@ -22,10 +22,35 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod -->
 
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationInput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationInput">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationTask"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInNormalization"/>
+    </owl:ObjectProperty>
     
 
 
@@ -36,6 +61,28 @@
         <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationTask"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationOutput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationOutput">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationTask"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutNormalization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationInput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationInput">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScatteringCalculationTask"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInScatteringCalculation"/>
     </owl:ObjectProperty>
     
 
@@ -51,6 +98,28 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationOutput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationOutput">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScatteringCalculationTask"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutScatteringCalculation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationInput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationInput">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#TrendCalculationTask"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInTrendCalculation"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationMethod -->
 
 
@@ -58,6 +127,17 @@
         <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#TrendCalculationTask"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#TrendCalculationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationOutput -->
+
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationOutput">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#TrendCalculationTask"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutTrendCalculation"/>
     </owl:ObjectProperty>
     
 
@@ -85,6 +165,67 @@
 
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity -->
+
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInNormalization -->
+
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInNormalization">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInScatteringCalculation -->
+
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInScatteringCalculation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInTrendCalculation -->
+
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInTrendCalculation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutNormalization -->
+
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutNormalization">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutScatteringCalculation -->
+
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutScatteringCalculation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutTrendCalculation -->
+
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutTrendCalculation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+    </owl:Class>
     
 
 

@@ -7,21 +7,55 @@
     "ScatteringCalculationTask" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScatteringCalculationTask"
     },
+    "DataOutScatteringCalculation" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutScatteringCalculation"
+    },
     "hasTrendCalculationMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationMethod",
+      "@type" : "@id"
+    },
+    "DataOutNormalization" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutNormalization"
+    },
+    "hasOutput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput",
+      "@type" : "@id"
+    },
+    "hasNormalizationOutput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationOutput",
       "@type" : "@id"
     },
     "StandardDeviationMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StandardDeviationMethod"
     },
+    "DataEntity" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"
+    },
     "NormalizationMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationMethod"
+    },
+    "hasInput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput",
+      "@type" : "@id"
+    },
+    "DataInNormalization" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInNormalization"
     },
     "MaximumCalculationMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#MaximumCalculationMethod"
     },
+    "DataInTrendCalculation" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInTrendCalculation"
+    },
+    "hasTrendCalculationOutput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationOutput",
+      "@type" : "@id"
+    },
     "AtomicTask" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"
+    },
+    "DataInScatteringCalculation" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInScatteringCalculation"
     },
     "hasNormalizationMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationMethod",
@@ -30,8 +64,15 @@
     "ScatteringCalculationMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScatteringCalculationMethod"
     },
+    "hasNormalizationInput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationInput",
+      "@type" : "@id"
+    },
     "MeanCalculationMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#MeanCalculationMethod"
+    },
+    "DataOutTrendCalculation" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutTrendCalculation"
     },
     "hasMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod",
@@ -40,8 +81,16 @@
     "NormalizationTask" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationTask"
     },
+    "hasScatteringCalculationOutput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationOutput",
+      "@type" : "@id"
+    },
     "MinimumCalcualtionMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#MinimumCalcualtionMethod"
+    },
+    "hasScatteringCalculationInput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationInput",
+      "@type" : "@id"
     },
     "TrendCalculationTask" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#TrendCalculationTask"
@@ -51,6 +100,10 @@
     },
     "AtomicMethod" : {
       "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+    },
+    "hasTrendCalculationInput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationInput",
+      "@type" : "@id"
     }
   }
 }
