@@ -19,35 +19,30 @@ ml:
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/ml#hasNormalizationMethod
 ml:hasDataSplittingMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        ml:DataSplitting ;
     rdfs:range         ml:DataSplittingMethod .
 
-###  http://www.semanticweb.org/ontologies/ml#hasConcatenationMethod
 ml:hasConcatenationMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        ml:Concatenation ;
     rdfs:range         ml:ConcatenationMethod .
 
-###  http://www.semanticweb.org/ontologies/ml#hasConcatenationMethod
 ml:hasPerformanceCalculationMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        ml:PerformanceCalculation ;
     rdfs:range         ml:PerformanceCalculationMethod .
 
-###  http://www.semanticweb.org/ontologies/ml#hasTrainMethod
 ml:hasTrainMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        ml:Train ;
     rdfs:range         ml:KNNTrain, ml:MLPTrain, ml:LRTrain .
 
-###  http://www.semanticweb.org/ontologies/ml#hasTestMethod
 ml:hasTestMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
@@ -129,90 +124,74 @@ ml:hasSplitRatio
 #################################################################
 
 
-###  http://www.semanticweb.org/ontologies/ml#KNNTest
 ml:KNNTest
     rdf:type        owl:Class ;
     rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#KNNTrain
 ml:KNNTrain
     rdf:type        owl:Class ;
     rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#LRTest
 ml:LRTest
     rdf:type        owl:Class ;
     rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#LRTrain
 ml:LRTrain
     rdf:type        owl:Class ;
     rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLPTest
 ml:MLPTest
     rdf:type        owl:Class ;
     rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLPTrain
 ml:MLPTrain
     rdf:type        owl:Class ;
     rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#TestMethod
 ml:TestMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:Method .
 
 
-###  http://www.semanticweb.org/ontologies/ml#MLTrainMethod
 ml:TrainMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:Method .
 
-###  http://www.semanticweb.org/ontologies/ml#Test
 ml:Test
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-###  http://www.semanticweb.org/ontologies/ml#Train
 ml:Train
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-###  http://www.semanticweb.org/ontologies/ml#Concatenation
 ml:Concatenation
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-###  http://www.semanticweb.org/ontologies/ml#DataSplitting
 ml:DataSplitting
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-###  http://www.semanticweb.org/ontologies/ml#PerformanceCalculation
 ml:PerformanceCalculation
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-###  http://www.semanticweb.org/ontologies/ml#PerformanceCalculationMethod
 ml:PerformanceCalculationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/ml#ConcatenationMethod
 ml:ConcatenationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
 
-###  http://www.semanticweb.org/ontologies/ml#DataSplittingMethod
 ml:DataSplittingMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .

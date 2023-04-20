@@ -19,21 +19,18 @@ stats:
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/stats#hasTrendCalculationMethod
 stats:hasTrendCalculationMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        stats:TrendCalculationTask ;
     rdfs:range         stats:TrendCalculationMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#hasScatteringCalculationMethod
 stats:hasScatteringCalculationMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        stats:ScatteringCalculationTask ;
     rdfs:range         stats:ScatteringCalculationMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#hasNormalizationMethod
 stats:hasNormalizationMethod
     rdf:type           owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
@@ -85,52 +82,42 @@ stats:hasTrendCalculationOutput
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/ontologies/stats#MaximumCalculationMethod
 stats:MaximumCalculationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#MeanCalculationMethod
 stats:MeanCalculationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#MinimumCalcualtionMethod
 stats:MinimumCalcualtionMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#NormalizationMethod
 stats:NormalizationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#StandardDeviationMethod
 stats:StandardDeviationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#TrendCalculationMethod
 stats:TrendCalculationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#ScatteringCalculationMethod
 stats:ScatteringCalculationMethod
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicMethod .
 
-###  http://www.semanticweb.org/ontologies/stats#TrendCalculationTask
 stats:TrendCalculationTask
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-###  http://www.semanticweb.org/ontologies/stats#ScatteringCalculationTask
 stats:ScatteringCalculationTask
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-###  http://www.semanticweb.org/ontologies/stats#NormalizationTask
 stats:NormalizationTask
     rdf:type        owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
