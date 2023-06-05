@@ -5,7 +5,7 @@
    <key for="edge" id="d2" yfiles.type="edgegraphics" />
    <key attr.name="description" attr.type="string" for="edge" id="d3" />
    <key for="graphml" id="d4" yfiles.type="resources" />
-   <graph edgedefault="directed" id="G" parse.edges="13" parse.nodes="15" parse.order="free">
+   <graph edgedefault="directed" id="G" parse.edges="14" parse.nodes="15" parse.order="free">
       <node id="nid_visu:hasVectorInput">
          <data key="d0">
             <y:ShapeNode>
@@ -76,6 +76,41 @@
          </data>
          <data key="d3" />
       </edge>
+      <node id="nid_visu:DataInVector">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
+               <y:Fill color="#FFA500" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">visu:DataInVector</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+      <node id="nid_ds:Vector">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="90.0" x="0.0" y="0.0" />
+               <y:Fill color="#FFA500" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">ds:Vector</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_ds:hasDataStructure2" source="nid_visu:DataInVector" target="nid_ds:Vector">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">ds:hasDataStructure</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
       <node id="nid_visu:hasCanvasMethod">
          <data key="d0">
             <y:ShapeNode>
@@ -88,7 +123,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subPropertyOf2" source="nid_visu:hasCanvasMethod" target="nid_ds:hasMethod">
+    <edge id="eid_rdfs:subPropertyOf3" source="nid_visu:hasCanvasMethod" target="nid_ds:hasMethod">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -123,7 +158,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_visu:hasLineStyle3" source="nid_visu:LineplotMethod" target="nid_xsd:string">
+    <edge id="eid_visu:hasLineStyle4" source="nid_visu:LineplotMethod" target="nid_xsd:string">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -146,7 +181,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_visu:hasScatterStyle4" source="nid_visu:ScatterplotMethod" target="nid_xsd:string">
+    <edge id="eid_visu:hasScatterStyle5" source="nid_visu:ScatterplotMethod" target="nid_xsd:string">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -169,19 +204,7 @@
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_visu:DataInVector">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
-               <y:Fill color="#FFA500" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">visu:DataInVector</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_visu:hasVectorInput5" source="nid_visu:PlotTask" target="nid_visu:DataInVector">
+    <edge id="eid_visu:hasVectorInput6" source="nid_visu:PlotTask" target="nid_visu:DataInVector">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -192,7 +215,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_visu:hasPlotMethod6" source="nid_visu:PlotTask" target="nid_visu:LineplotMethod">
+    <edge id="eid_visu:hasPlotMethod7" source="nid_visu:PlotTask" target="nid_visu:LineplotMethod">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -215,7 +238,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_visu:hasScatterSize7" source="nid_visu:ScatterplotMethod" target="nid_xsd:int">
+    <edge id="eid_visu:hasScatterSize8" source="nid_visu:ScatterplotMethod" target="nid_xsd:int">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -238,19 +261,7 @@
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_ds:intPair">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="100.0" x="0.0" y="0.0" />
-               <y:Fill color="#FFA500" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">ds:intPair</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_visu:hasLayout8" source="nid_visu:CanvasMethod" target="nid_ds:intPair">
+    <edge id="eid_visu:hasLayout9" source="nid_visu:CanvasMethod" target="nid_xsd:string">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -273,7 +284,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_visu:hasCanvasMethod9" source="nid_visu:CanvasTask" target="nid_visu:CanvasMethod">
+    <edge id="eid_visu:hasCanvasMethod10" source="nid_visu:CanvasTask" target="nid_visu:CanvasMethod">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -284,7 +295,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_visu:hasCanvasName10" source="nid_visu:CanvasMethod" target="nid_xsd:string">
+    <edge id="eid_visu:hasCanvasName11" source="nid_visu:CanvasMethod" target="nid_xsd:string">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -295,7 +306,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_visu:hasLineWidth11" source="nid_visu:LineplotMethod" target="nid_xsd:int">
+    <edge id="eid_visu:hasLineWidth12" source="nid_visu:LineplotMethod" target="nid_xsd:int">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -318,7 +329,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_visu:hasLegendName12" source="nid_visu:PlotMethod" target="nid_xsd:string">
+    <edge id="eid_visu:hasLegendName13" source="nid_visu:PlotMethod" target="nid_xsd:string">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />

@@ -5,8 +5,28 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ds_exeKGOntology="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure -->
+
+
+    <owl:AnnotationProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure"/>
     
 
 
@@ -308,6 +328,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInConcatenation">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -317,6 +338,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingX">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -326,6 +349,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -335,6 +360,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestModel">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue"/>
     </owl:Class>
     
 
@@ -344,6 +370,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestPredictedY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -353,6 +381,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestRealY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -362,6 +392,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestX">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -371,6 +403,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainPredictedY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -380,6 +414,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainRealY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -389,6 +425,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainX">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -398,6 +436,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -407,6 +447,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutConcatenatedData">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
     </owl:Class>
     
 
@@ -416,6 +457,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutMLTestErr">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -425,6 +467,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutMLTrainErr">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -434,6 +477,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutPredictedValueTest">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -443,6 +488,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutPredictedValueTrain">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -452,6 +499,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataX">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -461,6 +510,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -470,6 +521,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataX">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -479,6 +532,8 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataY">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector"/>
     </owl:Class>
     
 
@@ -488,6 +543,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTrainModel">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity"/>
+        <ds_exeKGOntology:hasDataStructure rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue"/>
     </owl:Class>
     
 
