@@ -1,0 +1,108 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://vocab.linkeddata.es/ontology/report#numberVocabsWarning>
+        a       owl:DatatypeProperty .
+
+<http://vocab.linkeddata.es/ontology/report#entrySubject>
+        a       rdf:Property .
+
+<http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
+        a       rdf:Property .
+
+<http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64ML_EXEKGONTOLOGYTTL>
+        a           <http://vocab.linkeddata.es/ontology/report#Entry> ;
+        rdfs:label  "Entry for vocab /home/ahmad/repos/prevclone-qH64/ml_exeKGOntology.ttl" ;
+        <http://vocab.linkeddata.es/ontology/report#detectedProblem>
+                <http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> ;
+        <http://vocab.linkeddata.es/ontology/report#entrySubject>
+                <http://vocab.linkeddata.es/ontology/report#/HOMEAHMADREPOSPREVCLONE-QH64ML_EXEKGONTOLOGY.TTL> ;
+        <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
+                <http://vocab.linkeddata.es/ontology/report#REPORT1686070569647> ;
+        <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
+                "http://vocab.linkeddata.es/ontology/report#warning" .
+
+rdfs:label  a   owl:DatatypeProperty .
+
+<http://vocab.linkeddata.es/ontology/report#reportDate>
+        a       owl:DatatypeProperty .
+
+<http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
+        a       rdf:Property .
+
+<http://vocab.linkeddata.es/ontology/report#REPORT1686070569647>
+        a           <http://vocab.linkeddata.es/ontology/report#Report> ;
+        rdfs:label  "Report created on Tue Jun 06 18:56:09 CEST 2023" ;
+        <http://vocab.linkeddata.es/ontology/report#hasEntry>
+                <http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64VISU_EXEKGONTOLOGYTTL> , <http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64ML_EXEKGONTOLOGYTTL> , <http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64DS_EXEKGONTOLOGYTTL> , <http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64STATS_EXEKGONTOLOGYTTL> ;
+        <http://vocab.linkeddata.es/ontology/report#numberVocabsError>
+                "0" ;
+        <http://vocab.linkeddata.es/ontology/report#numberVocabsOK>
+                "0" ;
+        <http://vocab.linkeddata.es/ontology/report#numberVocabsWarning>
+                "4" ;
+        <http://vocab.linkeddata.es/ontology/report#reportDate>
+                "Tue Jun 06 18:56:09 CEST 2023"^^xsd:dateTime .
+
+<http://vocab.linkeddata.es/ontology/report#Report>
+        a       owl:Class .
+
+<http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC>
+        a           <http://vocab.linkeddata.es/ontology/report#Warning> ;
+        rdfs:label  "Warning: title or description missing from vocabulary" .
+
+<http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64VISU_EXEKGONTOLOGYTTL>
+        a           <http://vocab.linkeddata.es/ontology/report#Entry> ;
+        rdfs:label  "Entry for vocab /home/ahmad/repos/prevclone-qH64/visu_exeKGOntology.ttl" ;
+        <http://vocab.linkeddata.es/ontology/report#detectedProblem>
+                <http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> ;
+        <http://vocab.linkeddata.es/ontology/report#entrySubject>
+                <http://vocab.linkeddata.es/ontology/report#/HOMEAHMADREPOSPREVCLONE-QH64VISU_EXEKGONTOLOGY.TTL> ;
+        <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
+                <http://vocab.linkeddata.es/ontology/report#REPORT1686070569647> ;
+        <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
+                "http://vocab.linkeddata.es/ontology/report#warning" .
+
+<http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64STATS_EXEKGONTOLOGYTTL>
+        a           <http://vocab.linkeddata.es/ontology/report#Entry> ;
+        rdfs:label  "Entry for vocab /home/ahmad/repos/prevclone-qH64/stats_exeKGOntology.ttl" ;
+        <http://vocab.linkeddata.es/ontology/report#detectedProblem>
+                <http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> ;
+        <http://vocab.linkeddata.es/ontology/report#entrySubject>
+                <http://vocab.linkeddata.es/ontology/report#/HOMEAHMADREPOSPREVCLONE-QH64STATS_EXEKGONTOLOGY.TTL> ;
+        <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
+                <http://vocab.linkeddata.es/ontology/report#REPORT1686070569647> ;
+        <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
+                "http://vocab.linkeddata.es/ontology/report#warning" .
+
+<http://vocab.linkeddata.es/ontology/report#numberVocabsError>
+        a       owl:DatatypeProperty .
+
+<http://vocab.linkeddata.es/ontology/report#Entry>
+        a       owl:Class .
+
+<http://vocab.linkeddata.es/ontology/report#Warning>
+        a       owl:Class .
+
+<http://vocab.linkeddata.es/ontology/report#numberVocabsOK>
+        a       owl:DatatypeProperty .
+
+<http://vocab.linkeddata.es/ontology/report#ENTRY1686070569647HOMEAHMADREPOSPREVCLONE-QH64DS_EXEKGONTOLOGYTTL>
+        a           <http://vocab.linkeddata.es/ontology/report#Entry> ;
+        rdfs:label  "Entry for vocab /home/ahmad/repos/prevclone-qH64/ds_exeKGOntology.ttl" ;
+        <http://vocab.linkeddata.es/ontology/report#detectedProblem>
+                <http://vocab.linkeddata.es/ontology/report#MISSINGTITLEORDESC> ;
+        <http://vocab.linkeddata.es/ontology/report#entrySubject>
+                <http://vocab.linkeddata.es/ontology/report#/HOMEAHMADREPOSPREVCLONE-QH64DS_EXEKGONTOLOGY.TTL> ;
+        <http://vocab.linkeddata.es/ontology/report#isEntryOfReport>
+                <http://vocab.linkeddata.es/ontology/report#REPORT1686070569647> ;
+        <http://vocab.linkeddata.es/ontology/report#vocabularyStatus>
+                "http://vocab.linkeddata.es/ontology/report#warning" .
+
+<http://vocab.linkeddata.es/ontology/report#hasEntry>
+        a       rdf:Property .
+
+<http://vocab.linkeddata.es/ontology/report#detectedProblem>
+        a       rdf:Property .
