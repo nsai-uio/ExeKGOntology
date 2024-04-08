@@ -1,30 +1,18 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "stats:ScatteringCalculationMethod" "stats:TrendCalculationTask" "stats:DataOutScatteringCalculation" "stats:NormalizationTask" "stats:DataOutNormalization" "stats:DataInTrendCalculation" "stats:DataInNormalization" "stats:DataInScatteringCalculation" "stats:NormalizationMethod" "stats:ScatteringCalculationTask" "stats:TrendCalculationMethod" "stats:DataOutTrendCalculation" ; /*classes style*/
-	"stats:hasScatteringCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"stats:DataOutNormalization" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
-	"stats:hasTrendCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"stats:hasScatteringCalculationInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
-	"stats:hasTrendCalculationInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
-	"stats:DataInScatteringCalculation" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
-	"stats:DataInNormalization" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
-	"stats:DataInTrendCalculation" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
-	"stats:hasNormalizationOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
-	"stats:DataOutScatteringCalculation" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
-	"stats:hasNormalizationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"stats:hasNormalizationInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
-	"stats:hasScatteringCalculationOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
-	"stats:DataOutTrendCalculation" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
-	"stats:hasTrendCalculationOutput" -> "ds:hasOutput" [ label = "rdfs:subPropertyOf" ];
-	"stats:TrendCalculationTask" -> "stats:TrendCalculationMethod" [ label = "stats:hasTrendCalculationMethod" ];
-	"stats:ScatteringCalculationTask" -> "stats:DataInScatteringCalculation" [ label = "stats:hasScatteringCalculationInput" ];
-	"stats:ScatteringCalculationTask" -> "stats:DataOutScatteringCalculation" [ label = "stats:hasScatteringCalculationOutput" ];
-	"stats:NormalizationTask" -> "stats:NormalizationMethod" [ label = "stats:hasNormalizationMethod" ];
-	"stats:ScatteringCalculationTask" -> "stats:ScatteringCalculationMethod" [ label = "stats:hasScatteringCalculationMethod" ];
-	"stats:NormalizationTask" -> "stats:DataInNormalization" [ label = "stats:hasNormalizationInput" ];
-	"stats:TrendCalculationTask" -> "stats:DataOutTrendCalculation" [ label = "stats:hasTrendCalculationOutput" ];
-	"stats:TrendCalculationTask" -> "stats:DataInTrendCalculation" [ label = "stats:hasTrendCalculationInput" ];
-	"stats:NormalizationTask" -> "stats:DataOutNormalization" [ label = "stats:hasNormalizationOutput" ];
+node [shape = rectangle, color="orange"]; "stats:DataOutStatisticCalculation" "stats:DataInStatisticCalculation" "stats:StatisticCalculation" ; /*classes style*/
+	"stats:hasStatisticCalculationInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
+	"stats:DataOutStatisticCalculation" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
+	"stats:DataOutStatisticCalculation" -> "ds:Matrix" [ label = "ds:hasDataStructure" ];
+	"stats:DataOutStatisticCalculation" -> "ds:Tensor" [ label = "ds:hasDataStructure" ];
+	"stats:DataInStatisticCalculation" -> "ds:Tabular" [ label = "ds:hasDataStructure" ];
+	"stats:DataInStatisticCalculation" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
+	"stats:DataInStatisticCalculation" -> "ds:Matrix" [ label = "ds:hasDataStructure" ];
+	"stats:DataInStatisticCalculation" -> "ds:Tensor" [ label = "ds:hasDataStructure" ];
+	"stats:hasStatisticCalculationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:StatisticCalculation" -> "owl:Thing" [ label = "stats:hasStatisticCalculationMethod" ];
+	"stats:StatisticCalculation" -> "stats:DataOutStatisticCalculation" [ label = "stats:hasStatisticCalculationOutput" ];
+	"stats:StatisticCalculation" -> "stats:DataInStatisticCalculation" [ label = "stats:hasStatisticCalculationInput" ];
 
 }

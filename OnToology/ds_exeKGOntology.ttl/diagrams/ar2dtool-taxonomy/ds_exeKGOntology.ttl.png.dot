@@ -1,20 +1,28 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "ds:Array" "ds:Data" "ds:Method" "ds:Pipeline" "ds:Task" "ds:SingleValue" "ds:Matrix" "ds:DataSemantics" "ds:DataStructure" "ds:AtomicTask" "ds:Vector" "ds:DataEntity" "ds:SingleFeature" "ds:AtomicMethod" "ds:TimeSeries" ; /*classes style*/
-	"ds:TimeSeries" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
-	"ds:Pipeline" -> "ds:Task" [ label = "rdfs:subClassOf" ];
-	"ds:Vector" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
-	"ds:SingleFeature" -> "ds:SingleValue" [ label = "rdfs:subClassOf" ];
-	"ds:SingleFeature" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "ds:Spatial" "ds:DataTransformer" "ds:Data" "ds:Tabular" "ds:Tensor" "ds:Method" "ds:Pipeline" "ds:Task" "ds:SingleValue" "ds:Mapping" "ds:Numerical" "ds:Matrix" "ds:DataSemantics" "ds:Categorical" "ds:DataStructure" "ds:AtomicTask" "ds:Vector" "ds:Model" "ds:Date" "ds:DataEntity" "ds:AtomicMethod" "ds:Text" "ds:TimeSeries" "ds:Image" ; /*classes style*/
+	"ds:Tensor" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:DataTransformer" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
 	"ds:DataEntity" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
 	"ds:DataEntity" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
-	"ds:Array" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
-	"ds:Matrix" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
-	"ds:DataStructure" -> "ds:Data" [ label = "rdfs:subClassOf" ];
+	"ds:Model" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:Mapping" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
 	"ds:SingleValue" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:Spatial" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:Matrix" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:Pipeline" -> "ds:Task" [ label = "rdfs:subClassOf" ];
+	"ds:Tabular" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
+	"ds:Numerical" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:Image" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:Categorical" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:DataStructure" -> "ds:Data" [ label = "rdfs:subClassOf" ];
+	"ds:DataSemantics" -> "ds:Data" [ label = "rdfs:subClassOf" ];
+	"ds:Date" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
 	"ds:AtomicMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
 	"ds:AtomicTask" -> "ds:Task" [ label = "rdfs:subClassOf" ];
-	"ds:DataSemantics" -> "ds:Data" [ label = "rdfs:subClassOf" ];
+	"ds:TimeSeries" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:Text" -> "ds:DataSemantics" [ label = "rdfs:subClassOf" ];
+	"ds:Vector" -> "ds:DataStructure" [ label = "rdfs:subClassOf" ];
 
 }
