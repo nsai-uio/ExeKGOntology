@@ -1,0 +1,1166 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ds_exeKGOntology="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule -->
+
+
+    <AnnotationProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RegularizedRegression"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamActivation -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamActivation">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBatchSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBatchSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBeta1 -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBeta1">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBeta2 -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBeta2">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEarlyStopping -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEarlyStopping">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningRate -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningRate">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningRateInit -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningRateInit">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxFun -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxFun">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMomentum -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMomentum">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNComponents -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNComponents">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIter">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIterNoChange -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIterNoChange">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNesterovsMomentum -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNesterovsMomentum">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPowerT -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPowerT">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSolver -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSolver">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamValidationFraction -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamValidationFraction">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWarmStart -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWarmStart">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliRBM">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Bernoulli Restricted Boltzmann Machine (RBM).
+
+A Restricted Boltzmann Machine with binary visible units and
+binary hidden units. Parameters are estimated using Stochastic Maximum
+Likelihood (SML), also known as Persistent Contrastive Divergence (PCD)
+[2].
+
+The time complexity of this implementation is ``O(d ** 2)`` assuming
+d ~ n_features ~ n_components.
+
+Read more in the :ref:`User Guide &lt;rbm&gt;`.
+
+Parameters
+----------
+n_components : int, default=256
+    Number of binary hidden units.
+
+learning_rate : float, default=0.1
+    The learning rate for weight updates. It is *highly* recommended
+    to tune this hyper-parameter. Reasonable values are in the
+    10**[0., -3.] range.
+
+batch_size : int, default=10
+    Number of examples per minibatch.
+
+n_iter : int, default=10
+    Number of iterations/sweeps over the training dataset to perform
+    during training.
+
+verbose : int, default=0
+    The verbosity level. The default, zero, means silent mode. Range
+    of values is [0, inf].
+
+random_state : int, RandomState instance or None, default=None
+    Determines random number generation for:
+
+    - Gibbs sampling from visible and hidden layers.
+
+    - Initializing components, sampling from layers during fit.
+
+    - Corrupting the data when scoring samples.
+
+    Pass an int for reproducible results across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Attributes
+----------
+intercept_hidden_ : array-like of shape (n_components,)
+    Biases of the hidden units.
+
+intercept_visible_ : array-like of shape (n_features,)
+    Biases of the visible units.
+
+components_ : array-like of shape (n_components, n_features)
+    Weight matrix, where `n_features` is the number of
+    visible units and `n_components` is the number of hidden units.
+
+h_samples_ : array-like of shape (batch_size, n_components)
+    Hidden Activation sampled from the model distribution,
+    where `batch_size` is the number of examples per minibatch and
+    `n_components` is the number of hidden units.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+sklearn.neural_network.MLPRegressor : Multi-layer Perceptron regressor.
+sklearn.neural_network.MLPClassifier : Multi-layer Perceptron classifier.
+sklearn.decomposition.PCA : An unsupervised linear dimensionality
+    reduction model.
+
+References
+----------
+
+[1] Hinton, G. E., Osindero, S. and Teh, Y. A fast learning algorithm for
+    deep belief nets. Neural Computation 18, pp 1527-1554.
+    https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf
+
+[2] Tieleman, T. Training Restricted Boltzmann Machines using
+    Approximations to the Likelihood Gradient. International Conference
+    on Machine Learning (ICML) 2008
+
+Examples
+--------
+
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.neural_network import BernoulliRBM
+&gt;&gt;&gt; X = np.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
+&gt;&gt;&gt; model = BernoulliRBM(n_components=2)
+&gt;&gt;&gt; model.fit(X)
+BernoulliRBM(n_components=2)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NeuralNetworkModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Classification"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Classification -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Classification">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPClassifier">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Multi-layer Perceptron classifier.
+
+This model optimizes the log-loss function using LBFGS or stochastic
+gradient descent.
+
+.. versionadded:: 0.18
+
+Parameters
+----------
+hidden_layer_sizes : array-like of shape(n_layers - 2,), default=(100,)
+    The ith element represents the number of neurons in the ith
+    hidden layer.
+
+activation : {&apos;identity&apos;, &apos;logistic&apos;, &apos;tanh&apos;, &apos;relu&apos;}, default=&apos;relu&apos;
+    Activation function for the hidden layer.
+
+    - &apos;identity&apos;, no-op activation, useful to implement linear bottleneck,
+      returns f(x) = x
+
+    - &apos;logistic&apos;, the logistic sigmoid function,
+      returns f(x) = 1 / (1 + exp(-x)).
+
+    - &apos;tanh&apos;, the hyperbolic tan function,
+      returns f(x) = tanh(x).
+
+    - &apos;relu&apos;, the rectified linear unit function,
+      returns f(x) = max(0, x)
+
+solver : {&apos;lbfgs&apos;, &apos;sgd&apos;, &apos;adam&apos;}, default=&apos;adam&apos;
+    The solver for weight optimization.
+
+    - &apos;lbfgs&apos; is an optimizer in the family of quasi-Newton methods.
+
+    - &apos;sgd&apos; refers to stochastic gradient descent.
+
+    - &apos;adam&apos; refers to a stochastic gradient-based optimizer proposed
+      by Kingma, Diederik, and Jimmy Ba
+
+    Note: The default solver &apos;adam&apos; works pretty well on relatively
+    large datasets (with thousands of training samples or more) in terms of
+    both training time and validation score.
+    For small datasets, however, &apos;lbfgs&apos; can converge faster and perform
+    better.
+
+alpha : float, default=0.0001
+    Strength of the L2 regularization term. The L2 regularization term
+    is divided by the sample size when added to the loss.
+
+batch_size : int, default=&apos;auto&apos;
+    Size of minibatches for stochastic optimizers.
+    If the solver is &apos;lbfgs&apos;, the classifier will not use minibatch.
+    When set to &quot;auto&quot;, `batch_size=min(200, n_samples)`.
+
+learning_rate : {&apos;constant&apos;, &apos;invscaling&apos;, &apos;adaptive&apos;}, default=&apos;constant&apos;
+    Learning rate schedule for weight updates.
+
+    - &apos;constant&apos; is a constant learning rate given by
+      &apos;learning_rate_init&apos;.
+
+    - &apos;invscaling&apos; gradually decreases the learning rate at each
+      time step &apos;t&apos; using an inverse scaling exponent of &apos;power_t&apos;.
+      effective_learning_rate = learning_rate_init / pow(t, power_t)
+
+    - &apos;adaptive&apos; keeps the learning rate constant to
+      &apos;learning_rate_init&apos; as long as training loss keeps decreasing.
+      Each time two consecutive epochs fail to decrease training loss by at
+      least tol, or fail to increase validation score by at least tol if
+      &apos;early_stopping&apos; is on, the current learning rate is divided by 5.
+
+    Only used when ``solver=&apos;sgd&apos;``.
+
+learning_rate_init : float, default=0.001
+    The initial learning rate used. It controls the step-size
+    in updating the weights. Only used when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+power_t : float, default=0.5
+    The exponent for inverse scaling learning rate.
+    It is used in updating effective learning rate when the learning_rate
+    is set to &apos;invscaling&apos;. Only used when solver=&apos;sgd&apos;.
+
+max_iter : int, default=200
+    Maximum number of iterations. The solver iterates until convergence
+    (determined by &apos;tol&apos;) or this number of iterations. For stochastic
+    solvers (&apos;sgd&apos;, &apos;adam&apos;), note that this determines the number of epochs
+    (how many times each data point will be used), not the number of
+    gradient steps.
+
+shuffle : bool, default=True
+    Whether to shuffle samples in each iteration. Only used when
+    solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+random_state : int, RandomState instance, default=None
+    Determines random number generation for weights and bias
+    initialization, train-test split if early stopping is used, and batch
+    sampling when solver=&apos;sgd&apos; or &apos;adam&apos;.
+    Pass an int for reproducible results across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+tol : float, default=1e-4
+    Tolerance for the optimization. When the loss or score is not improving
+    by at least ``tol`` for ``n_iter_no_change`` consecutive iterations,
+    unless ``learning_rate`` is set to &apos;adaptive&apos;, convergence is
+    considered to be reached and training stops.
+
+verbose : bool, default=False
+    Whether to print progress messages to stdout.
+
+warm_start : bool, default=False
+    When set to True, reuse the solution of the previous
+    call to fit as initialization, otherwise, just erase the
+    previous solution. See :term:`the Glossary &lt;warm_start&gt;`.
+
+momentum : float, default=0.9
+    Momentum for gradient descent update. Should be between 0 and 1. Only
+    used when solver=&apos;sgd&apos;.
+
+nesterovs_momentum : bool, default=True
+    Whether to use Nesterov&apos;s momentum. Only used when solver=&apos;sgd&apos; and
+    momentum &gt; 0.
+
+early_stopping : bool, default=False
+    Whether to use early stopping to terminate training when validation
+    score is not improving. If set to true, it will automatically set
+    aside 10% of training data as validation and terminate training when
+    validation score is not improving by at least ``tol`` for
+    ``n_iter_no_change`` consecutive epochs. The split is stratified,
+    except in a multilabel setting.
+    If early stopping is False, then the training stops when the training
+    loss does not improve by more than tol for n_iter_no_change consecutive
+    passes over the training set.
+    Only effective when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+validation_fraction : float, default=0.1
+    The proportion of training data to set aside as validation set for
+    early stopping. Must be between 0 and 1.
+    Only used if early_stopping is True.
+
+beta_1 : float, default=0.9
+    Exponential decay rate for estimates of first moment vector in adam,
+    should be in [0, 1). Only used when solver=&apos;adam&apos;.
+
+beta_2 : float, default=0.999
+    Exponential decay rate for estimates of second moment vector in adam,
+    should be in [0, 1). Only used when solver=&apos;adam&apos;.
+
+epsilon : float, default=1e-8
+    Value for numerical stability in adam. Only used when solver=&apos;adam&apos;.
+
+n_iter_no_change : int, default=10
+    Maximum number of epochs to not meet ``tol`` improvement.
+    Only effective when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+    .. versionadded:: 0.20
+
+max_fun : int, default=15000
+    Only used when solver=&apos;lbfgs&apos;. Maximum number of loss function calls.
+    The solver iterates until convergence (determined by &apos;tol&apos;), number
+    of iterations reaches max_iter, or this number of loss function calls.
+    Note that number of loss function calls will be greater than or equal
+    to the number of iterations for the `MLPClassifier`.
+
+    .. versionadded:: 0.22
+
+Attributes
+----------
+classes_ : ndarray or list of ndarray of shape (n_classes,)
+    Class labels for each output.
+
+loss_ : float
+    The current loss computed with the loss function.
+
+best_loss_ : float or None
+    The minimum loss reached by the solver throughout fitting.
+    If `early_stopping=True`, this attribute is set to `None`. Refer to
+    the `best_validation_score_` fitted attribute instead.
+
+loss_curve_ : list of shape (`n_iter_`,)
+    The ith element in the list represents the loss at the ith iteration.
+
+validation_scores_ : list of shape (`n_iter_`,) or None
+    The score at each iteration on a held-out validation set. The score
+    reported is the accuracy score. Only available if `early_stopping=True`,
+    otherwise the attribute is set to `None`.
+
+best_validation_score_ : float or None
+    The best validation score (i.e. accuracy score) that triggered the
+    early stopping. Only available if `early_stopping=True`, otherwise the
+    attribute is set to `None`.
+
+t_ : int
+    The number of training samples seen by the solver during fitting.
+
+coefs_ : list of shape (n_layers - 1,)
+    The ith element in the list represents the weight matrix corresponding
+    to layer i.
+
+intercepts_ : list of shape (n_layers - 1,)
+    The ith element in the list represents the bias vector corresponding to
+    layer i + 1.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    The number of iterations the solver has run.
+
+n_layers_ : int
+    Number of layers.
+
+n_outputs_ : int
+    Number of outputs.
+
+out_activation_ : str
+    Name of the output activation function.
+
+See Also
+--------
+MLPRegressor : Multi-layer Perceptron regressor.
+BernoulliRBM : Bernoulli Restricted Boltzmann Machine (RBM).
+
+Notes
+-----
+MLPClassifier trains iteratively since at each time step
+the partial derivatives of the loss function with respect to the model
+parameters are computed to update the parameters.
+
+It can also have a regularization term added to the loss function
+that shrinks model parameters to prevent overfitting.
+
+This implementation works with data represented as dense numpy arrays or
+sparse scipy arrays of floating point values.
+
+References
+----------
+Hinton, Geoffrey E. &quot;Connectionist learning procedures.&quot;
+Artificial intelligence 40.1 (1989): 185-234.
+
+Glorot, Xavier, and Yoshua Bengio.
+&quot;Understanding the difficulty of training deep feedforward neural networks.&quot;
+International Conference on Artificial Intelligence and Statistics. 2010.
+
+:arxiv:`He, Kaiming, et al (2015). &quot;Delving deep into rectifiers:
+Surpassing human-level performance on imagenet classification.&quot; &lt;1502.01852&gt;`
+
+:arxiv:`Kingma, Diederik, and Jimmy Ba (2014)
+&quot;Adam: A method for stochastic optimization.&quot; &lt;1412.6980&gt;`
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.neural_network import MLPClassifier
+&gt;&gt;&gt; from sklearn.datasets import make_classification
+&gt;&gt;&gt; from sklearn.model_selection import train_test_split
+&gt;&gt;&gt; X, y = make_classification(n_samples=100, random_state=1)
+&gt;&gt;&gt; X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y,
+...                                                     random_state=1)
+&gt;&gt;&gt; clf = MLPClassifier(random_state=1, max_iter=300).fit(X_train, y_train)
+&gt;&gt;&gt; clf.predict_proba(X_test[:1])
+array([[0.038..., 0.961...]])
+&gt;&gt;&gt; clf.predict(X_test[:5, :])
+array([1, 0, 1, 0, 1])
+&gt;&gt;&gt; clf.score(X_test, y_test)
+0.8...</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NeuralNetworkModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MLPRegressor">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Multi-layer Perceptron regressor.
+
+This model optimizes the squared error using LBFGS or stochastic gradient
+descent.
+
+.. versionadded:: 0.18
+
+Parameters
+----------
+hidden_layer_sizes : array-like of shape(n_layers - 2,), default=(100,)
+    The ith element represents the number of neurons in the ith
+    hidden layer.
+
+activation : {&apos;identity&apos;, &apos;logistic&apos;, &apos;tanh&apos;, &apos;relu&apos;}, default=&apos;relu&apos;
+    Activation function for the hidden layer.
+
+    - &apos;identity&apos;, no-op activation, useful to implement linear bottleneck,
+      returns f(x) = x
+
+    - &apos;logistic&apos;, the logistic sigmoid function,
+      returns f(x) = 1 / (1 + exp(-x)).
+
+    - &apos;tanh&apos;, the hyperbolic tan function,
+      returns f(x) = tanh(x).
+
+    - &apos;relu&apos;, the rectified linear unit function,
+      returns f(x) = max(0, x)
+
+solver : {&apos;lbfgs&apos;, &apos;sgd&apos;, &apos;adam&apos;}, default=&apos;adam&apos;
+    The solver for weight optimization.
+
+    - &apos;lbfgs&apos; is an optimizer in the family of quasi-Newton methods.
+
+    - &apos;sgd&apos; refers to stochastic gradient descent.
+
+    - &apos;adam&apos; refers to a stochastic gradient-based optimizer proposed by
+      Kingma, Diederik, and Jimmy Ba
+
+    Note: The default solver &apos;adam&apos; works pretty well on relatively
+    large datasets (with thousands of training samples or more) in terms of
+    both training time and validation score.
+    For small datasets, however, &apos;lbfgs&apos; can converge faster and perform
+    better.
+
+alpha : float, default=0.0001
+    Strength of the L2 regularization term. The L2 regularization term
+    is divided by the sample size when added to the loss.
+
+batch_size : int, default=&apos;auto&apos;
+    Size of minibatches for stochastic optimizers.
+    If the solver is &apos;lbfgs&apos;, the regressor will not use minibatch.
+    When set to &quot;auto&quot;, `batch_size=min(200, n_samples)`.
+
+learning_rate : {&apos;constant&apos;, &apos;invscaling&apos;, &apos;adaptive&apos;}, default=&apos;constant&apos;
+    Learning rate schedule for weight updates.
+
+    - &apos;constant&apos; is a constant learning rate given by
+      &apos;learning_rate_init&apos;.
+
+    - &apos;invscaling&apos; gradually decreases the learning rate ``learning_rate_``
+      at each time step &apos;t&apos; using an inverse scaling exponent of &apos;power_t&apos;.
+      effective_learning_rate = learning_rate_init / pow(t, power_t)
+
+    - &apos;adaptive&apos; keeps the learning rate constant to
+      &apos;learning_rate_init&apos; as long as training loss keeps decreasing.
+      Each time two consecutive epochs fail to decrease training loss by at
+      least tol, or fail to increase validation score by at least tol if
+      &apos;early_stopping&apos; is on, the current learning rate is divided by 5.
+
+    Only used when solver=&apos;sgd&apos;.
+
+learning_rate_init : float, default=0.001
+    The initial learning rate used. It controls the step-size
+    in updating the weights. Only used when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+power_t : float, default=0.5
+    The exponent for inverse scaling learning rate.
+    It is used in updating effective learning rate when the learning_rate
+    is set to &apos;invscaling&apos;. Only used when solver=&apos;sgd&apos;.
+
+max_iter : int, default=200
+    Maximum number of iterations. The solver iterates until convergence
+    (determined by &apos;tol&apos;) or this number of iterations. For stochastic
+    solvers (&apos;sgd&apos;, &apos;adam&apos;), note that this determines the number of epochs
+    (how many times each data point will be used), not the number of
+    gradient steps.
+
+shuffle : bool, default=True
+    Whether to shuffle samples in each iteration. Only used when
+    solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+random_state : int, RandomState instance, default=None
+    Determines random number generation for weights and bias
+    initialization, train-test split if early stopping is used, and batch
+    sampling when solver=&apos;sgd&apos; or &apos;adam&apos;.
+    Pass an int for reproducible results across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+tol : float, default=1e-4
+    Tolerance for the optimization. When the loss or score is not improving
+    by at least ``tol`` for ``n_iter_no_change`` consecutive iterations,
+    unless ``learning_rate`` is set to &apos;adaptive&apos;, convergence is
+    considered to be reached and training stops.
+
+verbose : bool, default=False
+    Whether to print progress messages to stdout.
+
+warm_start : bool, default=False
+    When set to True, reuse the solution of the previous
+    call to fit as initialization, otherwise, just erase the
+    previous solution. See :term:`the Glossary &lt;warm_start&gt;`.
+
+momentum : float, default=0.9
+    Momentum for gradient descent update. Should be between 0 and 1. Only
+    used when solver=&apos;sgd&apos;.
+
+nesterovs_momentum : bool, default=True
+    Whether to use Nesterov&apos;s momentum. Only used when solver=&apos;sgd&apos; and
+    momentum &gt; 0.
+
+early_stopping : bool, default=False
+    Whether to use early stopping to terminate training when validation
+    score is not improving. If set to True, it will automatically set
+    aside ``validation_fraction`` of training data as validation and
+    terminate training when validation score is not improving by at
+    least ``tol`` for ``n_iter_no_change`` consecutive epochs.
+    Only effective when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+validation_fraction : float, default=0.1
+    The proportion of training data to set aside as validation set for
+    early stopping. Must be between 0 and 1.
+    Only used if early_stopping is True.
+
+beta_1 : float, default=0.9
+    Exponential decay rate for estimates of first moment vector in adam,
+    should be in [0, 1). Only used when solver=&apos;adam&apos;.
+
+beta_2 : float, default=0.999
+    Exponential decay rate for estimates of second moment vector in adam,
+    should be in [0, 1). Only used when solver=&apos;adam&apos;.
+
+epsilon : float, default=1e-8
+    Value for numerical stability in adam. Only used when solver=&apos;adam&apos;.
+
+n_iter_no_change : int, default=10
+    Maximum number of epochs to not meet ``tol`` improvement.
+    Only effective when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+    .. versionadded:: 0.20
+
+max_fun : int, default=15000
+    Only used when solver=&apos;lbfgs&apos;. Maximum number of function calls.
+    The solver iterates until convergence (determined by ``tol``), number
+    of iterations reaches max_iter, or this number of function calls.
+    Note that number of function calls will be greater than or equal to
+    the number of iterations for the MLPRegressor.
+
+    .. versionadded:: 0.22
+
+Attributes
+----------
+loss_ : float
+    The current loss computed with the loss function.
+
+best_loss_ : float
+    The minimum loss reached by the solver throughout fitting.
+    If `early_stopping=True`, this attribute is set to `None`. Refer to
+    the `best_validation_score_` fitted attribute instead.
+    Only accessible when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+loss_curve_ : list of shape (`n_iter_`,)
+    Loss value evaluated at the end of each training step.
+    The ith element in the list represents the loss at the ith iteration.
+    Only accessible when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+validation_scores_ : list of shape (`n_iter_`,) or None
+    The score at each iteration on a held-out validation set. The score
+    reported is the R2 score. Only available if `early_stopping=True`,
+    otherwise the attribute is set to `None`.
+    Only accessible when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+best_validation_score_ : float or None
+    The best validation score (i.e. R2 score) that triggered the
+    early stopping. Only available if `early_stopping=True`, otherwise the
+    attribute is set to `None`.
+    Only accessible when solver=&apos;sgd&apos; or &apos;adam&apos;.
+
+t_ : int
+    The number of training samples seen by the solver during fitting.
+    Mathematically equals `n_iters * X.shape[0]`, it means
+    `time_step` and it is used by optimizer&apos;s learning rate scheduler.
+
+coefs_ : list of shape (n_layers - 1,)
+    The ith element in the list represents the weight matrix corresponding
+    to layer i.
+
+intercepts_ : list of shape (n_layers - 1,)
+    The ith element in the list represents the bias vector corresponding to
+    layer i + 1.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    The number of iterations the solver has run.
+
+n_layers_ : int
+    Number of layers.
+
+n_outputs_ : int
+    Number of outputs.
+
+out_activation_ : str
+    Name of the output activation function.
+
+See Also
+--------
+BernoulliRBM : Bernoulli Restricted Boltzmann Machine (RBM).
+MLPClassifier : Multi-layer Perceptron classifier.
+sklearn.linear_model.SGDRegressor : Linear model fitted by minimizing
+    a regularized empirical loss with SGD.
+
+Notes
+-----
+MLPRegressor trains iteratively since at each time step
+the partial derivatives of the loss function with respect to the model
+parameters are computed to update the parameters.
+
+It can also have a regularization term added to the loss function
+that shrinks model parameters to prevent overfitting.
+
+This implementation works with data represented as dense and sparse numpy
+arrays of floating point values.
+
+References
+----------
+Hinton, Geoffrey E. &quot;Connectionist learning procedures.&quot;
+Artificial intelligence 40.1 (1989): 185-234.
+
+Glorot, Xavier, and Yoshua Bengio.
+&quot;Understanding the difficulty of training deep feedforward neural networks.&quot;
+International Conference on Artificial Intelligence and Statistics. 2010.
+
+:arxiv:`He, Kaiming, et al (2015). &quot;Delving deep into rectifiers:
+Surpassing human-level performance on imagenet classification.&quot; &lt;1502.01852&gt;`
+
+:arxiv:`Kingma, Diederik, and Jimmy Ba (2014)
+&quot;Adam: A method for stochastic optimization.&quot; &lt;1412.6980&gt;`
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.neural_network import MLPRegressor
+&gt;&gt;&gt; from sklearn.datasets import make_regression
+&gt;&gt;&gt; from sklearn.model_selection import train_test_split
+&gt;&gt;&gt; X, y = make_regression(n_samples=200, random_state=1)
+&gt;&gt;&gt; X_train, X_test, y_train, y_test = train_test_split(X, y,
+...                                                     random_state=1)
+&gt;&gt;&gt; regr = MLPRegressor(random_state=1, max_iter=500).fit(X_train, y_train)
+&gt;&gt;&gt; regr.predict(X_test[:2])
+array([-0.9..., -7.1...])
+&gt;&gt;&gt; regr.score(X_test, y_test)
+0.4...</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NeuralNetworkModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NeuralNetworkModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NeuralNetworkModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Regression -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Regression">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RegularizedRegression -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RegularizedRegression">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Regression"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
