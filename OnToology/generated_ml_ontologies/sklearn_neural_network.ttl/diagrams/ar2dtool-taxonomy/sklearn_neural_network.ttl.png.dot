@@ -1,0 +1,20 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:BinaryClassification" "ml:NeuralNetworkModule" "ml:Classification" "ml:MLPRegressor" "ml:Train" "ml:MLPClassifier" "ml:SklearnModule" "ml:Regression" "ml:BernoulliRBM" "ml:RegularizedRegression" ; /*classes style*/
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:Classification" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:RegularizedRegression" -> "ml:Regression" [ label = "rdfs:subClassOf" ];
+	"ml:RegularizedRegression" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:NeuralNetworkModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:MLPClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MLPClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:MLPRegressor" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MLPRegressor" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliRBM" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliRBM" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Regression" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+
+}

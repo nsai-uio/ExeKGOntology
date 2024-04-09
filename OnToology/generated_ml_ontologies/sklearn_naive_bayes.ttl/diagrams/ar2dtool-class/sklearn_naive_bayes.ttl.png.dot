@@ -1,0 +1,27 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "ml:BinaryClassification" "ml:NaiveBayesModule" "ml:BernoulliNB" "ml:CategoricalNB" "ml:MultinomialNB" "ml:GaussianNB" "ml:ComplementNB" ; /*classes style*/
+	"ml:hasBinaryClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamVarSmoothing" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMinCategories" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamAlpha" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamNorm" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamForceAlpha" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:GaussianNB" -> "ml:NaiveBayesModule" [ label = "ds:hasModule" ];
+	"ml:CategoricalNB" -> "ml:NaiveBayesModule" [ label = "ds:hasModule" ];
+	"ml:ComplementNB" -> "ml:NaiveBayesModule" [ label = "ds:hasModule" ];
+	"ml:BernoulliNB" -> "ml:NaiveBayesModule" [ label = "ds:hasModule" ];
+	"ml:hasParamBinarize" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamFitPrior" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:MultinomialNB" -> "ml:NaiveBayesModule" [ label = "ds:hasModule" ];
+	"ml:BinaryClassification" -> "ml:BernoulliNB" [ label = "ml:hasBinaryClassificationMethod" ];
+	"ml:ComplementNB" -> "xsd:boolean" [ label = "ml:hasParamNorm" ];
+	"ml:CategoricalNB" -> "xsd:int" [ label = "ml:hasParamMinCategories" ];
+	"ml:BernoulliNB" -> "xsd:float" [ label = "ml:hasParamBinarize" ];
+	"ml:BernoulliNB" -> "xsd:boolean" [ label = "ml:hasParamFitPrior" ];
+	"ml:BernoulliNB" -> "xsd:float" [ label = "ml:hasParamAlpha" ];
+	"ml:GaussianNB" -> "xsd:float" [ label = "ml:hasParamVarSmoothing" ];
+	"ml:BernoulliNB" -> "xsd:boolean" [ label = "ml:hasParamForceAlpha" ];
+
+}

@@ -1,0 +1,42 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:KernelDensity" "ml:LocalOutlierFactor" "ml:NeighborhoodComponentsAnalysis" "ml:Clustering" "ml:BinaryClassification" "ml:PrepareTransformer" "ml:Classification" "ml:RadiusNeighborsClassifier" "ml:KNeighborsClassifier" "ml:MulticlassClassification" "ml:KNeighborsRegressor" "ml:RadiusNeighborsRegressor" "ml:NearestNeighbors" "ml:Train" "ml:KNeighborsTransformer" "ml:NearestCentroid" "ml:Decomposition" "ml:SklearnModule" "ml:RadiusNeighborsTransformer" "ml:NeighborsModule" "ml:InstanceBasedRegression" "ml:Regression" ; /*classes style*/
+	"ml:RadiusNeighborsTransformer" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RadiusNeighborsTransformer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NearestCentroid" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NearestCentroid" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Clustering" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:Clustering" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:Decomposition" -> "ml:PrepareTransformer" [ label = "rdfs:subClassOf" ];
+	"ml:Decomposition" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:NeighborsModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:KNeighborsTransformer" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNeighborsTransformer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NearestNeighbors" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NearestNeighbors" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NeighborhoodComponentsAnalysis" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NeighborhoodComponentsAnalysis" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:Regression" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:LocalOutlierFactor" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LocalOutlierFactor" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:InstanceBasedRegression" -> "ml:Regression" [ label = "rdfs:subClassOf" ];
+	"ml:InstanceBasedRegression" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:KNeighborsClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNeighborsClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNeighborsRegressor" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNeighborsRegressor" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RadiusNeighborsRegressor" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RadiusNeighborsRegressor" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Classification" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:RadiusNeighborsClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RadiusNeighborsClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelDensity" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelDensity" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

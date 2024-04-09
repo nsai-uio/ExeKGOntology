@@ -1,0 +1,24 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:ExtraTreeClassifier" "ml:DecisionTreeRegressor" "ml:BinaryClassification" "ml:DecisionTreeRegression" "ml:Classification" "ml:MulticlassClassification" "ml:Train" "ml:SklearnModule" "ml:DecisionTreeClassifier" "ml:Regression" "ml:TreeModule" "ml:ExtraTreeRegressor" ; /*classes style*/
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:Classification" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:ExtraTreeClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:ExtraTreeClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:TreeModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:DecisionTreeRegression" -> "ml:Regression" [ label = "rdfs:subClassOf" ];
+	"ml:DecisionTreeRegression" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:DecisionTreeClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DecisionTreeClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Regression" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:DecisionTreeRegressor" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DecisionTreeRegressor" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:ExtraTreeRegressor" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:ExtraTreeRegressor" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}
