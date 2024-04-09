@@ -1,0 +1,38 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:NMF" "ml:KernelPCA" "ml:SparseCoder" "ml:LatentDirichletAllocation" "ml:PrepareTransformer" "ml:DictionaryLearning" "ml:MiniBatchDictionaryLearning" "ml:PCA" "ml:SparsePCA" "ml:DecompositionModule" "ml:Decomposition" "ml:SklearnModule" "ml:TruncatedSVD" "ml:IncrementalPCA" "ml:FastICA" "ml:MiniBatchNMF" "ml:MiniBatchSparsePCA" "ml:FactorAnalysis" ; /*classes style*/
+	"ml:TruncatedSVD" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:TruncatedSVD" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelPCA" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelPCA" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:FactorAnalysis" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FactorAnalysis" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Decomposition" -> "ml:PrepareTransformer" [ label = "rdfs:subClassOf" ];
+	"ml:Decomposition" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:LatentDirichletAllocation" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LatentDirichletAllocation" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SparsePCA" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SparsePCA" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchDictionaryLearning" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchDictionaryLearning" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NMF" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NMF" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchSparsePCA" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchSparsePCA" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:IncrementalPCA" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:IncrementalPCA" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchNMF" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchNMF" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DictionaryLearning" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DictionaryLearning" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DecompositionModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:SparseCoder" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SparseCoder" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PCA" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PCA" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FastICA" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FastICA" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

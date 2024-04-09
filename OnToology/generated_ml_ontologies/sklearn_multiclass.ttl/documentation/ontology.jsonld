@@ -1,0 +1,230 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Classification"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Classification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Classification"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultilabelClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Classification"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsOneClassifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "One-vs-one multiclass strategy.\n\nThis strategy consists in fitting one classifier per class pair.\nAt prediction time, the class which received the most votes is selected.\nSince it requires to fit `n_classes * (n_classes - 1) / 2` classifiers,\nthis method is usually slower than one-vs-the-rest, due to its\nO(n_classes^2) complexity. However, this method may be advantageous for\nalgorithms such as kernel algorithms which don't scale well with\n`n_samples`. This is because each individual learning problem only involves\na small subset of the data whereas, with one-vs-the-rest, the complete\ndataset is used `n_classes` times.\n\nRead more in the :ref:`User Guide <ovo_classification>`.\n\nParameters\n----------\nestimator : estimator object\n    A regressor or a classifier that implements :term:`fit`.\n    When a classifier is passed, :term:`decision_function` will be used\n    in priority and it will fallback to :term:`predict_proba` if it is not\n    available.\n    When a regressor is passed, :term:`predict` is used.\n\nn_jobs : int, default=None\n    The number of jobs to use for the computation: the `n_classes * (\n    n_classes - 1) / 2` OVO problems are computed in parallel.\n\n    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.\n    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n    for more details.\n\nAttributes\n----------\nestimators_ : list of ``n_classes * (n_classes - 1) / 2`` estimators\n    Estimators used for predictions.\n\nclasses_ : numpy array of shape [n_classes]\n    Array containing labels.\n\nn_classes_ : int\n    Number of classes.\n\npairwise_indices_ : list, length = ``len(estimators_)``, or ``None``\n    Indices of samples used when training the estimators.\n    ``None`` when ``estimator``'s `pairwise` tag is False.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nOneVsRestClassifier : One-vs-all multiclass strategy.\nOutputCodeClassifier : (Error-Correcting) Output-Code multiclass strategy.\n\nExamples\n--------\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.model_selection import train_test_split\n>>> from sklearn.multiclass import OneVsOneClassifier\n>>> from sklearn.svm import LinearSVC\n>>> X, y = load_iris(return_X_y=True)\n>>> X_train, X_test, y_train, y_test = train_test_split(\n...     X, y, test_size=0.33, shuffle=True, random_state=0)\n>>> clf = OneVsOneClassifier(\n...     LinearSVC(dual=\"auto\", random_state=0)).fit(X_train, y_train)\n>>> clf.predict(X_test[:10])\narray([2, 1, 0, 2, 0, 2, 0, 1, 1, 1])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ],
+  "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsRestClassifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "One-vs-the-rest (OvR) multiclass strategy.\n\nAlso known as one-vs-all, this strategy consists in fitting one classifier\nper class. For each classifier, the class is fitted against all the other\nclasses. In addition to its computational efficiency (only `n_classes`\nclassifiers are needed), one advantage of this approach is its\ninterpretability. Since each class is represented by one and one classifier\nonly, it is possible to gain knowledge about the class by inspecting its\ncorresponding classifier. This is the most commonly used strategy for\nmulticlass classification and is a fair default choice.\n\nOneVsRestClassifier can also be used for multilabel classification. To use\nthis feature, provide an indicator matrix for the target `y` when calling\n`.fit`. In other words, the target labels should be formatted as a 2D\nbinary (0/1) matrix, where [i, j] == 1 indicates the presence of label j\nin sample i. This estimator uses the binary relevance method to perform\nmultilabel classification, which involves training one binary classifier\nindependently for each label.\n\nRead more in the :ref:`User Guide <ovr_classification>`.\n\nParameters\n----------\nestimator : estimator object\n    A regressor or a classifier that implements :term:`fit`.\n    When a classifier is passed, :term:`decision_function` will be used\n    in priority and it will fallback to :term:`predict_proba` if it is not\n    available.\n    When a regressor is passed, :term:`predict` is used.\n\nn_jobs : int, default=None\n    The number of jobs to use for the computation: the `n_classes`\n    one-vs-rest problems are computed in parallel.\n\n    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.\n    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n    for more details.\n\n    .. versionchanged:: 0.20\n       `n_jobs` default changed from 1 to None\n\nverbose : int, default=0\n    The verbosity level, if non zero, progress messages are printed.\n    Below 50, the output is sent to stderr. Otherwise, the output is sent\n    to stdout. The frequency of the messages increases with the verbosity\n    level, reporting all iterations at 10. See :class:`joblib.Parallel` for\n    more details.\n\n    .. versionadded:: 1.1\n\nAttributes\n----------\nestimators_ : list of `n_classes` estimators\n    Estimators used for predictions.\n\nclasses_ : array, shape = [`n_classes`]\n    Class labels.\n\nn_classes_ : int\n    Number of classes.\n\nlabel_binarizer_ : LabelBinarizer object\n    Object used to transform multiclass labels to binary labels and\n    vice-versa.\n\nmultilabel_ : boolean\n    Whether a OneVsRestClassifier is a multilabel classifier.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`. Only defined if the\n    underlying estimator exposes such an attribute when fit.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Only defined if the\n    underlying estimator exposes such an attribute when fit.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nOneVsOneClassifier : One-vs-one multiclass strategy.\nOutputCodeClassifier : (Error-Correcting) Output-Code multiclass strategy.\nsklearn.multioutput.MultiOutputClassifier : Alternate way of extending an\n    estimator for multilabel classification.\nsklearn.preprocessing.MultiLabelBinarizer : Transform iterable of iterables\n    to binary indicator matrix.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.multiclass import OneVsRestClassifier\n>>> from sklearn.svm import SVC\n>>> X = np.array([\n...     [10, 10],\n...     [8, 10],\n...     [-5, 5.5],\n...     [-5.4, 5.5],\n...     [-20, -20],\n...     [-15, -20]\n... ])\n>>> y = np.array([0, 0, 1, 1, 2, 2])\n>>> clf = OneVsRestClassifier(SVC()).fit(X, y)\n>>> clf.predict([[-19, -20], [9, 9], [-5, 5]])\narray([2, 0, 1])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ],
+  "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "(Error-Correcting) Output-Code multiclass strategy.\n\nOutput-code based strategies consist in representing each class with a\nbinary code (an array of 0s and 1s). At fitting time, one binary\nclassifier per bit in the code book is fitted.  At prediction time, the\nclassifiers are used to project new points in the class space and the class\nclosest to the points is chosen. The main advantage of these strategies is\nthat the number of classifiers used can be controlled by the user, either\nfor compressing the model (0 < `code_size` < 1) or for making the model more\nrobust to errors (`code_size` > 1). See the documentation for more details.\n\nRead more in the :ref:`User Guide <ecoc>`.\n\nParameters\n----------\nestimator : estimator object\n    An estimator object implementing :term:`fit` and one of\n    :term:`decision_function` or :term:`predict_proba`.\n\ncode_size : float, default=1.5\n    Percentage of the number of classes to be used to create the code book.\n    A number between 0 and 1 will require fewer classifiers than\n    one-vs-the-rest. A number greater than 1 will require more classifiers\n    than one-vs-the-rest.\n\nrandom_state : int, RandomState instance, default=None\n    The generator used to initialize the codebook.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nn_jobs : int, default=None\n    The number of jobs to use for the computation: the multiclass problems\n    are computed in parallel.\n\n    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.\n    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n    for more details.\n\nAttributes\n----------\nestimators_ : list of `int(n_classes * code_size)` estimators\n    Estimators used for predictions.\n\nclasses_ : ndarray of shape (n_classes,)\n    Array containing labels.\n\ncode_book_ : ndarray of shape (n_classes, `len(estimators_)`)\n    Binary array containing the code of each class.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`. Only defined if the\n    underlying estimator exposes such an attribute when fit.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Only defined if the\n    underlying estimator exposes such an attribute when fit.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nOneVsRestClassifier : One-vs-all multiclass strategy.\nOneVsOneClassifier : One-vs-one multiclass strategy.\n\nReferences\n----------\n\n.. [1] \"Solving multiclass learning problems via error-correcting output\n   codes\",\n   Dietterich T., Bakiri G.,\n   Journal of Artificial Intelligence Research 2,\n   1995.\n\n.. [2] \"The error coding method and PICTs\",\n   James G., Hastie T.,\n   Journal of Computational and Graphical statistics 7,\n   1998.\n\n.. [3] \"The Elements of Statistical Learning\",\n   Hastie T., Tibshirani R., Friedman J., page 606 (second-edition)\n   2008.\n\nExamples\n--------\n>>> from sklearn.multiclass import OutputCodeClassifier\n>>> from sklearn.ensemble import RandomForestClassifier\n>>> from sklearn.datasets import make_classification\n>>> X, y = make_classification(n_samples=100, n_features=4,\n...                            n_informative=2, n_redundant=0,\n...                            random_state=0, shuffle=False)\n>>> clf = OutputCodeClassifier(\n...     estimator=RandomForestClassifier(random_state=0),\n...     random_state=0).fit(X, y)\n>>> clf.predict([[0, 0, 0, 0]])\narray([1])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ],
+  "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsOneClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsRestClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsOneClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsRestClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMultilabelClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultilabelClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsOneClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsRestClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCodeSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEstimator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsOneClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsRestClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsOneClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsRestClassifier"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OutputCodeClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneVsRestClassifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]
