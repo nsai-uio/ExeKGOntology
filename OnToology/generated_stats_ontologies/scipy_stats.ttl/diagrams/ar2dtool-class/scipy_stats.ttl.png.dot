@@ -1,0 +1,20 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "stats:Kurtosis" "stats:Skew" "stats:StatsModule" "stats:ShapeMeasure" ; /*classes style*/
+	"stats:Skew" -> "stats:StatsModule" [ label = "ds:hasModule" ];
+	"stats:hasParamNanPolicy" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:Kurtosis" -> "stats:StatsModule" [ label = "ds:hasModule" ];
+	"stats:hasParamFisher" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamBias" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamAxis" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasShapeMeasureMethod" -> "stats:hasStatisticCalculationMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamKeepdims" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:Kurtosis" -> "xsd:string" [ label = "stats:hasParamNanPolicy" ];
+	"stats:Kurtosis" -> "xsd:boolean" [ label = "stats:hasParamBias" ];
+	"stats:ShapeMeasure" -> "stats:Kurtosis" [ label = "stats:hasShapeMeasureMethod" ];
+	"stats:Kurtosis" -> "xsd:boolean" [ label = "stats:hasParamFisher" ];
+	"stats:Kurtosis" -> "xsd:boolean" [ label = "stats:hasParamKeepdims" ];
+	"stats:Kurtosis" -> "xsd:int" [ label = "stats:hasParamAxis" ];
+
+}

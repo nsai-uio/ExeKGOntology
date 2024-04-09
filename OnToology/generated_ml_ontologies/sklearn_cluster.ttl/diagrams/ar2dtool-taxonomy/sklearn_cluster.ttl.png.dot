@@ -1,0 +1,41 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:HdbscanModule" "ml:Birch" "ml:DBSCAN" "ml:SpectralClustering" "ml:Clustering" "ml:FeatureAgglomeration" "ml:PrepareTransformer" "ml:MeanShift" "ml:MiniBatchKMeans" "ml:OPTICS" "ml:HDBSCAN" "ml:SpectralBiclustering" "ml:KMeans" "ml:Train" "ml:Decomposition" "ml:SklearnModule" "ml:AffinityPropagation" "ml:AgglomerativeClustering" "ml:SpectralCoclustering" "ml:ClusterModule" "ml:BisectingKMeans" ; /*classes style*/
+	"ml:MiniBatchKMeans" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchKMeans" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Clustering" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:Clustering" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:KMeans" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KMeans" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SpectralClustering" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SpectralClustering" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Decomposition" -> "ml:PrepareTransformer" [ label = "rdfs:subClassOf" ];
+	"ml:Decomposition" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:SpectralBiclustering" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SpectralBiclustering" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Birch" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Birch" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:AffinityPropagation" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:AffinityPropagation" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:HdbscanModule" -> "ml:ClusterModule" [ label = "rdfs:subClassOf" ];
+	"ml:ClusterModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:SpectralCoclustering" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SpectralCoclustering" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:AgglomerativeClustering" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:AgglomerativeClustering" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FeatureAgglomeration" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FeatureAgglomeration" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:MeanShift" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MeanShift" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DBSCAN" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DBSCAN" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OPTICS" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OPTICS" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:HDBSCAN" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:HDBSCAN" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BisectingKMeans" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BisectingKMeans" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}
