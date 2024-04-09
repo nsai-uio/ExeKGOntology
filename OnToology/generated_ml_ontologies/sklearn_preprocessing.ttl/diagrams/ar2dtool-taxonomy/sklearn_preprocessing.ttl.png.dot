@@ -1,0 +1,46 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:MultiLabelBinarizer" "ml:OrdinalEncoder" "ml:SplineTransformer" "ml:LabelBinarizer" "ml:MinMaxScaler" "ml:PrepareTransformer" "ml:StandardScaler" "ml:Binarizer" "ml:DataProcessing" "ml:PreprocessingModule" "ml:RobustScaler" "ml:MaxAbsScaler" "ml:KernelCenterer" "ml:FunctionTransformer" "ml:Normalizer" "ml:PowerTransformer" "ml:SklearnModule" "ml:TargetEncoder" "ml:QuantileTransformer" "ml:OneHotEncoder" "ml:PolynomialFeatures" "ml:KBinsDiscretizer" ; /*classes style*/
+	"ml:Normalizer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Normalizer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KBinsDiscretizer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KBinsDiscretizer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LabelBinarizer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LabelBinarizer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:TargetEncoder" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:TargetEncoder" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MinMaxScaler" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MinMaxScaler" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PreprocessingModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:SplineTransformer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SplineTransformer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DataProcessing" -> "ml:PrepareTransformer" [ label = "rdfs:subClassOf" ];
+	"ml:DataProcessing" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:OneHotEncoder" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneHotEncoder" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Binarizer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Binarizer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OrdinalEncoder" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OrdinalEncoder" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RobustScaler" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RobustScaler" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:StandardScaler" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:StandardScaler" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:PolynomialFeatures" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PolynomialFeatures" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MaxAbsScaler" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MaxAbsScaler" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FunctionTransformer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FunctionTransformer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PowerTransformer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PowerTransformer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MultiLabelBinarizer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MultiLabelBinarizer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:QuantileTransformer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:QuantileTransformer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelCenterer" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelCenterer" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}
