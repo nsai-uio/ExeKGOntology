@@ -1,0 +1,3320 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ds_exeKGOntology="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule -->
+
+
+    <AnnotationProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasModule"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasClusteringMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasClusteringMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Clustering"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDecompositionMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDecompositionMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Decomposition"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAffinity -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAffinity">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlgorithm -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlgorithm">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAllowSingleCluster -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAllowSingleCluster">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAssignLabels -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAssignLabels">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBandwidth -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBandwidth">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBatchSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBatchSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBinSeeding -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBinSeeding">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBisectingStrategy -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBisectingStrategy">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBranchingFactor -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBranchingFactor">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterAll -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterAll">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterMethod -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterSelectionEpsilon -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterSelectionEpsilon">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterSelectionMethod -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClusterSelectionMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0 -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamComputeDistances -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamComputeDistances">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamComputeFullTree -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamComputeFullTree">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamComputeLabels -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamComputeLabels">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamConnectivity -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamConnectivity">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamConvergenceIter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamConvergenceIter">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopyX -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopyX">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDamping -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDamping">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDistanceThreshold -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDistanceThreshold">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEigenSolver -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEigenSolver">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEigenTol -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEigenTol">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEps -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEps">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInit -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInit">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInitSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInitSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernelParams -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernelParams">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLeafSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLeafSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLinkage -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLinkage">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxClusterSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxClusterSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxEps -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxEps">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxNoImprovement -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxNoImprovement">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMemory -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMemory">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMethod -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetricParams -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetricParams">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinBinFreq -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinBinFreq">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinClusterSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinClusterSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinSamples -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinSamples">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMiniBatch -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMiniBatch">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNBest -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNBest">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNClusters -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNClusters">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNComponents -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNComponents">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNInit -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNInit">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNSvdVecs -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNSvdVecs">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamP -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamP">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPoolingFunc -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPoolingFunc">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPredecessorCorrection -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPredecessorCorrection">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPreference -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPreference">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamReassignmentRatio -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamReassignmentRatio">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeeds -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeeds">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStoreCenters -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStoreCenters">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSvdMethod -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSvdMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamThreshold -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamThreshold">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AffinityPropagation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Perform Affinity Propagation Clustering of data.
+
+Read more in the :ref:`User Guide &lt;affinity_propagation&gt;`.
+
+Parameters
+----------
+damping : float, default=0.5
+    Damping factor in the range `[0.5, 1.0)` is the extent to
+    which the current value is maintained relative to
+    incoming values (weighted 1 - damping). This in order
+    to avoid numerical oscillations when updating these
+    values (messages).
+
+max_iter : int, default=200
+    Maximum number of iterations.
+
+convergence_iter : int, default=15
+    Number of iterations with no change in the number
+    of estimated clusters that stops the convergence.
+
+copy : bool, default=True
+    Make a copy of input data.
+
+preference : array-like of shape (n_samples,) or float, default=None
+    Preferences for each point - points with larger values of
+    preferences are more likely to be chosen as exemplars. The number
+    of exemplars, ie of clusters, is influenced by the input
+    preferences value. If the preferences are not passed as arguments,
+    they will be set to the median of the input similarities.
+
+affinity : {&apos;euclidean&apos;, &apos;precomputed&apos;}, default=&apos;euclidean&apos;
+    Which affinity to use. At the moment &apos;precomputed&apos; and
+    ``euclidean`` are supported. &apos;euclidean&apos; uses the
+    negative squared euclidean distance between points.
+
+verbose : bool, default=False
+    Whether to be verbose.
+
+random_state : int, RandomState instance or None, default=None
+    Pseudo-random number generator to control the starting state.
+    Use an int for reproducible results across function calls.
+    See the :term:`Glossary &lt;random_state&gt;`.
+
+    .. versionadded:: 0.23
+        this parameter was previously hardcoded as 0.
+
+Attributes
+----------
+cluster_centers_indices_ : ndarray of shape (n_clusters,)
+    Indices of cluster centers.
+
+cluster_centers_ : ndarray of shape (n_clusters, n_features)
+    Cluster centers (if affinity != ``precomputed``).
+
+labels_ : ndarray of shape (n_samples,)
+    Labels of each point.
+
+affinity_matrix_ : ndarray of shape (n_samples, n_samples)
+    Stores the affinity matrix used in ``fit``.
+
+n_iter_ : int
+    Number of iterations taken to converge.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+AgglomerativeClustering : Recursively merges the pair of
+    clusters that minimally increases a given linkage distance.
+FeatureAgglomeration : Similar to AgglomerativeClustering,
+    but recursively merges features instead of samples.
+KMeans : K-Means clustering.
+MiniBatchKMeans : Mini-Batch K-Means clustering.
+MeanShift : Mean shift clustering using a flat kernel.
+SpectralClustering : Apply clustering to a projection
+    of the normalized Laplacian.
+
+Notes
+-----
+For an example, see :ref:`examples/cluster/plot_affinity_propagation.py
+&lt;sphx_glr_auto_examples_cluster_plot_affinity_propagation.py&gt;`.
+
+The algorithmic complexity of affinity propagation is quadratic
+in the number of points.
+
+When the algorithm does not converge, it will still return a arrays of
+``cluster_center_indices`` and labels if there are any exemplars/clusters,
+however they may be degenerate and should be used with caution.
+
+When ``fit`` does not converge, ``cluster_centers_`` is still populated
+however it may be degenerate. In such a case, proceed with caution.
+If ``fit`` does not converge and fails to produce any ``cluster_centers_``
+then ``predict`` will label every sample as ``-1``.
+
+When all training samples have equal similarities and equal preferences,
+the assignment of cluster centers and labels depends on the preference.
+If the preference is smaller than the similarities, ``fit`` will result in
+a single cluster center and label ``0`` for every sample. Otherwise, every
+training sample becomes its own cluster center and is assigned a unique
+label.
+
+References
+----------
+
+Brendan J. Frey and Delbert Dueck, &quot;Clustering by Passing Messages
+Between Data Points&quot;, Science Feb. 2007
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import AffinityPropagation
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 2], [1, 4], [1, 0],
+...               [4, 2], [4, 4], [4, 0]])
+&gt;&gt;&gt; clustering = AffinityPropagation(random_state=5).fit(X)
+&gt;&gt;&gt; clustering
+AffinityPropagation(random_state=5)
+&gt;&gt;&gt; clustering.labels_
+array([0, 0, 0, 1, 1, 1])
+&gt;&gt;&gt; clustering.predict([[0, 0], [4, 4]])
+array([0, 1])
+&gt;&gt;&gt; clustering.cluster_centers_
+array([[1, 2],
+       [4, 2]])</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AgglomerativeClustering">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Agglomerative Clustering.
+
+Recursively merges pair of clusters of sample data; uses linkage distance.
+
+Read more in the :ref:`User Guide &lt;hierarchical_clustering&gt;`.
+
+Parameters
+----------
+n_clusters : int or None, default=2
+    The number of clusters to find. It must be ``None`` if
+    ``distance_threshold`` is not ``None``.
+
+metric : str or callable, default=&quot;euclidean&quot;
+    Metric used to compute the linkage. Can be &quot;euclidean&quot;, &quot;l1&quot;, &quot;l2&quot;,
+    &quot;manhattan&quot;, &quot;cosine&quot;, or &quot;precomputed&quot;. If linkage is &quot;ward&quot;, only
+    &quot;euclidean&quot; is accepted. If &quot;precomputed&quot;, a distance matrix is needed
+    as input for the fit method.
+
+    .. versionadded:: 1.2
+
+    .. deprecated:: 1.4
+       `metric=None` is deprecated in 1.4 and will be removed in 1.6.
+       Let `metric` be the default value (i.e. `&quot;euclidean&quot;`) instead.
+
+memory : str or object with the joblib.Memory interface, default=None
+    Used to cache the output of the computation of the tree.
+    By default, no caching is done. If a string is given, it is the
+    path to the caching directory.
+
+connectivity : array-like or callable, default=None
+    Connectivity matrix. Defines for each sample the neighboring
+    samples following a given structure of the data.
+    This can be a connectivity matrix itself or a callable that transforms
+    the data into a connectivity matrix, such as derived from
+    `kneighbors_graph`. Default is ``None``, i.e, the
+    hierarchical clustering algorithm is unstructured.
+
+compute_full_tree : &apos;auto&apos; or bool, default=&apos;auto&apos;
+    Stop early the construction of the tree at ``n_clusters``. This is
+    useful to decrease computation time if the number of clusters is not
+    small compared to the number of samples. This option is useful only
+    when specifying a connectivity matrix. Note also that when varying the
+    number of clusters and using caching, it may be advantageous to compute
+    the full tree. It must be ``True`` if ``distance_threshold`` is not
+    ``None``. By default `compute_full_tree` is &quot;auto&quot;, which is equivalent
+    to `True` when `distance_threshold` is not `None` or that `n_clusters`
+    is inferior to the maximum between 100 or `0.02 * n_samples`.
+    Otherwise, &quot;auto&quot; is equivalent to `False`.
+
+linkage : {&apos;ward&apos;, &apos;complete&apos;, &apos;average&apos;, &apos;single&apos;}, default=&apos;ward&apos;
+    Which linkage criterion to use. The linkage criterion determines which
+    distance to use between sets of observation. The algorithm will merge
+    the pairs of cluster that minimize this criterion.
+
+    - &apos;ward&apos; minimizes the variance of the clusters being merged.
+    - &apos;average&apos; uses the average of the distances of each observation of
+      the two sets.
+    - &apos;complete&apos; or &apos;maximum&apos; linkage uses the maximum distances between
+      all observations of the two sets.
+    - &apos;single&apos; uses the minimum of the distances between all observations
+      of the two sets.
+
+    .. versionadded:: 0.20
+        Added the &apos;single&apos; option
+
+distance_threshold : float, default=None
+    The linkage distance threshold at or above which clusters will not be
+    merged. If not ``None``, ``n_clusters`` must be ``None`` and
+    ``compute_full_tree`` must be ``True``.
+
+    .. versionadded:: 0.21
+
+compute_distances : bool, default=False
+    Computes distances between clusters even if `distance_threshold` is not
+    used. This can be used to make dendrogram visualization, but introduces
+    a computational and memory overhead.
+
+    .. versionadded:: 0.24
+
+Attributes
+----------
+n_clusters_ : int
+    The number of clusters found by the algorithm. If
+    ``distance_threshold=None``, it will be equal to the given
+    ``n_clusters``.
+
+labels_ : ndarray of shape (n_samples)
+    Cluster labels for each point.
+
+n_leaves_ : int
+    Number of leaves in the hierarchical tree.
+
+n_connected_components_ : int
+    The estimated number of connected components in the graph.
+
+    .. versionadded:: 0.21
+        ``n_connected_components_`` was added to replace ``n_components_``.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+children_ : array-like of shape (n_samples-1, 2)
+    The children of each non-leaf node. Values less than `n_samples`
+    correspond to leaves of the tree which are the original samples.
+    A node `i` greater than or equal to `n_samples` is a non-leaf
+    node and has children `children_[i - n_samples]`. Alternatively
+    at the i-th iteration, children[i][0] and children[i][1]
+    are merged to form node `n_samples + i`.
+
+distances_ : array-like of shape (n_nodes-1,)
+    Distances between nodes in the corresponding place in `children_`.
+    Only computed if `distance_threshold` is used or `compute_distances`
+    is set to `True`.
+
+See Also
+--------
+FeatureAgglomeration : Agglomerative clustering but for features instead of
+    samples.
+ward_tree : Hierarchical clustering with ward linkage.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import AgglomerativeClustering
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 2], [1, 4], [1, 0],
+...               [4, 2], [4, 4], [4, 0]])
+&gt;&gt;&gt; clustering = AgglomerativeClustering().fit(X)
+&gt;&gt;&gt; clustering
+AgglomerativeClustering()
+&gt;&gt;&gt; clustering.labels_
+array([1, 1, 1, 0, 0, 0])</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Birch">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Implements the BIRCH clustering algorithm.
+
+It is a memory-efficient, online-learning algorithm provided as an
+alternative to :class:`MiniBatchKMeans`. It constructs a tree
+data structure with the cluster centroids being read off the leaf.
+These can be either the final cluster centroids or can be provided as input
+to another clustering algorithm such as :class:`AgglomerativeClustering`.
+
+Read more in the :ref:`User Guide &lt;birch&gt;`.
+
+.. versionadded:: 0.16
+
+Parameters
+----------
+threshold : float, default=0.5
+    The radius of the subcluster obtained by merging a new sample and the
+    closest subcluster should be lesser than the threshold. Otherwise a new
+    subcluster is started. Setting this value to be very low promotes
+    splitting and vice-versa.
+
+branching_factor : int, default=50
+    Maximum number of CF subclusters in each node. If a new samples enters
+    such that the number of subclusters exceed the branching_factor then
+    that node is split into two nodes with the subclusters redistributed
+    in each. The parent subcluster of that node is removed and two new
+    subclusters are added as parents of the 2 split nodes.
+
+n_clusters : int, instance of sklearn.cluster model or None, default=3
+    Number of clusters after the final clustering step, which treats the
+    subclusters from the leaves as new samples.
+
+    - `None` : the final clustering step is not performed and the
+      subclusters are returned as they are.
+
+    - :mod:`sklearn.cluster` Estimator : If a model is provided, the model
+      is fit treating the subclusters as new samples and the initial data
+      is mapped to the label of the closest subcluster.
+
+    - `int` : the model fit is :class:`AgglomerativeClustering` with
+      `n_clusters` set to be equal to the int.
+
+compute_labels : bool, default=True
+    Whether or not to compute labels for each fit.
+
+copy : bool, default=True
+    Whether or not to make a copy of the given data. If set to False,
+    the initial data will be overwritten.
+
+Attributes
+----------
+root_ : _CFNode
+    Root of the CFTree.
+
+dummy_leaf_ : _CFNode
+    Start pointer to all the leaves.
+
+subcluster_centers_ : ndarray
+    Centroids of all subclusters read directly from the leaves.
+
+subcluster_labels_ : ndarray
+    Labels assigned to the centroids of the subclusters after
+    they are clustered globally.
+
+labels_ : ndarray of shape (n_samples,)
+    Array of labels assigned to the input data.
+    if partial_fit is used instead of fit, they are assigned to the
+    last batch of data.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+MiniBatchKMeans : Alternative implementation that does incremental updates
+    of the centers&apos; positions using mini-batches.
+
+Notes
+-----
+The tree data structure consists of nodes with each node consisting of
+a number of subclusters. The maximum number of subclusters in a node
+is determined by the branching factor. Each subcluster maintains a
+linear sum, squared sum and the number of samples in that subcluster.
+In addition, each subcluster can also have a node as its child, if the
+subcluster is not a member of a leaf node.
+
+For a new point entering the root, it is merged with the subcluster closest
+to it and the linear sum, squared sum and the number of samples of that
+subcluster are updated. This is done recursively till the properties of
+the leaf node are updated.
+
+References
+----------
+* Tian Zhang, Raghu Ramakrishnan, Maron Livny
+  BIRCH: An efficient data clustering method for large databases.
+  https://www.cs.sfu.ca/CourseCentral/459/han/papers/zhang96.pdf
+
+* Roberto Perdisci
+  JBirch - Java implementation of BIRCH clustering algorithm
+  https://code.google.com/archive/p/jbirch
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import Birch
+&gt;&gt;&gt; X = [[0, 1], [0.3, 1], [-0.3, 1], [0, -1], [0.3, -1], [-0.3, -1]]
+&gt;&gt;&gt; brc = Birch(n_clusters=None)
+&gt;&gt;&gt; brc.fit(X)
+Birch(n_clusters=None)
+&gt;&gt;&gt; brc.predict(X)
+array([0, 0, 0, 1, 1, 1])</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BisectingKMeans">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Bisecting K-Means clustering.
+
+Read more in the :ref:`User Guide &lt;bisect_k_means&gt;`.
+
+.. versionadded:: 1.1
+
+Parameters
+----------
+n_clusters : int, default=8
+    The number of clusters to form as well as the number of
+    centroids to generate.
+
+init : {&apos;k-means++&apos;, &apos;random&apos;} or callable, default=&apos;random&apos;
+    Method for initialization:
+
+    &apos;k-means++&apos; : selects initial cluster centers for k-mean
+    clustering in a smart way to speed up convergence. See section
+    Notes in k_init for more details.
+
+    &apos;random&apos;: choose `n_clusters` observations (rows) at random from data
+    for the initial centroids.
+
+    If a callable is passed, it should take arguments X, n_clusters and a
+    random state and return an initialization.
+
+n_init : int, default=1
+    Number of time the inner k-means algorithm will be run with different
+    centroid seeds in each bisection.
+    That will result producing for each bisection best output of n_init
+    consecutive runs in terms of inertia.
+
+random_state : int, RandomState instance or None, default=None
+    Determines random number generation for centroid initialization
+    in inner K-Means. Use an int to make the randomness deterministic.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+max_iter : int, default=300
+    Maximum number of iterations of the inner k-means algorithm at each
+    bisection.
+
+verbose : int, default=0
+    Verbosity mode.
+
+tol : float, default=1e-4
+    Relative tolerance with regards to Frobenius norm of the difference
+    in the cluster centers of two consecutive iterations  to declare
+    convergence. Used in inner k-means algorithm at each bisection to pick
+    best possible clusters.
+
+copy_x : bool, default=True
+    When pre-computing distances it is more numerically accurate to center
+    the data first. If copy_x is True (default), then the original data is
+    not modified. If False, the original data is modified, and put back
+    before the function returns, but small numerical differences may be
+    introduced by subtracting and then adding the data mean. Note that if
+    the original data is not C-contiguous, a copy will be made even if
+    copy_x is False. If the original data is sparse, but not in CSR format,
+    a copy will be made even if copy_x is False.
+
+algorithm : {&quot;lloyd&quot;, &quot;elkan&quot;}, default=&quot;lloyd&quot;
+    Inner K-means algorithm used in bisection.
+    The classical EM-style algorithm is `&quot;lloyd&quot;`.
+    The `&quot;elkan&quot;` variation can be more efficient on some datasets with
+    well-defined clusters, by using the triangle inequality. However it&apos;s
+    more memory intensive due to the allocation of an extra array of shape
+    `(n_samples, n_clusters)`.
+
+bisecting_strategy : {&quot;biggest_inertia&quot;, &quot;largest_cluster&quot;},            default=&quot;biggest_inertia&quot;
+    Defines how bisection should be performed:
+
+     - &quot;biggest_inertia&quot; means that BisectingKMeans will always check
+        all calculated cluster for cluster with biggest SSE
+        (Sum of squared errors) and bisect it. This approach concentrates on
+        precision, but may be costly in terms of execution time (especially for
+        larger amount of data points).
+
+     - &quot;largest_cluster&quot; - BisectingKMeans will always split cluster with
+        largest amount of points assigned to it from all clusters
+        previously calculated. That should work faster than picking by SSE
+        (&apos;biggest_inertia&apos;) and may produce similar results in most cases.
+
+Attributes
+----------
+cluster_centers_ : ndarray of shape (n_clusters, n_features)
+    Coordinates of cluster centers. If the algorithm stops before fully
+    converging (see ``tol`` and ``max_iter``), these will not be
+    consistent with ``labels_``.
+
+labels_ : ndarray of shape (n_samples,)
+    Labels of each point.
+
+inertia_ : float
+    Sum of squared distances of samples to their closest cluster center,
+    weighted by the sample weights if provided.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+See Also
+--------
+KMeans : Original implementation of K-Means algorithm.
+
+Notes
+-----
+It might be inefficient when n_cluster is less than 3, due to unnecessary
+calculations for that case.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import BisectingKMeans
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 1], [10, 1], [3, 1],
+...               [10, 0], [2, 1], [10, 2],
+...               [10, 8], [10, 9], [10, 10]])
+&gt;&gt;&gt; bisect_means = BisectingKMeans(n_clusters=3, random_state=0).fit(X)
+&gt;&gt;&gt; bisect_means.labels_
+array([0, 2, 0, 2, 0, 2, 1, 1, 1], dtype=int32)
+&gt;&gt;&gt; bisect_means.predict([[0, 0], [12, 3]])
+array([0, 2], dtype=int32)
+&gt;&gt;&gt; bisect_means.cluster_centers_
+array([[ 2., 1.],
+       [10., 9.],
+       [10., 1.]])</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Clustering -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Clustering">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DBSCAN">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Perform DBSCAN clustering from vector array or distance matrix.
+
+DBSCAN - Density-Based Spatial Clustering of Applications with Noise.
+Finds core samples of high density and expands clusters from them.
+Good for data which contains clusters of similar density.
+
+The worst case memory complexity of DBSCAN is :math:`O({n}^2)`, which can
+occur when the `eps` param is large and `min_samples` is low.
+
+Read more in the :ref:`User Guide &lt;dbscan&gt;`.
+
+Parameters
+----------
+eps : float, default=0.5
+    The maximum distance between two samples for one to be considered
+    as in the neighborhood of the other. This is not a maximum bound
+    on the distances of points within a cluster. This is the most
+    important DBSCAN parameter to choose appropriately for your data set
+    and distance function.
+
+min_samples : int, default=5
+    The number of samples (or total weight) in a neighborhood for a point to
+    be considered as a core point. This includes the point itself. If
+    `min_samples` is set to a higher value, DBSCAN will find denser clusters,
+    whereas if it is set to a lower value, the found clusters will be more
+    sparse.
+
+metric : str, or callable, default=&apos;euclidean&apos;
+    The metric to use when calculating distance between instances in a
+    feature array. If metric is a string or callable, it must be one of
+    the options allowed by :func:`sklearn.metrics.pairwise_distances` for
+    its metric parameter.
+    If metric is &quot;precomputed&quot;, X is assumed to be a distance matrix and
+    must be square. X may be a :term:`sparse graph`, in which
+    case only &quot;nonzero&quot; elements may be considered neighbors for DBSCAN.
+
+    .. versionadded:: 0.17
+       metric *precomputed* to accept precomputed sparse matrix.
+
+metric_params : dict, default=None
+    Additional keyword arguments for the metric function.
+
+    .. versionadded:: 0.19
+
+algorithm : {&apos;auto&apos;, &apos;ball_tree&apos;, &apos;kd_tree&apos;, &apos;brute&apos;}, default=&apos;auto&apos;
+    The algorithm to be used by the NearestNeighbors module
+    to compute pointwise distances and find nearest neighbors.
+    See NearestNeighbors module documentation for details.
+
+leaf_size : int, default=30
+    Leaf size passed to BallTree or cKDTree. This can affect the speed
+    of the construction and query, as well as the memory required
+    to store the tree. The optimal value depends
+    on the nature of the problem.
+
+p : float, default=None
+    The power of the Minkowski metric to be used to calculate distance
+    between points. If None, then ``p=2`` (equivalent to the Euclidean
+    distance).
+
+n_jobs : int, default=None
+    The number of parallel jobs to run.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+Attributes
+----------
+core_sample_indices_ : ndarray of shape (n_core_samples,)
+    Indices of core samples.
+
+components_ : ndarray of shape (n_core_samples, n_features)
+    Copy of each core sample found by training.
+
+labels_ : ndarray of shape (n_samples)
+    Cluster labels for each point in the dataset given to fit().
+    Noisy samples are given the label -1.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+OPTICS : A similar clustering at multiple values of eps. Our implementation
+    is optimized for memory usage.
+
+Notes
+-----
+For an example, see :ref:`examples/cluster/plot_dbscan.py
+&lt;sphx_glr_auto_examples_cluster_plot_dbscan.py&gt;`.
+
+This implementation bulk-computes all neighborhood queries, which increases
+the memory complexity to O(n.d) where d is the average number of neighbors,
+while original DBSCAN had memory complexity O(n). It may attract a higher
+memory complexity when querying these nearest neighborhoods, depending
+on the ``algorithm``.
+
+One way to avoid the query complexity is to pre-compute sparse
+neighborhoods in chunks using
+:func:`NearestNeighbors.radius_neighbors_graph
+&lt;sklearn.neighbors.NearestNeighbors.radius_neighbors_graph&gt;` with
+``mode=&apos;distance&apos;``, then using ``metric=&apos;precomputed&apos;`` here.
+
+Another way to reduce memory and computation time is to remove
+(near-)duplicate points and use ``sample_weight`` instead.
+
+:class:`~sklearn.cluster.OPTICS` provides a similar clustering with lower memory
+usage.
+
+References
+----------
+Ester, M., H. P. Kriegel, J. Sander, and X. Xu, `&quot;A Density-Based
+Algorithm for Discovering Clusters in Large Spatial Databases with Noise&quot;
+&lt;https://www.dbs.ifi.lmu.de/Publikationen/Papers/KDD-96.final.frame.pdf&gt;`_.
+In: Proceedings of the 2nd International Conference on Knowledge Discovery
+and Data Mining, Portland, OR, AAAI Press, pp. 226-231. 1996
+
+Schubert, E., Sander, J., Ester, M., Kriegel, H. P., &amp; Xu, X. (2017).
+:doi:`&quot;DBSCAN revisited, revisited: why and how you should (still) use DBSCAN.&quot;
+&lt;10.1145/3068335&gt;`
+ACM Transactions on Database Systems (TODS), 42(3), 19.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import DBSCAN
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 2], [2, 2], [2, 3],
+...               [8, 7], [8, 8], [25, 80]])
+&gt;&gt;&gt; clustering = DBSCAN(eps=3, min_samples=2).fit(X)
+&gt;&gt;&gt; clustering.labels_
+array([ 0,  0,  0,  1,  1, -1])
+&gt;&gt;&gt; clustering
+DBSCAN(eps=3, min_samples=2)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Decomposition -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Decomposition">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureAgglomeration">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Agglomerate features.
+
+Recursively merges pair of clusters of features.
+
+Read more in the :ref:`User Guide &lt;hierarchical_clustering&gt;`.
+
+Parameters
+----------
+n_clusters : int or None, default=2
+    The number of clusters to find. It must be ``None`` if
+    ``distance_threshold`` is not ``None``.
+
+metric : str or callable, default=&quot;euclidean&quot;
+    Metric used to compute the linkage. Can be &quot;euclidean&quot;, &quot;l1&quot;, &quot;l2&quot;,
+    &quot;manhattan&quot;, &quot;cosine&quot;, or &quot;precomputed&quot;. If linkage is &quot;ward&quot;, only
+    &quot;euclidean&quot; is accepted. If &quot;precomputed&quot;, a distance matrix is needed
+    as input for the fit method.
+
+    .. versionadded:: 1.2
+
+    .. deprecated:: 1.4
+       `metric=None` is deprecated in 1.4 and will be removed in 1.6.
+       Let `metric` be the default value (i.e. `&quot;euclidean&quot;`) instead.
+
+memory : str or object with the joblib.Memory interface, default=None
+    Used to cache the output of the computation of the tree.
+    By default, no caching is done. If a string is given, it is the
+    path to the caching directory.
+
+connectivity : array-like or callable, default=None
+    Connectivity matrix. Defines for each feature the neighboring
+    features following a given structure of the data.
+    This can be a connectivity matrix itself or a callable that transforms
+    the data into a connectivity matrix, such as derived from
+    `kneighbors_graph`. Default is `None`, i.e, the
+    hierarchical clustering algorithm is unstructured.
+
+compute_full_tree : &apos;auto&apos; or bool, default=&apos;auto&apos;
+    Stop early the construction of the tree at `n_clusters`. This is useful
+    to decrease computation time if the number of clusters is not small
+    compared to the number of features. This option is useful only when
+    specifying a connectivity matrix. Note also that when varying the
+    number of clusters and using caching, it may be advantageous to compute
+    the full tree. It must be ``True`` if ``distance_threshold`` is not
+    ``None``. By default `compute_full_tree` is &quot;auto&quot;, which is equivalent
+    to `True` when `distance_threshold` is not `None` or that `n_clusters`
+    is inferior to the maximum between 100 or `0.02 * n_samples`.
+    Otherwise, &quot;auto&quot; is equivalent to `False`.
+
+linkage : {&quot;ward&quot;, &quot;complete&quot;, &quot;average&quot;, &quot;single&quot;}, default=&quot;ward&quot;
+    Which linkage criterion to use. The linkage criterion determines which
+    distance to use between sets of features. The algorithm will merge
+    the pairs of cluster that minimize this criterion.
+
+    - &quot;ward&quot; minimizes the variance of the clusters being merged.
+    - &quot;complete&quot; or maximum linkage uses the maximum distances between
+      all features of the two sets.
+    - &quot;average&quot; uses the average of the distances of each feature of
+      the two sets.
+    - &quot;single&quot; uses the minimum of the distances between all features
+      of the two sets.
+
+pooling_func : callable, default=np.mean
+    This combines the values of agglomerated features into a single
+    value, and should accept an array of shape [M, N] and the keyword
+    argument `axis=1`, and reduce it to an array of size [M].
+
+distance_threshold : float, default=None
+    The linkage distance threshold at or above which clusters will not be
+    merged. If not ``None``, ``n_clusters`` must be ``None`` and
+    ``compute_full_tree`` must be ``True``.
+
+    .. versionadded:: 0.21
+
+compute_distances : bool, default=False
+    Computes distances between clusters even if `distance_threshold` is not
+    used. This can be used to make dendrogram visualization, but introduces
+    a computational and memory overhead.
+
+    .. versionadded:: 0.24
+
+Attributes
+----------
+n_clusters_ : int
+    The number of clusters found by the algorithm. If
+    ``distance_threshold=None``, it will be equal to the given
+    ``n_clusters``.
+
+labels_ : array-like of (n_features,)
+    Cluster labels for each feature.
+
+n_leaves_ : int
+    Number of leaves in the hierarchical tree.
+
+n_connected_components_ : int
+    The estimated number of connected components in the graph.
+
+    .. versionadded:: 0.21
+        ``n_connected_components_`` was added to replace ``n_components_``.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+children_ : array-like of shape (n_nodes-1, 2)
+    The children of each non-leaf node. Values less than `n_features`
+    correspond to leaves of the tree which are the original samples.
+    A node `i` greater than or equal to `n_features` is a non-leaf
+    node and has children `children_[i - n_features]`. Alternatively
+    at the i-th iteration, children[i][0] and children[i][1]
+    are merged to form node `n_features + i`.
+
+distances_ : array-like of shape (n_nodes-1,)
+    Distances between nodes in the corresponding place in `children_`.
+    Only computed if `distance_threshold` is used or `compute_distances`
+    is set to `True`.
+
+See Also
+--------
+AgglomerativeClustering : Agglomerative clustering samples instead of
+    features.
+ward_tree : Hierarchical clustering with ward linkage.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn import datasets, cluster
+&gt;&gt;&gt; digits = datasets.load_digits()
+&gt;&gt;&gt; images = digits.images
+&gt;&gt;&gt; X = np.reshape(images, (len(images), -1))
+&gt;&gt;&gt; agglo = cluster.FeatureAgglomeration(n_clusters=32)
+&gt;&gt;&gt; agglo.fit(X)
+FeatureAgglomeration(n_clusters=32)
+&gt;&gt;&gt; X_reduced = agglo.transform(X)
+&gt;&gt;&gt; X_reduced.shape
+(1797, 32)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HDBSCAN">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Cluster data using hierarchical density-based clustering.
+
+HDBSCAN - Hierarchical Density-Based Spatial Clustering of Applications
+with Noise. Performs :class:`~sklearn.cluster.DBSCAN` over varying epsilon
+values and integrates the result to find a clustering that gives the best
+stability over epsilon.
+This allows HDBSCAN to find clusters of varying densities (unlike
+:class:`~sklearn.cluster.DBSCAN`), and be more robust to parameter selection.
+Read more in the :ref:`User Guide &lt;hdbscan&gt;`.
+
+For an example of how to use HDBSCAN, as well as a comparison to
+:class:`~sklearn.cluster.DBSCAN`, please see the :ref:`plotting demo
+&lt;sphx_glr_auto_examples_cluster_plot_hdbscan.py&gt;`.
+
+.. versionadded:: 1.3
+
+Parameters
+----------
+min_cluster_size : int, default=5
+    The minimum number of samples in a group for that group to be
+    considered a cluster; groupings smaller than this size will be left
+    as noise.
+
+min_samples : int, default=None
+    The number of samples in a neighborhood for a point
+    to be considered as a core point. This includes the point itself.
+    When `None`, defaults to `min_cluster_size`.
+
+cluster_selection_epsilon : float, default=0.0
+    A distance threshold. Clusters below this value will be merged.
+    See [5]_ for more information.
+
+max_cluster_size : int, default=None
+    A limit to the size of clusters returned by the `&quot;eom&quot;` cluster
+    selection algorithm. There is no limit when `max_cluster_size=None`.
+    Has no effect if `cluster_selection_method=&quot;leaf&quot;`.
+
+metric : str or callable, default=&apos;euclidean&apos;
+    The metric to use when calculating distance between instances in a
+    feature array.
+
+    - If metric is a string or callable, it must be one of
+      the options allowed by :func:`~sklearn.metrics.pairwise_distances`
+      for its metric parameter.
+
+    - If metric is &quot;precomputed&quot;, X is assumed to be a distance matrix and
+      must be square.
+
+metric_params : dict, default=None
+    Arguments passed to the distance metric.
+
+alpha : float, default=1.0
+    A distance scaling parameter as used in robust single linkage.
+    See [3]_ for more information.
+
+algorithm : {&quot;auto&quot;, &quot;brute&quot;, &quot;kd_tree&quot;, &quot;ball_tree&quot;}, default=&quot;auto&quot;
+    Exactly which algorithm to use for computing core distances; By default
+    this is set to `&quot;auto&quot;` which attempts to use a
+    :class:`~sklearn.neighbors.KDTree` tree if possible, otherwise it uses
+    a :class:`~sklearn.neighbors.BallTree` tree. Both `&quot;kd_tree&quot;` and
+    `&quot;ball_tree&quot;` algorithms use the
+    :class:`~sklearn.neighbors.NearestNeighbors` estimator.
+
+    If the `X` passed during `fit` is sparse or `metric` is invalid for
+    both :class:`~sklearn.neighbors.KDTree` and
+    :class:`~sklearn.neighbors.BallTree`, then it resolves to use the
+    `&quot;brute&quot;` algorithm.
+
+    .. deprecated:: 1.4
+       The `&apos;kdtree&apos;` option was deprecated in version 1.4,
+       and will be renamed to `&apos;kd_tree&apos;` in 1.6.
+
+    .. deprecated:: 1.4
+       The `&apos;balltree&apos;` option was deprecated in version 1.4,
+       and will be renamed to `&apos;ball_tree&apos;` in 1.6.
+
+leaf_size : int, default=40
+    Leaf size for trees responsible for fast nearest neighbour queries when
+    a KDTree or a BallTree are used as core-distance algorithms. A large
+    dataset size and small `leaf_size` may induce excessive memory usage.
+    If you are running out of memory consider increasing the `leaf_size`
+    parameter. Ignored for `algorithm=&quot;brute&quot;`.
+
+n_jobs : int, default=None
+    Number of jobs to run in parallel to calculate distances.
+    `None` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    `-1` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+cluster_selection_method : {&quot;eom&quot;, &quot;leaf&quot;}, default=&quot;eom&quot;
+    The method used to select clusters from the condensed tree. The
+    standard approach for HDBSCAN* is to use an Excess of Mass (`&quot;eom&quot;`)
+    algorithm to find the most persistent clusters. Alternatively you can
+    instead select the clusters at the leaves of the tree -- this provides
+    the most fine grained and homogeneous clusters.
+
+allow_single_cluster : bool, default=False
+    By default HDBSCAN* will not produce a single cluster, setting this
+    to True will override this and allow single cluster results in
+    the case that you feel this is a valid result for your dataset.
+
+store_centers : str, default=None
+    Which, if any, cluster centers to compute and store. The options are:
+
+    - `None` which does not compute nor store any centers.
+    - `&quot;centroid&quot;` which calculates the center by taking the weighted
+      average of their positions. Note that the algorithm uses the
+      euclidean metric and does not guarantee that the output will be
+      an observed data point.
+    - `&quot;medoid&quot;` which calculates the center by taking the point in the
+      fitted data which minimizes the distance to all other points in
+      the cluster. This is slower than &quot;centroid&quot; since it requires
+      computing additional pairwise distances between points of the
+      same cluster but guarantees the output is an observed data point.
+      The medoid is also well-defined for arbitrary metrics, and does not
+      depend on a euclidean metric.
+    - `&quot;both&quot;` which computes and stores both forms of centers.
+
+copy : bool, default=False
+    If `copy=True` then any time an in-place modifications would be made
+    that would overwrite data passed to :term:`fit`, a copy will first be
+    made, guaranteeing that the original data will be unchanged.
+    Currently, it only applies when `metric=&quot;precomputed&quot;`, when passing
+    a dense array or a CSR sparse matrix and when `algorithm=&quot;brute&quot;`.
+
+Attributes
+----------
+labels_ : ndarray of shape (n_samples,)
+    Cluster labels for each point in the dataset given to :term:`fit`.
+    Outliers are labeled as follows:
+
+    - Noisy samples are given the label -1.
+    - Samples with infinite elements (+/- np.inf) are given the label -2.
+    - Samples with missing data are given the label -3, even if they
+      also have infinite elements.
+
+probabilities_ : ndarray of shape (n_samples,)
+    The strength with which each sample is a member of its assigned
+    cluster.
+
+    - Clustered samples have probabilities proportional to the degree that
+      they persist as part of the cluster.
+    - Noisy samples have probability zero.
+    - Samples with infinite elements (+/- np.inf) have probability 0.
+    - Samples with missing data have probability `np.nan`.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+centroids_ : ndarray of shape (n_clusters, n_features)
+    A collection containing the centroid of each cluster calculated under
+    the standard euclidean metric. The centroids may fall &quot;outside&quot; their
+    respective clusters if the clusters themselves are non-convex.
+
+    Note that `n_clusters` only counts non-outlier clusters. That is to
+    say, the `-1, -2, -3` labels for the outlier clusters are excluded.
+
+medoids_ : ndarray of shape (n_clusters, n_features)
+    A collection containing the medoid of each cluster calculated under
+    the whichever metric was passed to the `metric` parameter. The
+    medoids are points in the original cluster which minimize the average
+    distance to all other points in that cluster under the chosen metric.
+    These can be thought of as the result of projecting the `metric`-based
+    centroid back onto the cluster.
+
+    Note that `n_clusters` only counts non-outlier clusters. That is to
+    say, the `-1, -2, -3` labels for the outlier clusters are excluded.
+
+See Also
+--------
+DBSCAN : Density-Based Spatial Clustering of Applications
+    with Noise.
+OPTICS : Ordering Points To Identify the Clustering Structure.
+Birch : Memory-efficient, online-learning algorithm.
+
+References
+----------
+
+.. [1] :doi:`Campello, R. J., Moulavi, D., &amp; Sander, J. Density-based clustering
+  based on hierarchical density estimates.
+  &lt;10.1007/978-3-642-37456-2_14&gt;`
+.. [2] :doi:`Campello, R. J., Moulavi, D., Zimek, A., &amp; Sander, J.
+   Hierarchical density estimates for data clustering, visualization,
+   and outlier detection.&lt;10.1145/2733381&gt;`
+
+.. [3] `Chaudhuri, K., &amp; Dasgupta, S. Rates of convergence for the
+   cluster tree.
+   &lt;https://papers.nips.cc/paper/2010/hash/
+   b534ba68236ba543ae44b22bd110a1d6-Abstract.html&gt;`_
+
+.. [4] `Moulavi, D., Jaskowiak, P.A., Campello, R.J., Zimek, A. and
+   Sander, J. Density-Based Clustering Validation.
+   &lt;https://www.dbs.ifi.lmu.de/~zimek/publications/SDM2014/DBCV.pdf&gt;`_
+
+.. [5] :arxiv:`Malzer, C., &amp; Baum, M. &quot;A Hybrid Approach To Hierarchical
+   Density-based Cluster Selection.&quot;&lt;1911.02282&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import HDBSCAN
+&gt;&gt;&gt; from sklearn.datasets import load_digits
+&gt;&gt;&gt; X, _ = load_digits(return_X_y=True)
+&gt;&gt;&gt; hdb = HDBSCAN(min_cluster_size=20)
+&gt;&gt;&gt; hdb.fit(X)
+HDBSCAN(min_cluster_size=20)
+&gt;&gt;&gt; hdb.labels_
+array([ 2,  6, -1, ..., -1, -1, -1])</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HdbscanModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HdbscanModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HdbscanModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KMeans">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>K-Means clustering.
+
+Read more in the :ref:`User Guide &lt;k_means&gt;`.
+
+Parameters
+----------
+
+n_clusters : int, default=8
+    The number of clusters to form as well as the number of
+    centroids to generate.
+
+    For an example of how to choose an optimal value for `n_clusters` refer to
+    :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_silhouette_analysis.py`.
+
+init : {&apos;k-means++&apos;, &apos;random&apos;}, callable or array-like of shape             (n_clusters, n_features), default=&apos;k-means++&apos;
+    Method for initialization:
+
+    * &apos;k-means++&apos; : selects initial cluster centroids using sampling             based on an empirical probability distribution of the points&apos;             contribution to the overall inertia. This technique speeds up             convergence. The algorithm implemented is &quot;greedy k-means++&quot;. It             differs from the vanilla k-means++ by making several trials at             each sampling step and choosing the best centroid among them.
+
+    * &apos;random&apos;: choose `n_clusters` observations (rows) at random from         data for the initial centroids.
+
+    * If an array is passed, it should be of shape (n_clusters, n_features)        and gives the initial centers.
+
+    * If a callable is passed, it should take arguments X, n_clusters and a        random state and return an initialization.
+
+    For an example of how to use the different `init` strategy, see the example
+    entitled :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_digits.py`.
+
+n_init : &apos;auto&apos; or int, default=&apos;auto&apos;
+    Number of times the k-means algorithm is run with different centroid
+    seeds. The final results is the best output of `n_init` consecutive runs
+    in terms of inertia. Several runs are recommended for sparse
+    high-dimensional problems (see :ref:`kmeans_sparse_high_dim`).
+
+    When `n_init=&apos;auto&apos;`, the number of runs depends on the value of init:
+    10 if using `init=&apos;random&apos;` or `init` is a callable;
+    1 if using `init=&apos;k-means++&apos;` or `init` is an array-like.
+
+    .. versionadded:: 1.2
+       Added &apos;auto&apos; option for `n_init`.
+
+    .. versionchanged:: 1.4
+       Default value for `n_init` changed to `&apos;auto&apos;`.
+
+max_iter : int, default=300
+    Maximum number of iterations of the k-means algorithm for a
+    single run.
+
+tol : float, default=1e-4
+    Relative tolerance with regards to Frobenius norm of the difference
+    in the cluster centers of two consecutive iterations to declare
+    convergence.
+
+verbose : int, default=0
+    Verbosity mode.
+
+random_state : int, RandomState instance or None, default=None
+    Determines random number generation for centroid initialization. Use
+    an int to make the randomness deterministic.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+copy_x : bool, default=True
+    When pre-computing distances it is more numerically accurate to center
+    the data first. If copy_x is True (default), then the original data is
+    not modified. If False, the original data is modified, and put back
+    before the function returns, but small numerical differences may be
+    introduced by subtracting and then adding the data mean. Note that if
+    the original data is not C-contiguous, a copy will be made even if
+    copy_x is False. If the original data is sparse, but not in CSR format,
+    a copy will be made even if copy_x is False.
+
+algorithm : {&quot;lloyd&quot;, &quot;elkan&quot;}, default=&quot;lloyd&quot;
+    K-means algorithm to use. The classical EM-style algorithm is `&quot;lloyd&quot;`.
+    The `&quot;elkan&quot;` variation can be more efficient on some datasets with
+    well-defined clusters, by using the triangle inequality. However it&apos;s
+    more memory intensive due to the allocation of an extra array of shape
+    `(n_samples, n_clusters)`.
+
+    .. versionchanged:: 0.18
+        Added Elkan algorithm
+
+    .. versionchanged:: 1.1
+        Renamed &quot;full&quot; to &quot;lloyd&quot;, and deprecated &quot;auto&quot; and &quot;full&quot;.
+        Changed &quot;auto&quot; to use &quot;lloyd&quot; instead of &quot;elkan&quot;.
+
+Attributes
+----------
+cluster_centers_ : ndarray of shape (n_clusters, n_features)
+    Coordinates of cluster centers. If the algorithm stops before fully
+    converging (see ``tol`` and ``max_iter``), these will not be
+    consistent with ``labels_``.
+
+labels_ : ndarray of shape (n_samples,)
+    Labels of each point
+
+inertia_ : float
+    Sum of squared distances of samples to their closest cluster center,
+    weighted by the sample weights if provided.
+
+n_iter_ : int
+    Number of iterations run.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+MiniBatchKMeans : Alternative online implementation that does incremental
+    updates of the centers positions using mini-batches.
+    For large scale learning (say n_samples &gt; 10k) MiniBatchKMeans is
+    probably much faster than the default batch implementation.
+
+Notes
+-----
+The k-means problem is solved using either Lloyd&apos;s or Elkan&apos;s algorithm.
+
+The average complexity is given by O(k n T), where n is the number of
+samples and T is the number of iteration.
+
+The worst case complexity is given by O(n^(k+2/p)) with
+n = n_samples, p = n_features.
+Refer to :doi:`&quot;How slow is the k-means method?&quot; D. Arthur and S. Vassilvitskii -
+SoCG2006.&lt;10.1145/1137856.1137880&gt;` for more details.
+
+In practice, the k-means algorithm is very fast (one of the fastest
+clustering algorithms available), but it falls in local minima. That&apos;s why
+it can be useful to restart it several times.
+
+If the algorithm stops before fully converging (because of ``tol`` or
+``max_iter``), ``labels_`` and ``cluster_centers_`` will not be consistent,
+i.e. the ``cluster_centers_`` will not be the means of the points in each
+cluster. Also, the estimator will reassign ``labels_`` after the last
+iteration to make ``labels_`` consistent with ``predict`` on the training
+set.
+
+Examples
+--------
+
+&gt;&gt;&gt; from sklearn.cluster import KMeans
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 2], [1, 4], [1, 0],
+...               [10, 2], [10, 4], [10, 0]])
+&gt;&gt;&gt; kmeans = KMeans(n_clusters=2, random_state=0, n_init=&quot;auto&quot;).fit(X)
+&gt;&gt;&gt; kmeans.labels_
+array([1, 1, 1, 0, 0, 0], dtype=int32)
+&gt;&gt;&gt; kmeans.predict([[0, 0], [12, 3]])
+array([1, 0], dtype=int32)
+&gt;&gt;&gt; kmeans.cluster_centers_
+array([[10.,  2.],
+       [ 1.,  2.]])
+
+For a more detailed example of K-Means using the iris dataset see
+:ref:`sphx_glr_auto_examples_cluster_plot_cluster_iris.py`.
+
+For examples of common problems with K-Means and how to address them see
+:ref:`sphx_glr_auto_examples_cluster_plot_kmeans_assumptions.py`.
+
+For an example of how to use K-Means to perform color quantization see
+:ref:`sphx_glr_auto_examples_cluster_plot_color_quantization.py`.
+
+For a demonstration of how K-Means can be used to cluster text documents see
+:ref:`sphx_glr_auto_examples_text_plot_document_clustering.py`.
+
+For a comparison between K-Means and MiniBatchKMeans refer to example
+:ref:`sphx_glr_auto_examples_cluster_plot_mini_batch_kmeans.py`.</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanShift">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Mean shift clustering using a flat kernel.
+
+Mean shift clustering aims to discover &quot;blobs&quot; in a smooth density of
+samples. It is a centroid-based algorithm, which works by updating
+candidates for centroids to be the mean of the points within a given
+region. These candidates are then filtered in a post-processing stage to
+eliminate near-duplicates to form the final set of centroids.
+
+Seeding is performed using a binning technique for scalability.
+
+Read more in the :ref:`User Guide &lt;mean_shift&gt;`.
+
+Parameters
+----------
+bandwidth : float, default=None
+    Bandwidth used in the flat kernel.
+
+    If not given, the bandwidth is estimated using
+    sklearn.cluster.estimate_bandwidth; see the documentation for that
+    function for hints on scalability (see also the Notes, below).
+
+seeds : array-like of shape (n_samples, n_features), default=None
+    Seeds used to initialize kernels. If not set,
+    the seeds are calculated by clustering.get_bin_seeds
+    with bandwidth as the grid size and default values for
+    other parameters.
+
+bin_seeding : bool, default=False
+    If true, initial kernel locations are not locations of all
+    points, but rather the location of the discretized version of
+    points, where points are binned onto a grid whose coarseness
+    corresponds to the bandwidth. Setting this option to True will speed
+    up the algorithm because fewer seeds will be initialized.
+    The default value is False.
+    Ignored if seeds argument is not None.
+
+min_bin_freq : int, default=1
+   To speed up the algorithm, accept only those bins with at least
+   min_bin_freq points as seeds.
+
+cluster_all : bool, default=True
+    If true, then all points are clustered, even those orphans that are
+    not within any kernel. Orphans are assigned to the nearest kernel.
+    If false, then orphans are given cluster label -1.
+
+n_jobs : int, default=None
+    The number of jobs to use for the computation. The following tasks benefit
+    from the parallelization:
+
+    - The search of nearest neighbors for bandwidth estimation and label
+      assignments. See the details in the docstring of the
+      ``NearestNeighbors`` class.
+    - Hill-climbing optimization for all seeds.
+
+    See :term:`Glossary &lt;n_jobs&gt;` for more details.
+
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+max_iter : int, default=300
+    Maximum number of iterations, per seed point before the clustering
+    operation terminates (for that seed point), if has not converged yet.
+
+    .. versionadded:: 0.22
+
+Attributes
+----------
+cluster_centers_ : ndarray of shape (n_clusters, n_features)
+    Coordinates of cluster centers.
+
+labels_ : ndarray of shape (n_samples,)
+    Labels of each point.
+
+n_iter_ : int
+    Maximum number of iterations performed on each seed.
+
+    .. versionadded:: 0.22
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+KMeans : K-Means clustering.
+
+Notes
+-----
+
+Scalability:
+
+Because this implementation uses a flat kernel and
+a Ball Tree to look up members of each kernel, the complexity will tend
+towards O(T*n*log(n)) in lower dimensions, with n the number of samples
+and T the number of points. In higher dimensions the complexity will
+tend towards O(T*n^2).
+
+Scalability can be boosted by using fewer seeds, for example by using
+a higher value of min_bin_freq in the get_bin_seeds function.
+
+Note that the estimate_bandwidth function is much less scalable than the
+mean shift algorithm and will be the bottleneck if it is used.
+
+References
+----------
+
+Dorin Comaniciu and Peter Meer, &quot;Mean Shift: A robust approach toward
+feature space analysis&quot;. IEEE Transactions on Pattern Analysis and
+Machine Intelligence. 2002. pp. 603-619.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import MeanShift
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 1], [2, 1], [1, 0],
+...               [4, 7], [3, 5], [3, 6]])
+&gt;&gt;&gt; clustering = MeanShift(bandwidth=2).fit(X)
+&gt;&gt;&gt; clustering.labels_
+array([1, 1, 1, 0, 0, 0])
+&gt;&gt;&gt; clustering.predict([[0, 0], [5, 5]])
+array([1, 0])
+&gt;&gt;&gt; clustering
+MeanShift(bandwidth=2)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchKMeans">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Mini-Batch K-Means clustering.
+
+Read more in the :ref:`User Guide &lt;mini_batch_kmeans&gt;`.
+
+Parameters
+----------
+
+n_clusters : int, default=8
+    The number of clusters to form as well as the number of
+    centroids to generate.
+
+init : {&apos;k-means++&apos;, &apos;random&apos;}, callable or array-like of shape             (n_clusters, n_features), default=&apos;k-means++&apos;
+    Method for initialization:
+
+    &apos;k-means++&apos; : selects initial cluster centroids using sampling based on
+    an empirical probability distribution of the points&apos; contribution to the
+    overall inertia. This technique speeds up convergence. The algorithm
+    implemented is &quot;greedy k-means++&quot;. It differs from the vanilla k-means++
+    by making several trials at each sampling step and choosing the best centroid
+    among them.
+
+    &apos;random&apos;: choose `n_clusters` observations (rows) at random from data
+    for the initial centroids.
+
+    If an array is passed, it should be of shape (n_clusters, n_features)
+    and gives the initial centers.
+
+    If a callable is passed, it should take arguments X, n_clusters and a
+    random state and return an initialization.
+
+max_iter : int, default=100
+    Maximum number of iterations over the complete dataset before
+    stopping independently of any early stopping criterion heuristics.
+
+batch_size : int, default=1024
+    Size of the mini batches.
+    For faster computations, you can set the ``batch_size`` greater than
+    256 * number of cores to enable parallelism on all cores.
+
+    .. versionchanged:: 1.0
+       `batch_size` default changed from 100 to 1024.
+
+verbose : int, default=0
+    Verbosity mode.
+
+compute_labels : bool, default=True
+    Compute label assignment and inertia for the complete dataset
+    once the minibatch optimization has converged in fit.
+
+random_state : int, RandomState instance or None, default=None
+    Determines random number generation for centroid initialization and
+    random reassignment. Use an int to make the randomness deterministic.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+tol : float, default=0.0
+    Control early stopping based on the relative center changes as
+    measured by a smoothed, variance-normalized of the mean center
+    squared position changes. This early stopping heuristics is
+    closer to the one used for the batch variant of the algorithms
+    but induces a slight computational and memory overhead over the
+    inertia heuristic.
+
+    To disable convergence detection based on normalized center
+    change, set tol to 0.0 (default).
+
+max_no_improvement : int, default=10
+    Control early stopping based on the consecutive number of mini
+    batches that does not yield an improvement on the smoothed inertia.
+
+    To disable convergence detection based on inertia, set
+    max_no_improvement to None.
+
+init_size : int, default=None
+    Number of samples to randomly sample for speeding up the
+    initialization (sometimes at the expense of accuracy): the
+    only algorithm is initialized by running a batch KMeans on a
+    random subset of the data. This needs to be larger than n_clusters.
+
+    If `None`, the heuristic is `init_size = 3 * batch_size` if
+    `3 * batch_size &lt; n_clusters`, else `init_size = 3 * n_clusters`.
+
+n_init : &apos;auto&apos; or int, default=&quot;auto&quot;
+    Number of random initializations that are tried.
+    In contrast to KMeans, the algorithm is only run once, using the best of
+    the `n_init` initializations as measured by inertia. Several runs are
+    recommended for sparse high-dimensional problems (see
+    :ref:`kmeans_sparse_high_dim`).
+
+    When `n_init=&apos;auto&apos;`, the number of runs depends on the value of init:
+    3 if using `init=&apos;random&apos;` or `init` is a callable;
+    1 if using `init=&apos;k-means++&apos;` or `init` is an array-like.
+
+    .. versionadded:: 1.2
+       Added &apos;auto&apos; option for `n_init`.
+
+    .. versionchanged:: 1.4
+       Default value for `n_init` changed to `&apos;auto&apos;` in version.
+
+reassignment_ratio : float, default=0.01
+    Control the fraction of the maximum number of counts for a center to
+    be reassigned. A higher value means that low count centers are more
+    easily reassigned, which means that the model will take longer to
+    converge, but should converge in a better clustering. However, too high
+    a value may cause convergence issues, especially with a small batch
+    size.
+
+Attributes
+----------
+
+cluster_centers_ : ndarray of shape (n_clusters, n_features)
+    Coordinates of cluster centers.
+
+labels_ : ndarray of shape (n_samples,)
+    Labels of each point (if compute_labels is set to True).
+
+inertia_ : float
+    The value of the inertia criterion associated with the chosen
+    partition if compute_labels is set to True. If compute_labels is set to
+    False, it&apos;s an approximation of the inertia based on an exponentially
+    weighted average of the batch inertiae.
+    The inertia is defined as the sum of square distances of samples to
+    their cluster center, weighted by the sample weights if provided.
+
+n_iter_ : int
+    Number of iterations over the full dataset.
+
+n_steps_ : int
+    Number of minibatches processed.
+
+    .. versionadded:: 1.0
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+KMeans : The classic implementation of the clustering method based on the
+    Lloyd&apos;s algorithm. It consumes the whole set of input data at each
+    iteration.
+
+Notes
+-----
+See https://www.eecs.tufts.edu/~dsculley/papers/fastkmeans.pdf
+
+When there are too few points in the dataset, some centers may be
+duplicated, which means that a proper clustering in terms of the number
+of requesting clusters and the number of returned clusters will not
+always match. One solution is to set `reassignment_ratio=0`, which
+prevents reassignments of clusters that are too small.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import MiniBatchKMeans
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 2], [1, 4], [1, 0],
+...               [4, 2], [4, 0], [4, 4],
+...               [4, 5], [0, 1], [2, 2],
+...               [3, 2], [5, 5], [1, -1]])
+&gt;&gt;&gt; # manually fit on batches
+&gt;&gt;&gt; kmeans = MiniBatchKMeans(n_clusters=2,
+...                          random_state=0,
+...                          batch_size=6,
+...                          n_init=&quot;auto&quot;)
+&gt;&gt;&gt; kmeans = kmeans.partial_fit(X[0:6,:])
+&gt;&gt;&gt; kmeans = kmeans.partial_fit(X[6:12,:])
+&gt;&gt;&gt; kmeans.cluster_centers_
+array([[3.375, 3.  ],
+       [0.75 , 0.5 ]])
+&gt;&gt;&gt; kmeans.predict([[0, 0], [4, 4]])
+array([1, 0], dtype=int32)
+&gt;&gt;&gt; # fit on the whole data
+&gt;&gt;&gt; kmeans = MiniBatchKMeans(n_clusters=2,
+...                          random_state=0,
+...                          batch_size=6,
+...                          max_iter=10,
+...                          n_init=&quot;auto&quot;).fit(X)
+&gt;&gt;&gt; kmeans.cluster_centers_
+array([[3.55102041, 2.48979592],
+       [1.06896552, 1.        ]])
+&gt;&gt;&gt; kmeans.predict([[0, 0], [4, 4]])
+array([1, 0], dtype=int32)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OPTICS">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Estimate clustering structure from vector array.
+
+OPTICS (Ordering Points To Identify the Clustering Structure), closely
+related to DBSCAN, finds core sample of high density and expands clusters
+from them [1]_. Unlike DBSCAN, keeps cluster hierarchy for a variable
+neighborhood radius. Better suited for usage on large datasets than the
+current sklearn implementation of DBSCAN.
+
+Clusters are then extracted using a DBSCAN-like method
+(cluster_method = &apos;dbscan&apos;) or an automatic
+technique proposed in [1]_ (cluster_method = &apos;xi&apos;).
+
+This implementation deviates from the original OPTICS by first performing
+k-nearest-neighborhood searches on all points to identify core sizes, then
+computing only the distances to unprocessed points when constructing the
+cluster order. Note that we do not employ a heap to manage the expansion
+candidates, so the time complexity will be O(n^2).
+
+Read more in the :ref:`User Guide &lt;optics&gt;`.
+
+Parameters
+----------
+min_samples : int &gt; 1 or float between 0 and 1, default=5
+    The number of samples in a neighborhood for a point to be considered as
+    a core point. Also, up and down steep regions can&apos;t have more than
+    ``min_samples`` consecutive non-steep points. Expressed as an absolute
+    number or a fraction of the number of samples (rounded to be at least
+    2).
+
+max_eps : float, default=np.inf
+    The maximum distance between two samples for one to be considered as
+    in the neighborhood of the other. Default value of ``np.inf`` will
+    identify clusters across all scales; reducing ``max_eps`` will result
+    in shorter run times.
+
+metric : str or callable, default=&apos;minkowski&apos;
+    Metric to use for distance computation. Any metric from scikit-learn
+    or scipy.spatial.distance can be used.
+
+    If metric is a callable function, it is called on each
+    pair of instances (rows) and the resulting value recorded. The callable
+    should take two arrays as input and return one value indicating the
+    distance between them. This works for Scipy&apos;s metrics, but is less
+    efficient than passing the metric name as a string. If metric is
+    &quot;precomputed&quot;, `X` is assumed to be a distance matrix and must be
+    square.
+
+    Valid values for metric are:
+
+    - from scikit-learn: [&apos;cityblock&apos;, &apos;cosine&apos;, &apos;euclidean&apos;, &apos;l1&apos;, &apos;l2&apos;,
+      &apos;manhattan&apos;]
+
+    - from scipy.spatial.distance: [&apos;braycurtis&apos;, &apos;canberra&apos;, &apos;chebyshev&apos;,
+      &apos;correlation&apos;, &apos;dice&apos;, &apos;hamming&apos;, &apos;jaccard&apos;, &apos;kulsinski&apos;,
+      &apos;mahalanobis&apos;, &apos;minkowski&apos;, &apos;rogerstanimoto&apos;, &apos;russellrao&apos;,
+      &apos;seuclidean&apos;, &apos;sokalmichener&apos;, &apos;sokalsneath&apos;, &apos;sqeuclidean&apos;,
+      &apos;yule&apos;]
+
+    Sparse matrices are only supported by scikit-learn metrics.
+    See the documentation for scipy.spatial.distance for details on these
+    metrics.
+
+    .. note::
+       `&apos;kulsinski&apos;` is deprecated from SciPy 1.9 and will removed in SciPy 1.11.
+
+p : float, default=2
+    Parameter for the Minkowski metric from
+    :class:`~sklearn.metrics.pairwise_distances`. When p = 1, this is
+    equivalent to using manhattan_distance (l1), and euclidean_distance
+    (l2) for p = 2. For arbitrary p, minkowski_distance (l_p) is used.
+
+metric_params : dict, default=None
+    Additional keyword arguments for the metric function.
+
+cluster_method : str, default=&apos;xi&apos;
+    The extraction method used to extract clusters using the calculated
+    reachability and ordering. Possible values are &quot;xi&quot; and &quot;dbscan&quot;.
+
+eps : float, default=None
+    The maximum distance between two samples for one to be considered as
+    in the neighborhood of the other. By default it assumes the same value
+    as ``max_eps``.
+    Used only when ``cluster_method=&apos;dbscan&apos;``.
+
+xi : float between 0 and 1, default=0.05
+    Determines the minimum steepness on the reachability plot that
+    constitutes a cluster boundary. For example, an upwards point in the
+    reachability plot is defined by the ratio from one point to its
+    successor being at most 1-xi.
+    Used only when ``cluster_method=&apos;xi&apos;``.
+
+predecessor_correction : bool, default=True
+    Correct clusters according to the predecessors calculated by OPTICS
+    [2]_. This parameter has minimal effect on most datasets.
+    Used only when ``cluster_method=&apos;xi&apos;``.
+
+min_cluster_size : int &gt; 1 or float between 0 and 1, default=None
+    Minimum number of samples in an OPTICS cluster, expressed as an
+    absolute number or a fraction of the number of samples (rounded to be
+    at least 2). If ``None``, the value of ``min_samples`` is used instead.
+    Used only when ``cluster_method=&apos;xi&apos;``.
+
+algorithm : {&apos;auto&apos;, &apos;ball_tree&apos;, &apos;kd_tree&apos;, &apos;brute&apos;}, default=&apos;auto&apos;
+    Algorithm used to compute the nearest neighbors:
+
+    - &apos;ball_tree&apos; will use :class:`~sklearn.neighbors.BallTree`.
+    - &apos;kd_tree&apos; will use :class:`~sklearn.neighbors.KDTree`.
+    - &apos;brute&apos; will use a brute-force search.
+    - &apos;auto&apos; (default) will attempt to decide the most appropriate
+      algorithm based on the values passed to :meth:`fit` method.
+
+    Note: fitting on sparse input will override the setting of
+    this parameter, using brute force.
+
+leaf_size : int, default=30
+    Leaf size passed to :class:`~sklearn.neighbors.BallTree` or
+    :class:`~sklearn.neighbors.KDTree`. This can affect the speed of the
+    construction and query, as well as the memory required to store the
+    tree. The optimal value depends on the nature of the problem.
+
+memory : str or object with the joblib.Memory interface, default=None
+    Used to cache the output of the computation of the tree.
+    By default, no caching is done. If a string is given, it is the
+    path to the caching directory.
+
+n_jobs : int, default=None
+    The number of parallel jobs to run for neighbors search.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+Attributes
+----------
+labels_ : ndarray of shape (n_samples,)
+    Cluster labels for each point in the dataset given to fit().
+    Noisy samples and points which are not included in a leaf cluster
+    of ``cluster_hierarchy_`` are labeled as -1.
+
+reachability_ : ndarray of shape (n_samples,)
+    Reachability distances per sample, indexed by object order. Use
+    ``clust.reachability_[clust.ordering_]`` to access in cluster order.
+
+ordering_ : ndarray of shape (n_samples,)
+    The cluster ordered list of sample indices.
+
+core_distances_ : ndarray of shape (n_samples,)
+    Distance at which each sample becomes a core point, indexed by object
+    order. Points which will never be core have a distance of inf. Use
+    ``clust.core_distances_[clust.ordering_]`` to access in cluster order.
+
+predecessor_ : ndarray of shape (n_samples,)
+    Point that a sample was reached from, indexed by object order.
+    Seed points have a predecessor of -1.
+
+cluster_hierarchy_ : ndarray of shape (n_clusters, 2)
+    The list of clusters in the form of ``[start, end]`` in each row, with
+    all indices inclusive. The clusters are ordered according to
+    ``(end, -start)`` (ascending) so that larger clusters encompassing
+    smaller clusters come after those smaller ones. Since ``labels_`` does
+    not reflect the hierarchy, usually
+    ``len(cluster_hierarchy_) &gt; np.unique(optics.labels_)``. Please also
+    note that these indices are of the ``ordering_``, i.e.
+    ``X[ordering_][start:end + 1]`` form a cluster.
+    Only available when ``cluster_method=&apos;xi&apos;``.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+DBSCAN : A similar clustering for a specified neighborhood radius (eps).
+    Our implementation is optimized for runtime.
+
+References
+----------
+.. [1] Ankerst, Mihael, Markus M. Breunig, Hans-Peter Kriegel,
+   and Jörg Sander. &quot;OPTICS: ordering points to identify the clustering
+   structure.&quot; ACM SIGMOD Record 28, no. 2 (1999): 49-60.
+
+.. [2] Schubert, Erich, Michael Gertz.
+   &quot;Improving the Cluster Structure Extracted from OPTICS Plots.&quot; Proc. of
+   the Conference &quot;Lernen, Wissen, Daten, Analysen&quot; (LWDA) (2018): 318-329.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import OPTICS
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 2], [2, 5], [3, 6],
+...               [8, 7], [8, 8], [7, 3]])
+&gt;&gt;&gt; clustering = OPTICS(min_samples=2).fit(X)
+&gt;&gt;&gt; clustering.labels_
+array([0, 0, 0, 1, 1, 1])
+
+For a more detailed example see
+:ref:`sphx_glr_auto_examples_cluster_plot_optics.py`.</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralBiclustering">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Spectral biclustering (Kluger, 2003).
+
+Partitions rows and columns under the assumption that the data has
+an underlying checkerboard structure. For instance, if there are
+two row partitions and three column partitions, each row will
+belong to three biclusters, and each column will belong to two
+biclusters. The outer product of the corresponding row and column
+label vectors gives this checkerboard structure.
+
+Read more in the :ref:`User Guide &lt;spectral_biclustering&gt;`.
+
+Parameters
+----------
+n_clusters : int or tuple (n_row_clusters, n_column_clusters), default=3
+    The number of row and column clusters in the checkerboard
+    structure.
+
+method : {&apos;bistochastic&apos;, &apos;scale&apos;, &apos;log&apos;}, default=&apos;bistochastic&apos;
+    Method of normalizing and converting singular vectors into
+    biclusters. May be one of &apos;scale&apos;, &apos;bistochastic&apos;, or &apos;log&apos;.
+    The authors recommend using &apos;log&apos;. If the data is sparse,
+    however, log normalization will not work, which is why the
+    default is &apos;bistochastic&apos;.
+
+    .. warning::
+       if `method=&apos;log&apos;`, the data must not be sparse.
+
+n_components : int, default=6
+    Number of singular vectors to check.
+
+n_best : int, default=3
+    Number of best singular vectors to which to project the data
+    for clustering.
+
+svd_method : {&apos;randomized&apos;, &apos;arpack&apos;}, default=&apos;randomized&apos;
+    Selects the algorithm for finding singular vectors. May be
+    &apos;randomized&apos; or &apos;arpack&apos;. If &apos;randomized&apos;, uses
+    :func:`~sklearn.utils.extmath.randomized_svd`, which may be faster
+    for large matrices. If &apos;arpack&apos;, uses
+    `scipy.sparse.linalg.svds`, which is more accurate, but
+    possibly slower in some cases.
+
+n_svd_vecs : int, default=None
+    Number of vectors to use in calculating the SVD. Corresponds
+    to `ncv` when `svd_method=arpack` and `n_oversamples` when
+    `svd_method` is &apos;randomized`.
+
+mini_batch : bool, default=False
+    Whether to use mini-batch k-means, which is faster but may get
+    different results.
+
+init : {&apos;k-means++&apos;, &apos;random&apos;} or ndarray of shape (n_clusters, n_features),             default=&apos;k-means++&apos;
+    Method for initialization of k-means algorithm; defaults to
+    &apos;k-means++&apos;.
+
+n_init : int, default=10
+    Number of random initializations that are tried with the
+    k-means algorithm.
+
+    If mini-batch k-means is used, the best initialization is
+    chosen and the algorithm runs once. Otherwise, the algorithm
+    is run for each initialization and the best solution chosen.
+
+random_state : int, RandomState instance, default=None
+    Used for randomizing the singular value decomposition and the k-means
+    initialization. Use an int to make the randomness deterministic.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Attributes
+----------
+rows_ : array-like of shape (n_row_clusters, n_rows)
+    Results of the clustering. `rows[i, r]` is True if
+    cluster `i` contains row `r`. Available only after calling ``fit``.
+
+columns_ : array-like of shape (n_column_clusters, n_columns)
+    Results of the clustering, like `rows`.
+
+row_labels_ : array-like of shape (n_rows,)
+    Row partition labels.
+
+column_labels_ : array-like of shape (n_cols,)
+    Column partition labels.
+
+biclusters_ : tuple of two ndarrays
+    The tuple contains the `rows_` and `columns_` arrays.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+SpectralCoclustering : Spectral Co-Clustering algorithm (Dhillon, 2001).
+
+References
+----------
+
+* :doi:`Kluger, Yuval, et. al., 2003. Spectral biclustering of microarray
+  data: coclustering genes and conditions.
+  &lt;10.1101/gr.648603&gt;`
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import SpectralBiclustering
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 1], [2, 1], [1, 0],
+...               [4, 7], [3, 5], [3, 6]])
+&gt;&gt;&gt; clustering = SpectralBiclustering(n_clusters=2, random_state=0).fit(X)
+&gt;&gt;&gt; clustering.row_labels_
+array([1, 1, 1, 0, 0, 0], dtype=int32)
+&gt;&gt;&gt; clustering.column_labels_
+array([1, 0], dtype=int32)
+&gt;&gt;&gt; clustering
+SpectralBiclustering(n_clusters=2, random_state=0)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralClustering">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Apply clustering to a projection of the normalized Laplacian.
+
+In practice Spectral Clustering is very useful when the structure of
+the individual clusters is highly non-convex, or more generally when
+a measure of the center and spread of the cluster is not a suitable
+description of the complete cluster, such as when clusters are
+nested circles on the 2D plane.
+
+If the affinity matrix is the adjacency matrix of a graph, this method
+can be used to find normalized graph cuts [1]_, [2]_.
+
+When calling ``fit``, an affinity matrix is constructed using either
+a kernel function such the Gaussian (aka RBF) kernel with Euclidean
+distance ``d(X, X)``::
+
+        np.exp(-gamma * d(X,X) ** 2)
+
+or a k-nearest neighbors connectivity matrix.
+
+Alternatively, a user-provided affinity matrix can be specified by
+setting ``affinity=&apos;precomputed&apos;``.
+
+Read more in the :ref:`User Guide &lt;spectral_clustering&gt;`.
+
+Parameters
+----------
+n_clusters : int, default=8
+    The dimension of the projection subspace.
+
+eigen_solver : {&apos;arpack&apos;, &apos;lobpcg&apos;, &apos;amg&apos;}, default=None
+    The eigenvalue decomposition strategy to use. AMG requires pyamg
+    to be installed. It can be faster on very large, sparse problems,
+    but may also lead to instabilities. If None, then ``&apos;arpack&apos;`` is
+    used. See [4]_ for more details regarding `&apos;lobpcg&apos;`.
+
+n_components : int, default=None
+    Number of eigenvectors to use for the spectral embedding. If None,
+    defaults to `n_clusters`.
+
+random_state : int, RandomState instance, default=None
+    A pseudo random number generator used for the initialization
+    of the lobpcg eigenvectors decomposition when `eigen_solver ==
+    &apos;amg&apos;`, and for the K-Means initialization. Use an int to make
+    the results deterministic across calls (See
+    :term:`Glossary &lt;random_state&gt;`).
+
+    .. note::
+        When using `eigen_solver == &apos;amg&apos;`,
+        it is necessary to also fix the global numpy seed with
+        `np.random.seed(int)` to get deterministic results. See
+        https://github.com/pyamg/pyamg/issues/139 for further
+        information.
+
+n_init : int, default=10
+    Number of time the k-means algorithm will be run with different
+    centroid seeds. The final results will be the best output of n_init
+    consecutive runs in terms of inertia. Only used if
+    ``assign_labels=&apos;kmeans&apos;``.
+
+gamma : float, default=1.0
+    Kernel coefficient for rbf, poly, sigmoid, laplacian and chi2 kernels.
+    Ignored for ``affinity=&apos;nearest_neighbors&apos;``.
+
+affinity : str or callable, default=&apos;rbf&apos;
+    How to construct the affinity matrix.
+     - &apos;nearest_neighbors&apos;: construct the affinity matrix by computing a
+       graph of nearest neighbors.
+     - &apos;rbf&apos;: construct the affinity matrix using a radial basis function
+       (RBF) kernel.
+     - &apos;precomputed&apos;: interpret ``X`` as a precomputed affinity matrix,
+       where larger values indicate greater similarity between instances.
+     - &apos;precomputed_nearest_neighbors&apos;: interpret ``X`` as a sparse graph
+       of precomputed distances, and construct a binary affinity matrix
+       from the ``n_neighbors`` nearest neighbors of each instance.
+     - one of the kernels supported by
+       :func:`~sklearn.metrics.pairwise.pairwise_kernels`.
+
+    Only kernels that produce similarity scores (non-negative values that
+    increase with similarity) should be used. This property is not checked
+    by the clustering algorithm.
+
+n_neighbors : int, default=10
+    Number of neighbors to use when constructing the affinity matrix using
+    the nearest neighbors method. Ignored for ``affinity=&apos;rbf&apos;``.
+
+eigen_tol : float, default=&quot;auto&quot;
+    Stopping criterion for eigen decomposition of the Laplacian matrix.
+    If `eigen_tol=&quot;auto&quot;` then the passed tolerance will depend on the
+    `eigen_solver`:
+
+    - If `eigen_solver=&quot;arpack&quot;`, then `eigen_tol=0.0`;
+    - If `eigen_solver=&quot;lobpcg&quot;` or `eigen_solver=&quot;amg&quot;`, then
+      `eigen_tol=None` which configures the underlying `lobpcg` solver to
+      automatically resolve the value according to their heuristics. See,
+      :func:`scipy.sparse.linalg.lobpcg` for details.
+
+    Note that when using `eigen_solver=&quot;lobpcg&quot;` or `eigen_solver=&quot;amg&quot;`
+    values of `tol&lt;1e-5` may lead to convergence issues and should be
+    avoided.
+
+    .. versionadded:: 1.2
+       Added &apos;auto&apos; option.
+
+assign_labels : {&apos;kmeans&apos;, &apos;discretize&apos;, &apos;cluster_qr&apos;}, default=&apos;kmeans&apos;
+    The strategy for assigning labels in the embedding space. There are two
+    ways to assign labels after the Laplacian embedding. k-means is a
+    popular choice, but it can be sensitive to initialization.
+    Discretization is another approach which is less sensitive to random
+    initialization [3]_.
+    The cluster_qr method [5]_ directly extract clusters from eigenvectors
+    in spectral clustering. In contrast to k-means and discretization, cluster_qr
+    has no tuning parameters and runs no iterations, yet may outperform
+    k-means and discretization in terms of both quality and speed.
+
+    .. versionchanged:: 1.1
+       Added new labeling method &apos;cluster_qr&apos;.
+
+degree : float, default=3
+    Degree of the polynomial kernel. Ignored by other kernels.
+
+coef0 : float, default=1
+    Zero coefficient for polynomial and sigmoid kernels.
+    Ignored by other kernels.
+
+kernel_params : dict of str to any, default=None
+    Parameters (keyword arguments) and values for kernel passed as
+    callable object. Ignored by other kernels.
+
+n_jobs : int, default=None
+    The number of parallel jobs to run when `affinity=&apos;nearest_neighbors&apos;`
+    or `affinity=&apos;precomputed_nearest_neighbors&apos;`. The neighbors search
+    will be done in parallel.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+verbose : bool, default=False
+    Verbosity mode.
+
+    .. versionadded:: 0.24
+
+Attributes
+----------
+affinity_matrix_ : array-like of shape (n_samples, n_samples)
+    Affinity matrix used for clustering. Available only after calling
+    ``fit``.
+
+labels_ : ndarray of shape (n_samples,)
+    Labels of each point
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+sklearn.cluster.KMeans : K-Means clustering.
+sklearn.cluster.DBSCAN : Density-Based Spatial Clustering of
+    Applications with Noise.
+
+Notes
+-----
+A distance matrix for which 0 indicates identical elements and high values
+indicate very dissimilar elements can be transformed into an affinity /
+similarity matrix that is well-suited for the algorithm by
+applying the Gaussian (aka RBF, heat) kernel::
+
+    np.exp(- dist_matrix ** 2 / (2. * delta ** 2))
+
+where ``delta`` is a free parameter representing the width of the Gaussian
+kernel.
+
+An alternative is to take a symmetric version of the k-nearest neighbors
+connectivity matrix of the points.
+
+If the pyamg package is installed, it is used: this greatly
+speeds up computation.
+
+References
+----------
+.. [1] :doi:`Normalized cuts and image segmentation, 2000
+       Jianbo Shi, Jitendra Malik
+       &lt;10.1109/34.868688&gt;`
+
+.. [2] :doi:`A Tutorial on Spectral Clustering, 2007
+       Ulrike von Luxburg
+       &lt;10.1007/s11222-007-9033-z&gt;`
+
+.. [3] `Multiclass spectral clustering, 2003
+       Stella X. Yu, Jianbo Shi
+       &lt;https://people.eecs.berkeley.edu/~jordan/courses/281B-spring04/readings/yu-shi.pdf&gt;`_
+
+.. [4] :doi:`Toward the Optimal Preconditioned Eigensolver:
+       Locally Optimal Block Preconditioned Conjugate Gradient Method, 2001
+       A. V. Knyazev
+       SIAM Journal on Scientific Computing 23, no. 2, pp. 517-541.
+       &lt;10.1137/S1064827500366124&gt;`
+
+.. [5] :doi:`Simple, direct, and efficient multi-way spectral clustering, 2019
+       Anil Damle, Victor Minden, Lexing Ying
+       &lt;10.1093/imaiai/iay008&gt;`
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import SpectralClustering
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 1], [2, 1], [1, 0],
+...               [4, 7], [3, 5], [3, 6]])
+&gt;&gt;&gt; clustering = SpectralClustering(n_clusters=2,
+...         assign_labels=&apos;discretize&apos;,
+...         random_state=0).fit(X)
+&gt;&gt;&gt; clustering.labels_
+array([1, 1, 1, 0, 0, 0])
+&gt;&gt;&gt; clustering
+SpectralClustering(assign_labels=&apos;discretize&apos;, n_clusters=2,
+    random_state=0)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SpectralCoclustering">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Spectral Co-Clustering algorithm (Dhillon, 2001).
+
+Clusters rows and columns of an array `X` to solve the relaxed
+normalized cut of the bipartite graph created from `X` as follows:
+the edge between row vertex `i` and column vertex `j` has weight
+`X[i, j]`.
+
+The resulting bicluster structure is block-diagonal, since each
+row and each column belongs to exactly one bicluster.
+
+Supports sparse matrices, as long as they are nonnegative.
+
+Read more in the :ref:`User Guide &lt;spectral_coclustering&gt;`.
+
+Parameters
+----------
+n_clusters : int, default=3
+    The number of biclusters to find.
+
+svd_method : {&apos;randomized&apos;, &apos;arpack&apos;}, default=&apos;randomized&apos;
+    Selects the algorithm for finding singular vectors. May be
+    &apos;randomized&apos; or &apos;arpack&apos;. If &apos;randomized&apos;, use
+    :func:`sklearn.utils.extmath.randomized_svd`, which may be faster
+    for large matrices. If &apos;arpack&apos;, use
+    :func:`scipy.sparse.linalg.svds`, which is more accurate, but
+    possibly slower in some cases.
+
+n_svd_vecs : int, default=None
+    Number of vectors to use in calculating the SVD. Corresponds
+    to `ncv` when `svd_method=arpack` and `n_oversamples` when
+    `svd_method` is &apos;randomized`.
+
+mini_batch : bool, default=False
+    Whether to use mini-batch k-means, which is faster but may get
+    different results.
+
+init : {&apos;k-means++&apos;, &apos;random&apos;}, or ndarray of shape             (n_clusters, n_features), default=&apos;k-means++&apos;
+    Method for initialization of k-means algorithm; defaults to
+    &apos;k-means++&apos;.
+
+n_init : int, default=10
+    Number of random initializations that are tried with the
+    k-means algorithm.
+
+    If mini-batch k-means is used, the best initialization is
+    chosen and the algorithm runs once. Otherwise, the algorithm
+    is run for each initialization and the best solution chosen.
+
+random_state : int, RandomState instance, default=None
+    Used for randomizing the singular value decomposition and the k-means
+    initialization. Use an int to make the randomness deterministic.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Attributes
+----------
+rows_ : array-like of shape (n_row_clusters, n_rows)
+    Results of the clustering. `rows[i, r]` is True if
+    cluster `i` contains row `r`. Available only after calling ``fit``.
+
+columns_ : array-like of shape (n_column_clusters, n_columns)
+    Results of the clustering, like `rows`.
+
+row_labels_ : array-like of shape (n_rows,)
+    The bicluster label of each row.
+
+column_labels_ : array-like of shape (n_cols,)
+    The bicluster label of each column.
+
+biclusters_ : tuple of two ndarrays
+    The tuple contains the `rows_` and `columns_` arrays.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+SpectralBiclustering : Partitions rows and columns under the assumption
+    that the data has an underlying checkerboard structure.
+
+References
+----------
+* :doi:`Dhillon, Inderjit S, 2001. Co-clustering documents and words using
+  bipartite spectral graph partitioning.
+  &lt;10.1145/502512.502550&gt;`
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.cluster import SpectralCoclustering
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[1, 1], [2, 1], [1, 0],
+...               [4, 7], [3, 5], [3, 6]])
+&gt;&gt;&gt; clustering = SpectralCoclustering(n_clusters=2, random_state=0).fit(X)
+&gt;&gt;&gt; clustering.row_labels_ #doctest: +SKIP
+array([0, 1, 1, 0, 0, 0], dtype=int32)
+&gt;&gt;&gt; clustering.column_labels_ #doctest: +SKIP
+array([0, 0], dtype=int32)
+&gt;&gt;&gt; clustering
+SpectralCoclustering(n_clusters=2, random_state=0)</rdfs:comment>
+        <ds_exeKGOntology:hasModule rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClusterModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
