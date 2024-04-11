@@ -66,5 +66,4 @@ visu:Plot a owl:Class ;
     rdfs:subClassOf ds:Task .
 
 visu:DataInToPlot a owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular .
+    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular .

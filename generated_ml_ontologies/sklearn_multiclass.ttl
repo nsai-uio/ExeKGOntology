@@ -155,8 +155,8 @@ Examples
 >>> clf.predict(X_test[:10])
 array([2, 1, 0, 2, 0, 2, 0, 1, 1, 1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:MulticlassModule .
+        ml:MulticlassModule,
+        ml:TrainMethod .
 
 ml:OneVsRestClassifier a owl:Class ;
     rdfs:comment """One-vs-the-rest (OvR) multiclass strategy.
@@ -266,8 +266,8 @@ Examples
 >>> clf.predict([[-19, -20], [9, 9], [-5, 5]])
 array([2, 0, 1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:MulticlassModule .
+        ml:MulticlassModule,
+        ml:TrainMethod .
 
 ml:OutputCodeClassifier a owl:Class ;
     rdfs:comment """(Error-Correcting) Output-Code multiclass strategy.
@@ -368,6 +368,6 @@ Examples
 >>> clf.predict([[0, 0, 0, 0]])
 array([1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:MulticlassModule .
+        ml:MulticlassModule,
+        ml:TrainMethod .
 

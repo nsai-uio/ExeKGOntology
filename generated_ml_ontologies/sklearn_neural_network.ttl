@@ -288,8 +288,8 @@ Examples
 >>> model.fit(X)
 BernoulliRBM(n_components=2)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeuralNetworkModule .
+        ml:NeuralNetworkModule,
+        ml:TrainMethod .
 
 ml:MLPClassifier a owl:Class ;
     rdfs:comment """Multi-layer Perceptron classifier.
@@ -563,8 +563,8 @@ array([1, 0, 1, 0, 1])
 >>> clf.score(X_test, y_test)
 0.8...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeuralNetworkModule .
+        ml:NeuralNetworkModule,
+        ml:TrainMethod .
 
 ml:MLPRegressor a owl:Class ;
     rdfs:comment """Multi-layer Perceptron regressor.
@@ -838,6 +838,6 @@ array([-0.9..., -7.1...])
 >>> regr.score(X_test, y_test)
 0.4...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeuralNetworkModule .
+        ml:NeuralNetworkModule,
+        ml:TrainMethod .
 

@@ -142,8 +142,8 @@ Examples
 >>> skew([2, 8, 0, 4, 1, 9, 9, 0])
 0.2650554122698573""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:StatsModule .
+        stats:StatisticCalculationMethod,
+        stats:StatsModule .
 
 stats:Kurtosis a owl:Class ;
     rdfs:comment """Compute the kurtosis (Fisher or Pearson) of a dataset.
@@ -248,6 +248,6 @@ The Laplace distribution has a heavier tail than the normal distribution.
 The uniform distribution (which has negative kurtosis) has the thinnest
 tail.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:StatsModule .
+        stats:StatisticCalculationMethod,
+        stats:StatsModule .
 

@@ -37,16 +37,6 @@ ds:hasParameter a owl:DatatypeProperty ;
 #    Object Properties
 #################################################################
 
-ds:hasDataSemantics a owl:ObjectProperty ;
-    rdfs:domain ds:DataEntity ;
-    rdfs:range  ds:DataSemantics .
-
-
-ds:hasDataStructure a owl:ObjectProperty ;
-    rdfs:domain ds:DataEntity ;
-    rdfs:range  ds:DataStructure .
-
-
 ds:hasInput a owl:ObjectProperty ;
     rdfs:domain ds:Task ;
     rdfs:range  ds:DataEntity .
@@ -71,10 +61,6 @@ ds:hasStartTask a owl:ObjectProperty ;
     rdfs:domain ds:Pipeline ;
     rdfs:range  ds:AtomicTask .
 
-ds:hasModule a owl:ObjectProperty ;
-    rdfs:domain ds:AtomicMethod ;
-    rdfs:range  ds:Module .
-
 #################################################################
 #    Classes
 #################################################################
@@ -83,7 +69,7 @@ ds:AtomicTask a owl:Class ;
     rdfs:subClassOf ds:Task .
 
 ds:AtomicMethod a owl:Class ;
-    rdfs:subClassOf ds:Method .
+    rdfs:subClassOf ds:Method, ds:Module.
 
 ds:Data
     a owl:Class .

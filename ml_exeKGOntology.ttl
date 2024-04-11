@@ -22,8 +22,7 @@ ml:hasPerformanceCalculationMethod a owl:ObjectProperty;
     rdfs:range ml:PerformanceCalculationMethod.
 
 ml:DataOutConcatenatedData a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Tabular .
+    rdfs:subClassOf ds:DataEntity, ds:Tabular.
 
 ml:hasConcatenationOutput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasOutput;
@@ -47,20 +46,16 @@ ml:hasPrepareTransformerMethod a owl:ObjectProperty;
     rdfs:domain ml:PrepareTransformer.
 
 ml:DataOutSplittedTestDataX a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:DataOutSplittedTestDataY a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:DataOutSplittedTrainDataX a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:DataOutSplittedTrainDataY a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:hasDataSplittingOutput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasOutput;
@@ -69,12 +64,10 @@ ml:hasDataSplittingOutput a owl:ObjectProperty;
         ml:DataOutSplittedTrainDataY.
 
 ml:DataInTestModel a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Model .
+    rdfs:subClassOf ds:DataEntity, ds:Model.
 
 ml:DataInTestX a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:hasTestInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
@@ -86,8 +79,7 @@ ml:hasTestMethod a owl:ObjectProperty;
     rdfs:domain ml:Test.
 
 ml:DataOutTrainModel a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Model .
+    rdfs:subClassOf ds:DataEntity, ds:Model.
 
 ml:hasTrainOutput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasOutput;
@@ -95,8 +87,7 @@ ml:hasTrainOutput a owl:ObjectProperty;
     rdfs:range ml:DataOutTrainModel.
 
 ml:DataOutPredictedValueTest a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector.
 
 ml:hasTestOutput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasOutput;
@@ -104,8 +95,7 @@ ml:hasTestOutput a owl:ObjectProperty;
     rdfs:range ml:DataOutPredictedValueTest.
 
 ml:DataInConcatenation a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Vector .
+    rdfs:subClassOf ds:DataEntity, ds:Vector.
 
 ml:hasConcatenationInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
@@ -118,12 +108,10 @@ ml:hasPerformanceCalculationOutput a owl:ObjectProperty;
     rdfs:range ml:DataOutScore.
 
 ml:DataInTrainX a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:DataInTrainY a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:hasTrainInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
@@ -136,12 +124,10 @@ ml:hasPerformanceCalculationInput a owl:ObjectProperty;
     rdfs:range ml:DataInPredictedY, ml:DataInRealY.
 
 ml:DataInDataSplittingX a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular .
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:DataInDataSplittingY a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:hasDataSplittingInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
@@ -178,20 +164,16 @@ ml:TrainMethod a owl:Class;
     rdfs:subClassOf ds:Method.
 
 ml:DataInPredictedY a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector.
 
 ml:DataInRealY a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:DataOutScore a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:SingleValue .
+    rdfs:subClassOf ds:DataEntity, ds:SingleValue.
 
 ml:DataOutTransformer a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:DataTransformer .
+    rdfs:subClassOf ds:DataEntity, ds:DataTransformer.
 
 ml:hasPrepareTransformerOutput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasOutput;
@@ -199,8 +181,7 @@ ml:hasPrepareTransformerOutput a owl:ObjectProperty;
     rdfs:range ml:DataOutTransformer.
 
 ml:DataInToTransform a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:PrepareTransformer a owl:Class;
     rdfs:subClassOf ds:Task.
@@ -219,12 +200,10 @@ ml:hasTransformInput a owl:ObjectProperty;
     rdfs:range ml:DataInToTransform, ml:DataInTransformer.
 
 ml:DataInTransformer a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:DataTransformer .
+    rdfs:subClassOf ds:DataEntity, ds:DataTransformer.
 
 ml:DataOutTransformed a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
 ml:hasTransformOutput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasOutput;
@@ -238,5 +217,4 @@ ml:PrepareTransformerAndTransform a owl:Class;
     rdfs:subClassOf ds:Task, ml:PrepareTransformer, ml:Transform.
 
 ml:DataInToPrepareTransformer a owl:Class;
-    rdfs:subClassOf ds:DataEntity;
-    ds:hasDataStructure ds:Matrix, ds:Vector, ds:Tabular.
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.

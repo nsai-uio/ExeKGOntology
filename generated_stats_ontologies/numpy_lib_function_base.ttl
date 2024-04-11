@@ -226,8 +226,8 @@ array([7.,  2.])
 3.5
 >>> assert not np.all(a==b)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FunctionBaseModule .
+        stats:FunctionBaseModule,
+        stats:StatisticCalculationMethod .
 
 stats:Average a owl:Class ;
     rdfs:comment """Compute the weighted average along the specified axis.
@@ -339,8 +339,8 @@ array([[0.5],
        [2.5],
        [4.5]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FunctionBaseModule .
+        stats:FunctionBaseModule,
+        stats:StatisticCalculationMethod .
 
 stats:FunctionBaseModule a owl:Class ;
     rdfs:subClassOf stats:LibModule .
@@ -469,8 +469,8 @@ array([[ 1.        ,  0.77598074, -0.47458546, -0.75078643, -0.9665554 ,
        [ 0.22423734, -0.44069024,  0.75137473,  0.47536961, -0.46666491,
          1.        ]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FunctionBaseModule .
+        stats:FunctionBaseModule,
+        stats:StatisticCalculationMethod .
 
 stats:Percentile a owl:Class ;
     rdfs:comment """Compute the q-th percentile of the data along the specified axis.
@@ -740,8 +740,8 @@ References
    "Sample quantiles in statistical packages,"
    The American Statistician, 50(4), pp. 361-365, 1996""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FunctionBaseModule .
+        stats:FunctionBaseModule,
+        stats:StatisticCalculationMethod .
 
 stats:Quantile a owl:Class ;
     rdfs:comment """Compute the q-th quantile of the data along the specified axis.
@@ -972,8 +972,8 @@ References
    "Sample quantiles in statistical packages,"
    The American Statistician, 50(4), pp. 361-365, 1996""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FunctionBaseModule .
+        stats:FunctionBaseModule,
+        stats:StatisticCalculationMethod .
 
 stats:Cov a owl:Class ;
     rdfs:comment """Estimate a covariance matrix, given data and weights.
@@ -1094,6 +1094,6 @@ array([[11.71      , -4.286     ], # may vary
 >>> np.cov(x)
 array(11.71)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FunctionBaseModule .
+        stats:FunctionBaseModule,
+        stats:StatisticCalculationMethod .
 

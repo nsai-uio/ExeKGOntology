@@ -284,8 +284,8 @@ Fold 1:
   Train: index=[0 2]
   Test:  index=[1 3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
@@ -376,8 +376,8 @@ StratifiedKFold : Takes class information into account to avoid building
     folds with imbalanced class proportions (for binary or multiclass
     classification tasks).""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:LeavePGroupsOut a owl:Class ;
     rdfs:comment """Leave P Group(s) Out cross-validator.
@@ -433,8 +433,8 @@ See Also
 --------
 GroupKFold : K-fold iterator variant with non-overlapping groups.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:LeavePOut a owl:Class ;
     rdfs:comment """Leave-P-Out cross-validator.
@@ -493,8 +493,8 @@ Fold 5:
   Train: index=[0 1]
   Test:  index=[2 3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:CheckCv a owl:Class ;
     rdfs:comment """Input checker utility for building a cross-validator.
@@ -540,8 +540,8 @@ KFold(...)
 >>> check_cv(cv=5, y=[1, 1, 0, 0, 0, 0], classifier=True)
 StratifiedKFold(...)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:KFold a owl:Class ;
     rdfs:comment """K-Fold cross-validator.
@@ -619,8 +619,8 @@ GroupKFold : K-fold iterator variant with non-overlapping groups.
 
 RepeatedKFold : Repeats K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:LearningCurveDisplay a owl:Class ;
     rdfs:comment """Learning Curve visualization.
@@ -700,8 +700,8 @@ Examples
 <...>
 >>> plt.show()""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:RepeatedKFold a owl:Class ;
     rdfs:comment """Repeated K-Fold cross validator.
@@ -762,8 +762,8 @@ See Also
 --------
 RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:RepeatedStratifiedKFold a owl:Class ;
     rdfs:comment """Repeated Stratified K-Fold cross validator.
@@ -826,8 +826,8 @@ See Also
 --------
 RepeatedKFold : Repeats K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:StratifiedGroupKFold a owl:Class ;
     rdfs:comment """Stratified K-Fold iterator variant with non-overlapping groups.
@@ -927,8 +927,8 @@ StratifiedKFold: Takes class information into account to build folds which
 
 GroupKFold: K-fold iterator variant with non-overlapping groups.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:StratifiedKFold a owl:Class ;
     rdfs:comment """Stratified K-Fold cross-validator.
@@ -1007,8 +1007,8 @@ See Also
 --------
 RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:GroupShuffleSplit a owl:Class ;
     rdfs:comment """Shuffle-Group(s)-Out cross-validation iterator.
@@ -1094,8 +1094,8 @@ ShuffleSplit : Shuffles samples to create independent test/train sets.
 
 LeavePGroupsOut : Train set leaves out all possible subsets of `p` groups.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:ShuffleSplit a owl:Class ;
     rdfs:comment """Random permutation cross-validator.
@@ -1188,8 +1188,8 @@ Fold 4:
   Train: index=[3 5 1]
   Test:  index=[2 4]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:StratifiedShuffleSplit a owl:Class ;
     rdfs:comment """Stratified ShuffleSplit cross-validator.
@@ -1264,8 +1264,8 @@ Fold 4:
   Train: index=[0 5 1]
   Test:  index=[3 4 2]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:TimeSeriesSplit a owl:Class ;
     rdfs:comment """Time Series cross-validator.
@@ -1385,8 +1385,8 @@ The training set has size ``i * n_samples // (n_splits + 1)
 with a test set of size ``n_samples//(n_splits + 1)`` by default,
 where ``n_samples`` is the number of samples.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:ValidationCurveDisplay a owl:Class ;
     rdfs:comment """Validation Curve visualization.
@@ -1472,8 +1472,8 @@ Examples
 <...>
 >>> plt.show()""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:TrainTestSplit a owl:Class ;
     rdfs:comment """Split arrays or matrices into random train and test subsets.
@@ -1560,8 +1560,8 @@ array([[2, 3],
 >>> train_test_split(y, shuffle=False)
 [[0, 1, 2], [3, 4]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:PermutationTestScore a owl:Class ;
     rdfs:comment """Evaluate the significance of a cross-validated score with permutations.
@@ -1697,8 +1697,8 @@ Permutation Scores: 0.505 +/- 0.057
 >>> print(f"P-value: {pvalue:.3f}")
 P-value: 0.010""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:CrossValPredict a owl:Class ;
     rdfs:comment """Generate cross-validated estimates for each input data point.
@@ -1840,8 +1840,8 @@ Examples
 >>> lasso = linear_model.Lasso()
 >>> y_pred = cross_val_predict(lasso, X, y, cv=3)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:CrossValScore a owl:Class ;
     rdfs:comment """Evaluate a score by cross-validation.
@@ -1977,8 +1977,8 @@ Examples
 >>> print(cross_val_score(lasso, X, y, cv=3))
 [0.3315057  0.08022103 0.03531816]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:ValidationCurve a owl:Class ;
     rdfs:comment """Validation curve.
@@ -2100,8 +2100,8 @@ The average train accuracy is 0.81
 >>> print(f"The average test accuracy is {test_scores.mean():.2f}")
 The average test accuracy is 0.81""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:CrossValidate a owl:Class ;
     rdfs:comment """Evaluate metric(s) by cross-validation and also record fit/score times.
@@ -2313,8 +2313,8 @@ Multiple metric evaluation using ``cross_validate``
 >>> print(scores['train_r2'])
 [0.28009951 0.3908844  0.22784907]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:LearningCurve a owl:Class ;
     rdfs:comment """Learning curve.
@@ -2474,8 +2474,8 @@ The average test accuracy is 0.90
 The average train accuracy is 1.00
 The average test accuracy is 0.93""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:ModelSelectionModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .

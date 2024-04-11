@@ -348,8 +348,8 @@ NearestCentroid()
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:NearestNeighbors a owl:Class ;
     rdfs:comment """Unsupervised learner for implementing neighbor searches.
@@ -475,8 +475,8 @@ array([[2, 0]]...)
 >>> np.asarray(nbrs[0][0])
 array(2)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:KNeighborsRegressor a owl:Class ;
     rdfs:comment """Regression based on k-nearest neighbors.
@@ -621,8 +621,8 @@ KNeighborsRegressor(...)
 >>> print(neigh.predict([[1.5]]))
 [0.5]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:KNeighborsTransformer a owl:Class ;
     rdfs:comment """Transform X into a (weighted) graph of k nearest neighbors.
@@ -746,8 +746,8 @@ Examples
 >>> X_dist_graph.shape
 (178, 178)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:NeighborhoodComponentsAnalysis a owl:Class ;
     rdfs:comment """Neighborhood Components Analysis.
@@ -898,8 +898,8 @@ KNeighborsClassifier(...)
 >>> print(knn.score(nca.transform(X_test), y_test))
 0.961904...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:PrepareTransformerMethod .
 
 ml:RadiusNeighborsRegressor a owl:Class ;
     rdfs:comment """Regression based on neighbors within a fixed radius.
@@ -1033,8 +1033,8 @@ RadiusNeighborsRegressor(...)
 >>> print(neigh.predict([[1.5]]))
 [0.5]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:RadiusNeighborsTransformer a owl:Class ;
     rdfs:comment """Transform X into a (weighted) graph of neighbors nearer than a radius.
@@ -1154,8 +1154,8 @@ Examples
 >>> print(counts)
 [ 29  15 111  11  12]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:KNeighborsClassifier a owl:Class ;
     rdfs:comment """Classifier implementing the k-nearest neighbors vote.
@@ -1304,8 +1304,8 @@ KNeighborsClassifier(...)
 >>> print(neigh.predict_proba([[0.9]]))
 [[0.666... 0.333...]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:KernelDensity a owl:Class ;
     rdfs:comment """Kernel Density Estimation.
@@ -1399,8 +1399,8 @@ Compute a gaussian kernel density estimate with a fixed bandwidth.
 >>> log_density
 array([-1.52955942, -1.51462041, -1.60244657])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:LocalOutlierFactor a owl:Class ;
     rdfs:comment """Unsupervised Outlier Detection using the Local Outlier Factor (LOF).
@@ -1567,8 +1567,8 @@ array([ 1,  1, -1,  1])
 >>> clf.negative_outlier_factor_
 array([ -0.9821...,  -1.0370..., -73.3697...,  -0.9821...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:NeighborsModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -1729,6 +1729,6 @@ RadiusNeighborsClassifier(...)
 >>> print(neigh.predict_proba([[1.0]]))
 [[0.66666667 0.33333333]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 

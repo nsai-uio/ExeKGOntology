@@ -373,8 +373,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(regr.predict([[0, 0, 0, 0]]))
 [-2.384...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:OneClassSVM a owl:Class ;
     rdfs:comment """Unsupervised Outlier Detection.
@@ -507,8 +507,8 @@ array([-1,  1,  1,  1, -1])
 >>> clf.score_samples(X)
 array([1.7798..., 2.0547..., 2.0556..., 2.0561..., 1.7332...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:NuSVR a owl:Class ;
     rdfs:comment """Nu Support Vector Regression.
@@ -651,8 +651,8 @@ Examples
 Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('nusvr', NuSVR(nu=0.1))])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:SVR a owl:Class ;
     rdfs:comment """Epsilon-Support Vector Regression.
@@ -802,8 +802,8 @@ Examples
 Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('svr', SVR(epsilon=0.2))])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:LinearSVC a owl:Class ;
     rdfs:comment """Linear Support Vector Classification.
@@ -1001,8 +1001,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(clf.predict([[0, 0, 0, 0]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:NuSVC a owl:Class ;
     rdfs:comment """Nu-Support Vector Classification.
@@ -1216,8 +1216,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()), ('nusvc', NuSVC())])
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:SVC a owl:Class ;
     rdfs:comment """C-Support Vector Classification.
@@ -1446,6 +1446,6 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 

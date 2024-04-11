@@ -618,8 +618,8 @@ In the following example, we drop the `'lr'` estimator with
 >>> len(er.estimators_)
 2""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:AdaBoostRegressor a owl:Class ;
     rdfs:comment """An AdaBoost regressor.
@@ -734,8 +734,8 @@ array([4.7972...])
 >>> regr.score(X, y)
 0.9771...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:VotingClassifier a owl:Class ;
     rdfs:comment """Soft Voting/Majority Rule classifier for unfitted estimators.
@@ -869,8 +869,8 @@ Setting `flatten_transform=True` with `voting='soft'` flattens output shape of
 >>> print(eclf3.transform(X).shape)
 (6, 6)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:AdaBoostClassifier a owl:Class ;
     rdfs:comment """An AdaBoost classifier.
@@ -1013,8 +1013,8 @@ array([1])
 >>> clf.score(X, y)
 0.96...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:StackingRegressor a owl:Class ;
     rdfs:comment """Stack of estimators with a final regressor.
@@ -1155,8 +1155,8 @@ Examples
 >>> reg.fit(X_train, y_train).score(X_test, y_test)
 0.3...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:StackingClassifier a owl:Class ;
     rdfs:comment """Stack of estimators with a final classifier.
@@ -1331,8 +1331,8 @@ Examples
 >>> clf.fit(X_train, y_train).score(X_test, y_test)
 0.9...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:IsolationForest a owl:Class ;
     rdfs:comment """Isolation Forest Algorithm.
@@ -1503,8 +1503,8 @@ array([ 1,  1, -1])
 For an example of using isolation forest for anomaly detection see
 :ref:`sphx_glr_auto_examples_ensemble_plot_isolation_forest.py`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:BaggingClassifier a owl:Class ;
     rdfs:comment """A Bagging classifier.
@@ -1673,8 +1673,8 @@ Examples
 >>> clf.predict([[0, 0, 0, 0]])
 array([1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:BaggingRegressor a owl:Class ;
     rdfs:comment """A Bagging regressor.
@@ -1834,8 +1834,8 @@ Examples
 >>> regr.predict([[0, 0, 0, 0]])
 array([-2.8720...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:RandomTreesEmbedding a owl:Class ;
     rdfs:comment """An ensemble of totally random trees.
@@ -2016,8 +2016,8 @@ array([[0., 1., 1., 0., 1., 0., 0., 1., 1., 0.],
        [1., 0., 1., 0., 1., 0., 1., 0., 1., 0.],
        [0., 1., 1., 0., 1., 0., 0., 1., 1., 0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:PrepareTransformerMethod .
 
 ml:ExtraTreesRegressor a owl:Class ;
     rdfs:comment """An extra-trees regressor.
@@ -2289,8 +2289,8 @@ Examples
 >>> reg.score(X_test, y_test)
 0.2727...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:RandomForestRegressor a owl:Class ;
     rdfs:comment """A random forest regressor.
@@ -2583,8 +2583,8 @@ RandomForestRegressor(...)
 >>> print(regr.predict([[0, 0, 0, 0]]))
 [-8.32987858]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:EnsembleModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -2883,8 +2883,8 @@ ExtraTreesClassifier(random_state=0)
 >>> clf.predict([[0, 0, 0, 0]])
 array([1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:RandomForestClassifier a owl:Class ;
     rdfs:comment """A random forest classifier.
@@ -3194,8 +3194,8 @@ RandomForestClassifier(...)
 >>> print(clf.predict([[0, 0, 0, 0]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:GradientBoostingClassifier a owl:Class ;
     rdfs:comment """Gradient Boosting for classification.
@@ -3522,8 +3522,8 @@ The following example shows how to fit a gradient boosting classifier with
 >>> clf.score(X_test, y_test)
 0.913...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:GradientBoostingRegressor a owl:Class ;
     rdfs:comment """Gradient Boosting for regression.
@@ -3838,8 +3838,8 @@ array([-61...])
 >>> reg.score(X_test, y_test)
 0.4...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:HistGradientBoostingRegressor a owl:Class ;
     rdfs:comment """Histogram-based Gradient Boosting Regression Tree.
@@ -4091,9 +4091,9 @@ Examples
 >>> est.score(X, y)
 0.92...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule,
-        ml:GradientBoostingModule .
+        ml:EnsembleModule,
+        ml:GradientBoostingModule,
+        ml:TrainMethod .
 
 ml:HistGradientBoostingClassifier a owl:Class ;
     rdfs:comment """Histogram-based Gradient Boosting Classification Tree.
@@ -4352,7 +4352,7 @@ Examples
 >>> clf.score(X, y)
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule,
-        ml:GradientBoostingModule .
+        ml:EnsembleModule,
+        ml:GradientBoostingModule,
+        ml:TrainMethod .
 

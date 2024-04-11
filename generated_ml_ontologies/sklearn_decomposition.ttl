@@ -646,8 +646,8 @@ IncrementalPCA(batch_size=200, n_components=7)
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:TruncatedSVD a owl:Class ;
     rdfs:comment """Dimensionality reduction using truncated SVD (aka LSA).
@@ -781,8 +781,8 @@ TruncatedSVD(n_components=5, n_iter=7, random_state=42)
 >>> print(svd.singular_values_)
 [35.2410...  4.5981...   4.5420...  4.4486...  4.3288...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:FactorAnalysis a owl:Class ;
     rdfs:comment """Factor Analysis (FA).
@@ -910,8 +910,8 @@ Examples
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:SparseCoder a owl:Class ;
     rdfs:comment """Sparse coding.
@@ -1031,8 +1031,8 @@ Examples
 array([[ 0.,  0., -1.,  0.,  0.],
        [ 0.,  1.,  1.,  0.,  0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:PCA a owl:Class ;
     rdfs:comment """Principal component analysis (PCA).
@@ -1278,8 +1278,8 @@ PCA(n_components=1, svd_solver='arpack')
 >>> print(pca.singular_values_)
 [6.30061...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:FastICA a owl:Class ;
     rdfs:comment """FastICA: a fast algorithm for Independent Component Analysis.
@@ -1416,8 +1416,8 @@ Examples
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:SparsePCA a owl:Class ;
     rdfs:comment """Sparse Principal Components Analysis (SparsePCA).
@@ -1532,8 +1532,8 @@ SparsePCA(...)
 >>> np.mean(transformer.components_ == 0)
 0.9666...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:NMF a owl:Class ;
     rdfs:comment """Non-Negative Matrix Factorization (NMF).
@@ -1741,8 +1741,8 @@ Examples
 >>> W = model.fit_transform(X)
 >>> H = model.components_""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:DecompositionModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -1886,8 +1886,8 @@ MiniBatchSparsePCA(...)
 >>> np.mean(transformer.components_ == 0)
 0.9...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:KernelPCA a owl:Class ;
     rdfs:comment """Kernel Principal component analysis (KPCA) [1]_.
@@ -2098,8 +2098,8 @@ Examples
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:LatentDirichletAllocation a owl:Class ;
     rdfs:comment """Latent Dirichlet Allocation with online variational Bayes algorithm.
@@ -2280,8 +2280,8 @@ LatentDirichletAllocation(...)
 array([[0.00360392, 0.25499205, 0.0036211 , 0.64236448, 0.09541846],
        [0.15297572, 0.00362644, 0.44412786, 0.39568399, 0.003586  ]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:MiniBatchNMF a owl:Class ;
     rdfs:comment """Mini-Batch Non-Negative Matrix Factorization (NMF).
@@ -2486,8 +2486,8 @@ Examples
 >>> W = model.fit_transform(X)
 >>> H = model.components_""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:DictionaryLearning a owl:Class ;
     rdfs:comment """Dictionary learning.
@@ -2680,8 +2680,8 @@ the original signal:
 >>> np.mean(np.sum((X_hat - X) ** 2, axis=1) / np.sum(X ** 2, axis=1))
 0.05...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:MiniBatchDictionaryLearning a owl:Class ;
     rdfs:comment """Mini-batch dictionary learning.
@@ -2894,6 +2894,6 @@ the original signal:
 >>> np.mean(np.sum((X_hat - X) ** 2, axis=1) / np.sum(X ** 2, axis=1))
 0.052...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 

@@ -150,8 +150,8 @@ GaussianNB()
 >>> print(clf_pf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:MultinomialNB a owl:Class ;
     rdfs:comment """Naive Bayes classifier for multinomial models.
@@ -244,8 +244,8 @@ MultinomialNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:BernoulliNB a owl:Class ;
     rdfs:comment """Naive Bayes classifier for multivariate Bernoulli models.
@@ -348,8 +348,8 @@ BernoulliNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:CategoricalNB a owl:Class ;
     rdfs:comment """Naive Bayes classifier for categorical features.
@@ -454,8 +454,8 @@ CategoricalNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:ComplementNB a owl:Class ;
     rdfs:comment """The Complement Naive Bayes classifier described in Rennie et al. (2003).
@@ -557,8 +557,8 @@ ComplementNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:NaiveBayesModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .

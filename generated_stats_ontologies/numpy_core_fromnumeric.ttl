@@ -153,8 +153,8 @@ unsigned integers with the same bit width:
 >>> np.ptp(y, axis=1).view(np.uint8)
 array([126, 127, 128, 129], dtype=uint8)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FromnumericModule .
+        stats:FromnumericModule,
+        stats:StatisticCalculationMethod .
 
 stats:StatisticCalculation a owl:Class .
 
@@ -263,8 +263,8 @@ Specifying a where argument:
 >>> np.mean(a, where=[[True], [False], [False]])
 9.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FromnumericModule .
+        stats:FromnumericModule,
+        stats:StatisticCalculationMethod .
 
 stats:Std a owl:Class ;
     rdfs:comment """Compute the standard deviation along the specified axis.
@@ -381,8 +381,8 @@ Specifying a where argument:
 >>> np.std(a, where=[[True], [True], [False]])
 2.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FromnumericModule .
+        stats:FromnumericModule,
+        stats:StatisticCalculationMethod .
 
 stats:Var a owl:Class ;
     rdfs:comment """Compute the variance along the specified axis.
@@ -498,6 +498,6 @@ Specifying a where argument:
 >>> np.var(a, where=[[True], [True], [False]])
 4.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        stats:StatisticCalculationMethod ;
-    ds:hasModule stats:FromnumericModule .
+        stats:FromnumericModule,
+        stats:StatisticCalculationMethod .
 

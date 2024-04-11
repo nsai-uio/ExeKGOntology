@@ -3200,8 +3200,8 @@ are a worse choice than the expected value of random labels::
   >>> adjusted_rand_score([0, 0, 1, 1], [0, 1, 0, 1])
   -0.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:Auc a owl:Class ;
     rdfs:comment """Compute Area Under the Curve (AUC) using the trapezoidal rule.
@@ -3241,8 +3241,8 @@ Examples
 >>> metrics.auc(fpr, tpr)
 0.75""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:BayesianRegression a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -3296,8 +3296,8 @@ Examples
 >>> calinski_harabasz_score(X, kmeans.labels_)
 114.8...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:Clustering a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -3369,8 +3369,8 @@ assignment cannot be complete::
   >>> print(completeness_score([0, 0, 0, 0], [0, 1, 2, 3]))
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:CoverageError a owl:Class ;
     rdfs:comment """Coverage error measure.
@@ -3420,8 +3420,8 @@ Examples
 >>> coverage_error(y_true, y_score)
 1.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:DataProcessing a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -3474,8 +3474,8 @@ Examples
 >>> davies_bouldin_score(X, labels)
 0.12...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:DecisionTreeRegression a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -3507,8 +3507,8 @@ Examples
 >>> "roc_auc" in all_scorers
 True""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:HammingLoss a owl:Class ;
     rdfs:comment """Compute the average Hamming loss.
@@ -3585,8 +3585,8 @@ In the multilabel case with binary label indicators:
 >>> hamming_loss(np.array([[0, 1], [1, 1]]), np.zeros((2, 2)))
 0.75""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:HdbscanModule a owl:Class ;
     rdfs:subClassOf ml:ClusterModule .
@@ -3657,8 +3657,8 @@ homogeneous labeling::
   >>> print("%.6f" % homogeneity_score([0, 0, 1, 1], [0, 0, 0, 0]))
   0.0...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:InstanceBasedRegression a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -3741,8 +3741,8 @@ array([[  5.,   0.,  -5.],
        [  0.,  14., -14.],
        [ -5., -14.,  19.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:LabelRankingAveragePrecisionScore a owl:Class ;
     rdfs:comment """Compute ranking-based average precision.
@@ -3788,8 +3788,8 @@ Examples
 >>> label_ranking_average_precision_score(y_true, y_score)
 0.416...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:LabelRankingLoss a owl:Class ;
     rdfs:comment """Compute Ranking loss measure.
@@ -3841,8 +3841,8 @@ Examples
 >>> label_ranking_loss(y_true, y_score)
 0.75...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:LeastAngleRegression a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -3911,8 +3911,8 @@ Examples
 >>> matthews_corrcoef(y_true, y_pred)
 -0.33...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MaxError a owl:Class ;
     rdfs:comment """The max_error metric calculates the maximum residual error.
@@ -3940,8 +3940,8 @@ Examples
 >>> max_error(y_true, y_pred)
 1""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanGammaDeviance a owl:Class ;
     rdfs:comment """Mean Gamma deviance regression loss.
@@ -3976,8 +3976,8 @@ Examples
 >>> mean_gamma_deviance(y_true, y_pred)
 1.0568...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanPoissonDeviance a owl:Class ;
     rdfs:comment """Mean Poisson deviance regression loss.
@@ -4011,8 +4011,8 @@ Examples
 >>> mean_poisson_deviance(y_true, y_pred)
 1.4260...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MulticlassClassification a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -4082,8 +4082,8 @@ have some off-diagonal non-zero entries:
 
 Note that the matrix is not symmetric.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PerformanceCalculation a owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
@@ -4129,8 +4129,8 @@ Fold 1:
   Train: index=[0 2]
   Test:  index=[1 3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:RandScore a owl:Class ;
     rdfs:comment """Rand index.
@@ -4190,8 +4190,8 @@ are complete but may not always be pure, hence penalized:
   >>> rand_score([0, 0, 1, 2], [0, 0, 1, 1])
   0.83...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RandomForestRegression a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -4380,8 +4380,8 @@ In the multilabel case with binary label indicators:
 >>> accuracy_score(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
 0.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:AdjustedMutualInfoScore a owl:Class ;
     rdfs:comment """Adjusted Mutual Information between two clusterings.
@@ -4471,8 +4471,8 @@ the assignment is totally in-complete, hence the AMI is null::
   ... # doctest: +SKIP
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:BalancedAccuracyScore a owl:Class ;
     rdfs:comment """Compute the balanced accuracy.
@@ -4543,8 +4543,8 @@ Examples
 >>> balanced_accuracy_score(y_true, y_pred)
 0.625""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:BrierScoreLoss a owl:Class ;
     rdfs:comment """Compute the Brier score loss.
@@ -4616,8 +4616,8 @@ Examples
 >>> brier_score_loss(y_true, np.array(y_prob) > 0.5)
 0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ClassLikelihoodRatios a owl:Class ;
     rdfs:comment """Compute binary classification positive and negative likelihood ratios.
@@ -4719,8 +4719,8 @@ positive_class]`
 >>> class_likelihood_ratios(y_true, y_pred, labels=["non-cat", "cat"])
 (1.5, 0.75)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:CohenKappaScore a owl:Class ;
     rdfs:comment """Compute Cohen's kappa: a statistic that measures inter-annotator agreement.
@@ -4786,8 +4786,8 @@ Examples
 >>> cohen_kappa_score(y1, y2)
 0.6875""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ConfusionMatrix a owl:Class ;
     rdfs:comment """Compute confusion matrix to evaluate the accuracy of a classification.
@@ -4872,8 +4872,8 @@ In the binary case, we can extract true positives, etc. as follows:
 >>> (tn, fp, fn, tp)
 (0, 2, 1, 1)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:D2AbsoluteErrorScore a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of absolute error explained.
@@ -4954,8 +4954,8 @@ array([0.8125    , 0.57142857])
 >>> d2_absolute_error_score(y_true, y_pred)
 -1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:D2TweedieScore a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of Tweedie deviance explained.
@@ -5033,8 +5033,8 @@ Examples
 >>> d2_tweedie_score(y_true, y_true, power=2)
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:DetCurve a owl:Class ;
     rdfs:comment """Compute error rates for different probability thresholds.
@@ -5105,8 +5105,8 @@ array([0. , 0.5, 0.5])
 >>> thresholds
 array([0.35, 0.4 , 0.8 ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:EuclideanDistances a owl:Class ;
     rdfs:comment """Compute the distance matrix between each pair from a vector array X and Y.
@@ -5178,8 +5178,8 @@ array([[0., 1.],
 array([[1.        ],
        [1.41421356]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:FeatureExtractionModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -5251,8 +5251,8 @@ the assignment is totally random, hence the FMI is null::
   >>> fowlkes_mallows_score([0, 0, 0, 0], [0, 1, 2, 3])
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:GaussianNB a owl:Class ;
     rdfs:comment """Gaussian Naive Bayes (GaussianNB).
@@ -5334,8 +5334,8 @@ GaussianNB()
 >>> print(clf_pf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:GetScorer a owl:Class ;
     rdfs:comment """Get a scorer from string.
@@ -5373,8 +5373,8 @@ Examples
 >>> accuracy(classifier, X, y)
 0.4""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:GradientBoostingModule a owl:Class ;
     rdfs:subClassOf ml:EnsembleModule .
@@ -5438,8 +5438,8 @@ StratifiedKFold : Takes class information into account to avoid building
     folds with imbalanced class proportions (for binary or multiclass
     classification tasks).""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:HingeLoss a owl:Class ;
     rdfs:comment """Average hinge loss (non-regularized).
@@ -5521,8 +5521,8 @@ LinearSVC(dual='auto')
 >>> hinge_loss(y_true, pred_decision, labels=labels)
 0.56...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:HomogeneityCompletenessVMeasure a owl:Class ;
     rdfs:comment """Compute the homogeneity and completeness and V-Measure scores at once.
@@ -5590,8 +5590,8 @@ Examples
 >>> homogeneity_completeness_v_measure(y_true, y_pred)
 (0.71..., 0.77..., 0.73...)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:LeavePGroupsOut a owl:Class ;
     rdfs:comment """Leave P Group(s) Out cross-validator.
@@ -5647,8 +5647,8 @@ See Also
 --------
 GroupKFold : K-fold iterator variant with non-overlapping groups.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:LeavePOut a owl:Class ;
     rdfs:comment """Leave-P-Out cross-validator.
@@ -5707,8 +5707,8 @@ Fold 5:
   Train: index=[0 1]
   Test:  index=[2 3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:MaxAbsScaler a owl:Class ;
     rdfs:comment """Scale each feature by its maximum absolute value.
@@ -5781,8 +5781,8 @@ array([[ 0.5, -1. ,  1. ],
        [ 1. ,  0. ,  0. ],
        [ 0. ,  1. , -0.5]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:MeanAbsoluteError a owl:Class ;
     rdfs:comment """Mean absolute error regression loss.
@@ -5836,8 +5836,8 @@ array([0.5, 1. ])
 >>> mean_absolute_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.85...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanAbsolutePercentageError a owl:Class ;
     rdfs:comment """Mean absolute percentage error (MAPE) regression loss.
@@ -5906,8 +5906,8 @@ Examples
 >>> mean_absolute_percentage_error(y_true, y_pred)
 112589990684262.48""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanTweedieDeviance a owl:Class ;
     rdfs:comment """Mean Tweedie deviance regression loss.
@@ -5957,8 +5957,8 @@ Examples
 >>> mean_tweedie_deviance(y_true, y_pred, power=1)
 1.4260...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MedianAbsoluteError a owl:Class ;
     rdfs:comment """Median absolute error regression loss.
@@ -6013,8 +6013,8 @@ array([0.5, 1. ])
 >>> median_absolute_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.85""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MultiLabelBinarizer a owl:Class ;
     rdfs:comment """Transform between iterable of iterables and a multilabel format.
@@ -6078,8 +6078,8 @@ MultiLabelBinarizer()
 >>> mlb.classes_
 array(['comedy', 'sci-fi', 'thriller'], dtype=object)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:MultilabelConfusionMatrix a owl:Class ;
     rdfs:comment """Compute a confusion matrix for each class or sample.
@@ -6177,8 +6177,8 @@ array([[[3, 1],
        [[2, 1],
         [1, 2]]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MutualInfoScore a owl:Class ;
     rdfs:comment """Mutual Information between two clusterings.
@@ -6245,8 +6245,8 @@ Examples
 >>> mutual_info_score(labels_true, labels_pred)
 0.056...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:NormalizedMutualInfoScore a owl:Class ;
     rdfs:comment """Normalized Mutual Information between two clusterings.
@@ -6322,8 +6322,8 @@ the assignment is totally in-complete, hence the NMI is null::
   ... # doctest: +SKIP
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PrepareTransformer a owl:Class .
 
@@ -6373,8 +6373,8 @@ Examples
 >>> root_mean_squared_error(y_true, y_pred)
 0.822...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RootMeanSquaredLogError a owl:Class ;
     rdfs:comment """Root mean squared logarithmic error regression loss.
@@ -6420,8 +6420,8 @@ Examples
 >>> root_mean_squared_log_error(y_true, y_pred)
 0.199...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:SilhouetteSamples a owl:Class ;
     rdfs:comment """Compute the Silhouette Coefficient for each sample.
@@ -6495,8 +6495,8 @@ Examples
 >>> silhouette_samples(X, labels)
 array([...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:VMeasureScore a owl:Class ;
     rdfs:comment """V-measure cluster labeling given a ground truth.
@@ -6591,8 +6591,8 @@ destroy the homogeneity of the labeling, hence::
   >>> print("%.6f" % v_measure_score([0, 0, 1, 1], [0, 0, 0, 0]))
   0.0...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ZeroOneLoss a owl:Class ;
     rdfs:comment """Zero-one classification loss.
@@ -6655,8 +6655,8 @@ In the multilabel case with binary label indicators:
 >>> zero_one_loss(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
 0.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:AveragePrecisionScore a owl:Class ;
     rdfs:comment """Compute average precision (AP) from prediction scores.
@@ -6754,8 +6754,8 @@ Examples
 >>> average_precision_score(y_true, y_scores)
 0.77...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:Binarizer a owl:Class ;
     rdfs:comment """Binarize data (set feature values to 0 or 1) according to a threshold.
@@ -6827,8 +6827,8 @@ array([[1., 0., 1.],
        [1., 0., 0.],
        [0., 1., 0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:CheckCv a owl:Class ;
     rdfs:comment """Input checker utility for building a cross-validator.
@@ -6874,8 +6874,8 @@ KFold(...)
 >>> check_cv(cv=5, y=[1, 1, 0, 0, 0, 0], classifier=True)
 StratifiedKFold(...)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:CheckScoring a owl:Class ;
     rdfs:comment """Determine scorer from user options.
@@ -6914,8 +6914,8 @@ Examples
 >>> scorer(classifier, X, y)
 0.96...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:Classification a owl:Class ;
     rdfs:subClassOf ml:Train .
@@ -6995,8 +6995,8 @@ Examples
 >>> d2_pinball_score(y_true, y_true, alpha=0.1)
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ExplainedVarianceScore a owl:Class ;
     rdfs:comment """Explained variance regression score function.
@@ -7093,8 +7093,8 @@ nan
 >>> explained_variance_score(y_true, y_pred, force_finite=False)
 -inf""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:GlmModule a owl:Class ;
     rdfs:subClassOf ml:LinearModelModule .
@@ -7178,8 +7178,8 @@ Examples
 ...          [[.1, .9], [.9, .1], [.8, .2], [.35, .65]])
 0.21616...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanPinballLoss a owl:Class ;
     rdfs:comment """Pinball loss for quantile regression.
@@ -7239,8 +7239,8 @@ Examples
 >>> mean_pinball_loss(y_true, y_true, alpha=0.9)
 0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanSquaredError a owl:Class ;
     rdfs:comment """Mean squared error regression loss.
@@ -7298,8 +7298,8 @@ array([0.41666667, 1.        ])
 >>> mean_squared_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.825...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanSquaredLogError a owl:Class ;
     rdfs:comment """Mean squared logarithmic error regression loss.
@@ -7360,8 +7360,8 @@ array([0.00462428, 0.08377444])
 >>> mean_squared_log_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.060...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MulticlassModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -7460,8 +7460,8 @@ Examples
 ...           scores, k=1, ignore_ties=True)
 0.5...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:NeuralNetworkModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -7538,8 +7538,8 @@ array([[0.8, 0.2, 0.4, 0.4],
        [0.1, 0.3, 0.9, 0.3],
        [0.5, 0.7, 0.5, 0.1]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:PrecisionRecallCurve a owl:Class ;
     rdfs:comment """Compute precision-recall pairs for different probability thresholds.
@@ -7629,8 +7629,8 @@ array([1. , 1. , 0.5, 0.5, 0. ])
 >>> thresholds
 array([0.1 , 0.35, 0.4 , 0.8 ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:R2Score a owl:Class ;
     rdfs:comment """:math:`R^2` (coefficient of determination) regression score function.
@@ -7751,8 +7751,8 @@ nan
 >>> r2_score(y_true, y_pred, force_finite=False)
 -inf""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RocAucScore a owl:Class ;
     rdfs:comment """Compute Area Under the Receiver Operating Characteristic Curve (ROC AUC)     from prediction scores.
@@ -7939,8 +7939,8 @@ array([0.82..., 0.86..., 0.94..., 0.85... , 0.94...])
 >>> roc_auc_score(y, clf.decision_function(X), average=None)
 array([0.81..., 0.84... , 0.93..., 0.87..., 0.94...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RocCurve a owl:Class ;
     rdfs:comment """Compute Receiver operating characteristic (ROC).
@@ -8032,8 +8032,8 @@ array([0. , 0.5, 0.5, 1. , 1. ])
 >>> thresholds
 array([ inf, 0.8 , 0.4 , 0.35, 0.1 ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:TopKAccuracyScore a owl:Class ;
     rdfs:comment """Top-k Accuracy classification score.
@@ -8112,8 +8112,8 @@ Examples
 >>> top_k_accuracy_score(y_true, y_score, k=2, normalize=False)
 3""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:Train a owl:Class .
 
@@ -8224,8 +8224,8 @@ weighted avg       0.70      0.60      0.61         5
 weighted avg       1.00      0.67      0.80         3
 <BLANKLINE>""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ConsensusScore a owl:Class ;
     rdfs:comment """The similarity of two sets of biclusters.
@@ -8271,8 +8271,8 @@ Examples
 >>> consensus_score(a, b, similarity='jaccard')
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:DcgScore a owl:Class ;
     rdfs:comment """Compute Discounted Cumulative Gain.
@@ -8367,8 +8367,8 @@ Examples
 ...           scores, k=1, ignore_ties=True)
 5.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:F1Score a owl:Class ;
     rdfs:comment """Compute the F1 score, also known as balanced F-score or F-measure.
@@ -8521,8 +8521,8 @@ nan...
 >>> f1_score(y_true, y_pred, average=None)
 array([0.66666667, 1.        , 0.66666667])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:JaccardScore a owl:Class ;
     rdfs:comment """Jaccard similarity coefficient score.
@@ -8654,8 +8654,8 @@ In the multiclass case:
 >>> jaccard_score(y_true, y_pred, average=None)
 array([1. , 0. , 0.33...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:KFold a owl:Class ;
     rdfs:comment """K-Fold cross-validator.
@@ -8733,8 +8733,8 @@ GroupKFold : K-fold iterator variant with non-overlapping groups.
 
 RepeatedKFold : Repeats K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:LabelBinarizer a owl:Class ;
     rdfs:comment """Binarize labels in a one-vs-all fashion.
@@ -8824,8 +8824,8 @@ array([[1, 0, 0],
        [0, 0, 1],
        [0, 1, 0]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:LearningCurveDisplay a owl:Class ;
     rdfs:comment """Learning Curve visualization.
@@ -8905,8 +8905,8 @@ Examples
 <...>
 >>> plt.show()""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:MinMaxScaler a owl:Class ;
     rdfs:comment """Transform features by scaling each feature to a given range.
@@ -9021,8 +9021,8 @@ MinMaxScaler()
 >>> print(scaler.transform([[2, 2]]))
 [[1.5 0. ]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:MultinomialNB a owl:Class ;
     rdfs:comment """Naive Bayes classifier for multinomial models.
@@ -9115,8 +9115,8 @@ MultinomialNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:NanEuclideanDistances a owl:Class ;
     rdfs:comment """Calculate the euclidean distances in the presence of missing values.
@@ -9193,8 +9193,8 @@ array([[0.        , 1.41421356],
 array([[1.        ],
        [1.41421356]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:NearestCentroid a owl:Class ;
     rdfs:comment """Nearest centroid classifier.
@@ -9279,8 +9279,8 @@ NearestCentroid()
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:PairwiseDistances a owl:Class ;
     rdfs:comment """Compute the distance matrix from a vector array X and optional Y.
@@ -9402,8 +9402,8 @@ Examples
 array([[1., 2.],
        [2., 1.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseDistancesArgmin a owl:Class ;
     rdfs:comment """Compute minimum distances between one point and a set of points.
@@ -9484,8 +9484,8 @@ Examples
 >>> pairwise_distances_argmin(X, Y)
 array([0, 1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseDistancesArgminMin a owl:Class ;
     rdfs:comment """Compute minimum distances between one point and a set of points.
@@ -9573,8 +9573,8 @@ array([0, 1])
 >>> distances
 array([1., 1.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseKernels a owl:Class ;
     rdfs:comment """Compute the kernel between arrays X and optional array Y.
@@ -9655,8 +9655,8 @@ Examples
 array([[0., 0.],
        [1., 2.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PowerTransformer a owl:Class ;
     rdfs:comment """Apply a power transform featurewise to make data more Gaussian-like.
@@ -9755,8 +9755,8 @@ PowerTransformer()
  [ 0.209... -0.707...]
  [ 1.106...  1.414...]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:PrecisionScore a owl:Class ;
     rdfs:comment """Compute the precision.
@@ -9895,8 +9895,8 @@ array([0.33...,        nan,        nan])
 >>> precision_score(y_true, y_pred, average=None)
 array([0.5, 1. , 1. ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RecallScore a owl:Class ;
     rdfs:comment """Compute the recall.
@@ -10036,8 +10036,8 @@ array([0.5, nan, nan])
 >>> recall_score(y_true, y_pred, average=None)
 array([1. , 1. , 0.5])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RepeatedKFold a owl:Class ;
     rdfs:comment """Repeated K-Fold cross validator.
@@ -10098,8 +10098,8 @@ See Also
 --------
 RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:RepeatedStratifiedKFold a owl:Class ;
     rdfs:comment """Repeated Stratified K-Fold cross validator.
@@ -10162,8 +10162,8 @@ See Also
 --------
 RepeatedKFold : Repeats K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:SilhouetteScore a owl:Class ;
     rdfs:comment """Compute the mean Silhouette Coefficient of all samples.
@@ -10241,8 +10241,8 @@ Examples
 >>> silhouette_score(X, kmeans.fit_predict(X))
 0.49...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:StandardScaler a owl:Class ;
     rdfs:comment """Standardize features by removing the mean and scaling to unit variance.
@@ -10376,8 +10376,8 @@ StandardScaler()
 >>> print(scaler.transform([[2, 2]]))
 [[3. 3.]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:StratifiedGroupKFold a owl:Class ;
     rdfs:comment """Stratified K-Fold iterator variant with non-overlapping groups.
@@ -10477,8 +10477,8 @@ StratifiedKFold: Takes class information into account to build folds which
 
 GroupKFold: K-fold iterator variant with non-overlapping groups.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:StratifiedKFold a owl:Class ;
     rdfs:comment """Stratified K-Fold cross-validator.
@@ -10557,8 +10557,8 @@ See Also
 --------
 RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:TreeModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -10653,8 +10653,8 @@ In the following example, we drop the `'lr'` estimator with
 >>> len(er.estimators_)
 2""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:BernoulliNB a owl:Class ;
     rdfs:comment """Naive Bayes classifier for multivariate Bernoulli models.
@@ -10757,8 +10757,8 @@ BernoulliNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:CategoricalNB a owl:Class ;
     rdfs:comment """Naive Bayes classifier for categorical features.
@@ -10863,8 +10863,8 @@ CategoricalNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:ComplementNB a owl:Class ;
     rdfs:comment """The Complement Naive Bayes classifier described in Rennie et al. (2003).
@@ -10966,8 +10966,8 @@ ComplementNB()
 >>> print(clf.predict(X[2:3]))
 [3]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NaiveBayesModule .
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 
 ml:DictVectorizer a owl:Class ;
     rdfs:comment """Transforms lists of feature-value mappings to vectors.
@@ -11045,8 +11045,8 @@ True
 >>> v.transform({'foo': 4, 'unseen_feature': 3})
 array([[0., 0., 4.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:FeatureExtractionModule .
+        ml:FeatureExtractionModule,
+        ml:PrepareTransformerMethod .
 
 ml:FbetaScore a owl:Class ;
     rdfs:comment """Compute the F-beta score.
@@ -11195,8 +11195,8 @@ array([0.71..., 0.        , 0.        ])
 ...             average="macro", zero_division=np.nan, beta=0.5)
 0.12...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:FeatureHasher a owl:Class ;
     rdfs:comment """Implements feature hashing, aka the hashing trick.
@@ -11284,8 +11284,8 @@ array([[ 0.,  0.,  0., -1.,  0., -1.,  0.,  1.],
        [ 0.,  0.,  0., -1.,  0., -1.,  0.,  0.],
        [ 0., -1.,  0.,  0.,  0.,  0.,  0.,  1.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:FeatureExtractionModule .
+        ml:FeatureExtractionModule,
+        ml:PrepareTransformerMethod .
 
 ml:GroupShuffleSplit a owl:Class ;
     rdfs:comment """Shuffle-Group(s)-Out cross-validation iterator.
@@ -11371,8 +11371,8 @@ ShuffleSplit : Shuffles samples to create independent test/train sets.
 
 LeavePGroupsOut : Train set leaves out all possible subsets of `p` groups.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:IncrementalPCA a owl:Class ;
     rdfs:comment """Incremental principal components analysis (IPCA).
@@ -11541,8 +11541,8 @@ IncrementalPCA(batch_size=200, n_components=7)
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:LinearRegression a owl:Class ;
     rdfs:comment """Ordinary least squares Linear Regression.
@@ -11638,8 +11638,8 @@ array([1., 2.])
 >>> reg.predict(np.array([[3, 5]]))
 array([16.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:NaiveBayesModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -11721,8 +11721,8 @@ Examples
 >>> clf.predict(X_test[:10])
 array([2, 1, 0, 2, 0, 2, 0, 1, 1, 1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:MulticlassModule .
+        ml:MulticlassModule,
+        ml:TrainMethod .
 
 ml:OrthogonalMatchingPursuit a owl:Class ;
     rdfs:comment """Orthogonal Matching Pursuit model (OMP).
@@ -11812,8 +11812,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.3854...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PairwiseDistancesChunked a owl:Class ;
     rdfs:comment """Generate a distance matrix chunk by chunk with optional reduction.
@@ -11933,8 +11933,8 @@ Force row-by-row generation by reducing ``working_memory``:
 >>> next(gen)
 [array([0, 1])]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PolynomialFeatures a owl:Class ;
     rdfs:comment """Generate polynomial and interaction features.
@@ -12030,8 +12030,8 @@ array([[ 1.,  0.,  1.,  0.],
        [ 1.,  2.,  3.,  6.],
        [ 1.,  4.,  5., 20.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:ShuffleSplit a owl:Class ;
     rdfs:comment """Random permutation cross-validator.
@@ -12124,8 +12124,8 @@ Fold 4:
   Train: index=[3 5 1]
   Test:  index=[2 4]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:StratifiedShuffleSplit a owl:Class ;
     rdfs:comment """Stratified ShuffleSplit cross-validator.
@@ -12200,8 +12200,8 @@ Fold 4:
   Train: index=[0 5 1]
   Test:  index=[3 4 2]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:TimeSeriesSplit a owl:Class ;
     rdfs:comment """Time Series cross-validator.
@@ -12321,8 +12321,8 @@ The training set has size ``i * n_samples // (n_splits + 1)
 with a test set of size ``n_samples//(n_splits + 1)`` by default,
 where ``n_samples`` is the number of samples.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:ValidationCurveDisplay a owl:Class ;
     rdfs:comment """Validation Curve visualization.
@@ -12408,8 +12408,8 @@ Examples
 <...>
 >>> plt.show()""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:AdaBoostRegressor a owl:Class ;
     rdfs:comment """An AdaBoost regressor.
@@ -12524,8 +12524,8 @@ array([4.7972...])
 >>> regr.score(X, y)
 0.9771...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:Birch a owl:Class ;
     rdfs:comment """Implements the BIRCH clustering algorithm.
@@ -12646,8 +12646,8 @@ Birch(n_clusters=None)
 >>> brc.predict(X)
 array([0, 0, 0, 1, 1, 1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:MakeScorer a owl:Class ;
     rdfs:comment """Make a scorer from a performance metric or loss function.
@@ -12736,8 +12736,8 @@ make_scorer(fbeta_score, response_method='predict', beta=2)
 >>> grid = GridSearchCV(LinearSVC(), param_grid={'C': [1, 10]},
 ...                     scoring=ftwo_scorer)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:OneVsRestClassifier a owl:Class ;
     rdfs:comment """One-vs-the-rest (OvR) multiclass strategy.
@@ -12847,8 +12847,8 @@ Examples
 >>> clf.predict([[-19, -20], [9, 9], [-5, 5]])
 array([2, 0, 1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:MulticlassModule .
+        ml:MulticlassModule,
+        ml:TrainMethod .
 
 ml:PrecisionRecallFscoreSupport a owl:Class ;
     rdfs:comment """Compute precision, recall, F-measure and support for each class.
@@ -13008,8 +13008,8 @@ supports instead of averaging:
  array([0., 0., 1.]), array([0. , 0. , 0.8]),
  array([2, 2, 2]))""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:QuantileRegressor a owl:Class ;
     rdfs:comment """Linear regression model that predicts conditional quantiles.
@@ -13099,8 +13099,8 @@ Examples
 >>> np.mean(y <= reg.predict(X))
 0.8""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:RidgeClassifierCV a owl:Class ;
     rdfs:comment """Ridge classifier with built-in cross-validation.
@@ -13219,8 +13219,8 @@ Examples
 >>> clf.score(X, y)
 0.9630...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:RobustScaler a owl:Class ;
     rdfs:comment """Scale features using statistics that are robust to outliers.
@@ -13329,8 +13329,8 @@ array([[ 0. , -2. ,  0. ],
        [-1. ,  0. ,  0.4],
        [ 1. ,  0. , -1.6]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:TrainTestSplit a owl:Class ;
     rdfs:comment """Split arrays or matrices into random train and test subsets.
@@ -13417,8 +13417,8 @@ array([[2, 3],
 >>> train_test_split(y, shuffle=False)
 [[0, 1, 2], [3, 4]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:VotingClassifier a owl:Class ;
     rdfs:comment """Soft Voting/Majority Rule classifier for unfitted estimators.
@@ -13552,8 +13552,8 @@ Setting `flatten_transform=True` with `voting='soft'` flattens output shape of
 >>> print(eclf3.transform(X).shape)
 (6, 6)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:AdaBoostClassifier a owl:Class ;
     rdfs:comment """An AdaBoost classifier.
@@ -13696,8 +13696,8 @@ array([1])
 >>> clf.score(X, y)
 0.96...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:BernoulliRBM a owl:Class ;
     rdfs:comment """Bernoulli Restricted Boltzmann Machine (RBM).
@@ -13801,8 +13801,8 @@ Examples
 >>> model.fit(X)
 BernoulliRBM(n_components=2)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeuralNetworkModule .
+        ml:NeuralNetworkModule,
+        ml:TrainMethod .
 
 ml:HuberRegressor a owl:Class ;
     rdfs:comment """L2-regularized linear regression model that is robust to outliers.
@@ -13925,8 +13925,8 @@ Huber coefficients: [17.7906... 31.0106...]
 >>> print("Linear Regression coefficients:", linear.coef_)
 Linear Regression coefficients: [-1.9221...  7.0226...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:KBinsDiscretizer a owl:Class ;
     rdfs:comment """Bin continuous data into intervals.
@@ -14076,8 +14076,8 @@ array([[-1.5,  1.5, -3.5, -0.5],
        [ 0.5,  3.5, -1.5,  0.5],
        [ 0.5,  3.5, -1.5,  1.5]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:OrthogonalMatchingPursuitCV a owl:Class ;
     rdfs:comment """Cross-validated Orthogonal Matching Pursuit model (OMP).
@@ -14188,8 +14188,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.3854...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:OutputCodeClassifier a owl:Class ;
     rdfs:comment """(Error-Correcting) Output-Code multiclass strategy.
@@ -14290,8 +14290,8 @@ Examples
 >>> clf.predict([[0, 0, 0, 0]])
 array([1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:MulticlassModule .
+        ml:MulticlassModule,
+        ml:TrainMethod .
 
 ml:QuantileTransformer a owl:Class ;
     rdfs:comment """Transform features using quantiles information.
@@ -14401,8 +14401,8 @@ Examples
 >>> qt.fit_transform(X)
 array([...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:RidgeCV a owl:Class ;
     rdfs:comment """Ridge regression with built-in cross-validation.
@@ -14533,8 +14533,8 @@ Examples
 >>> clf.score(X, y)
 0.5166...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:StackingRegressor a owl:Class ;
     rdfs:comment """Stack of estimators with a final regressor.
@@ -14675,8 +14675,8 @@ Examples
 >>> reg.fit(X_train, y_train).score(X_test, y_test)
 0.3...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:SvmModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -14847,8 +14847,8 @@ With `smooth="auto"`, the smoothing parameter is set to an empirical Bayes estim
 >>> enc_low_smooth.encodings_
 [array([20..., 80..., 43...])]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:GammaRegressor a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Gamma distribution.
@@ -14952,9 +14952,9 @@ array([0.072..., 0.066...])
 >>> clf.predict([[1, 0], [2, 8]])
 array([19.483..., 35.795...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:GlmModule,
-        ml:LinearModelModule .
+        ml:GlmModule,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:MeanShift a owl:Class ;
     rdfs:comment """Mean shift clustering using a flat kernel.
@@ -15089,8 +15089,8 @@ array([1, 0])
 >>> clustering
 MeanShift(bandwidth=2)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:NearestNeighbors a owl:Class ;
     rdfs:comment """Unsupervised learner for implementing neighbor searches.
@@ -15216,8 +15216,8 @@ array([[2, 0]]...)
 >>> np.asarray(nbrs[0][0])
 array(2)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:OrdinalEncoder a owl:Class ;
     rdfs:comment """Encode categorical features as an integer array.
@@ -15403,8 +15403,8 @@ array([[2.],
        [3.],
        [4.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:PermutationTestScore a owl:Class ;
     rdfs:comment """Evaluate the significance of a cross-validated score with permutations.
@@ -15540,8 +15540,8 @@ Permutation Scores: 0.505 +/- 0.057
 >>> print(f"P-value: {pvalue:.3f}")
 P-value: 0.010""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:PoissonRegressor a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Poisson distribution.
@@ -15644,9 +15644,9 @@ array([0.121..., 0.158...])
 >>> clf.predict([[1, 1], [3, 4]])
 array([10.676..., 21.875...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:GlmModule,
-        ml:LinearModelModule .
+        ml:GlmModule,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:SpectralCoclustering a owl:Class ;
     rdfs:comment """Spectral Co-Clustering algorithm (Dhillon, 2001).
@@ -15756,8 +15756,8 @@ array([0, 0], dtype=int32)
 >>> clustering
 SpectralCoclustering(n_clusters=2, random_state=0)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:SplineTransformer a owl:Class ;
     rdfs:comment """Generate univariate B-spline bases for features.
@@ -15879,8 +15879,8 @@ array([[0.5 , 0.5 , 0.  , 0.  ],
        [0.  , 0.08, 0.74, 0.18],
        [0.  , 0.  , 0.5 , 0.5 ]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:StackingClassifier a owl:Class ;
     rdfs:comment """Stack of estimators with a final classifier.
@@ -16055,8 +16055,8 @@ Examples
 >>> clf.fit(X_train, y_train).score(X_test, y_test)
 0.9...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:TruncatedSVD a owl:Class ;
     rdfs:comment """Dimensionality reduction using truncated SVD (aka LSA).
@@ -16190,8 +16190,8 @@ TruncatedSVD(n_components=5, n_iter=7, random_state=42)
 >>> print(svd.singular_values_)
 [35.2410...  4.5981...   4.5420...  4.4486...  4.3288...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:AffinityPropagation a owl:Class ;
     rdfs:comment """Perform Affinity Propagation Clustering of data.
@@ -16327,8 +16327,8 @@ array([0, 1])
 array([[1, 2],
        [4, 2]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:AgglomerativeClustering a owl:Class ;
     rdfs:comment """Agglomerative Clustering.
@@ -16471,8 +16471,8 @@ AgglomerativeClustering()
 >>> clustering.labels_
 array([1, 1, 1, 0, 0, 0])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:CrossValPredict a owl:Class ;
     rdfs:comment """Generate cross-validated estimates for each input data point.
@@ -16614,8 +16614,8 @@ Examples
 >>> lasso = linear_model.Lasso()
 >>> y_pred = cross_val_predict(lasso, X, y, cv=3)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:CrossValScore a owl:Class ;
     rdfs:comment """Evaluate a score by cross-validation.
@@ -16751,8 +16751,8 @@ Examples
 >>> print(cross_val_score(lasso, X, y, cv=3))
 [0.3315057  0.08022103 0.03531816]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:DBSCAN a owl:Class ;
     rdfs:comment """Perform DBSCAN clustering from vector array or distance matrix.
@@ -16897,8 +16897,8 @@ array([ 0,  0,  0,  1,  1, -1])
 >>> clustering
 DBSCAN(eps=3, min_samples=2)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:FactorAnalysis a owl:Class ;
     rdfs:comment """Factor Analysis (FA).
@@ -17026,8 +17026,8 @@ Examples
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:FunctionTransformer a owl:Class ;
     rdfs:comment """Constructs a transformer from an arbitrary callable.
@@ -17142,8 +17142,8 @@ Examples
 array([[0.       , 0.6931...],
        [1.0986..., 1.3862...]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:KNeighborsRegressor a owl:Class ;
     rdfs:comment """Regression based on k-nearest neighbors.
@@ -17288,8 +17288,8 @@ KNeighborsRegressor(...)
 >>> print(neigh.predict([[1.5]]))
 [0.5]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:KNeighborsTransformer a owl:Class ;
     rdfs:comment """Transform X into a (weighted) graph of k nearest neighbors.
@@ -17413,8 +17413,8 @@ Examples
 >>> X_dist_graph.shape
 (178, 178)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:MultiTaskLasso a owl:Class ;
     rdfs:comment """Multi-task Lasso model trained with L1/L2 mixed-norm as regularizer.
@@ -17529,8 +17529,8 @@ MultiTaskLasso(alpha=0.1)
 >>> print(clf.intercept_)
 [-0.41888636 -0.87382323]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:NeighborhoodComponentsAnalysis a owl:Class ;
     rdfs:comment """Neighborhood Components Analysis.
@@ -17681,8 +17681,8 @@ KNeighborsClassifier(...)
 >>> print(knn.score(nca.transform(X_test), y_test))
 0.961904...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:PrepareTransformerMethod .
 
 ml:OneHotEncoder a owl:Class ;
     rdfs:comment """Encode categorical features as a one-hot numeric array.
@@ -17950,8 +17950,8 @@ Infrequent categories are enabled by setting `max_categories` or `min_frequency`
 array([[0., 0., 1.],
        [1., 0., 0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:RadiusNeighborsRegressor a owl:Class ;
     rdfs:comment """Regression based on neighbors within a fixed radius.
@@ -18085,8 +18085,8 @@ RadiusNeighborsRegressor(...)
 >>> print(neigh.predict([[1.5]]))
 [0.5]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:RadiusNeighborsTransformer a owl:Class ;
     rdfs:comment """Transform X into a (weighted) graph of neighbors nearer than a radius.
@@ -18206,8 +18206,8 @@ Examples
 >>> print(counts)
 [ 29  15 111  11  12]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:Regression a owl:Class ;
     rdfs:subClassOf ml:Train .
@@ -18384,8 +18384,8 @@ Examples
 >>> clf.fit(X, y)
 Ridge()""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:SparseCoder a owl:Class ;
     rdfs:comment """Sparse coding.
@@ -18505,8 +18505,8 @@ Examples
 array([[ 0.,  0., -1.,  0.,  0.],
        [ 0.,  1.,  1.,  0.,  0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:FeatureAgglomeration a owl:Class ;
     rdfs:comment """Agglomerate features.
@@ -18653,8 +18653,8 @@ FeatureAgglomeration(n_clusters=32)
 >>> X_reduced.shape
 (1797, 32)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:PrepareTransformerMethod .
 
 ml:IsolationForest a owl:Class ;
     rdfs:comment """Isolation Forest Algorithm.
@@ -18825,8 +18825,8 @@ array([ 1,  1, -1])
 For an example of using isolation forest for anomaly detection see
 :ref:`sphx_glr_auto_examples_ensemble_plot_isolation_forest.py`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:KMeans a owl:Class ;
     rdfs:comment """K-Means clustering.
@@ -19003,8 +19003,8 @@ For a demonstration of how K-Means can be used to cluster text documents see
 For a comparison between K-Means and MiniBatchKMeans refer to example
 :ref:`sphx_glr_auto_examples_cluster_plot_mini_batch_kmeans.py`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:KNeighborsClassifier a owl:Class ;
     rdfs:comment """Classifier implementing the k-nearest neighbors vote.
@@ -19153,8 +19153,8 @@ KNeighborsClassifier(...)
 >>> print(neigh.predict_proba([[0.9]]))
 [[0.666... 0.333...]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:KernelDensity a owl:Class ;
     rdfs:comment """Kernel Density Estimation.
@@ -19248,8 +19248,8 @@ Compute a gaussian kernel density estimate with a fixed bandwidth.
 >>> log_density
 array([-1.52955942, -1.51462041, -1.60244657])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:Lars a owl:Class ;
     rdfs:comment """Least Angle Regression model a.k.a. LAR.
@@ -19359,8 +19359,8 @@ Lars(n_nonzero_coefs=1)
 >>> print(reg.coef_)
 [ 0. -1.11...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LarsCV a owl:Class ;
     rdfs:comment """Cross-validated Least Angle Regression model.
@@ -19498,8 +19498,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([154.3996...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LassoLarsIC a owl:Class ;
     rdfs:comment """Lasso model fit with Lars using BIC or AIC for model selection.
@@ -19654,8 +19654,8 @@ LassoLarsIC(criterion='bic')
 >>> print(reg.coef_)
 [ 0.  -1.11...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LocalOutlierFactor a owl:Class ;
     rdfs:comment """Unsupervised Outlier Detection using the Local Outlier Factor (LOF).
@@ -19822,8 +19822,8 @@ array([ 1,  1, -1,  1])
 >>> clf.negative_outlier_factor_
 array([ -0.9821...,  -1.0370..., -73.3697...,  -0.9821...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:MultiTaskElasticNet a owl:Class ;
     rdfs:comment """Multi-task ElasticNet model trained with L1/L2 mixed-norm as regularizer.
@@ -19948,8 +19948,8 @@ MultiTaskElasticNet(alpha=0.1)
 >>> print(clf.intercept_)
 [0.0872422 0.0872422]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PCA a owl:Class ;
     rdfs:comment """Principal component analysis (PCA).
@@ -20195,8 +20195,8 @@ PCA(n_components=1, svd_solver='arpack')
 >>> print(pca.singular_values_)
 [6.30061...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:RidgeClassifier a owl:Class ;
     rdfs:comment """Classifier using Ridge regression.
@@ -20355,8 +20355,8 @@ Examples
 >>> clf.score(X, y)
 0.9595...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:TheilSenRegressor a owl:Class ;
     rdfs:comment """Theil-Sen Estimator: robust multivariate regression model.
@@ -20474,8 +20474,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-31.5871...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:TweedieRegressor a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Tweedie distribution.
@@ -20609,9 +20609,9 @@ array([0.599..., 0.299...])
 >>> clf.predict([[1, 1], [3, 4]])
 array([2.500..., 4.599...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:GlmModule,
-        ml:LinearModelModule .
+        ml:GlmModule,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:ValidationCurve a owl:Class ;
     rdfs:comment """Validation curve.
@@ -20733,8 +20733,8 @@ The average train accuracy is 0.81
 >>> print(f"The average test accuracy is {test_scores.mean():.2f}")
 The average test accuracy is 0.81""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:BisectingKMeans a owl:Class ;
     rdfs:comment """Bisecting K-Means clustering.
@@ -20865,8 +20865,8 @@ array([[ 2., 1.],
        [10., 9.],
        [10., 1.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:FastICA a owl:Class ;
     rdfs:comment """FastICA: a fast algorithm for Independent Component Analysis.
@@ -21003,8 +21003,8 @@ Examples
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:Lasso a owl:Class ;
     rdfs:comment """Linear Model trained with L1 prior as regularizer (aka the Lasso).
@@ -21152,8 +21152,8 @@ Lasso(alpha=0.1)
 >>> print(clf.intercept_)
 0.15...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LassoLarsCV a owl:Class ;
     rdfs:comment """Cross-validated Lasso, using the LARS algorithm.
@@ -21317,8 +21317,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.4831...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LinearSVR a owl:Class ;
     rdfs:comment """Linear Support Vector Regression.
@@ -21465,8 +21465,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(regr.predict([[0, 0, 0, 0]]))
 [-2.384...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:NeighborsModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -21602,8 +21602,8 @@ array([-1,  1,  1,  1, -1])
 >>> clf.score_samples(X)
 array([1.7798..., 2.0547..., 2.0556..., 2.0561..., 1.7332...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:RANSACRegressor a owl:Class ;
     rdfs:comment """RANSAC (RANdom SAmple Consensus) algorithm.
@@ -21774,8 +21774,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-31.9417...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:RadiusNeighborsClassifier a owl:Class ;
     rdfs:comment """Classifier implementing a vote among neighbors within a given radius.
@@ -21933,8 +21933,8 @@ RadiusNeighborsClassifier(...)
 >>> print(neigh.predict_proba([[1.0]]))
 [[0.66666667 0.33333333]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeighborsModule .
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:SpectralBiclustering a owl:Class ;
     rdfs:comment """Spectral biclustering (Kluger, 2003).
@@ -22059,8 +22059,8 @@ array([1, 0], dtype=int32)
 >>> clustering
 SpectralBiclustering(n_clusters=2, random_state=0)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:BaggingClassifier a owl:Class ;
     rdfs:comment """A Bagging classifier.
@@ -22229,8 +22229,8 @@ Examples
 >>> clf.predict([[0, 0, 0, 0]])
 array([1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:BaggingRegressor a owl:Class ;
     rdfs:comment """A Bagging regressor.
@@ -22390,8 +22390,8 @@ Examples
 >>> regr.predict([[0, 0, 0, 0]])
 array([-2.8720...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:CrossValidate a owl:Class ;
     rdfs:comment """Evaluate metric(s) by cross-validation and also record fit/score times.
@@ -22603,8 +22603,8 @@ Multiple metric evaluation using ``cross_validate``
 >>> print(scores['train_r2'])
 [0.28009951 0.3908844  0.22784907]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:DecisionTreeRegressor a owl:Class ;
     rdfs:comment """A decision tree regressor.
@@ -22819,8 +22819,8 @@ Examples
 array([-0.39..., -0.46...,  0.02...,  0.06..., -0.50...,
        0.16...,  0.11..., -0.73..., -0.30..., -0.00...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 
 ml:ElasticNet a owl:Class ;
     rdfs:comment """Linear regression with combined L1 and L2 priors as regularizer.
@@ -22969,8 +22969,8 @@ ElasticNet(random_state=0)
 >>> print(regr.predict([[0, 0]]))
 [1.451...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:ExtraTreeRegressor a owl:Class ;
     rdfs:comment """An extremely randomized tree regressor.
@@ -23182,8 +23182,8 @@ Examples
 >>> reg.score(X_test, y_test)
 0.33...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 
 ml:LassoLars a owl:Class ;
     rdfs:comment """Lasso model fit with Least Angle Regression a.k.a. Lars.
@@ -23324,8 +23324,8 @@ LassoLars(alpha=0.01)
 >>> print(reg.coef_)
 [ 0.         -0.955...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:NuSVR a owl:Class ;
     rdfs:comment """Nu Support Vector Regression.
@@ -23468,8 +23468,8 @@ Examples
 Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('nusvr', NuSVR(nu=0.1))])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:OPTICS a owl:Class ;
     rdfs:comment """Estimate clustering structure from vector array.
@@ -23676,8 +23676,8 @@ array([0, 0, 0, 1, 1, 1])
 For a more detailed example see
 :ref:`sphx_glr_auto_examples_cluster_plot_optics.py`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:SVR a owl:Class ;
     rdfs:comment """Epsilon-Support Vector Regression.
@@ -23827,8 +23827,8 @@ Examples
 Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('svr', SVR(epsilon=0.2))])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:SparsePCA a owl:Class ;
     rdfs:comment """Sparse Principal Components Analysis (SparsePCA).
@@ -23943,8 +23943,8 @@ SparsePCA(...)
 >>> np.mean(transformer.components_ == 0)
 0.9666...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:ARDRegression a owl:Class ;
     rdfs:comment """Bayesian ARD regression.
@@ -24083,8 +24083,8 @@ ARDRegression()
 >>> clf.predict([[1, 1]])
 array([1.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LearningCurve a owl:Class ;
     rdfs:comment """Learning curve.
@@ -24244,8 +24244,8 @@ The average test accuracy is 0.90
 The average train accuracy is 1.00
 The average test accuracy is 0.93""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:DataSplittingMethod ;
-    ds:hasModule ml:ModelSelectionModule .
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
 
 ml:LinearSVC a owl:Class ;
     rdfs:comment """Linear Support Vector Classification.
@@ -24443,8 +24443,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(clf.predict([[0, 0, 0, 0]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:MiniBatchKMeans a owl:Class ;
     rdfs:comment """Mini-Batch K-Means clustering.
@@ -24637,8 +24637,8 @@ array([[3.55102041, 2.48979592],
 >>> kmeans.predict([[0, 0], [4, 4]])
 array([1, 0], dtype=int32)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:MultiTaskLassoCV a owl:Class ;
     rdfs:comment """Multi-task Lasso model trained with L1/L2 mixed-norm as regularizer.
@@ -24797,8 +24797,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([[153.7971...,  94.9015...]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:NMF a owl:Class ;
     rdfs:comment """Non-Negative Matrix Factorization (NMF).
@@ -25006,8 +25006,8 @@ Examples
 >>> W = model.fit_transform(X)
 >>> H = model.components_""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:RandomTreesEmbedding a owl:Class ;
     rdfs:comment """An ensemble of totally random trees.
@@ -25188,8 +25188,8 @@ array([[0., 1., 1., 0., 1., 0., 0., 1., 1., 0.],
        [1., 0., 1., 0., 1., 0., 1., 0., 1., 0.],
        [0., 1., 1., 0., 1., 0., 0., 1., 1., 0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:PrepareTransformerMethod .
 
 ml:SGDOneClassSVM a owl:Class ;
     rdfs:comment """Solves linear One-Class SVM using Stochastic Gradient Descent.
@@ -25338,8 +25338,8 @@ SGDOneClassSVM(random_state=42)
 >>> print(clf.predict([[4, 4]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:BayesianRidge a owl:Class ;
     rdfs:comment """Bayesian ridge regression.
@@ -25491,8 +25491,8 @@ BayesianRidge()
 >>> clf.predict([[1, 1]])
 array([1.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:DecisionTreeClassifier a owl:Class ;
     rdfs:comment """A decision tree classifier.
@@ -25734,8 +25734,8 @@ Examples
 array([ 1.     ,  0.93...,  0.86...,  0.93...,  0.93...,
         0.93...,  0.93...,  1.     ,  0.93...,  1.      ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 
 ml:DecompositionModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -25979,8 +25979,8 @@ Examples
 >>> cls.score(X_test, y_test)
 0.8947...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 
 ml:MiniBatchSparsePCA a owl:Class ;
     rdfs:comment """Mini-batch Sparse Principal Components Analysis.
@@ -26121,8 +26121,8 @@ MiniBatchSparsePCA(...)
 >>> np.mean(transformer.components_ == 0)
 0.9...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:MultiTaskElasticNetCV a owl:Class ;
     rdfs:comment """Multi-task L1/L2 ElasticNet with built-in cross-validation.
@@ -26296,8 +26296,8 @@ MultiTaskElasticNetCV(cv=3)
 >>> print(clf.intercept_)
 [0.00166409 0.00166409]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
@@ -26518,9 +26518,9 @@ HDBSCAN(min_cluster_size=20)
 >>> hdb.labels_
 array([ 2,  6, -1, ..., -1, -1, -1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule,
-        ml:HdbscanModule .
+        ml:ClusterModule,
+        ml:HdbscanModule,
+        ml:TrainMethod .
 
 ml:LassoCV a owl:Class ;
     rdfs:comment """Lasso linear model with iterative fitting along a regularization path.
@@ -26689,8 +26689,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.4951...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PassiveAggressiveRegressor a owl:Class ;
     rdfs:comment """Passive Aggressive Regressor.
@@ -26835,8 +26835,8 @@ PassiveAggressiveRegressor(max_iter=100, random_state=0)
 >>> print(regr.predict([[0, 0, 0, 0]]))
 [-0.02306214]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:ElasticNetCV a owl:Class ;
     rdfs:comment """Elastic Net model with iterative fitting along a regularization path.
@@ -27023,8 +27023,8 @@ ElasticNetCV(cv=5, random_state=0)
 >>> print(regr.predict([[0, 0]]))
 [0.398...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:KernelPCA a owl:Class ;
     rdfs:comment """Kernel Principal component analysis (KPCA) [1]_.
@@ -27235,8 +27235,8 @@ Examples
 >>> X_transformed.shape
 (1797, 7)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:LogisticRegression a owl:Class ;
     rdfs:comment """Logistic Regression (aka logit, MaxEnt) classifier.
@@ -27517,8 +27517,8 @@ array([[9.8...e-01, 1.8...e-02, 1.4...e-08],
 >>> clf.score(X, y)
 0.97...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:NuSVC a owl:Class ;
     rdfs:comment """Nu-Support Vector Classification.
@@ -27732,8 +27732,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()), ('nusvc', NuSVC())])
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:PassiveAggressiveClassifier a owl:Class ;
     rdfs:comment """Passive Aggressive Classifier.
@@ -27898,8 +27898,8 @@ PassiveAggressiveClassifier(random_state=0)
 >>> print(clf.predict([[0, 0, 0, 0]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:SVC a owl:Class ;
     rdfs:comment """C-Support Vector Classification.
@@ -28128,8 +28128,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:SvmModule .
+        ml:SvmModule,
+        ml:TrainMethod .
 
 ml:SpectralClustering a owl:Class ;
     rdfs:comment """Apply clustering to a projection of the normalized Laplacian.
@@ -28356,8 +28356,8 @@ array([1, 1, 1, 0, 0, 0])
 SpectralClustering(assign_labels='discretize', n_clusters=2,
     random_state=0)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:ClusterModule .
+        ml:ClusterModule,
+        ml:TrainMethod .
 
 ml:LatentDirichletAllocation a owl:Class ;
     rdfs:comment """Latent Dirichlet Allocation with online variational Bayes algorithm.
@@ -28538,8 +28538,8 @@ LatentDirichletAllocation(...)
 array([[0.00360392, 0.25499205, 0.0036211 , 0.64236448, 0.09541846],
        [0.15297572, 0.00362644, 0.44412786, 0.39568399, 0.003586  ]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:MiniBatchNMF a owl:Class ;
     rdfs:comment """Mini-Batch Non-Negative Matrix Factorization (NMF).
@@ -28744,8 +28744,8 @@ Examples
 >>> W = model.fit_transform(X)
 >>> H = model.components_""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:Perceptron a owl:Class ;
     rdfs:comment """Linear perceptron classifier.
@@ -28913,8 +28913,8 @@ Perceptron()
 >>> clf.score(X, y)
 0.939...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:ExtraTreesRegressor a owl:Class ;
     rdfs:comment """An extra-trees regressor.
@@ -29186,8 +29186,8 @@ Examples
 >>> reg.score(X_test, y_test)
 0.2727...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:LogisticRegressionCV a owl:Class ;
     rdfs:comment """Logistic Regression CV (aka logit, MaxEnt) classifier.
@@ -29465,8 +29465,8 @@ array([0, 0])
 >>> clf.score(X, y)
 0.98...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PreprocessingModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -29762,8 +29762,8 @@ RandomForestRegressor(...)
 >>> print(regr.predict([[0, 0, 0, 0]]))
 [-8.32987858]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:DictionaryLearning a owl:Class ;
     rdfs:comment """Dictionary learning.
@@ -29956,8 +29956,8 @@ the original signal:
 >>> np.mean(np.sum((X_hat - X) ** 2, axis=1) / np.sum(X ** 2, axis=1))
 0.05...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:EnsembleModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
@@ -30256,8 +30256,8 @@ ExtraTreesClassifier(random_state=0)
 >>> clf.predict([[0, 0, 0, 0]])
 array([1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:RandomForestClassifier a owl:Class ;
     rdfs:comment """A random forest classifier.
@@ -30567,8 +30567,8 @@ RandomForestClassifier(...)
 >>> print(clf.predict([[0, 0, 0, 0]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:SGDRegressor a owl:Class ;
     rdfs:comment """Linear model fitted by minimizing a regularized empirical loss with SGD.
@@ -30794,8 +30794,8 @@ Examples
 Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('sgdregressor', SGDRegressor())])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:MiniBatchDictionaryLearning a owl:Class ;
     rdfs:comment """Mini-batch dictionary learning.
@@ -31008,8 +31008,8 @@ the original signal:
 >>> np.mean(np.sum((X_hat - X) ** 2, axis=1) / np.sum(X ** 2, axis=1))
 0.052...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:DecompositionModule .
+        ml:DecompositionModule,
+        ml:PrepareTransformerMethod .
 
 ml:GradientBoostingClassifier a owl:Class ;
     rdfs:comment """Gradient Boosting for classification.
@@ -31336,8 +31336,8 @@ The following example shows how to fit a gradient boosting classifier with
 >>> clf.score(X_test, y_test)
 0.913...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:GradientBoostingRegressor a owl:Class ;
     rdfs:comment """Gradient Boosting for regression.
@@ -31652,8 +31652,8 @@ array([-61...])
 >>> reg.score(X_test, y_test)
 0.4...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule .
+        ml:EnsembleModule,
+        ml:TrainMethod .
 
 ml:HistGradientBoostingRegressor a owl:Class ;
     rdfs:comment """Histogram-based Gradient Boosting Regression Tree.
@@ -31905,9 +31905,9 @@ Examples
 >>> est.score(X, y)
 0.92...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule,
-        ml:GradientBoostingModule .
+        ml:EnsembleModule,
+        ml:GradientBoostingModule,
+        ml:TrainMethod .
 
 ml:SGDClassifier a owl:Class ;
     rdfs:comment """Linear classifiers (SVM, logistic regression, etc.) with SGD training.
@@ -32167,8 +32167,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:HistGradientBoostingClassifier a owl:Class ;
     rdfs:comment """Histogram-based Gradient Boosting Classification Tree.
@@ -32427,9 +32427,9 @@ Examples
 >>> clf.score(X, y)
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:EnsembleModule,
-        ml:GradientBoostingModule .
+        ml:EnsembleModule,
+        ml:GradientBoostingModule,
+        ml:TrainMethod .
 
 ml:MLPClassifier a owl:Class ;
     rdfs:comment """Multi-layer Perceptron classifier.
@@ -32703,8 +32703,8 @@ array([1, 0, 1, 0, 1])
 >>> clf.score(X_test, y_test)
 0.8...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeuralNetworkModule .
+        ml:NeuralNetworkModule,
+        ml:TrainMethod .
 
 ml:MLPRegressor a owl:Class ;
     rdfs:comment """Multi-layer Perceptron regressor.
@@ -32978,8 +32978,8 @@ array([-0.9..., -7.1...])
 >>> regr.score(X_test, y_test)
 0.4...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:NeuralNetworkModule .
+        ml:NeuralNetworkModule,
+        ml:TrainMethod .
 
 ml:ModelSelectionModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .

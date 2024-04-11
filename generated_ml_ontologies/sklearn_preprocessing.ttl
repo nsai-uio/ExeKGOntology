@@ -396,8 +396,8 @@ array([[  5.,   0.,  -5.],
        [  0.,  14., -14.],
        [ -5., -14.,  19.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:PrepareTransformer a owl:Class .
 
@@ -475,8 +475,8 @@ array([[ 0.5, -1. ,  1. ],
        [ 1. ,  0. ,  0. ],
        [ 0. ,  1. , -0.5]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:MultiLabelBinarizer a owl:Class ;
     rdfs:comment """Transform between iterable of iterables and a multilabel format.
@@ -540,8 +540,8 @@ MultiLabelBinarizer()
 >>> mlb.classes_
 array(['comedy', 'sci-fi', 'thriller'], dtype=object)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:Binarizer a owl:Class ;
     rdfs:comment """Binarize data (set feature values to 0 or 1) according to a threshold.
@@ -613,8 +613,8 @@ array([[1., 0., 1.],
        [1., 0., 0.],
        [0., 1., 0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:Normalizer a owl:Class ;
     rdfs:comment """Normalize samples individually to unit norm.
@@ -688,8 +688,8 @@ array([[0.8, 0.2, 0.4, 0.4],
        [0.1, 0.3, 0.9, 0.3],
        [0.5, 0.7, 0.5, 0.1]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:LabelBinarizer a owl:Class ;
     rdfs:comment """Binarize labels in a one-vs-all fashion.
@@ -779,8 +779,8 @@ array([[1, 0, 0],
        [0, 0, 1],
        [0, 1, 0]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:MinMaxScaler a owl:Class ;
     rdfs:comment """Transform features by scaling each feature to a given range.
@@ -895,8 +895,8 @@ MinMaxScaler()
 >>> print(scaler.transform([[2, 2]]))
 [[1.5 0. ]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:PowerTransformer a owl:Class ;
     rdfs:comment """Apply a power transform featurewise to make data more Gaussian-like.
@@ -995,8 +995,8 @@ PowerTransformer()
  [ 0.209... -0.707...]
  [ 1.106...  1.414...]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:StandardScaler a owl:Class ;
     rdfs:comment """Standardize features by removing the mean and scaling to unit variance.
@@ -1130,8 +1130,8 @@ StandardScaler()
 >>> print(scaler.transform([[2, 2]]))
 [[3. 3.]]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:PolynomialFeatures a owl:Class ;
     rdfs:comment """Generate polynomial and interaction features.
@@ -1227,8 +1227,8 @@ array([[ 1.,  0.,  1.,  0.],
        [ 1.,  2.,  3.,  6.],
        [ 1.,  4.,  5., 20.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:RobustScaler a owl:Class ;
     rdfs:comment """Scale features using statistics that are robust to outliers.
@@ -1337,8 +1337,8 @@ array([[ 0. , -2. ,  0. ],
        [-1. ,  0. ,  0.4],
        [ 1. ,  0. , -1.6]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:KBinsDiscretizer a owl:Class ;
     rdfs:comment """Bin continuous data into intervals.
@@ -1488,8 +1488,8 @@ array([[-1.5,  1.5, -3.5, -0.5],
        [ 0.5,  3.5, -1.5,  0.5],
        [ 0.5,  3.5, -1.5,  1.5]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:QuantileTransformer a owl:Class ;
     rdfs:comment """Transform features using quantiles information.
@@ -1599,8 +1599,8 @@ Examples
 >>> qt.fit_transform(X)
 array([...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:TargetEncoder a owl:Class ;
     rdfs:comment """Target Encoder for regression and classification targets.
@@ -1768,8 +1768,8 @@ With `smooth="auto"`, the smoothing parameter is set to an empirical Bayes estim
 >>> enc_low_smooth.encodings_
 [array([20..., 80..., 43...])]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:OrdinalEncoder a owl:Class ;
     rdfs:comment """Encode categorical features as an integer array.
@@ -1955,8 +1955,8 @@ array([[2.],
        [3.],
        [4.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:SplineTransformer a owl:Class ;
     rdfs:comment """Generate univariate B-spline bases for features.
@@ -2078,8 +2078,8 @@ array([[0.5 , 0.5 , 0.  , 0.  ],
        [0.  , 0.08, 0.74, 0.18],
        [0.  , 0.  , 0.5 , 0.5 ]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:FunctionTransformer a owl:Class ;
     rdfs:comment """Constructs a transformer from an arbitrary callable.
@@ -2194,8 +2194,8 @@ Examples
 array([[0.       , 0.6931...],
        [1.0986..., 1.3862...]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:OneHotEncoder a owl:Class ;
     rdfs:comment """Encode categorical features as a one-hot numeric array.
@@ -2463,8 +2463,8 @@ Infrequent categories are enabled by setting `max_categories` or `min_frequency`
 array([[0., 0., 1.],
        [1., 0., 0.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PrepareTransformerMethod ;
-    ds:hasModule ml:PreprocessingModule .
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
 
 ml:PreprocessingModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .

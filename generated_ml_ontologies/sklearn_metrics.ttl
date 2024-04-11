@@ -411,8 +411,8 @@ are a worse choice than the expected value of random labels::
   >>> adjusted_rand_score([0, 0, 1, 1], [0, 1, 0, 1])
   -0.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:Auc a owl:Class ;
     rdfs:comment """Compute Area Under the Curve (AUC) using the trapezoidal rule.
@@ -452,8 +452,8 @@ Examples
 >>> metrics.auc(fpr, tpr)
 0.75""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:CalinskiHarabaszScore a owl:Class ;
     rdfs:comment """Compute the Calinski and Harabasz score.
@@ -495,8 +495,8 @@ Examples
 >>> calinski_harabasz_score(X, kmeans.labels_)
 114.8...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:CompletenessScore a owl:Class ;
     rdfs:comment """Compute completeness metric of a cluster labeling given a ground truth.
@@ -564,8 +564,8 @@ assignment cannot be complete::
   >>> print(completeness_score([0, 0, 0, 0], [0, 1, 2, 3]))
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:CoverageError a owl:Class ;
     rdfs:comment """Coverage error measure.
@@ -615,8 +615,8 @@ Examples
 >>> coverage_error(y_true, y_score)
 1.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:DaviesBouldinScore a owl:Class ;
     rdfs:comment """Compute the Davies-Bouldin score.
@@ -662,8 +662,8 @@ Examples
 >>> davies_bouldin_score(X, labels)
 0.12...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:GetScorerNames a owl:Class ;
     rdfs:comment """Get the names of all available scorers.
@@ -687,8 +687,8 @@ Examples
 >>> "roc_auc" in all_scorers
 True""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:HammingLoss a owl:Class ;
     rdfs:comment """Compute the average Hamming loss.
@@ -765,8 +765,8 @@ In the multilabel case with binary label indicators:
 >>> hamming_loss(np.array([[0, 1], [1, 1]]), np.zeros((2, 2)))
 0.75""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:HomogeneityScore a owl:Class ;
     rdfs:comment """Homogeneity metric of a cluster labeling given a ground truth.
@@ -834,8 +834,8 @@ homogeneous labeling::
   >>> print("%.6f" % homogeneity_score([0, 0, 1, 1], [0, 0, 0, 0]))
   0.0...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:LabelRankingAveragePrecisionScore a owl:Class ;
     rdfs:comment """Compute ranking-based average precision.
@@ -881,8 +881,8 @@ Examples
 >>> label_ranking_average_precision_score(y_true, y_score)
 0.416...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:LabelRankingLoss a owl:Class ;
     rdfs:comment """Compute Ranking loss measure.
@@ -934,8 +934,8 @@ Examples
 >>> label_ranking_loss(y_true, y_score)
 0.75...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MatthewsCorrcoef a owl:Class ;
     rdfs:comment """Compute the Matthews correlation coefficient (MCC).
@@ -1000,8 +1000,8 @@ Examples
 >>> matthews_corrcoef(y_true, y_pred)
 -0.33...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MaxError a owl:Class ;
     rdfs:comment """The max_error metric calculates the maximum residual error.
@@ -1029,8 +1029,8 @@ Examples
 >>> max_error(y_true, y_pred)
 1""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanGammaDeviance a owl:Class ;
     rdfs:comment """Mean Gamma deviance regression loss.
@@ -1065,8 +1065,8 @@ Examples
 >>> mean_gamma_deviance(y_true, y_pred)
 1.0568...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanPoissonDeviance a owl:Class ;
     rdfs:comment """Mean Poisson deviance regression loss.
@@ -1100,8 +1100,8 @@ Examples
 >>> mean_poisson_deviance(y_true, y_pred)
 1.4260...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairConfusionMatrix a owl:Class ;
     rdfs:comment """Pair confusion matrix arising from two clusterings [1]_.
@@ -1163,8 +1163,8 @@ have some off-diagonal non-zero entries:
 
 Note that the matrix is not symmetric.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PerformanceCalculation a owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
@@ -1227,8 +1227,8 @@ are complete but may not always be pure, hence penalized:
   >>> rand_score([0, 0, 1, 2], [0, 0, 1, 1])
   0.83...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
@@ -1377,8 +1377,8 @@ In the multilabel case with binary label indicators:
 >>> accuracy_score(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
 0.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:AdjustedMutualInfoScore a owl:Class ;
     rdfs:comment """Adjusted Mutual Information between two clusterings.
@@ -1468,8 +1468,8 @@ the assignment is totally in-complete, hence the AMI is null::
   ... # doctest: +SKIP
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:BalancedAccuracyScore a owl:Class ;
     rdfs:comment """Compute the balanced accuracy.
@@ -1540,8 +1540,8 @@ Examples
 >>> balanced_accuracy_score(y_true, y_pred)
 0.625""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:BrierScoreLoss a owl:Class ;
     rdfs:comment """Compute the Brier score loss.
@@ -1613,8 +1613,8 @@ Examples
 >>> brier_score_loss(y_true, np.array(y_prob) > 0.5)
 0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ClassLikelihoodRatios a owl:Class ;
     rdfs:comment """Compute binary classification positive and negative likelihood ratios.
@@ -1716,8 +1716,8 @@ positive_class]`
 >>> class_likelihood_ratios(y_true, y_pred, labels=["non-cat", "cat"])
 (1.5, 0.75)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:CohenKappaScore a owl:Class ;
     rdfs:comment """Compute Cohen's kappa: a statistic that measures inter-annotator agreement.
@@ -1783,8 +1783,8 @@ Examples
 >>> cohen_kappa_score(y1, y2)
 0.6875""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ConfusionMatrix a owl:Class ;
     rdfs:comment """Compute confusion matrix to evaluate the accuracy of a classification.
@@ -1869,8 +1869,8 @@ In the binary case, we can extract true positives, etc. as follows:
 >>> (tn, fp, fn, tp)
 (0, 2, 1, 1)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:D2AbsoluteErrorScore a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of absolute error explained.
@@ -1951,8 +1951,8 @@ array([0.8125    , 0.57142857])
 >>> d2_absolute_error_score(y_true, y_pred)
 -1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:D2TweedieScore a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of Tweedie deviance explained.
@@ -2030,8 +2030,8 @@ Examples
 >>> d2_tweedie_score(y_true, y_true, power=2)
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:DetCurve a owl:Class ;
     rdfs:comment """Compute error rates for different probability thresholds.
@@ -2102,8 +2102,8 @@ array([0. , 0.5, 0.5])
 >>> thresholds
 array([0.35, 0.4 , 0.8 ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:EuclideanDistances a owl:Class ;
     rdfs:comment """Compute the distance matrix between each pair from a vector array X and Y.
@@ -2175,8 +2175,8 @@ array([[0., 1.],
 array([[1.        ],
        [1.41421356]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:FowlkesMallowsScore a owl:Class ;
     rdfs:comment """Measure the similarity of two clusterings of a set of points.
@@ -2245,8 +2245,8 @@ the assignment is totally random, hence the FMI is null::
   >>> fowlkes_mallows_score([0, 0, 0, 0], [0, 1, 2, 3])
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:GetScorer a owl:Class ;
     rdfs:comment """Get a scorer from string.
@@ -2284,8 +2284,8 @@ Examples
 >>> accuracy(classifier, X, y)
 0.4""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:HingeLoss a owl:Class ;
     rdfs:comment """Average hinge loss (non-regularized).
@@ -2367,8 +2367,8 @@ LinearSVC(dual='auto')
 >>> hinge_loss(y_true, pred_decision, labels=labels)
 0.56...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:HomogeneityCompletenessVMeasure a owl:Class ;
     rdfs:comment """Compute the homogeneity and completeness and V-Measure scores at once.
@@ -2436,8 +2436,8 @@ Examples
 >>> homogeneity_completeness_v_measure(y_true, y_pred)
 (0.71..., 0.77..., 0.73...)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanAbsoluteError a owl:Class ;
     rdfs:comment """Mean absolute error regression loss.
@@ -2491,8 +2491,8 @@ array([0.5, 1. ])
 >>> mean_absolute_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.85...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanAbsolutePercentageError a owl:Class ;
     rdfs:comment """Mean absolute percentage error (MAPE) regression loss.
@@ -2561,8 +2561,8 @@ Examples
 >>> mean_absolute_percentage_error(y_true, y_pred)
 112589990684262.48""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanTweedieDeviance a owl:Class ;
     rdfs:comment """Mean Tweedie deviance regression loss.
@@ -2612,8 +2612,8 @@ Examples
 >>> mean_tweedie_deviance(y_true, y_pred, power=1)
 1.4260...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MedianAbsoluteError a owl:Class ;
     rdfs:comment """Median absolute error regression loss.
@@ -2668,8 +2668,8 @@ array([0.5, 1. ])
 >>> median_absolute_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.85""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MultilabelConfusionMatrix a owl:Class ;
     rdfs:comment """Compute a confusion matrix for each class or sample.
@@ -2767,8 +2767,8 @@ array([[[3, 1],
        [[2, 1],
         [1, 2]]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MutualInfoScore a owl:Class ;
     rdfs:comment """Mutual Information between two clusterings.
@@ -2835,8 +2835,8 @@ Examples
 >>> mutual_info_score(labels_true, labels_pred)
 0.056...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:NormalizedMutualInfoScore a owl:Class ;
     rdfs:comment """Normalized Mutual Information between two clusterings.
@@ -2912,8 +2912,8 @@ the assignment is totally in-complete, hence the NMI is null::
   ... # doctest: +SKIP
   0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RootMeanSquaredError a owl:Class ;
     rdfs:comment """Root mean squared error regression loss.
@@ -2961,8 +2961,8 @@ Examples
 >>> root_mean_squared_error(y_true, y_pred)
 0.822...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RootMeanSquaredLogError a owl:Class ;
     rdfs:comment """Root mean squared logarithmic error regression loss.
@@ -3008,8 +3008,8 @@ Examples
 >>> root_mean_squared_log_error(y_true, y_pred)
 0.199...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:SilhouetteSamples a owl:Class ;
     rdfs:comment """Compute the Silhouette Coefficient for each sample.
@@ -3083,8 +3083,8 @@ Examples
 >>> silhouette_samples(X, labels)
 array([...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:VMeasureScore a owl:Class ;
     rdfs:comment """V-measure cluster labeling given a ground truth.
@@ -3179,8 +3179,8 @@ destroy the homogeneity of the labeling, hence::
   >>> print("%.6f" % v_measure_score([0, 0, 1, 1], [0, 0, 0, 0]))
   0.0...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ZeroOneLoss a owl:Class ;
     rdfs:comment """Zero-one classification loss.
@@ -3243,8 +3243,8 @@ In the multilabel case with binary label indicators:
 >>> zero_one_loss(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
 0.5""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:AveragePrecisionScore a owl:Class ;
     rdfs:comment """Compute average precision (AP) from prediction scores.
@@ -3342,8 +3342,8 @@ Examples
 >>> average_precision_score(y_true, y_scores)
 0.77...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:CheckScoring a owl:Class ;
     rdfs:comment """Determine scorer from user options.
@@ -3382,8 +3382,8 @@ Examples
 >>> scorer(classifier, X, y)
 0.96...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:D2PinballScore a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of pinball loss explained.
@@ -3460,8 +3460,8 @@ Examples
 >>> d2_pinball_score(y_true, y_true, alpha=0.1)
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ExplainedVarianceScore a owl:Class ;
     rdfs:comment """Explained variance regression score function.
@@ -3558,8 +3558,8 @@ nan
 >>> explained_variance_score(y_true, y_pred, force_finite=False)
 -inf""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:LogLoss a owl:Class ;
     rdfs:comment """Log loss, aka logistic loss or cross-entropy loss.
@@ -3640,8 +3640,8 @@ Examples
 ...          [[.1, .9], [.9, .1], [.8, .2], [.35, .65]])
 0.21616...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanPinballLoss a owl:Class ;
     rdfs:comment """Pinball loss for quantile regression.
@@ -3701,8 +3701,8 @@ Examples
 >>> mean_pinball_loss(y_true, y_true, alpha=0.9)
 0.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanSquaredError a owl:Class ;
     rdfs:comment """Mean squared error regression loss.
@@ -3760,8 +3760,8 @@ array([0.41666667, 1.        ])
 >>> mean_squared_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.825...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MeanSquaredLogError a owl:Class ;
     rdfs:comment """Mean squared logarithmic error regression loss.
@@ -3822,8 +3822,8 @@ array([0.00462428, 0.08377444])
 >>> mean_squared_log_error(y_true, y_pred, multioutput=[0.3, 0.7])
 0.060...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:NdcgScore a owl:Class ;
     rdfs:comment """Compute Normalized Discounted Cumulative Gain.
@@ -3919,8 +3919,8 @@ Examples
 ...           scores, k=1, ignore_ties=True)
 0.5...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PrecisionRecallCurve a owl:Class ;
     rdfs:comment """Compute precision-recall pairs for different probability thresholds.
@@ -4010,8 +4010,8 @@ array([1. , 1. , 0.5, 0.5, 0. ])
 >>> thresholds
 array([0.1 , 0.35, 0.4 , 0.8 ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:R2Score a owl:Class ;
     rdfs:comment """:math:`R^2` (coefficient of determination) regression score function.
@@ -4132,8 +4132,8 @@ nan
 >>> r2_score(y_true, y_pred, force_finite=False)
 -inf""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RocAucScore a owl:Class ;
     rdfs:comment """Compute Area Under the Receiver Operating Characteristic Curve (ROC AUC)     from prediction scores.
@@ -4320,8 +4320,8 @@ array([0.82..., 0.86..., 0.94..., 0.85... , 0.94...])
 >>> roc_auc_score(y, clf.decision_function(X), average=None)
 array([0.81..., 0.84... , 0.93..., 0.87..., 0.94...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RocCurve a owl:Class ;
     rdfs:comment """Compute Receiver operating characteristic (ROC).
@@ -4413,8 +4413,8 @@ array([0. , 0.5, 0.5, 1. , 1. ])
 >>> thresholds
 array([ inf, 0.8 , 0.4 , 0.35, 0.1 ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:TopKAccuracyScore a owl:Class ;
     rdfs:comment """Top-k Accuracy classification score.
@@ -4493,8 +4493,8 @@ Examples
 >>> top_k_accuracy_score(y_true, y_score, k=2, normalize=False)
 3""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ClassificationReport a owl:Class ;
     rdfs:comment """Build a text report showing the main classification metrics.
@@ -4603,8 +4603,8 @@ weighted avg       0.70      0.60      0.61         5
 weighted avg       1.00      0.67      0.80         3
 <BLANKLINE>""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:ConsensusScore a owl:Class ;
     rdfs:comment """The similarity of two sets of biclusters.
@@ -4650,8 +4650,8 @@ Examples
 >>> consensus_score(a, b, similarity='jaccard')
 1.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:DcgScore a owl:Class ;
     rdfs:comment """Compute Discounted Cumulative Gain.
@@ -4746,8 +4746,8 @@ Examples
 ...           scores, k=1, ignore_ties=True)
 5.0""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:F1Score a owl:Class ;
     rdfs:comment """Compute the F1 score, also known as balanced F-score or F-measure.
@@ -4900,8 +4900,8 @@ nan...
 >>> f1_score(y_true, y_pred, average=None)
 array([0.66666667, 1.        , 0.66666667])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:JaccardScore a owl:Class ;
     rdfs:comment """Jaccard similarity coefficient score.
@@ -5033,8 +5033,8 @@ In the multiclass case:
 >>> jaccard_score(y_true, y_pred, average=None)
 array([1. , 0. , 0.33...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:NanEuclideanDistances a owl:Class ;
     rdfs:comment """Calculate the euclidean distances in the presence of missing values.
@@ -5111,8 +5111,8 @@ array([[0.        , 1.41421356],
 array([[1.        ],
        [1.41421356]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseDistances a owl:Class ;
     rdfs:comment """Compute the distance matrix from a vector array X and optional Y.
@@ -5234,8 +5234,8 @@ Examples
 array([[1., 2.],
        [2., 1.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseDistancesArgmin a owl:Class ;
     rdfs:comment """Compute minimum distances between one point and a set of points.
@@ -5316,8 +5316,8 @@ Examples
 >>> pairwise_distances_argmin(X, Y)
 array([0, 1])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseDistancesArgminMin a owl:Class ;
     rdfs:comment """Compute minimum distances between one point and a set of points.
@@ -5405,8 +5405,8 @@ array([0, 1])
 >>> distances
 array([1., 1.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseKernels a owl:Class ;
     rdfs:comment """Compute the kernel between arrays X and optional array Y.
@@ -5487,8 +5487,8 @@ Examples
 array([[0., 0.],
        [1., 2.]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PrecisionScore a owl:Class ;
     rdfs:comment """Compute the precision.
@@ -5627,8 +5627,8 @@ array([0.33...,        nan,        nan])
 >>> precision_score(y_true, y_pred, average=None)
 array([0.5, 1. , 1. ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:RecallScore a owl:Class ;
     rdfs:comment """Compute the recall.
@@ -5768,8 +5768,8 @@ array([0.5, nan, nan])
 >>> recall_score(y_true, y_pred, average=None)
 array([1. , 1. , 0.5])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:SilhouetteScore a owl:Class ;
     rdfs:comment """Compute the mean Silhouette Coefficient of all samples.
@@ -5847,8 +5847,8 @@ Examples
 >>> silhouette_score(X, kmeans.fit_predict(X))
 0.49...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:FbetaScore a owl:Class ;
     rdfs:comment """Compute the F-beta score.
@@ -5997,8 +5997,8 @@ array([0.71..., 0.        , 0.        ])
 ...             average="macro", zero_division=np.nan, beta=0.5)
 0.12...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PairwiseDistancesChunked a owl:Class ;
     rdfs:comment """Generate a distance matrix chunk by chunk with optional reduction.
@@ -6118,8 +6118,8 @@ Force row-by-row generation by reducing ``working_memory``:
 >>> next(gen)
 [array([0, 1])]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MakeScorer a owl:Class ;
     rdfs:comment """Make a scorer from a performance metric or loss function.
@@ -6208,8 +6208,8 @@ make_scorer(fbeta_score, response_method='predict', beta=2)
 >>> grid = GridSearchCV(LinearSVC(), param_grid={'C': [1, 10]},
 ...                     scoring=ftwo_scorer)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:PrecisionRecallFscoreSupport a owl:Class ;
     rdfs:comment """Compute precision, recall, F-measure and support for each class.
@@ -6369,8 +6369,8 @@ supports instead of averaging:
  array([0., 0., 1.]), array([0. , 0. , 0.8]),
  array([2, 2, 2]))""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:PerformanceCalculationMethod ;
-    ds:hasModule ml:MetricsModule .
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
 
 ml:MetricsModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .

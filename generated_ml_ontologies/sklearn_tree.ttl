@@ -360,8 +360,8 @@ Examples
 array([-0.39..., -0.46...,  0.02...,  0.06..., -0.50...,
        0.16...,  0.11..., -0.73..., -0.30..., -0.00...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 
 ml:ExtraTreeRegressor a owl:Class ;
     rdfs:comment """An extremely randomized tree regressor.
@@ -573,8 +573,8 @@ Examples
 >>> reg.score(X_test, y_test)
 0.33...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 
 ml:DecisionTreeClassifier a owl:Class ;
     rdfs:comment """A decision tree classifier.
@@ -816,8 +816,8 @@ Examples
 array([ 1.     ,  0.93...,  0.86...,  0.93...,  0.93...,
         0.93...,  0.93...,  1.     ,  0.93...,  1.      ])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 
 ml:ExtraTreeClassifier a owl:Class ;
     rdfs:comment """An extremely randomized tree classifier.
@@ -1058,6 +1058,6 @@ Examples
 >>> cls.score(X_test, y_test)
 0.8947...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:TreeModule .
+        ml:TrainMethod,
+        ml:TreeModule .
 

@@ -1228,8 +1228,8 @@ Notes
    compute contour locations.  More information can be found in
    `ContourPy documentation <https://contourpy.readthedocs.io>`_.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:ContourPlot a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -1501,8 +1501,8 @@ Notes
    compute contour locations.  More information can be found in
    `ContourPy documentation <https://contourpy.readthedocs.io>`_.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:ErrorBarPlot a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -1550,8 +1550,8 @@ Notes
 Use :meth:`fill_between` if you would like to fill the region between
 two curves.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Histogram a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -1605,8 +1605,8 @@ Returns
 list of `.Line2D`
     Objects representing the plotted data.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:MatplotlibModule a owl:Class ;
     rdfs:subClassOf ds:Module .
@@ -1625,8 +1625,8 @@ call signature::
 Multiple *theta*, *r* arguments are supported, with format strings, as in
 `plot`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:PolarPlot a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -1875,8 +1875,8 @@ get other head shapes:
   nodes (i.e. the ones connecting the head with the shaft) will protrude out
   of the head in forward direction so that the arrow head looks broken.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:ScatterPlot a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -1919,8 +1919,8 @@ Returns
 list of `.Line2D`
     Objects representing the plotted data.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Semilogy a owl:Class ;
     rdfs:comment """Make a plot with log scaling on the y-axis.
@@ -1959,8 +1959,8 @@ Returns
 list of `.Line2D`
     Objects representing the plotted data.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:VectorField a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
@@ -2041,8 +2041,8 @@ Notes
 The cross correlation is performed with `numpy.correlate` with
 ``mode = "full"``.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Step a owl:Class ;
     rdfs:comment """Make a step plot.
@@ -2107,8 +2107,8 @@ Returns
 list of `.Line2D`
     Objects representing the plotted data.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Stackplot a owl:Class ;
     rdfs:comment """Draw a stacked area plot.
@@ -2160,8 +2160,8 @@ list of `.PolyCollection`
     A list of `.PolyCollection` instances, one for each element in the
     stacked area plot.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Bar a owl:Class ;
     rdfs:comment """Make a bar plot.
@@ -2316,8 +2316,8 @@ Notes
 Stacked bars can be achieved by passing individual *bottom* values per
 bar. See :doc:`/gallery/lines_bars_and_markers/bar_stacked`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Barh a owl:Class ;
     rdfs:comment """Make a horizontal bar plot.
@@ -2474,8 +2474,8 @@ Stacked bars can be achieved by passing individual *left* values per
 bar. See
 :doc:`/gallery/lines_bars_and_markers/horizontal_barchart_distribution`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:AngleSpectrum a owl:Class ;
     rdfs:comment """Plot the angle spectrum.
@@ -2595,8 +2595,8 @@ specgram
     Can plot the angle spectrum of segments within the signal in a
     colormap.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:FillBetween a owl:Class ;
     rdfs:comment """Fill the area between two horizontal curves.
@@ -2723,8 +2723,8 @@ See Also
 fill_between : Fill between two sets of y-values.
 fill_betweenx : Fill between two sets of x-values.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:PhaseSpectrum a owl:Class ;
     rdfs:comment """Plot the phase spectrum.
@@ -2844,8 +2844,8 @@ specgram
     Can plot the phase spectrum of segments within the signal in a
     colormap.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Xcorr a owl:Class ;
     rdfs:comment """Plot the cross correlation between *x* and *y*.
@@ -2922,8 +2922,8 @@ Notes
 The cross correlation is performed with `numpy.correlate` with
 ``mode = "full"``.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:MagnitudeSpectrum a owl:Class ;
     rdfs:comment """Plot the magnitude spectrum.
@@ -3050,8 +3050,8 @@ specgram
     Can plot the magnitude spectrum of segments within the signal in a
     colormap.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Pcolor a owl:Class ;
     rdfs:comment """Create a pseudocolor plot with a non-regular rectangular grid.
@@ -3256,8 +3256,8 @@ The grid orientation follows the standard matrix convention: An array
 *C* with shape (nrows, ncolumns) is plotted with the column number as
 *X* and the row number as *Y*.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Stem a owl:Class ;
     rdfs:comment """Create a stem plot.
@@ -3340,8 +3340,8 @@ Notes
     `stem <https://www.mathworks.com/help/matlab/ref/stem.html>`_
     which inspired this method.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Hist2d a owl:Class ;
     rdfs:comment """Make a 2D histogram plot.
@@ -3453,8 +3453,8 @@ Notes
   in effect to gamma correction) can be accomplished with
   `.colors.PowerNorm`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Pcolormesh a owl:Class ;
     rdfs:comment """Create a pseudocolor plot with a non-regular rectangular grid.
@@ -3694,8 +3694,8 @@ polygon, it also supports applying hatches and linestyles to the collection.
 Another difference is the support of Gouraud shading in
 `~.Axes.pcolormesh`, which is not available with `~.Axes.pcolor`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Violinplot a owl:Class ;
     rdfs:comment """Make a violin plot.
@@ -3784,8 +3784,8 @@ dict
     to identify the quantile values of each of the violin's
     distribution.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Cohere a owl:Class ;
     rdfs:comment """Plot the coherence between *x* and *y*.
@@ -3920,8 +3920,8 @@ References
 Bendat & Piersol -- Random Data: Analysis and Measurement Procedures,
 John Wiley & Sons (1986)""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Streamplot a owl:Class ;
     rdfs:comment """Draw streamlines of a vector flow.
@@ -3994,8 +3994,8 @@ StreamplotSet
     to the colormap, alpha, etc. for both lines and arrows, but these
     changes should be backward compatible.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Scatter a owl:Class ;
     rdfs:comment """A scatter plot of *y* vs. *x* with varying marker size and/or color.
@@ -4138,8 +4138,8 @@ Notes
   flattened. The exception is *c*, which will be flattened only if its
   size matches the size of *x* and *y*.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Errorbar a owl:Class ;
     rdfs:comment """Plot y versus x as lines and/or markers with attached errorbars.
@@ -4319,8 +4319,8 @@ data : indexable object, optional
     ydata: 1D array
     zorder: float""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Hist a owl:Class ;
     rdfs:comment """Compute and plot a histogram.
@@ -4512,8 +4512,8 @@ accelerated by using `~.Axes.stairs` to plot a pre-computed histogram
 (``plt.stairs(*np.histogram(data))``), or by setting *histtype* to
 'step' or 'stepfilled' rather than 'bar' or 'barstacked'.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Imshow a owl:Class ;
     rdfs:comment """Display data as an image, i.e., on a 2D regular raster.
@@ -4733,8 +4733,8 @@ channel:
 `~matplotlib.pyplot.imshow` expects RGB images adopting the straight
 (unassociated) alpha representation.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Plot a owl:Class ;
     rdfs:comment """Plot y versus x as lines and/or markers.
@@ -5021,8 +5021,8 @@ If the color is the only part of the format string, you can
 additionally use any  `matplotlib.colors` spec, e.g. full names
 (``'green'``) or hex strings (``'#008000'``).""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Hexbin a owl:Class ;
     rdfs:comment """Make a 2D hexagonal binning plot of points *x*, *y*.
@@ -5241,8 +5241,8 @@ See Also
 --------
 hist2d : 2D histogram rectangular bins""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Pie a owl:Class ;
     rdfs:comment """Plot a pie chart.
@@ -5360,8 +5360,8 @@ square, or the Axes aspect is equal.
 This method sets the aspect ratio of the axis to "equal".
 The Axes aspect ratio can be controlled with `.Axes.set_aspect`.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:Boxplot a owl:Class ;
     rdfs:comment """Draw a box and whisker plot.
@@ -5550,8 +5550,8 @@ See Also
 --------
 violinplot : Draw an estimate of the probability density function.""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        visu:PlotMethod ;
-    ds:hasModule visu:PyplotModule .
+        visu:PlotMethod,
+        visu:PyplotModule .
 
 visu:PyplotModule a owl:Class ;
     rdfs:subClassOf visu:MatplotlibModule .

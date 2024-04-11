@@ -875,8 +875,8 @@ array([1., 2.])
 >>> reg.predict(np.array([[3, 5]]))
 array([16.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:OrthogonalMatchingPursuit a owl:Class ;
     rdfs:comment """Orthogonal Matching Pursuit model (OMP).
@@ -966,8 +966,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.3854...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:QuantileRegressor a owl:Class ;
     rdfs:comment """Linear regression model that predicts conditional quantiles.
@@ -1057,8 +1057,8 @@ Examples
 >>> np.mean(y <= reg.predict(X))
 0.8""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:RidgeClassifierCV a owl:Class ;
     rdfs:comment """Ridge classifier with built-in cross-validation.
@@ -1177,8 +1177,8 @@ Examples
 >>> clf.score(X, y)
 0.9630...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:HuberRegressor a owl:Class ;
     rdfs:comment """L2-regularized linear regression model that is robust to outliers.
@@ -1301,8 +1301,8 @@ Huber coefficients: [17.7906... 31.0106...]
 >>> print("Linear Regression coefficients:", linear.coef_)
 Linear Regression coefficients: [-1.9221...  7.0226...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:OrthogonalMatchingPursuitCV a owl:Class ;
     rdfs:comment """Cross-validated Orthogonal Matching Pursuit model (OMP).
@@ -1413,8 +1413,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.3854...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:RidgeCV a owl:Class ;
     rdfs:comment """Ridge regression with built-in cross-validation.
@@ -1545,8 +1545,8 @@ Examples
 >>> clf.score(X, y)
 0.5166...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:GammaRegressor a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Gamma distribution.
@@ -1650,9 +1650,9 @@ array([0.072..., 0.066...])
 >>> clf.predict([[1, 0], [2, 8]])
 array([19.483..., 35.795...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:GlmModule,
-        ml:LinearModelModule .
+        ml:GlmModule,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PoissonRegressor a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Poisson distribution.
@@ -1755,9 +1755,9 @@ array([0.121..., 0.158...])
 >>> clf.predict([[1, 1], [3, 4]])
 array([10.676..., 21.875...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:GlmModule,
-        ml:LinearModelModule .
+        ml:GlmModule,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:MultiTaskLasso a owl:Class ;
     rdfs:comment """Multi-task Lasso model trained with L1/L2 mixed-norm as regularizer.
@@ -1872,8 +1872,8 @@ MultiTaskLasso(alpha=0.1)
 >>> print(clf.intercept_)
 [-0.41888636 -0.87382323]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:Ridge a owl:Class ;
     rdfs:comment """Linear least squares with l2 regularization.
@@ -2047,8 +2047,8 @@ Examples
 >>> clf.fit(X, y)
 Ridge()""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:Lars a owl:Class ;
     rdfs:comment """Least Angle Regression model a.k.a. LAR.
@@ -2158,8 +2158,8 @@ Lars(n_nonzero_coefs=1)
 >>> print(reg.coef_)
 [ 0. -1.11...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LarsCV a owl:Class ;
     rdfs:comment """Cross-validated Least Angle Regression model.
@@ -2297,8 +2297,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([154.3996...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LassoLarsIC a owl:Class ;
     rdfs:comment """Lasso model fit with Lars using BIC or AIC for model selection.
@@ -2453,8 +2453,8 @@ LassoLarsIC(criterion='bic')
 >>> print(reg.coef_)
 [ 0.  -1.11...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:MultiTaskElasticNet a owl:Class ;
     rdfs:comment """Multi-task ElasticNet model trained with L1/L2 mixed-norm as regularizer.
@@ -2579,8 +2579,8 @@ MultiTaskElasticNet(alpha=0.1)
 >>> print(clf.intercept_)
 [0.0872422 0.0872422]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:RidgeClassifier a owl:Class ;
     rdfs:comment """Classifier using Ridge regression.
@@ -2739,8 +2739,8 @@ Examples
 >>> clf.score(X, y)
 0.9595...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:TheilSenRegressor a owl:Class ;
     rdfs:comment """Theil-Sen Estimator: robust multivariate regression model.
@@ -2858,8 +2858,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-31.5871...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:TweedieRegressor a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Tweedie distribution.
@@ -2993,9 +2993,9 @@ array([0.599..., 0.299...])
 >>> clf.predict([[1, 1], [3, 4]])
 array([2.500..., 4.599...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:GlmModule,
-        ml:LinearModelModule .
+        ml:GlmModule,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:Lasso a owl:Class ;
     rdfs:comment """Linear Model trained with L1 prior as regularizer (aka the Lasso).
@@ -3143,8 +3143,8 @@ Lasso(alpha=0.1)
 >>> print(clf.intercept_)
 0.15...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LassoLarsCV a owl:Class ;
     rdfs:comment """Cross-validated Lasso, using the LARS algorithm.
@@ -3308,8 +3308,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.4831...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:RANSACRegressor a owl:Class ;
     rdfs:comment """RANSAC (RANdom SAmple Consensus) algorithm.
@@ -3480,8 +3480,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-31.9417...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:ElasticNet a owl:Class ;
     rdfs:comment """Linear regression with combined L1 and L2 priors as regularizer.
@@ -3630,8 +3630,8 @@ ElasticNet(random_state=0)
 >>> print(regr.predict([[0, 0]]))
 [1.451...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LassoLars a owl:Class ;
     rdfs:comment """Lasso model fit with Least Angle Regression a.k.a. Lars.
@@ -3772,8 +3772,8 @@ LassoLars(alpha=0.01)
 >>> print(reg.coef_)
 [ 0.         -0.955...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:ARDRegression a owl:Class ;
     rdfs:comment """Bayesian ARD regression.
@@ -3912,8 +3912,8 @@ ARDRegression()
 >>> clf.predict([[1, 1]])
 array([1.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:MultiTaskLassoCV a owl:Class ;
     rdfs:comment """Multi-task Lasso model trained with L1/L2 mixed-norm as regularizer.
@@ -4072,8 +4072,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([[153.7971...,  94.9015...]])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:SGDOneClassSVM a owl:Class ;
     rdfs:comment """Solves linear One-Class SVM using Stochastic Gradient Descent.
@@ -4222,8 +4222,8 @@ SGDOneClassSVM(random_state=42)
 >>> print(clf.predict([[4, 4]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:BayesianRidge a owl:Class ;
     rdfs:comment """Bayesian ridge regression.
@@ -4375,8 +4375,8 @@ BayesianRidge()
 >>> clf.predict([[1, 1]])
 array([1.])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:MultiTaskElasticNetCV a owl:Class ;
     rdfs:comment """Multi-task L1/L2 ElasticNet with built-in cross-validation.
@@ -4550,8 +4550,8 @@ MultiTaskElasticNetCV(cv=3)
 >>> print(clf.intercept_)
 [0.00166409 0.00166409]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LassoCV a owl:Class ;
     rdfs:comment """Lasso linear model with iterative fitting along a regularization path.
@@ -4720,8 +4720,8 @@ Examples
 >>> reg.predict(X[:1,])
 array([-78.4951...])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PassiveAggressiveRegressor a owl:Class ;
     rdfs:comment """Passive Aggressive Regressor.
@@ -4866,8 +4866,8 @@ PassiveAggressiveRegressor(max_iter=100, random_state=0)
 >>> print(regr.predict([[0, 0, 0, 0]]))
 [-0.02306214]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:ElasticNetCV a owl:Class ;
     rdfs:comment """Elastic Net model with iterative fitting along a regularization path.
@@ -5054,8 +5054,8 @@ ElasticNetCV(cv=5, random_state=0)
 >>> print(regr.predict([[0, 0]]))
 [0.398...]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LogisticRegression a owl:Class ;
     rdfs:comment """Logistic Regression (aka logit, MaxEnt) classifier.
@@ -5336,8 +5336,8 @@ array([[9.8...e-01, 1.8...e-02, 1.4...e-08],
 >>> clf.score(X, y)
 0.97...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PassiveAggressiveClassifier a owl:Class ;
     rdfs:comment """Passive Aggressive Classifier.
@@ -5502,8 +5502,8 @@ PassiveAggressiveClassifier(random_state=0)
 >>> print(clf.predict([[0, 0, 0, 0]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:Perceptron a owl:Class ;
     rdfs:comment """Linear perceptron classifier.
@@ -5671,8 +5671,8 @@ Perceptron()
 >>> clf.score(X, y)
 0.939...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LogisticRegressionCV a owl:Class ;
     rdfs:comment """Logistic Regression CV (aka logit, MaxEnt) classifier.
@@ -5950,8 +5950,8 @@ array([0, 0])
 >>> clf.score(X, y)
 0.98...""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:SGDRegressor a owl:Class ;
     rdfs:comment """Linear model fitted by minimizing a regularized empirical loss with SGD.
@@ -6177,8 +6177,8 @@ Examples
 Pipeline(steps=[('standardscaler', StandardScaler()),
                 ('sgdregressor', SGDRegressor())])""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:SGDClassifier a owl:Class ;
     rdfs:comment """Linear classifiers (SVM, logistic regression, etc.) with SGD training.
@@ -6438,8 +6438,8 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
 >>> print(clf.predict([[-0.8, -1]]))
 [1]""" ;
     rdfs:subClassOf ds:AtomicMethod,
-        ml:TrainMethod ;
-    ds:hasModule ml:LinearModelModule .
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:LinearModelModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
