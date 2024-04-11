@@ -1,0 +1,37 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:SVR" "ml:NuSVR" "ml:BinaryClassification" "ml:SupportVectorRegression" "ml:Classification" "ml:NuSVC" "ml:OneClassSVM" "ml:SVC" "ml:Train" "ml:SklearnModule" "ml:LinearSVR" "ml:SvmModule" "ml:Regression" "ml:LinearSVC" "ml:RegularizedRegression" ; /*classes style*/
+	"ml:OneClassSVM" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneClassSVM" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:OneClassSVM" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:Classification" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:SVC" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SVC" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:SVC" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RegularizedRegression" -> "ml:Regression" [ label = "rdfs:subClassOf" ];
+	"ml:RegularizedRegression" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:SVR" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SVR" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:SVR" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVC" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVC" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVC" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVR" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVR" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVR" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVC" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVC" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVC" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SupportVectorRegression" -> "ml:Regression" [ label = "rdfs:subClassOf" ];
+	"ml:SupportVectorRegression" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVR" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVR" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVR" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Regression" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:SvmModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+
+}

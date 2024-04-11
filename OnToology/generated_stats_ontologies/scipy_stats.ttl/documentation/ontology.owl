@@ -1,0 +1,412 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationMethod"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule"/>
+        <rdfs:comment>Compute the kurtosis (Fisher or Pearson) of a dataset.
+
+Kurtosis is the fourth central moment divided by the square of the
+variance. If Fisher&apos;s definition is used, then 3.0 is subtracted from
+the result to give 0.0 for a normal distribution.
+
+If bias is False then the kurtosis is calculated using k statistics to
+eliminate bias coming from biased moment estimators
+
+Use `kurtosistest` to see if result is close enough to normal.
+
+Parameters
+----------
+a : array
+    Data for which the kurtosis is calculated.
+axis : int or None, default: 0
+    If an int, the axis of the input along which to compute the statistic.
+    The statistic of each axis-slice (e.g. row) of the input will appear in a
+    corresponding element of the output.
+    If ``None``, the input will be raveled before computing the statistic.
+fisher : bool, optional
+    If True, Fisher&apos;s definition is used (normal ==&gt; 0.0). If False,
+    Pearson&apos;s definition is used (normal ==&gt; 3.0).
+bias : bool, optional
+    If False, then the calculations are corrected for statistical bias.
+nan_policy : {&apos;propagate&apos;, &apos;omit&apos;, &apos;raise&apos;}
+    Defines how to handle input NaNs.
+    
+    - ``propagate``: if a NaN is present in the axis slice (e.g. row) along
+      which the  statistic is computed, the corresponding entry of the output
+      will be NaN.
+    - ``omit``: NaNs will be omitted when performing the calculation.
+      If insufficient data remains in the axis slice along which the
+      statistic is computed, the corresponding entry of the output will be
+      NaN.
+    - ``raise``: if a NaN is present, a ``ValueError`` will be raised.
+keepdims : bool, default: False
+    If this is set to True, the axes which are reduced are left
+    in the result as dimensions with size one. With this option,
+    the result will broadcast correctly against the input array.
+
+Returns
+-------
+kurtosis : array
+    The kurtosis of values along an axis, returning NaN where all values
+    are equal.
+
+Notes
+-----
+
+Beginning in SciPy 1.9, ``np.matrix`` inputs (not recommended for new
+code) are converted to ``np.ndarray`` before the calculation is performed. In
+this case, the output will be a scalar or ``np.ndarray`` of appropriate shape
+rather than a 2D ``np.matrix``. Similarly, while masked elements of masked
+arrays are ignored, the output will be a scalar or ``np.ndarray`` rather than a
+masked array with ``mask=False``.
+
+References
+----------
+.. [1] Zwillinger, D. and Kokoska, S. (2000). CRC Standard
+   Probability and Statistics Tables and Formulae. Chapman &amp; Hall: New
+   York. 2000.
+
+Examples
+--------
+In Fisher&apos;s definition, the kurtosis of the normal distribution is zero.
+In the following example, the kurtosis is close to zero, because it was
+calculated from the dataset, not from the continuous distribution.
+
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from scipy.stats import norm, kurtosis
+&gt;&gt;&gt; data = norm.rvs(size=1000, random_state=3)
+&gt;&gt;&gt; kurtosis(data)
+-0.06928694200380558
+
+The distribution with a higher kurtosis has a heavier tail.
+The zero valued kurtosis of the normal distribution in Fisher&apos;s definition
+can serve as a reference point.
+
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; import scipy.stats as stats
+&gt;&gt;&gt; from scipy.stats import kurtosis
+
+&gt;&gt;&gt; x = np.linspace(-5, 5, 100)
+&gt;&gt;&gt; ax = plt.subplot()
+&gt;&gt;&gt; distnames = [&apos;laplace&apos;, &apos;norm&apos;, &apos;uniform&apos;]
+
+&gt;&gt;&gt; for distname in distnames:
+...     if distname == &apos;uniform&apos;:
+...         dist = getattr(stats, distname)(loc=-2, scale=4)
+...     else:
+...         dist = getattr(stats, distname)
+...     data = dist.rvs(size=1000)
+...     kur = kurtosis(data, fisher=True)
+...     y = dist.pdf(x)
+...     ax.plot(x, y, label=&quot;{}, {}&quot;.format(distname, round(kur, 3)))
+...     ax.legend()
+
+The Laplace distribution has a heavier tail than the normal distribution.
+The uniform distribution (which has negative kurtosis) has the thinnest
+tail.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculation"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule"/>
+        <rdfs:comment>Compute the sample skewness of a data set.
+
+For normally distributed data, the skewness should be about zero. For
+unimodal continuous distributions, a skewness value greater than zero means
+that there is more weight in the right tail of the distribution. The
+function `skewtest` can be used to determine if the skewness value
+is close enough to zero, statistically speaking.
+
+Parameters
+----------
+a : ndarray
+    Input array.
+axis : int or None, default: 0
+    If an int, the axis of the input along which to compute the statistic.
+    The statistic of each axis-slice (e.g. row) of the input will appear in a
+    corresponding element of the output.
+    If ``None``, the input will be raveled before computing the statistic.
+bias : bool, optional
+    If False, then the calculations are corrected for statistical bias.
+nan_policy : {&apos;propagate&apos;, &apos;omit&apos;, &apos;raise&apos;}
+    Defines how to handle input NaNs.
+    
+    - ``propagate``: if a NaN is present in the axis slice (e.g. row) along
+      which the  statistic is computed, the corresponding entry of the output
+      will be NaN.
+    - ``omit``: NaNs will be omitted when performing the calculation.
+      If insufficient data remains in the axis slice along which the
+      statistic is computed, the corresponding entry of the output will be
+      NaN.
+    - ``raise``: if a NaN is present, a ``ValueError`` will be raised.
+keepdims : bool, default: False
+    If this is set to True, the axes which are reduced are left
+    in the result as dimensions with size one. With this option,
+    the result will broadcast correctly against the input array.
+
+Returns
+-------
+skewness : ndarray
+    The skewness of values along an axis, returning NaN where all values
+    are equal.
+
+Notes
+-----
+The sample skewness is computed as the Fisher-Pearson coefficient
+of skewness, i.e.
+
+.. math::
+
+    g_1=\frac{m_3}{m_2^{3/2}}
+
+where
+
+.. math::
+
+    m_i=\frac{1}{N}\sum_{n=1}^N(x[n]-\bar{x})^i
+
+is the biased sample :math:`i\texttt{th}` central moment, and
+:math:`\bar{x}` is
+the sample mean.  If ``bias`` is False, the calculations are
+corrected for bias and the value computed is the adjusted
+Fisher-Pearson standardized moment coefficient, i.e.
+
+.. math::
+
+    G_1=\frac{k_3}{k_2^{3/2}}=
+        \frac{\sqrt{N(N-1)}}{N-2}\frac{m_3}{m_2^{3/2}}.
+
+Beginning in SciPy 1.9, ``np.matrix`` inputs (not recommended for new
+code) are converted to ``np.ndarray`` before the calculation is performed. In
+this case, the output will be a scalar or ``np.ndarray`` of appropriate shape
+rather than a 2D ``np.matrix``. Similarly, while masked elements of masked
+arrays are ignored, the output will be a scalar or ``np.ndarray`` rather than a
+masked array with ``mask=False``.
+
+References
+----------
+.. [1] Zwillinger, D. and Kokoska, S. (2000). CRC Standard
+   Probability and Statistics Tables and Formulae. Chapman &amp; Hall: New
+   York. 2000.
+   Section 2.2.24.1
+
+Examples
+--------
+&gt;&gt;&gt; from scipy.stats import skew
+&gt;&gt;&gt; skew([1, 2, 3, 4, 5])
+0.0
+&gt;&gt;&gt; skew([2, 8, 0, 4, 1, 9, 9, 0])
+0.2650554122698573</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculation -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculation"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule"/>
+    </Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

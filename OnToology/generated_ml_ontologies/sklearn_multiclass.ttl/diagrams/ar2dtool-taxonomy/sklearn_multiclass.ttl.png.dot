@@ -1,0 +1,24 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:BinaryClassification" "ml:Classification" "ml:OutputCodeClassifier" "ml:MulticlassClassification" "ml:MultilabelClassification" "ml:OneVsRestClassifier" "ml:Train" "ml:SklearnModule" "ml:MulticlassModule" "ml:OneVsOneClassifier" ; /*classes style*/
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:Classification" -> "ml:Train" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsOneClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsOneClassifier" -> "ml:MulticlassModule" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsOneClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:BinaryClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:MultilabelClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:MultilabelClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsRestClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsRestClassifier" -> "ml:MulticlassModule" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsRestClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:OutputCodeClassifier" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OutputCodeClassifier" -> "ml:MulticlassModule" [ label = "rdfs:subClassOf" ];
+	"ml:OutputCodeClassifier" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassClassification" -> "ml:Classification" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassClassification" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+
+}

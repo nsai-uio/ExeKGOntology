@@ -1,0 +1,22 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "ml:FeatureHasher" "ml:DictVectorizer" "ml:DataProcessing" ; /*classes style*/
+	"ml:hasParamSeparator" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamSort" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamAlternateSign" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamDtype" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamNFeatures" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamInputType" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasDataProcessingMethod" -> "ml:hasPrepareTransformerMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamSparse" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:DictVectorizer" -> "xsd:string" [ label = "ml:hasParamSeparator" ];
+	"ml:DictVectorizer" -> "xsd:boolean" [ label = "ml:hasParamSparse" ];
+	"ml:DictVectorizer" -> "xsd:boolean" [ label = "ml:hasParamSort" ];
+	"ml:FeatureHasher" -> "xsd:boolean" [ label = "ml:hasParamAlternateSign" ];
+	"ml:FeatureHasher" -> "xsd:string" [ label = "ml:hasParamInputType" ];
+	"ml:DictVectorizer" -> "xsd:string" [ label = "ml:hasParamDtype" ];
+	"ml:DataProcessing" -> "ml:DictVectorizer" [ label = "ml:hasDataProcessingMethod" ];
+	"ml:FeatureHasher" -> "xsd:int" [ label = "ml:hasParamNFeatures" ];
+
+}

@@ -1,0 +1,16 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "stats:Kurtosis" "stats:Skew" "stats:StatsModule" "stats:StatisticCalculation" "stats:ShapeMeasure" "stats:ScipyModule" ; /*classes style*/
+	"stats:Skew" -> "stats:StatsModule" [ label = "rdfs:subClassOf" ];
+	"stats:Skew" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:Skew" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:Kurtosis" -> "stats:StatsModule" [ label = "rdfs:subClassOf" ];
+	"stats:Kurtosis" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:Kurtosis" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:ScipyModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"stats:ShapeMeasure" -> "stats:StatisticCalculation" [ label = "rdfs:subClassOf" ];
+	"stats:ShapeMeasure" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"stats:StatsModule" -> "stats:ScipyModule" [ label = "rdfs:subClassOf" ];
+
+}

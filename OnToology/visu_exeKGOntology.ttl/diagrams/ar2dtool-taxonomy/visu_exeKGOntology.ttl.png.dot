@@ -1,17 +1,15 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "visu:DataInVector" "visu:BarplotMethod" "visu:ScatterplotMethod" "visu:LineplotMethod" "visu:PlotTask" "visu:PlotMethod" "visu:CanvasTask" "visu:CanvasMethod" ; /*classes style*/
-	"visu:LineplotMethod" -> "visu:PlotMethod" [ label = "rdfs:subClassOf" ];
-	"visu:LineplotMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"visu:BarplotMethod" -> "visu:PlotMethod" [ label = "rdfs:subClassOf" ];
-	"visu:BarplotMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "visu:DataInToPlot" "visu:Plot" "visu:PlotMethod" "visu:CanvasCreation" "visu:CanvasMethod" ; /*classes style*/
 	"visu:CanvasMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
 	"visu:PlotMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
-	"visu:PlotTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"visu:ScatterplotMethod" -> "visu:PlotMethod" [ label = "rdfs:subClassOf" ];
-	"visu:ScatterplotMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"visu:DataInVector" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"visu:CanvasTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:CanvasCreation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Tabular" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Vector" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Matrix" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Tensor" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"visu:Plot" -> "ds:Task" [ label = "rdfs:subClassOf" ];
 
 }

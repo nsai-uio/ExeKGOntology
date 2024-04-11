@@ -1,0 +1,22 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "stats:Std" "stats:ShapeMeasure" "stats:CentralTendencyMeasure" "stats:Ptp" "stats:Mean" "stats:DispersionMeasure" ; /*classes style*/
+	"stats:hasParamDtype" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasCentralTendencyMeasureMethod" -> "stats:hasStatisticCalculationMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasDispersionMeasureMethod" -> "stats:hasStatisticCalculationMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamDdof" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamWhere" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamAxis" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasShapeMeasureMethod" -> "stats:hasStatisticCalculationMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamKeepdims" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:Std" -> "xsd:int" [ label = "stats:hasParamDdof" ];
+	"stats:DispersionMeasure" -> "stats:Std" [ label = "stats:hasDispersionMeasureMethod" ];
+	"stats:ShapeMeasure" -> "stats:Ptp" [ label = "stats:hasShapeMeasureMethod" ];
+	"stats:Mean" -> "xsd:string" [ label = "stats:hasParamDtype" ];
+	"stats:CentralTendencyMeasure" -> "stats:Mean" [ label = "stats:hasCentralTendencyMeasureMethod" ];
+	"stats:Mean" -> "xsd:boolean" [ label = "stats:hasParamWhere" ];
+	"stats:Mean" -> "xsd:boolean" [ label = "stats:hasParamKeepdims" ];
+	"stats:Mean" -> "xsd:int" [ label = "stats:hasParamAxis" ];
+
+}

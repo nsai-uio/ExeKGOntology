@@ -1,17 +1,16 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "ds:Data" "ds:Method" "ds:Pipeline" "ds:Task" "ds:DataSemantics" "ds:DataStructure" "ds:AtomicTask" "ds:DataEntity" ; /*classes style*/
-	"ds:DataEntity" -> "ds:DataSemantics" [ label = "ds:hasDataSemantics" ];
-	"ds:Data" -> "ds:DataEntity" [ label = "ds:hasReference" ];
+node [shape = rectangle, color="orange"]; "ds:Pipeline" "ds:Task" "ds:AtomicTask" "ds:DataEntity" "ds:AtomicMethod" ; /*classes style*/
+	"ds:DataEntity" -> "ds:DataEntity" [ label = "ds:hasReference" ];
+	"ds:Pipeline" -> "xsd:string" [ label = "ds:hasPlotsOutputDir" ];
 	"ds:Task" -> "ds:DataEntity" [ label = "ds:hasOutput" ];
-	"ds:Data" -> "xsd:string" [ label = "ds:hasSource" ];
-	"ds:AtomicTask" -> "ds:Method" [ label = "ds:hasMethod" ];
+	"ds:DataEntity" -> "xsd:string" [ label = "ds:hasSource" ];
+	"ds:AtomicTask" -> "ds:AtomicMethod" [ label = "ds:hasMethod" ];
 	"ds:Task" -> "ds:DataEntity" [ label = "ds:hasInput" ];
-	"ds:Method" -> "ds:DataStructure" [ label = "ds:allowedDataStructure" ];
+	"ds:AtomicMethod" -> "xsd:boolean" [ label = "ds:hasParameter" ];
 	"ds:Pipeline" -> "xsd:string" [ label = "ds:hasInputDataPath" ];
 	"ds:AtomicTask" -> "ds:AtomicTask" [ label = "ds:hasNextTask" ];
-	"ds:DataEntity" -> "ds:DataStructure" [ label = "ds:hasDataStructure" ];
 	"ds:Pipeline" -> "ds:AtomicTask" [ label = "ds:hasStartTask" ];
 
 }

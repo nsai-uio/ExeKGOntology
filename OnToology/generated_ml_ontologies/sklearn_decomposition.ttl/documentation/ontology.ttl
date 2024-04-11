@@ -1,0 +1,3114 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDecompositionMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDecompositionMethod> rdf:type owl:ObjectProperty ;
+                                                                                                            rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod> ;
+                                                                                                            rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Decomposition> ;
+                                                                                                            rdfs:range <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#IncrementalPCA> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlgorithm
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlgorithm> rdf:type owl:DatatypeProperty ;
+                                                                                                       rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                       rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> ;
+                                                                                                       rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                   rdfs:range xsd:float ,
+                                                                                                              xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlphaH
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlphaH> rdf:type owl:DatatypeProperty ;
+                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ;
+                                                                                                    rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlphaW
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlphaW> rdf:type owl:DatatypeProperty ;
+                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ;
+                                                                                                    rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBatchSize
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBatchSize> rdf:type owl:DatatypeProperty ;
+                                                                                                       rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                       rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#IncrementalPCA> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ;
+                                                                                                       rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBetaLoss
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBetaLoss> rdf:type owl:DatatypeProperty ;
+                                                                                                      rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                      rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ;
+                                                                                                      rdfs:range xsd:float ,
+                                                                                                                 xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCallback
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCallback> rdf:type owl:DatatypeProperty ;
+                                                                                                      rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                      rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ;
+                                                                                                      rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCodeInit
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCodeInit> rdf:type owl:DatatypeProperty ;
+                                                                                                      rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                      rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ;
+                                                                                                      rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                   rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy> rdf:type owl:DatatypeProperty ;
+                                                                                                  rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                  rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ,
+                                                                                                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#IncrementalPCA> ,
+                                                                                                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ;
+                                                                                                  rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopyX
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopyX> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                   rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree> rdf:type owl:DatatypeProperty ;
+                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                    rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDictInit
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDictInit> rdf:type owl:DatatypeProperty ;
+                                                                                                      rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                      rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ;
+                                                                                                      rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDictionary
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDictionary> rdf:type owl:DatatypeProperty ;
+                                                                                                        rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                        rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ;
+                                                                                                        rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDocTopicPrior
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDocTopicPrior> rdf:type owl:DatatypeProperty ;
+                                                                                                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                           rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                           rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEigenSolver
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEigenSolver> rdf:type owl:DatatypeProperty ;
+                                                                                                         rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                         rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                         rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEvaluateEvery
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEvaluateEvery> rdf:type owl:DatatypeProperty ;
+                                                                                                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                           rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                           rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitAlgorithm
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitAlgorithm> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                      <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ;
+                                                                                                          rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitInverseTransform
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitInverseTransform> rdf:type owl:DatatypeProperty ;
+                                                                                                                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                                 rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                                 rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamForgetFactor
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamForgetFactor> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ;
+                                                                                                          rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFreshRestarts
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFreshRestarts> rdf:type owl:DatatypeProperty ;
+                                                                                                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                           rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ;
+                                                                                                           rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFreshRestartsMaxIter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFreshRestartsMaxIter> rdf:type owl:DatatypeProperty ;
+                                                                                                                  rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                                  rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ;
+                                                                                                                  rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFun
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFun> rdf:type owl:DatatypeProperty ;
+                                                                                                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                 rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ;
+                                                                                                 rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFunArgs
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFunArgs> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                     rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ;
+                                                                                                     rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                   rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInit
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInit> rdf:type owl:DatatypeProperty ;
+                                                                                                  rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                  rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ;
+                                                                                                  rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamIteratedPower
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamIteratedPower> rdf:type owl:DatatypeProperty ;
+                                                                                                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                           rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ,
+                                                                                                                       <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ;
+                                                                                                           rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel> rdf:type owl:DatatypeProperty ;
+                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                    rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernelParams
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernelParams> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                          rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamL1Ratio
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamL1Ratio> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                     rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ;
+                                                                                                     rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningDecay
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningDecay> rdf:type owl:DatatypeProperty ;
+                                                                                                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                           rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                           rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningMethod> rdf:type owl:DatatypeProperty ;
+                                                                                                            rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                            rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                            rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningOffset
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLearningOffset> rdf:type owl:DatatypeProperty ;
+                                                                                                            rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                            rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                            rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxDocUpdateIter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxDocUpdateIter> rdf:type owl:DatatypeProperty ;
+                                                                                                              rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                              rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                              rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                     rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                     rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxNoImprovement
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxNoImprovement> rdf:type owl:DatatypeProperty ;
+                                                                                                              rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                              rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                          <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                          <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ;
+                                                                                                              rdfs:range xsd:int ,
+                                                                                                                         xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMeanChangeTol
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMeanChangeTol> rdf:type owl:DatatypeProperty ;
+                                                                                                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                           rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                           rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMethod> rdf:type owl:DatatypeProperty ;
+                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                    rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNComponents
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNComponents> rdf:type owl:DatatypeProperty ;
+                                                                                                         rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                         rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#IncrementalPCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> ;
+                                                                                                         rdfs:range xsd:float ,
+                                                                                                                    xsd:int ,
+                                                                                                                    xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIter> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> ;
+                                                                                                   rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                   rdfs:range xsd:int ,
+                                                                                                              xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNOversamples
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNOversamples> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ,
+                                                                                                                      <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> ;
+                                                                                                          rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPerpTol
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPerpTol> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                     rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                     rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPositiveCode
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPositiveCode> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                      <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                      <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ;
+                                                                                                          rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPositiveDict
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPositiveDict> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                      <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ;
+                                                                                                          rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPowerIterationNormalizer
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPowerIterationNormalizer> rdf:type owl:DatatypeProperty ;
+                                                                                                                      rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                                      rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ,
+                                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> ;
+                                                                                                                      rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState> rdf:type owl:DatatypeProperty ;
+                                                                                                         rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                         rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ,
+                                                                                                                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> ;
+                                                                                                         rdfs:range xsd:int ,
+                                                                                                                    xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRemoveZeroEig
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRemoveZeroEig> rdf:type owl:DatatypeProperty ;
+                                                                                                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                           rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ;
+                                                                                                           rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRidgeAlpha
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRidgeAlpha> rdf:type owl:DatatypeProperty ;
+                                                                                                        rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                        rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                    <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                        rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRotation
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRotation> rdf:type owl:DatatypeProperty ;
+                                                                                                      rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                      rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ;
+                                                                                                      rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                     rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ;
+                                                                                                     rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSolver
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSolver> rdf:type owl:DatatypeProperty ;
+                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ;
+                                                                                                    rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSplitSign
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSplitSign> rdf:type owl:DatatypeProperty ;
+                                                                                                       rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                       rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ;
+                                                                                                       rdfs:range xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSvdMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSvdMethod> rdf:type owl:DatatypeProperty ;
+                                                                                                       rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                       rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ;
+                                                                                                       rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSvdSolver
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSvdSolver> rdf:type owl:DatatypeProperty ;
+                                                                                                       rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                       rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ;
+                                                                                                       rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol> rdf:type owl:DatatypeProperty ;
+                                                                                                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                 rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> ;
+                                                                                                 rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTopicWordPrior
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTopicWordPrior> rdf:type owl:DatatypeProperty ;
+                                                                                                            rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                            rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                            rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTotalSamples
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTotalSamples> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ;
+                                                                                                          rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformAlgorithm
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformAlgorithm> rdf:type owl:DatatypeProperty ;
+                                                                                                                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                                rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                            <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                            <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ;
+                                                                                                                rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformAlpha
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformAlpha> rdf:type owl:DatatypeProperty ;
+                                                                                                            rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                            rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                        <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                        <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ;
+                                                                                                            rdfs:range xsd:float .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformMaxIter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformMaxIter> rdf:type owl:DatatypeProperty ;
+                                                                                                              rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                              rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                          <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                          <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                          <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ;
+                                                                                                              rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformNNonzeroCoefs
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTransformNNonzeroCoefs> rdf:type owl:DatatypeProperty ;
+                                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                                <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                                <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> ;
+                                                                                                                    rdfs:range xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamUInit
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamUInit> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                   rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVInit
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVInit> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                   rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                     rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> ;
+                                                                                                     rdfs:range xsd:boolean ,
+                                                                                                                xsd:int .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWInit
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWInit> rdf:type owl:DatatypeProperty ;
+                                                                                                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                   rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ;
+                                                                                                   rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWhiten
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWhiten> rdf:type owl:DatatypeProperty ;
+                                                                                                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                    rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ,
+                                                                                                                <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#IncrementalPCA> ,
+                                                                                                                <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> ;
+                                                                                                    rdfs:range xsd:boolean ,
+                                                                                                               xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWhitenSolver
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWhitenSolver> rdf:type owl:DatatypeProperty ;
+                                                                                                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                                                                                                          rdfs:domain <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> ;
+                                                                                                          rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Decomposition
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Decomposition> rdf:type owl:Class ;
+                                                                                                   rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                                                                                                                   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> rdf:type owl:Class ;
+                                                                                                         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictionaryLearning> rdf:type owl:Class ;
+                                                                                                        rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                        <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                        <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                        rdfs:comment """Dictionary learning.
+
+Finds a dictionary (a set of atoms) that performs well at sparsely
+encoding the fitted data.
+
+Solves the optimization problem::
+
+    (U^*,V^*) = argmin 0.5 || X - U V ||_Fro^2 + alpha * || U ||_1,1
+                (U,V)
+                with || V_k ||_2 <= 1 for all  0 <= k < n_components
+
+||.||_Fro stands for the Frobenius norm and ||.||_1,1 stands for
+the entry-wise matrix norm which is the sum of the absolute values
+of all the entries in the matrix.
+
+Read more in the :ref:`User Guide <DictionaryLearning>`.
+
+Parameters
+----------
+n_components : int, default=None
+    Number of dictionary elements to extract. If None, then ``n_components``
+    is set to ``n_features``.
+
+alpha : float, default=1.0
+    Sparsity controlling parameter.
+
+max_iter : int, default=1000
+    Maximum number of iterations to perform.
+
+tol : float, default=1e-8
+    Tolerance for numerical error.
+
+fit_algorithm : {'lars', 'cd'}, default='lars'
+    * `'lars'`: uses the least angle regression method to solve the lasso
+      problem (:func:`~sklearn.linear_model.lars_path`);
+    * `'cd'`: uses the coordinate descent method to compute the
+      Lasso solution (:class:`~sklearn.linear_model.Lasso`). Lars will be
+      faster if the estimated components are sparse.
+
+    .. versionadded:: 0.17
+       *cd* coordinate descent method to improve speed.
+
+transform_algorithm : {'lasso_lars', 'lasso_cd', 'lars', 'omp',             'threshold'}, default='omp'
+    Algorithm used to transform the data:
+
+    - `'lars'`: uses the least angle regression method
+      (:func:`~sklearn.linear_model.lars_path`);
+    - `'lasso_lars'`: uses Lars to compute the Lasso solution.
+    - `'lasso_cd'`: uses the coordinate descent method to compute the
+      Lasso solution (:class:`~sklearn.linear_model.Lasso`). `'lasso_lars'`
+      will be faster if the estimated components are sparse.
+    - `'omp'`: uses orthogonal matching pursuit to estimate the sparse
+      solution.
+    - `'threshold'`: squashes to zero all coefficients less than alpha from
+      the projection ``dictionary * X'``.
+
+    .. versionadded:: 0.17
+       *lasso_cd* coordinate descent method to improve speed.
+
+transform_n_nonzero_coefs : int, default=None
+    Number of nonzero coefficients to target in each column of the
+    solution. This is only used by `algorithm='lars'` and
+    `algorithm='omp'`. If `None`, then
+    `transform_n_nonzero_coefs=int(n_features / 10)`.
+
+transform_alpha : float, default=None
+    If `algorithm='lasso_lars'` or `algorithm='lasso_cd'`, `alpha` is the
+    penalty applied to the L1 norm.
+    If `algorithm='threshold'`, `alpha` is the absolute value of the
+    threshold below which coefficients will be squashed to zero.
+    If `None`, defaults to `alpha`.
+
+    .. versionchanged:: 1.2
+        When None, default value changed from 1.0 to `alpha`.
+
+n_jobs : int or None, default=None
+    Number of parallel jobs to run.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+    for more details.
+
+code_init : ndarray of shape (n_samples, n_components), default=None
+    Initial value for the code, for warm restart. Only used if `code_init`
+    and `dict_init` are not None.
+
+dict_init : ndarray of shape (n_components, n_features), default=None
+    Initial values for the dictionary, for warm restart. Only used if
+    `code_init` and `dict_init` are not None.
+
+callback : callable, default=None
+    Callable that gets invoked every five iterations.
+
+    .. versionadded:: 1.3
+
+verbose : bool, default=False
+    To control the verbosity of the procedure.
+
+split_sign : bool, default=False
+    Whether to split the sparse feature vector into the concatenation of
+    its negative part and its positive part. This can improve the
+    performance of downstream classifiers.
+
+random_state : int, RandomState instance or None, default=None
+    Used for initializing the dictionary when ``dict_init`` is not
+    specified, randomly shuffling the data when ``shuffle`` is set to
+    ``True``, and updating the dictionary. Pass an int for reproducible
+    results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+positive_code : bool, default=False
+    Whether to enforce positivity when finding the code.
+
+    .. versionadded:: 0.20
+
+positive_dict : bool, default=False
+    Whether to enforce positivity when finding the dictionary.
+
+    .. versionadded:: 0.20
+
+transform_max_iter : int, default=1000
+    Maximum number of iterations to perform if `algorithm='lasso_cd'` or
+    `'lasso_lars'`.
+
+    .. versionadded:: 0.22
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    dictionary atoms extracted from the data
+
+error_ : array
+    vector of errors at each iteration
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Number of iterations run.
+
+See Also
+--------
+MiniBatchDictionaryLearning: A faster, less accurate, version of the
+    dictionary learning algorithm.
+MiniBatchSparsePCA : Mini-batch Sparse Principal Components Analysis.
+SparseCoder : Find a sparse representation of data from a fixed,
+    precomputed dictionary.
+SparsePCA : Sparse Principal Components Analysis.
+
+References
+----------
+
+J. Mairal, F. Bach, J. Ponce, G. Sapiro, 2009: Online dictionary learning
+for sparse coding (https://www.di.ens.fr/sierra/pdfs/icml09.pdf)
+
+Examples
+--------
+>>> import numpy as np
+>>> from sklearn.datasets import make_sparse_coded_signal
+>>> from sklearn.decomposition import DictionaryLearning
+>>> X, dictionary, code = make_sparse_coded_signal(
+...     n_samples=30, n_components=15, n_features=20, n_nonzero_coefs=10,
+...     random_state=42,
+... )
+>>> dict_learner = DictionaryLearning(
+...     n_components=15, transform_algorithm='lasso_lars', transform_alpha=0.1,
+...     random_state=42,
+... )
+>>> X_transformed = dict_learner.fit(X).transform(X)
+
+We can check the level of sparsity of `X_transformed`:
+
+>>> np.mean(X_transformed == 0)
+0.52...
+
+We can compare the average squared euclidean norm of the reconstruction
+error of the sparse coded signal relative to the squared euclidean norm of
+the original signal:
+
+>>> X_hat = X_transformed @ dict_learner.components_
+>>> np.mean(np.sum((X_hat - X) ** 2, axis=1) / np.sum(X ** 2, axis=1))
+0.05...""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FactorAnalysis> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                    <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                    <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                    rdfs:comment """Factor Analysis (FA).
+
+A simple linear generative model with Gaussian latent variables.
+
+The observations are assumed to be caused by a linear transformation of
+lower dimensional latent factors and added Gaussian noise.
+Without loss of generality the factors are distributed according to a
+Gaussian with zero mean and unit covariance. The noise is also zero mean
+and has an arbitrary diagonal covariance matrix.
+
+If we would restrict the model further, by assuming that the Gaussian
+noise is even isotropic (all diagonal entries are the same) we would obtain
+:class:`PCA`.
+
+FactorAnalysis performs a maximum likelihood estimate of the so-called
+`loading` matrix, the transformation of the latent variables to the
+observed ones, using SVD based approach.
+
+Read more in the :ref:`User Guide <FA>`.
+
+.. versionadded:: 0.13
+
+Parameters
+----------
+n_components : int, default=None
+    Dimensionality of latent space, the number of components
+    of ``X`` that are obtained after ``transform``.
+    If None, n_components is set to the number of features.
+
+tol : float, default=1e-2
+    Stopping tolerance for log-likelihood increase.
+
+copy : bool, default=True
+    Whether to make a copy of X. If ``False``, the input X gets overwritten
+    during fitting.
+
+max_iter : int, default=1000
+    Maximum number of iterations.
+
+noise_variance_init : array-like of shape (n_features,), default=None
+    The initial guess of the noise variance for each feature.
+    If None, it defaults to np.ones(n_features).
+
+svd_method : {'lapack', 'randomized'}, default='randomized'
+    Which SVD method to use. If 'lapack' use standard SVD from
+    scipy.linalg, if 'randomized' use fast ``randomized_svd`` function.
+    Defaults to 'randomized'. For most applications 'randomized' will
+    be sufficiently precise while providing significant speed gains.
+    Accuracy can also be improved by setting higher values for
+    `iterated_power`. If this is not sufficient, for maximum precision
+    you should choose 'lapack'.
+
+iterated_power : int, default=3
+    Number of iterations for the power method. 3 by default. Only used
+    if ``svd_method`` equals 'randomized'.
+
+rotation : {'varimax', 'quartimax'}, default=None
+    If not None, apply the indicated rotation. Currently, varimax and
+    quartimax are implemented. See
+    `\"The varimax criterion for analytic rotation in factor analysis\"
+    <https://link.springer.com/article/10.1007%2FBF02289233>`_
+    H. F. Kaiser, 1958.
+
+    .. versionadded:: 0.24
+
+random_state : int or RandomState instance, default=0
+    Only used when ``svd_method`` equals 'randomized'. Pass an int for
+    reproducible results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Components with maximum variance.
+
+loglike_ : list of shape (n_iterations,)
+    The log likelihood at each iteration.
+
+noise_variance_ : ndarray of shape (n_features,)
+    The estimated noise variance for each feature.
+
+n_iter_ : int
+    Number of iterations run.
+
+mean_ : ndarray of shape (n_features,)
+    Per-feature empirical mean, estimated from the training set.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+PCA: Principal component analysis is also a latent linear variable model
+    which however assumes equal noise variance for each feature.
+    This extra assumption makes probabilistic PCA faster as it can be
+    computed in closed form.
+FastICA: Independent component analysis, a latent variable model with
+    non-Gaussian latent variables.
+
+References
+----------
+- David Barber, Bayesian Reasoning and Machine Learning,
+  Algorithm 21.1.
+
+- Christopher M. Bishop: Pattern Recognition and Machine Learning,
+  Chapter 12.2.4.
+
+Examples
+--------
+>>> from sklearn.datasets import load_digits
+>>> from sklearn.decomposition import FactorAnalysis
+>>> X, _ = load_digits(return_X_y=True)
+>>> transformer = FactorAnalysis(n_components=7, random_state=0)
+>>> X_transformed = transformer.fit_transform(X)
+>>> X_transformed.shape
+(1797, 7)""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FastICA> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                             rdfs:comment """FastICA: a fast algorithm for Independent Component Analysis.
+
+The implementation is based on [1]_.
+
+Read more in the :ref:`User Guide <ICA>`.
+
+Parameters
+----------
+n_components : int, default=None
+    Number of components to use. If None is passed, all are used.
+
+algorithm : {'parallel', 'deflation'}, default='parallel'
+    Specify which algorithm to use for FastICA.
+
+whiten : str or bool, default='unit-variance'
+    Specify the whitening strategy to use.
+
+    - If 'arbitrary-variance', a whitening with variance
+      arbitrary is used.
+    - If 'unit-variance', the whitening matrix is rescaled to ensure that
+      each recovered source has unit variance.
+    - If False, the data is already considered to be whitened, and no
+      whitening is performed.
+
+    .. versionchanged:: 1.3
+        The default value of `whiten` changed to 'unit-variance' in 1.3.
+
+fun : {'logcosh', 'exp', 'cube'} or callable, default='logcosh'
+    The functional form of the G function used in the
+    approximation to neg-entropy. Could be either 'logcosh', 'exp',
+    or 'cube'.
+    You can also provide your own function. It should return a tuple
+    containing the value of the function, and of its derivative, in the
+    point. The derivative should be averaged along its last dimension.
+    Example::
+
+        def my_g(x):
+            return x ** 3, (3 * x ** 2).mean(axis=-1)
+
+fun_args : dict, default=None
+    Arguments to send to the functional form.
+    If empty or None and if fun='logcosh', fun_args will take value
+    {'alpha' : 1.0}.
+
+max_iter : int, default=200
+    Maximum number of iterations during fit.
+
+tol : float, default=1e-4
+    A positive scalar giving the tolerance at which the
+    un-mixing matrix is considered to have converged.
+
+w_init : array-like of shape (n_components, n_components), default=None
+    Initial un-mixing array. If `w_init=None`, then an array of values
+    drawn from a normal distribution is used.
+
+whiten_solver : {\"eigh\", \"svd\"}, default=\"svd\"
+    The solver to use for whitening.
+
+    - \"svd\" is more stable numerically if the problem is degenerate, and
+      often faster when `n_samples <= n_features`.
+
+    - \"eigh\" is generally more memory efficient when
+      `n_samples >= n_features`, and can be faster when
+      `n_samples >= 50 * n_features`.
+
+    .. versionadded:: 1.2
+
+random_state : int, RandomState instance or None, default=None
+    Used to initialize ``w_init`` when not specified, with a
+    normal distribution. Pass an int, for reproducible results
+    across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    The linear operator to apply to the data to get the independent
+    sources. This is equal to the unmixing matrix when ``whiten`` is
+    False, and equal to ``np.dot(unmixing_matrix, self.whitening_)`` when
+    ``whiten`` is True.
+
+mixing_ : ndarray of shape (n_features, n_components)
+    The pseudo-inverse of ``components_``. It is the linear operator
+    that maps independent sources to the data.
+
+mean_ : ndarray of shape(n_features,)
+    The mean over features. Only set if `self.whiten` is True.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    If the algorithm is \"deflation\", n_iter is the
+    maximum number of iterations run across all components. Else
+    they are just the number of iterations taken to converge.
+
+whitening_ : ndarray of shape (n_components, n_features)
+    Only set if whiten is 'True'. This is the pre-whitening matrix
+    that projects data onto the first `n_components` principal components.
+
+See Also
+--------
+PCA : Principal component analysis (PCA).
+IncrementalPCA : Incremental principal components analysis (IPCA).
+KernelPCA : Kernel Principal component analysis (KPCA).
+MiniBatchSparsePCA : Mini-batch Sparse Principal Components Analysis.
+SparsePCA : Sparse Principal Components Analysis (SparsePCA).
+
+References
+----------
+.. [1] A. Hyvarinen and E. Oja, Independent Component Analysis:
+       Algorithms and Applications, Neural Networks, 13(4-5), 2000,
+       pp. 411-430.
+
+Examples
+--------
+>>> from sklearn.datasets import load_digits
+>>> from sklearn.decomposition import FastICA
+>>> X, _ = load_digits(return_X_y=True)
+>>> transformer = FastICA(n_components=7,
+...         random_state=0,
+...         whiten='unit-variance')
+>>> X_transformed = transformer.fit_transform(X)
+>>> X_transformed.shape
+(1797, 7)""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#IncrementalPCA
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#IncrementalPCA> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                    <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                    <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                    rdfs:comment """Incremental principal components analysis (IPCA).
+
+Linear dimensionality reduction using Singular Value Decomposition of
+the data, keeping only the most significant singular vectors to
+project the data to a lower dimensional space. The input data is centered
+but not scaled for each feature before applying the SVD.
+
+Depending on the size of the input data, this algorithm can be much more
+memory efficient than a PCA, and allows sparse input.
+
+This algorithm has constant memory complexity, on the order
+of ``batch_size * n_features``, enabling use of np.memmap files without
+loading the entire file into memory. For sparse matrices, the input
+is converted to dense in batches (in order to be able to subtract the
+mean) which avoids storing the entire dense matrix at any one time.
+
+The computational overhead of each SVD is
+``O(batch_size * n_features ** 2)``, but only 2 * batch_size samples
+remain in memory at a time. There will be ``n_samples / batch_size`` SVD
+computations to get the principal components, versus 1 large SVD of
+complexity ``O(n_samples * n_features ** 2)`` for PCA.
+
+For a usage example, see
+:ref:`sphx_glr_auto_examples_decomposition_plot_incremental_pca.py`.
+
+Read more in the :ref:`User Guide <IncrementalPCA>`.
+
+.. versionadded:: 0.16
+
+Parameters
+----------
+n_components : int, default=None
+    Number of components to keep. If ``n_components`` is ``None``,
+    then ``n_components`` is set to ``min(n_samples, n_features)``.
+
+whiten : bool, default=False
+    When True (False by default) the ``components_`` vectors are divided
+    by ``n_samples`` times ``components_`` to ensure uncorrelated outputs
+    with unit component-wise variances.
+
+    Whitening will remove some information from the transformed signal
+    (the relative variance scales of the components) but can sometimes
+    improve the predictive accuracy of the downstream estimators by
+    making data respect some hard-wired assumptions.
+
+copy : bool, default=True
+    If False, X will be overwritten. ``copy=False`` can be used to
+    save memory but is unsafe for general use.
+
+batch_size : int, default=None
+    The number of samples to use for each batch. Only used when calling
+    ``fit``. If ``batch_size`` is ``None``, then ``batch_size``
+    is inferred from the data and set to ``5 * n_features``, to provide a
+    balance between approximation accuracy and memory consumption.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Principal axes in feature space, representing the directions of
+    maximum variance in the data. Equivalently, the right singular
+    vectors of the centered input data, parallel to its eigenvectors.
+    The components are sorted by decreasing ``explained_variance_``.
+
+explained_variance_ : ndarray of shape (n_components,)
+    Variance explained by each of the selected components.
+
+explained_variance_ratio_ : ndarray of shape (n_components,)
+    Percentage of variance explained by each of the selected components.
+    If all components are stored, the sum of explained variances is equal
+    to 1.0.
+
+singular_values_ : ndarray of shape (n_components,)
+    The singular values corresponding to each of the selected components.
+    The singular values are equal to the 2-norms of the ``n_components``
+    variables in the lower-dimensional space.
+
+mean_ : ndarray of shape (n_features,)
+    Per-feature empirical mean, aggregate over calls to ``partial_fit``.
+
+var_ : ndarray of shape (n_features,)
+    Per-feature empirical variance, aggregate over calls to
+    ``partial_fit``.
+
+noise_variance_ : float
+    The estimated noise covariance following the Probabilistic PCA model
+    from Tipping and Bishop 1999. See \"Pattern Recognition and
+    Machine Learning\" by C. Bishop, 12.2.1 p. 574 or
+    http://www.miketipping.com/papers/met-mppca.pdf.
+
+n_components_ : int
+    The estimated number of components. Relevant when
+    ``n_components=None``.
+
+n_samples_seen_ : int
+    The number of samples processed by the estimator. Will be reset on
+    new calls to fit, but increments across ``partial_fit`` calls.
+
+batch_size_ : int
+    Inferred batch size from ``batch_size``.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+PCA : Principal component analysis (PCA).
+KernelPCA : Kernel Principal component analysis (KPCA).
+SparsePCA : Sparse Principal Components Analysis (SparsePCA).
+TruncatedSVD : Dimensionality reduction using truncated SVD.
+
+Notes
+-----
+Implements the incremental PCA model from:
+*D. Ross, J. Lim, R. Lin, M. Yang, Incremental Learning for Robust Visual
+Tracking, International Journal of Computer Vision, Volume 77, Issue 1-3,
+pp. 125-141, May 2008.*
+See https://www.cs.toronto.edu/~dross/ivt/RossLimLinYang_ijcv.pdf
+
+This model is an extension of the Sequential Karhunen-Loeve Transform from:
+:doi:`A. Levy and M. Lindenbaum, Sequential Karhunen-Loeve Basis Extraction and
+its Application to Images, IEEE Transactions on Image Processing, Volume 9,
+Number 8, pp. 1371-1374, August 2000. <10.1109/83.855432>`
+
+We have specifically abstained from an optimization used by authors of both
+papers, a QR decomposition used in specific situations to reduce the
+algorithmic complexity of the SVD. The source for this technique is
+*Matrix Computations, Third Edition, G. Holub and C. Van Loan, Chapter 5,
+section 5.4.4, pp 252-253.*. This technique has been omitted because it is
+advantageous only when decomposing a matrix with ``n_samples`` (rows)
+>= 5/3 * ``n_features`` (columns), and hurts the readability of the
+implemented algorithm. This would be a good opportunity for future
+optimization, if it is deemed necessary.
+
+References
+----------
+D. Ross, J. Lim, R. Lin, M. Yang. Incremental Learning for Robust Visual
+Tracking, International Journal of Computer Vision, Volume 77,
+Issue 1-3, pp. 125-141, May 2008.
+
+G. Golub and C. Van Loan. Matrix Computations, Third Edition, Chapter 5,
+Section 5.4.4, pp. 252-253.
+
+Examples
+--------
+>>> from sklearn.datasets import load_digits
+>>> from sklearn.decomposition import IncrementalPCA
+>>> from scipy import sparse
+>>> X, _ = load_digits(return_X_y=True)
+>>> transformer = IncrementalPCA(n_components=7, batch_size=200)
+>>> # either partially fit on smaller batches of data
+>>> transformer.partial_fit(X[:100, :])
+IncrementalPCA(batch_size=200, n_components=7)
+>>> # or let the fit function itself divide the data into batches
+>>> X_sparse = sparse.csr_matrix(X)
+>>> X_transformed = transformer.fit_transform(X_sparse)
+>>> X_transformed.shape
+(1797, 7)""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelPCA> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                               rdfs:comment """Kernel Principal component analysis (KPCA) [1]_.
+
+Non-linear dimensionality reduction through the use of kernels (see
+:ref:`metrics`).
+
+It uses the :func:`scipy.linalg.eigh` LAPACK implementation of the full SVD
+or the :func:`scipy.sparse.linalg.eigsh` ARPACK implementation of the
+truncated SVD, depending on the shape of the input data and the number of
+components to extract. It can also use a randomized truncated SVD by the
+method proposed in [3]_, see `eigen_solver`.
+
+For a usage example, see
+:ref:`sphx_glr_auto_examples_decomposition_plot_kernel_pca.py`.
+
+Read more in the :ref:`User Guide <kernel_PCA>`.
+
+Parameters
+----------
+n_components : int, default=None
+    Number of components. If None, all non-zero components are kept.
+
+kernel : {'linear', 'poly', 'rbf', 'sigmoid', 'cosine', 'precomputed'}             or callable, default='linear'
+    Kernel used for PCA.
+
+gamma : float, default=None
+    Kernel coefficient for rbf, poly and sigmoid kernels. Ignored by other
+    kernels. If ``gamma`` is ``None``, then it is set to ``1/n_features``.
+
+degree : float, default=3
+    Degree for poly kernels. Ignored by other kernels.
+
+coef0 : float, default=1
+    Independent term in poly and sigmoid kernels.
+    Ignored by other kernels.
+
+kernel_params : dict, default=None
+    Parameters (keyword arguments) and
+    values for kernel passed as callable object.
+    Ignored by other kernels.
+
+alpha : float, default=1.0
+    Hyperparameter of the ridge regression that learns the
+    inverse transform (when fit_inverse_transform=True).
+
+fit_inverse_transform : bool, default=False
+    Learn the inverse transform for non-precomputed kernels
+    (i.e. learn to find the pre-image of a point). This method is based
+    on [2]_.
+
+eigen_solver : {'auto', 'dense', 'arpack', 'randomized'},             default='auto'
+    Select eigensolver to use. If `n_components` is much
+    less than the number of training samples, randomized (or arpack to a
+    smaller extent) may be more efficient than the dense eigensolver.
+    Randomized SVD is performed according to the method of Halko et al
+    [3]_.
+
+    auto :
+        the solver is selected by a default policy based on n_samples
+        (the number of training samples) and `n_components`:
+        if the number of components to extract is less than 10 (strict) and
+        the number of samples is more than 200 (strict), the 'arpack'
+        method is enabled. Otherwise the exact full eigenvalue
+        decomposition is computed and optionally truncated afterwards
+        ('dense' method).
+    dense :
+        run exact full eigenvalue decomposition calling the standard
+        LAPACK solver via `scipy.linalg.eigh`, and select the components
+        by postprocessing
+    arpack :
+        run SVD truncated to n_components calling ARPACK solver using
+        `scipy.sparse.linalg.eigsh`. It requires strictly
+        0 < n_components < n_samples
+    randomized :
+        run randomized SVD by the method of Halko et al. [3]_. The current
+        implementation selects eigenvalues based on their module; therefore
+        using this method can lead to unexpected results if the kernel is
+        not positive semi-definite. See also [4]_.
+
+    .. versionchanged:: 1.0
+       `'randomized'` was added.
+
+tol : float, default=0
+    Convergence tolerance for arpack.
+    If 0, optimal value will be chosen by arpack.
+
+max_iter : int, default=None
+    Maximum number of iterations for arpack.
+    If None, optimal value will be chosen by arpack.
+
+iterated_power : int >= 0, or 'auto', default='auto'
+    Number of iterations for the power method computed by
+    svd_solver == 'randomized'. When 'auto', it is set to 7 when
+    `n_components < 0.1 * min(X.shape)`, other it is set to 4.
+
+    .. versionadded:: 1.0
+
+remove_zero_eig : bool, default=False
+    If True, then all components with zero eigenvalues are removed, so
+    that the number of components in the output may be < n_components
+    (and sometimes even zero due to numerical instability).
+    When n_components is None, this parameter is ignored and components
+    with zero eigenvalues are removed regardless.
+
+random_state : int, RandomState instance or None, default=None
+    Used when ``eigen_solver`` == 'arpack' or 'randomized'. Pass an int
+    for reproducible results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+    .. versionadded:: 0.18
+
+copy_X : bool, default=True
+    If True, input X is copied and stored by the model in the `X_fit_`
+    attribute. If no further changes will be done to X, setting
+    `copy_X=False` saves memory by storing a reference.
+
+    .. versionadded:: 0.18
+
+n_jobs : int, default=None
+    The number of parallel jobs to run.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+    for more details.
+
+    .. versionadded:: 0.18
+
+Attributes
+----------
+eigenvalues_ : ndarray of shape (n_components,)
+    Eigenvalues of the centered kernel matrix in decreasing order.
+    If `n_components` and `remove_zero_eig` are not set,
+    then all values are stored.
+
+eigenvectors_ : ndarray of shape (n_samples, n_components)
+    Eigenvectors of the centered kernel matrix. If `n_components` and
+    `remove_zero_eig` are not set, then all components are stored.
+
+dual_coef_ : ndarray of shape (n_samples, n_features)
+    Inverse transform matrix. Only available when
+    ``fit_inverse_transform`` is True.
+
+X_transformed_fit_ : ndarray of shape (n_samples, n_components)
+    Projection of the fitted data on the kernel principal components.
+    Only available when ``fit_inverse_transform`` is True.
+
+X_fit_ : ndarray of shape (n_samples, n_features)
+    The data used to fit the model. If `copy_X=False`, then `X_fit_` is
+    a reference. This attribute is used for the calls to transform.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+gamma_ : float
+    Kernel coefficient for rbf, poly and sigmoid kernels. When `gamma`
+    is explicitly provided, this is just the same as `gamma`. When `gamma`
+    is `None`, this is the actual value of kernel coefficient.
+
+    .. versionadded:: 1.3
+
+See Also
+--------
+FastICA : A fast algorithm for Independent Component Analysis.
+IncrementalPCA : Incremental Principal Component Analysis.
+NMF : Non-Negative Matrix Factorization.
+PCA : Principal Component Analysis.
+SparsePCA : Sparse Principal Component Analysis.
+TruncatedSVD : Dimensionality reduction using truncated SVD.
+
+References
+----------
+.. [1] `Schölkopf, Bernhard, Alexander Smola, and Klaus-Robert Müller.
+   \"Kernel principal component analysis.\"
+   International conference on artificial neural networks.
+   Springer, Berlin, Heidelberg, 1997.
+   <https://people.eecs.berkeley.edu/~wainwrig/stat241b/scholkopf_kernel.pdf>`_
+
+.. [2] `Bakır, Gökhan H., Jason Weston, and Bernhard Schölkopf.
+   \"Learning to find pre-images.\"
+   Advances in neural information processing systems 16 (2004): 449-456.
+   <https://papers.nips.cc/paper/2003/file/ac1ad983e08ad3304a97e147f522747e-Paper.pdf>`_
+
+.. [3] :arxiv:`Halko, Nathan, Per-Gunnar Martinsson, and Joel A. Tropp.
+   \"Finding structure with randomness: Probabilistic algorithms for
+   constructing approximate matrix decompositions.\"
+   SIAM review 53.2 (2011): 217-288. <0909.4061>`
+
+.. [4] `Martinsson, Per-Gunnar, Vladimir Rokhlin, and Mark Tygert.
+   \"A randomized algorithm for the decomposition of matrices.\"
+   Applied and Computational Harmonic Analysis 30.1 (2011): 47-68.
+   <https://www.sciencedirect.com/science/article/pii/S1063520310000242>`_
+
+Examples
+--------
+>>> from sklearn.datasets import load_digits
+>>> from sklearn.decomposition import KernelPCA
+>>> X, _ = load_digits(return_X_y=True)
+>>> transformer = KernelPCA(n_components=7, kernel='linear')
+>>> X_transformed = transformer.fit_transform(X)
+>>> X_transformed.shape
+(1797, 7)""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LatentDirichletAllocation> rdf:type owl:Class ;
+                                                                                                               rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                               rdfs:comment """Latent Dirichlet Allocation with online variational Bayes algorithm.
+
+The implementation is based on [1]_ and [2]_.
+
+.. versionadded:: 0.17
+
+Read more in the :ref:`User Guide <LatentDirichletAllocation>`.
+
+Parameters
+----------
+n_components : int, default=10
+    Number of topics.
+
+    .. versionchanged:: 0.19
+        ``n_topics`` was renamed to ``n_components``
+
+doc_topic_prior : float, default=None
+    Prior of document topic distribution `theta`. If the value is None,
+    defaults to `1 / n_components`.
+    In [1]_, this is called `alpha`.
+
+topic_word_prior : float, default=None
+    Prior of topic word distribution `beta`. If the value is None, defaults
+    to `1 / n_components`.
+    In [1]_, this is called `eta`.
+
+learning_method : {'batch', 'online'}, default='batch'
+    Method used to update `_component`. Only used in :meth:`fit` method.
+    In general, if the data size is large, the online update will be much
+    faster than the batch update.
+
+    Valid options::
+
+        'batch': Batch variational Bayes method. Use all training data in
+            each EM update.
+            Old `components_` will be overwritten in each iteration.
+        'online': Online variational Bayes method. In each EM update, use
+            mini-batch of training data to update the ``components_``
+            variable incrementally. The learning rate is controlled by the
+            ``learning_decay`` and the ``learning_offset`` parameters.
+
+    .. versionchanged:: 0.20
+        The default learning method is now ``\"batch\"``.
+
+learning_decay : float, default=0.7
+    It is a parameter that control learning rate in the online learning
+    method. The value should be set between (0.5, 1.0] to guarantee
+    asymptotic convergence. When the value is 0.0 and batch_size is
+    ``n_samples``, the update method is same as batch learning. In the
+    literature, this is called kappa.
+
+learning_offset : float, default=10.0
+    A (positive) parameter that downweights early iterations in online
+    learning.  It should be greater than 1.0. In the literature, this is
+    called tau_0.
+
+max_iter : int, default=10
+    The maximum number of passes over the training data (aka epochs).
+    It only impacts the behavior in the :meth:`fit` method, and not the
+    :meth:`partial_fit` method.
+
+batch_size : int, default=128
+    Number of documents to use in each EM iteration. Only used in online
+    learning.
+
+evaluate_every : int, default=-1
+    How often to evaluate perplexity. Only used in `fit` method.
+    set it to 0 or negative number to not evaluate perplexity in
+    training at all. Evaluating perplexity can help you check convergence
+    in training process, but it will also increase total training time.
+    Evaluating perplexity in every iteration might increase training time
+    up to two-fold.
+
+total_samples : int, default=1e6
+    Total number of documents. Only used in the :meth:`partial_fit` method.
+
+perp_tol : float, default=1e-1
+    Perplexity tolerance in batch learning. Only used when
+    ``evaluate_every`` is greater than 0.
+
+mean_change_tol : float, default=1e-3
+    Stopping tolerance for updating document topic distribution in E-step.
+
+max_doc_update_iter : int, default=100
+    Max number of iterations for updating document topic distribution in
+    the E-step.
+
+n_jobs : int, default=None
+    The number of jobs to use in the E-step.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+    for more details.
+
+verbose : int, default=0
+    Verbosity level.
+
+random_state : int, RandomState instance or None, default=None
+    Pass an int for reproducible results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Variational parameters for topic word distribution. Since the complete
+    conditional for topic word distribution is a Dirichlet,
+    ``components_[i, j]`` can be viewed as pseudocount that represents the
+    number of times word `j` was assigned to topic `i`.
+    It can also be viewed as distribution over the words for each topic
+    after normalization:
+    ``model.components_ / model.components_.sum(axis=1)[:, np.newaxis]``.
+
+exp_dirichlet_component_ : ndarray of shape (n_components, n_features)
+    Exponential value of expectation of log topic word distribution.
+    In the literature, this is `exp(E[log(beta)])`.
+
+n_batch_iter_ : int
+    Number of iterations of the EM step.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Number of passes over the dataset.
+
+bound_ : float
+    Final perplexity score on training set.
+
+doc_topic_prior_ : float
+    Prior of document topic distribution `theta`. If the value is None,
+    it is `1 / n_components`.
+
+random_state_ : RandomState instance
+    RandomState instance that is generated either from a seed, the random
+    number generator or by `np.random`.
+
+topic_word_prior_ : float
+    Prior of topic word distribution `beta`. If the value is None, it is
+    `1 / n_components`.
+
+See Also
+--------
+sklearn.discriminant_analysis.LinearDiscriminantAnalysis:
+    A classifier with a linear decision boundary, generated by fitting
+    class conditional densities to the data and using Bayes' rule.
+
+References
+----------
+.. [1] \"Online Learning for Latent Dirichlet Allocation\", Matthew D.
+       Hoffman, David M. Blei, Francis Bach, 2010
+       https://github.com/blei-lab/onlineldavb
+
+.. [2] \"Stochastic Variational Inference\", Matthew D. Hoffman,
+       David M. Blei, Chong Wang, John Paisley, 2013
+
+Examples
+--------
+>>> from sklearn.decomposition import LatentDirichletAllocation
+>>> from sklearn.datasets import make_multilabel_classification
+>>> # This produces a feature matrix of token counts, similar to what
+>>> # CountVectorizer would produce on text.
+>>> X, _ = make_multilabel_classification(random_state=0)
+>>> lda = LatentDirichletAllocation(n_components=5,
+...     random_state=0)
+>>> lda.fit(X)
+LatentDirichletAllocation(...)
+>>> # get topics for some given samples:
+>>> lda.transform(X[-2:])
+array([[0.00360392, 0.25499205, 0.0036211 , 0.64236448, 0.09541846],
+       [0.15297572, 0.00362644, 0.44412786, 0.39568399, 0.003586  ]])""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchDictionaryLearning> rdf:type owl:Class ;
+                                                                                                                 rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                                 rdfs:comment """Mini-batch dictionary learning.
+
+Finds a dictionary (a set of atoms) that performs well at sparsely
+encoding the fitted data.
+
+Solves the optimization problem::
+
+   (U^*,V^*) = argmin 0.5 || X - U V ||_Fro^2 + alpha * || U ||_1,1
+                (U,V)
+                with || V_k ||_2 <= 1 for all  0 <= k < n_components
+
+||.||_Fro stands for the Frobenius norm and ||.||_1,1 stands for
+the entry-wise matrix norm which is the sum of the absolute values
+of all the entries in the matrix.
+
+Read more in the :ref:`User Guide <DictionaryLearning>`.
+
+Parameters
+----------
+n_components : int, default=None
+    Number of dictionary elements to extract.
+
+alpha : float, default=1
+    Sparsity controlling parameter.
+
+max_iter : int, default=1_000
+    Maximum number of iterations over the complete dataset before
+    stopping independently of any early stopping criterion heuristics.
+
+    .. versionadded:: 1.1
+
+    .. deprecated:: 1.4
+       `max_iter=None` is deprecated in 1.4 and will be removed in 1.6.
+       Use the default value (i.e. `1_000`) instead.
+
+fit_algorithm : {'lars', 'cd'}, default='lars'
+    The algorithm used:
+
+    - `'lars'`: uses the least angle regression method to solve the lasso
+      problem (`linear_model.lars_path`)
+    - `'cd'`: uses the coordinate descent method to compute the
+      Lasso solution (`linear_model.Lasso`). Lars will be faster if
+      the estimated components are sparse.
+
+n_jobs : int, default=None
+    Number of parallel jobs to run.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+    for more details.
+
+batch_size : int, default=256
+    Number of samples in each mini-batch.
+
+    .. versionchanged:: 1.3
+       The default value of `batch_size` changed from 3 to 256 in version 1.3.
+
+shuffle : bool, default=True
+    Whether to shuffle the samples before forming batches.
+
+dict_init : ndarray of shape (n_components, n_features), default=None
+    Initial value of the dictionary for warm restart scenarios.
+
+transform_algorithm : {'lasso_lars', 'lasso_cd', 'lars', 'omp',             'threshold'}, default='omp'
+    Algorithm used to transform the data:
+
+    - `'lars'`: uses the least angle regression method
+      (`linear_model.lars_path`);
+    - `'lasso_lars'`: uses Lars to compute the Lasso solution.
+    - `'lasso_cd'`: uses the coordinate descent method to compute the
+      Lasso solution (`linear_model.Lasso`). `'lasso_lars'` will be faster
+      if the estimated components are sparse.
+    - `'omp'`: uses orthogonal matching pursuit to estimate the sparse
+      solution.
+    - `'threshold'`: squashes to zero all coefficients less than alpha from
+      the projection ``dictionary * X'``.
+
+transform_n_nonzero_coefs : int, default=None
+    Number of nonzero coefficients to target in each column of the
+    solution. This is only used by `algorithm='lars'` and
+    `algorithm='omp'`. If `None`, then
+    `transform_n_nonzero_coefs=int(n_features / 10)`.
+
+transform_alpha : float, default=None
+    If `algorithm='lasso_lars'` or `algorithm='lasso_cd'`, `alpha` is the
+    penalty applied to the L1 norm.
+    If `algorithm='threshold'`, `alpha` is the absolute value of the
+    threshold below which coefficients will be squashed to zero.
+    If `None`, defaults to `alpha`.
+
+    .. versionchanged:: 1.2
+        When None, default value changed from 1.0 to `alpha`.
+
+verbose : bool or int, default=False
+    To control the verbosity of the procedure.
+
+split_sign : bool, default=False
+    Whether to split the sparse feature vector into the concatenation of
+    its negative part and its positive part. This can improve the
+    performance of downstream classifiers.
+
+random_state : int, RandomState instance or None, default=None
+    Used for initializing the dictionary when ``dict_init`` is not
+    specified, randomly shuffling the data when ``shuffle`` is set to
+    ``True``, and updating the dictionary. Pass an int for reproducible
+    results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+positive_code : bool, default=False
+    Whether to enforce positivity when finding the code.
+
+    .. versionadded:: 0.20
+
+positive_dict : bool, default=False
+    Whether to enforce positivity when finding the dictionary.
+
+    .. versionadded:: 0.20
+
+transform_max_iter : int, default=1000
+    Maximum number of iterations to perform if `algorithm='lasso_cd'` or
+    `'lasso_lars'`.
+
+    .. versionadded:: 0.22
+
+callback : callable, default=None
+    A callable that gets invoked at the end of each iteration.
+
+    .. versionadded:: 1.1
+
+tol : float, default=1e-3
+    Control early stopping based on the norm of the differences in the
+    dictionary between 2 steps.
+
+    To disable early stopping based on changes in the dictionary, set
+    `tol` to 0.0.
+
+    .. versionadded:: 1.1
+
+max_no_improvement : int, default=10
+    Control early stopping based on the consecutive number of mini batches
+    that does not yield an improvement on the smoothed cost function.
+
+    To disable convergence detection based on cost function, set
+    `max_no_improvement` to None.
+
+    .. versionadded:: 1.1
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Components extracted from the data.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Number of iterations over the full dataset.
+
+n_steps_ : int
+    Number of mini-batches processed.
+
+    .. versionadded:: 1.1
+
+See Also
+--------
+DictionaryLearning : Find a dictionary that sparsely encodes data.
+MiniBatchSparsePCA : Mini-batch Sparse Principal Components Analysis.
+SparseCoder : Find a sparse representation of data from a fixed,
+    precomputed dictionary.
+SparsePCA : Sparse Principal Components Analysis.
+
+References
+----------
+
+J. Mairal, F. Bach, J. Ponce, G. Sapiro, 2009: Online dictionary learning
+for sparse coding (https://www.di.ens.fr/sierra/pdfs/icml09.pdf)
+
+Examples
+--------
+>>> import numpy as np
+>>> from sklearn.datasets import make_sparse_coded_signal
+>>> from sklearn.decomposition import MiniBatchDictionaryLearning
+>>> X, dictionary, code = make_sparse_coded_signal(
+...     n_samples=30, n_components=15, n_features=20, n_nonzero_coefs=10,
+...     random_state=42)
+>>> dict_learner = MiniBatchDictionaryLearning(
+...     n_components=15, batch_size=3, transform_algorithm='lasso_lars',
+...     transform_alpha=0.1, max_iter=20, random_state=42)
+>>> X_transformed = dict_learner.fit_transform(X)
+
+We can check the level of sparsity of `X_transformed`:
+
+>>> np.mean(X_transformed == 0) > 0.5
+True
+
+We can compare the average squared euclidean norm of the reconstruction
+error of the sparse coded signal relative to the squared euclidean norm of
+the original signal:
+
+>>> X_hat = X_transformed @ dict_learner.components_
+>>> np.mean(np.sum((X_hat - X) ** 2, axis=1) / np.sum(X ** 2, axis=1))
+0.052...""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchNMF> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                  rdfs:comment """Mini-Batch Non-Negative Matrix Factorization (NMF).
+
+.. versionadded:: 1.1
+
+Find two non-negative matrices, i.e. matrices with all non-negative elements,
+(`W`, `H`) whose product approximates the non-negative matrix `X`. This
+factorization can be used for example for dimensionality reduction, source
+separation or topic extraction.
+
+The objective function is:
+
+    .. math::
+
+        L(W, H) &= 0.5 * ||X - WH||_{loss}^2
+
+        &+ alpha\\_W * l1\\_ratio * n\\_features * ||vec(W)||_1
+
+        &+ alpha\\_H * l1\\_ratio * n\\_samples * ||vec(H)||_1
+
+        &+ 0.5 * alpha\\_W * (1 - l1\\_ratio) * n\\_features * ||W||_{Fro}^2
+
+        &+ 0.5 * alpha\\_H * (1 - l1\\_ratio) * n\\_samples * ||H||_{Fro}^2
+
+Where:
+
+:math:`||A||_{Fro}^2 = \\sum_{i,j} A_{ij}^2` (Frobenius norm)
+
+:math:`||vec(A)||_1 = \\sum_{i,j} abs(A_{ij})` (Elementwise L1 norm)
+
+The generic norm :math:`||X - WH||_{loss}^2` may represent
+the Frobenius norm or another supported beta-divergence loss.
+The choice between options is controlled by the `beta_loss` parameter.
+
+The objective function is minimized with an alternating minimization of `W`
+and `H`.
+
+Note that the transformed data is named `W` and the components matrix is
+named `H`. In the NMF literature, the naming convention is usually the opposite
+since the data matrix `X` is transposed.
+
+Read more in the :ref:`User Guide <MiniBatchNMF>`.
+
+Parameters
+----------
+n_components : int or {'auto'} or None, default=None
+    Number of components, if `n_components` is not set all features
+    are kept.
+    If `n_components='auto'`, the number of components is automatically inferred
+    from W or H shapes.
+
+    .. versionchanged:: 1.4
+        Added `'auto'` value.
+
+init : {'random', 'nndsvd', 'nndsvda', 'nndsvdar', 'custom'}, default=None
+    Method used to initialize the procedure.
+    Valid options:
+
+    - `None`: 'nndsvda' if `n_components <= min(n_samples, n_features)`,
+      otherwise random.
+
+    - `'random'`: non-negative random matrices, scaled with:
+      `sqrt(X.mean() / n_components)`
+
+    - `'nndsvd'`: Nonnegative Double Singular Value Decomposition (NNDSVD)
+      initialization (better for sparseness).
+
+    - `'nndsvda'`: NNDSVD with zeros filled with the average of X
+      (better when sparsity is not desired).
+
+    - `'nndsvdar'` NNDSVD with zeros filled with small random values
+      (generally faster, less accurate alternative to NNDSVDa
+      for when sparsity is not desired).
+
+    - `'custom'`: Use custom matrices `W` and `H` which must both be provided.
+
+batch_size : int, default=1024
+    Number of samples in each mini-batch. Large batch sizes
+    give better long-term convergence at the cost of a slower start.
+
+beta_loss : float or {'frobenius', 'kullback-leibler',             'itakura-saito'}, default='frobenius'
+    Beta divergence to be minimized, measuring the distance between `X`
+    and the dot product `WH`. Note that values different from 'frobenius'
+    (or 2) and 'kullback-leibler' (or 1) lead to significantly slower
+    fits. Note that for `beta_loss <= 0` (or 'itakura-saito'), the input
+    matrix `X` cannot contain zeros.
+
+tol : float, default=1e-4
+    Control early stopping based on the norm of the differences in `H`
+    between 2 steps. To disable early stopping based on changes in `H`, set
+    `tol` to 0.0.
+
+max_no_improvement : int, default=10
+    Control early stopping based on the consecutive number of mini batches
+    that does not yield an improvement on the smoothed cost function.
+    To disable convergence detection based on cost function, set
+    `max_no_improvement` to None.
+
+max_iter : int, default=200
+    Maximum number of iterations over the complete dataset before
+    timing out.
+
+alpha_W : float, default=0.0
+    Constant that multiplies the regularization terms of `W`. Set it to zero
+    (default) to have no regularization on `W`.
+
+alpha_H : float or \"same\", default=\"same\"
+    Constant that multiplies the regularization terms of `H`. Set it to zero to
+    have no regularization on `H`. If \"same\" (default), it takes the same value as
+    `alpha_W`.
+
+l1_ratio : float, default=0.0
+    The regularization mixing parameter, with 0 <= l1_ratio <= 1.
+    For l1_ratio = 0 the penalty is an elementwise L2 penalty
+    (aka Frobenius Norm).
+    For l1_ratio = 1 it is an elementwise L1 penalty.
+    For 0 < l1_ratio < 1, the penalty is a combination of L1 and L2.
+
+forget_factor : float, default=0.7
+    Amount of rescaling of past information. Its value could be 1 with
+    finite datasets. Choosing values < 1 is recommended with online
+    learning as more recent batches will weight more than past batches.
+
+fresh_restarts : bool, default=False
+    Whether to completely solve for W at each step. Doing fresh restarts will likely
+    lead to a better solution for a same number of iterations but it is much slower.
+
+fresh_restarts_max_iter : int, default=30
+    Maximum number of iterations when solving for W at each step. Only used when
+    doing fresh restarts. These iterations may be stopped early based on a small
+    change of W controlled by `tol`.
+
+transform_max_iter : int, default=None
+    Maximum number of iterations when solving for W at transform time.
+    If None, it defaults to `max_iter`.
+
+random_state : int, RandomState instance or None, default=None
+    Used for initialisation (when ``init`` == 'nndsvdar' or
+    'random'), and in Coordinate Descent. Pass an int for reproducible
+    results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+verbose : bool, default=False
+    Whether to be verbose.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Factorization matrix, sometimes called 'dictionary'.
+
+n_components_ : int
+    The number of components. It is same as the `n_components` parameter
+    if it was given. Otherwise, it will be same as the number of
+    features.
+
+reconstruction_err_ : float
+    Frobenius norm of the matrix difference, or beta-divergence, between
+    the training data `X` and the reconstructed data `WH` from
+    the fitted model.
+
+n_iter_ : int
+    Actual number of started iterations over the whole dataset.
+
+n_steps_ : int
+    Number of mini-batches processed.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+See Also
+--------
+NMF : Non-negative matrix factorization.
+MiniBatchDictionaryLearning : Finds a dictionary that can best be used to represent
+    data using a sparse code.
+
+References
+----------
+.. [1] :doi:`\"Fast local algorithms for large scale nonnegative matrix and tensor
+   factorizations\" <10.1587/transfun.E92.A.708>`
+   Cichocki, Andrzej, and P. H. A. N. Anh-Huy. IEICE transactions on fundamentals
+   of electronics, communications and computer sciences 92.3: 708-721, 2009.
+
+.. [2] :doi:`\"Algorithms for nonnegative matrix factorization with the
+   beta-divergence\" <10.1162/NECO_a_00168>`
+   Fevotte, C., & Idier, J. (2011). Neural Computation, 23(9).
+
+.. [3] :doi:`\"Online algorithms for nonnegative matrix factorization with the
+   Itakura-Saito divergence\" <10.1109/ASPAA.2011.6082314>`
+   Lefevre, A., Bach, F., Fevotte, C. (2011). WASPA.
+
+Examples
+--------
+>>> import numpy as np
+>>> X = np.array([[1, 1], [2, 1], [3, 1.2], [4, 1], [5, 0.8], [6, 1]])
+>>> from sklearn.decomposition import MiniBatchNMF
+>>> model = MiniBatchNMF(n_components=2, init='random', random_state=0)
+>>> W = model.fit_transform(X)
+>>> H = model.components_""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MiniBatchSparsePCA> rdf:type owl:Class ;
+                                                                                                        rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                        <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                        <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                        rdfs:comment """Mini-batch Sparse Principal Components Analysis.
+
+Finds the set of sparse components that can optimally reconstruct
+the data.  The amount of sparseness is controllable by the coefficient
+of the L1 penalty, given by the parameter alpha.
+
+For an example comparing sparse PCA to PCA, see
+:ref:`sphx_glr_auto_examples_decomposition_plot_faces_decomposition.py`
+
+Read more in the :ref:`User Guide <SparsePCA>`.
+
+Parameters
+----------
+n_components : int, default=None
+    Number of sparse atoms to extract. If None, then ``n_components``
+    is set to ``n_features``.
+
+alpha : int, default=1
+    Sparsity controlling parameter. Higher values lead to sparser
+    components.
+
+ridge_alpha : float, default=0.01
+    Amount of ridge shrinkage to apply in order to improve
+    conditioning when calling the transform method.
+
+max_iter : int, default=1_000
+    Maximum number of iterations over the complete dataset before
+    stopping independently of any early stopping criterion heuristics.
+
+    .. versionadded:: 1.2
+
+    .. deprecated:: 1.4
+       `max_iter=None` is deprecated in 1.4 and will be removed in 1.6.
+       Use the default value (i.e. `100`) instead.
+
+callback : callable, default=None
+    Callable that gets invoked every five iterations.
+
+batch_size : int, default=3
+    The number of features to take in each mini batch.
+
+verbose : int or bool, default=False
+    Controls the verbosity; the higher, the more messages. Defaults to 0.
+
+shuffle : bool, default=True
+    Whether to shuffle the data before splitting it in batches.
+
+n_jobs : int, default=None
+    Number of parallel jobs to run.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+    for more details.
+
+method : {'lars', 'cd'}, default='lars'
+    Method to be used for optimization.
+    lars: uses the least angle regression method to solve the lasso problem
+    (linear_model.lars_path)
+    cd: uses the coordinate descent method to compute the
+    Lasso solution (linear_model.Lasso). Lars will be faster if
+    the estimated components are sparse.
+
+random_state : int, RandomState instance or None, default=None
+    Used for random shuffling when ``shuffle`` is set to ``True``,
+    during online dictionary learning. Pass an int for reproducible results
+    across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+tol : float, default=1e-3
+    Control early stopping based on the norm of the differences in the
+    dictionary between 2 steps.
+
+    To disable early stopping based on changes in the dictionary, set
+    `tol` to 0.0.
+
+    .. versionadded:: 1.1
+
+max_no_improvement : int or None, default=10
+    Control early stopping based on the consecutive number of mini batches
+    that does not yield an improvement on the smoothed cost function.
+
+    To disable convergence detection based on cost function, set
+    `max_no_improvement` to `None`.
+
+    .. versionadded:: 1.1
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Sparse components extracted from the data.
+
+n_components_ : int
+    Estimated number of components.
+
+    .. versionadded:: 0.23
+
+n_iter_ : int
+    Number of iterations run.
+
+mean_ : ndarray of shape (n_features,)
+    Per-feature empirical mean, estimated from the training set.
+    Equal to ``X.mean(axis=0)``.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+DictionaryLearning : Find a dictionary that sparsely encodes data.
+IncrementalPCA : Incremental principal components analysis.
+PCA : Principal component analysis.
+SparsePCA : Sparse Principal Components Analysis.
+TruncatedSVD : Dimensionality reduction using truncated SVD.
+
+Examples
+--------
+>>> import numpy as np
+>>> from sklearn.datasets import make_friedman1
+>>> from sklearn.decomposition import MiniBatchSparsePCA
+>>> X, _ = make_friedman1(n_samples=200, n_features=30, random_state=0)
+>>> transformer = MiniBatchSparsePCA(n_components=5, batch_size=50,
+...                                  max_iter=10, random_state=0)
+>>> transformer.fit(X)
+MiniBatchSparsePCA(...)
+>>> X_transformed = transformer.transform(X)
+>>> X_transformed.shape
+(200, 5)
+>>> # most values in the components_ are zero (sparsity)
+>>> np.mean(transformer.components_ == 0)
+0.9...""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NMF> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                         <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                         <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                         rdfs:comment """Non-Negative Matrix Factorization (NMF).
+
+Find two non-negative matrices, i.e. matrices with all non-negative elements, (W, H)
+whose product approximates the non-negative matrix X. This factorization can be used
+for example for dimensionality reduction, source separation or topic extraction.
+
+The objective function is:
+
+    .. math::
+
+        L(W, H) &= 0.5 * ||X - WH||_{loss}^2
+
+        &+ alpha\\_W * l1\\_ratio * n\\_features * ||vec(W)||_1
+
+        &+ alpha\\_H * l1\\_ratio * n\\_samples * ||vec(H)||_1
+
+        &+ 0.5 * alpha\\_W * (1 - l1\\_ratio) * n\\_features * ||W||_{Fro}^2
+
+        &+ 0.5 * alpha\\_H * (1 - l1\\_ratio) * n\\_samples * ||H||_{Fro}^2
+
+Where:
+
+:math:`||A||_{Fro}^2 = \\sum_{i,j} A_{ij}^2` (Frobenius norm)
+
+:math:`||vec(A)||_1 = \\sum_{i,j} abs(A_{ij})` (Elementwise L1 norm)
+
+The generic norm :math:`||X - WH||_{loss}` may represent
+the Frobenius norm or another supported beta-divergence loss.
+The choice between options is controlled by the `beta_loss` parameter.
+
+The regularization terms are scaled by `n_features` for `W` and by `n_samples` for
+`H` to keep their impact balanced with respect to one another and to the data fit
+term as independent as possible of the size `n_samples` of the training set.
+
+The objective function is minimized with an alternating minimization of W
+and H.
+
+Note that the transformed data is named W and the components matrix is named H. In
+the NMF literature, the naming convention is usually the opposite since the data
+matrix X is transposed.
+
+Read more in the :ref:`User Guide <NMF>`.
+
+Parameters
+----------
+n_components : int or {'auto'} or None, default=None
+    Number of components, if n_components is not set all features
+    are kept.
+    If `n_components='auto'`, the number of components is automatically inferred
+    from W or H shapes.
+
+    .. versionchanged:: 1.4
+        Added `'auto'` value.
+
+init : {'random', 'nndsvd', 'nndsvda', 'nndsvdar', 'custom'}, default=None
+    Method used to initialize the procedure.
+    Valid options:
+
+    - `None`: 'nndsvda' if n_components <= min(n_samples, n_features),
+      otherwise random.
+
+    - `'random'`: non-negative random matrices, scaled with:
+      `sqrt(X.mean() / n_components)`
+
+    - `'nndsvd'`: Nonnegative Double Singular Value Decomposition (NNDSVD)
+      initialization (better for sparseness)
+
+    - `'nndsvda'`: NNDSVD with zeros filled with the average of X
+      (better when sparsity is not desired)
+
+    - `'nndsvdar'` NNDSVD with zeros filled with small random values
+      (generally faster, less accurate alternative to NNDSVDa
+      for when sparsity is not desired)
+
+    - `'custom'`: Use custom matrices `W` and `H` which must both be provided.
+
+    .. versionchanged:: 1.1
+        When `init=None` and n_components is less than n_samples and n_features
+        defaults to `nndsvda` instead of `nndsvd`.
+
+solver : {'cd', 'mu'}, default='cd'
+    Numerical solver to use:
+
+    - 'cd' is a Coordinate Descent solver.
+    - 'mu' is a Multiplicative Update solver.
+
+    .. versionadded:: 0.17
+       Coordinate Descent solver.
+
+    .. versionadded:: 0.19
+       Multiplicative Update solver.
+
+beta_loss : float or {'frobenius', 'kullback-leibler',             'itakura-saito'}, default='frobenius'
+    Beta divergence to be minimized, measuring the distance between X
+    and the dot product WH. Note that values different from 'frobenius'
+    (or 2) and 'kullback-leibler' (or 1) lead to significantly slower
+    fits. Note that for beta_loss <= 0 (or 'itakura-saito'), the input
+    matrix X cannot contain zeros. Used only in 'mu' solver.
+
+    .. versionadded:: 0.19
+
+tol : float, default=1e-4
+    Tolerance of the stopping condition.
+
+max_iter : int, default=200
+    Maximum number of iterations before timing out.
+
+random_state : int, RandomState instance or None, default=None
+    Used for initialisation (when ``init`` == 'nndsvdar' or
+    'random'), and in Coordinate Descent. Pass an int for reproducible
+    results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+alpha_W : float, default=0.0
+    Constant that multiplies the regularization terms of `W`. Set it to zero
+    (default) to have no regularization on `W`.
+
+    .. versionadded:: 1.0
+
+alpha_H : float or \"same\", default=\"same\"
+    Constant that multiplies the regularization terms of `H`. Set it to zero to
+    have no regularization on `H`. If \"same\" (default), it takes the same value as
+    `alpha_W`.
+
+    .. versionadded:: 1.0
+
+l1_ratio : float, default=0.0
+    The regularization mixing parameter, with 0 <= l1_ratio <= 1.
+    For l1_ratio = 0 the penalty is an elementwise L2 penalty
+    (aka Frobenius Norm).
+    For l1_ratio = 1 it is an elementwise L1 penalty.
+    For 0 < l1_ratio < 1, the penalty is a combination of L1 and L2.
+
+    .. versionadded:: 0.17
+       Regularization parameter *l1_ratio* used in the Coordinate Descent
+       solver.
+
+verbose : int, default=0
+    Whether to be verbose.
+
+shuffle : bool, default=False
+    If true, randomize the order of coordinates in the CD solver.
+
+    .. versionadded:: 0.17
+       *shuffle* parameter used in the Coordinate Descent solver.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Factorization matrix, sometimes called 'dictionary'.
+
+n_components_ : int
+    The number of components. It is same as the `n_components` parameter
+    if it was given. Otherwise, it will be same as the number of
+    features.
+
+reconstruction_err_ : float
+    Frobenius norm of the matrix difference, or beta-divergence, between
+    the training data ``X`` and the reconstructed data ``WH`` from
+    the fitted model.
+
+n_iter_ : int
+    Actual number of iterations.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+DictionaryLearning : Find a dictionary that sparsely encodes data.
+MiniBatchSparsePCA : Mini-batch Sparse Principal Components Analysis.
+PCA : Principal component analysis.
+SparseCoder : Find a sparse representation of data from a fixed,
+    precomputed dictionary.
+SparsePCA : Sparse Principal Components Analysis.
+TruncatedSVD : Dimensionality reduction using truncated SVD.
+
+References
+----------
+.. [1] :doi:`\"Fast local algorithms for large scale nonnegative matrix and tensor
+   factorizations\" <10.1587/transfun.E92.A.708>`
+   Cichocki, Andrzej, and P. H. A. N. Anh-Huy. IEICE transactions on fundamentals
+   of electronics, communications and computer sciences 92.3: 708-721, 2009.
+
+.. [2] :doi:`\"Algorithms for nonnegative matrix factorization with the
+   beta-divergence\" <10.1162/NECO_a_00168>`
+   Fevotte, C., & Idier, J. (2011). Neural Computation, 23(9).
+
+Examples
+--------
+>>> import numpy as np
+>>> X = np.array([[1, 1], [2, 1], [3, 1.2], [4, 1], [5, 0.8], [6, 1]])
+>>> from sklearn.decomposition import NMF
+>>> model = NMF(n_components=2, init='random', random_state=0)
+>>> W = model.fit_transform(X)
+>>> H = model.components_""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PCA> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                         <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                         <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                         rdfs:comment """Principal component analysis (PCA).
+
+Linear dimensionality reduction using Singular Value Decomposition of the
+data to project it to a lower dimensional space. The input data is centered
+but not scaled for each feature before applying the SVD.
+
+It uses the LAPACK implementation of the full SVD or a randomized truncated
+SVD by the method of Halko et al. 2009, depending on the shape of the input
+data and the number of components to extract.
+
+It can also use the scipy.sparse.linalg ARPACK implementation of the
+truncated SVD.
+
+Notice that this class does not support sparse input. See
+:class:`TruncatedSVD` for an alternative with sparse data.
+
+For a usage example, see
+:ref:`sphx_glr_auto_examples_decomposition_plot_pca_iris.py`
+
+Read more in the :ref:`User Guide <PCA>`.
+
+Parameters
+----------
+n_components : int, float or 'mle', default=None
+    Number of components to keep.
+    if n_components is not set all components are kept::
+
+        n_components == min(n_samples, n_features)
+
+    If ``n_components == 'mle'`` and ``svd_solver == 'full'``, Minka's
+    MLE is used to guess the dimension. Use of ``n_components == 'mle'``
+    will interpret ``svd_solver == 'auto'`` as ``svd_solver == 'full'``.
+
+    If ``0 < n_components < 1`` and ``svd_solver == 'full'``, select the
+    number of components such that the amount of variance that needs to be
+    explained is greater than the percentage specified by n_components.
+
+    If ``svd_solver == 'arpack'``, the number of components must be
+    strictly less than the minimum of n_features and n_samples.
+
+    Hence, the None case results in::
+
+        n_components == min(n_samples, n_features) - 1
+
+copy : bool, default=True
+    If False, data passed to fit are overwritten and running
+    fit(X).transform(X) will not yield the expected results,
+    use fit_transform(X) instead.
+
+whiten : bool, default=False
+    When True (False by default) the `components_` vectors are multiplied
+    by the square root of n_samples and then divided by the singular values
+    to ensure uncorrelated outputs with unit component-wise variances.
+
+    Whitening will remove some information from the transformed signal
+    (the relative variance scales of the components) but can sometime
+    improve the predictive accuracy of the downstream estimators by
+    making their data respect some hard-wired assumptions.
+
+svd_solver : {'auto', 'full', 'arpack', 'randomized'}, default='auto'
+    If auto :
+        The solver is selected by a default policy based on `X.shape` and
+        `n_components`: if the input data is larger than 500x500 and the
+        number of components to extract is lower than 80% of the smallest
+        dimension of the data, then the more efficient 'randomized'
+        method is enabled. Otherwise the exact full SVD is computed and
+        optionally truncated afterwards.
+    If full :
+        run exact full SVD calling the standard LAPACK solver via
+        `scipy.linalg.svd` and select the components by postprocessing
+    If arpack :
+        run SVD truncated to n_components calling ARPACK solver via
+        `scipy.sparse.linalg.svds`. It requires strictly
+        0 < n_components < min(X.shape)
+    If randomized :
+        run randomized SVD by the method of Halko et al.
+
+    .. versionadded:: 0.18.0
+
+tol : float, default=0.0
+    Tolerance for singular values computed by svd_solver == 'arpack'.
+    Must be of range [0.0, infinity).
+
+    .. versionadded:: 0.18.0
+
+iterated_power : int or 'auto', default='auto'
+    Number of iterations for the power method computed by
+    svd_solver == 'randomized'.
+    Must be of range [0, infinity).
+
+    .. versionadded:: 0.18.0
+
+n_oversamples : int, default=10
+    This parameter is only relevant when `svd_solver=\"randomized\"`.
+    It corresponds to the additional number of random vectors to sample the
+    range of `X` so as to ensure proper conditioning. See
+    :func:`~sklearn.utils.extmath.randomized_svd` for more details.
+
+    .. versionadded:: 1.1
+
+power_iteration_normalizer : {'auto', 'QR', 'LU', 'none'}, default='auto'
+    Power iteration normalizer for randomized SVD solver.
+    Not used by ARPACK. See :func:`~sklearn.utils.extmath.randomized_svd`
+    for more details.
+
+    .. versionadded:: 1.1
+
+random_state : int, RandomState instance or None, default=None
+    Used when the 'arpack' or 'randomized' solvers are used. Pass an int
+    for reproducible results across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+    .. versionadded:: 0.18.0
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Principal axes in feature space, representing the directions of
+    maximum variance in the data. Equivalently, the right singular
+    vectors of the centered input data, parallel to its eigenvectors.
+    The components are sorted by decreasing ``explained_variance_``.
+
+explained_variance_ : ndarray of shape (n_components,)
+    The amount of variance explained by each of the selected components.
+    The variance estimation uses `n_samples - 1` degrees of freedom.
+
+    Equal to n_components largest eigenvalues
+    of the covariance matrix of X.
+
+    .. versionadded:: 0.18
+
+explained_variance_ratio_ : ndarray of shape (n_components,)
+    Percentage of variance explained by each of the selected components.
+
+    If ``n_components`` is not set then all components are stored and the
+    sum of the ratios is equal to 1.0.
+
+singular_values_ : ndarray of shape (n_components,)
+    The singular values corresponding to each of the selected components.
+    The singular values are equal to the 2-norms of the ``n_components``
+    variables in the lower-dimensional space.
+
+    .. versionadded:: 0.19
+
+mean_ : ndarray of shape (n_features,)
+    Per-feature empirical mean, estimated from the training set.
+
+    Equal to `X.mean(axis=0)`.
+
+n_components_ : int
+    The estimated number of components. When n_components is set
+    to 'mle' or a number between 0 and 1 (with svd_solver == 'full') this
+    number is estimated from input data. Otherwise it equals the parameter
+    n_components, or the lesser value of n_features and n_samples
+    if n_components is None.
+
+n_samples_ : int
+    Number of samples in the training data.
+
+noise_variance_ : float
+    The estimated noise covariance following the Probabilistic PCA model
+    from Tipping and Bishop 1999. See \"Pattern Recognition and
+    Machine Learning\" by C. Bishop, 12.2.1 p. 574 or
+    http://www.miketipping.com/papers/met-mppca.pdf. It is required to
+    compute the estimated data covariance and score samples.
+
+    Equal to the average of (min(n_features, n_samples) - n_components)
+    smallest eigenvalues of the covariance matrix of X.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+KernelPCA : Kernel Principal Component Analysis.
+SparsePCA : Sparse Principal Component Analysis.
+TruncatedSVD : Dimensionality reduction using truncated SVD.
+IncrementalPCA : Incremental Principal Component Analysis.
+
+References
+----------
+For n_components == 'mle', this class uses the method from:
+`Minka, T. P.. \"Automatic choice of dimensionality for PCA\".
+In NIPS, pp. 598-604 <https://tminka.github.io/papers/pca/minka-pca.pdf>`_
+
+Implements the probabilistic PCA model from:
+`Tipping, M. E., and Bishop, C. M. (1999). \"Probabilistic principal
+component analysis\". Journal of the Royal Statistical Society:
+Series B (Statistical Methodology), 61(3), 611-622.
+<http://www.miketipping.com/papers/met-mppca.pdf>`_
+via the score and score_samples methods.
+
+For svd_solver == 'arpack', refer to `scipy.sparse.linalg.svds`.
+
+For svd_solver == 'randomized', see:
+:doi:`Halko, N., Martinsson, P. G., and Tropp, J. A. (2011).
+\"Finding structure with randomness: Probabilistic algorithms for
+constructing approximate matrix decompositions\".
+SIAM review, 53(2), 217-288.
+<10.1137/090771806>`
+and also
+:doi:`Martinsson, P. G., Rokhlin, V., and Tygert, M. (2011).
+\"A randomized algorithm for the decomposition of matrices\".
+Applied and Computational Harmonic Analysis, 30(1), 47-68.
+<10.1016/j.acha.2010.02.003>`
+
+Examples
+--------
+>>> import numpy as np
+>>> from sklearn.decomposition import PCA
+>>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+>>> pca = PCA(n_components=2)
+>>> pca.fit(X)
+PCA(n_components=2)
+>>> print(pca.explained_variance_ratio_)
+[0.9924... 0.0075...]
+>>> print(pca.singular_values_)
+[6.30061... 0.54980...]
+
+>>> pca = PCA(n_components=2, svd_solver='full')
+>>> pca.fit(X)
+PCA(n_components=2, svd_solver='full')
+>>> print(pca.explained_variance_ratio_)
+[0.9924... 0.00755...]
+>>> print(pca.singular_values_)
+[6.30061... 0.54980...]
+
+>>> pca = PCA(n_components=1, svd_solver='arpack')
+>>> pca.fit(X)
+PCA(n_components=1, svd_solver='arpack')
+>>> print(pca.explained_variance_ratio_)
+[0.99244...]
+>>> print(pca.singular_values_)
+[6.30061...]""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> rdf:type owl:Class ;
+                                                                                                   rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparseCoder> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                 rdfs:comment """Sparse coding.
+
+Finds a sparse representation of data against a fixed, precomputed
+dictionary.
+
+Each row of the result is the solution to a sparse coding problem.
+The goal is to find a sparse array `code` such that::
+
+    X ~= code * dictionary
+
+Read more in the :ref:`User Guide <SparseCoder>`.
+
+Parameters
+----------
+dictionary : ndarray of shape (n_components, n_features)
+    The dictionary atoms used for sparse coding. Lines are assumed to be
+    normalized to unit norm.
+
+transform_algorithm : {'lasso_lars', 'lasso_cd', 'lars', 'omp',             'threshold'}, default='omp'
+    Algorithm used to transform the data:
+
+    - `'lars'`: uses the least angle regression method
+      (`linear_model.lars_path`);
+    - `'lasso_lars'`: uses Lars to compute the Lasso solution;
+    - `'lasso_cd'`: uses the coordinate descent method to compute the
+      Lasso solution (linear_model.Lasso). `'lasso_lars'` will be faster if
+      the estimated components are sparse;
+    - `'omp'`: uses orthogonal matching pursuit to estimate the sparse
+      solution;
+    - `'threshold'`: squashes to zero all coefficients less than alpha from
+      the projection ``dictionary * X'``.
+
+transform_n_nonzero_coefs : int, default=None
+    Number of nonzero coefficients to target in each column of the
+    solution. This is only used by `algorithm='lars'` and `algorithm='omp'`
+    and is overridden by `alpha` in the `omp` case. If `None`, then
+    `transform_n_nonzero_coefs=int(n_features / 10)`.
+
+transform_alpha : float, default=None
+    If `algorithm='lasso_lars'` or `algorithm='lasso_cd'`, `alpha` is the
+    penalty applied to the L1 norm.
+    If `algorithm='threshold'`, `alpha` is the absolute value of the
+    threshold below which coefficients will be squashed to zero.
+    If `algorithm='omp'`, `alpha` is the tolerance parameter: the value of
+    the reconstruction error targeted. In this case, it overrides
+    `n_nonzero_coefs`.
+    If `None`, default to 1.
+
+split_sign : bool, default=False
+    Whether to split the sparse feature vector into the concatenation of
+    its negative part and its positive part. This can improve the
+    performance of downstream classifiers.
+
+n_jobs : int, default=None
+    Number of parallel jobs to run.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+    for more details.
+
+positive_code : bool, default=False
+    Whether to enforce positivity when finding the code.
+
+    .. versionadded:: 0.20
+
+transform_max_iter : int, default=1000
+    Maximum number of iterations to perform if `algorithm='lasso_cd'` or
+    `lasso_lars`.
+
+    .. versionadded:: 0.22
+
+Attributes
+----------
+n_components_ : int
+    Number of atoms.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+DictionaryLearning : Find a dictionary that sparsely encodes data.
+MiniBatchDictionaryLearning : A faster, less accurate, version of the
+    dictionary learning algorithm.
+MiniBatchSparsePCA : Mini-batch Sparse Principal Components Analysis.
+SparsePCA : Sparse Principal Components Analysis.
+sparse_encode : Sparse coding where each row of the result is the solution
+    to a sparse coding problem.
+
+Examples
+--------
+>>> import numpy as np
+>>> from sklearn.decomposition import SparseCoder
+>>> X = np.array([[-1, -1, -1], [0, 0, 3]])
+>>> dictionary = np.array(
+...     [[0, 1, 0],
+...      [-1, -1, 2],
+...      [1, 1, 1],
+...      [0, 1, 1],
+...      [0, 2, 1]],
+...    dtype=np.float64
+... )
+>>> coder = SparseCoder(
+...     dictionary=dictionary, transform_algorithm='lasso_lars',
+...     transform_alpha=1e-10,
+... )
+>>> coder.transform(X)
+array([[ 0.,  0., -1.,  0.,  0.],
+       [ 0.,  1.,  1.,  0.,  0.]])""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SparsePCA> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                               <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                               rdfs:comment """Sparse Principal Components Analysis (SparsePCA).
+
+Finds the set of sparse components that can optimally reconstruct
+the data.  The amount of sparseness is controllable by the coefficient
+of the L1 penalty, given by the parameter alpha.
+
+Read more in the :ref:`User Guide <SparsePCA>`.
+
+Parameters
+----------
+n_components : int, default=None
+    Number of sparse atoms to extract. If None, then ``n_components``
+    is set to ``n_features``.
+
+alpha : float, default=1
+    Sparsity controlling parameter. Higher values lead to sparser
+    components.
+
+ridge_alpha : float, default=0.01
+    Amount of ridge shrinkage to apply in order to improve
+    conditioning when calling the transform method.
+
+max_iter : int, default=1000
+    Maximum number of iterations to perform.
+
+tol : float, default=1e-8
+    Tolerance for the stopping condition.
+
+method : {'lars', 'cd'}, default='lars'
+    Method to be used for optimization.
+    lars: uses the least angle regression method to solve the lasso problem
+    (linear_model.lars_path)
+    cd: uses the coordinate descent method to compute the
+    Lasso solution (linear_model.Lasso). Lars will be faster if
+    the estimated components are sparse.
+
+n_jobs : int, default=None
+    Number of parallel jobs to run.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+    for more details.
+
+U_init : ndarray of shape (n_samples, n_components), default=None
+    Initial values for the loadings for warm restart scenarios. Only used
+    if `U_init` and `V_init` are not None.
+
+V_init : ndarray of shape (n_components, n_features), default=None
+    Initial values for the components for warm restart scenarios. Only used
+    if `U_init` and `V_init` are not None.
+
+verbose : int or bool, default=False
+    Controls the verbosity; the higher, the more messages. Defaults to 0.
+
+random_state : int, RandomState instance or None, default=None
+    Used during dictionary learning. Pass an int for reproducible results
+    across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    Sparse components extracted from the data.
+
+error_ : ndarray
+    Vector of errors at each iteration.
+
+n_components_ : int
+    Estimated number of components.
+
+    .. versionadded:: 0.23
+
+n_iter_ : int
+    Number of iterations run.
+
+mean_ : ndarray of shape (n_features,)
+    Per-feature empirical mean, estimated from the training set.
+    Equal to ``X.mean(axis=0)``.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+PCA : Principal Component Analysis implementation.
+MiniBatchSparsePCA : Mini batch variant of `SparsePCA` that is faster but less
+    accurate.
+DictionaryLearning : Generic dictionary learning problem using a sparse code.
+
+Examples
+--------
+>>> import numpy as np
+>>> from sklearn.datasets import make_friedman1
+>>> from sklearn.decomposition import SparsePCA
+>>> X, _ = make_friedman1(n_samples=200, n_features=30, random_state=0)
+>>> transformer = SparsePCA(n_components=5, random_state=0)
+>>> transformer.fit(X)
+SparsePCA(...)
+>>> X_transformed = transformer.transform(X)
+>>> X_transformed.shape
+(200, 5)
+>>> # most values in the components_ are zero (sparsity)
+>>> np.mean(transformer.components_ == 0)
+0.9666...""" .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TruncatedSVD> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecompositionModule> ,
+                                                                                                                  <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> ;
+                                                                                                  rdfs:comment """Dimensionality reduction using truncated SVD (aka LSA).
+
+This transformer performs linear dimensionality reduction by means of
+truncated singular value decomposition (SVD). Contrary to PCA, this
+estimator does not center the data before computing the singular value
+decomposition. This means it can work with sparse matrices
+efficiently.
+
+In particular, truncated SVD works on term count/tf-idf matrices as
+returned by the vectorizers in :mod:`sklearn.feature_extraction.text`. In
+that context, it is known as latent semantic analysis (LSA).
+
+This estimator supports two algorithms: a fast randomized SVD solver, and
+a \"naive\" algorithm that uses ARPACK as an eigensolver on `X * X.T` or
+`X.T * X`, whichever is more efficient.
+
+Read more in the :ref:`User Guide <LSA>`.
+
+Parameters
+----------
+n_components : int, default=2
+    Desired dimensionality of output data.
+    If algorithm='arpack', must be strictly less than the number of features.
+    If algorithm='randomized', must be less than or equal to the number of features.
+    The default value is useful for visualisation. For LSA, a value of
+    100 is recommended.
+
+algorithm : {'arpack', 'randomized'}, default='randomized'
+    SVD solver to use. Either \"arpack\" for the ARPACK wrapper in SciPy
+    (scipy.sparse.linalg.svds), or \"randomized\" for the randomized
+    algorithm due to Halko (2009).
+
+n_iter : int, default=5
+    Number of iterations for randomized SVD solver. Not used by ARPACK. The
+    default is larger than the default in
+    :func:`~sklearn.utils.extmath.randomized_svd` to handle sparse
+    matrices that may have large slowly decaying spectrum.
+
+n_oversamples : int, default=10
+    Number of oversamples for randomized SVD solver. Not used by ARPACK.
+    See :func:`~sklearn.utils.extmath.randomized_svd` for a complete
+    description.
+
+    .. versionadded:: 1.1
+
+power_iteration_normalizer : {'auto', 'QR', 'LU', 'none'}, default='auto'
+    Power iteration normalizer for randomized SVD solver.
+    Not used by ARPACK. See :func:`~sklearn.utils.extmath.randomized_svd`
+    for more details.
+
+    .. versionadded:: 1.1
+
+random_state : int, RandomState instance or None, default=None
+    Used during randomized svd. Pass an int for reproducible results across
+    multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+tol : float, default=0.0
+    Tolerance for ARPACK. 0 means machine precision. Ignored by randomized
+    SVD solver.
+
+Attributes
+----------
+components_ : ndarray of shape (n_components, n_features)
+    The right singular vectors of the input data.
+
+explained_variance_ : ndarray of shape (n_components,)
+    The variance of the training samples transformed by a projection to
+    each component.
+
+explained_variance_ratio_ : ndarray of shape (n_components,)
+    Percentage of variance explained by each of the selected components.
+
+singular_values_ : ndarray of shape (n_components,)
+    The singular values corresponding to each of the selected components.
+    The singular values are equal to the 2-norms of the ``n_components``
+    variables in the lower-dimensional space.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+DictionaryLearning : Find a dictionary that sparsely encodes data.
+FactorAnalysis : A simple linear generative model with
+    Gaussian latent variables.
+IncrementalPCA : Incremental principal components analysis.
+KernelPCA : Kernel Principal component analysis.
+NMF : Non-Negative Matrix Factorization.
+PCA : Principal component analysis.
+
+Notes
+-----
+SVD suffers from a problem called \"sign indeterminacy\", which means the
+sign of the ``components_`` and the output from transform depend on the
+algorithm and random state. To work around this, fit instances of this
+class to data once, then keep the instance around to do transformations.
+
+References
+----------
+:arxiv:`Halko, et al. (2009). \"Finding structure with randomness:
+Stochastic algorithms for constructing approximate matrix decompositions\"
+<0909.4061>`
+
+Examples
+--------
+>>> from sklearn.decomposition import TruncatedSVD
+>>> from scipy.sparse import csr_matrix
+>>> import numpy as np
+>>> np.random.seed(0)
+>>> X_dense = np.random.rand(100, 100)
+>>> X_dense[:, 2 * np.arange(50)] = 0
+>>> X = csr_matrix(X_dense)
+>>> svd = TruncatedSVD(n_components=5, n_iter=7, random_state=42)
+>>> svd.fit(X)
+TruncatedSVD(n_components=5, n_iter=7, random_state=42)
+>>> print(svd.explained_variance_ratio_)
+[0.0157... 0.0512... 0.0499... 0.0479... 0.0453...]
+>>> print(svd.explained_variance_ratio_.sum())
+0.2102...
+>>> print(svd.singular_values_)
+[35.2410...  4.5981...   4.5420...  4.4486...  4.3288...]""" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
