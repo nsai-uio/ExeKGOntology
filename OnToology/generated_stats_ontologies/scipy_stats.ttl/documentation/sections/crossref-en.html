@@ -1,0 +1,658 @@
+<h2 id="crossreference" class="list">Cross-reference for [Ontology Name] classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by [Ontology Name].
+<div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">
+            <span>kurtosis</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule">
+            <span>scipy module</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure">
+            <span>shape measure</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">
+            <span>skew</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule">
+            <span>stats module</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">
+      <h3>kurtosis<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis</p>
+      <div class="comment">
+         <span class="markdown">Compute the kurtosis (Fisher or Pearson) of a dataset.
+
+Kurtosis is the fourth central moment divided by the square of the
+variance. If Fisher's definition is used, then 3.0 is subtracted from
+the result to give 0.0 for a normal distribution.
+
+If bias is False then the kurtosis is calculated using k statistics to
+eliminate bias coming from biased moment estimators
+
+Use `kurtosistest` to see if result is close enough to normal.
+
+Parameters
+----------
+a : array
+    Data for which the kurtosis is calculated.
+axis : int or None, default: 0
+    If an int, the axis of the input along which to compute the statistic.
+    The statistic of each axis-slice (e.g. row) of the input will appear in a
+    corresponding element of the output.
+    If ``None``, the input will be raveled before computing the statistic.
+fisher : bool, optional
+    If True, Fisher's definition is used (normal ==&gt; 0.0). If False,
+    Pearson's definition is used (normal ==&gt; 3.0).
+bias : bool, optional
+    If False, then the calculations are corrected for statistical bias.
+nan_policy : {'propagate', 'omit', 'raise'}
+    Defines how to handle input NaNs.
+    
+    - ``propagate``: if a NaN is present in the axis slice (e.g. row) along
+      which the  statistic is computed, the corresponding entry of the output
+      will be NaN.
+    - ``omit``: NaNs will be omitted when performing the calculation.
+      If insufficient data remains in the axis slice along which the
+      statistic is computed, the corresponding entry of the output will be
+      NaN.
+    - ``raise``: if a NaN is present, a ``ValueError`` will be raised.
+keepdims : bool, default: False
+    If this is set to True, the axes which are reduced are left
+    in the result as dimensions with size one. With this option,
+    the result will broadcast correctly against the input array.
+
+Returns
+-------
+kurtosis : array
+    The kurtosis of values along an axis, returning NaN where all values
+    are equal.
+
+Notes
+-----
+
+Beginning in SciPy 1.9, ``np.matrix`` inputs (not recommended for new
+code) are converted to ``np.ndarray`` before the calculation is performed. In
+this case, the output will be a scalar or ``np.ndarray`` of appropriate shape
+rather than a 2D ``np.matrix``. Similarly, while masked elements of masked
+arrays are ignored, the output will be a scalar or ``np.ndarray`` rather than a
+masked array with ``mask=False``.
+
+References
+----------
+.. [1] Zwillinger, D. and Kokoska, S. (2000). CRC Standard
+   Probability and Statistics Tables and Formulae. Chapman &amp; Hall: New
+   York. 2000.
+
+Examples
+--------
+In Fisher's definition, the kurtosis of the normal distribution is zero.
+In the following example, the kurtosis is close to zero, because it was
+calculated from the dataset, not from the continuous distribution.
+
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from scipy.stats import norm, kurtosis
+&gt;&gt;&gt; data = norm.rvs(size=1000, random_state=3)
+&gt;&gt;&gt; kurtosis(data)
+-0.06928694200380558
+
+The distribution with a higher kurtosis has a heavier tail.
+The zero valued kurtosis of the normal distribution in Fisher's definition
+can serve as a reference point.
+
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; import scipy.stats as stats
+&gt;&gt;&gt; from scipy.stats import kurtosis
+
+&gt;&gt;&gt; x = np.linspace(-5, 5, 100)
+&gt;&gt;&gt; ax = plt.subplot()
+&gt;&gt;&gt; distnames = ['laplace', 'norm', 'uniform']
+
+&gt;&gt;&gt; for distname in distnames:
+...     if distname == 'uniform':
+...         dist = getattr(stats, distname)(loc=-2, scale=4)
+...     else:
+...         dist = getattr(stats, distname)
+...     data = dist.rvs(size=1000)
+...     kur = kurtosis(data, fisher=True)
+...     y = dist.pdf(x)
+...     ax.plot(x, y, label="{}, {}".format(distname, round(kur, 3)))
+...     ax.legend()
+
+The Laplace distribution has a heavier tail than the normal distribution.
+The uniform distribution (which has negative kurtosis) has the thinnest
+tail.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod">statistic calculation method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule">stats module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis">has param axis</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias">has param bias</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher">has param fisher</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims">has param keepdims</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy">has param nan policy</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod">has shape measure method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule">
+      <h3>scipy module<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module">module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule">stats module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure">
+      <h3>shape measure<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask">atomic task</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculation"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculation">statistic calculation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod">has shape measure method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">
+      <h3>skew<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew</p>
+      <div class="comment">
+         <span class="markdown">Compute the sample skewness of a data set.
+
+For normally distributed data, the skewness should be about zero. For
+unimodal continuous distributions, a skewness value greater than zero means
+that there is more weight in the right tail of the distribution. The
+function `skewtest` can be used to determine if the skewness value
+is close enough to zero, statistically speaking.
+
+Parameters
+----------
+a : ndarray
+    Input array.
+axis : int or None, default: 0
+    If an int, the axis of the input along which to compute the statistic.
+    The statistic of each axis-slice (e.g. row) of the input will appear in a
+    corresponding element of the output.
+    If ``None``, the input will be raveled before computing the statistic.
+bias : bool, optional
+    If False, then the calculations are corrected for statistical bias.
+nan_policy : {'propagate', 'omit', 'raise'}
+    Defines how to handle input NaNs.
+    
+    - ``propagate``: if a NaN is present in the axis slice (e.g. row) along
+      which the  statistic is computed, the corresponding entry of the output
+      will be NaN.
+    - ``omit``: NaNs will be omitted when performing the calculation.
+      If insufficient data remains in the axis slice along which the
+      statistic is computed, the corresponding entry of the output will be
+      NaN.
+    - ``raise``: if a NaN is present, a ``ValueError`` will be raised.
+keepdims : bool, default: False
+    If this is set to True, the axes which are reduced are left
+    in the result as dimensions with size one. With this option,
+    the result will broadcast correctly against the input array.
+
+Returns
+-------
+skewness : ndarray
+    The skewness of values along an axis, returning NaN where all values
+    are equal.
+
+Notes
+-----
+The sample skewness is computed as the Fisher-Pearson coefficient
+of skewness, i.e.
+
+.. math::
+
+    g_1=\frac{m_3}{m_2^{3/2}}
+
+where
+
+.. math::
+
+    m_i=\frac{1}{N}\sum_{n=1}^N(x[n]-\bar{x})^i
+
+is the biased sample :math:`i\texttt{th}` central moment, and
+:math:`\bar{x}` is
+the sample mean.  If ``bias`` is False, the calculations are
+corrected for bias and the value computed is the adjusted
+Fisher-Pearson standardized moment coefficient, i.e.
+
+.. math::
+
+    G_1=\frac{k_3}{k_2^{3/2}}=
+        \frac{\sqrt{N(N-1)}}{N-2}\frac{m_3}{m_2^{3/2}}.
+
+Beginning in SciPy 1.9, ``np.matrix`` inputs (not recommended for new
+code) are converted to ``np.ndarray`` before the calculation is performed. In
+this case, the output will be a scalar or ``np.ndarray`` of appropriate shape
+rather than a 2D ``np.matrix``. Similarly, while masked elements of masked
+arrays are ignored, the output will be a scalar or ``np.ndarray`` rather than a
+masked array with ``mask=False``.
+
+References
+----------
+.. [1] Zwillinger, D. and Kokoska, S. (2000). CRC Standard
+   Probability and Statistics Tables and Formulae. Chapman &amp; Hall: New
+   York. 2000.
+   Section 2.2.24.1
+
+Examples
+--------
+&gt;&gt;&gt; from scipy.stats import skew
+&gt;&gt;&gt; skew([1, 2, 3, 4, 5])
+0.0
+&gt;&gt;&gt; skew([2, 8, 0, 4, 1, 9, 9, 0])
+0.2650554122698573</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculationMethod">statistic calculation method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule">stats module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis">has param axis</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias">has param bias</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims">has param keepdims</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy">has param nan policy</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod">has shape measure method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule">
+      <h3>stats module<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatsModule</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScipyModule">scipy module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">kurtosis</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">skew</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod">
+            <span>has shape measure method</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod">
+      <h3>has shape measure method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasShapeMeasureMethod</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationMethod"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationMethod">has statistic calculation method</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ShapeMeasure">shape measure</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">kurtosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">skew</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis">
+            <span>has param axis</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias">
+            <span>has param bias</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher">
+            <span>has param fisher</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims">
+            <span>has param keepdims</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy">
+            <span>has param nan policy</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis">
+      <h3>has param axis<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamAxis</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">kurtosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">skew</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias">
+      <h3>has param bias<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamBias</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">kurtosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">skew</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher">
+      <h3>has param fisher<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamFisher</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">kurtosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims">
+      <h3>has param keepdims<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamKeepdims</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">kurtosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">skew</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy">
+      <h3>has param nan policy<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasParamNanPolicy</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Kurtosis">kurtosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#Skew">skew</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>

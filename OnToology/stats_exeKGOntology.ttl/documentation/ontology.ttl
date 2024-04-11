@@ -9,14 +9,6 @@
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#> rdf:type owl:Ontology .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure
-<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
 #    Object Properties
 #################################################################
 
@@ -28,80 +20,28 @@
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> rdf:type owl:ObjectProperty .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput
-<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput> rdf:type owl:ObjectProperty .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationInput
+:hasStatisticCalculationInput rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
+                              rdfs:domain :StatisticCalculation ;
+                              rdfs:range :DataInStatisticCalculation .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationInput
-:hasNormalizationInput rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
-                       rdfs:domain :NormalizationTask ;
-                       rdfs:range :DataInNormalization .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationMethod
+:hasStatisticCalculationMethod rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+                               rdfs:domain :StatisticCalculation .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationMethod
-:hasNormalizationMethod rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
-                        rdfs:domain :NormalizationTask ;
-                        rdfs:range :NormalizationMethod .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasNormalizationOutput
-:hasNormalizationOutput rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput> ;
-                        rdfs:domain :NormalizationTask ;
-                        rdfs:range :DataOutNormalization .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationInput
-:hasScatteringCalculationInput rdf:type owl:ObjectProperty ;
-                               rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
-                               rdfs:domain :ScatteringCalculationTask ;
-                               rdfs:range :DataInScatteringCalculation .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationMethod
-:hasScatteringCalculationMethod rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
-                                rdfs:domain :ScatteringCalculationTask ;
-                                rdfs:range :ScatteringCalculationMethod .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasScatteringCalculationOutput
-:hasScatteringCalculationOutput rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput> ;
-                                rdfs:domain :ScatteringCalculationTask ;
-                                rdfs:range :DataOutScatteringCalculation .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationInput
-:hasTrendCalculationInput rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
-                          rdfs:domain :TrendCalculationTask ;
-                          rdfs:range :DataInTrendCalculation .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationMethod
-:hasTrendCalculationMethod rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
-                           rdfs:domain :TrendCalculationTask ;
-                           rdfs:range :TrendCalculationMethod .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasTrendCalculationOutput
-:hasTrendCalculationOutput rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasOutput> ;
-                           rdfs:domain :TrendCalculationTask ;
-                           rdfs:range :DataOutTrendCalculation .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#hasStatisticCalculationOutput
+:hasStatisticCalculationOutput rdf:type owl:ObjectProperty ;
+                               rdfs:domain :StatisticCalculation ;
+                               rdfs:range :DataOutStatisticCalculation .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
-<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> rdf:type owl:Class .
-
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> rdf:type owl:Class .
@@ -111,89 +51,41 @@
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInNormalization
-:DataInNormalization rdf:type owl:Class ;
-                     rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ;
-                     <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInScatteringCalculation
-:DataInScatteringCalculation rdf:type owl:Class ;
-                             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ;
-                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tabular
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tabular> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInTrendCalculation
-:DataInTrendCalculation rdf:type owl:Class ;
-                        rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ;
-                        <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutNormalization
-:DataOutNormalization rdf:type owl:Class ;
-                      rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ;
-                      <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutScatteringCalculation
-:DataOutScatteringCalculation rdf:type owl:Class ;
-                              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ;
-                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataInStatisticCalculation
+:DataInStatisticCalculation rdf:type owl:Class ;
+                            rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ,
+                                            <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix> ,
+                                            <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tabular> ,
+                                            <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor> ,
+                                            <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutTrendCalculation
-:DataOutTrendCalculation rdf:type owl:Class ;
-                         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ;
-                         <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#DataOutStatisticCalculation
+:DataOutStatisticCalculation rdf:type owl:Class ;
+                             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ,
+                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix> ,
+                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor> ,
+                                             <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#MaximumCalculationMethod
-:MaximumCalculationMethod rdf:type owl:Class ;
-                          rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#MeanCalculationMethod
-:MeanCalculationMethod rdf:type owl:Class ;
-                       rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#MinimumCalcualtionMethod
-:MinimumCalcualtionMethod rdf:type owl:Class ;
-                          rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationMethod
-:NormalizationMethod rdf:type owl:Class ;
-                     rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#NormalizationTask
-:NormalizationTask rdf:type owl:Class ;
-                   rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScatteringCalculationMethod
-:ScatteringCalculationMethod rdf:type owl:Class ;
-                             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#ScatteringCalculationTask
-:ScatteringCalculationTask rdf:type owl:Class ;
-                           rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StandardDeviationMethod
-:StandardDeviationMethod rdf:type owl:Class ;
-                         rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#TrendCalculationMethod
-:TrendCalculationMethod rdf:type owl:Class ;
-                        rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#TrendCalculationTask
-:TrendCalculationTask rdf:type owl:Class ;
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#StatisticCalculation
+:StatisticCalculation rdf:type owl:Class ;
                       rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
 
 

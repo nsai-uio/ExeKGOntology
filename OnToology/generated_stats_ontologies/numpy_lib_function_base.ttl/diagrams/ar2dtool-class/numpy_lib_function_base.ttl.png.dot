@@ -1,0 +1,46 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "stats:Median" "stats:Percentile" "stats:CentralTendencyMeasure" "stats:Corrcoef" "stats:DependencyMeasure" "stats:Cov" "stats:PositionMeasure" "stats:Average" ; /*classes style*/
+	"stats:hasCentralTendencyMeasureMethod" -> "stats:hasStatisticCalculationMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasDependencyMeasureMethod" -> "stats:hasStatisticCalculationMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamDdof" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamWeights" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasPositionMeasureMethod" -> "stats:hasStatisticCalculationMethod" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamInterpolation" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamKeepdims" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamRowvar" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamMethod" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamBias" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamAweights" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamM" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamY" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamFweights" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamX" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamReturned" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamAxis" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamQ" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamDtype" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:hasParamOverwriteInput" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"stats:Corrcoef" -> "xsd:boolean" [ label = "stats:hasParamRowvar" ];
+	"stats:Cov" -> "xsd:string" [ label = "stats:hasParamAweights" ];
+	"stats:Median" -> "xsd:boolean" [ label = "stats:hasParamOverwriteInput" ];
+	"stats:Average" -> "xsd:boolean" [ label = "stats:hasParamKeepdims" ];
+	"stats:Average" -> "xsd:int" [ label = "stats:hasParamAxis" ];
+	"stats:PositionMeasure" -> "stats:Percentile" [ label = "stats:hasPositionMeasureMethod" ];
+	"stats:Cov" -> "xsd:string" [ label = "stats:hasParamM" ];
+	"stats:Cov" -> "xsd:int" [ label = "stats:hasParamFweights" ];
+	"stats:Percentile" -> "xsd:float" [ label = "stats:hasParamQ" ];
+	"stats:Percentile" -> "xsd:string" [ label = "stats:hasParamMethod" ];
+	"stats:Corrcoef" -> "xsd:string" [ label = "stats:hasParamX" ];
+	"stats:Corrcoef" -> "xsd:int" [ label = "stats:hasParamDdof" ];
+	"stats:Corrcoef" -> "xsd:boolean" [ label = "stats:hasParamBias" ];
+	"stats:Percentile" -> "xsd:string" [ label = "stats:hasParamInterpolation" ];
+	"stats:Corrcoef" -> "xsd:string" [ label = "stats:hasParamDtype" ];
+	"stats:CentralTendencyMeasure" -> "stats:Average" [ label = "stats:hasCentralTendencyMeasureMethod" ];
+	"stats:Average" -> "xsd:boolean" [ label = "stats:hasParamReturned" ];
+	"stats:DependencyMeasure" -> "stats:Corrcoef" [ label = "stats:hasDependencyMeasureMethod" ];
+	"stats:Corrcoef" -> "xsd:string" [ label = "stats:hasParamY" ];
+	"stats:Average" -> "xsd:string" [ label = "stats:hasParamWeights" ];
+
+}

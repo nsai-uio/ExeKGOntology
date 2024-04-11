@@ -1,0 +1,740 @@
+{
+  "@context" : {
+    "hasParamScaleByFreq" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamScaleByFreq"
+    },
+    "hasParamShowbox" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShowbox"
+    },
+    "hasParamXerr" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamXerr"
+    },
+    "hasParamShadow" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShadow",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamScalex" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamScalex",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasLinePlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasLinePlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamFrame" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFrame",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "ImagePlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ImagePlot"
+    },
+    "hasParamRadius" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamRadius",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "ScatterPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ScatterPlot"
+    },
+    "Polar" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Polar"
+    },
+    "Histogram" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Histogram"
+    },
+    "hasParamStacked" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamStacked",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamNorm" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamNorm",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamDataset" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamDataset",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamYscale" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamYscale",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Pcolor" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Pcolor"
+    },
+    "hasParamReduceCFunction" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamReduceCFunction",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Hist" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Hist"
+    },
+    "hasParamShowextrema" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShowextrema",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamCapthick" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCapthick"
+    },
+    "hasParamShowmeans" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShowmeans"
+    },
+    "hasParamQuantiles" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamQuantiles",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamX" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamX"
+    },
+    "hasParamRotatelabels" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamRotatelabels",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "AreaPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#AreaPlot"
+    },
+    "PolarPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PolarPlot"
+    },
+    "hasViolinPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasViolinPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamOrigin" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamOrigin",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamStep" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamStep",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamPctdistance" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamPctdistance",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "hasParamDensity" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamDensity"
+    },
+    "hasParamMeanline" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMeanline"
+    },
+    "hasParamSides" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamSides",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamColors" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamColors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Stackplot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Stackplot"
+    },
+    "hasParamZorder" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamZorder"
+    },
+    "hasParamPositions" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamPositions",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamCmap" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCmap",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamWhis" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWhis"
+    },
+    "hasParamTextprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamTextprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamAlpha" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamAlpha"
+    },
+    "PlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PlotMethod"
+    },
+    "hasParamXuplims" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamXuplims"
+    },
+    "hasParamCapsize" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCapsize"
+    },
+    "hasParamEcolor" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamEcolor",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasErrorBarPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasErrorBarPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamErrorevery" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamErrorevery"
+    },
+    "hasParamBarsabove" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBarsabove",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamFmt" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFmt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasBoxPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasBoxPlotMethod",
+      "@type" : "@id"
+    },
+    "VectorField" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#VectorField"
+    },
+    "hasParamSym" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamSym",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Semilogy" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Semilogy"
+    },
+    "hasParamUsevlines" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamUsevlines",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "BarPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#BarPlot"
+    },
+    "hasHistogramMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasHistogramMethod",
+      "@type" : "@id"
+    },
+    "hasParamBrokenStreamlines" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBrokenStreamlines",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamLabel" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLabel",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamMedianprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMedianprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamMeanprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMeanprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamXlolims" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamXlolims"
+    },
+    "hasParamMaxlength" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMaxlength",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "Module" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+    },
+    "LinePlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#LinePlot"
+    },
+    "Streamplot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Streamplot"
+    },
+    "Acorr" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Acorr"
+    },
+    "hasParamFilternorm" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFilternorm",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamArgs" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamArgs"
+    },
+    "hasParamPatchArtist" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamPatchArtist"
+    },
+    "hasParamCmax" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCmax"
+    },
+    "hasParamExplode" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamExplode",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Pcolormesh" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Pcolormesh"
+    },
+    "ErrorBarPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ErrorBarPlot"
+    },
+    "hasParamMarkerfmt" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMarkerfmt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamY1" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamY1"
+    },
+    "Violinplot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Violinplot"
+    },
+    "hasParamC" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamC",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "MagnitudeSpectrum" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#MagnitudeSpectrum"
+    },
+    "hasParamRwidth" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamRwidth"
+    },
+    "hasParamXscale" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamXscale",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamLabels" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLabels",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Boxplot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Boxplot"
+    },
+    "Scatter" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Scatter"
+    },
+    "hasParamLinewidth" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLinewidth"
+    },
+    "hasParamNormed" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamNormed",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamWidths" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWidths"
+    },
+    "hasParamVert" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamVert"
+    },
+    "hasParamMinlength" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMinlength",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "Step" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Step"
+    },
+    "hasParamY2" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamY2"
+    },
+    "hasParamFlierprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFlierprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamAlign" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamAlign",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamPadTo" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamPadTo"
+    },
+    "hasParamNormalize" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamNormalize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamScale" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamScale",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamCapprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCapprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamWidth" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWidth"
+    },
+    "Cohere" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Cohere"
+    },
+    "hasParamCumulative" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCumulative"
+    },
+    "hasParamArrowsize" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamArrowsize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "hasParamWhiskerprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWhiskerprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamHatch" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamHatch",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Loglog" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Loglog"
+    },
+    "Fill" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Fill"
+    },
+    "Xcorr" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Xcorr"
+    },
+    "hasParamAutorange" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamAutorange",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "PhaseSpectrum" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PhaseSpectrum"
+    },
+    "hasPolarPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPolarPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamNfft" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamNfft",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "hasParamMarker" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMarker",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamMincnt" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMincnt"
+    },
+    "hasParamBasefmt" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBasefmt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamPoints" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamPoints",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "hasParamStartPoints" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamStartPoints",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamNotch" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamNotch"
+    },
+    "FillBetween" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#FillBetween"
+    },
+    "hasParamY" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamY"
+    },
+    "hasParamLog" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLog",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasVectorFieldMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasVectorFieldMethod",
+      "@type" : "@id"
+    },
+    "hasParamAntialiased" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamAntialiased",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamManageTicks" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamManageTicks",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "MatplotlibModule" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#MatplotlibModule"
+    },
+    "hasParamWhere" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWhere",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamCounterclock" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCounterclock",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamAutopct" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamAutopct",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamLolims" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLolims"
+    },
+    "hasParamFilterrad" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFilterrad",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "hasParamShading" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShading",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamShowfliers" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShowfliers"
+    },
+    "Imshow" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Imshow"
+    },
+    "hasParamConfIntervals" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamConfIntervals",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamBottom" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBottom"
+    },
+    "hasParamExtent" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamExtent",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamResample" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamResample"
+    },
+    "hasParamS" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamS"
+    },
+    "hasParamIntegrationDirection" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamIntegrationDirection",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamInterpolate" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamInterpolate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamInterpolation" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamInterpolation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamElinewidth" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamElinewidth"
+    },
+    "AngleSpectrum" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#AngleSpectrum"
+    },
+    "ViolinPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ViolinPlot"
+    },
+    "hasParamEdgecolors" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamEdgecolors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Semilogx" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Semilogx"
+    },
+    "hasParamBootstrap" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBootstrap"
+    },
+    "hasParamWedgeprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWedgeprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamLabeldistance" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLabeldistance"
+    },
+    "hasParamYerr" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamYerr"
+    },
+    "hasParamVmin" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamVmin"
+    },
+    "hasParamUplims" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamUplims"
+    },
+    "hasParamShowcaps" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShowcaps"
+    },
+    "Plot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Plot"
+    },
+    "AtomicTask" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"
+    },
+    "hasParamScaley" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamScaley",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamPlotnonfinite" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamPlotnonfinite",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamNoverlap" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamNoverlap",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "hasBarPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasBarPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamAspect" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamAspect"
+    },
+    "hasParamShowmedians" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamShowmedians",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamBoxprops" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBoxprops",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamMaxlags" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMaxlags",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "hasParamStartangle" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamStartangle",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "hasScatterPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasScatterPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamFs" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFs"
+    },
+    "hasParamCenter" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCenter",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParameter" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+    },
+    "hasParamBaseline" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBaseline",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasImagePlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasImagePlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamRange" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamRange",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Errorbar" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Errorbar"
+    },
+    "hasParamMarginals" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamMarginals",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "BoxPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#BoxPlot"
+    },
+    "hasPieChartMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPieChartMethod",
+      "@type" : "@id"
+    },
+    "PyplotModule" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PyplotModule"
+    },
+    "hasAreaPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasAreaPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamFc" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFc"
+    },
+    "hasParamArrowstyle" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamArrowstyle",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Hexbin" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Hexbin"
+    },
+    "hasParamDetrend" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamDetrend",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamBwMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBwMethod"
+    },
+    "hasParamLinewidths" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLinewidths"
+    },
+    "Contour" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Contour"
+    },
+    "hasParamHisttype" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamHisttype",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamVmax" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamVmax"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Quiver" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Quiver"
+    },
+    "hasParamColor" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamColor",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamUrl" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamUrl",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamBins" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamBins"
+    },
+    "hasContourPlotMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasContourPlotMethod",
+      "@type" : "@id"
+    },
+    "hasParamOrientation" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamOrientation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Barh" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Barh"
+    },
+    "hasParamInterpolationStage" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamInterpolationStage",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamLinefmt" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLinefmt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Bar" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Bar"
+    },
+    "hasParamCmin" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCmin"
+    },
+    "ContourPlot" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ContourPlot"
+    },
+    "hasParamWindow" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWindow",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "PieChart" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PieChart"
+    },
+    "Pie" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Pie"
+    },
+    "Contourf" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Contourf"
+    },
+    "hasParamWeights" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamWeights",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamLeft" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLeft"
+    },
+    "AtomicMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+    },
+    "Stem" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Stem"
+    },
+    "hasParamGridsize" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamGridsize"
+    },
+    "Hist2d" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Hist2d"
+    },
+    "hasParamUsermedians" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamUsermedians",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamCapwidths" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamCapwidths"
+    },
+    "hasParamHeight" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamHeight"
+    }
+  }
+}
