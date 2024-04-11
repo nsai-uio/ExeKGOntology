@@ -41,8 +41,27 @@ visu:hasParamLayout a owl:DatatypeProperty ;
     rdfs:domain visu:CanvasMethod ;
     rdfs:range  xsd:string .
 
+visu:hasParamFigureSize a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:CanvasMethod ;
+    rdfs:range  xsd:string .
 
 visu:hasParamLegendName a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlotMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamTitle a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlotMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamXLabel a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlotMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamYLabel a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter;
     rdfs:domain visu:PlotMethod ;
     rdfs:range  xsd:string .
@@ -58,7 +77,6 @@ visu:CanvasMethod a owl:Class ;
 visu:CanvasCreation a owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-
 visu:PlotMethod a owl:Class ;
     rdfs:subClassOf ds:Method .
 
@@ -66,4 +84,4 @@ visu:Plot a owl:Class ;
     rdfs:subClassOf ds:Task .
 
 visu:DataInToPlot a owl:Class ;
-    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular .
+    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular, ds:SingleValue .
