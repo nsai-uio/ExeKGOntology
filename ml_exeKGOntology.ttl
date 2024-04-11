@@ -76,7 +76,8 @@ ml:hasTestInput a owl:ObjectProperty;
 
 ml:hasTestMethod a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasMethod;
-    rdfs:domain ml:Test.
+    rdfs:domain ml:Test;
+    rdfs:range ml:TestMethod.
 
 ml:DataOutTrainModel a owl:Class;
     rdfs:subClassOf ds:DataEntity, ds:Model.
@@ -155,7 +156,7 @@ ml:Test a owl:Class;
     rdfs:subClassOf ds:AtomicTask.
 
 ml:TestMethod a owl:Class;
-    rdfs:subClassOf ds:Method.
+    rdfs:subClassOf ds:AtomicMethod.
 
 ml:Train a owl:Class;
     rdfs:subClassOf ds:Task.
