@@ -14,7 +14,7 @@ stats:
     a owl:Ontology.
 
 stats:StatisticCalculation a owl:Class;
-    rdfs:subClassOf ds:AtomicTask.
+    rdfs:subClassOf ds:Task.
 
 stats:DataInStatisticCalculation a owl:Class;
     rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular.
@@ -25,9 +25,10 @@ stats:hasStatisticCalculationInput a owl:ObjectProperty;
     rdfs:range stats:DataInStatisticCalculation.
 
 stats:DataOutStatisticCalculation a owl:Class;
-    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector.
-    
+    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:SingleValue, ds:Tabular.
+
 stats:hasStatisticCalculationOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
     rdfs:domain stats:StatisticCalculation;
     rdfs:range stats:DataOutStatisticCalculation.
 
