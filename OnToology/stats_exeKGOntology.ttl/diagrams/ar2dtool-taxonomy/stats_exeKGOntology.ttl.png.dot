@@ -1,22 +1,18 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "stats:ScatteringCalculationMethod" "stats:StandardDeviationMethod" "stats:TrendCalculationTask" "stats:DataOutScatteringCalculation" "stats:NormalizationTask" "stats:MinimumCalcualtionMethod" "stats:DataOutNormalization" "stats:DataInTrendCalculation" "stats:DataInNormalization" "stats:DataInScatteringCalculation" "stats:NormalizationMethod" "stats:ScatteringCalculationTask" "stats:MeanCalculationMethod" "stats:MaximumCalculationMethod" "stats:TrendCalculationMethod" "stats:DataOutTrendCalculation" ; /*classes style*/
-	"stats:DataOutNormalization" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"stats:NormalizationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:TrendCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:MeanCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:TrendCalculationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"stats:DataInScatteringCalculation" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"stats:DataInNormalization" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"stats:NormalizationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"stats:DataInTrendCalculation" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"stats:ScatteringCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:DataOutScatteringCalculation" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"stats:StandardDeviationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:MaximumCalculationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"stats:DataOutTrendCalculation" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"stats:ScatteringCalculationTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"stats:MinimumCalcualtionMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "stats:DataOutStatisticCalculation" "stats:DataInStatisticCalculation" "stats:StatisticCalculation" ; /*classes style*/
+	"stats:DataInStatisticCalculation" -> "ds:Tabular" [ label = "rdfs:subClassOf" ];
+	"stats:DataInStatisticCalculation" -> "ds:Vector" [ label = "rdfs:subClassOf" ];
+	"stats:DataInStatisticCalculation" -> "ds:Matrix" [ label = "rdfs:subClassOf" ];
+	"stats:DataInStatisticCalculation" -> "ds:Tensor" [ label = "rdfs:subClassOf" ];
+	"stats:DataInStatisticCalculation" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"stats:StatisticCalculation" -> "ds:Task" [ label = "rdfs:subClassOf" ];
+	"stats:DataOutStatisticCalculation" -> "ds:Tabular" [ label = "rdfs:subClassOf" ];
+	"stats:DataOutStatisticCalculation" -> "ds:SingleValue" [ label = "rdfs:subClassOf" ];
+	"stats:DataOutStatisticCalculation" -> "ds:Vector" [ label = "rdfs:subClassOf" ];
+	"stats:DataOutStatisticCalculation" -> "ds:Matrix" [ label = "rdfs:subClassOf" ];
+	"stats:DataOutStatisticCalculation" -> "ds:Tensor" [ label = "rdfs:subClassOf" ];
+	"stats:DataOutStatisticCalculation" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
 
 }
