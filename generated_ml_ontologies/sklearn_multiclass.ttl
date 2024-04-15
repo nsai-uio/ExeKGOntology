@@ -55,25 +55,8 @@ ml:hasParamVerbose a owl:DatatypeProperty ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:MulticlassClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:MultilabelClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-ml:Train a owl:Class .
-
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
 
 ml:MulticlassModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .

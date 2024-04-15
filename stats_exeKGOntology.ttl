@@ -13,25 +13,64 @@
 stats:
     a owl:Ontology.
 
+#################################################################
+#    Classes
+#################################################################
+
+## Task subclasses
 stats:StatisticCalculation a owl:Class;
     rdfs:subClassOf ds:Task.
 
+## AtomicTask subclasses
+stats:CentralTendencyMeasure a owl:Class;
+    rdfs:subClassOf ds:AtomicTask,
+                    stats:StatisticCalculation. 
+
+stats:DispersionMeasure a owl:Class;
+    rdfs:subClassOf ds:AtomicTask,
+                    stats:StatisticCalculation. 
+
+stats:PositionMeasure a owl:Class;
+    rdfs:subClassOf ds:AtomicTask,
+                    stats:StatisticCalculation. 
+
+stats:DependencyMeasure a owl:Class;
+    rdfs:subClassOf ds:AtomicTask,
+                    stats:StatisticCalculation. 
+                
+stats:ShapeMeasure a owl:Class;
+    rdfs:subClassOf ds:AtomicTask,
+                    stats:StatisticCalculation. 
+                
+stats:ProbabilityDistributions a owl:Class;
+    rdfs:subClassOf ds:AtomicTask,
+                    stats:StatisticCalculation. 
+
+## Input DataEntity subclasses
 stats:DataInStatisticCalculation a owl:Class;
     rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular.
 
+## Output DataEntity subclasses
+stats:DataOutStatisticCalculation a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:SingleValue, ds:Tabular.
+
+#################################################################
+#    Object Properties
+#################################################################
+
+## hasInput subproperties
 stats:hasStatisticCalculationInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
     rdfs:domain stats:StatisticCalculation;
     rdfs:range stats:DataInStatisticCalculation.
 
-stats:DataOutStatisticCalculation a owl:Class;
-    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:SingleValue, ds:Tabular.
-
+## hasOutput subproperties
 stats:hasStatisticCalculationOutput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasOutput;
     rdfs:domain stats:StatisticCalculation;
     rdfs:range stats:DataOutStatisticCalculation.
 
+## hasMethod subproperties
 stats:hasStatisticCalculationMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        stats:StatisticCalculation .

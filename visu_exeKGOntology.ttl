@@ -11,13 +11,86 @@ visu:
     a owl:Ontology.
 
 #################################################################
-#    Datatypes
+#    Classes
 #################################################################
+
+## Task subclasses
+visu:Plot a owl:Class ;
+    rdfs:subClassOf ds:Task .
+
+## AtomicTask subclasses
+visu:CanvasCreation a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask .
+
+visu:LinePlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:ScatterPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:BarPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:Histogram a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:PieChart a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:BoxPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:ViolinPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:ContourPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:ImagePlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:AreaPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:VectorField a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:ErrorBarPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+visu:PolarPlot a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plot .
+
+## Method subclasses
+visu:PlotMethod a owl:Class ;
+    rdfs:subClassOf ds:Method .
+
+## AtomicMethod subclasses
+visu:CanvasMethod a owl:Class ;
+    rdfs:subClassOf ds:AtomicMethod .
+
+## Input DataEntity subclasses
+visu:DataInToPlot a owl:Class ;
+    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular, ds:SingleValue .
 
 #################################################################
 #    Object Properties
 #################################################################
 
+## hasMethod subproperties
 visu:hasCanvasCreationMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        visu:CanvasCreation ;
@@ -27,13 +100,14 @@ visu:hasPlotMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
     rdfs:domain        visu:Plot .
 
+## hasInput subproperties
 visu:hasPlotInput a owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasInput ;
     rdfs:domain        visu:Plot ;
     rdfs:range         visu:DataInToPlot .
 
 #################################################################
-#    Data properties
+#    Datatype properties
 #################################################################
 
 visu:hasParamLayout a owl:DatatypeProperty ;
@@ -65,23 +139,3 @@ visu:hasParamYLabel a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter;
     rdfs:domain visu:PlotMethod ;
     rdfs:range  xsd:string .
-
-#################################################################
-#    Classes
-#################################################################
-
-visu:CanvasMethod a owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod .
-
-
-visu:CanvasCreation a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
-
-visu:PlotMethod a owl:Class ;
-    rdfs:subClassOf ds:Method .
-
-visu:Plot a owl:Class ;
-    rdfs:subClassOf ds:Task .
-
-visu:DataInToPlot a owl:Class ;
-    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular, ds:SingleValue .

@@ -58,17 +58,8 @@ ml:hasParamVarSmoothing a owl:DatatypeProperty ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-ml:Train a owl:Class .
 
 ml:GaussianNB a owl:Class ;
     rdfs:comment """Gaussian Naive Bayes (GaussianNB).

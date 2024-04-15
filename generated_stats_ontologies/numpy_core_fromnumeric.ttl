@@ -57,23 +57,11 @@ stats:hasShapeMeasureMethod a owl:ObjectProperty ;
     rdfs:range stats:Ptp ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
-stats:CentralTendencyMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
 stats:CoreModule a owl:Class ;
     rdfs:subClassOf stats:NumpyModule .
 
-stats:DispersionMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
 stats:NumpyModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-stats:ShapeMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
 
 stats:Ptp a owl:Class ;
     rdfs:comment """Range of values (maximum - minimum) along an axis.
@@ -155,8 +143,6 @@ array([126, 127, 128, 129], dtype=uint8)""" ;
     rdfs:subClassOf ds:AtomicMethod,
         stats:FromnumericModule,
         stats:StatisticCalculationMethod .
-
-stats:StatisticCalculation a owl:Class .
 
 stats:FromnumericModule a owl:Class ;
     rdfs:subClassOf stats:CoreModule .

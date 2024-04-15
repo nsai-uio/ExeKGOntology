@@ -164,24 +164,8 @@ ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
     rdfs:range ml:MLPRegressor ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
-ml:Regression a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
-ml:RegularizedRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-ml:Train a owl:Class .
 
 ml:NeuralNetworkModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .

@@ -315,10 +315,6 @@ ml:hasParamWithStd a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:DataProcessing a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:PrepareTransformer .
-
 ml:KernelCenterer a owl:Class ;
     rdfs:comment """Center an arbitrary kernel matrix :math:`K`.
 
@@ -398,8 +394,6 @@ array([[  5.,   0.,  -5.],
     rdfs:subClassOf ds:AtomicMethod,
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
-
-ml:PrepareTransformer a owl:Class .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .

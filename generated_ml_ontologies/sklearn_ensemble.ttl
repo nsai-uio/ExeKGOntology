@@ -484,49 +484,11 @@ ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
         ml:VotingRegressor ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:BoostingRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:Clustering a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Train .
-
-ml:DataProcessing a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:PrepareTransformer .
-
-ml:MulticlassClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:PrepareTransformer a owl:Class .
-
-ml:RandomForestRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:RegularizedRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
 ml:GradientBoostingModule a owl:Class ;
     rdfs:subClassOf ml:EnsembleModule .
-
-ml:Regression a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
-ml:Train a owl:Class .
 
 ml:VotingRegressor a owl:Class ;
     rdfs:comment """Prediction voting regressor for unfitted estimators.

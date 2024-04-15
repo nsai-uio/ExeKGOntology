@@ -178,34 +178,14 @@ stats:hasShapeMeasureMethod a owl:ObjectProperty ;
         stats:Skew ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
-stats:CentralTendencyMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
 stats:CoreModule a owl:Class ;
     rdfs:subClassOf stats:NumpyModule .
-
-stats:DependencyMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
-stats:DispersionMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
 
 stats:LibModule a owl:Class ;
     rdfs:subClassOf stats:NumpyModule .
 
-stats:PositionMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
 stats:ScipyModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-stats:ShapeMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
 
 stats:NumpyModule a owl:Class ;
     rdfs:subClassOf ds:Module .
@@ -689,8 +669,6 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         stats:StatisticCalculationMethod,
         stats:StatsModule .
-
-stats:StatisticCalculation a owl:Class .
 
 stats:FunctionBaseModule a owl:Class ;
     rdfs:subClassOf stats:LibModule .

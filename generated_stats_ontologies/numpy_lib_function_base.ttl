@@ -127,25 +127,11 @@ stats:hasPositionMeasureMethod a owl:ObjectProperty ;
         stats:Quantile ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
-stats:CentralTendencyMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
-stats:DependencyMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
 stats:LibModule a owl:Class ;
     rdfs:subClassOf stats:NumpyModule .
 
 stats:NumpyModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-stats:PositionMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
-stats:StatisticCalculation a owl:Class .
 
 stats:Median a owl:Class ;
     rdfs:comment """Compute the median along the specified axis.

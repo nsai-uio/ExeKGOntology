@@ -232,38 +232,8 @@ ml:hasParamWeights a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:Clustering a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Train .
-
-ml:Decomposition a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:PrepareTransformer .
-
-ml:InstanceBasedRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:MulticlassClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:PrepareTransformer a owl:Class .
-
-ml:Regression a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
-ml:Train a owl:Class .
 
 ml:NearestCentroid a owl:Class ;
     rdfs:comment """Nearest centroid classifier.

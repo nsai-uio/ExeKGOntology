@@ -747,39 +747,11 @@ ml:hasSimpleRegressionMethod a owl:ObjectProperty ;
     rdfs:range ml:LinearRegression ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
-ml:BayesianRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
-ml:LeastAngleRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:RegularizedRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:SimpleRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-ml:Train a owl:Class .
-
 ml:GlmModule a owl:Class ;
     rdfs:subClassOf ml:LinearModelModule .
-
-ml:Regression a owl:Class ;
-    rdfs:subClassOf ml:Train .
 
 ml:LinearRegression a owl:Class ;
     rdfs:comment """Ordinary least squares Linear Regression.

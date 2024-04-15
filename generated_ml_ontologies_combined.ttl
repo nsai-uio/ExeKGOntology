@@ -3244,18 +3244,6 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:BayesianRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:BoostingRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
 ml:CalinskiHarabaszScore a owl:Class ;
     rdfs:comment """Compute the Calinski and Harabasz score.
 
@@ -3298,10 +3286,6 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
-
-ml:Clustering a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Train .
 
 ml:CompletenessScore a owl:Class ;
     rdfs:comment """Compute completeness metric of a cluster labeling given a ground truth.
@@ -3423,13 +3407,6 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:DataProcessing a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:PrepareTransformer .
-
-ml:DataSplitting a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
-
 ml:DaviesBouldinScore a owl:Class ;
     rdfs:comment """Compute the Davies-Bouldin score.
 
@@ -3476,14 +3453,6 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
-
-ml:DecisionTreeRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:Decomposition a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:PrepareTransformer .
 
 ml:GetScorerNames a owl:Class ;
     rdfs:comment """Get the names of all available scorers.
@@ -3659,10 +3628,6 @@ homogeneous labeling::
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
-
-ml:InstanceBasedRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
 
 ml:KernelCenterer a owl:Class ;
     rdfs:comment """Center an arbitrary kernel matrix :math:`K`.
@@ -3844,10 +3809,6 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:LeastAngleRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
 ml:MatthewsCorrcoef a owl:Class ;
     rdfs:comment """Compute the Matthews correlation coefficient (MCC).
 
@@ -4014,14 +3975,6 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MulticlassClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:MultilabelClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
 ml:PairConfusionMatrix a owl:Class ;
     rdfs:comment """Pair confusion matrix arising from two clusterings [1]_.
 
@@ -4084,9 +4037,6 @@ Note that the matrix is not symmetric.""" ;
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
-
-ml:PerformanceCalculation a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
 
 ml:PredefinedSplit a owl:Class ;
     rdfs:comment """Predefined split cross-validator.
@@ -4192,22 +4142,6 @@ are complete but may not always be pure, hence penalized:
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
-
-ml:RandomForestRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:RegularizedRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:SimpleRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:SupportVectorRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
 
 ml:hasDataSplittingMethod a owl:ObjectProperty ;
     rdfs:domain ml:DataSplitting ;
@@ -6325,8 +6259,6 @@ the assignment is totally in-complete, hence the NMI is null::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PrepareTransformer a owl:Class .
-
 ml:RootMeanSquaredError a owl:Class ;
     rdfs:comment """Root mean squared error regression loss.
 
@@ -6916,9 +6848,6 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
-
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
 
 ml:D2PinballScore a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of pinball loss explained.
@@ -8114,8 +8043,6 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
-
-ml:Train a owl:Class .
 
 ml:ClassificationReport a owl:Class ;
     rdfs:comment """Build a text report showing the main classification metrics.
@@ -18208,9 +18135,6 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:NeighborsModule,
         ml:TrainMethod .
-
-ml:Regression a owl:Class ;
-    rdfs:subClassOf ml:Train .
 
 ml:Ridge a owl:Class ;
     rdfs:comment """Linear least squares with l2 regularization.

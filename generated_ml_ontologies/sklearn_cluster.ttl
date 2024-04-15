@@ -422,23 +422,11 @@ ml:hasParamVerbose a owl:DatatypeProperty ;
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:Clustering a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Train .
-
-ml:Decomposition a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:PrepareTransformer .
-
 ml:HdbscanModule a owl:Class ;
     rdfs:subClassOf ml:ClusterModule .
 
-ml:PrepareTransformer a owl:Class .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-ml:Train a owl:Class .
 
 ml:Birch a owl:Class ;
     rdfs:comment """Implements the BIRCH clustering algorithm.

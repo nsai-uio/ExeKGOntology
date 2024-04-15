@@ -240,9 +240,6 @@ ml:hasParamVerbose a owl:DatatypeProperty ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:DataSplitting a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
-
 ml:PredefinedSplit a owl:Class ;
     rdfs:comment """Predefined split cross-validator.
 

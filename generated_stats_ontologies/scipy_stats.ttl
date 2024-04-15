@@ -43,12 +43,6 @@ stats:hasShapeMeasureMethod a owl:ObjectProperty ;
 stats:ScipyModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-stats:ShapeMeasure a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        stats:StatisticCalculation .
-
-stats:StatisticCalculation a owl:Class .
-
 stats:StatsModule a owl:Class ;
     rdfs:subClassOf stats:ScipyModule .
 

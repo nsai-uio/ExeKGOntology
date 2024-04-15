@@ -46,12 +46,6 @@ ml:hasParamSparse a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:DataProcessing a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:PrepareTransformer .
-
-ml:PrepareTransformer a owl:Class .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 

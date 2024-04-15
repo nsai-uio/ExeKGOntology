@@ -202,28 +202,8 @@ ml:hasSupportVectorRegressionMethod a owl:ObjectProperty ;
         ml:SVR ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
-ml:BinaryClassification a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Classification .
-
-ml:Classification a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
-ml:RegularizedRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
-
-ml:SupportVectorRegression a owl:Class ;
-    rdfs:subClassOf ds:AtomicTask,
-        ml:Regression .
-
-ml:Regression a owl:Class ;
-    rdfs:subClassOf ml:Train .
-
-ml:Train a owl:Class .
 
 ml:SvmModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
