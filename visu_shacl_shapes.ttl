@@ -6,8 +6,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix visu: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#> .
 
-:PlotTaskInputOutputShape a sh:NodeShape ;
-    sh:targetClass visu:Plot ;
+:PlottingTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass visu:Plotting ;
     # sh:target [
 	# 	a sh:SPARQLTarget ;
 	# 	sh:prefixes visu:, rdfs:, rdf:;
@@ -21,8 +21,8 @@
 	# ] ;
     # input
     sh:property [
-        sh:path visu:hasPlotInput ;
+        sh:path visu:hasPlottingInput ;
         sh:minCount 1 ;
         sh:class visu:DataInToPlot ;
-        sh:message "Tasks of type Plot must be connected with at least one input of type DataInToPlot." ;
+        sh:message "Tasks of type Plotting must be connected with at least one input of type DataInToPlot." ;
     ] .
