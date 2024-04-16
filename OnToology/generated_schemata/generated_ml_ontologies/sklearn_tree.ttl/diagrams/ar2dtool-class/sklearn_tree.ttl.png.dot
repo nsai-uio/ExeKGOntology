@@ -1,0 +1,36 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "ml:DecisionTreeClassifierMethod" "ml:DecisionTreeRegressorMethod" ; /*classes style*/
+	"ml:hasParamMinImpurityDecrease" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMaxLeafNodes" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamClassWeight" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamRandomState" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasMulticlassClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamCriterion" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamSplitter" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamCcpAlpha" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasDecisionTreeRegressionMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMinSamplesSplit" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMaxFeatures" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMinWeightFractionLeaf" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasBinaryClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMaxDepth" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMinSamplesLeaf" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:int" [ label = "ml:hasParamMaxDepth" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:string" [ label = "ml:hasParamCriterion" ];
+	"ml:BinaryClassification" -> "ml:DecisionTreeClassifierMethod" [ label = "ml:hasBinaryClassificationMethod" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:float" [ label = "ml:hasParamCcpAlpha" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:string" [ label = "ml:hasParamClassWeight" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:int" [ label = "ml:hasParamRandomState" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:float" [ label = "ml:hasParamMinSamplesLeaf" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:float" [ label = "ml:hasParamMaxFeatures" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:string" [ label = "ml:hasParamSplitter" ];
+	"ml:DecisionTreeRegression" -> "ml:DecisionTreeRegressorMethod" [ label = "ml:hasDecisionTreeRegressionMethod" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:int" [ label = "ml:hasParamMaxLeafNodes" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:float" [ label = "ml:hasParamMinSamplesSplit" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:float" [ label = "ml:hasParamMinWeightFractionLeaf" ];
+	"ml:DecisionTreeClassifierMethod" -> "xsd:float" [ label = "ml:hasParamMinImpurityDecrease" ];
+	"ml:MulticlassClassification" -> "ml:DecisionTreeClassifierMethod" [ label = "ml:hasMulticlassClassificationMethod" ];
+
+}

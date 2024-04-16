@@ -1,0 +1,12 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+	"NULL" -> "stats:DataOutStatisticCalculation" [ label = "sh:class" ];
+	"NULL" -> "stats:hasStatisticCalculationOutput" [ label = "sh:path" ];
+	"NULL" -> "stats:DataInStatisticCalculation" [ label = "sh:class" ];
+	"NULL" -> "stats:hasStatisticCalculationInput" [ label = "sh:path" ];
+	"base:StatisticCalculationTaskInputOutputShape" -> "2107287dd945e653a3fcd084ce72d78a" [ label = "sh:property" ];
+	"base:StatisticCalculationTaskInputOutputShape" -> "0093e621492de8d4817b3a982eeea821" [ label = "sh:property" ];
+	"base:StatisticCalculationTaskInputOutputShape" -> "stats:StatisticCalculation" [ label = "sh:targetClass" ];
+
+}

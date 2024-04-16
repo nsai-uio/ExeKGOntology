@@ -1,0 +1,23 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:NaiveBayesModule" "ml:ComplementNBMethod" "ml:CategoricalNBMethod" "ml:BernoulliNBMethod" "ml:MultinomialNBMethod" "ml:GaussianNBMethod" "ml:SklearnModule" ; /*classes style*/
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:NaiveBayesModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:GaussianNBMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:GaussianNBMethod" -> "ml:NaiveBayesModule" [ label = "rdfs:subClassOf" ];
+	"ml:GaussianNBMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MultinomialNBMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MultinomialNBMethod" -> "ml:NaiveBayesModule" [ label = "rdfs:subClassOf" ];
+	"ml:MultinomialNBMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:ComplementNBMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:ComplementNBMethod" -> "ml:NaiveBayesModule" [ label = "rdfs:subClassOf" ];
+	"ml:ComplementNBMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliNBMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliNBMethod" -> "ml:NaiveBayesModule" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliNBMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:CategoricalNBMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:CategoricalNBMethod" -> "ml:NaiveBayesModule" [ label = "rdfs:subClassOf" ];
+	"ml:CategoricalNBMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}
