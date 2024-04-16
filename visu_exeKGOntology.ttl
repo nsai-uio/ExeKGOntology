@@ -15,67 +15,67 @@ visu:
 #################################################################
 
 ## Task subclasses
-visu:Plot a owl:Class ;
+visu:Plotting a owl:Class ;
     rdfs:subClassOf ds:Task .
 
 ## AtomicTask subclasses
 visu:CanvasCreation a owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
-visu:LinePlot a owl:Class ;
+visu:LinePlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:ScatterPlot a owl:Class ;
+visu:ScatterPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:BarPlot a owl:Class ;
+visu:BarPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
 visu:Histogram a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
 visu:PieChart a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:BoxPlot a owl:Class ;
+visu:BoxPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:ViolinPlot a owl:Class ;
+visu:ViolinPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:ContourPlot a owl:Class ;
+visu:ContourPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:ImagePlot a owl:Class ;
+visu:ImagePlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:AreaPlot a owl:Class ;
+visu:AreaPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
 visu:VectorField a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:ErrorBarPlot a owl:Class ;
+visu:ErrorBarPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
-visu:PolarPlot a owl:Class ;
+visu:PolarPlotting a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
-                    visu:Plot .
+                    visu:Plotting .
 
 ## Method subclasses
-visu:PlotMethod a owl:Class ;
+visu:PlottingMethod a owl:Class ;
     rdfs:subClassOf ds:Method .
 
 ## AtomicMethod subclasses
@@ -96,14 +96,14 @@ visu:hasCanvasCreationMethod a owl:ObjectProperty ;
     rdfs:domain        visu:CanvasCreation ;
     rdfs:range         visu:CanvasMethod .
 
-visu:hasPlotMethod a owl:ObjectProperty ;
+visu:hasPlottingMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        visu:Plot .
+    rdfs:domain        visu:Plotting .
 
 ## hasInput subproperties
-visu:hasPlotInput a owl:ObjectProperty ;
+visu:hasPlottingInput a owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        visu:Plot ;
+    rdfs:domain        visu:Plotting ;
     rdfs:range         visu:DataInToPlot .
 
 #################################################################
@@ -122,20 +122,20 @@ visu:hasParamFigureSize a owl:DatatypeProperty ;
 
 visu:hasParamLegendName a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter;
-    rdfs:domain visu:PlotMethod ;
+    rdfs:domain visu:PlottingMethod ;
     rdfs:range  xsd:string .
 
 visu:hasParamTitle a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter;
-    rdfs:domain visu:PlotMethod ;
+    rdfs:domain visu:PlottingMethod ;
     rdfs:range  xsd:string .
 
 visu:hasParamXLabel a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter;
-    rdfs:domain visu:PlotMethod ;
+    rdfs:domain visu:PlottingMethod ;
     rdfs:range  xsd:string .
 
 visu:hasParamYLabel a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter;
-    rdfs:domain visu:PlotMethod ;
+    rdfs:domain visu:PlottingMethod ;
     rdfs:range  xsd:string .
