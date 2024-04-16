@@ -1,0 +1,463 @@
+
+:DataSplittingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:DataSplitting ;
+    sh:property [
+        sh:path ml:hasDataSplittingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:CrossValidateMethod ]
+            [ sh:class ml:StratifiedGroupKFoldMethod ]
+            [ sh:class ml:StratifiedShuffleSplitMethod ]
+            [ sh:class ml:GroupShuffleSplitMethod ]
+            [ sh:class ml:PredefinedSplitMethod ]
+            [ sh:class ml:StratifiedKFoldMethod ]
+            [ sh:class ml:ValidationCurveMethod ]
+            [ sh:class ml:CrossValPredictMethod ]
+            [ sh:class ml:LeavePGroupsOutMethod ]
+            [ sh:class ml:LeavePOutMethod ]
+            [ sh:class ml:CrossValScoreMethod ]
+            [ sh:class ml:ShuffleSplitMethod ]
+            [ sh:class ml:TrainTestSplitMethod ]
+            [ sh:class ml:ValidationCurveDisplayMethod ]
+            [ sh:class ml:RepeatedStratifiedKFoldMethod ]
+            [ sh:class ml:RepeatedKFoldMethod ]
+            [ sh:class ml:CheckCvMethod ]
+            [ sh:class ml:DataSplittingMethod ]
+            [ sh:class ml:KFoldMethod ]
+            [ sh:class ml:PermutationTestScoreMethod ]
+            [ sh:class ml:LearningCurveMethod ]
+            [ sh:class ml:GroupKFoldMethod ]
+            [ sh:class ml:TimeSeriesSplitMethod ]
+            [ sh:class ml:LearningCurveDisplayMethod ]
+        ) ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:TestTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Test ;
+    sh:property [
+        sh:path ml:hasTestMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:TestMethod ]
+        ) ;
+        sh:message "Tasks of type Test must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:LeastAngleRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:LeastAngleRegression ;
+    sh:property [
+        sh:path ml:hasLeastAngleRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:LarsMethod ]
+            [ sh:class ml:LassoLarsMethod ]
+        ) ;
+        sh:message "Tasks of type LeastAngleRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:BayesianRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BayesianRegression ;
+    sh:property [
+        sh:path ml:hasBayesianRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:BayesianRidgeMethod ]
+            [ sh:class ml:ARDRegressionMethod ]
+        ) ;
+        sh:message "Tasks of type BayesianRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:InstanceBasedRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:InstanceBasedRegression ;
+    sh:property [
+        sh:path ml:hasInstanceBasedRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:KNeighborsRegressorMethod ]
+            [ sh:class ml:RadiusNeighborsRegressorMethod ]
+        ) ;
+        sh:message "Tasks of type InstanceBasedRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:SimpleRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:SimpleRegression ;
+    sh:property [
+        sh:path ml:hasSimpleRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:LinearRegressionMethod ]
+        ) ;
+        sh:message "Tasks of type SimpleRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:DecisionTreeRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:DecisionTreeRegression ;
+    sh:property [
+        sh:path ml:hasDecisionTreeRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:ExtraTreeRegressorMethod ]
+            [ sh:class ml:DecisionTreeRegressorMethod ]
+        ) ;
+        sh:message "Tasks of type DecisionTreeRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:BinaryClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BinaryClassification ;
+    sh:property [
+        sh:path ml:hasBinaryClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:RidgeClassifierMethod ]
+            [ sh:class ml:AdaBoostClassifierMethod ]
+            [ sh:class ml:PerceptronMethod ]
+            [ sh:class ml:StackingClassifierMethod ]
+            [ sh:class ml:ComplementNBMethod ]
+            [ sh:class ml:NuSVCMethod ]
+            [ sh:class ml:MLPClassifierMethod ]
+            [ sh:class ml:CategoricalNBMethod ]
+            [ sh:class ml:BaggingClassifierMethod ]
+            [ sh:class ml:VotingClassifierMethod ]
+            [ sh:class ml:LinearSVCMethod ]
+            [ sh:class ml:KNeighborsClassifierMethod ]
+            [ sh:class ml:RidgeClassifierCVMethod ]
+            [ sh:class ml:OutputCodeClassifierMethod ]
+            [ sh:class ml:LogisticRegressionCVMethod ]
+            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:GaussianNBMethod ]
+            [ sh:class ml:ExtraTreesClassifierMethod ]
+            [ sh:class ml:PassiveAggressiveClassifierMethod ]
+            [ sh:class ml:MultinomialNBMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:ExtraTreeClassifierMethod ]
+            [ sh:class ml:RadiusNeighborsClassifierMethod ]
+            [ sh:class ml:NearestCentroidMethod ]
+            [ sh:class ml:BernoulliNBMethod ]
+            [ sh:class ml:BernoulliRBMMethod ]
+            [ sh:class ml:OneVsRestClassifierMethod ]
+            [ sh:class ml:SGDClassifierMethod ]
+            [ sh:class ml:RandomForestClassifierMethod ]
+            [ sh:class ml:LogisticRegressionMethod ]
+            [ sh:class ml:SVCMethod ]
+            [ sh:class ml:HistGradientBoostingClassifierMethod ]
+            [ sh:class ml:GradientBoostingClassifierMethod ]
+        ) ;
+        sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:MultilabelClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:MultilabelClassification ;
+    sh:property [
+        sh:path ml:hasMultilabelClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:OutputCodeClassifierMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:OneVsRestClassifierMethod ]
+        ) ;
+        sh:message "Tasks of type MultilabelClassification must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:SupportVectorRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:SupportVectorRegression ;
+    sh:property [
+        sh:path ml:hasSupportVectorRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:NuSVRMethod ]
+            [ sh:class ml:SVRMethod ]
+            [ sh:class ml:LinearSVRMethod ]
+        ) ;
+        sh:message "Tasks of type SupportVectorRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:BoostingRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BoostingRegression ;
+    sh:property [
+        sh:path ml:hasBoostingRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:AdaBoostRegressorMethod ]
+            [ sh:class ml:HistGradientBoostingRegressorMethod ]
+            [ sh:class ml:GradientBoostingRegressorMethod ]
+        ) ;
+        sh:message "Tasks of type BoostingRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:RandomForestRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:RandomForestRegression ;
+    sh:property [
+        sh:path ml:hasRandomForestRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:ExtraTreesRegressorMethod ]
+            [ sh:class ml:RandomForestRegressorMethod ]
+        ) ;
+        sh:message "Tasks of type RandomForestRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:MulticlassClassification ;
+    sh:property [
+        sh:path ml:hasMulticlassClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:OneVsRestClassifierMethod ]
+            [ sh:class ml:HistGradientBoostingClassifierMethod ]
+            [ sh:class ml:GradientBoostingClassifierMethod ]
+            [ sh:class ml:RandomForestClassifierMethod ]
+            [ sh:class ml:AdaBoostClassifierMethod ]
+            [ sh:class ml:KNeighborsClassifierMethod ]
+            [ sh:class ml:OutputCodeClassifierMethod ]
+            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreesClassifierMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:ExtraTreeClassifierMethod ]
+            [ sh:class ml:RadiusNeighborsClassifierMethod ]
+            [ sh:class ml:NearestCentroidMethod ]
+        ) ;
+        sh:message "Tasks of type MulticlassClassification must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ClusteringTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Clustering ;
+    sh:property [
+        sh:path ml:hasClusteringMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:AgglomerativeClusteringMethod ]
+            [ sh:class ml:KMeansMethod ]
+            [ sh:class ml:BirchMethod ]
+            [ sh:class ml:OPTICSMethod ]
+            [ sh:class ml:RadiusNeighborsTransformerMethod ]
+            [ sh:class ml:AffinityPropagationMethod ]
+            [ sh:class ml:HDBSCANMethod ]
+            [ sh:class ml:KNeighborsTransformerMethod ]
+            [ sh:class ml:BisectingKMeansMethod ]
+            [ sh:class ml:MiniBatchKMeansMethod ]
+            [ sh:class ml:SpectralBiclusteringMethod ]
+            [ sh:class ml:KernelDensityMethod ]
+            [ sh:class ml:DBSCANMethod ]
+            [ sh:class ml:MeanShiftMethod ]
+            [ sh:class ml:NearestNeighborsMethod ]
+            [ sh:class ml:LocalOutlierFactorMethod ]
+            [ sh:class ml:SpectralCoclusteringMethod ]
+            [ sh:class ml:SpectralClusteringMethod ]
+            [ sh:class ml:IsolationForestMethod ]
+        ) ;
+        sh:message "Tasks of type Clustering must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:RegularizedRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:RegularizedRegression ;
+    sh:property [
+        sh:path ml:hasRegularizedRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:LassoLarsICMethod ]
+            [ sh:class ml:SGDRegressorMethod ]
+            [ sh:class ml:PoissonRegressorMethod ]
+            [ sh:class ml:LassoMethod ]
+            [ sh:class ml:RidgeMethod ]
+            [ sh:class ml:QuantileRegressorMethod ]
+            [ sh:class ml:BaggingRegressorMethod ]
+            [ sh:class ml:ElasticNetMethod ]
+            [ sh:class ml:TheilSenRegressorMethod ]
+            [ sh:class ml:OrthogonalMatchingPursuitMethod ]
+            [ sh:class ml:HuberRegressorMethod ]
+            [ sh:class ml:RidgeCVMethod ]
+            [ sh:class ml:GammaRegressorMethod ]
+            [ sh:class ml:SGDOneClassSVMMethod ]
+            [ sh:class ml:MultiTaskLassoCVMethod ]
+            [ sh:class ml:StackingRegressorMethod ]
+            [ sh:class ml:LassoCVMethod ]
+            [ sh:class ml:TweedieRegressorMethod ]
+            [ sh:class ml:RANSACRegressorMethod ]
+            [ sh:class ml:PassiveAggressiveRegressorMethod ]
+            [ sh:class ml:MultiTaskLassoMethod ]
+            [ sh:class ml:ElasticNetCVMethod ]
+            [ sh:class ml:LassoLarsCVMethod ]
+            [ sh:class ml:MultiTaskElasticNetCVMethod ]
+            [ sh:class ml:MultiTaskElasticNetMethod ]
+            [ sh:class ml:OneClassSVMMethod ]
+            [ sh:class ml:MLPRegressorMethod ]
+            [ sh:class ml:OrthogonalMatchingPursuitCVMethod ]
+            [ sh:class ml:LarsCVMethod ]
+            [ sh:class ml:VotingRegressorMethod ]
+        ) ;
+        sh:message "Tasks of type RegularizedRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ConcatenationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Concatenation ;
+    sh:property [
+        sh:path ml:hasConcatenationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:ConcatenationMethod ]
+        ) ;
+        sh:message "Tasks of type Concatenation must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:PerformanceCalculationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:PerformanceCalculation ;
+    sh:property [
+        sh:path ml:hasPerformanceCalculationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:NormalizedMutualInfoScoreMethod ]
+            [ sh:class ml:TopKAccuracyScoreMethod ]
+            [ sh:class ml:RootMeanSquaredErrorMethod ]
+            [ sh:class ml:AucMethod ]
+            [ sh:class ml:MeanAbsoluteErrorMethod ]
+            [ sh:class ml:MeanSquaredLogErrorMethod ]
+            [ sh:class ml:HomogeneityCompletenessVMeasureMethod ]
+            [ sh:class ml:ExplainedVarianceScoreMethod ]
+            [ sh:class ml:AveragePrecisionScoreMethod ]
+            [ sh:class ml:F1ScoreMethod ]
+            [ sh:class ml:MeanPinballLossMethod ]
+            [ sh:class ml:R2ScoreMethod ]
+            [ sh:class ml:RootMeanSquaredLogErrorMethod ]
+            [ sh:class ml:AdjustedMutualInfoScoreMethod ]
+            [ sh:class ml:MaxErrorMethod ]
+            [ sh:class ml:SilhouetteScoreMethod ]
+            [ sh:class ml:AccuracyScoreMethod ]
+            [ sh:class ml:FowlkesMallowsScoreMethod ]
+            [ sh:class ml:ConfusionMatrixMethod ]
+            [ sh:class ml:PairwiseKernelsMethod ]
+            [ sh:class ml:MutualInfoScoreMethod ]
+            [ sh:class ml:MakeScorerMethod ]
+            [ sh:class ml:ClassificationReportMethod ]
+            [ sh:class ml:VMeasureScoreMethod ]
+            [ sh:class ml:BrierScoreLossMethod ]
+            [ sh:class ml:MeanPoissonDevianceMethod ]
+            [ sh:class ml:ConsensusScoreMethod ]
+            [ sh:class ml:FbetaScoreMethod ]
+            [ sh:class ml:JaccardScoreMethod ]
+            [ sh:class ml:PairwiseDistancesChunkedMethod ]
+            [ sh:class ml:D2TweedieScoreMethod ]
+            [ sh:class ml:RandScoreMethod ]
+            [ sh:class ml:PairwiseDistancesArgminMinMethod ]
+            [ sh:class ml:MeanSquaredErrorMethod ]
+            [ sh:class ml:CohenKappaScoreMethod ]
+            [ sh:class ml:NdcgScoreMethod ]
+            [ sh:class ml:MultilabelConfusionMatrixMethod ]
+            [ sh:class ml:NanEuclideanDistancesMethod ]
+            [ sh:class ml:PerformanceCalculationMethod ]
+            [ sh:class ml:MedianAbsoluteErrorMethod ]
+            [ sh:class ml:MeanAbsolutePercentageErrorMethod ]
+            [ sh:class ml:PrecisionRecallFscoreSupportMethod ]
+            [ sh:class ml:MeanTweedieDevianceMethod ]
+            [ sh:class ml:PairwiseDistancesArgminMethod ]
+            [ sh:class ml:SilhouetteSamplesMethod ]
+            [ sh:class ml:MeanGammaDevianceMethod ]
+            [ sh:class ml:LogLossMethod ]
+            [ sh:class ml:EuclideanDistancesMethod ]
+            [ sh:class ml:ZeroOneLossMethod ]
+            [ sh:class ml:CoverageErrorMethod ]
+            [ sh:class ml:PrecisionRecallCurveMethod ]
+            [ sh:class ml:D2PinballScoreMethod ]
+            [ sh:class ml:ClassLikelihoodRatiosMethod ]
+            [ sh:class ml:RecallScoreMethod ]
+            [ sh:class ml:PrecisionScoreMethod ]
+            [ sh:class ml:LabelRankingLossMethod ]
+            [ sh:class ml:GetScorerMethod ]
+            [ sh:class ml:DetCurveMethod ]
+            [ sh:class ml:HingeLossMethod ]
+            [ sh:class ml:PairConfusionMatrixMethod ]
+            [ sh:class ml:LabelRankingAveragePrecisionScoreMethod ]
+            [ sh:class ml:RocAucScoreMethod ]
+            [ sh:class ml:PairwiseDistancesMethod ]
+            [ sh:class ml:RocCurveMethod ]
+            [ sh:class ml:DcgScoreMethod ]
+            [ sh:class ml:HammingLossMethod ]
+            [ sh:class ml:AdjustedRandScoreMethod ]
+            [ sh:class ml:CheckScoringMethod ]
+            [ sh:class ml:MatthewsCorrcoefMethod ]
+            [ sh:class ml:CalinskiHarabaszScoreMethod ]
+            [ sh:class ml:CompletenessScoreMethod ]
+            [ sh:class ml:D2AbsoluteErrorScoreMethod ]
+            [ sh:class ml:GetScorerNamesMethod ]
+            [ sh:class ml:DaviesBouldinScoreMethod ]
+            [ sh:class ml:HomogeneityScoreMethod ]
+            [ sh:class ml:BalancedAccuracyScoreMethod ]
+        ) ;
+        sh:message "Tasks of type PerformanceCalculation must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:DataProcessingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:DataProcessing ;
+    sh:property [
+        sh:path ml:hasDataProcessingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:PolynomialFeaturesMethod ]
+            [ sh:class ml:KBinsDiscretizerMethod ]
+            [ sh:class ml:MaxAbsScalerMethod ]
+            [ sh:class ml:PowerTransformerMethod ]
+            [ sh:class ml:TargetEncoderMethod ]
+            [ sh:class ml:LabelBinarizerMethod ]
+            [ sh:class ml:SplineTransformerMethod ]
+            [ sh:class ml:NormalizerMethod ]
+            [ sh:class ml:MultiLabelBinarizerMethod ]
+            [ sh:class ml:KernelCentererMethod ]
+            [ sh:class ml:OrdinalEncoderMethod ]
+            [ sh:class ml:QuantileTransformerMethod ]
+            [ sh:class ml:MinMaxScalerMethod ]
+            [ sh:class ml:FeatureHasherMethod ]
+            [ sh:class ml:RobustScalerMethod ]
+            [ sh:class ml:RandomTreesEmbeddingMethod ]
+            [ sh:class ml:FunctionTransformerMethod ]
+            [ sh:class ml:StandardScalerMethod ]
+            [ sh:class ml:BinarizerMethod ]
+            [ sh:class ml:DictVectorizerMethod ]
+            [ sh:class ml:OneHotEncoderMethod ]
+        ) ;
+        sh:message "Tasks of type DataProcessing must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:DecompositionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Decomposition ;
+    sh:property [
+        sh:path ml:hasDecompositionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:NMFMethod ]
+            [ sh:class ml:NeighborhoodComponentsAnalysisMethod ]
+            [ sh:class ml:FeatureAgglomerationMethod ]
+            [ sh:class ml:IncrementalPCAMethod ]
+            [ sh:class ml:SparseCoderMethod ]
+            [ sh:class ml:LatentDirichletAllocationMethod ]
+            [ sh:class ml:SparsePCAMethod ]
+            [ sh:class ml:KernelPCAMethod ]
+            [ sh:class ml:MiniBatchDictionaryLearningMethod ]
+            [ sh:class ml:PCAMethod ]
+            [ sh:class ml:TruncatedSVDMethod ]
+            [ sh:class ml:FactorAnalysisMethod ]
+            [ sh:class ml:FastICAMethod ]
+            [ sh:class ml:DictionaryLearningMethod ]
+            [ sh:class ml:MiniBatchSparsePCAMethod ]
+            [ sh:class ml:MiniBatchNMFMethod ]
+        ) ;
+        sh:message "Tasks of type Decomposition must be connected with exactly one compatible atomic method." ;
+    ] .

@@ -1,32 +1,22 @@
 
-visu:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
+:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
     sh:targetClass stats:CentralTendencyMeasure ;
     sh:property [
-        sh:path visu:hasCentralTendencyMeasureMethod ;
+        sh:path stats:hasCentralTendencyMeasureMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
+            [ sh:class stats:AverageMethod ]
+            [ sh:class stats:MedianMethod ]
             [ sh:class stats:MeanMethod ]
         ) ;
         sh:message "Tasks of type CentralTendencyMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
-visu:ShapeMeasureTaskMethodShape a sh:NodeShape ;
-    sh:targetClass stats:ShapeMeasure ;
-    sh:property [
-        sh:path visu:hasShapeMeasureMethod ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:class stats:PtpMethod ]
-        ) ;
-        sh:message "Tasks of type ShapeMeasure must be connected with exactly one compatible atomic method." ;
-    ] .
-
-visu:DispersionMeasureTaskMethodShape a sh:NodeShape ;
+:DispersionMeasureTaskMethodShape a sh:NodeShape ;
     sh:targetClass stats:DispersionMeasure ;
     sh:property [
-        sh:path visu:hasDispersionMeasureMethod ;
+        sh:path stats:hasDispersionMeasureMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
@@ -36,36 +26,23 @@ visu:DispersionMeasureTaskMethodShape a sh:NodeShape ;
         sh:message "Tasks of type DispersionMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
-visu:PositionMeasureTaskMethodShape a sh:NodeShape ;
+:PositionMeasureTaskMethodShape a sh:NodeShape ;
     sh:targetClass stats:PositionMeasure ;
     sh:property [
-        sh:path visu:hasPositionMeasureMethod ;
+        sh:path stats:hasPositionMeasureMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class stats:PercentileMethod ]
             [ sh:class stats:QuantileMethod ]
+            [ sh:class stats:PercentileMethod ]
         ) ;
         sh:message "Tasks of type PositionMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
-visu:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
-    sh:targetClass stats:CentralTendencyMeasure ;
-    sh:property [
-        sh:path visu:hasCentralTendencyMeasureMethod ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:class stats:AverageMethod ]
-            [ sh:class stats:MedianMethod ]
-        ) ;
-        sh:message "Tasks of type CentralTendencyMeasure must be connected with exactly one compatible atomic method." ;
-    ] .
-
-visu:DependencyMeasureTaskMethodShape a sh:NodeShape ;
+:DependencyMeasureTaskMethodShape a sh:NodeShape ;
     sh:targetClass stats:DependencyMeasure ;
     sh:property [
-        sh:path visu:hasDependencyMeasureMethod ;
+        sh:path stats:hasDependencyMeasureMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
@@ -75,15 +52,16 @@ visu:DependencyMeasureTaskMethodShape a sh:NodeShape ;
         sh:message "Tasks of type DependencyMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
-visu:ShapeMeasureTaskMethodShape a sh:NodeShape ;
+:ShapeMeasureTaskMethodShape a sh:NodeShape ;
     sh:targetClass stats:ShapeMeasure ;
     sh:property [
-        sh:path visu:hasShapeMeasureMethod ;
+        sh:path stats:hasShapeMeasureMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class stats:KurtosisMethod ]
+            [ sh:class stats:PtpMethod ]
             [ sh:class stats:SkewMethod ]
+            [ sh:class stats:KurtosisMethod ]
         ) ;
         sh:message "Tasks of type ShapeMeasure must be connected with exactly one compatible atomic method." ;
     ] .

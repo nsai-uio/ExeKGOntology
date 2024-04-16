@@ -1,0 +1,188 @@
+
+:CanvasCreationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:CanvasCreation ;
+    sh:property [
+        sh:path visu:hasCanvasCreationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:CanvasMethod ]
+        ) ;
+        sh:message "Tasks of type CanvasCreation must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:PolarPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:PolarPlotting ;
+    sh:property [
+        sh:path visu:hasPolarPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:PolarMethod ]
+        ) ;
+        sh:message "Tasks of type PolarPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ErrorBarPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ErrorBarPlotting ;
+    sh:property [
+        sh:path visu:hasErrorBarPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:ErrorbarMethod ]
+        ) ;
+        sh:message "Tasks of type ErrorBarPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ViolinPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ViolinPlotting ;
+    sh:property [
+        sh:path visu:hasViolinPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:ViolinplotMethod ]
+        ) ;
+        sh:message "Tasks of type ViolinPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:BoxPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:BoxPlotting ;
+    sh:property [
+        sh:path visu:hasBoxPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:BoxplotMethod ]
+        ) ;
+        sh:message "Tasks of type BoxPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:PieChartTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:PieChart ;
+    sh:property [
+        sh:path visu:hasPieChartMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:PieMethod ]
+        ) ;
+        sh:message "Tasks of type PieChart must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ImagePlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ImagePlotting ;
+    sh:property [
+        sh:path visu:hasImagePlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:PcolorMethod ]
+            [ sh:class visu:ImshowMethod ]
+            [ sh:class visu:PcolormeshMethod ]
+        ) ;
+        sh:message "Tasks of type ImagePlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:LinePlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:LinePlotting ;
+    sh:property [
+        sh:path visu:hasLinePlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:StackplotMethod ]
+            [ sh:class visu:PlotMethod ]
+            [ sh:class visu:XcorrMethod ]
+            [ sh:class visu:StepMethod ]
+            [ sh:class visu:LoglogMethod ]
+            [ sh:class visu:MagnitudeSpectrumMethod ]
+            [ sh:class visu:PhaseSpectrumMethod ]
+            [ sh:class visu:AcorrMethod ]
+            [ sh:class visu:StemMethod ]
+            [ sh:class visu:SemilogxMethod ]
+            [ sh:class visu:SemilogyMethod ]
+            [ sh:class visu:CohereMethod ]
+            [ sh:class visu:AngleSpectrumMethod ]
+        ) ;
+        sh:message "Tasks of type LinePlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:AreaPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:AreaPlotting ;
+    sh:property [
+        sh:path visu:hasAreaPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:FillBetweenMethod ]
+            [ sh:class visu:FillMethod ]
+        ) ;
+        sh:message "Tasks of type AreaPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:VectorFieldTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:VectorField ;
+    sh:property [
+        sh:path visu:hasVectorFieldMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:StreamplotMethod ]
+            [ sh:class visu:QuiverMethod ]
+        ) ;
+        sh:message "Tasks of type VectorField must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ContourPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ContourPlotting ;
+    sh:property [
+        sh:path visu:hasContourPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:ContourfMethod ]
+            [ sh:class visu:ContourMethod ]
+        ) ;
+        sh:message "Tasks of type ContourPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ScatterPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ScatterPlotting ;
+    sh:property [
+        sh:path visu:hasScatterPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:ScatterMethod ]
+        ) ;
+        sh:message "Tasks of type ScatterPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:HistogramTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:Histogram ;
+    sh:property [
+        sh:path visu:hasHistogramMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:HexbinMethod ]
+            [ sh:class visu:Hist2dMethod ]
+            [ sh:class visu:HistMethod ]
+        ) ;
+        sh:message "Tasks of type Histogram must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:BarPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:BarPlotting ;
+    sh:property [
+        sh:path visu:hasBarPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:BarhMethod ]
+            [ sh:class visu:BarMethod ]
+        ) ;
+        sh:message "Tasks of type BarPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
