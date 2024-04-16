@@ -9,7 +9,7 @@ visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:BernoulliRBMMethod ]
             [ sh:class ml:MLPClassifierMethod ]
         ) ;
-        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:RegularizedRegressionTaskMethodShape a sh:NodeShape ;
@@ -21,5 +21,5 @@ visu:RegularizedRegressionTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class ml:MLPRegressorMethod ]
         ) ;
-        sh:message "RegularizedRegression must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type RegularizedRegression must be connected with exactly one compatible atomic method." ;
     ] .

@@ -20,7 +20,7 @@ visu:LinePlotTaskMethodShape a sh:NodeShape ;
             [ sh:class visu:StepMethod ]
             [ sh:class visu:XcorrMethod ]
         ) ;
-        sh:message "LinePlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type LinePlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:BarPlotTaskMethodShape a sh:NodeShape ;
@@ -33,7 +33,7 @@ visu:BarPlotTaskMethodShape a sh:NodeShape ;
             [ sh:class visu:BarMethod ]
             [ sh:class visu:BarhMethod ]
         ) ;
-        sh:message "BarPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BarPlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:BoxPlotTaskMethodShape a sh:NodeShape ;
@@ -45,7 +45,7 @@ visu:BoxPlotTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class visu:BoxplotMethod ]
         ) ;
-        sh:message "BoxPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BoxPlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ContourPlotTaskMethodShape a sh:NodeShape ;
@@ -58,7 +58,7 @@ visu:ContourPlotTaskMethodShape a sh:NodeShape ;
             [ sh:class visu:ContourMethod ]
             [ sh:class visu:ContourfMethod ]
         ) ;
-        sh:message "ContourPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type ContourPlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ErrorBarPlotTaskMethodShape a sh:NodeShape ;
@@ -70,7 +70,7 @@ visu:ErrorBarPlotTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class visu:ErrorbarMethod ]
         ) ;
-        sh:message "ErrorBarPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type ErrorBarPlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:AreaPlotTaskMethodShape a sh:NodeShape ;
@@ -83,7 +83,7 @@ visu:AreaPlotTaskMethodShape a sh:NodeShape ;
             [ sh:class visu:FillMethod ]
             [ sh:class visu:FillBetweenMethod ]
         ) ;
-        sh:message "AreaPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type AreaPlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:HistogramTaskMethodShape a sh:NodeShape ;
@@ -97,7 +97,7 @@ visu:HistogramTaskMethodShape a sh:NodeShape ;
             [ sh:class visu:HistMethod ]
             [ sh:class visu:Hist2dMethod ]
         ) ;
-        sh:message "Histogram must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type Histogram must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ImagePlotTaskMethodShape a sh:NodeShape ;
@@ -111,7 +111,7 @@ visu:ImagePlotTaskMethodShape a sh:NodeShape ;
             [ sh:class visu:PcolorMethod ]
             [ sh:class visu:PcolormeshMethod ]
         ) ;
-        sh:message "ImagePlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type ImagePlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:PieChartTaskMethodShape a sh:NodeShape ;
@@ -123,7 +123,7 @@ visu:PieChartTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class visu:PieMethod ]
         ) ;
-        sh:message "PieChart must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type PieChart must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:PolarPlotTaskMethodShape a sh:NodeShape ;
@@ -135,7 +135,7 @@ visu:PolarPlotTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class visu:PolarMethod ]
         ) ;
-        sh:message "PolarPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type PolarPlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:VectorFieldTaskMethodShape a sh:NodeShape ;
@@ -148,7 +148,7 @@ visu:VectorFieldTaskMethodShape a sh:NodeShape ;
             [ sh:class visu:QuiverMethod ]
             [ sh:class visu:StreamplotMethod ]
         ) ;
-        sh:message "VectorField must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type VectorField must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ScatterPlotTaskMethodShape a sh:NodeShape ;
@@ -160,7 +160,7 @@ visu:ScatterPlotTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class visu:ScatterMethod ]
         ) ;
-        sh:message "ScatterPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type ScatterPlot must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ViolinPlotTaskMethodShape a sh:NodeShape ;
@@ -172,5 +172,5 @@ visu:ViolinPlotTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class visu:ViolinplotMethod ]
         ) ;
-        sh:message "ViolinPlot must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type ViolinPlot must be connected with exactly one compatible atomic method." ;
     ] .

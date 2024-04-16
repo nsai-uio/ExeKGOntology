@@ -20,7 +20,7 @@ visu:ClusteringTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:SpectralCoclusteringMethod ]
             [ sh:class ml:HDBSCANMethod ]
         ) ;
-        sh:message "Clustering must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type Clustering must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:DecompositionTaskMethodShape a sh:NodeShape ;
@@ -32,5 +32,5 @@ visu:DecompositionTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class ml:FeatureAgglomerationMethod ]
         ) ;
-        sh:message "Decomposition must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type Decomposition must be connected with exactly one compatible atomic method." ;
     ] .

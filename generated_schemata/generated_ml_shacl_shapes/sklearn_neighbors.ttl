@@ -10,7 +10,7 @@ visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:NearestCentroidMethod ]
             [ sh:class ml:RadiusNeighborsClassifierMethod ]
         ) ;
-        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
@@ -24,7 +24,7 @@ visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:NearestCentroidMethod ]
             [ sh:class ml:RadiusNeighborsClassifierMethod ]
         ) ;
-        sh:message "MulticlassClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type MulticlassClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:InstanceBasedRegressionTaskMethodShape a sh:NodeShape ;
@@ -37,7 +37,7 @@ visu:InstanceBasedRegressionTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:KNeighborsRegressorMethod ]
             [ sh:class ml:RadiusNeighborsRegressorMethod ]
         ) ;
-        sh:message "InstanceBasedRegression must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type InstanceBasedRegression must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ClusteringTaskMethodShape a sh:NodeShape ;
@@ -53,7 +53,7 @@ visu:ClusteringTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:KernelDensityMethod ]
             [ sh:class ml:LocalOutlierFactorMethod ]
         ) ;
-        sh:message "Clustering must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type Clustering must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:DecompositionTaskMethodShape a sh:NodeShape ;
@@ -65,5 +65,5 @@ visu:DecompositionTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class ml:NeighborhoodComponentsAnalysisMethod ]
         ) ;
-        sh:message "Decomposition must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type Decomposition must be connected with exactly one compatible atomic method." ;
     ] .

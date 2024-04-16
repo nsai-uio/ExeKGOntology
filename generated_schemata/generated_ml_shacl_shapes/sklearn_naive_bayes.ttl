@@ -12,5 +12,5 @@ visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:ComplementNBMethod ]
             [ sh:class ml:CategoricalNBMethod ]
         ) ;
-        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
     ] .

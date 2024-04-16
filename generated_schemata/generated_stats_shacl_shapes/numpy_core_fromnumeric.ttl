@@ -8,7 +8,7 @@ visu:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class stats:MeanMethod ]
         ) ;
-        sh:message "CentralTendencyMeasure must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type CentralTendencyMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ShapeMeasureTaskMethodShape a sh:NodeShape ;
@@ -20,7 +20,7 @@ visu:ShapeMeasureTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class stats:PtpMethod ]
         ) ;
-        sh:message "ShapeMeasure must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type ShapeMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:DispersionMeasureTaskMethodShape a sh:NodeShape ;
@@ -33,5 +33,5 @@ visu:DispersionMeasureTaskMethodShape a sh:NodeShape ;
             [ sh:class stats:StdMethod ]
             [ sh:class stats:VarMethod ]
         ) ;
-        sh:message "DispersionMeasure must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type DispersionMeasure must be connected with exactly one compatible atomic method." ;
     ] .

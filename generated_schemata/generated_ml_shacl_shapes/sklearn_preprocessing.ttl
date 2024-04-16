@@ -25,5 +25,5 @@ visu:DataProcessingTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:TargetEncoderMethod ]
             [ sh:class ml:PolynomialFeaturesMethod ]
         ) ;
-        sh:message "DataProcessing must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type DataProcessing must be connected with exactly one compatible atomic method." ;
     ] .

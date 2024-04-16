@@ -9,7 +9,7 @@ visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:DecisionTreeClassifierMethod ]
             [ sh:class ml:ExtraTreeClassifierMethod ]
         ) ;
-        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
@@ -22,7 +22,7 @@ visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:DecisionTreeClassifierMethod ]
             [ sh:class ml:ExtraTreeClassifierMethod ]
         ) ;
-        sh:message "MulticlassClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type MulticlassClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:DecisionTreeRegressionTaskMethodShape a sh:NodeShape ;
@@ -35,5 +35,5 @@ visu:DecisionTreeRegressionTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:DecisionTreeRegressorMethod ]
             [ sh:class ml:ExtraTreeRegressorMethod ]
         ) ;
-        sh:message "DecisionTreeRegression must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type DecisionTreeRegression must be connected with exactly one compatible atomic method." ;
     ] .

@@ -10,7 +10,7 @@ visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:OneVsOneClassifierMethod ]
             [ sh:class ml:OutputCodeClassifierMethod ]
         ) ;
-        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
@@ -24,7 +24,7 @@ visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:OneVsOneClassifierMethod ]
             [ sh:class ml:OutputCodeClassifierMethod ]
         ) ;
-        sh:message "MulticlassClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type MulticlassClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:MultilabelClassificationTaskMethodShape a sh:NodeShape ;
@@ -38,5 +38,5 @@ visu:MultilabelClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:OneVsOneClassifierMethod ]
             [ sh:class ml:OutputCodeClassifierMethod ]
         ) ;
-        sh:message "MultilabelClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type MultilabelClassification must be connected with exactly one compatible atomic method." ;
     ] .

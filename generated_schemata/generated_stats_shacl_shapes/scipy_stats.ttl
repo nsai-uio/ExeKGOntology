@@ -9,5 +9,5 @@ visu:ShapeMeasureTaskMethodShape a sh:NodeShape ;
             [ sh:class stats:KurtosisMethod ]
             [ sh:class stats:SkewMethod ]
         ) ;
-        sh:message "ShapeMeasure must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type ShapeMeasure must be connected with exactly one compatible atomic method." ;
     ] .

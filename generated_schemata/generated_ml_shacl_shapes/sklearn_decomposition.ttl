@@ -21,5 +21,5 @@ visu:DecompositionTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:TruncatedSVDMethod ]
             [ sh:class ml:LatentDirichletAllocationMethod ]
         ) ;
-        sh:message "Decomposition must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type Decomposition must be connected with exactly one compatible atomic method." ;
     ] .

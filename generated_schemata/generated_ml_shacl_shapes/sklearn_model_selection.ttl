@@ -30,5 +30,5 @@ visu:DataSplittingTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:LearningCurveDisplayMethod ]
             [ sh:class ml:ValidationCurveDisplayMethod ]
         ) ;
-        sh:message "DataSplitting must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one compatible atomic method." ;
     ] .

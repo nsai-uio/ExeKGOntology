@@ -9,7 +9,7 @@ visu:PositionMeasureTaskMethodShape a sh:NodeShape ;
             [ sh:class stats:PercentileMethod ]
             [ sh:class stats:QuantileMethod ]
         ) ;
-        sh:message "PositionMeasure must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type PositionMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
@@ -22,7 +22,7 @@ visu:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
             [ sh:class stats:AverageMethod ]
             [ sh:class stats:MedianMethod ]
         ) ;
-        sh:message "CentralTendencyMeasure must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type CentralTendencyMeasure must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:DependencyMeasureTaskMethodShape a sh:NodeShape ;
@@ -35,5 +35,5 @@ visu:DependencyMeasureTaskMethodShape a sh:NodeShape ;
             [ sh:class stats:CovMethod ]
             [ sh:class stats:CorrcoefMethod ]
         ) ;
-        sh:message "DependencyMeasure must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type DependencyMeasure must be connected with exactly one compatible atomic method." ;
     ] .

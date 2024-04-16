@@ -15,7 +15,7 @@ visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:StackingClassifierMethod ]
             [ sh:class ml:HistGradientBoostingClassifierMethod ]
         ) ;
-        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
@@ -31,7 +31,7 @@ visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:AdaBoostClassifierMethod ]
             [ sh:class ml:HistGradientBoostingClassifierMethod ]
         ) ;
-        sh:message "MulticlassClassification must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type MulticlassClassification must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:RandomForestRegressionTaskMethodShape a sh:NodeShape ;
@@ -44,7 +44,7 @@ visu:RandomForestRegressionTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:RandomForestRegressorMethod ]
             [ sh:class ml:ExtraTreesRegressorMethod ]
         ) ;
-        sh:message "RandomForestRegression must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type RandomForestRegression must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:DataProcessingTaskMethodShape a sh:NodeShape ;
@@ -56,7 +56,7 @@ visu:DataProcessingTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class ml:RandomTreesEmbeddingMethod ]
         ) ;
-        sh:message "DataProcessing must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type DataProcessing must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:RegularizedRegressionTaskMethodShape a sh:NodeShape ;
@@ -70,7 +70,7 @@ visu:RegularizedRegressionTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:VotingRegressorMethod ]
             [ sh:class ml:StackingRegressorMethod ]
         ) ;
-        sh:message "RegularizedRegression must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type RegularizedRegression must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:ClusteringTaskMethodShape a sh:NodeShape ;
@@ -82,7 +82,7 @@ visu:ClusteringTaskMethodShape a sh:NodeShape ;
         sh:or (
             [ sh:class ml:IsolationForestMethod ]
         ) ;
-        sh:message "Clustering must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type Clustering must be connected with exactly one compatible atomic method." ;
     ] .
 
 visu:BoostingRegressionTaskMethodShape a sh:NodeShape ;
@@ -96,5 +96,5 @@ visu:BoostingRegressionTaskMethodShape a sh:NodeShape ;
             [ sh:class ml:AdaBoostRegressorMethod ]
             [ sh:class ml:HistGradientBoostingRegressorMethod ]
         ) ;
-        sh:message "BoostingRegression must be connected with one compatible atomic method." ;
+        sh:message "Tasks of type BoostingRegression must be connected with exactly one compatible atomic method." ;
     ] .
