@@ -1,0 +1,31 @@
+@prefix : <http://weso.es/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ds: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
+
+:Pipeline a sh:NodeShape ;
+    sh:targetClass ds:Pipeline ;
+    sh:property [ a sh:PropertyShape ;
+            sh:dataType xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path ds:hasInputDataPath ],
+        [ a sh:PropertyShape ;
+            sh:dataType xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path ds:hasPlotsOutputDir ],
+        [ a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node :AtomicTaskShape ;
+            sh:path ds:hasStartTask ].
+
+:AtomicTaskShape
+    a sh:NodeShape ;
+    sh:targetClass ds:AtomicTask ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path ds:hasNextTask ;
+        sh:class ds:AtomicTask ;
+        sh:maxCount 1 ;
+    ] .
