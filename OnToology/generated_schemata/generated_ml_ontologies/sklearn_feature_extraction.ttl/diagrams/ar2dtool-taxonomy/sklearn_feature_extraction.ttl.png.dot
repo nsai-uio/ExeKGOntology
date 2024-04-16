@@ -1,0 +1,14 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:FeatureHasherMethod" "ml:DictVectorizerMethod" "ml:FeatureExtractionModule" "ml:SklearnModule" ; /*classes style*/
+	"ml:DictVectorizerMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DictVectorizerMethod" -> "ml:FeatureExtractionModule" [ label = "rdfs:subClassOf" ];
+	"ml:DictVectorizerMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FeatureExtractionModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:FeatureHasherMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FeatureHasherMethod" -> "ml:FeatureExtractionModule" [ label = "rdfs:subClassOf" ];
+	"ml:FeatureHasherMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

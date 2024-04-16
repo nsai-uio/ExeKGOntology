@@ -9,14 +9,6 @@
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#> rdf:type owl:Ontology .
 
 #################################################################
-#    Annotation properties
-#################################################################
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure
-<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
 #    Object Properties
 #################################################################
 
@@ -28,74 +20,74 @@
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> rdf:type owl:ObjectProperty .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasCanvasMethod
-:hasCanvasMethod rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
-                 rdfs:domain :CanvasTask ;
-                 rdfs:range :CanvasMethod .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasCanvasCreationMethod
+:hasCanvasCreationMethod rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+                         rdfs:domain :CanvasCreation ;
+                         rdfs:range :CanvasMethod .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPlotMethod
-:hasPlotMethod rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
-               rdfs:domain :PlotTask ;
-               rdfs:range :LineplotMethod ,
-                          :ScatterplotMethod .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPlottingInput
+:hasPlottingInput rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
+                  rdfs:domain :Plotting ;
+                  rdfs:range :DataInToPlot .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasVectorInput
-:hasVectorInput rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput> ;
-                rdfs:domain :PlotTask ;
-                rdfs:range :DataInVector .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasPlottingMethod
+:hasPlottingMethod rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod> ;
+                   rdfs:domain :Plotting .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasCanvasName
-:hasCanvasName rdf:type owl:DatatypeProperty ;
-               rdfs:domain :CanvasMethod ;
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamFigureSize
+:hasParamFigureSize rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                    rdfs:domain :CanvasMethod ;
+                    rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLayout
+:hasParamLayout rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                rdfs:domain :CanvasMethod ;
+                rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamLegendName
+:hasParamLegendName rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                    rdfs:domain :PlottingMethod ;
+                    rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamTitle
+:hasParamTitle rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+               rdfs:domain :PlottingMethod ;
                rdfs:range xsd:string .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasLayout
-:hasLayout rdf:type owl:DatatypeProperty ;
-           rdfs:domain :CanvasMethod ;
-           rdfs:range xsd:string .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamXLabel
+:hasParamXLabel rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                rdfs:domain :PlottingMethod ;
+                rdfs:range xsd:string .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasLegendName
-:hasLegendName rdf:type owl:DatatypeProperty ;
-               rdfs:domain :PlotMethod ;
-               rdfs:range xsd:string .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasLineStyle
-:hasLineStyle rdf:type owl:DatatypeProperty ;
-              rdfs:domain :LineplotMethod ,
-                          :ScatterplotMethod ;
-              rdfs:range xsd:string .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasLineWidth
-:hasLineWidth rdf:type owl:DatatypeProperty ;
-              rdfs:domain :LineplotMethod ,
-                          :ScatterplotMethod ;
-              rdfs:range xsd:int .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasScatterSize
-:hasScatterSize rdf:type owl:DatatypeProperty ;
-                rdfs:domain :ScatterplotMethod ;
-                rdfs:range xsd:int .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasScatterStyle
-:hasScatterStyle rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :ScatterplotMethod ;
-                 rdfs:range xsd:string .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#hasParamYLabel
+:hasParamYLabel rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> ;
+                rdfs:domain :PlottingMethod ;
+                rdfs:range xsd:string .
 
 
 #################################################################
@@ -114,14 +106,55 @@
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix> rdf:type owl:Class .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Method
 <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Method> rdf:type owl:Class .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#BarplotMethod
-:BarplotMethod rdf:type owl:Class ;
-               rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
-                               :PlotMethod .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tabular
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tabular> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Task
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Task> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#AreaPlotting
+:AreaPlotting rdf:type owl:Class ;
+              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                              :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#BarPlotting
+:BarPlotting rdf:type owl:Class ;
+             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                             :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#BoxPlotting
+:BoxPlotting rdf:type owl:Class ;
+             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                             :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#CanvasCreation
+:CanvasCreation rdf:type owl:Class ;
+                rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#CanvasMethod
@@ -129,37 +162,84 @@
               rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#CanvasTask
-:CanvasTask rdf:type owl:Class ;
-            rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ContourPlotting
+:ContourPlotting rdf:type owl:Class ;
+                 rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                                 :Plotting .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#DataInVector
-:DataInVector rdf:type owl:Class ;
-              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ;
-              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#DataInToPlot
+:DataInToPlot rdf:type owl:Class ;
+              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataEntity> ,
+                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix> ,
+                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue> ,
+                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tabular> ,
+                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor> ,
+                              <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Vector> .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#LineplotMethod
-:LineplotMethod rdf:type owl:Class ;
-                rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
-                                :PlotMethod .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ErrorBarPlotting
+:ErrorBarPlotting rdf:type owl:Class ;
+                  rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                                  :Plotting .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PlotMethod
-:PlotMethod rdf:type owl:Class ;
-            rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Method> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Histogram
+:Histogram rdf:type owl:Class ;
+           rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                           :Plotting .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PlotTask
-:PlotTask rdf:type owl:Class ;
-          rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ImagePlotting
+:ImagePlotting rdf:type owl:Class ;
+               rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                               :Plotting .
 
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ScatterplotMethod
-:ScatterplotMethod rdf:type owl:Class ;
-                   rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> ,
-                                   :PlotMethod .
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#LinePlotting
+:LinePlotting rdf:type owl:Class ;
+              rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                              :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PieChart
+:PieChart rdf:type owl:Class ;
+          rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                          :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#Plotting
+:Plotting rdf:type owl:Class ;
+          rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Task> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PlottingMethod
+:PlottingMethod rdf:type owl:Class ;
+                rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Method> .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#PolarPlotting
+:PolarPlotting rdf:type owl:Class ;
+               rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                               :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ScatterPlotting
+:ScatterPlotting rdf:type owl:Class ;
+                 rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                                 :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#VectorField
+:VectorField rdf:type owl:Class ;
+             rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                             :Plotting .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#ViolinPlotting
+:ViolinPlotting rdf:type owl:Class ;
+                rdfs:subClassOf <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask> ,
+                                :Plotting .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

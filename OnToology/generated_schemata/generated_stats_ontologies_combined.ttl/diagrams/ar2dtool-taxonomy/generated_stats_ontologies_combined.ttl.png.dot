@@ -1,0 +1,49 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "stats:KurtosisMethod" "stats:MedianMethod" "stats:FunctionBaseModule" "stats:CoreModule" "stats:CovMethod" "stats:NumpyModule" "stats:StatsModule" "stats:VarMethod" "stats:PtpMethod" "stats:QuantileMethod" "stats:AverageMethod" "stats:PercentileMethod" "stats:FromnumericModule" "stats:ScipyModule" "stats:StdMethod" "stats:LibModule" "stats:MeanMethod" "stats:CorrcoefMethod" "stats:SkewMethod" ; /*classes style*/
+	"stats:NumpyModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"stats:PercentileMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:PercentileMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:PercentileMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:StatsModule" -> "stats:ScipyModule" [ label = "rdfs:subClassOf" ];
+	"stats:LibModule" -> "stats:NumpyModule" [ label = "rdfs:subClassOf" ];
+	"stats:FunctionBaseModule" -> "stats:LibModule" [ label = "rdfs:subClassOf" ];
+	"stats:QuantileMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:QuantileMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:QuantileMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CoreModule" -> "stats:NumpyModule" [ label = "rdfs:subClassOf" ];
+	"stats:AverageMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:AverageMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:AverageMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:ScipyModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"stats:VarMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:VarMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:VarMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:SkewMethod" -> "stats:StatsModule" [ label = "rdfs:subClassOf" ];
+	"stats:SkewMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:SkewMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:KurtosisMethod" -> "stats:StatsModule" [ label = "rdfs:subClassOf" ];
+	"stats:KurtosisMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:KurtosisMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CovMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CovMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:CovMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:PtpMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:PtpMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:PtpMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:MeanMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:MeanMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:MeanMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CorrcoefMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CorrcoefMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:CorrcoefMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:MedianMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:MedianMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:MedianMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:FromnumericModule" -> "stats:CoreModule" [ label = "rdfs:subClassOf" ];
+	"stats:StdMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:StdMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:StdMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

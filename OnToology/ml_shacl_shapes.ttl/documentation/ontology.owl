@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:shacl="http://www.w3.org/ns/shacl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#class -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#class"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#maxCount -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#maxCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#message -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#message"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#minCount -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#minCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#path -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#path"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#property -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#property"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#qualifiedMaxCount -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#qualifiedMaxCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#qualifiedMinCount -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#qualifiedMinCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#qualifiedValueShape -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#qualifiedValueShape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#targetClass -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#targetClass"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#NodeShape -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shacl#NodeShape"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://weso.es/shapes/ConcatenationTaskInputOutputShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/ConcatenationTaskInputOutputShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid2"/>
+        <shacl:property rdf:nodeID="genid3"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Concatenation"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid2">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInConcatenation"/>
+        <shacl:message>Tasks of type Concatenation must be connected with at least two inputs of type DataInConcatenation.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasConcatenationInput"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutConcatenatedData"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:message>Tasks of type Concatenation must be connected with exactly one output of type DataOutConcatenatedData.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasConcatenationOutput"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/DataSplittingTaskInputOutputShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/DataSplittingTaskInputOutputShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid4"/>
+        <shacl:property rdf:nodeID="genid6"/>
+        <shacl:property rdf:nodeID="genid8"/>
+        <shacl:property rdf:nodeID="genid10"/>
+        <shacl:property rdf:nodeID="genid12"/>
+        <shacl:property rdf:nodeID="genid14"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid4">
+        <shacl:message>Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingX.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingX"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid6">
+        <shacl:message>Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataX.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataX"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid8">
+        <shacl:message>Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingY.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingY"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid10">
+        <shacl:message>Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataY.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataY"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid12">
+        <shacl:message>Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataX.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataX"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid14">
+        <shacl:message>Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataY.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataY"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid16"/>
+        <shacl:property rdf:nodeID="genid17"/>
+        <shacl:property rdf:nodeID="genid19"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PerformanceCalculation"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid16">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutScore"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:message>Tasks of type PerformanceCalculation must be connected with exactly one output of type DataOutScore.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationOutput"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid17">
+        <shacl:message>Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInRealY.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInRealY"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid19">
+        <shacl:message>Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInPredictedY.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInPredictedY"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/PrepareTransformerTaskInputOutputShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/PrepareTransformerTaskInputOutputShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid21"/>
+        <shacl:property rdf:nodeID="genid22"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid21">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTransformer"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:message>Tasks of type PrepareTransformer must be connected with exactly one output of type DataOutTransformer.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerOutput"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid22">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInToPrepareTransformer"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:message>Tasks of type PrepareTransformer must be connected with exactly one input of type DataInToPrepareTransformer.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerInput"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/TestTaskInputOutputShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/TestTaskInputOutputShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid23"/>
+        <shacl:property rdf:nodeID="genid25"/>
+        <shacl:property rdf:nodeID="genid27"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Test"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid23">
+        <shacl:message>Tasks of type Test must be connected with exactly one input of type DataInTestModel.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestModel"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid25">
+        <shacl:message>Tasks of type Test must be connected with exactly one input of type DataInTestX.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestX"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid27">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutPredictedValueTest"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:message>Tasks of type Test must be connected with exactly one output of type DataOutPredictedValueTest.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestOutput"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/TrainTaskInputOutputShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/TrainTaskInputOutputShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid28"/>
+        <shacl:property rdf:nodeID="genid30"/>
+        <shacl:property rdf:nodeID="genid32"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid28">
+        <shacl:message>Tasks of type Train must be connected with exactly one input of type DataInTrainX.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainX"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid30">
+        <shacl:message>Tasks of type Train must be connected with exactly one input of type DataInTrainY.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainY"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid32">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTrainModel"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:message>Tasks of type Train must be connected with exactly one output of type DataOutTrainModel.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainOutput"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/TransformTaskInputOutputShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/TransformTaskInputOutputShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid33"/>
+        <shacl:property rdf:nodeID="genid34"/>
+        <shacl:property rdf:nodeID="genid36"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Transform"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid33">
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTransformed"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:message>Tasks of type Transform must be connected with exactly one output of type DataOutTransformed.</shacl:message>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformOutput"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid34">
+        <shacl:message>Tasks of type Transform must be connected with exactly one input of type DataInTransformer.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTransformer"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid36">
+        <shacl:message>Tasks of type Transform must be connected with exactly one input of type DataInToTransform.</shacl:message>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformInput"/>
+        <shacl:qualifiedMaxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMaxCount>
+        <shacl:qualifiedMinCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:qualifiedMinCount>
+        <shacl:qualifiedValueShape>
+            <rdf:Description>
+                <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInToTransform"/>
+            </rdf:Description>
+        </shacl:qualifiedValueShape>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

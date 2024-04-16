@@ -1,0 +1,18 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+	"NULL" -> "ds:AtomicTask" [ label = "sh:class" ];
+	"NULL" -> "ds:hasNextTask" [ label = "sh:path" ];
+	"NULL" -> "ds:hasStartTask" [ label = "sh:path" ];
+	"NULL" -> "base:AtomicTaskShape" [ label = "sh:node" ];
+	"NULL" -> "ds:hasPlotsOutputDir" [ label = "sh:path" ];
+	"NULL" -> "ds:hasInputDataPath" [ label = "sh:path" ];
+	"NULL" -> "xsd:string" [ label = "sh:dataType" ];
+	"base:Pipeline" -> "3d4e53e5775da3bda50dcc177d1cc013" [ label = "sh:property" ];
+	"base:Pipeline" -> "00c2cd2ccc7f52703dd8d2e2452da252" [ label = "sh:property" ];
+	"base:Pipeline" -> "979e45286e22319ce2e915f64d3141f6" [ label = "sh:property" ];
+	"base:Pipeline" -> "ds:Pipeline" [ label = "sh:targetClass" ];
+	"base:AtomicTaskShape" -> "1ddaf902b94e8da13ccc3c3aa55ddaa3" [ label = "sh:property" ];
+	"base:AtomicTaskShape" -> "ds:AtomicTask" [ label = "sh:targetClass" ];
+
+}

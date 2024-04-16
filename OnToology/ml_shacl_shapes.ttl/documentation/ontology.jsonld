@@ -1,0 +1,635 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "_:genid10",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataY."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid11"
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataY"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataX."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid13"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataX"
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataY."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid15"
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataY"
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutScore"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type PerformanceCalculation must be connected with exactly one output of type DataOutScore."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationOutput"
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInRealY."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid18"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInRealY"
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInPredictedY."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid20"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInConcatenation"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Concatenation must be connected with at least two inputs of type DataInConcatenation."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasConcatenationInput"
+  } ]
+}, {
+  "@id" : "_:genid20",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInPredictedY"
+  } ]
+}, {
+  "@id" : "_:genid21",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTransformer"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type PrepareTransformer must be connected with exactly one output of type DataOutTransformer."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerOutput"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInToPrepareTransformer"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type PrepareTransformer must be connected with exactly one input of type DataInToPrepareTransformer."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerInput"
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Test must be connected with exactly one input of type DataInTestModel."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid24"
+  } ]
+}, {
+  "@id" : "_:genid24",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestModel"
+  } ]
+}, {
+  "@id" : "_:genid25",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Test must be connected with exactly one input of type DataInTestX."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid26"
+  } ]
+}, {
+  "@id" : "_:genid26",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestX"
+  } ]
+}, {
+  "@id" : "_:genid27",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutPredictedValueTest"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Test must be connected with exactly one output of type DataOutPredictedValueTest."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestOutput"
+  } ]
+}, {
+  "@id" : "_:genid28",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Train must be connected with exactly one input of type DataInTrainX."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid29"
+  } ]
+}, {
+  "@id" : "_:genid29",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainX"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutConcatenatedData"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Concatenation must be connected with exactly one output of type DataOutConcatenatedData."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasConcatenationOutput"
+  } ]
+}, {
+  "@id" : "_:genid30",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Train must be connected with exactly one input of type DataInTrainY."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid31"
+  } ]
+}, {
+  "@id" : "_:genid31",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainY"
+  } ]
+}, {
+  "@id" : "_:genid32",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTrainModel"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Train must be connected with exactly one output of type DataOutTrainModel."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainOutput"
+  } ]
+}, {
+  "@id" : "_:genid33",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTransformed"
+  } ],
+  "http://www.w3.org/ns/shacl#maxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Transform must be connected with exactly one output of type DataOutTransformed."
+  } ],
+  "http://www.w3.org/ns/shacl#minCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformOutput"
+  } ]
+}, {
+  "@id" : "_:genid34",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Transform must be connected with exactly one input of type DataInTransformer."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid35"
+  } ]
+}, {
+  "@id" : "_:genid35",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTransformer"
+  } ]
+}, {
+  "@id" : "_:genid36",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type Transform must be connected with exactly one input of type DataInToTransform."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid37"
+  } ]
+}, {
+  "@id" : "_:genid37",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInToTransform"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingX."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingX"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataX."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid7"
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataX"
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "http://www.w3.org/ns/shacl#message" : [ {
+    "@value" : "Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingY."
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingInput"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMaxCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedMinCount" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/ns/shacl#qualifiedValueShape" : [ {
+    "@id" : "_:genid9"
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingY"
+  } ]
+}, {
+  "@id" : "http://weso.es/shapes/ConcatenationTaskInputOutputShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid2"
+  }, {
+    "@id" : "_:genid3"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Concatenation"
+  } ]
+}, {
+  "@id" : "http://weso.es/shapes/DataSplittingTaskInputOutputShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid4"
+  }, {
+    "@id" : "_:genid6"
+  }, {
+    "@id" : "_:genid8"
+  }, {
+    "@id" : "_:genid10"
+  }, {
+    "@id" : "_:genid12"
+  }, {
+    "@id" : "_:genid14"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting"
+  } ]
+}, {
+  "@id" : "http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid16"
+  }, {
+    "@id" : "_:genid17"
+  }, {
+    "@id" : "_:genid19"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PerformanceCalculation"
+  } ]
+}, {
+  "@id" : "http://weso.es/shapes/PrepareTransformerTaskInputOutputShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid21"
+  }, {
+    "@id" : "_:genid22"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer"
+  } ]
+}, {
+  "@id" : "http://weso.es/shapes/TestTaskInputOutputShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid23"
+  }, {
+    "@id" : "_:genid25"
+  }, {
+    "@id" : "_:genid27"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Test"
+  } ]
+}, {
+  "@id" : "http://weso.es/shapes/TrainTaskInputOutputShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid28"
+  }, {
+    "@id" : "_:genid30"
+  }, {
+    "@id" : "_:genid32"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train"
+  } ]
+}, {
+  "@id" : "http://weso.es/shapes/TransformTaskInputOutputShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#NodeShape"
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid33"
+  }, {
+    "@id" : "_:genid34"
+  }, {
+    "@id" : "_:genid36"
+  } ],
+  "http://www.w3.org/ns/shacl#targetClass" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Transform"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#NodeShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#maxCount",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#message",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#minCount",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#path",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#property",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#qualifiedMaxCount",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#qualifiedMinCount",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#qualifiedValueShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#targetClass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]
