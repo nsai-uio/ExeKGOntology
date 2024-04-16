@@ -5,39 +5,39 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 stats:hasParamAxis a owl:DatatypeProperty ;
-    rdfs:domain stats:Kurtosis,
-        stats:Skew ;
+    rdfs:domain stats:KurtosisMethod,
+        stats:SkewMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamBias a owl:DatatypeProperty ;
-    rdfs:domain stats:Kurtosis,
-        stats:Skew ;
+    rdfs:domain stats:KurtosisMethod,
+        stats:SkewMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamFisher a owl:DatatypeProperty ;
-    rdfs:domain stats:Kurtosis ;
+    rdfs:domain stats:KurtosisMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamKeepdims a owl:DatatypeProperty ;
-    rdfs:domain stats:Kurtosis,
-        stats:Skew ;
+    rdfs:domain stats:KurtosisMethod,
+        stats:SkewMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamNanPolicy a owl:DatatypeProperty ;
-    rdfs:domain stats:Kurtosis,
-        stats:Skew ;
+    rdfs:domain stats:KurtosisMethod,
+        stats:SkewMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasShapeMeasureMethod a owl:ObjectProperty ;
     rdfs:domain stats:ShapeMeasure ;
-    rdfs:range stats:Kurtosis,
-        stats:Skew ;
+    rdfs:range stats:KurtosisMethod,
+        stats:SkewMethod ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
 stats:ScipyModule a owl:Class ;
@@ -46,7 +46,7 @@ stats:ScipyModule a owl:Class ;
 stats:StatsModule a owl:Class ;
     rdfs:subClassOf stats:ScipyModule .
 
-stats:Skew a owl:Class ;
+stats:SkewMethod a owl:Class ;
     rdfs:comment """Compute the sample skewness of a data set.
 
 For normally distributed data, the skewness should be about zero. For
@@ -139,7 +139,7 @@ Examples
         stats:StatisticCalculationMethod,
         stats:StatsModule .
 
-stats:Kurtosis a owl:Class ;
+stats:KurtosisMethod a owl:Class ;
     rdfs:comment """Compute the kurtosis (Fisher or Pearson) of a dataset.
 
 Kurtosis is the fourth central moment divided by the square of the

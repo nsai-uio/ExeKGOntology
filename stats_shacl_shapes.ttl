@@ -1,0 +1,22 @@
+@prefix : <http://weso.es/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix stats: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#> .
+
+:StatisticCalculationTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass stats:StatisticCalculation ;
+    # input
+    sh:property [
+        sh:path stats:hasStatisticCalculationInput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class stats:DataInStatisticCalculation ;
+        sh:message "Tasks of type StatisticCalculation must be connected with exactly one input of type DataInStatisticCalculation." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path stats:hasStatisticCalculationOutput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class stats:DataOutStatisticCalculation ;
+        sh:message "Tasks of type StatisticCalculation must be connected with exactly one output of type DataOutStatisticCalculation." ;
+    ] .

@@ -1,0 +1,39 @@
+
+visu:PositionMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:PositionMeasure ;
+    sh:property [
+        sh:path visu:hasPositionMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:PercentileMethod ]
+            [ sh:class stats:QuantileMethod ]
+        ) ;
+        sh:message "PositionMeasure must be connected with one compatible atomic method." ;
+    ] .
+
+visu:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:CentralTendencyMeasure ;
+    sh:property [
+        sh:path visu:hasCentralTendencyMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:AverageMethod ]
+            [ sh:class stats:MedianMethod ]
+        ) ;
+        sh:message "CentralTendencyMeasure must be connected with one compatible atomic method." ;
+    ] .
+
+visu:DependencyMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:DependencyMeasure ;
+    sh:property [
+        sh:path visu:hasDependencyMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:CovMethod ]
+            [ sh:class stats:CorrcoefMethod ]
+        ) ;
+        sh:message "DependencyMeasure must be connected with one compatible atomic method." ;
+    ] .

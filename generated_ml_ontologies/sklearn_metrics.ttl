@@ -5,218 +5,218 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ml:hasParamA a owl:DatatypeProperty ;
-    rdfs:domain ml:ConsensusScore ;
+    rdfs:domain ml:ConsensusScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAdjusted a owl:DatatypeProperty ;
-    rdfs:domain ml:BalancedAccuracyScore ;
+    rdfs:domain ml:BalancedAccuracyScoreMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAllowNone a owl:DatatypeProperty ;
-    rdfs:domain ml:CheckScoring ;
+    rdfs:domain ml:CheckScoringMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:D2PinballScore,
-        ml:MeanPinballLoss ;
+    rdfs:domain ml:D2PinballScoreMethod,
+        ml:MeanPinballLossMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAverage a owl:DatatypeProperty ;
-    rdfs:domain ml:AveragePrecisionScore,
-        ml:F1Score,
-        ml:FbetaScore,
-        ml:JaccardScore,
-        ml:PrecisionRecallFscoreSupport,
-        ml:PrecisionScore,
-        ml:RecallScore,
-        ml:RocAucScore ;
+    rdfs:domain ml:AveragePrecisionScoreMethod,
+        ml:F1ScoreMethod,
+        ml:FbetaScoreMethod,
+        ml:JaccardScoreMethod,
+        ml:PrecisionRecallFscoreSupportMethod,
+        ml:PrecisionScoreMethod,
+        ml:RecallScoreMethod,
+        ml:RocAucScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAverageMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:AdjustedMutualInfoScore,
-        ml:NormalizedMutualInfoScore ;
+    rdfs:domain ml:AdjustedMutualInfoScoreMethod,
+        ml:NormalizedMutualInfoScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAxis a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseDistancesArgmin,
-        ml:PairwiseDistancesArgminMin ;
+    rdfs:domain ml:PairwiseDistancesArgminMethod,
+        ml:PairwiseDistancesArgminMinMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamB a owl:DatatypeProperty ;
-    rdfs:domain ml:ConsensusScore ;
+    rdfs:domain ml:ConsensusScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBeta a owl:DatatypeProperty ;
-    rdfs:domain ml:FbetaScore,
-        ml:HomogeneityCompletenessVMeasure,
-        ml:PrecisionRecallFscoreSupport,
-        ml:VMeasureScore ;
+    rdfs:domain ml:FbetaScoreMethod,
+        ml:HomogeneityCompletenessVMeasureMethod,
+        ml:PrecisionRecallFscoreSupportMethod,
+        ml:VMeasureScoreMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamContingency a owl:DatatypeProperty ;
-    rdfs:domain ml:MutualInfoScore ;
+    rdfs:domain ml:MutualInfoScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopy a owl:DatatypeProperty ;
-    rdfs:domain ml:NanEuclideanDistances ;
+    rdfs:domain ml:NanEuclideanDistancesMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDigits a owl:DatatypeProperty ;
-    rdfs:domain ml:ClassificationReport ;
+    rdfs:domain ml:ClassificationReportMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDropIntermediate a owl:DatatypeProperty ;
-    rdfs:domain ml:PrecisionRecallCurve,
-        ml:RocCurve ;
+    rdfs:domain ml:PrecisionRecallCurveMethod,
+        ml:RocCurveMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEps a owl:DatatypeProperty ;
-    rdfs:domain ml:LogLoss ;
+    rdfs:domain ml:LogLossMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFilterParams a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseKernels ;
+    rdfs:domain ml:PairwiseKernelsMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamForceAllFinite a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseDistances ;
+    rdfs:domain ml:PairwiseDistancesMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamForceFinite a owl:DatatypeProperty ;
-    rdfs:domain ml:ExplainedVarianceScore,
-        ml:R2Score ;
+    rdfs:domain ml:ExplainedVarianceScoreMethod,
+        ml:R2ScoreMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamGreaterIsBetter a owl:DatatypeProperty ;
-    rdfs:domain ml:MakeScorer ;
+    rdfs:domain ml:MakeScorerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamIgnoreTies a owl:DatatypeProperty ;
-    rdfs:domain ml:DcgScore,
-        ml:NdcgScore ;
+    rdfs:domain ml:DcgScoreMethod,
+        ml:NdcgScoreMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamK a owl:DatatypeProperty ;
-    rdfs:domain ml:DcgScore,
-        ml:NdcgScore,
-        ml:TopKAccuracyScore ;
+    rdfs:domain ml:DcgScoreMethod,
+        ml:NdcgScoreMethod,
+        ml:TopKAccuracyScoreMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLogBase a owl:DatatypeProperty ;
-    rdfs:domain ml:DcgScore ;
+    rdfs:domain ml:DcgScoreMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMetric a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseDistances,
-        ml:PairwiseDistancesArgmin,
-        ml:PairwiseDistancesArgminMin,
-        ml:PairwiseDistancesChunked,
-        ml:PairwiseKernels,
-        ml:SilhouetteSamples,
-        ml:SilhouetteScore ;
+    rdfs:domain ml:PairwiseDistancesArgminMethod,
+        ml:PairwiseDistancesArgminMinMethod,
+        ml:PairwiseDistancesChunkedMethod,
+        ml:PairwiseDistancesMethod,
+        ml:PairwiseKernelsMethod,
+        ml:SilhouetteSamplesMethod,
+        ml:SilhouetteScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMetricKwargs a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseDistancesArgmin,
-        ml:PairwiseDistancesArgminMin ;
+    rdfs:domain ml:PairwiseDistancesArgminMethod,
+        ml:PairwiseDistancesArgminMinMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMissingValues a owl:DatatypeProperty ;
-    rdfs:domain ml:NanEuclideanDistances ;
+    rdfs:domain ml:NanEuclideanDistancesMethod ;
     rdfs:range xsd:float,
         xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMultiClass a owl:DatatypeProperty ;
-    rdfs:domain ml:RocAucScore ;
+    rdfs:domain ml:RocAucScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMultioutput a owl:DatatypeProperty ;
-    rdfs:domain ml:D2AbsoluteErrorScore,
-        ml:D2PinballScore,
-        ml:ExplainedVarianceScore,
-        ml:MeanAbsoluteError,
-        ml:MeanAbsolutePercentageError,
-        ml:MeanPinballLoss,
-        ml:MeanSquaredError,
-        ml:MeanSquaredLogError,
-        ml:MedianAbsoluteError,
-        ml:R2Score,
-        ml:RootMeanSquaredError,
-        ml:RootMeanSquaredLogError ;
+    rdfs:domain ml:D2AbsoluteErrorScoreMethod,
+        ml:D2PinballScoreMethod,
+        ml:ExplainedVarianceScoreMethod,
+        ml:MeanAbsoluteErrorMethod,
+        ml:MeanAbsolutePercentageErrorMethod,
+        ml:MeanPinballLossMethod,
+        ml:MeanSquaredErrorMethod,
+        ml:MeanSquaredLogErrorMethod,
+        ml:MedianAbsoluteErrorMethod,
+        ml:R2ScoreMethod,
+        ml:RootMeanSquaredErrorMethod,
+        ml:RootMeanSquaredLogErrorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseDistances,
-        ml:PairwiseDistancesChunked,
-        ml:PairwiseKernels ;
+    rdfs:domain ml:PairwiseDistancesChunkedMethod,
+        ml:PairwiseDistancesMethod,
+        ml:PairwiseKernelsMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNeedsProba a owl:DatatypeProperty ;
-    rdfs:domain ml:MakeScorer ;
+    rdfs:domain ml:MakeScorerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNeedsThreshold a owl:DatatypeProperty ;
-    rdfs:domain ml:MakeScorer ;
+    rdfs:domain ml:MakeScorerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNormalize a owl:DatatypeProperty ;
-    rdfs:domain ml:AccuracyScore,
-        ml:ConfusionMatrix,
-        ml:LogLoss,
-        ml:TopKAccuracyScore,
-        ml:ZeroOneLoss ;
+    rdfs:domain ml:AccuracyScoreMethod,
+        ml:ConfusionMatrixMethod,
+        ml:LogLossMethod,
+        ml:TopKAccuracyScoreMethod,
+        ml:ZeroOneLossMethod ;
     rdfs:range xsd:boolean,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamOutputDict a owl:DatatypeProperty ;
-    rdfs:domain ml:ClassificationReport ;
+    rdfs:domain ml:ClassificationReportMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPosLabel a owl:DatatypeProperty ;
-    rdfs:domain ml:AveragePrecisionScore,
-        ml:BrierScoreLoss,
-        ml:DetCurve,
-        ml:F1Score,
-        ml:FbetaScore,
-        ml:JaccardScore,
-        ml:PrecisionRecallCurve,
-        ml:PrecisionRecallFscoreSupport,
-        ml:PrecisionScore,
-        ml:RecallScore,
-        ml:RocCurve ;
+    rdfs:domain ml:AveragePrecisionScoreMethod,
+        ml:BrierScoreLossMethod,
+        ml:DetCurveMethod,
+        ml:F1ScoreMethod,
+        ml:FbetaScoreMethod,
+        ml:JaccardScoreMethod,
+        ml:PrecisionRecallCurveMethod,
+        ml:PrecisionRecallFscoreSupportMethod,
+        ml:PrecisionScoreMethod,
+        ml:RecallScoreMethod,
+        ml:RocCurveMethod ;
     rdfs:range xsd:boolean,
         xsd:float,
         xsd:int,
@@ -224,103 +224,103 @@ ml:hasParamPosLabel a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPower a owl:DatatypeProperty ;
-    rdfs:domain ml:D2TweedieScore,
-        ml:MeanTweedieDeviance ;
+    rdfs:domain ml:D2TweedieScoreMethod,
+        ml:MeanTweedieDevianceMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPredDecision a owl:DatatypeProperty ;
-    rdfs:domain ml:HingeLoss ;
+    rdfs:domain ml:HingeLossMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRaiseWarning a owl:DatatypeProperty ;
-    rdfs:domain ml:ClassLikelihoodRatios ;
+    rdfs:domain ml:ClassLikelihoodRatiosMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:SilhouetteScore ;
+    rdfs:domain ml:SilhouetteScoreMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamReduceFunc a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseDistancesChunked ;
+    rdfs:domain ml:PairwiseDistancesChunkedMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamResponseMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:MakeScorer ;
+    rdfs:domain ml:MakeScorerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSampleSize a owl:DatatypeProperty ;
-    rdfs:domain ml:SilhouetteScore ;
+    rdfs:domain ml:SilhouetteScoreMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSamplewise a owl:DatatypeProperty ;
-    rdfs:domain ml:MultilabelConfusionMatrix ;
+    rdfs:domain ml:MultilabelConfusionMatrixMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamScoreFunc a owl:DatatypeProperty ;
-    rdfs:domain ml:MakeScorer ;
+    rdfs:domain ml:MakeScorerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamScoring a owl:DatatypeProperty ;
-    rdfs:domain ml:CheckScoring,
-        ml:GetScorer ;
+    rdfs:domain ml:CheckScoringMethod,
+        ml:GetScorerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSimilarity a owl:DatatypeProperty ;
-    rdfs:domain ml:ConsensusScore ;
+    rdfs:domain ml:ConsensusScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSparse a owl:DatatypeProperty ;
-    rdfs:domain ml:FowlkesMallowsScore ;
+    rdfs:domain ml:FowlkesMallowsScoreMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSquared a owl:DatatypeProperty ;
-    rdfs:domain ml:EuclideanDistances,
-        ml:MeanSquaredError,
-        ml:MeanSquaredLogError,
-        ml:NanEuclideanDistances ;
+    rdfs:domain ml:EuclideanDistancesMethod,
+        ml:MeanSquaredErrorMethod,
+        ml:MeanSquaredLogErrorMethod,
+        ml:NanEuclideanDistancesMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWarnFor a owl:DatatypeProperty ;
-    rdfs:domain ml:PrecisionRecallFscoreSupport ;
+    rdfs:domain ml:PrecisionRecallFscoreSupportMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWeights a owl:DatatypeProperty ;
-    rdfs:domain ml:CohenKappaScore ;
+    rdfs:domain ml:CohenKappaScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWorkingMemory a owl:DatatypeProperty ;
-    rdfs:domain ml:PairwiseDistancesChunked ;
+    rdfs:domain ml:PairwiseDistancesChunkedMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamZeroDivision a owl:DatatypeProperty ;
-    rdfs:domain ml:ClassificationReport,
-        ml:F1Score,
-        ml:FbetaScore,
-        ml:JaccardScore,
-        ml:PrecisionRecallFscoreSupport,
-        ml:PrecisionScore,
-        ml:RecallScore ;
+    rdfs:domain ml:ClassificationReportMethod,
+        ml:F1ScoreMethod,
+        ml:FbetaScoreMethod,
+        ml:JaccardScoreMethod,
+        ml:PrecisionRecallFscoreSupportMethod,
+        ml:PrecisionScoreMethod,
+        ml:RecallScoreMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:AdjustedRandScore a owl:Class ;
+ml:AdjustedRandScoreMethod a owl:Class ;
     rdfs:comment """Rand index adjusted for chance.
 
 The Rand Index computes a similarity measure between two clusterings
@@ -414,7 +414,7 @@ are a worse choice than the expected value of random labels::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:Auc a owl:Class ;
+ml:AucMethod a owl:Class ;
     rdfs:comment """Compute Area Under the Curve (AUC) using the trapezoidal rule.
 
 This is a general function, given points on a curve.  For computing the
@@ -455,7 +455,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:CalinskiHarabaszScore a owl:Class ;
+ml:CalinskiHarabaszScoreMethod a owl:Class ;
     rdfs:comment """Compute the Calinski and Harabasz score.
 
 It is also known as the Variance Ratio Criterion.
@@ -498,7 +498,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:CompletenessScore a owl:Class ;
+ml:CompletenessScoreMethod a owl:Class ;
     rdfs:comment """Compute completeness metric of a cluster labeling given a ground truth.
 
 A clustering result satisfies completeness if all the data points
@@ -567,7 +567,7 @@ assignment cannot be complete::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:CoverageError a owl:Class ;
+ml:CoverageErrorMethod a owl:Class ;
     rdfs:comment """Coverage error measure.
 
 Compute how far we need to go through the ranked scores to cover all
@@ -618,7 +618,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:DaviesBouldinScore a owl:Class ;
+ml:DaviesBouldinScoreMethod a owl:Class ;
     rdfs:comment """Compute the Davies-Bouldin score.
 
 The score is defined as the average similarity measure of each cluster with
@@ -665,7 +665,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:GetScorerNames a owl:Class ;
+ml:GetScorerNamesMethod a owl:Class ;
     rdfs:comment """Get the names of all available scorers.
 
 These names can be passed to :func:`~sklearn.metrics.get_scorer` to
@@ -690,7 +690,7 @@ True""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:HammingLoss a owl:Class ;
+ml:HammingLossMethod a owl:Class ;
     rdfs:comment """Compute the average Hamming loss.
 
 The Hamming loss is the fraction of labels that are incorrectly predicted.
@@ -768,7 +768,7 @@ In the multilabel case with binary label indicators:
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:HomogeneityScore a owl:Class ;
+ml:HomogeneityScoreMethod a owl:Class ;
     rdfs:comment """Homogeneity metric of a cluster labeling given a ground truth.
 
 A clustering result satisfies homogeneity if all of its clusters
@@ -837,7 +837,7 @@ homogeneous labeling::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:LabelRankingAveragePrecisionScore a owl:Class ;
+ml:LabelRankingAveragePrecisionScoreMethod a owl:Class ;
     rdfs:comment """Compute ranking-based average precision.
 
 Label ranking average precision (LRAP) is the average over each ground
@@ -884,7 +884,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:LabelRankingLoss a owl:Class ;
+ml:LabelRankingLossMethod a owl:Class ;
     rdfs:comment """Compute Ranking loss measure.
 
 Compute the average number of label pairs that are incorrectly ordered
@@ -937,7 +937,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MatthewsCorrcoef a owl:Class ;
+ml:MatthewsCorrcoefMethod a owl:Class ;
     rdfs:comment """Compute the Matthews correlation coefficient (MCC).
 
 The Matthews correlation coefficient is used in machine learning as a
@@ -1003,7 +1003,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MaxError a owl:Class ;
+ml:MaxErrorMethod a owl:Class ;
     rdfs:comment """The max_error metric calculates the maximum residual error.
 
 Read more in the :ref:`User Guide <max_error>`.
@@ -1032,7 +1032,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanGammaDeviance a owl:Class ;
+ml:MeanGammaDevianceMethod a owl:Class ;
     rdfs:comment """Mean Gamma deviance regression loss.
 
 Gamma deviance is equivalent to the Tweedie deviance with
@@ -1068,7 +1068,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanPoissonDeviance a owl:Class ;
+ml:MeanPoissonDevianceMethod a owl:Class ;
     rdfs:comment """Mean Poisson deviance regression loss.
 
 Poisson deviance is equivalent to the Tweedie deviance with
@@ -1103,7 +1103,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PairConfusionMatrix a owl:Class ;
+ml:PairConfusionMatrixMethod a owl:Class ;
     rdfs:comment """Pair confusion matrix arising from two clusterings [1]_.
 
 The pair confusion matrix :math:`C` computes a 2 by 2 similarity matrix
@@ -1166,7 +1166,7 @@ Note that the matrix is not symmetric.""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:RandScore a owl:Class ;
+ml:RandScoreMethod a owl:Class ;
     rdfs:comment """Rand index.
 
 The Rand Index computes a similarity measure between two clusterings
@@ -1232,84 +1232,84 @@ ml:SklearnModule a owl:Class ;
 
 ml:hasPerformanceCalculationMethod a owl:ObjectProperty ;
     rdfs:domain ml:PerformanceCalculation ;
-    rdfs:range ml:AccuracyScore,
-        ml:AdjustedMutualInfoScore,
-        ml:AdjustedRandScore,
-        ml:Auc,
-        ml:AveragePrecisionScore,
-        ml:BalancedAccuracyScore,
-        ml:BrierScoreLoss,
-        ml:CalinskiHarabaszScore,
-        ml:CheckScoring,
-        ml:ClassLikelihoodRatios,
-        ml:ClassificationReport,
-        ml:CohenKappaScore,
-        ml:CompletenessScore,
-        ml:ConfusionMatrix,
-        ml:ConsensusScore,
-        ml:CoverageError,
-        ml:D2AbsoluteErrorScore,
-        ml:D2PinballScore,
-        ml:D2TweedieScore,
-        ml:DaviesBouldinScore,
-        ml:DcgScore,
-        ml:DetCurve,
-        ml:EuclideanDistances,
-        ml:ExplainedVarianceScore,
-        ml:F1Score,
-        ml:FbetaScore,
-        ml:FowlkesMallowsScore,
-        ml:GetScorer,
-        ml:GetScorerNames,
-        ml:HammingLoss,
-        ml:HingeLoss,
-        ml:HomogeneityCompletenessVMeasure,
-        ml:HomogeneityScore,
-        ml:JaccardScore,
-        ml:LabelRankingAveragePrecisionScore,
-        ml:LabelRankingLoss,
-        ml:LogLoss,
-        ml:MakeScorer,
-        ml:MatthewsCorrcoef,
-        ml:MaxError,
-        ml:MeanAbsoluteError,
-        ml:MeanAbsolutePercentageError,
-        ml:MeanGammaDeviance,
-        ml:MeanPinballLoss,
-        ml:MeanPoissonDeviance,
-        ml:MeanSquaredError,
-        ml:MeanSquaredLogError,
-        ml:MeanTweedieDeviance,
-        ml:MedianAbsoluteError,
-        ml:MultilabelConfusionMatrix,
-        ml:MutualInfoScore,
-        ml:NanEuclideanDistances,
-        ml:NdcgScore,
-        ml:NormalizedMutualInfoScore,
-        ml:PairConfusionMatrix,
-        ml:PairwiseDistances,
-        ml:PairwiseDistancesArgmin,
-        ml:PairwiseDistancesArgminMin,
-        ml:PairwiseDistancesChunked,
-        ml:PairwiseKernels,
-        ml:PrecisionRecallCurve,
-        ml:PrecisionRecallFscoreSupport,
-        ml:PrecisionScore,
-        ml:R2Score,
-        ml:RandScore,
-        ml:RecallScore,
-        ml:RocAucScore,
-        ml:RocCurve,
-        ml:RootMeanSquaredError,
-        ml:RootMeanSquaredLogError,
-        ml:SilhouetteSamples,
-        ml:SilhouetteScore,
-        ml:TopKAccuracyScore,
-        ml:VMeasureScore,
-        ml:ZeroOneLoss ;
+    rdfs:range ml:AccuracyScoreMethod,
+        ml:AdjustedMutualInfoScoreMethod,
+        ml:AdjustedRandScoreMethod,
+        ml:AucMethod,
+        ml:AveragePrecisionScoreMethod,
+        ml:BalancedAccuracyScoreMethod,
+        ml:BrierScoreLossMethod,
+        ml:CalinskiHarabaszScoreMethod,
+        ml:CheckScoringMethod,
+        ml:ClassLikelihoodRatiosMethod,
+        ml:ClassificationReportMethod,
+        ml:CohenKappaScoreMethod,
+        ml:CompletenessScoreMethod,
+        ml:ConfusionMatrixMethod,
+        ml:ConsensusScoreMethod,
+        ml:CoverageErrorMethod,
+        ml:D2AbsoluteErrorScoreMethod,
+        ml:D2PinballScoreMethod,
+        ml:D2TweedieScoreMethod,
+        ml:DaviesBouldinScoreMethod,
+        ml:DcgScoreMethod,
+        ml:DetCurveMethod,
+        ml:EuclideanDistancesMethod,
+        ml:ExplainedVarianceScoreMethod,
+        ml:F1ScoreMethod,
+        ml:FbetaScoreMethod,
+        ml:FowlkesMallowsScoreMethod,
+        ml:GetScorerMethod,
+        ml:GetScorerNamesMethod,
+        ml:HammingLossMethod,
+        ml:HingeLossMethod,
+        ml:HomogeneityCompletenessVMeasureMethod,
+        ml:HomogeneityScoreMethod,
+        ml:JaccardScoreMethod,
+        ml:LabelRankingAveragePrecisionScoreMethod,
+        ml:LabelRankingLossMethod,
+        ml:LogLossMethod,
+        ml:MakeScorerMethod,
+        ml:MatthewsCorrcoefMethod,
+        ml:MaxErrorMethod,
+        ml:MeanAbsoluteErrorMethod,
+        ml:MeanAbsolutePercentageErrorMethod,
+        ml:MeanGammaDevianceMethod,
+        ml:MeanPinballLossMethod,
+        ml:MeanPoissonDevianceMethod,
+        ml:MeanSquaredErrorMethod,
+        ml:MeanSquaredLogErrorMethod,
+        ml:MeanTweedieDevianceMethod,
+        ml:MedianAbsoluteErrorMethod,
+        ml:MultilabelConfusionMatrixMethod,
+        ml:MutualInfoScoreMethod,
+        ml:NanEuclideanDistancesMethod,
+        ml:NdcgScoreMethod,
+        ml:NormalizedMutualInfoScoreMethod,
+        ml:PairConfusionMatrixMethod,
+        ml:PairwiseDistancesArgminMethod,
+        ml:PairwiseDistancesArgminMinMethod,
+        ml:PairwiseDistancesChunkedMethod,
+        ml:PairwiseDistancesMethod,
+        ml:PairwiseKernelsMethod,
+        ml:PrecisionRecallCurveMethod,
+        ml:PrecisionRecallFscoreSupportMethod,
+        ml:PrecisionScoreMethod,
+        ml:R2ScoreMethod,
+        ml:RandScoreMethod,
+        ml:RecallScoreMethod,
+        ml:RocAucScoreMethod,
+        ml:RocCurveMethod,
+        ml:RootMeanSquaredErrorMethod,
+        ml:RootMeanSquaredLogErrorMethod,
+        ml:SilhouetteSamplesMethod,
+        ml:SilhouetteScoreMethod,
+        ml:TopKAccuracyScoreMethod,
+        ml:VMeasureScoreMethod,
+        ml:ZeroOneLossMethod ;
     rdfs:subPropertyOf ml:hasPerformanceCalculationMethod .
 
-ml:AccuracyScore a owl:Class ;
+ml:AccuracyScoreMethod a owl:Class ;
     rdfs:comment """Accuracy classification score.
 
 In multilabel classification, this function computes subset accuracy:
@@ -1377,7 +1377,7 @@ In the multilabel case with binary label indicators:
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:AdjustedMutualInfoScore a owl:Class ;
+ml:AdjustedMutualInfoScoreMethod a owl:Class ;
     rdfs:comment """Adjusted Mutual Information between two clusterings.
 
 Adjusted Mutual Information (AMI) is an adjustment of the Mutual
@@ -1468,7 +1468,7 @@ the assignment is totally in-complete, hence the AMI is null::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:BalancedAccuracyScore a owl:Class ;
+ml:BalancedAccuracyScoreMethod a owl:Class ;
     rdfs:comment """Compute the balanced accuracy.
 
 The balanced accuracy in binary and multiclass classification problems to
@@ -1540,7 +1540,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:BrierScoreLoss a owl:Class ;
+ml:BrierScoreLossMethod a owl:Class ;
     rdfs:comment """Compute the Brier score loss.
 
 The smaller the Brier score loss, the better, hence the naming with "loss".
@@ -1613,7 +1613,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:ClassLikelihoodRatios a owl:Class ;
+ml:ClassLikelihoodRatiosMethod a owl:Class ;
     rdfs:comment """Compute binary classification positive and negative likelihood ratios.
 
 The positive likelihood ratio is `LR+ = sensitivity / (1 - specificity)`
@@ -1716,7 +1716,7 @@ positive_class]`
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:CohenKappaScore a owl:Class ;
+ml:CohenKappaScoreMethod a owl:Class ;
     rdfs:comment """Compute Cohen's kappa: a statistic that measures inter-annotator agreement.
 
 This function computes Cohen's kappa [1]_, a score that expresses the level
@@ -1783,7 +1783,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:ConfusionMatrix a owl:Class ;
+ml:ConfusionMatrixMethod a owl:Class ;
     rdfs:comment """Compute confusion matrix to evaluate the accuracy of a classification.
 
 By definition a confusion matrix :math:`C` is such that :math:`C_{i, j}`
@@ -1869,7 +1869,7 @@ In the binary case, we can extract true positives, etc. as follows:
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:D2AbsoluteErrorScore a owl:Class ;
+ml:D2AbsoluteErrorScoreMethod a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of absolute error explained.
 
 Best possible score is 1.0 and it can be negative (because the model can be
@@ -1951,7 +1951,7 @@ array([0.8125    , 0.57142857])
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:D2TweedieScore a owl:Class ;
+ml:D2TweedieScoreMethod a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of Tweedie deviance explained.
 
 Best possible score is 1.0 and it can be negative (because the model can be
@@ -2030,7 +2030,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:DetCurve a owl:Class ;
+ml:DetCurveMethod a owl:Class ;
     rdfs:comment """Compute error rates for different probability thresholds.
 
 .. note::
@@ -2102,7 +2102,7 @@ array([0.35, 0.4 , 0.8 ])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:EuclideanDistances a owl:Class ;
+ml:EuclideanDistancesMethod a owl:Class ;
     rdfs:comment """Compute the distance matrix between each pair from a vector array X and Y.
 
 For efficiency reasons, the euclidean distance between a pair of row
@@ -2175,7 +2175,7 @@ array([[1.        ],
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:FowlkesMallowsScore a owl:Class ;
+ml:FowlkesMallowsScoreMethod a owl:Class ;
     rdfs:comment """Measure the similarity of two clusterings of a set of points.
 
 .. versionadded:: 0.18
@@ -2245,7 +2245,7 @@ the assignment is totally random, hence the FMI is null::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:GetScorer a owl:Class ;
+ml:GetScorerMethod a owl:Class ;
     rdfs:comment """Get a scorer from string.
 
 Read more in the :ref:`User Guide <scoring_parameter>`.
@@ -2284,7 +2284,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:HingeLoss a owl:Class ;
+ml:HingeLossMethod a owl:Class ;
     rdfs:comment """Average hinge loss (non-regularized).
 
 In binary class case, assuming labels in y_true are encoded with +1 and -1,
@@ -2367,7 +2367,7 @@ LinearSVC(dual='auto')
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:HomogeneityCompletenessVMeasure a owl:Class ;
+ml:HomogeneityCompletenessVMeasureMethod a owl:Class ;
     rdfs:comment """Compute the homogeneity and completeness and V-Measure scores at once.
 
 Those metrics are based on normalized conditional entropy measures of
@@ -2436,7 +2436,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanAbsoluteError a owl:Class ;
+ml:MeanAbsoluteErrorMethod a owl:Class ;
     rdfs:comment """Mean absolute error regression loss.
 
 Read more in the :ref:`User Guide <mean_absolute_error>`.
@@ -2491,7 +2491,7 @@ array([0.5, 1. ])
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanAbsolutePercentageError a owl:Class ;
+ml:MeanAbsolutePercentageErrorMethod a owl:Class ;
     rdfs:comment """Mean absolute percentage error (MAPE) regression loss.
 
 Note here that the output is not a percentage in the range [0, 100]
@@ -2561,7 +2561,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanTweedieDeviance a owl:Class ;
+ml:MeanTweedieDevianceMethod a owl:Class ;
     rdfs:comment """Mean Tweedie deviance regression loss.
 
 Read more in the :ref:`User Guide <mean_tweedie_deviance>`.
@@ -2612,7 +2612,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MedianAbsoluteError a owl:Class ;
+ml:MedianAbsoluteErrorMethod a owl:Class ;
     rdfs:comment """Median absolute error regression loss.
 
 Median absolute error output is non-negative floating point. The best value
@@ -2668,7 +2668,7 @@ array([0.5, 1. ])
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MultilabelConfusionMatrix a owl:Class ;
+ml:MultilabelConfusionMatrixMethod a owl:Class ;
     rdfs:comment """Compute a confusion matrix for each class or sample.
 
 .. versionadded:: 0.21
@@ -2767,7 +2767,7 @@ array([[[3, 1],
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MutualInfoScore a owl:Class ;
+ml:MutualInfoScoreMethod a owl:Class ;
     rdfs:comment """Mutual Information between two clusterings.
 
 The Mutual Information is a measure of the similarity between two labels
@@ -2835,7 +2835,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:NormalizedMutualInfoScore a owl:Class ;
+ml:NormalizedMutualInfoScoreMethod a owl:Class ;
     rdfs:comment """Normalized Mutual Information between two clusterings.
 
 Normalized Mutual Information (NMI) is a normalization of the Mutual
@@ -2912,7 +2912,7 @@ the assignment is totally in-complete, hence the NMI is null::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:RootMeanSquaredError a owl:Class ;
+ml:RootMeanSquaredErrorMethod a owl:Class ;
     rdfs:comment """Root mean squared error regression loss.
 
 Read more in the :ref:`User Guide <mean_squared_error>`.
@@ -2961,7 +2961,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:RootMeanSquaredLogError a owl:Class ;
+ml:RootMeanSquaredLogErrorMethod a owl:Class ;
     rdfs:comment """Root mean squared logarithmic error regression loss.
 
 Read more in the :ref:`User Guide <mean_squared_log_error>`.
@@ -3008,7 +3008,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:SilhouetteSamples a owl:Class ;
+ml:SilhouetteSamplesMethod a owl:Class ;
     rdfs:comment """Compute the Silhouette Coefficient for each sample.
 
 The Silhouette Coefficient is a measure of how well samples are clustered
@@ -3083,7 +3083,7 @@ array([...])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:VMeasureScore a owl:Class ;
+ml:VMeasureScoreMethod a owl:Class ;
     rdfs:comment """V-measure cluster labeling given a ground truth.
 
 This score is identical to :func:`normalized_mutual_info_score` with
@@ -3179,7 +3179,7 @@ destroy the homogeneity of the labeling, hence::
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:ZeroOneLoss a owl:Class ;
+ml:ZeroOneLossMethod a owl:Class ;
     rdfs:comment """Zero-one classification loss.
 
 If normalize is ``True``, return the fraction of misclassifications
@@ -3243,7 +3243,7 @@ In the multilabel case with binary label indicators:
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:AveragePrecisionScore a owl:Class ;
+ml:AveragePrecisionScoreMethod a owl:Class ;
     rdfs:comment """Compute average precision (AP) from prediction scores.
 
 AP summarizes a precision-recall curve as the weighted mean of precisions
@@ -3342,7 +3342,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:CheckScoring a owl:Class ;
+ml:CheckScoringMethod a owl:Class ;
     rdfs:comment """Determine scorer from user options.
 
 A TypeError will be thrown if the estimator cannot be scored.
@@ -3382,7 +3382,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:D2PinballScore a owl:Class ;
+ml:D2PinballScoreMethod a owl:Class ;
     rdfs:comment """:math:`D^2` regression score function, fraction of pinball loss explained.
 
 Best possible score is 1.0 and it can be negative (because the model can be
@@ -3460,7 +3460,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:ExplainedVarianceScore a owl:Class ;
+ml:ExplainedVarianceScoreMethod a owl:Class ;
     rdfs:comment """Explained variance regression score function.
 
 Best possible score is 1.0, lower values are worse.
@@ -3558,7 +3558,7 @@ nan
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:LogLoss a owl:Class ;
+ml:LogLossMethod a owl:Class ;
     rdfs:comment """Log loss, aka logistic loss or cross-entropy loss.
 
 This is the loss function used in (multinomial) logistic regression
@@ -3640,7 +3640,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanPinballLoss a owl:Class ;
+ml:MeanPinballLossMethod a owl:Class ;
     rdfs:comment """Pinball loss for quantile regression.
 
 Read more in the :ref:`User Guide <pinball_loss>`.
@@ -3701,7 +3701,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanSquaredError a owl:Class ;
+ml:MeanSquaredErrorMethod a owl:Class ;
     rdfs:comment """Mean squared error regression loss.
 
 Read more in the :ref:`User Guide <mean_squared_error>`.
@@ -3760,7 +3760,7 @@ array([0.41666667, 1.        ])
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MeanSquaredLogError a owl:Class ;
+ml:MeanSquaredLogErrorMethod a owl:Class ;
     rdfs:comment """Mean squared logarithmic error regression loss.
 
 Read more in the :ref:`User Guide <mean_squared_log_error>`.
@@ -3822,7 +3822,7 @@ array([0.00462428, 0.08377444])
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:NdcgScore a owl:Class ;
+ml:NdcgScoreMethod a owl:Class ;
     rdfs:comment """Compute Normalized Discounted Cumulative Gain.
 
 Sum the true scores ranked in the order induced by the predicted scores,
@@ -3919,7 +3919,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PrecisionRecallCurve a owl:Class ;
+ml:PrecisionRecallCurveMethod a owl:Class ;
     rdfs:comment """Compute precision-recall pairs for different probability thresholds.
 
 Note: this implementation is restricted to the binary classification task.
@@ -4010,7 +4010,7 @@ array([0.1 , 0.35, 0.4 , 0.8 ])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:R2Score a owl:Class ;
+ml:R2ScoreMethod a owl:Class ;
     rdfs:comment """:math:`R^2` (coefficient of determination) regression score function.
 
 Best possible score is 1.0 and it can be negative (because the
@@ -4132,7 +4132,7 @@ nan
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:RocAucScore a owl:Class ;
+ml:RocAucScoreMethod a owl:Class ;
     rdfs:comment """Compute Area Under the Receiver Operating Characteristic Curve (ROC AUC)     from prediction scores.
 
 Note: this implementation can be used with binary, multiclass and
@@ -4320,7 +4320,7 @@ array([0.81..., 0.84... , 0.93..., 0.87..., 0.94...])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:RocCurve a owl:Class ;
+ml:RocCurveMethod a owl:Class ;
     rdfs:comment """Compute Receiver operating characteristic (ROC).
 
 Note: this implementation is restricted to the binary classification task.
@@ -4413,7 +4413,7 @@ array([ inf, 0.8 , 0.4 , 0.35, 0.1 ])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:TopKAccuracyScore a owl:Class ;
+ml:TopKAccuracyScoreMethod a owl:Class ;
     rdfs:comment """Top-k Accuracy classification score.
 
 This metric computes the number of times where the correct label is among
@@ -4493,7 +4493,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:ClassificationReport a owl:Class ;
+ml:ClassificationReportMethod a owl:Class ;
     rdfs:comment """Build a text report showing the main classification metrics.
 
 Read more in the :ref:`User Guide <classification_report>`.
@@ -4603,7 +4603,7 @@ weighted avg       1.00      0.67      0.80         3
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:ConsensusScore a owl:Class ;
+ml:ConsensusScoreMethod a owl:Class ;
     rdfs:comment """The similarity of two sets of biclusters.
 
 Similarity between individual biclusters is computed. Then the
@@ -4650,7 +4650,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:DcgScore a owl:Class ;
+ml:DcgScoreMethod a owl:Class ;
     rdfs:comment """Compute Discounted Cumulative Gain.
 
 Sum the true scores ranked in the order induced by the predicted scores,
@@ -4746,7 +4746,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:F1Score a owl:Class ;
+ml:F1ScoreMethod a owl:Class ;
     rdfs:comment """Compute the F1 score, also known as balanced F-score or F-measure.
 
 The F1 score can be interpreted as a harmonic mean of the precision and
@@ -4900,7 +4900,7 @@ array([0.66666667, 1.        , 0.66666667])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:JaccardScore a owl:Class ;
+ml:JaccardScoreMethod a owl:Class ;
     rdfs:comment """Jaccard similarity coefficient score.
 
 The Jaccard index [1], or Jaccard similarity coefficient, defined as
@@ -5033,7 +5033,7 @@ array([1. , 0. , 0.33...])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:NanEuclideanDistances a owl:Class ;
+ml:NanEuclideanDistancesMethod a owl:Class ;
     rdfs:comment """Calculate the euclidean distances in the presence of missing values.
 
 Compute the euclidean distance between each pair of samples in X and Y,
@@ -5111,7 +5111,178 @@ array([[1.        ],
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PairwiseDistances a owl:Class ;
+ml:PairwiseDistancesArgminMethod a owl:Class ;
+    rdfs:comment """Compute minimum distances between one point and a set of points.
+
+This function computes for each row in X, the index of the row of Y which
+is closest (according to the specified distance).
+
+This is mostly equivalent to calling:
+
+    pairwise_distances(X, Y=Y, metric=metric).argmin(axis=axis)
+
+but uses much less memory, and is faster for large arrays.
+
+This function works with dense 2D arrays only.
+
+Parameters
+----------
+X : {array-like, sparse matrix} of shape (n_samples_X, n_features)
+    Array containing points.
+
+Y : {array-like, sparse matrix} of shape (n_samples_Y, n_features)
+    Arrays containing points.
+
+axis : int, default=1
+    Axis along which the argmin and distances are to be computed.
+
+metric : str or callable, default="euclidean"
+    Metric to use for distance computation. Any metric from scikit-learn
+    or scipy.spatial.distance can be used.
+
+    If metric is a callable function, it is called on each
+    pair of instances (rows) and the resulting value recorded. The callable
+    should take two arrays as input and return one value indicating the
+    distance between them. This works for Scipy's metrics, but is less
+    efficient than passing the metric name as a string.
+
+    Distance matrices are not supported.
+
+    Valid values for metric are:
+
+    - from scikit-learn: ['cityblock', 'cosine', 'euclidean', 'l1', 'l2',
+      'manhattan']
+
+    - from scipy.spatial.distance: ['braycurtis', 'canberra', 'chebyshev',
+      'correlation', 'dice', 'hamming', 'jaccard', 'kulsinski',
+      'mahalanobis', 'minkowski', 'rogerstanimoto', 'russellrao',
+      'seuclidean', 'sokalmichener', 'sokalsneath', 'sqeuclidean',
+      'yule']
+
+    See the documentation for scipy.spatial.distance for details on these
+    metrics.
+
+    .. note::
+       `'kulsinski'` is deprecated from SciPy 1.9 and will be removed in SciPy 1.11.
+
+    .. note::
+       `'matching'` has been removed in SciPy 1.9 (use `'hamming'` instead).
+
+metric_kwargs : dict, default=None
+    Keyword arguments to pass to specified metric function.
+
+Returns
+-------
+argmin : numpy.ndarray
+    Y[argmin[i], :] is the row in Y that is closest to X[i, :].
+
+See Also
+--------
+pairwise_distances : Distances between every pair of samples of X and Y.
+pairwise_distances_argmin_min : Same as `pairwise_distances_argmin` but also
+    returns the distances.
+
+Examples
+--------
+>>> from sklearn.metrics.pairwise import pairwise_distances_argmin
+>>> X = [[0, 0, 0], [1, 1, 1]]
+>>> Y = [[1, 0, 0], [1, 1, 0]]
+>>> pairwise_distances_argmin(X, Y)
+array([0, 1])""" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
+
+ml:PairwiseDistancesArgminMinMethod a owl:Class ;
+    rdfs:comment """Compute minimum distances between one point and a set of points.
+
+This function computes for each row in X, the index of the row of Y which
+is closest (according to the specified distance). The minimal distances are
+also returned.
+
+This is mostly equivalent to calling:
+
+    (pairwise_distances(X, Y=Y, metric=metric).argmin(axis=axis),
+     pairwise_distances(X, Y=Y, metric=metric).min(axis=axis))
+
+but uses much less memory, and is faster for large arrays.
+
+Parameters
+----------
+X : {array-like, sparse matrix} of shape (n_samples_X, n_features)
+    Array containing points.
+
+Y : {array-like, sparse matrix} of shape (n_samples_Y, n_features)
+    Array containing points.
+
+axis : int, default=1
+    Axis along which the argmin and distances are to be computed.
+
+metric : str or callable, default='euclidean'
+    Metric to use for distance computation. Any metric from scikit-learn
+    or scipy.spatial.distance can be used.
+
+    If metric is a callable function, it is called on each
+    pair of instances (rows) and the resulting value recorded. The callable
+    should take two arrays as input and return one value indicating the
+    distance between them. This works for Scipy's metrics, but is less
+    efficient than passing the metric name as a string.
+
+    Distance matrices are not supported.
+
+    Valid values for metric are:
+
+    - from scikit-learn: ['cityblock', 'cosine', 'euclidean', 'l1', 'l2',
+      'manhattan']
+
+    - from scipy.spatial.distance: ['braycurtis', 'canberra', 'chebyshev',
+      'correlation', 'dice', 'hamming', 'jaccard', 'kulsinski',
+      'mahalanobis', 'minkowski', 'rogerstanimoto', 'russellrao',
+      'seuclidean', 'sokalmichener', 'sokalsneath', 'sqeuclidean',
+      'yule']
+
+    See the documentation for scipy.spatial.distance for details on these
+    metrics.
+
+    .. note::
+       `'kulsinski'` is deprecated from SciPy 1.9 and will be removed in SciPy 1.11.
+
+    .. note::
+       `'matching'` has been removed in SciPy 1.9 (use `'hamming'` instead).
+
+metric_kwargs : dict, default=None
+    Keyword arguments to pass to specified metric function.
+
+Returns
+-------
+argmin : ndarray
+    Y[argmin[i], :] is the row in Y that is closest to X[i, :].
+
+distances : ndarray
+    The array of minimum distances. `distances[i]` is the distance between
+    the i-th row in X and the argmin[i]-th row in Y.
+
+See Also
+--------
+pairwise_distances : Distances between every pair of samples of X and Y.
+pairwise_distances_argmin : Same as `pairwise_distances_argmin_min` but only
+    returns the argmins.
+
+Examples
+--------
+>>> from sklearn.metrics.pairwise import pairwise_distances_argmin_min
+>>> X = [[0, 0, 0], [1, 1, 1]]
+>>> Y = [[1, 0, 0], [1, 1, 0]]
+>>> argmin, distances = pairwise_distances_argmin_min(X, Y)
+>>> argmin
+array([0, 1])
+>>> distances
+array([1., 1.])""" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:MetricsModule,
+        ml:PerformanceCalculationMethod .
+
+ml:PairwiseDistancesMethod a owl:Class ;
     rdfs:comment """Compute the distance matrix from a vector array X and optional Y.
 
 This method takes either a vector array or a distance matrix, and returns
@@ -5234,178 +5405,7 @@ array([[1., 2.],
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PairwiseDistancesArgmin a owl:Class ;
-    rdfs:comment """Compute minimum distances between one point and a set of points.
-
-This function computes for each row in X, the index of the row of Y which
-is closest (according to the specified distance).
-
-This is mostly equivalent to calling:
-
-    pairwise_distances(X, Y=Y, metric=metric).argmin(axis=axis)
-
-but uses much less memory, and is faster for large arrays.
-
-This function works with dense 2D arrays only.
-
-Parameters
-----------
-X : {array-like, sparse matrix} of shape (n_samples_X, n_features)
-    Array containing points.
-
-Y : {array-like, sparse matrix} of shape (n_samples_Y, n_features)
-    Arrays containing points.
-
-axis : int, default=1
-    Axis along which the argmin and distances are to be computed.
-
-metric : str or callable, default="euclidean"
-    Metric to use for distance computation. Any metric from scikit-learn
-    or scipy.spatial.distance can be used.
-
-    If metric is a callable function, it is called on each
-    pair of instances (rows) and the resulting value recorded. The callable
-    should take two arrays as input and return one value indicating the
-    distance between them. This works for Scipy's metrics, but is less
-    efficient than passing the metric name as a string.
-
-    Distance matrices are not supported.
-
-    Valid values for metric are:
-
-    - from scikit-learn: ['cityblock', 'cosine', 'euclidean', 'l1', 'l2',
-      'manhattan']
-
-    - from scipy.spatial.distance: ['braycurtis', 'canberra', 'chebyshev',
-      'correlation', 'dice', 'hamming', 'jaccard', 'kulsinski',
-      'mahalanobis', 'minkowski', 'rogerstanimoto', 'russellrao',
-      'seuclidean', 'sokalmichener', 'sokalsneath', 'sqeuclidean',
-      'yule']
-
-    See the documentation for scipy.spatial.distance for details on these
-    metrics.
-
-    .. note::
-       `'kulsinski'` is deprecated from SciPy 1.9 and will be removed in SciPy 1.11.
-
-    .. note::
-       `'matching'` has been removed in SciPy 1.9 (use `'hamming'` instead).
-
-metric_kwargs : dict, default=None
-    Keyword arguments to pass to specified metric function.
-
-Returns
--------
-argmin : numpy.ndarray
-    Y[argmin[i], :] is the row in Y that is closest to X[i, :].
-
-See Also
---------
-pairwise_distances : Distances between every pair of samples of X and Y.
-pairwise_distances_argmin_min : Same as `pairwise_distances_argmin` but also
-    returns the distances.
-
-Examples
---------
->>> from sklearn.metrics.pairwise import pairwise_distances_argmin
->>> X = [[0, 0, 0], [1, 1, 1]]
->>> Y = [[1, 0, 0], [1, 1, 0]]
->>> pairwise_distances_argmin(X, Y)
-array([0, 1])""" ;
-    rdfs:subClassOf ds:AtomicMethod,
-        ml:MetricsModule,
-        ml:PerformanceCalculationMethod .
-
-ml:PairwiseDistancesArgminMin a owl:Class ;
-    rdfs:comment """Compute minimum distances between one point and a set of points.
-
-This function computes for each row in X, the index of the row of Y which
-is closest (according to the specified distance). The minimal distances are
-also returned.
-
-This is mostly equivalent to calling:
-
-    (pairwise_distances(X, Y=Y, metric=metric).argmin(axis=axis),
-     pairwise_distances(X, Y=Y, metric=metric).min(axis=axis))
-
-but uses much less memory, and is faster for large arrays.
-
-Parameters
-----------
-X : {array-like, sparse matrix} of shape (n_samples_X, n_features)
-    Array containing points.
-
-Y : {array-like, sparse matrix} of shape (n_samples_Y, n_features)
-    Array containing points.
-
-axis : int, default=1
-    Axis along which the argmin and distances are to be computed.
-
-metric : str or callable, default='euclidean'
-    Metric to use for distance computation. Any metric from scikit-learn
-    or scipy.spatial.distance can be used.
-
-    If metric is a callable function, it is called on each
-    pair of instances (rows) and the resulting value recorded. The callable
-    should take two arrays as input and return one value indicating the
-    distance between them. This works for Scipy's metrics, but is less
-    efficient than passing the metric name as a string.
-
-    Distance matrices are not supported.
-
-    Valid values for metric are:
-
-    - from scikit-learn: ['cityblock', 'cosine', 'euclidean', 'l1', 'l2',
-      'manhattan']
-
-    - from scipy.spatial.distance: ['braycurtis', 'canberra', 'chebyshev',
-      'correlation', 'dice', 'hamming', 'jaccard', 'kulsinski',
-      'mahalanobis', 'minkowski', 'rogerstanimoto', 'russellrao',
-      'seuclidean', 'sokalmichener', 'sokalsneath', 'sqeuclidean',
-      'yule']
-
-    See the documentation for scipy.spatial.distance for details on these
-    metrics.
-
-    .. note::
-       `'kulsinski'` is deprecated from SciPy 1.9 and will be removed in SciPy 1.11.
-
-    .. note::
-       `'matching'` has been removed in SciPy 1.9 (use `'hamming'` instead).
-
-metric_kwargs : dict, default=None
-    Keyword arguments to pass to specified metric function.
-
-Returns
--------
-argmin : ndarray
-    Y[argmin[i], :] is the row in Y that is closest to X[i, :].
-
-distances : ndarray
-    The array of minimum distances. `distances[i]` is the distance between
-    the i-th row in X and the argmin[i]-th row in Y.
-
-See Also
---------
-pairwise_distances : Distances between every pair of samples of X and Y.
-pairwise_distances_argmin : Same as `pairwise_distances_argmin_min` but only
-    returns the argmins.
-
-Examples
---------
->>> from sklearn.metrics.pairwise import pairwise_distances_argmin_min
->>> X = [[0, 0, 0], [1, 1, 1]]
->>> Y = [[1, 0, 0], [1, 1, 0]]
->>> argmin, distances = pairwise_distances_argmin_min(X, Y)
->>> argmin
-array([0, 1])
->>> distances
-array([1., 1.])""" ;
-    rdfs:subClassOf ds:AtomicMethod,
-        ml:MetricsModule,
-        ml:PerformanceCalculationMethod .
-
-ml:PairwiseKernels a owl:Class ;
+ml:PairwiseKernelsMethod a owl:Class ;
     rdfs:comment """Compute the kernel between arrays X and optional array Y.
 
 This method takes either a vector array or a kernel matrix, and returns
@@ -5487,7 +5487,7 @@ array([[0., 0.],
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PrecisionScore a owl:Class ;
+ml:PrecisionScoreMethod a owl:Class ;
     rdfs:comment """Compute the precision.
 
 The precision is the ratio ``tp / (tp + fp)`` where ``tp`` is the number of
@@ -5627,7 +5627,7 @@ array([0.5, 1. , 1. ])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:RecallScore a owl:Class ;
+ml:RecallScoreMethod a owl:Class ;
     rdfs:comment """Compute the recall.
 
 The recall is the ratio ``tp / (tp + fn)`` where ``tp`` is the number of
@@ -5768,7 +5768,7 @@ array([1. , 1. , 0.5])""" ;
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:SilhouetteScore a owl:Class ;
+ml:SilhouetteScoreMethod a owl:Class ;
     rdfs:comment """Compute the mean Silhouette Coefficient of all samples.
 
 The Silhouette Coefficient is calculated using the mean intra-cluster
@@ -5847,7 +5847,7 @@ Examples
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:FbetaScore a owl:Class ;
+ml:FbetaScoreMethod a owl:Class ;
     rdfs:comment """Compute the F-beta score.
 
 The F-beta score is the weighted harmonic mean of precision and recall,
@@ -5997,7 +5997,7 @@ array([0.71..., 0.        , 0.        ])
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PairwiseDistancesChunked a owl:Class ;
+ml:PairwiseDistancesChunkedMethod a owl:Class ;
     rdfs:comment """Generate a distance matrix chunk by chunk with optional reduction.
 
 In cases where not all of a pairwise distance matrix needs to be
@@ -6118,7 +6118,7 @@ Force row-by-row generation by reducing ``working_memory``:
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:MakeScorer a owl:Class ;
+ml:MakeScorerMethod a owl:Class ;
     rdfs:comment """Make a scorer from a performance metric or loss function.
 
 A scorer is a wrapper around an arbitrary metric or loss function that is called
@@ -6208,7 +6208,7 @@ make_scorer(fbeta_score, response_method='predict', beta=2)
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
-ml:PrecisionRecallFscoreSupport a owl:Class ;
+ml:PrecisionRecallFscoreSupportMethod a owl:Class ;
     rdfs:comment """Compute precision, recall, F-measure and support for each class.
 
 The precision is the ratio ``tp / (tp + fp)`` where ``tp`` is the number of

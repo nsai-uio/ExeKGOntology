@@ -6,62 +6,62 @@
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:BernoulliNB,
-        ml:CategoricalNB,
-        ml:ComplementNB,
-        ml:GaussianNB,
-        ml:MultinomialNB ;
+    rdfs:range ml:BernoulliNBMethod,
+        ml:CategoricalNBMethod,
+        ml:ComplementNBMethod,
+        ml:GaussianNBMethod,
+        ml:MultinomialNBMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliNB,
-        ml:CategoricalNB,
-        ml:ComplementNB,
-        ml:MultinomialNB ;
+    rdfs:domain ml:BernoulliNBMethod,
+        ml:CategoricalNBMethod,
+        ml:ComplementNBMethod,
+        ml:MultinomialNBMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBinarize a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliNB ;
+    rdfs:domain ml:BernoulliNBMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitPrior a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliNB,
-        ml:CategoricalNB,
-        ml:ComplementNB,
-        ml:MultinomialNB ;
+    rdfs:domain ml:BernoulliNBMethod,
+        ml:CategoricalNBMethod,
+        ml:ComplementNBMethod,
+        ml:MultinomialNBMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamForceAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliNB,
-        ml:CategoricalNB,
-        ml:ComplementNB,
-        ml:MultinomialNB ;
+    rdfs:domain ml:BernoulliNBMethod,
+        ml:CategoricalNBMethod,
+        ml:ComplementNBMethod,
+        ml:MultinomialNBMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinCategories a owl:DatatypeProperty ;
-    rdfs:domain ml:CategoricalNB ;
+    rdfs:domain ml:CategoricalNBMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNorm a owl:DatatypeProperty ;
-    rdfs:domain ml:ComplementNB ;
+    rdfs:domain ml:ComplementNBMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVarSmoothing a owl:DatatypeProperty ;
-    rdfs:domain ml:GaussianNB ;
+    rdfs:domain ml:GaussianNBMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-ml:GaussianNB a owl:Class ;
+ml:GaussianNBMethod a owl:Class ;
     rdfs:comment """Gaussian Naive Bayes (GaussianNB).
 
 Can perform online updates to model parameters via :meth:`partial_fit`.
@@ -144,7 +144,7 @@ GaussianNB()
         ml:NaiveBayesModule,
         ml:TrainMethod .
 
-ml:MultinomialNB a owl:Class ;
+ml:MultinomialNBMethod a owl:Class ;
     rdfs:comment """Naive Bayes classifier for multinomial models.
 
 The multinomial Naive Bayes classifier is suitable for classification with
@@ -238,7 +238,7 @@ MultinomialNB()
         ml:NaiveBayesModule,
         ml:TrainMethod .
 
-ml:BernoulliNB a owl:Class ;
+ml:BernoulliNBMethod a owl:Class ;
     rdfs:comment """Naive Bayes classifier for multivariate Bernoulli models.
 
 Like MultinomialNB, this classifier is suitable for discrete data. The
@@ -342,7 +342,7 @@ BernoulliNB()
         ml:NaiveBayesModule,
         ml:TrainMethod .
 
-ml:CategoricalNB a owl:Class ;
+ml:CategoricalNBMethod a owl:Class ;
     rdfs:comment """Naive Bayes classifier for categorical features.
 
 The categorical Naive Bayes classifier is suitable for classification with
@@ -448,7 +448,7 @@ CategoricalNB()
         ml:NaiveBayesModule,
         ml:TrainMethod .
 
-ml:ComplementNB a owl:Class ;
+ml:ComplementNBMethod a owl:Class ;
     rdfs:comment """The Complement Naive Bayes classifier described in Rennie et al. (2003).
 
 The Complement Naive Bayes classifier was designed to correct the "severe

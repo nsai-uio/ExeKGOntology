@@ -6,236 +6,236 @@
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:KNeighborsClassifier,
-        ml:NearestCentroid,
-        ml:RadiusNeighborsClassifier ;
+    rdfs:range ml:KNeighborsClassifierMethod,
+        ml:NearestCentroidMethod,
+        ml:RadiusNeighborsClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasClusteringMethod a owl:ObjectProperty ;
     rdfs:domain ml:Clustering ;
-    rdfs:range ml:KNeighborsTransformer,
-        ml:KernelDensity,
-        ml:LocalOutlierFactor,
-        ml:NearestNeighbors,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:range ml:KNeighborsTransformerMethod,
+        ml:KernelDensityMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:NearestNeighborsMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasDecompositionMethod a owl:ObjectProperty ;
     rdfs:domain ml:Decomposition ;
-    rdfs:range ml:NeighborhoodComponentsAnalysis ;
+    rdfs:range ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:subPropertyOf ml:hasPrepareTransformerMethod .
 
 ml:hasInstanceBasedRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:InstanceBasedRegression ;
-    rdfs:range ml:KNeighborsRegressor,
-        ml:RadiusNeighborsRegressor ;
+    rdfs:range ml:KNeighborsRegressorMethod,
+        ml:RadiusNeighborsRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasMulticlassClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:MulticlassClassification ;
-    rdfs:range ml:KNeighborsClassifier,
-        ml:NearestCentroid,
-        ml:RadiusNeighborsClassifier ;
+    rdfs:range ml:KNeighborsClassifierMethod,
+        ml:NearestCentroidMethod,
+        ml:RadiusNeighborsClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamAlgorithm a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:KNeighborsTransformer,
-        ml:KernelDensity,
-        ml:LocalOutlierFactor,
-        ml:NearestNeighbors,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:KNeighborsTransformerMethod,
+        ml:KernelDensityMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:NearestNeighborsMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAtol a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelDensity ;
+    rdfs:domain ml:KernelDensityMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBandwidth a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelDensity ;
+    rdfs:domain ml:KernelDensityMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBreadthFirst a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelDensity ;
+    rdfs:domain ml:KernelDensityMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCallback a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamContamination a owl:DatatypeProperty ;
-    rdfs:domain ml:LocalOutlierFactor ;
+    rdfs:domain ml:LocalOutlierFactorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInit a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKernel a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelDensity ;
+    rdfs:domain ml:KernelDensityMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLeafSize a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:KNeighborsTransformer,
-        ml:KernelDensity,
-        ml:LocalOutlierFactor,
-        ml:NearestNeighbors,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:KNeighborsTransformerMethod,
+        ml:KernelDensityMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:NearestNeighborsMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMetric a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:KNeighborsTransformer,
-        ml:KernelDensity,
-        ml:LocalOutlierFactor,
-        ml:NearestCentroid,
-        ml:NearestNeighbors,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:KNeighborsTransformerMethod,
+        ml:KernelDensityMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:NearestCentroidMethod,
+        ml:NearestNeighborsMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMetricParams a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:KNeighborsTransformer,
-        ml:KernelDensity,
-        ml:LocalOutlierFactor,
-        ml:NearestNeighbors,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:KNeighborsTransformerMethod,
+        ml:KernelDensityMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:NearestNeighborsMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMode a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsTransformer,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:KNeighborsTransformerMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNComponents a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:KNeighborsTransformer,
-        ml:LocalOutlierFactor,
-        ml:NearestNeighbors,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:KNeighborsTransformerMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:NearestNeighborsMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNNeighbors a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:KNeighborsTransformer,
-        ml:LocalOutlierFactor,
-        ml:NearestNeighbors ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:KNeighborsTransformerMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:NearestNeighborsMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNovelty a owl:DatatypeProperty ;
-    rdfs:domain ml:LocalOutlierFactor ;
+    rdfs:domain ml:LocalOutlierFactorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamOutlierLabel a owl:DatatypeProperty ;
-    rdfs:domain ml:RadiusNeighborsClassifier ;
+    rdfs:domain ml:RadiusNeighborsClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamP a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:KNeighborsTransformer,
-        ml:LocalOutlierFactor,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:KNeighborsTransformerMethod,
+        ml:LocalOutlierFactorMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRadius a owl:DatatypeProperty ;
-    rdfs:domain ml:NearestNeighbors,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor,
-        ml:RadiusNeighborsTransformer ;
+    rdfs:domain ml:NearestNeighborsMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod,
+        ml:RadiusNeighborsTransformerMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRtol a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelDensity ;
+    rdfs:domain ml:KernelDensityMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShrinkThreshold a owl:DatatypeProperty ;
-    rdfs:domain ml:NearestCentroid ;
+    rdfs:domain ml:NearestCentroidMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWarmStart a owl:DatatypeProperty ;
-    rdfs:domain ml:NeighborhoodComponentsAnalysis ;
+    rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWeights a owl:DatatypeProperty ;
-    rdfs:domain ml:KNeighborsClassifier,
-        ml:KNeighborsRegressor,
-        ml:RadiusNeighborsClassifier,
-        ml:RadiusNeighborsRegressor ;
+    rdfs:domain ml:KNeighborsClassifierMethod,
+        ml:KNeighborsRegressorMethod,
+        ml:RadiusNeighborsClassifierMethod,
+        ml:RadiusNeighborsRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-ml:NearestCentroid a owl:Class ;
+ml:NearestCentroidMethod a owl:Class ;
     rdfs:comment """Nearest centroid classifier.
 
 Each class is represented by its centroid, with test samples classified to
@@ -321,7 +321,7 @@ NearestCentroid()
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:NearestNeighbors a owl:Class ;
+ml:NearestNeighborsMethod a owl:Class ;
     rdfs:comment """Unsupervised learner for implementing neighbor searches.
 
 Read more in the :ref:`User Guide <unsupervised_neighbors>`.
@@ -448,7 +448,7 @@ array(2)""" ;
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:KNeighborsRegressor a owl:Class ;
+ml:KNeighborsRegressorMethod a owl:Class ;
     rdfs:comment """Regression based on k-nearest neighbors.
 
 The target is predicted by local interpolation of the targets
@@ -594,7 +594,7 @@ KNeighborsRegressor(...)
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:KNeighborsTransformer a owl:Class ;
+ml:KNeighborsTransformerMethod a owl:Class ;
     rdfs:comment """Transform X into a (weighted) graph of k nearest neighbors.
 
 The transformed data is a sparse graph as returned by kneighbors_graph.
@@ -719,7 +719,7 @@ Examples
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:NeighborhoodComponentsAnalysis a owl:Class ;
+ml:NeighborhoodComponentsAnalysisMethod a owl:Class ;
     rdfs:comment """Neighborhood Components Analysis.
 
 Neighborhood Component Analysis (NCA) is a machine learning algorithm for
@@ -871,7 +871,7 @@ KNeighborsClassifier(...)
         ml:NeighborsModule,
         ml:PrepareTransformerMethod .
 
-ml:RadiusNeighborsRegressor a owl:Class ;
+ml:RadiusNeighborsRegressorMethod a owl:Class ;
     rdfs:comment """Regression based on neighbors within a fixed radius.
 
 The target is predicted by local interpolation of the targets
@@ -1006,7 +1006,7 @@ RadiusNeighborsRegressor(...)
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:RadiusNeighborsTransformer a owl:Class ;
+ml:RadiusNeighborsTransformerMethod a owl:Class ;
     rdfs:comment """Transform X into a (weighted) graph of neighbors nearer than a radius.
 
 The transformed data is a sparse graph as returned by
@@ -1127,7 +1127,7 @@ Examples
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:KNeighborsClassifier a owl:Class ;
+ml:KNeighborsClassifierMethod a owl:Class ;
     rdfs:comment """Classifier implementing the k-nearest neighbors vote.
 
 Read more in the :ref:`User Guide <classification>`.
@@ -1277,7 +1277,7 @@ KNeighborsClassifier(...)
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:KernelDensity a owl:Class ;
+ml:KernelDensityMethod a owl:Class ;
     rdfs:comment """Kernel Density Estimation.
 
 Read more in the :ref:`User Guide <kernel_density>`.
@@ -1372,7 +1372,7 @@ array([-1.52955942, -1.51462041, -1.60244657])""" ;
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:LocalOutlierFactor a owl:Class ;
+ml:LocalOutlierFactorMethod a owl:Class ;
     rdfs:comment """Unsupervised Outlier Detection using the Local Outlier Factor (LOF).
 
 The anomaly score of each sample is called the Local Outlier Factor.
@@ -1543,7 +1543,7 @@ array([ -0.9821...,  -1.0370..., -73.3697...,  -0.9821...])""" ;
 ml:NeighborsModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:RadiusNeighborsClassifier a owl:Class ;
+ml:RadiusNeighborsClassifierMethod a owl:Class ;
     rdfs:comment """Classifier implementing a vote among neighbors within a given radius.
 
 Read more in the :ref:`User Guide <classification>`.

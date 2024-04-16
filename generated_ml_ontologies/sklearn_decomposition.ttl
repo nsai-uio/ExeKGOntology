@@ -6,474 +6,474 @@
 
 ml:hasDecompositionMethod a owl:ObjectProperty ;
     rdfs:domain ml:Decomposition ;
-    rdfs:range ml:DictionaryLearning,
-        ml:FactorAnalysis,
-        ml:FastICA,
-        ml:IncrementalPCA,
-        ml:KernelPCA,
-        ml:LatentDirichletAllocation,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA,
-        ml:NMF,
-        ml:PCA,
-        ml:SparseCoder,
-        ml:SparsePCA,
-        ml:TruncatedSVD ;
+    rdfs:range ml:DictionaryLearningMethod,
+        ml:FactorAnalysisMethod,
+        ml:FastICAMethod,
+        ml:IncrementalPCAMethod,
+        ml:KernelPCAMethod,
+        ml:LatentDirichletAllocationMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:NMFMethod,
+        ml:PCAMethod,
+        ml:SparseCoderMethod,
+        ml:SparsePCAMethod,
+        ml:TruncatedSVDMethod ;
     rdfs:subPropertyOf ml:hasPrepareTransformerMethod .
 
 ml:hasParamAlgorithm a owl:DatatypeProperty ;
-    rdfs:domain ml:FastICA,
-        ml:TruncatedSVD ;
+    rdfs:domain ml:FastICAMethod,
+        ml:TruncatedSVDMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:KernelPCA,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchSparsePCA,
-        ml:SparsePCA ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:KernelPCAMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:SparsePCAMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphaH a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF,
-        ml:NMF ;
+    rdfs:domain ml:MiniBatchNMFMethod,
+        ml:NMFMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphaW a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF,
-        ml:NMF ;
+    rdfs:domain ml:MiniBatchNMFMethod,
+        ml:NMFMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBatchSize a owl:DatatypeProperty ;
-    rdfs:domain ml:IncrementalPCA,
-        ml:LatentDirichletAllocation,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA ;
+    rdfs:domain ml:IncrementalPCAMethod,
+        ml:LatentDirichletAllocationMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBetaLoss a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF,
-        ml:NMF ;
+    rdfs:domain ml:MiniBatchNMFMethod,
+        ml:NMFMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCallback a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchSparsePCA ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchSparsePCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCodeInit a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning ;
+    rdfs:domain ml:DictionaryLearningMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCoef0 a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopy a owl:DatatypeProperty ;
-    rdfs:domain ml:FactorAnalysis,
-        ml:IncrementalPCA,
-        ml:PCA ;
+    rdfs:domain ml:FactorAnalysisMethod,
+        ml:IncrementalPCAMethod,
+        ml:PCAMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopyX a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDegree a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDictInit a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDictionary a owl:DatatypeProperty ;
-    rdfs:domain ml:SparseCoder ;
+    rdfs:domain ml:SparseCoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDocTopicPrior a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEigenSolver a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEvaluateEvery a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitAlgorithm a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitInverseTransform a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamForgetFactor a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF ;
+    rdfs:domain ml:MiniBatchNMFMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFreshRestarts a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF ;
+    rdfs:domain ml:MiniBatchNMFMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFreshRestartsMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF ;
+    rdfs:domain ml:MiniBatchNMFMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFun a owl:DatatypeProperty ;
-    rdfs:domain ml:FastICA ;
+    rdfs:domain ml:FastICAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFunArgs a owl:DatatypeProperty ;
-    rdfs:domain ml:FastICA ;
+    rdfs:domain ml:FastICAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamGamma a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInit a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF,
-        ml:NMF ;
+    rdfs:domain ml:MiniBatchNMFMethod,
+        ml:NMFMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamIteratedPower a owl:DatatypeProperty ;
-    rdfs:domain ml:FactorAnalysis,
-        ml:PCA ;
+    rdfs:domain ml:FactorAnalysisMethod,
+        ml:PCAMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKernel a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKernelParams a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamL1Ratio a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchNMF,
-        ml:NMF ;
+    rdfs:domain ml:MiniBatchNMFMethod,
+        ml:NMFMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningDecay a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningOffset a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxDocUpdateIter a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:FactorAnalysis,
-        ml:FastICA,
-        ml:KernelPCA,
-        ml:LatentDirichletAllocation,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA,
-        ml:NMF,
-        ml:SparsePCA ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:FactorAnalysisMethod,
+        ml:FastICAMethod,
+        ml:KernelPCAMethod,
+        ml:LatentDirichletAllocationMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:NMFMethod,
+        ml:SparsePCAMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxNoImprovement a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA ;
+    rdfs:domain ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMeanChangeTol a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchSparsePCA,
-        ml:SparsePCA ;
+    rdfs:domain ml:MiniBatchSparsePCAMethod,
+        ml:SparsePCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNComponents a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:FactorAnalysis,
-        ml:FastICA,
-        ml:IncrementalPCA,
-        ml:KernelPCA,
-        ml:LatentDirichletAllocation,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA,
-        ml:NMF,
-        ml:PCA,
-        ml:SparsePCA,
-        ml:TruncatedSVD ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:FactorAnalysisMethod,
+        ml:FastICAMethod,
+        ml:IncrementalPCAMethod,
+        ml:KernelPCAMethod,
+        ml:LatentDirichletAllocationMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:NMFMethod,
+        ml:PCAMethod,
+        ml:SparsePCAMethod,
+        ml:TruncatedSVDMethod ;
     rdfs:range xsd:float,
         xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNIter a owl:DatatypeProperty ;
-    rdfs:domain ml:TruncatedSVD ;
+    rdfs:domain ml:TruncatedSVDMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:KernelPCA,
-        ml:LatentDirichletAllocation,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchSparsePCA,
-        ml:SparseCoder,
-        ml:SparsePCA ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:KernelPCAMethod,
+        ml:LatentDirichletAllocationMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:SparseCoderMethod,
+        ml:SparsePCAMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNOversamples a owl:DatatypeProperty ;
-    rdfs:domain ml:PCA,
-        ml:TruncatedSVD ;
+    rdfs:domain ml:PCAMethod,
+        ml:TruncatedSVDMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPerpTol a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPositiveCode a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning,
-        ml:SparseCoder ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:SparseCoderMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPositiveDict a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPowerIterationNormalizer a owl:DatatypeProperty ;
-    rdfs:domain ml:PCA,
-        ml:TruncatedSVD ;
+    rdfs:domain ml:PCAMethod,
+        ml:TruncatedSVDMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:FactorAnalysis,
-        ml:FastICA,
-        ml:KernelPCA,
-        ml:LatentDirichletAllocation,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA,
-        ml:NMF,
-        ml:PCA,
-        ml:SparsePCA,
-        ml:TruncatedSVD ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:FactorAnalysisMethod,
+        ml:FastICAMethod,
+        ml:KernelPCAMethod,
+        ml:LatentDirichletAllocationMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:NMFMethod,
+        ml:PCAMethod,
+        ml:SparsePCAMethod,
+        ml:TruncatedSVDMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRemoveZeroEig a owl:DatatypeProperty ;
-    rdfs:domain ml:KernelPCA ;
+    rdfs:domain ml:KernelPCAMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRidgeAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchSparsePCA,
-        ml:SparsePCA ;
+    rdfs:domain ml:MiniBatchSparsePCAMethod,
+        ml:SparsePCAMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRotation a owl:DatatypeProperty ;
-    rdfs:domain ml:FactorAnalysis ;
+    rdfs:domain ml:FactorAnalysisMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShuffle a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchSparsePCA,
-        ml:NMF ;
+    rdfs:domain ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:NMFMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSolver a owl:DatatypeProperty ;
-    rdfs:domain ml:NMF ;
+    rdfs:domain ml:NMFMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSplitSign a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning,
-        ml:SparseCoder ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:SparseCoderMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSvdMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:FactorAnalysis ;
+    rdfs:domain ml:FactorAnalysisMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSvdSolver a owl:DatatypeProperty ;
-    rdfs:domain ml:PCA ;
+    rdfs:domain ml:PCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:FactorAnalysis,
-        ml:FastICA,
-        ml:KernelPCA,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA,
-        ml:NMF,
-        ml:PCA,
-        ml:SparsePCA,
-        ml:TruncatedSVD ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:FactorAnalysisMethod,
+        ml:FastICAMethod,
+        ml:KernelPCAMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:NMFMethod,
+        ml:PCAMethod,
+        ml:SparsePCAMethod,
+        ml:TruncatedSVDMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTopicWordPrior a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTotalSamples a owl:DatatypeProperty ;
-    rdfs:domain ml:LatentDirichletAllocation ;
+    rdfs:domain ml:LatentDirichletAllocationMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTransformAlgorithm a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning,
-        ml:SparseCoder ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:SparseCoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTransformAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning,
-        ml:SparseCoder ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:SparseCoderMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTransformMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:SparseCoder ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:SparseCoderMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTransformNNonzeroCoefs a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:MiniBatchDictionaryLearning,
-        ml:SparseCoder ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:SparseCoderMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamUInit a owl:DatatypeProperty ;
-    rdfs:domain ml:SparsePCA ;
+    rdfs:domain ml:SparsePCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVInit a owl:DatatypeProperty ;
-    rdfs:domain ml:SparsePCA ;
+    rdfs:domain ml:SparsePCAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:DictionaryLearning,
-        ml:LatentDirichletAllocation,
-        ml:MiniBatchDictionaryLearning,
-        ml:MiniBatchNMF,
-        ml:MiniBatchSparsePCA,
-        ml:NMF,
-        ml:SparsePCA ;
+    rdfs:domain ml:DictionaryLearningMethod,
+        ml:LatentDirichletAllocationMethod,
+        ml:MiniBatchDictionaryLearningMethod,
+        ml:MiniBatchNMFMethod,
+        ml:MiniBatchSparsePCAMethod,
+        ml:NMFMethod,
+        ml:SparsePCAMethod ;
     rdfs:range xsd:boolean,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWInit a owl:DatatypeProperty ;
-    rdfs:domain ml:FastICA ;
+    rdfs:domain ml:FastICAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWhiten a owl:DatatypeProperty ;
-    rdfs:domain ml:FastICA,
-        ml:IncrementalPCA,
-        ml:PCA ;
+    rdfs:domain ml:FastICAMethod,
+        ml:IncrementalPCAMethod,
+        ml:PCAMethod ;
     rdfs:range xsd:boolean,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWhitenSolver a owl:DatatypeProperty ;
-    rdfs:domain ml:FastICA ;
+    rdfs:domain ml:FastICAMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-ml:IncrementalPCA a owl:Class ;
+ml:IncrementalPCAMethod a owl:Class ;
     rdfs:comment """Incremental principal components analysis (IPCA).
 
 Linear dimensionality reduction using Singular Value Decomposition of
@@ -643,7 +643,7 @@ IncrementalPCA(batch_size=200, n_components=7)
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:TruncatedSVD a owl:Class ;
+ml:TruncatedSVDMethod a owl:Class ;
     rdfs:comment """Dimensionality reduction using truncated SVD (aka LSA).
 
 This transformer performs linear dimensionality reduction by means of
@@ -778,7 +778,7 @@ TruncatedSVD(n_components=5, n_iter=7, random_state=42)
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:FactorAnalysis a owl:Class ;
+ml:FactorAnalysisMethod a owl:Class ;
     rdfs:comment """Factor Analysis (FA).
 
 A simple linear generative model with Gaussian latent variables.
@@ -907,7 +907,7 @@ Examples
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:SparseCoder a owl:Class ;
+ml:SparseCoderMethod a owl:Class ;
     rdfs:comment """Sparse coding.
 
 Finds a sparse representation of data against a fixed, precomputed
@@ -1028,7 +1028,7 @@ array([[ 0.,  0., -1.,  0.,  0.],
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:PCA a owl:Class ;
+ml:PCAMethod a owl:Class ;
     rdfs:comment """Principal component analysis (PCA).
 
 Linear dimensionality reduction using Singular Value Decomposition of the
@@ -1275,7 +1275,7 @@ PCA(n_components=1, svd_solver='arpack')
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:FastICA a owl:Class ;
+ml:FastICAMethod a owl:Class ;
     rdfs:comment """FastICA: a fast algorithm for Independent Component Analysis.
 
 The implementation is based on [1]_.
@@ -1413,7 +1413,7 @@ Examples
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:SparsePCA a owl:Class ;
+ml:SparsePCAMethod a owl:Class ;
     rdfs:comment """Sparse Principal Components Analysis (SparsePCA).
 
 Finds the set of sparse components that can optimally reconstruct
@@ -1529,7 +1529,7 @@ SparsePCA(...)
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:NMF a owl:Class ;
+ml:NMFMethod a owl:Class ;
     rdfs:comment """Non-Negative Matrix Factorization (NMF).
 
 Find two non-negative matrices, i.e. matrices with all non-negative elements, (W, H)
@@ -1741,7 +1741,7 @@ Examples
 ml:DecompositionModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:MiniBatchSparsePCA a owl:Class ;
+ml:MiniBatchSparsePCAMethod a owl:Class ;
     rdfs:comment """Mini-batch Sparse Principal Components Analysis.
 
 Finds the set of sparse components that can optimally reconstruct
@@ -1883,7 +1883,7 @@ MiniBatchSparsePCA(...)
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:KernelPCA a owl:Class ;
+ml:KernelPCAMethod a owl:Class ;
     rdfs:comment """Kernel Principal component analysis (KPCA) [1]_.
 
 Non-linear dimensionality reduction through the use of kernels (see
@@ -2095,7 +2095,7 @@ Examples
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:LatentDirichletAllocation a owl:Class ;
+ml:LatentDirichletAllocationMethod a owl:Class ;
     rdfs:comment """Latent Dirichlet Allocation with online variational Bayes algorithm.
 
 The implementation is based on [1]_ and [2]_.
@@ -2277,7 +2277,7 @@ array([[0.00360392, 0.25499205, 0.0036211 , 0.64236448, 0.09541846],
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:MiniBatchNMF a owl:Class ;
+ml:MiniBatchNMFMethod a owl:Class ;
     rdfs:comment """Mini-Batch Non-Negative Matrix Factorization (NMF).
 
 .. versionadded:: 1.1
@@ -2483,7 +2483,7 @@ Examples
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:DictionaryLearning a owl:Class ;
+ml:DictionaryLearningMethod a owl:Class ;
     rdfs:comment """Dictionary learning.
 
 Finds a dictionary (a set of atoms) that performs well at sparsely
@@ -2677,7 +2677,7 @@ the original signal:
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
 
-ml:MiniBatchDictionaryLearning a owl:Class ;
+ml:MiniBatchDictionaryLearningMethod a owl:Class ;
     rdfs:comment """Mini-batch dictionary learning.
 
 Finds a dictionary (a set of atoms) that performs well at sparsely

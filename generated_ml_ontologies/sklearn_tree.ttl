@@ -6,118 +6,118 @@
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:DecisionTreeClassifier,
-        ml:ExtraTreeClassifier ;
+    rdfs:range ml:DecisionTreeClassifierMethod,
+        ml:ExtraTreeClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasDecisionTreeRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:DecisionTreeRegression ;
-    rdfs:range ml:DecisionTreeRegressor,
-        ml:ExtraTreeRegressor ;
+    rdfs:range ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasMulticlassClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:MulticlassClassification ;
-    rdfs:range ml:DecisionTreeClassifier,
-        ml:ExtraTreeClassifier ;
+    rdfs:range ml:DecisionTreeClassifierMethod,
+        ml:ExtraTreeClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamCcpAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:ExtraTreeClassifier ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:ExtraTreeClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCriterion a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxDepth a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxFeatures a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:float,
         xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxLeafNodes a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinImpurityDecrease a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinSamplesLeaf a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinSamplesSplit a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinWeightFractionLeaf a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSplitter a owl:DatatypeProperty ;
-    rdfs:domain ml:DecisionTreeClassifier,
-        ml:DecisionTreeRegressor,
-        ml:ExtraTreeClassifier,
-        ml:ExtraTreeRegressor ;
+    rdfs:domain ml:DecisionTreeClassifierMethod,
+        ml:DecisionTreeRegressorMethod,
+        ml:ExtraTreeClassifierMethod,
+        ml:ExtraTreeRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -127,7 +127,7 @@ ml:SklearnModule a owl:Class ;
 ml:TreeModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:DecisionTreeRegressor a owl:Class ;
+ml:DecisionTreeRegressorMethod a owl:Class ;
     rdfs:comment """A decision tree regressor.
 
 Read more in the :ref:`User Guide <tree>`.
@@ -343,7 +343,7 @@ array([-0.39..., -0.46...,  0.02...,  0.06..., -0.50...,
         ml:TrainMethod,
         ml:TreeModule .
 
-ml:ExtraTreeRegressor a owl:Class ;
+ml:ExtraTreeRegressorMethod a owl:Class ;
     rdfs:comment """An extremely randomized tree regressor.
 
 Extra-trees differ from classic decision trees in the way they are built.
@@ -556,7 +556,7 @@ Examples
         ml:TrainMethod,
         ml:TreeModule .
 
-ml:DecisionTreeClassifier a owl:Class ;
+ml:DecisionTreeClassifierMethod a owl:Class ;
     rdfs:comment """A decision tree classifier.
 
 Read more in the :ref:`User Guide <tree>`.
@@ -799,7 +799,7 @@ array([ 1.     ,  0.93...,  0.86...,  0.93...,  0.93...,
         ml:TrainMethod,
         ml:TreeModule .
 
-ml:ExtraTreeClassifier a owl:Class ;
+ml:ExtraTreeClassifierMethod a owl:Class ;
     rdfs:comment """An extremely randomized tree classifier.
 
 Extra-trees differ from classic decision trees in the way they are built.

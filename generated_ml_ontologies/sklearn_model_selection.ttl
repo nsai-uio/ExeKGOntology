@@ -5,242 +5,242 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ml:hasParamClassifier a owl:DatatypeProperty ;
-    rdfs:domain ml:CheckCv ;
+    rdfs:domain ml:CheckCvMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCv a owl:DatatypeProperty ;
-    rdfs:domain ml:CheckCv,
-        ml:CrossValPredict,
-        ml:CrossValScore,
-        ml:CrossValidate,
-        ml:LearningCurve,
-        ml:PermutationTestScore,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CheckCvMethod,
+        ml:CrossValPredictMethod,
+        ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:LearningCurveMethod,
+        ml:PermutationTestScoreMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamErrorScore a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValScore,
-        ml:CrossValidate,
-        ml:LearningCurve,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:LearningCurveMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEstimator a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValPredict,
-        ml:LearningCurve,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CrossValPredictMethod,
+        ml:LearningCurveMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamExploitIncrementalLearning a owl:DatatypeProperty ;
-    rdfs:domain ml:LearningCurve ;
+    rdfs:domain ml:LearningCurveMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitParams a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValPredict,
-        ml:CrossValScore,
-        ml:CrossValidate,
-        ml:LearningCurve,
-        ml:PermutationTestScore,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CrossValPredictMethod,
+        ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:LearningCurveMethod,
+        ml:PermutationTestScoreMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamGap a owl:DatatypeProperty ;
-    rdfs:domain ml:TimeSeriesSplit ;
+    rdfs:domain ml:TimeSeriesSplitMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxTrainSize a owl:DatatypeProperty ;
-    rdfs:domain ml:TimeSeriesSplit ;
+    rdfs:domain ml:TimeSeriesSplitMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValPredict ;
+    rdfs:domain ml:CrossValPredictMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNGroups a owl:DatatypeProperty ;
-    rdfs:domain ml:LeavePGroupsOut ;
+    rdfs:domain ml:LeavePGroupsOutMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValPredict,
-        ml:CrossValScore,
-        ml:CrossValidate,
-        ml:LearningCurve,
-        ml:PermutationTestScore,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CrossValPredictMethod,
+        ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:LearningCurveMethod,
+        ml:PermutationTestScoreMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNPermutations a owl:DatatypeProperty ;
-    rdfs:domain ml:PermutationTestScore ;
+    rdfs:domain ml:PermutationTestScoreMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNRepeats a owl:DatatypeProperty ;
-    rdfs:domain ml:RepeatedKFold,
-        ml:RepeatedStratifiedKFold ;
+    rdfs:domain ml:RepeatedKFoldMethod,
+        ml:RepeatedStratifiedKFoldMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNSplits a owl:DatatypeProperty ;
-    rdfs:domain ml:GroupKFold,
-        ml:GroupShuffleSplit,
-        ml:KFold,
-        ml:RepeatedKFold,
-        ml:RepeatedStratifiedKFold,
-        ml:ShuffleSplit,
-        ml:StratifiedGroupKFold,
-        ml:StratifiedKFold,
-        ml:StratifiedShuffleSplit,
-        ml:TimeSeriesSplit ;
+    rdfs:domain ml:GroupKFoldMethod,
+        ml:GroupShuffleSplitMethod,
+        ml:KFoldMethod,
+        ml:RepeatedKFoldMethod,
+        ml:RepeatedStratifiedKFoldMethod,
+        ml:ShuffleSplitMethod,
+        ml:StratifiedGroupKFoldMethod,
+        ml:StratifiedKFoldMethod,
+        ml:StratifiedShuffleSplitMethod,
+        ml:TimeSeriesSplitMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamP a owl:DatatypeProperty ;
-    rdfs:domain ml:LeavePOut ;
+    rdfs:domain ml:LeavePOutMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamParamName a owl:DatatypeProperty ;
-    rdfs:domain ml:ValidationCurve,
-        ml:ValidationCurveDisplay ;
+    rdfs:domain ml:ValidationCurveDisplayMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamParams a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValPredict,
-        ml:CrossValScore,
-        ml:CrossValidate ;
+    rdfs:domain ml:CrossValPredictMethod,
+        ml:CrossValScoreMethod,
+        ml:CrossValidateMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPreDispatch a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValPredict,
-        ml:CrossValScore,
-        ml:CrossValidate,
-        ml:LearningCurve,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CrossValPredictMethod,
+        ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:LearningCurveMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:GroupShuffleSplit,
-        ml:KFold,
-        ml:LearningCurve,
-        ml:PermutationTestScore,
-        ml:RepeatedKFold,
-        ml:RepeatedStratifiedKFold,
-        ml:ShuffleSplit,
-        ml:StratifiedGroupKFold,
-        ml:StratifiedKFold,
-        ml:StratifiedShuffleSplit,
-        ml:TrainTestSplit ;
+    rdfs:domain ml:GroupShuffleSplitMethod,
+        ml:KFoldMethod,
+        ml:LearningCurveMethod,
+        ml:PermutationTestScoreMethod,
+        ml:RepeatedKFoldMethod,
+        ml:RepeatedStratifiedKFoldMethod,
+        ml:ShuffleSplitMethod,
+        ml:StratifiedGroupKFoldMethod,
+        ml:StratifiedKFoldMethod,
+        ml:StratifiedShuffleSplitMethod,
+        ml:TrainTestSplitMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamReturnEstimator a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValidate ;
+    rdfs:domain ml:CrossValidateMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamReturnIndices a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValidate ;
+    rdfs:domain ml:CrossValidateMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamReturnTimes a owl:DatatypeProperty ;
-    rdfs:domain ml:LearningCurve ;
+    rdfs:domain ml:LearningCurveMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamReturnTrainScore a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValidate ;
+    rdfs:domain ml:CrossValidateMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamScoreName a owl:DatatypeProperty ;
-    rdfs:domain ml:LearningCurveDisplay,
-        ml:ValidationCurveDisplay ;
+    rdfs:domain ml:LearningCurveDisplayMethod,
+        ml:ValidationCurveDisplayMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamScoring a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValScore,
-        ml:CrossValidate,
-        ml:LearningCurve,
-        ml:PermutationTestScore,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:LearningCurveMethod,
+        ml:PermutationTestScoreMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShuffle a owl:DatatypeProperty ;
-    rdfs:domain ml:KFold,
-        ml:LearningCurve,
-        ml:StratifiedGroupKFold,
-        ml:StratifiedKFold,
-        ml:TrainTestSplit ;
+    rdfs:domain ml:KFoldMethod,
+        ml:LearningCurveMethod,
+        ml:StratifiedGroupKFoldMethod,
+        ml:StratifiedKFoldMethod,
+        ml:TrainTestSplitMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStratify a owl:DatatypeProperty ;
-    rdfs:domain ml:TrainTestSplit ;
+    rdfs:domain ml:TrainTestSplitMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTestScores a owl:DatatypeProperty ;
-    rdfs:domain ml:LearningCurveDisplay,
-        ml:ValidationCurveDisplay ;
+    rdfs:domain ml:LearningCurveDisplayMethod,
+        ml:ValidationCurveDisplayMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTestSize a owl:DatatypeProperty ;
-    rdfs:domain ml:GroupShuffleSplit,
-        ml:ShuffleSplit,
-        ml:StratifiedShuffleSplit,
-        ml:TimeSeriesSplit,
-        ml:TrainTestSplit ;
+    rdfs:domain ml:GroupShuffleSplitMethod,
+        ml:ShuffleSplitMethod,
+        ml:StratifiedShuffleSplitMethod,
+        ml:TimeSeriesSplitMethod,
+        ml:TrainTestSplitMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTrainScores a owl:DatatypeProperty ;
-    rdfs:domain ml:LearningCurveDisplay,
-        ml:ValidationCurveDisplay ;
+    rdfs:domain ml:LearningCurveDisplayMethod,
+        ml:ValidationCurveDisplayMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTrainSize a owl:DatatypeProperty ;
-    rdfs:domain ml:GroupShuffleSplit,
-        ml:ShuffleSplit,
-        ml:StratifiedShuffleSplit,
-        ml:TrainTestSplit ;
+    rdfs:domain ml:GroupShuffleSplitMethod,
+        ml:ShuffleSplitMethod,
+        ml:StratifiedShuffleSplitMethod,
+        ml:TrainTestSplitMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:CrossValPredict,
-        ml:CrossValScore,
-        ml:CrossValidate,
-        ml:LearningCurve,
-        ml:PermutationTestScore,
-        ml:ValidationCurve ;
+    rdfs:domain ml:CrossValPredictMethod,
+        ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:LearningCurveMethod,
+        ml:PermutationTestScoreMethod,
+        ml:ValidationCurveMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:PredefinedSplit a owl:Class ;
+ml:PredefinedSplitMethod a owl:Class ;
     rdfs:comment """Predefined split cross-validator.
 
 Provides train/test indices to split data into train/test sets using a
@@ -289,32 +289,32 @@ ml:SklearnModule a owl:Class ;
 
 ml:hasDataSplittingMethod a owl:ObjectProperty ;
     rdfs:domain ml:DataSplitting ;
-    rdfs:range ml:CheckCv,
-        ml:CrossValPredict,
-        ml:CrossValScore,
-        ml:CrossValidate,
-        ml:GroupKFold,
-        ml:GroupShuffleSplit,
-        ml:KFold,
-        ml:LearningCurve,
-        ml:LearningCurveDisplay,
-        ml:LeavePGroupsOut,
-        ml:LeavePOut,
-        ml:PermutationTestScore,
-        ml:PredefinedSplit,
-        ml:RepeatedKFold,
-        ml:RepeatedStratifiedKFold,
-        ml:ShuffleSplit,
-        ml:StratifiedGroupKFold,
-        ml:StratifiedKFold,
-        ml:StratifiedShuffleSplit,
-        ml:TimeSeriesSplit,
-        ml:TrainTestSplit,
-        ml:ValidationCurve,
-        ml:ValidationCurveDisplay ;
+    rdfs:range ml:CheckCvMethod,
+        ml:CrossValPredictMethod,
+        ml:CrossValScoreMethod,
+        ml:CrossValidateMethod,
+        ml:GroupKFoldMethod,
+        ml:GroupShuffleSplitMethod,
+        ml:KFoldMethod,
+        ml:LearningCurveDisplayMethod,
+        ml:LearningCurveMethod,
+        ml:LeavePGroupsOutMethod,
+        ml:LeavePOutMethod,
+        ml:PermutationTestScoreMethod,
+        ml:PredefinedSplitMethod,
+        ml:RepeatedKFoldMethod,
+        ml:RepeatedStratifiedKFoldMethod,
+        ml:ShuffleSplitMethod,
+        ml:StratifiedGroupKFoldMethod,
+        ml:StratifiedKFoldMethod,
+        ml:StratifiedShuffleSplitMethod,
+        ml:TimeSeriesSplitMethod,
+        ml:TrainTestSplitMethod,
+        ml:ValidationCurveDisplayMethod,
+        ml:ValidationCurveMethod ;
     rdfs:subPropertyOf ml:hasDataSplittingMethod .
 
-ml:GroupKFold a owl:Class ;
+ml:GroupKFoldMethod a owl:Class ;
     rdfs:comment """K-fold iterator variant with non-overlapping groups.
 
 Each group will appear exactly once in the test set across all folds (the
@@ -376,7 +376,7 @@ StratifiedKFold : Takes class information into account to avoid building
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:LeavePGroupsOut a owl:Class ;
+ml:LeavePGroupsOutMethod a owl:Class ;
     rdfs:comment """Leave P Group(s) Out cross-validator.
 
 Provides train/test indices to split data according to a third-party
@@ -433,7 +433,7 @@ GroupKFold : K-fold iterator variant with non-overlapping groups.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:LeavePOut a owl:Class ;
+ml:LeavePOutMethod a owl:Class ;
     rdfs:comment """Leave-P-Out cross-validator.
 
 Provides train/test indices to split data in train/test sets. This results
@@ -493,7 +493,7 @@ Fold 5:
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:CheckCv a owl:Class ;
+ml:CheckCvMethod a owl:Class ;
     rdfs:comment """Input checker utility for building a cross-validator.
 
 Parameters
@@ -540,7 +540,7 @@ StratifiedKFold(...)""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:KFold a owl:Class ;
+ml:KFoldMethod a owl:Class ;
     rdfs:comment """K-Fold cross-validator.
 
 Provides train/test indices to split data in train/test sets. Split
@@ -619,7 +619,7 @@ RepeatedKFold : Repeats K-Fold n times.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:LearningCurveDisplay a owl:Class ;
+ml:LearningCurveDisplayMethod a owl:Class ;
     rdfs:comment """Learning Curve visualization.
 
 It is recommended to use
@@ -700,7 +700,7 @@ Examples
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:RepeatedKFold a owl:Class ;
+ml:RepeatedKFoldMethod a owl:Class ;
     rdfs:comment """Repeated K-Fold cross validator.
 
 Repeats K-Fold n times with different randomization in each repetition.
@@ -762,7 +762,7 @@ RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:RepeatedStratifiedKFold a owl:Class ;
+ml:RepeatedStratifiedKFoldMethod a owl:Class ;
     rdfs:comment """Repeated Stratified K-Fold cross validator.
 
 Repeats Stratified K-Fold n times with different randomization in each
@@ -826,7 +826,7 @@ RepeatedKFold : Repeats K-Fold n times.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:StratifiedGroupKFold a owl:Class ;
+ml:StratifiedGroupKFoldMethod a owl:Class ;
     rdfs:comment """Stratified K-Fold iterator variant with non-overlapping groups.
 
 This cross-validation object is a variation of StratifiedKFold attempts to
@@ -927,7 +927,7 @@ GroupKFold: K-fold iterator variant with non-overlapping groups.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:StratifiedKFold a owl:Class ;
+ml:StratifiedKFoldMethod a owl:Class ;
     rdfs:comment """Stratified K-Fold cross-validator.
 
 Provides train/test indices to split data in train/test sets.
@@ -1007,7 +1007,7 @@ RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:GroupShuffleSplit a owl:Class ;
+ml:GroupShuffleSplitMethod a owl:Class ;
     rdfs:comment """Shuffle-Group(s)-Out cross-validation iterator.
 
 Provides randomized train/test indices to split data according to a
@@ -1094,7 +1094,7 @@ LeavePGroupsOut : Train set leaves out all possible subsets of `p` groups.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:ShuffleSplit a owl:Class ;
+ml:ShuffleSplitMethod a owl:Class ;
     rdfs:comment """Random permutation cross-validator.
 
 Yields indices to split data into training and test sets.
@@ -1188,7 +1188,7 @@ Fold 4:
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:StratifiedShuffleSplit a owl:Class ;
+ml:StratifiedShuffleSplitMethod a owl:Class ;
     rdfs:comment """Stratified ShuffleSplit cross-validator.
 
 Provides train/test indices to split data in train/test sets.
@@ -1264,7 +1264,7 @@ Fold 4:
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:TimeSeriesSplit a owl:Class ;
+ml:TimeSeriesSplitMethod a owl:Class ;
     rdfs:comment """Time Series cross-validator.
 
 Provides train/test indices to split time series data samples
@@ -1385,7 +1385,7 @@ where ``n_samples`` is the number of samples.""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:ValidationCurveDisplay a owl:Class ;
+ml:ValidationCurveDisplayMethod a owl:Class ;
     rdfs:comment """Validation Curve visualization.
 
 It is recommended to use
@@ -1472,7 +1472,7 @@ Examples
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:TrainTestSplit a owl:Class ;
+ml:TrainTestSplitMethod a owl:Class ;
     rdfs:comment """Split arrays or matrices into random train and test subsets.
 
 Quick utility that wraps input validation,
@@ -1560,7 +1560,7 @@ array([[2, 3],
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:PermutationTestScore a owl:Class ;
+ml:PermutationTestScoreMethod a owl:Class ;
     rdfs:comment """Evaluate the significance of a cross-validated score with permutations.
 
 Permutes targets to generate 'randomized data' and compute the empirical
@@ -1697,7 +1697,7 @@ P-value: 0.010""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:CrossValPredict a owl:Class ;
+ml:CrossValPredictMethod a owl:Class ;
     rdfs:comment """Generate cross-validated estimates for each input data point.
 
 The data is split according to the cv parameter. Each sample belongs
@@ -1840,7 +1840,7 @@ Examples
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:CrossValScore a owl:Class ;
+ml:CrossValScoreMethod a owl:Class ;
     rdfs:comment """Evaluate a score by cross-validation.
 
 Read more in the :ref:`User Guide <cross_validation>`.
@@ -1977,7 +1977,7 @@ Examples
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:ValidationCurve a owl:Class ;
+ml:ValidationCurveMethod a owl:Class ;
     rdfs:comment """Validation curve.
 
 Determine training and test scores for varying parameter values.
@@ -2100,7 +2100,7 @@ The average test accuracy is 0.81""" ;
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:CrossValidate a owl:Class ;
+ml:CrossValidateMethod a owl:Class ;
     rdfs:comment """Evaluate metric(s) by cross-validation and also record fit/score times.
 
 Read more in the :ref:`User Guide <multimetric_cross_validation>`.
@@ -2313,7 +2313,7 @@ Multiple metric evaluation using ``cross_validate``
         ml:DataSplittingMethod,
         ml:ModelSelectionModule .
 
-ml:LearningCurve a owl:Class ;
+ml:LearningCurveMethod a owl:Class ;
     rdfs:comment """Learning curve.
 
 Determines cross-validated training and test scores for different training

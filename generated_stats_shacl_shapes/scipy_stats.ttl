@@ -1,0 +1,13 @@
+
+visu:ShapeMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:ShapeMeasure ;
+    sh:property [
+        sh:path visu:hasShapeMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:KurtosisMethod ]
+            [ sh:class stats:SkewMethod ]
+        ) ;
+        sh:message "ShapeMeasure must be connected with one compatible atomic method." ;
+    ] .

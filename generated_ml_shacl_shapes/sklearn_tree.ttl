@@ -1,0 +1,39 @@
+
+visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BinaryClassification ;
+    sh:property [
+        sh:path visu:hasBinaryClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreeClassifierMethod ]
+        ) ;
+        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+    ] .
+
+visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:MulticlassClassification ;
+    sh:property [
+        sh:path visu:hasMulticlassClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreeClassifierMethod ]
+        ) ;
+        sh:message "MulticlassClassification must be connected with one compatible atomic method." ;
+    ] .
+
+visu:DecisionTreeRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:DecisionTreeRegression ;
+    sh:property [
+        sh:path visu:hasDecisionTreeRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:DecisionTreeRegressorMethod ]
+            [ sh:class ml:ExtraTreeRegressorMethod ]
+        ) ;
+        sh:message "DecisionTreeRegression must be connected with one compatible atomic method." ;
+    ] .

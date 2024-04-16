@@ -6,55 +6,55 @@
 
 stats:hasCentralTendencyMeasureMethod a owl:ObjectProperty ;
     rdfs:domain stats:CentralTendencyMeasure ;
-    rdfs:range stats:Mean ;
+    rdfs:range stats:MeanMethod ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
 stats:hasDispersionMeasureMethod a owl:ObjectProperty ;
     rdfs:domain stats:DispersionMeasure ;
-    rdfs:range stats:Std,
-        stats:Var ;
+    rdfs:range stats:StdMethod,
+        stats:VarMethod ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
 stats:hasParamAxis a owl:DatatypeProperty ;
-    rdfs:domain stats:Mean,
-        stats:Ptp,
-        stats:Std,
-        stats:Var ;
+    rdfs:domain stats:MeanMethod,
+        stats:PtpMethod,
+        stats:StdMethod,
+        stats:VarMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamDdof a owl:DatatypeProperty ;
-    rdfs:domain stats:Std,
-        stats:Var ;
+    rdfs:domain stats:StdMethod,
+        stats:VarMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamDtype a owl:DatatypeProperty ;
-    rdfs:domain stats:Mean,
-        stats:Std,
-        stats:Var ;
+    rdfs:domain stats:MeanMethod,
+        stats:StdMethod,
+        stats:VarMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamKeepdims a owl:DatatypeProperty ;
-    rdfs:domain stats:Mean,
-        stats:Ptp,
-        stats:Std,
-        stats:Var ;
+    rdfs:domain stats:MeanMethod,
+        stats:PtpMethod,
+        stats:StdMethod,
+        stats:VarMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamWhere a owl:DatatypeProperty ;
-    rdfs:domain stats:Mean,
-        stats:Std,
-        stats:Var ;
+    rdfs:domain stats:MeanMethod,
+        stats:StdMethod,
+        stats:VarMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasShapeMeasureMethod a owl:ObjectProperty ;
     rdfs:domain stats:ShapeMeasure ;
-    rdfs:range stats:Ptp ;
+    rdfs:range stats:PtpMethod ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
 stats:CoreModule a owl:Class ;
@@ -63,7 +63,7 @@ stats:CoreModule a owl:Class ;
 stats:NumpyModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-stats:Ptp a owl:Class ;
+stats:PtpMethod a owl:Class ;
     rdfs:comment """Range of values (maximum - minimum) along an axis.
 
 The name of the function comes from the acronym for 'peak to peak'.
@@ -147,7 +147,7 @@ array([126, 127, 128, 129], dtype=uint8)""" ;
 stats:FromnumericModule a owl:Class ;
     rdfs:subClassOf stats:CoreModule .
 
-stats:Mean a owl:Class ;
+stats:MeanMethod a owl:Class ;
     rdfs:comment """Compute the arithmetic mean along the specified axis.
 
 Returns the average of the array elements.  The average is taken over
@@ -252,7 +252,7 @@ Specifying a where argument:
         stats:FromnumericModule,
         stats:StatisticCalculationMethod .
 
-stats:Std a owl:Class ;
+stats:StdMethod a owl:Class ;
     rdfs:comment """Compute the standard deviation along the specified axis.
 
 Returns the standard deviation, a measure of the spread of a distribution,
@@ -370,7 +370,7 @@ Specifying a where argument:
         stats:FromnumericModule,
         stats:StatisticCalculationMethod .
 
-stats:Var a owl:Class ;
+stats:VarMethod a owl:Class ;
     rdfs:comment """Compute the variance along the specified axis.
 
 Returns the variance of the array elements, a measure of the spread of a

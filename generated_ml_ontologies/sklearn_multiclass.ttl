@@ -6,52 +6,52 @@
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:OneVsOneClassifier,
-        ml:OneVsRestClassifier,
-        ml:OutputCodeClassifier ;
+    rdfs:range ml:OneVsOneClassifierMethod,
+        ml:OneVsRestClassifierMethod,
+        ml:OutputCodeClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasMulticlassClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:MulticlassClassification ;
-    rdfs:range ml:OneVsOneClassifier,
-        ml:OneVsRestClassifier,
-        ml:OutputCodeClassifier ;
+    rdfs:range ml:OneVsOneClassifierMethod,
+        ml:OneVsRestClassifierMethod,
+        ml:OutputCodeClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasMultilabelClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:MultilabelClassification ;
-    rdfs:range ml:OneVsOneClassifier,
-        ml:OneVsRestClassifier,
-        ml:OutputCodeClassifier ;
+    rdfs:range ml:OneVsOneClassifierMethod,
+        ml:OneVsRestClassifierMethod,
+        ml:OutputCodeClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamCodeSize a owl:DatatypeProperty ;
-    rdfs:domain ml:OutputCodeClassifier ;
+    rdfs:domain ml:OutputCodeClassifierMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEstimator a owl:DatatypeProperty ;
-    rdfs:domain ml:OneVsOneClassifier,
-        ml:OneVsRestClassifier,
-        ml:OutputCodeClassifier ;
+    rdfs:domain ml:OneVsOneClassifierMethod,
+        ml:OneVsRestClassifierMethod,
+        ml:OutputCodeClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:OneVsOneClassifier,
-        ml:OneVsRestClassifier,
-        ml:OutputCodeClassifier ;
+    rdfs:domain ml:OneVsOneClassifierMethod,
+        ml:OneVsRestClassifierMethod,
+        ml:OutputCodeClassifierMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:OutputCodeClassifier ;
+    rdfs:domain ml:OutputCodeClassifierMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:OneVsRestClassifier ;
+    rdfs:domain ml:OneVsRestClassifierMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -61,7 +61,7 @@ ml:SklearnModule a owl:Class ;
 ml:MulticlassModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:OneVsOneClassifier a owl:Class ;
+ml:OneVsOneClassifierMethod a owl:Class ;
     rdfs:comment """One-vs-one multiclass strategy.
 
 This strategy consists in fitting one classifier per class pair.
@@ -141,7 +141,7 @@ array([2, 1, 0, 2, 0, 2, 0, 1, 1, 1])""" ;
         ml:MulticlassModule,
         ml:TrainMethod .
 
-ml:OneVsRestClassifier a owl:Class ;
+ml:OneVsRestClassifierMethod a owl:Class ;
     rdfs:comment """One-vs-the-rest (OvR) multiclass strategy.
 
 Also known as one-vs-all, this strategy consists in fitting one classifier
@@ -252,7 +252,7 @@ array([2, 0, 1])""" ;
         ml:MulticlassModule,
         ml:TrainMethod .
 
-ml:OutputCodeClassifier a owl:Class ;
+ml:OutputCodeClassifierMethod a owl:Class ;
     rdfs:comment """(Error-Correcting) Output-Code multiclass strategy.
 
 Output-code based strategies consist in representing each class with a

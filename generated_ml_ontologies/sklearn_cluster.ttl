@@ -6,418 +6,418 @@
 
 ml:hasClusteringMethod a owl:ObjectProperty ;
     rdfs:domain ml:Clustering ;
-    rdfs:range ml:AffinityPropagation,
-        ml:AgglomerativeClustering,
-        ml:Birch,
-        ml:BisectingKMeans,
-        ml:DBSCAN,
-        ml:HDBSCAN,
-        ml:KMeans,
-        ml:MeanShift,
-        ml:MiniBatchKMeans,
-        ml:OPTICS,
-        ml:SpectralBiclustering,
-        ml:SpectralClustering,
-        ml:SpectralCoclustering ;
+    rdfs:range ml:AffinityPropagationMethod,
+        ml:AgglomerativeClusteringMethod,
+        ml:BirchMethod,
+        ml:BisectingKMeansMethod,
+        ml:DBSCANMethod,
+        ml:HDBSCANMethod,
+        ml:KMeansMethod,
+        ml:MeanShiftMethod,
+        ml:MiniBatchKMeansMethod,
+        ml:OPTICSMethod,
+        ml:SpectralBiclusteringMethod,
+        ml:SpectralClusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasDecompositionMethod a owl:ObjectProperty ;
     rdfs:domain ml:Decomposition ;
-    rdfs:range ml:FeatureAgglomeration ;
+    rdfs:range ml:FeatureAgglomerationMethod ;
     rdfs:subPropertyOf ml:hasPrepareTransformerMethod .
 
 ml:hasParamAffinity a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation,
-        ml:SpectralClustering ;
+    rdfs:domain ml:AffinityPropagationMethod,
+        ml:SpectralClusteringMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlgorithm a owl:DatatypeProperty ;
-    rdfs:domain ml:BisectingKMeans,
-        ml:DBSCAN,
-        ml:HDBSCAN,
-        ml:KMeans,
-        ml:OPTICS ;
+    rdfs:domain ml:BisectingKMeansMethod,
+        ml:DBSCANMethod,
+        ml:HDBSCANMethod,
+        ml:KMeansMethod,
+        ml:OPTICSMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAllowSingleCluster a owl:DatatypeProperty ;
-    rdfs:domain ml:HDBSCAN ;
+    rdfs:domain ml:HDBSCANMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:HDBSCAN ;
+    rdfs:domain ml:HDBSCANMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAssignLabels a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBandwidth a owl:DatatypeProperty ;
-    rdfs:domain ml:MeanShift ;
+    rdfs:domain ml:MeanShiftMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBatchSize a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchKMeans ;
+    rdfs:domain ml:MiniBatchKMeansMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBinSeeding a owl:DatatypeProperty ;
-    rdfs:domain ml:MeanShift ;
+    rdfs:domain ml:MeanShiftMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBisectingStrategy a owl:DatatypeProperty ;
-    rdfs:domain ml:BisectingKMeans ;
+    rdfs:domain ml:BisectingKMeansMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBranchingFactor a owl:DatatypeProperty ;
-    rdfs:domain ml:Birch ;
+    rdfs:domain ml:BirchMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClusterAll a owl:DatatypeProperty ;
-    rdfs:domain ml:MeanShift ;
+    rdfs:domain ml:MeanShiftMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClusterMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:OPTICS ;
+    rdfs:domain ml:OPTICSMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClusterSelectionEpsilon a owl:DatatypeProperty ;
-    rdfs:domain ml:HDBSCAN ;
+    rdfs:domain ml:HDBSCANMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClusterSelectionMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:HDBSCAN ;
+    rdfs:domain ml:HDBSCANMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCoef0 a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamComputeDistances a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:FeatureAgglomeration ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:FeatureAgglomerationMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamComputeFullTree a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:FeatureAgglomeration ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:FeatureAgglomerationMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamComputeLabels a owl:DatatypeProperty ;
-    rdfs:domain ml:Birch,
-        ml:MiniBatchKMeans ;
+    rdfs:domain ml:BirchMethod,
+        ml:MiniBatchKMeansMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamConnectivity a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:FeatureAgglomeration ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:FeatureAgglomerationMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamConvergenceIter a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation ;
+    rdfs:domain ml:AffinityPropagationMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopy a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation,
-        ml:Birch,
-        ml:HDBSCAN ;
+    rdfs:domain ml:AffinityPropagationMethod,
+        ml:BirchMethod,
+        ml:HDBSCANMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopyX a owl:DatatypeProperty ;
-    rdfs:domain ml:BisectingKMeans,
-        ml:KMeans ;
+    rdfs:domain ml:BisectingKMeansMethod,
+        ml:KMeansMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDamping a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation ;
+    rdfs:domain ml:AffinityPropagationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDegree a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDistanceThreshold a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:FeatureAgglomeration ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:FeatureAgglomerationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEigenSolver a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEigenTol a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEps a owl:DatatypeProperty ;
-    rdfs:domain ml:DBSCAN,
-        ml:OPTICS ;
+    rdfs:domain ml:DBSCANMethod,
+        ml:OPTICSMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamGamma a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInit a owl:DatatypeProperty ;
-    rdfs:domain ml:BisectingKMeans,
-        ml:KMeans,
-        ml:MiniBatchKMeans,
-        ml:SpectralBiclustering,
-        ml:SpectralCoclustering ;
+    rdfs:domain ml:BisectingKMeansMethod,
+        ml:KMeansMethod,
+        ml:MiniBatchKMeansMethod,
+        ml:SpectralBiclusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInitSize a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchKMeans ;
+    rdfs:domain ml:MiniBatchKMeansMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKernelParams a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLeafSize a owl:DatatypeProperty ;
-    rdfs:domain ml:DBSCAN,
-        ml:HDBSCAN,
-        ml:OPTICS ;
+    rdfs:domain ml:DBSCANMethod,
+        ml:HDBSCANMethod,
+        ml:OPTICSMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLinkage a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:FeatureAgglomeration ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:FeatureAgglomerationMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxClusterSize a owl:DatatypeProperty ;
-    rdfs:domain ml:HDBSCAN ;
+    rdfs:domain ml:HDBSCANMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxEps a owl:DatatypeProperty ;
-    rdfs:domain ml:OPTICS ;
+    rdfs:domain ml:OPTICSMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation,
-        ml:BisectingKMeans,
-        ml:KMeans,
-        ml:MeanShift,
-        ml:MiniBatchKMeans ;
+    rdfs:domain ml:AffinityPropagationMethod,
+        ml:BisectingKMeansMethod,
+        ml:KMeansMethod,
+        ml:MeanShiftMethod,
+        ml:MiniBatchKMeansMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxNoImprovement a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchKMeans ;
+    rdfs:domain ml:MiniBatchKMeansMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMemory a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:FeatureAgglomeration,
-        ml:OPTICS ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:FeatureAgglomerationMethod,
+        ml:OPTICSMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralBiclustering ;
+    rdfs:domain ml:SpectralBiclusteringMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMetric a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:DBSCAN,
-        ml:FeatureAgglomeration,
-        ml:HDBSCAN,
-        ml:OPTICS ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:DBSCANMethod,
+        ml:FeatureAgglomerationMethod,
+        ml:HDBSCANMethod,
+        ml:OPTICSMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMetricParams a owl:DatatypeProperty ;
-    rdfs:domain ml:DBSCAN,
-        ml:HDBSCAN,
-        ml:OPTICS ;
+    rdfs:domain ml:DBSCANMethod,
+        ml:HDBSCANMethod,
+        ml:OPTICSMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinBinFreq a owl:DatatypeProperty ;
-    rdfs:domain ml:MeanShift ;
+    rdfs:domain ml:MeanShiftMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinClusterSize a owl:DatatypeProperty ;
-    rdfs:domain ml:HDBSCAN ;
+    rdfs:domain ml:HDBSCANMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinSamples a owl:DatatypeProperty ;
-    rdfs:domain ml:DBSCAN,
-        ml:HDBSCAN ;
+    rdfs:domain ml:DBSCANMethod,
+        ml:HDBSCANMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMiniBatch a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralBiclustering,
-        ml:SpectralCoclustering ;
+    rdfs:domain ml:SpectralBiclusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNBest a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralBiclustering ;
+    rdfs:domain ml:SpectralBiclusteringMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNClusters a owl:DatatypeProperty ;
-    rdfs:domain ml:AgglomerativeClustering,
-        ml:Birch,
-        ml:BisectingKMeans,
-        ml:FeatureAgglomeration,
-        ml:KMeans,
-        ml:MiniBatchKMeans,
-        ml:SpectralBiclustering,
-        ml:SpectralClustering,
-        ml:SpectralCoclustering ;
+    rdfs:domain ml:AgglomerativeClusteringMethod,
+        ml:BirchMethod,
+        ml:BisectingKMeansMethod,
+        ml:FeatureAgglomerationMethod,
+        ml:KMeansMethod,
+        ml:MiniBatchKMeansMethod,
+        ml:SpectralBiclusteringMethod,
+        ml:SpectralClusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNComponents a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralBiclustering,
-        ml:SpectralClustering ;
+    rdfs:domain ml:SpectralBiclusteringMethod,
+        ml:SpectralClusteringMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNInit a owl:DatatypeProperty ;
-    rdfs:domain ml:BisectingKMeans,
-        ml:KMeans,
-        ml:MiniBatchKMeans,
-        ml:SpectralBiclustering,
-        ml:SpectralClustering,
-        ml:SpectralCoclustering ;
+    rdfs:domain ml:BisectingKMeansMethod,
+        ml:KMeansMethod,
+        ml:MiniBatchKMeansMethod,
+        ml:SpectralBiclusteringMethod,
+        ml:SpectralClusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:DBSCAN,
-        ml:HDBSCAN,
-        ml:MeanShift,
-        ml:OPTICS,
-        ml:SpectralClustering ;
+    rdfs:domain ml:DBSCANMethod,
+        ml:HDBSCANMethod,
+        ml:MeanShiftMethod,
+        ml:OPTICSMethod,
+        ml:SpectralClusteringMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNNeighbors a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralClustering ;
+    rdfs:domain ml:SpectralClusteringMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNSvdVecs a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralBiclustering,
-        ml:SpectralCoclustering ;
+    rdfs:domain ml:SpectralBiclusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamP a owl:DatatypeProperty ;
-    rdfs:domain ml:DBSCAN,
-        ml:OPTICS ;
+    rdfs:domain ml:DBSCANMethod,
+        ml:OPTICSMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPoolingFunc a owl:DatatypeProperty ;
-    rdfs:domain ml:FeatureAgglomeration ;
+    rdfs:domain ml:FeatureAgglomerationMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPredecessorCorrection a owl:DatatypeProperty ;
-    rdfs:domain ml:OPTICS ;
+    rdfs:domain ml:OPTICSMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPreference a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation ;
+    rdfs:domain ml:AffinityPropagationMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation,
-        ml:BisectingKMeans,
-        ml:KMeans,
-        ml:MiniBatchKMeans,
-        ml:SpectralBiclustering,
-        ml:SpectralClustering,
-        ml:SpectralCoclustering ;
+    rdfs:domain ml:AffinityPropagationMethod,
+        ml:BisectingKMeansMethod,
+        ml:KMeansMethod,
+        ml:MiniBatchKMeansMethod,
+        ml:SpectralBiclusteringMethod,
+        ml:SpectralClusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamReassignmentRatio a owl:DatatypeProperty ;
-    rdfs:domain ml:MiniBatchKMeans ;
+    rdfs:domain ml:MiniBatchKMeansMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSeeds a owl:DatatypeProperty ;
-    rdfs:domain ml:MeanShift ;
+    rdfs:domain ml:MeanShiftMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStoreCenters a owl:DatatypeProperty ;
-    rdfs:domain ml:HDBSCAN ;
+    rdfs:domain ml:HDBSCANMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSvdMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:SpectralBiclustering,
-        ml:SpectralCoclustering ;
+    rdfs:domain ml:SpectralBiclusteringMethod,
+        ml:SpectralCoclusteringMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamThreshold a owl:DatatypeProperty ;
-    rdfs:domain ml:Birch ;
+    rdfs:domain ml:BirchMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
-    rdfs:domain ml:BisectingKMeans,
-        ml:KMeans,
-        ml:MiniBatchKMeans ;
+    rdfs:domain ml:BisectingKMeansMethod,
+        ml:KMeansMethod,
+        ml:MiniBatchKMeansMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:AffinityPropagation,
-        ml:BisectingKMeans,
-        ml:KMeans,
-        ml:MiniBatchKMeans,
-        ml:SpectralClustering ;
+    rdfs:domain ml:AffinityPropagationMethod,
+        ml:BisectingKMeansMethod,
+        ml:KMeansMethod,
+        ml:MiniBatchKMeansMethod,
+        ml:SpectralClusteringMethod ;
     rdfs:range xsd:boolean,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
@@ -428,7 +428,7 @@ ml:HdbscanModule a owl:Class ;
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-ml:Birch a owl:Class ;
+ml:BirchMethod a owl:Class ;
     rdfs:comment """Implements the BIRCH clustering algorithm.
 
 It is a memory-efficient, online-learning algorithm provided as an
@@ -550,7 +550,7 @@ array([0, 0, 0, 1, 1, 1])""" ;
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:MeanShift a owl:Class ;
+ml:MeanShiftMethod a owl:Class ;
     rdfs:comment """Mean shift clustering using a flat kernel.
 
 Mean shift clustering aims to discover "blobs" in a smooth density of
@@ -686,7 +686,7 @@ MeanShift(bandwidth=2)""" ;
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:SpectralCoclustering a owl:Class ;
+ml:SpectralCoclusteringMethod a owl:Class ;
     rdfs:comment """Spectral Co-Clustering algorithm (Dhillon, 2001).
 
 Clusters rows and columns of an array `X` to solve the relaxed
@@ -797,7 +797,7 @@ SpectralCoclustering(n_clusters=2, random_state=0)""" ;
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:AffinityPropagation a owl:Class ;
+ml:AffinityPropagationMethod a owl:Class ;
     rdfs:comment """Perform Affinity Propagation Clustering of data.
 
 Read more in the :ref:`User Guide <affinity_propagation>`.
@@ -934,7 +934,7 @@ array([[1, 2],
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:AgglomerativeClustering a owl:Class ;
+ml:AgglomerativeClusteringMethod a owl:Class ;
     rdfs:comment """Agglomerative Clustering.
 
 Recursively merges pair of clusters of sample data; uses linkage distance.
@@ -1078,7 +1078,7 @@ array([1, 1, 1, 0, 0, 0])""" ;
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:DBSCAN a owl:Class ;
+ml:DBSCANMethod a owl:Class ;
     rdfs:comment """Perform DBSCAN clustering from vector array or distance matrix.
 
 DBSCAN - Density-Based Spatial Clustering of Applications with Noise.
@@ -1224,7 +1224,7 @@ DBSCAN(eps=3, min_samples=2)""" ;
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:FeatureAgglomeration a owl:Class ;
+ml:FeatureAgglomerationMethod a owl:Class ;
     rdfs:comment """Agglomerate features.
 
 Recursively merges pair of clusters of features.
@@ -1372,7 +1372,7 @@ FeatureAgglomeration(n_clusters=32)
         ml:ClusterModule,
         ml:PrepareTransformerMethod .
 
-ml:KMeans a owl:Class ;
+ml:KMeansMethod a owl:Class ;
     rdfs:comment """K-Means clustering.
 
 Read more in the :ref:`User Guide <k_means>`.
@@ -1550,7 +1550,7 @@ For a comparison between K-Means and MiniBatchKMeans refer to example
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:BisectingKMeans a owl:Class ;
+ml:BisectingKMeansMethod a owl:Class ;
     rdfs:comment """Bisecting K-Means clustering.
 
 Read more in the :ref:`User Guide <bisect_k_means>`.
@@ -1682,7 +1682,7 @@ array([[ 2., 1.],
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:SpectralBiclustering a owl:Class ;
+ml:SpectralBiclusteringMethod a owl:Class ;
     rdfs:comment """Spectral biclustering (Kluger, 2003).
 
 Partitions rows and columns under the assumption that the data has
@@ -1808,7 +1808,7 @@ SpectralBiclustering(n_clusters=2, random_state=0)""" ;
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:OPTICS a owl:Class ;
+ml:OPTICSMethod a owl:Class ;
     rdfs:comment """Estimate clustering structure from vector array.
 
 OPTICS (Ordering Points To Identify the Clustering Structure), closely
@@ -2016,7 +2016,7 @@ For a more detailed example see
         ml:ClusterModule,
         ml:TrainMethod .
 
-ml:MiniBatchKMeans a owl:Class ;
+ml:MiniBatchKMeansMethod a owl:Class ;
     rdfs:comment """Mini-Batch K-Means clustering.
 
 Read more in the :ref:`User Guide <mini_batch_kmeans>`.
@@ -2213,7 +2213,7 @@ array([1, 0], dtype=int32)""" ;
 ml:ClusterModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:HDBSCAN a owl:Class ;
+ml:HDBSCANMethod a owl:Class ;
     rdfs:comment """Cluster data using hierarchical density-based clustering.
 
 HDBSCAN - Hierarchical Density-Based Spatial Clustering of Applications
@@ -2430,7 +2430,7 @@ array([ 2,  6, -1, ..., -1, -1, -1])""" ;
         ml:HdbscanModule,
         ml:TrainMethod .
 
-ml:SpectralClustering a owl:Class ;
+ml:SpectralClusteringMethod a owl:Class ;
     rdfs:comment """Apply clustering to a projection of the normalized Laplacian.
 
 In practice Spectral Clustering is very useful when the structure of

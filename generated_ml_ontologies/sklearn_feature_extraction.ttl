@@ -6,43 +6,43 @@
 
 ml:hasDataProcessingMethod a owl:ObjectProperty ;
     rdfs:domain ml:DataProcessing ;
-    rdfs:range ml:DictVectorizer,
-        ml:FeatureHasher ;
+    rdfs:range ml:DictVectorizerMethod,
+        ml:FeatureHasherMethod ;
     rdfs:subPropertyOf ml:hasPrepareTransformerMethod .
 
 ml:hasParamAlternateSign a owl:DatatypeProperty ;
-    rdfs:domain ml:FeatureHasher ;
+    rdfs:domain ml:FeatureHasherMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDtype a owl:DatatypeProperty ;
-    rdfs:domain ml:DictVectorizer,
-        ml:FeatureHasher ;
+    rdfs:domain ml:DictVectorizerMethod,
+        ml:FeatureHasherMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInputType a owl:DatatypeProperty ;
-    rdfs:domain ml:FeatureHasher ;
+    rdfs:domain ml:FeatureHasherMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNFeatures a owl:DatatypeProperty ;
-    rdfs:domain ml:FeatureHasher ;
+    rdfs:domain ml:FeatureHasherMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSeparator a owl:DatatypeProperty ;
-    rdfs:domain ml:DictVectorizer ;
+    rdfs:domain ml:DictVectorizerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSort a owl:DatatypeProperty ;
-    rdfs:domain ml:DictVectorizer ;
+    rdfs:domain ml:DictVectorizerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSparse a owl:DatatypeProperty ;
-    rdfs:domain ml:DictVectorizer ;
+    rdfs:domain ml:DictVectorizerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -52,7 +52,7 @@ ml:SklearnModule a owl:Class ;
 ml:FeatureExtractionModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:DictVectorizer a owl:Class ;
+ml:DictVectorizerMethod a owl:Class ;
     rdfs:comment """Transforms lists of feature-value mappings to vectors.
 
 This transformer turns lists of mappings (dict-like objects) of feature
@@ -131,7 +131,7 @@ array([[0., 0., 4.]])""" ;
         ml:FeatureExtractionModule,
         ml:PrepareTransformerMethod .
 
-ml:FeatureHasher a owl:Class ;
+ml:FeatureHasherMethod a owl:Class ;
     rdfs:comment """Implements feature hashing, aka the hashing trick.
 
 This class turns sequences of symbolic feature names (strings) into

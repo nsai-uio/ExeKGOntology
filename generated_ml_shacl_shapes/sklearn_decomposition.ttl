@@ -1,0 +1,25 @@
+
+visu:DecompositionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Decomposition ;
+    sh:property [
+        sh:path visu:hasDecompositionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:DictionaryLearningMethod ]
+            [ sh:class ml:FastICAMethod ]
+            [ sh:class ml:IncrementalPCAMethod ]
+            [ sh:class ml:KernelPCAMethod ]
+            [ sh:class ml:MiniBatchDictionaryLearningMethod ]
+            [ sh:class ml:MiniBatchNMFMethod ]
+            [ sh:class ml:MiniBatchSparsePCAMethod ]
+            [ sh:class ml:NMFMethod ]
+            [ sh:class ml:PCAMethod ]
+            [ sh:class ml:SparseCoderMethod ]
+            [ sh:class ml:SparsePCAMethod ]
+            [ sh:class ml:FactorAnalysisMethod ]
+            [ sh:class ml:TruncatedSVDMethod ]
+            [ sh:class ml:LatentDirichletAllocationMethod ]
+        ) ;
+        sh:message "Decomposition must be connected with one compatible atomic method." ;
+    ] .

@@ -1,0 +1,69 @@
+
+visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BinaryClassification ;
+    sh:property [
+        sh:path visu:hasBinaryClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:KNeighborsClassifierMethod ]
+            [ sh:class ml:NearestCentroidMethod ]
+            [ sh:class ml:RadiusNeighborsClassifierMethod ]
+        ) ;
+        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+    ] .
+
+visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:MulticlassClassification ;
+    sh:property [
+        sh:path visu:hasMulticlassClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:KNeighborsClassifierMethod ]
+            [ sh:class ml:NearestCentroidMethod ]
+            [ sh:class ml:RadiusNeighborsClassifierMethod ]
+        ) ;
+        sh:message "MulticlassClassification must be connected with one compatible atomic method." ;
+    ] .
+
+visu:InstanceBasedRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:InstanceBasedRegression ;
+    sh:property [
+        sh:path visu:hasInstanceBasedRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:KNeighborsRegressorMethod ]
+            [ sh:class ml:RadiusNeighborsRegressorMethod ]
+        ) ;
+        sh:message "InstanceBasedRegression must be connected with one compatible atomic method." ;
+    ] .
+
+visu:ClusteringTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Clustering ;
+    sh:property [
+        sh:path visu:hasClusteringMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:KNeighborsTransformerMethod ]
+            [ sh:class ml:NearestNeighborsMethod ]
+            [ sh:class ml:RadiusNeighborsTransformerMethod ]
+            [ sh:class ml:KernelDensityMethod ]
+            [ sh:class ml:LocalOutlierFactorMethod ]
+        ) ;
+        sh:message "Clustering must be connected with one compatible atomic method." ;
+    ] .
+
+visu:DecompositionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Decomposition ;
+    sh:property [
+        sh:path visu:hasDecompositionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:NeighborhoodComponentsAnalysisMethod ]
+        ) ;
+        sh:message "Decomposition must be connected with one compatible atomic method." ;
+    ] .

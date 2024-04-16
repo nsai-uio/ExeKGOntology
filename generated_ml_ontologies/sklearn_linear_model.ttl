@@ -6,745 +6,745 @@
 
 ml:hasBayesianRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:BayesianRegression ;
-    rdfs:range ml:ARDRegression,
-        ml:BayesianRidge ;
+    rdfs:range ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:PassiveAggressiveClassifier,
-        ml:Perceptron,
-        ml:RidgeClassifier,
-        ml:RidgeClassifierCV,
-        ml:SGDClassifier ;
+    rdfs:range ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PerceptronMethod,
+        ml:RidgeClassifierCVMethod,
+        ml:RidgeClassifierMethod,
+        ml:SGDClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasLeastAngleRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:LeastAngleRegression ;
-    rdfs:range ml:Lars,
-        ml:LassoLars ;
+    rdfs:range ml:LarsMethod,
+        ml:LassoLarsMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNet,
-        ml:GammaRegressor,
-        ml:HuberRegressor,
-        ml:Lasso,
-        ml:LassoLars,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskLasso,
-        ml:Perceptron,
-        ml:PoissonRegressor,
-        ml:QuantileRegressor,
-        ml:Ridge,
-        ml:RidgeClassifier,
-        ml:SGDClassifier,
-        ml:SGDRegressor,
-        ml:TweedieRegressor ;
+    rdfs:domain ml:ElasticNetMethod,
+        ml:GammaRegressorMethod,
+        ml:HuberRegressorMethod,
+        ml:LassoLarsMethod,
+        ml:LassoMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoMethod,
+        ml:PerceptronMethod,
+        ml:PoissonRegressorMethod,
+        ml:QuantileRegressorMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha1 a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha2 a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphaInit a owl:DatatypeProperty ;
-    rdfs:domain ml:BayesianRidge ;
+    rdfs:domain ml:BayesianRidgeMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphaPerTarget a owl:DatatypeProperty ;
-    rdfs:domain ml:RidgeCV ;
+    rdfs:domain ml:RidgeCVMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphas a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNetCV,
-        ml:LassoCV,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLassoCV ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:LassoCVMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskLassoCVMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAverage a owl:DatatypeProperty ;
-    rdfs:domain ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor ;
+    rdfs:domain ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:boolean,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamC a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegression,
-        ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor ;
+    rdfs:domain ml:LogisticRegressionMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:PassiveAggressiveClassifier,
-        ml:Perceptron,
-        ml:RidgeClassifier,
-        ml:RidgeClassifierCV,
-        ml:SGDClassifier ;
+    rdfs:domain ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PerceptronMethod,
+        ml:RidgeClassifierCVMethod,
+        ml:RidgeClassifierMethod,
+        ml:SGDClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamComputeScore a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopy a owl:DatatypeProperty ;
-    rdfs:domain ml:OrthogonalMatchingPursuitCV ;
+    rdfs:domain ml:OrthogonalMatchingPursuitCVMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopyX a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge,
-        ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:Lars,
-        ml:LarsCV,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:LinearRegression,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLasso,
-        ml:MultiTaskLassoCV,
-        ml:Ridge,
-        ml:RidgeClassifier,
-        ml:TheilSenRegressor ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod,
+        ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:LarsCVMethod,
+        ml:LarsMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoLarsMethod,
+        ml:LassoMethod,
+        ml:LinearRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:MultiTaskLassoMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod,
+        ml:TheilSenRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCriterion a owl:DatatypeProperty ;
-    rdfs:domain ml:LassoLarsIC ;
+    rdfs:domain ml:LassoLarsICMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCs a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegressionCV ;
+    rdfs:domain ml:LogisticRegressionCVMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCv a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNetCV,
-        ml:LarsCV,
-        ml:LassoCV,
-        ml:LassoLarsCV,
-        ml:LogisticRegressionCV,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLassoCV,
-        ml:OrthogonalMatchingPursuitCV,
-        ml:RidgeCV,
-        ml:RidgeClassifierCV ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:LarsCVMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:OrthogonalMatchingPursuitCVMethod,
+        ml:RidgeCVMethod,
+        ml:RidgeClassifierCVMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDual a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegression,
-        ml:LogisticRegressionCV ;
+    rdfs:domain ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEarlyStopping a owl:DatatypeProperty ;
-    rdfs:domain ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:SGDClassifier,
-        ml:SGDRegressor ;
+    rdfs:domain ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEps a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNetCV,
-        ml:Lars,
-        ml:LarsCV,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLassoCV ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:LarsCVMethod,
+        ml:LarsMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoLarsMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskLassoCVMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEpsilon a owl:DatatypeProperty ;
-    rdfs:domain ml:HuberRegressor,
-        ml:PassiveAggressiveRegressor,
-        ml:SGDClassifier,
-        ml:SGDRegressor ;
+    rdfs:domain ml:HuberRegressorMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEstimator a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEta0 a owl:DatatypeProperty ;
-    rdfs:domain ml:Perceptron,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor ;
+    rdfs:domain ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitIntercept a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge,
-        ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:GammaRegressor,
-        ml:HuberRegressor,
-        ml:Lars,
-        ml:LarsCV,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:LinearRegression,
-        ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLasso,
-        ml:MultiTaskLassoCV,
-        ml:OrthogonalMatchingPursuit,
-        ml:OrthogonalMatchingPursuitCV,
-        ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:PoissonRegressor,
-        ml:QuantileRegressor,
-        ml:Ridge,
-        ml:RidgeCV,
-        ml:RidgeClassifier,
-        ml:RidgeClassifierCV,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor,
-        ml:TheilSenRegressor,
-        ml:TweedieRegressor ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod,
+        ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:GammaRegressorMethod,
+        ml:HuberRegressorMethod,
+        ml:LarsCVMethod,
+        ml:LarsMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoLarsMethod,
+        ml:LassoMethod,
+        ml:LinearRegressionMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:MultiTaskLassoMethod,
+        ml:OrthogonalMatchingPursuitCVMethod,
+        ml:OrthogonalMatchingPursuitMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:PoissonRegressorMethod,
+        ml:QuantileRegressorMethod,
+        ml:RidgeCVMethod,
+        ml:RidgeClassifierCVMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod,
+        ml:TheilSenRegressorMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitPath a owl:DatatypeProperty ;
-    rdfs:domain ml:Lars,
-        ml:LassoLars ;
+    rdfs:domain ml:LarsMethod,
+        ml:LassoLarsMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamGcvMode a owl:DatatypeProperty ;
-    rdfs:domain ml:RidgeCV ;
+    rdfs:domain ml:RidgeCVMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInterceptScaling a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegression,
-        ml:LogisticRegressionCV ;
+    rdfs:domain ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamIsDataValid a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamIsModelValid a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamJitter a owl:DatatypeProperty ;
-    rdfs:domain ml:Lars,
-        ml:LassoLars ;
+    rdfs:domain ml:LarsMethod,
+        ml:LassoLarsMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamL1Ratio a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:LogisticRegression,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:Perceptron,
-        ml:SGDClassifier,
-        ml:SGDRegressor ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamL1Ratios a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegressionCV ;
+    rdfs:domain ml:LogisticRegressionCVMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLambda1 a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLambda2 a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLambdaInit a owl:DatatypeProperty ;
-    rdfs:domain ml:BayesianRidge ;
+    rdfs:domain ml:BayesianRidgeMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRate a owl:DatatypeProperty ;
-    rdfs:domain ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor ;
+    rdfs:domain ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLink a owl:DatatypeProperty ;
-    rdfs:domain ml:TweedieRegressor ;
+    rdfs:domain ml:TweedieRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLoss a owl:DatatypeProperty ;
-    rdfs:domain ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:RANSACRegressor,
-        ml:SGDClassifier,
-        ml:SGDRegressor ;
+    rdfs:domain ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:RANSACRegressorMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge,
-        ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:GammaRegressor,
-        ml:HuberRegressor,
-        ml:LarsCV,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLasso,
-        ml:MultiTaskLassoCV,
-        ml:OrthogonalMatchingPursuitCV,
-        ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:PoissonRegressor,
-        ml:Ridge,
-        ml:RidgeClassifier,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor,
-        ml:TheilSenRegressor,
-        ml:TweedieRegressor ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod,
+        ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:GammaRegressorMethod,
+        ml:HuberRegressorMethod,
+        ml:LarsCVMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoLarsMethod,
+        ml:LassoMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:MultiTaskLassoMethod,
+        ml:OrthogonalMatchingPursuitCVMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:PoissonRegressorMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod,
+        ml:TheilSenRegressorMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxNAlphas a owl:DatatypeProperty ;
-    rdfs:domain ml:LarsCV,
-        ml:LassoLarsCV ;
+    rdfs:domain ml:LarsCVMethod,
+        ml:LassoLarsCVMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxSkips a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxSubpopulation a owl:DatatypeProperty ;
-    rdfs:domain ml:TheilSenRegressor ;
+    rdfs:domain ml:TheilSenRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxTrials a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMultiClass a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegression,
-        ml:LogisticRegressionCV ;
+    rdfs:domain ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNAlphas a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNetCV,
-        ml:LassoCV,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLassoCV ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:LassoCVMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskLassoCVMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNIter a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNIterNoChange a owl:DatatypeProperty ;
-    rdfs:domain ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:SGDClassifier,
-        ml:SGDRegressor ;
+    rdfs:domain ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNetCV,
-        ml:LarsCV,
-        ml:LassoCV,
-        ml:LassoLarsCV,
-        ml:LinearRegression,
-        ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLassoCV,
-        ml:OrthogonalMatchingPursuitCV,
-        ml:PassiveAggressiveClassifier,
-        ml:Perceptron,
-        ml:SGDClassifier,
-        ml:TheilSenRegressor ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:LarsCVMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LinearRegressionMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:OrthogonalMatchingPursuitCVMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:TheilSenRegressorMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNNonzeroCoefs a owl:DatatypeProperty ;
-    rdfs:domain ml:Lars,
-        ml:OrthogonalMatchingPursuit ;
+    rdfs:domain ml:LarsMethod,
+        ml:OrthogonalMatchingPursuitMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNSubsamples a owl:DatatypeProperty ;
-    rdfs:domain ml:TheilSenRegressor ;
+    rdfs:domain ml:TheilSenRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNoiseVariance a owl:DatatypeProperty ;
-    rdfs:domain ml:LassoLarsIC ;
+    rdfs:domain ml:LassoLarsICMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNu a owl:DatatypeProperty ;
-    rdfs:domain ml:SGDOneClassSVM ;
+    rdfs:domain ml:SGDOneClassSVMMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPenalty a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:Perceptron,
-        ml:SGDClassifier,
-        ml:SGDRegressor ;
+    rdfs:domain ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPositive a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:LinearRegression,
-        ml:Ridge,
-        ml:RidgeClassifier ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoLarsMethod,
+        ml:LassoMethod,
+        ml:LinearRegressionMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPower a owl:DatatypeProperty ;
-    rdfs:domain ml:TweedieRegressor ;
+    rdfs:domain ml:TweedieRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPowerT a owl:DatatypeProperty ;
-    rdfs:domain ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor ;
+    rdfs:domain ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPrecompute a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:Lars,
-        ml:LarsCV,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:OrthogonalMatchingPursuit ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:LarsCVMethod,
+        ml:LarsMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoLarsMethod,
+        ml:LassoMethod,
+        ml:OrthogonalMatchingPursuitMethod ;
     rdfs:range xsd:boolean,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamQuantile a owl:DatatypeProperty ;
-    rdfs:domain ml:QuantileRegressor ;
+    rdfs:domain ml:QuantileRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:Lars,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLasso,
-        ml:MultiTaskLassoCV,
-        ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:RANSACRegressor,
-        ml:Ridge,
-        ml:RidgeClassifier,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor,
-        ml:TheilSenRegressor ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:LarsMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsMethod,
+        ml:LassoMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:MultiTaskLassoMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:RANSACRegressorMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod,
+        ml:TheilSenRegressorMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRefit a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegressionCV ;
+    rdfs:domain ml:LogisticRegressionCVMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamResidualThreshold a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamScoring a owl:DatatypeProperty ;
-    rdfs:domain ml:LogisticRegressionCV,
-        ml:RidgeCV,
-        ml:RidgeClassifierCV ;
+    rdfs:domain ml:LogisticRegressionCVMethod,
+        ml:RidgeCVMethod,
+        ml:RidgeClassifierCVMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSelection a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLasso,
-        ml:MultiTaskLassoCV ;
+    rdfs:domain ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:LassoCVMethod,
+        ml:LassoMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:MultiTaskLassoMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShuffle a owl:DatatypeProperty ;
-    rdfs:domain ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor ;
+    rdfs:domain ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSolver a owl:DatatypeProperty ;
-    rdfs:domain ml:GammaRegressor,
-        ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:PoissonRegressor,
-        ml:QuantileRegressor,
-        ml:Ridge,
-        ml:RidgeClassifier,
-        ml:TweedieRegressor ;
+    rdfs:domain ml:GammaRegressorMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:PoissonRegressorMethod,
+        ml:QuantileRegressorMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSolverOptions a owl:DatatypeProperty ;
-    rdfs:domain ml:QuantileRegressor ;
+    rdfs:domain ml:QuantileRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStopNInliers a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStopScore a owl:DatatypeProperty ;
-    rdfs:domain ml:RANSACRegressor ;
+    rdfs:domain ml:RANSACRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStoreCvValues a owl:DatatypeProperty ;
-    rdfs:domain ml:RidgeCV,
-        ml:RidgeClassifierCV ;
+    rdfs:domain ml:RidgeCVMethod,
+        ml:RidgeClassifierCVMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamThresholdLambda a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression ;
+    rdfs:domain ml:ARDRegressionMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge,
-        ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:GammaRegressor,
-        ml:HuberRegressor,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLasso,
-        ml:MultiTaskLassoCV,
-        ml:OrthogonalMatchingPursuit,
-        ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:PoissonRegressor,
-        ml:Ridge,
-        ml:RidgeClassifier,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor,
-        ml:TheilSenRegressor,
-        ml:TweedieRegressor ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod,
+        ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:GammaRegressorMethod,
+        ml:HuberRegressorMethod,
+        ml:LassoCVMethod,
+        ml:LassoMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:MultiTaskLassoMethod,
+        ml:OrthogonalMatchingPursuitMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:PoissonRegressorMethod,
+        ml:RidgeClassifierMethod,
+        ml:RidgeMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod,
+        ml:TheilSenRegressorMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamValidationFraction a owl:DatatypeProperty ;
-    rdfs:domain ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:SGDClassifier,
-        ml:SGDRegressor ;
+    rdfs:domain ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:ARDRegression,
-        ml:BayesianRidge,
-        ml:ElasticNetCV,
-        ml:GammaRegressor,
-        ml:Lars,
-        ml:LarsCV,
-        ml:LassoCV,
-        ml:LassoLars,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:LogisticRegression,
-        ml:LogisticRegressionCV,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLassoCV,
-        ml:OrthogonalMatchingPursuitCV,
-        ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:PoissonRegressor,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor,
-        ml:TheilSenRegressor,
-        ml:TweedieRegressor ;
+    rdfs:domain ml:ARDRegressionMethod,
+        ml:BayesianRidgeMethod,
+        ml:ElasticNetCVMethod,
+        ml:GammaRegressorMethod,
+        ml:LarsCVMethod,
+        ml:LarsMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoLarsMethod,
+        ml:LogisticRegressionCVMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:OrthogonalMatchingPursuitCVMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:PoissonRegressorMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod,
+        ml:TheilSenRegressorMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:range xsd:boolean,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWarmStart a owl:DatatypeProperty ;
-    rdfs:domain ml:ElasticNet,
-        ml:GammaRegressor,
-        ml:HuberRegressor,
-        ml:Lasso,
-        ml:LogisticRegression,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskLasso,
-        ml:PassiveAggressiveClassifier,
-        ml:PassiveAggressiveRegressor,
-        ml:Perceptron,
-        ml:PoissonRegressor,
-        ml:SGDClassifier,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor,
-        ml:TweedieRegressor ;
+    rdfs:domain ml:ElasticNetMethod,
+        ml:GammaRegressorMethod,
+        ml:HuberRegressorMethod,
+        ml:LassoMethod,
+        ml:LogisticRegressionMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoMethod,
+        ml:PassiveAggressiveClassifierMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PerceptronMethod,
+        ml:PoissonRegressorMethod,
+        ml:SGDClassifierMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:RegularizedRegression ;
-    rdfs:range ml:ElasticNet,
-        ml:ElasticNetCV,
-        ml:GammaRegressor,
-        ml:HuberRegressor,
-        ml:LarsCV,
-        ml:Lasso,
-        ml:LassoCV,
-        ml:LassoLarsCV,
-        ml:LassoLarsIC,
-        ml:MultiTaskElasticNet,
-        ml:MultiTaskElasticNetCV,
-        ml:MultiTaskLasso,
-        ml:MultiTaskLassoCV,
-        ml:OrthogonalMatchingPursuit,
-        ml:OrthogonalMatchingPursuitCV,
-        ml:PassiveAggressiveRegressor,
-        ml:PoissonRegressor,
-        ml:QuantileRegressor,
-        ml:RANSACRegressor,
-        ml:Ridge,
-        ml:RidgeCV,
-        ml:SGDOneClassSVM,
-        ml:SGDRegressor,
-        ml:TheilSenRegressor,
-        ml:TweedieRegressor ;
+    rdfs:range ml:ElasticNetCVMethod,
+        ml:ElasticNetMethod,
+        ml:GammaRegressorMethod,
+        ml:HuberRegressorMethod,
+        ml:LarsCVMethod,
+        ml:LassoCVMethod,
+        ml:LassoLarsCVMethod,
+        ml:LassoLarsICMethod,
+        ml:LassoMethod,
+        ml:MultiTaskElasticNetCVMethod,
+        ml:MultiTaskElasticNetMethod,
+        ml:MultiTaskLassoCVMethod,
+        ml:MultiTaskLassoMethod,
+        ml:OrthogonalMatchingPursuitCVMethod,
+        ml:OrthogonalMatchingPursuitMethod,
+        ml:PassiveAggressiveRegressorMethod,
+        ml:PoissonRegressorMethod,
+        ml:QuantileRegressorMethod,
+        ml:RANSACRegressorMethod,
+        ml:RidgeCVMethod,
+        ml:RidgeMethod,
+        ml:SGDOneClassSVMMethod,
+        ml:SGDRegressorMethod,
+        ml:TheilSenRegressorMethod,
+        ml:TweedieRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasSimpleRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:SimpleRegression ;
-    rdfs:range ml:LinearRegression ;
+    rdfs:range ml:LinearRegressionMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:SklearnModule a owl:Class ;
@@ -753,7 +753,7 @@ ml:SklearnModule a owl:Class ;
 ml:GlmModule a owl:Class ;
     rdfs:subClassOf ml:LinearModelModule .
 
-ml:LinearRegression a owl:Class ;
+ml:LinearRegressionMethod a owl:Class ;
     rdfs:comment """Ordinary least squares Linear Regression.
 
 LinearRegression fits a linear model with coefficients w = (w1, ..., wp)
@@ -850,7 +850,7 @@ array([16.])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:OrthogonalMatchingPursuit a owl:Class ;
+ml:OrthogonalMatchingPursuitMethod a owl:Class ;
     rdfs:comment """Orthogonal Matching Pursuit model (OMP).
 
 Read more in the :ref:`User Guide <omp>`.
@@ -941,7 +941,7 @@ array([-78.3854...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:QuantileRegressor a owl:Class ;
+ml:QuantileRegressorMethod a owl:Class ;
     rdfs:comment """Linear regression model that predicts conditional quantiles.
 
 The linear :class:`QuantileRegressor` optimizes the pinball loss for a
@@ -1032,7 +1032,7 @@ Examples
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:RidgeClassifierCV a owl:Class ;
+ml:RidgeClassifierCVMethod a owl:Class ;
     rdfs:comment """Ridge classifier with built-in cross-validation.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -1152,7 +1152,7 @@ Examples
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:HuberRegressor a owl:Class ;
+ml:HuberRegressorMethod a owl:Class ;
     rdfs:comment """L2-regularized linear regression model that is robust to outliers.
 
 The Huber Regressor optimizes the squared loss for the samples where
@@ -1276,7 +1276,7 @@ Linear Regression coefficients: [-1.9221...  7.0226...]""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:OrthogonalMatchingPursuitCV a owl:Class ;
+ml:OrthogonalMatchingPursuitCVMethod a owl:Class ;
     rdfs:comment """Cross-validated Orthogonal Matching Pursuit model (OMP).
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -1388,7 +1388,7 @@ array([-78.3854...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:RidgeCV a owl:Class ;
+ml:RidgeCVMethod a owl:Class ;
     rdfs:comment """Ridge regression with built-in cross-validation.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -1520,7 +1520,7 @@ Examples
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:GammaRegressor a owl:Class ;
+ml:GammaRegressorMethod a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Gamma distribution.
 
 This regressor uses the 'log' link function.
@@ -1626,7 +1626,7 @@ array([19.483..., 35.795...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:PoissonRegressor a owl:Class ;
+ml:PoissonRegressorMethod a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Poisson distribution.
 
 This regressor uses the 'log' link function.
@@ -1731,7 +1731,7 @@ array([10.676..., 21.875...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:MultiTaskLasso a owl:Class ;
+ml:MultiTaskLassoMethod a owl:Class ;
     rdfs:comment """Multi-task Lasso model trained with L1/L2 mixed-norm as regularizer.
 
 The optimization objective for Lasso is::
@@ -1847,7 +1847,7 @@ MultiTaskLasso(alpha=0.1)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:Ridge a owl:Class ;
+ml:RidgeMethod a owl:Class ;
     rdfs:comment """Linear least squares with l2 regularization.
 
 Minimizes the objective function::
@@ -2022,118 +2022,7 @@ Ridge()""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:Lars a owl:Class ;
-    rdfs:comment """Least Angle Regression model a.k.a. LAR.
-
-Read more in the :ref:`User Guide <least_angle_regression>`.
-
-Parameters
-----------
-fit_intercept : bool, default=True
-    Whether to calculate the intercept for this model. If set
-    to false, no intercept will be used in calculations
-    (i.e. data is expected to be centered).
-
-verbose : bool or int, default=False
-    Sets the verbosity amount.
-
-precompute : bool, 'auto' or array-like , default='auto'
-    Whether to use a precomputed Gram matrix to speed up
-    calculations. If set to ``'auto'`` let us decide. The Gram
-    matrix can also be passed as argument.
-
-n_nonzero_coefs : int, default=500
-    Target number of non-zero coefficients. Use ``np.inf`` for no limit.
-
-eps : float, default=np.finfo(float).eps
-    The machine-precision regularization in the computation of the
-    Cholesky diagonal factors. Increase this for very ill-conditioned
-    systems. Unlike the ``tol`` parameter in some iterative
-    optimization-based algorithms, this parameter does not control
-    the tolerance of the optimization.
-
-copy_X : bool, default=True
-    If ``True``, X will be copied; else, it may be overwritten.
-
-fit_path : bool, default=True
-    If True the full path is stored in the ``coef_path_`` attribute.
-    If you compute the solution for a large problem or many targets,
-    setting ``fit_path`` to ``False`` will lead to a speedup, especially
-    with a small alpha.
-
-jitter : float, default=None
-    Upper bound on a uniform noise parameter to be added to the
-    `y` values, to satisfy the model's assumption of
-    one-at-a-time computations. Might help with stability.
-
-    .. versionadded:: 0.23
-
-random_state : int, RandomState instance or None, default=None
-    Determines random number generation for jittering. Pass an int
-    for reproducible output across multiple function calls.
-    See :term:`Glossary <random_state>`. Ignored if `jitter` is None.
-
-    .. versionadded:: 0.23
-
-Attributes
-----------
-alphas_ : array-like of shape (n_alphas + 1,) or list of such arrays
-    Maximum of covariances (in absolute value) at each iteration.
-    ``n_alphas`` is either ``max_iter``, ``n_features`` or the
-    number of nodes in the path with ``alpha >= alpha_min``, whichever
-    is smaller. If this is a list of array-like, the length of the outer
-    list is `n_targets`.
-
-active_ : list of shape (n_alphas,) or list of such lists
-    Indices of active variables at the end of the path.
-    If this is a list of list, the length of the outer list is `n_targets`.
-
-coef_path_ : array-like of shape (n_features, n_alphas + 1) or list             of such arrays
-    The varying values of the coefficients along the path. It is not
-    present if the ``fit_path`` parameter is ``False``. If this is a list
-    of array-like, the length of the outer list is `n_targets`.
-
-coef_ : array-like of shape (n_features,) or (n_targets, n_features)
-    Parameter vector (w in the formulation formula).
-
-intercept_ : float or array-like of shape (n_targets,)
-    Independent term in decision function.
-
-n_iter_ : array-like or int
-    The number of iterations taken by lars_path to find the
-    grid of alphas for each target.
-
-n_features_in_ : int
-    Number of features seen during :term:`fit`.
-
-    .. versionadded:: 0.24
-
-feature_names_in_ : ndarray of shape (`n_features_in_`,)
-    Names of features seen during :term:`fit`. Defined only when `X`
-    has feature names that are all strings.
-
-    .. versionadded:: 1.0
-
-See Also
---------
-lars_path: Compute Least Angle Regression or Lasso
-    path using LARS algorithm.
-LarsCV : Cross-validated Least Angle Regression model.
-sklearn.decomposition.sparse_encode : Sparse coding.
-
-Examples
---------
->>> from sklearn import linear_model
->>> reg = linear_model.Lars(n_nonzero_coefs=1)
->>> reg.fit([[-1, 1], [0, 0], [1, 1]], [-1.1111, 0, -1.1111])
-Lars(n_nonzero_coefs=1)
->>> print(reg.coef_)
-[ 0. -1.11...]""" ;
-    rdfs:subClassOf ds:AtomicMethod,
-        ml:LinearModelModule,
-        ml:TrainMethod .
-
-ml:LarsCV a owl:Class ;
+ml:LarsCVMethod a owl:Class ;
     rdfs:comment """Cross-validated Least Angle Regression model.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -2272,7 +2161,118 @@ array([154.3996...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:LassoLarsIC a owl:Class ;
+ml:LarsMethod a owl:Class ;
+    rdfs:comment """Least Angle Regression model a.k.a. LAR.
+
+Read more in the :ref:`User Guide <least_angle_regression>`.
+
+Parameters
+----------
+fit_intercept : bool, default=True
+    Whether to calculate the intercept for this model. If set
+    to false, no intercept will be used in calculations
+    (i.e. data is expected to be centered).
+
+verbose : bool or int, default=False
+    Sets the verbosity amount.
+
+precompute : bool, 'auto' or array-like , default='auto'
+    Whether to use a precomputed Gram matrix to speed up
+    calculations. If set to ``'auto'`` let us decide. The Gram
+    matrix can also be passed as argument.
+
+n_nonzero_coefs : int, default=500
+    Target number of non-zero coefficients. Use ``np.inf`` for no limit.
+
+eps : float, default=np.finfo(float).eps
+    The machine-precision regularization in the computation of the
+    Cholesky diagonal factors. Increase this for very ill-conditioned
+    systems. Unlike the ``tol`` parameter in some iterative
+    optimization-based algorithms, this parameter does not control
+    the tolerance of the optimization.
+
+copy_X : bool, default=True
+    If ``True``, X will be copied; else, it may be overwritten.
+
+fit_path : bool, default=True
+    If True the full path is stored in the ``coef_path_`` attribute.
+    If you compute the solution for a large problem or many targets,
+    setting ``fit_path`` to ``False`` will lead to a speedup, especially
+    with a small alpha.
+
+jitter : float, default=None
+    Upper bound on a uniform noise parameter to be added to the
+    `y` values, to satisfy the model's assumption of
+    one-at-a-time computations. Might help with stability.
+
+    .. versionadded:: 0.23
+
+random_state : int, RandomState instance or None, default=None
+    Determines random number generation for jittering. Pass an int
+    for reproducible output across multiple function calls.
+    See :term:`Glossary <random_state>`. Ignored if `jitter` is None.
+
+    .. versionadded:: 0.23
+
+Attributes
+----------
+alphas_ : array-like of shape (n_alphas + 1,) or list of such arrays
+    Maximum of covariances (in absolute value) at each iteration.
+    ``n_alphas`` is either ``max_iter``, ``n_features`` or the
+    number of nodes in the path with ``alpha >= alpha_min``, whichever
+    is smaller. If this is a list of array-like, the length of the outer
+    list is `n_targets`.
+
+active_ : list of shape (n_alphas,) or list of such lists
+    Indices of active variables at the end of the path.
+    If this is a list of list, the length of the outer list is `n_targets`.
+
+coef_path_ : array-like of shape (n_features, n_alphas + 1) or list             of such arrays
+    The varying values of the coefficients along the path. It is not
+    present if the ``fit_path`` parameter is ``False``. If this is a list
+    of array-like, the length of the outer list is `n_targets`.
+
+coef_ : array-like of shape (n_features,) or (n_targets, n_features)
+    Parameter vector (w in the formulation formula).
+
+intercept_ : float or array-like of shape (n_targets,)
+    Independent term in decision function.
+
+n_iter_ : array-like or int
+    The number of iterations taken by lars_path to find the
+    grid of alphas for each target.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+lars_path: Compute Least Angle Regression or Lasso
+    path using LARS algorithm.
+LarsCV : Cross-validated Least Angle Regression model.
+sklearn.decomposition.sparse_encode : Sparse coding.
+
+Examples
+--------
+>>> from sklearn import linear_model
+>>> reg = linear_model.Lars(n_nonzero_coefs=1)
+>>> reg.fit([[-1, 1], [0, 0], [1, 1]], [-1.1111, 0, -1.1111])
+Lars(n_nonzero_coefs=1)
+>>> print(reg.coef_)
+[ 0. -1.11...]""" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
+ml:LassoLarsICMethod a owl:Class ;
     rdfs:comment """Lasso model fit with Lars using BIC or AIC for model selection.
 
 The optimization objective for Lasso is::
@@ -2428,7 +2428,7 @@ LassoLarsIC(criterion='bic')
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:MultiTaskElasticNet a owl:Class ;
+ml:MultiTaskElasticNetMethod a owl:Class ;
     rdfs:comment """Multi-task ElasticNet model trained with L1/L2 mixed-norm as regularizer.
 
 The optimization objective for MultiTaskElasticNet is::
@@ -2554,7 +2554,7 @@ MultiTaskElasticNet(alpha=0.1)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:RidgeClassifier a owl:Class ;
+ml:RidgeClassifierMethod a owl:Class ;
     rdfs:comment """Classifier using Ridge regression.
 
 This classifier first converts the target values into ``{-1, 1}`` and
@@ -2714,7 +2714,7 @@ Examples
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:TheilSenRegressor a owl:Class ;
+ml:TheilSenRegressorMethod a owl:Class ;
     rdfs:comment """Theil-Sen Estimator: robust multivariate regression model.
 
 The algorithm calculates least square solutions on subsets with size
@@ -2833,7 +2833,7 @@ array([-31.5871...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:TweedieRegressor a owl:Class ;
+ml:TweedieRegressorMethod a owl:Class ;
     rdfs:comment """Generalized Linear Model with a Tweedie distribution.
 
 This estimator can be used to model different GLMs depending on the
@@ -2969,156 +2969,7 @@ array([2.500..., 4.599...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:Lasso a owl:Class ;
-    rdfs:comment """Linear Model trained with L1 prior as regularizer (aka the Lasso).
-
-The optimization objective for Lasso is::
-
-    (1 / (2 * n_samples)) * ||y - Xw||^2_2 + alpha * ||w||_1
-
-Technically the Lasso model is optimizing the same objective function as
-the Elastic Net with ``l1_ratio=1.0`` (no L2 penalty).
-
-Read more in the :ref:`User Guide <lasso>`.
-
-Parameters
-----------
-alpha : float, default=1.0
-    Constant that multiplies the L1 term, controlling regularization
-    strength. `alpha` must be a non-negative float i.e. in `[0, inf)`.
-
-    When `alpha = 0`, the objective is equivalent to ordinary least
-    squares, solved by the :class:`LinearRegression` object. For numerical
-    reasons, using `alpha = 0` with the `Lasso` object is not advised.
-    Instead, you should use the :class:`LinearRegression` object.
-
-fit_intercept : bool, default=True
-    Whether to calculate the intercept for this model. If set
-    to False, no intercept will be used in calculations
-    (i.e. data is expected to be centered).
-
-precompute : bool or array-like of shape (n_features, n_features),                 default=False
-    Whether to use a precomputed Gram matrix to speed up
-    calculations. The Gram matrix can also be passed as argument.
-    For sparse input this option is always ``False`` to preserve sparsity.
-
-copy_X : bool, default=True
-    If ``True``, X will be copied; else, it may be overwritten.
-
-max_iter : int, default=1000
-    The maximum number of iterations.
-
-tol : float, default=1e-4
-    The tolerance for the optimization: if the updates are
-    smaller than ``tol``, the optimization code checks the
-    dual gap for optimality and continues until it is smaller
-    than ``tol``, see Notes below.
-
-warm_start : bool, default=False
-    When set to True, reuse the solution of the previous call to fit as
-    initialization, otherwise, just erase the previous solution.
-    See :term:`the Glossary <warm_start>`.
-
-positive : bool, default=False
-    When set to ``True``, forces the coefficients to be positive.
-
-random_state : int, RandomState instance, default=None
-    The seed of the pseudo random number generator that selects a random
-    feature to update. Used when ``selection`` == 'random'.
-    Pass an int for reproducible output across multiple function calls.
-    See :term:`Glossary <random_state>`.
-
-selection : {'cyclic', 'random'}, default='cyclic'
-    If set to 'random', a random coefficient is updated every iteration
-    rather than looping over features sequentially by default. This
-    (setting to 'random') often leads to significantly faster convergence
-    especially when tol is higher than 1e-4.
-
-Attributes
-----------
-coef_ : ndarray of shape (n_features,) or (n_targets, n_features)
-    Parameter vector (w in the cost function formula).
-
-dual_gap_ : float or ndarray of shape (n_targets,)
-    Given param alpha, the dual gaps at the end of the optimization,
-    same shape as each observation of y.
-
-sparse_coef_ : sparse matrix of shape (n_features, 1) or             (n_targets, n_features)
-    Readonly property derived from ``coef_``.
-
-intercept_ : float or ndarray of shape (n_targets,)
-    Independent term in decision function.
-
-n_iter_ : int or list of int
-    Number of iterations run by the coordinate descent solver to reach
-    the specified tolerance.
-
-n_features_in_ : int
-    Number of features seen during :term:`fit`.
-
-    .. versionadded:: 0.24
-
-feature_names_in_ : ndarray of shape (`n_features_in_`,)
-    Names of features seen during :term:`fit`. Defined only when `X`
-    has feature names that are all strings.
-
-    .. versionadded:: 1.0
-
-See Also
---------
-lars_path : Regularization path using LARS.
-lasso_path : Regularization path using Lasso.
-LassoLars : Lasso Path along the regularization parameter using LARS algorithm.
-LassoCV : Lasso alpha parameter by cross-validation.
-LassoLarsCV : Lasso least angle parameter algorithm by cross-validation.
-sklearn.decomposition.sparse_encode : Sparse coding array estimator.
-
-Notes
------
-The algorithm used to fit the model is coordinate descent.
-
-To avoid unnecessary memory duplication the X argument of the fit method
-should be directly passed as a Fortran-contiguous numpy array.
-
-Regularization improves the conditioning of the problem and
-reduces the variance of the estimates. Larger values specify stronger
-regularization. Alpha corresponds to `1 / (2C)` in other linear
-models such as :class:`~sklearn.linear_model.LogisticRegression` or
-:class:`~sklearn.svm.LinearSVC`. If an array is passed, penalties are
-assumed to be specific to the targets. Hence they must correspond in
-number.
-
-The precise stopping criteria based on `tol` are the following: First, check that
-that maximum coordinate update, i.e. :math:`\\max_j |w_j^{new} - w_j^{old}|`
-is smaller than `tol` times the maximum absolute coefficient, :math:`\\max_j |w_j|`.
-If so, then additionally check whether the dual gap is smaller than `tol` times
-:math:`||y||_2^2 / n_{\\text{samples}}`.
-
-The target can be a 2-dimensional array, resulting in the optimization of the
-following objective::
-
-    (1 / (2 * n_samples)) * ||Y - XW||^2_F + alpha * ||W||_11
-
-where :math:`||W||_{1,1}` is the sum of the magnitude of the matrix coefficients.
-It should not be confused with :class:`~sklearn.linear_model.MultiTaskLasso` which
-instead penalizes the :math:`L_{2,1}` norm of the coefficients, yielding row-wise
-sparsity in the coefficients.
-
-Examples
---------
->>> from sklearn import linear_model
->>> clf = linear_model.Lasso(alpha=0.1)
->>> clf.fit([[0,0], [1, 1], [2, 2]], [0, 1, 2])
-Lasso(alpha=0.1)
->>> print(clf.coef_)
-[0.85 0.  ]
->>> print(clf.intercept_)
-0.15...""" ;
-    rdfs:subClassOf ds:AtomicMethod,
-        ml:LinearModelModule,
-        ml:TrainMethod .
-
-ml:LassoLarsCV a owl:Class ;
+ml:LassoLarsCVMethod a owl:Class ;
     rdfs:comment """Cross-validated Lasso, using the LARS algorithm.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -3283,7 +3134,156 @@ array([-78.4831...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:RANSACRegressor a owl:Class ;
+ml:LassoMethod a owl:Class ;
+    rdfs:comment """Linear Model trained with L1 prior as regularizer (aka the Lasso).
+
+The optimization objective for Lasso is::
+
+    (1 / (2 * n_samples)) * ||y - Xw||^2_2 + alpha * ||w||_1
+
+Technically the Lasso model is optimizing the same objective function as
+the Elastic Net with ``l1_ratio=1.0`` (no L2 penalty).
+
+Read more in the :ref:`User Guide <lasso>`.
+
+Parameters
+----------
+alpha : float, default=1.0
+    Constant that multiplies the L1 term, controlling regularization
+    strength. `alpha` must be a non-negative float i.e. in `[0, inf)`.
+
+    When `alpha = 0`, the objective is equivalent to ordinary least
+    squares, solved by the :class:`LinearRegression` object. For numerical
+    reasons, using `alpha = 0` with the `Lasso` object is not advised.
+    Instead, you should use the :class:`LinearRegression` object.
+
+fit_intercept : bool, default=True
+    Whether to calculate the intercept for this model. If set
+    to False, no intercept will be used in calculations
+    (i.e. data is expected to be centered).
+
+precompute : bool or array-like of shape (n_features, n_features),                 default=False
+    Whether to use a precomputed Gram matrix to speed up
+    calculations. The Gram matrix can also be passed as argument.
+    For sparse input this option is always ``False`` to preserve sparsity.
+
+copy_X : bool, default=True
+    If ``True``, X will be copied; else, it may be overwritten.
+
+max_iter : int, default=1000
+    The maximum number of iterations.
+
+tol : float, default=1e-4
+    The tolerance for the optimization: if the updates are
+    smaller than ``tol``, the optimization code checks the
+    dual gap for optimality and continues until it is smaller
+    than ``tol``, see Notes below.
+
+warm_start : bool, default=False
+    When set to True, reuse the solution of the previous call to fit as
+    initialization, otherwise, just erase the previous solution.
+    See :term:`the Glossary <warm_start>`.
+
+positive : bool, default=False
+    When set to ``True``, forces the coefficients to be positive.
+
+random_state : int, RandomState instance, default=None
+    The seed of the pseudo random number generator that selects a random
+    feature to update. Used when ``selection`` == 'random'.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary <random_state>`.
+
+selection : {'cyclic', 'random'}, default='cyclic'
+    If set to 'random', a random coefficient is updated every iteration
+    rather than looping over features sequentially by default. This
+    (setting to 'random') often leads to significantly faster convergence
+    especially when tol is higher than 1e-4.
+
+Attributes
+----------
+coef_ : ndarray of shape (n_features,) or (n_targets, n_features)
+    Parameter vector (w in the cost function formula).
+
+dual_gap_ : float or ndarray of shape (n_targets,)
+    Given param alpha, the dual gaps at the end of the optimization,
+    same shape as each observation of y.
+
+sparse_coef_ : sparse matrix of shape (n_features, 1) or             (n_targets, n_features)
+    Readonly property derived from ``coef_``.
+
+intercept_ : float or ndarray of shape (n_targets,)
+    Independent term in decision function.
+
+n_iter_ : int or list of int
+    Number of iterations run by the coordinate descent solver to reach
+    the specified tolerance.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+lars_path : Regularization path using LARS.
+lasso_path : Regularization path using Lasso.
+LassoLars : Lasso Path along the regularization parameter using LARS algorithm.
+LassoCV : Lasso alpha parameter by cross-validation.
+LassoLarsCV : Lasso least angle parameter algorithm by cross-validation.
+sklearn.decomposition.sparse_encode : Sparse coding array estimator.
+
+Notes
+-----
+The algorithm used to fit the model is coordinate descent.
+
+To avoid unnecessary memory duplication the X argument of the fit method
+should be directly passed as a Fortran-contiguous numpy array.
+
+Regularization improves the conditioning of the problem and
+reduces the variance of the estimates. Larger values specify stronger
+regularization. Alpha corresponds to `1 / (2C)` in other linear
+models such as :class:`~sklearn.linear_model.LogisticRegression` or
+:class:`~sklearn.svm.LinearSVC`. If an array is passed, penalties are
+assumed to be specific to the targets. Hence they must correspond in
+number.
+
+The precise stopping criteria based on `tol` are the following: First, check that
+that maximum coordinate update, i.e. :math:`\\max_j |w_j^{new} - w_j^{old}|`
+is smaller than `tol` times the maximum absolute coefficient, :math:`\\max_j |w_j|`.
+If so, then additionally check whether the dual gap is smaller than `tol` times
+:math:`||y||_2^2 / n_{\\text{samples}}`.
+
+The target can be a 2-dimensional array, resulting in the optimization of the
+following objective::
+
+    (1 / (2 * n_samples)) * ||Y - XW||^2_F + alpha * ||W||_11
+
+where :math:`||W||_{1,1}` is the sum of the magnitude of the matrix coefficients.
+It should not be confused with :class:`~sklearn.linear_model.MultiTaskLasso` which
+instead penalizes the :math:`L_{2,1}` norm of the coefficients, yielding row-wise
+sparsity in the coefficients.
+
+Examples
+--------
+>>> from sklearn import linear_model
+>>> clf = linear_model.Lasso(alpha=0.1)
+>>> clf.fit([[0,0], [1, 1], [2, 2]], [0, 1, 2])
+Lasso(alpha=0.1)
+>>> print(clf.coef_)
+[0.85 0.  ]
+>>> print(clf.intercept_)
+0.15...""" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
+ml:RANSACRegressorMethod a owl:Class ;
     rdfs:comment """RANSAC (RANdom SAmple Consensus) algorithm.
 
 RANSAC is an iterative algorithm for the robust estimation of parameters
@@ -3455,7 +3455,7 @@ array([-31.9417...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:ElasticNet a owl:Class ;
+ml:ElasticNetMethod a owl:Class ;
     rdfs:comment """Linear regression with combined L1 and L2 priors as regularizer.
 
 Minimizes the objective function::
@@ -3605,7 +3605,7 @@ ElasticNet(random_state=0)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:LassoLars a owl:Class ;
+ml:LassoLarsMethod a owl:Class ;
     rdfs:comment """Lasso model fit with Least Angle Regression a.k.a. Lars.
 
 It is a Linear Model trained with an L1 prior as regularizer.
@@ -3747,7 +3747,7 @@ LassoLars(alpha=0.01)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:ARDRegression a owl:Class ;
+ml:ARDRegressionMethod a owl:Class ;
     rdfs:comment """Bayesian ARD regression.
 
 Fit the weights of a regression model, using an ARD prior. The weights of
@@ -3887,7 +3887,7 @@ array([1.])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:MultiTaskLassoCV a owl:Class ;
+ml:MultiTaskLassoCVMethod a owl:Class ;
     rdfs:comment """Multi-task Lasso model trained with L1/L2 mixed-norm as regularizer.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -4047,7 +4047,7 @@ array([[153.7971...,  94.9015...]])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:SGDOneClassSVM a owl:Class ;
+ml:SGDOneClassSVMMethod a owl:Class ;
     rdfs:comment """Solves linear One-Class SVM using Stochastic Gradient Descent.
 
 This implementation is meant to be used with a kernel approximation
@@ -4197,7 +4197,7 @@ SGDOneClassSVM(random_state=42)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:BayesianRidge a owl:Class ;
+ml:BayesianRidgeMethod a owl:Class ;
     rdfs:comment """Bayesian ridge regression.
 
 Fit a Bayesian ridge model. See the Notes section for details on this
@@ -4350,7 +4350,7 @@ array([1.])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:MultiTaskElasticNetCV a owl:Class ;
+ml:MultiTaskElasticNetCVMethod a owl:Class ;
     rdfs:comment """Multi-task L1/L2 ElasticNet with built-in cross-validation.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -4525,7 +4525,7 @@ MultiTaskElasticNetCV(cv=3)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:LassoCV a owl:Class ;
+ml:LassoCVMethod a owl:Class ;
     rdfs:comment """Lasso linear model with iterative fitting along a regularization path.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -4695,7 +4695,7 @@ array([-78.4951...])""" ;
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:PassiveAggressiveRegressor a owl:Class ;
+ml:PassiveAggressiveRegressorMethod a owl:Class ;
     rdfs:comment """Passive Aggressive Regressor.
 
 Read more in the :ref:`User Guide <passive_aggressive>`.
@@ -4841,7 +4841,7 @@ PassiveAggressiveRegressor(max_iter=100, random_state=0)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:ElasticNetCV a owl:Class ;
+ml:ElasticNetCVMethod a owl:Class ;
     rdfs:comment """Elastic Net model with iterative fitting along a regularization path.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -5029,7 +5029,7 @@ ElasticNetCV(cv=5, random_state=0)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:LogisticRegression a owl:Class ;
+ml:LogisticRegressionMethod a owl:Class ;
     rdfs:comment """Logistic Regression (aka logit, MaxEnt) classifier.
 
 In the multiclass case, the training algorithm uses the one-vs-rest (OvR)
@@ -5311,7 +5311,7 @@ array([[9.8...e-01, 1.8...e-02, 1.4...e-08],
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:PassiveAggressiveClassifier a owl:Class ;
+ml:PassiveAggressiveClassifierMethod a owl:Class ;
     rdfs:comment """Passive Aggressive Classifier.
 
 Read more in the :ref:`User Guide <passive_aggressive>`.
@@ -5477,7 +5477,7 @@ PassiveAggressiveClassifier(random_state=0)
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:Perceptron a owl:Class ;
+ml:PerceptronMethod a owl:Class ;
     rdfs:comment """Linear perceptron classifier.
 
 The implementation is a wrapper around :class:`~sklearn.linear_model.SGDClassifier`
@@ -5646,7 +5646,7 @@ Perceptron()
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:LogisticRegressionCV a owl:Class ;
+ml:LogisticRegressionCVMethod a owl:Class ;
     rdfs:comment """Logistic Regression CV (aka logit, MaxEnt) classifier.
 
 See glossary entry for :term:`cross-validation estimator`.
@@ -5925,7 +5925,7 @@ array([0, 0])
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:SGDRegressor a owl:Class ;
+ml:SGDRegressorMethod a owl:Class ;
     rdfs:comment """Linear model fitted by minimizing a regularized empirical loss with SGD.
 
 SGD stands for Stochastic Gradient Descent: the gradient of the loss is
@@ -6152,7 +6152,7 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:SGDClassifier a owl:Class ;
+ml:SGDClassifierMethod a owl:Class ;
     rdfs:comment """Linear classifiers (SVM, logistic regression, etc.) with SGD training.
 
 This estimator implements regularized linear models with stochastic

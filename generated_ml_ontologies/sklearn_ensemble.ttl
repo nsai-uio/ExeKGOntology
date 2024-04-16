@@ -6,482 +6,482 @@
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:AdaBoostClassifier,
-        ml:BaggingClassifier,
-        ml:ExtraTreesClassifier,
-        ml:GradientBoostingClassifier,
-        ml:HistGradientBoostingClassifier,
-        ml:RandomForestClassifier,
-        ml:StackingClassifier,
-        ml:VotingClassifier ;
+    rdfs:range ml:AdaBoostClassifierMethod,
+        ml:BaggingClassifierMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:RandomForestClassifierMethod,
+        ml:StackingClassifierMethod,
+        ml:VotingClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasBoostingRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:BoostingRegression ;
-    rdfs:range ml:AdaBoostRegressor,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:range ml:AdaBoostRegressorMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasClusteringMethod a owl:ObjectProperty ;
     rdfs:domain ml:Clustering ;
-    rdfs:range ml:IsolationForest ;
+    rdfs:range ml:IsolationForestMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasDataProcessingMethod a owl:ObjectProperty ;
     rdfs:domain ml:DataProcessing ;
-    rdfs:range ml:RandomTreesEmbedding ;
+    rdfs:range ml:RandomTreesEmbeddingMethod ;
     rdfs:subPropertyOf ml:hasPrepareTransformerMethod .
 
 ml:hasMulticlassClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:MulticlassClassification ;
-    rdfs:range ml:AdaBoostClassifier,
-        ml:ExtraTreesClassifier,
-        ml:GradientBoostingClassifier,
-        ml:HistGradientBoostingClassifier,
-        ml:RandomForestClassifier ;
+    rdfs:range ml:AdaBoostClassifierMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:RandomForestClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamAlgorithm a owl:DatatypeProperty ;
-    rdfs:domain ml:AdaBoostClassifier ;
+    rdfs:domain ml:AdaBoostClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:GradientBoostingRegressor ;
+    rdfs:domain ml:GradientBoostingRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBootstrap a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBootstrapFeatures a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCategoricalFeatures a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCcpAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:HistGradientBoostingClassifier,
-        ml:RandomForestClassifier ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:RandomForestClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamContamination a owl:DatatypeProperty ;
-    rdfs:domain ml:IsolationForest ;
+    rdfs:domain ml:IsolationForestMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCriterion a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCv a owl:DatatypeProperty ;
-    rdfs:domain ml:StackingClassifier,
-        ml:StackingRegressor ;
+    rdfs:domain ml:StackingClassifierMethod,
+        ml:StackingRegressorMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEarlyStopping a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEstimator a owl:DatatypeProperty ;
-    rdfs:domain ml:AdaBoostClassifier,
-        ml:AdaBoostRegressor,
-        ml:BaggingClassifier,
-        ml:BaggingRegressor ;
+    rdfs:domain ml:AdaBoostClassifierMethod,
+        ml:AdaBoostRegressorMethod,
+        ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEstimators a owl:DatatypeProperty ;
-    rdfs:domain ml:StackingClassifier,
-        ml:StackingRegressor,
-        ml:VotingClassifier,
-        ml:VotingRegressor ;
+    rdfs:domain ml:StackingClassifierMethod,
+        ml:StackingRegressorMethod,
+        ml:VotingClassifierMethod,
+        ml:VotingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFinalEstimator a owl:DatatypeProperty ;
-    rdfs:domain ml:StackingClassifier,
-        ml:StackingRegressor ;
+    rdfs:domain ml:StackingClassifierMethod,
+        ml:StackingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFlattenTransform a owl:DatatypeProperty ;
-    rdfs:domain ml:VotingClassifier ;
+    rdfs:domain ml:VotingClassifierMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInit a owl:DatatypeProperty ;
-    rdfs:domain ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor ;
+    rdfs:domain ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInteractionCst a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamL2Regularization a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRate a owl:DatatypeProperty ;
-    rdfs:domain ml:AdaBoostClassifier,
-        ml:AdaBoostRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:AdaBoostClassifierMethod,
+        ml:AdaBoostRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLoss a owl:DatatypeProperty ;
-    rdfs:domain ml:AdaBoostRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:AdaBoostRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxBins a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxDepth a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxFeatures a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod ;
     rdfs:range xsd:float,
         xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxLeafNodes a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxSamples a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinImpurityDecrease a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinSamplesLeaf a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinSamplesSplit a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinWeightFractionLeaf a owl:DatatypeProperty ;
-    rdfs:domain ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMonotonicCst a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNEstimators a owl:DatatypeProperty ;
-    rdfs:domain ml:AdaBoostClassifier,
-        ml:AdaBoostRegressor,
-        ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:AdaBoostClassifierMethod,
+        ml:AdaBoostRegressorMethod,
+        ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNIterNoChange a owl:DatatypeProperty ;
-    rdfs:domain ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNJobs a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding,
-        ml:StackingClassifier,
-        ml:StackingRegressor,
-        ml:VotingClassifier,
-        ml:VotingRegressor ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod,
+        ml:StackingClassifierMethod,
+        ml:StackingRegressorMethod,
+        ml:VotingClassifierMethod,
+        ml:VotingRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamOobScore a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod ;
     rdfs:range xsd:boolean,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPassthrough a owl:DatatypeProperty ;
-    rdfs:domain ml:StackingClassifier,
-        ml:StackingRegressor ;
+    rdfs:domain ml:StackingClassifierMethod,
+        ml:StackingRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamQuantile a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:AdaBoostClassifier,
-        ml:AdaBoostRegressor,
-        ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:AdaBoostClassifierMethod,
+        ml:AdaBoostRegressorMethod,
+        ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamScoring a owl:DatatypeProperty ;
-    rdfs:domain ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSparseOutput a owl:DatatypeProperty ;
-    rdfs:domain ml:RandomTreesEmbedding ;
+    rdfs:domain ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStackMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:StackingClassifier ;
+    rdfs:domain ml:StackingClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSubsample a owl:DatatypeProperty ;
-    rdfs:domain ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor ;
+    rdfs:domain ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
-    rdfs:domain ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamValidationFraction a owl:DatatypeProperty ;
-    rdfs:domain ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor ;
+    rdfs:domain ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod ;
     rdfs:range xsd:float,
         xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding,
-        ml:StackingClassifier,
-        ml:StackingRegressor,
-        ml:VotingClassifier,
-        ml:VotingRegressor ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod,
+        ml:StackingClassifierMethod,
+        ml:StackingRegressorMethod,
+        ml:VotingClassifierMethod,
+        ml:VotingRegressorMethod ;
     rdfs:range xsd:boolean,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVoting a owl:DatatypeProperty ;
-    rdfs:domain ml:VotingClassifier ;
+    rdfs:domain ml:VotingClassifierMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWarmStart a owl:DatatypeProperty ;
-    rdfs:domain ml:BaggingClassifier,
-        ml:BaggingRegressor,
-        ml:ExtraTreesClassifier,
-        ml:ExtraTreesRegressor,
-        ml:GradientBoostingClassifier,
-        ml:GradientBoostingRegressor,
-        ml:HistGradientBoostingClassifier,
-        ml:HistGradientBoostingRegressor,
-        ml:IsolationForest,
-        ml:RandomForestClassifier,
-        ml:RandomForestRegressor,
-        ml:RandomTreesEmbedding ;
+    rdfs:domain ml:BaggingClassifierMethod,
+        ml:BaggingRegressorMethod,
+        ml:ExtraTreesClassifierMethod,
+        ml:ExtraTreesRegressorMethod,
+        ml:GradientBoostingClassifierMethod,
+        ml:GradientBoostingRegressorMethod,
+        ml:HistGradientBoostingClassifierMethod,
+        ml:HistGradientBoostingRegressorMethod,
+        ml:IsolationForestMethod,
+        ml:RandomForestClassifierMethod,
+        ml:RandomForestRegressorMethod,
+        ml:RandomTreesEmbeddingMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasRandomForestRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:RandomForestRegression ;
-    rdfs:range ml:ExtraTreesRegressor,
-        ml:RandomForestRegressor ;
+    rdfs:range ml:ExtraTreesRegressorMethod,
+        ml:RandomForestRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:RegularizedRegression ;
-    rdfs:range ml:BaggingRegressor,
-        ml:StackingRegressor,
-        ml:VotingRegressor ;
+    rdfs:range ml:BaggingRegressorMethod,
+        ml:StackingRegressorMethod,
+        ml:VotingRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:SklearnModule a owl:Class ;
@@ -490,7 +490,7 @@ ml:SklearnModule a owl:Class ;
 ml:GradientBoostingModule a owl:Class ;
     rdfs:subClassOf ml:EnsembleModule .
 
-ml:VotingRegressor a owl:Class ;
+ml:VotingRegressorMethod a owl:Class ;
     rdfs:comment """Prediction voting regressor for unfitted estimators.
 
 A voting regressor is an ensemble meta-estimator that fits several base
@@ -583,7 +583,7 @@ In the following example, we drop the `'lr'` estimator with
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:AdaBoostRegressor a owl:Class ;
+ml:AdaBoostRegressorMethod a owl:Class ;
     rdfs:comment """An AdaBoost regressor.
 
 An AdaBoost [1] regressor is a meta-estimator that begins by fitting a
@@ -699,7 +699,7 @@ array([4.7972...])
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:VotingClassifier a owl:Class ;
+ml:VotingClassifierMethod a owl:Class ;
     rdfs:comment """Soft Voting/Majority Rule classifier for unfitted estimators.
 
 Read more in the :ref:`User Guide <voting_classifier>`.
@@ -834,7 +834,7 @@ Setting `flatten_transform=True` with `voting='soft'` flattens output shape of
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:AdaBoostClassifier a owl:Class ;
+ml:AdaBoostClassifierMethod a owl:Class ;
     rdfs:comment """An AdaBoost classifier.
 
 An AdaBoost [1]_ classifier is a meta-estimator that begins by fitting a
@@ -978,7 +978,7 @@ array([1])
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:StackingRegressor a owl:Class ;
+ml:StackingRegressorMethod a owl:Class ;
     rdfs:comment """Stack of estimators with a final regressor.
 
 Stacked generalization consists in stacking the output of individual
@@ -1120,7 +1120,7 @@ Examples
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:StackingClassifier a owl:Class ;
+ml:StackingClassifierMethod a owl:Class ;
     rdfs:comment """Stack of estimators with a final classifier.
 
 Stacked generalization consists in stacking the output of individual
@@ -1296,7 +1296,7 @@ Examples
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:IsolationForest a owl:Class ;
+ml:IsolationForestMethod a owl:Class ;
     rdfs:comment """Isolation Forest Algorithm.
 
 Return the anomaly score of each sample using the IsolationForest algorithm
@@ -1468,7 +1468,7 @@ For an example of using isolation forest for anomaly detection see
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:BaggingClassifier a owl:Class ;
+ml:BaggingClassifierMethod a owl:Class ;
     rdfs:comment """A Bagging classifier.
 
 A Bagging classifier is an ensemble meta-estimator that fits base
@@ -1638,7 +1638,7 @@ array([1])""" ;
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:BaggingRegressor a owl:Class ;
+ml:BaggingRegressorMethod a owl:Class ;
     rdfs:comment """A Bagging regressor.
 
 A Bagging regressor is an ensemble meta-estimator that fits base
@@ -1799,7 +1799,7 @@ array([-2.8720...])""" ;
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:RandomTreesEmbedding a owl:Class ;
+ml:RandomTreesEmbeddingMethod a owl:Class ;
     rdfs:comment """An ensemble of totally random trees.
 
 An unsupervised transformation of a dataset to a high-dimensional
@@ -1981,7 +1981,7 @@ array([[0., 1., 1., 0., 1., 0., 0., 1., 1., 0.],
         ml:EnsembleModule,
         ml:PrepareTransformerMethod .
 
-ml:ExtraTreesRegressor a owl:Class ;
+ml:ExtraTreesRegressorMethod a owl:Class ;
     rdfs:comment """An extra-trees regressor.
 
 This class implements a meta estimator that fits a number of
@@ -2254,7 +2254,7 @@ Examples
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:RandomForestRegressor a owl:Class ;
+ml:RandomForestRegressorMethod a owl:Class ;
     rdfs:comment """A random forest regressor.
 
 A random forest is a meta estimator that fits a number of decision tree
@@ -2551,7 +2551,7 @@ RandomForestRegressor(...)
 ml:EnsembleModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:ExtraTreesClassifier a owl:Class ;
+ml:ExtraTreesClassifierMethod a owl:Class ;
     rdfs:comment """An extra-trees classifier.
 
 This class implements a meta estimator that fits a number of
@@ -2848,7 +2848,7 @@ array([1])""" ;
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:RandomForestClassifier a owl:Class ;
+ml:RandomForestClassifierMethod a owl:Class ;
     rdfs:comment """A random forest classifier.
 
 A random forest is a meta estimator that fits a number of decision tree
@@ -3159,7 +3159,7 @@ RandomForestClassifier(...)
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:GradientBoostingClassifier a owl:Class ;
+ml:GradientBoostingClassifierMethod a owl:Class ;
     rdfs:comment """Gradient Boosting for classification.
 
 This algorithm builds an additive model in a forward stage-wise fashion; it
@@ -3487,7 +3487,7 @@ The following example shows how to fit a gradient boosting classifier with
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:GradientBoostingRegressor a owl:Class ;
+ml:GradientBoostingRegressorMethod a owl:Class ;
     rdfs:comment """Gradient Boosting for regression.
 
 This estimator builds an additive model in a forward stage-wise fashion; it
@@ -3803,7 +3803,7 @@ array([-61...])
         ml:EnsembleModule,
         ml:TrainMethod .
 
-ml:HistGradientBoostingRegressor a owl:Class ;
+ml:HistGradientBoostingRegressorMethod a owl:Class ;
     rdfs:comment """Histogram-based Gradient Boosting Regression Tree.
 
 This estimator is much faster than
@@ -4057,7 +4057,7 @@ Examples
         ml:GradientBoostingModule,
         ml:TrainMethod .
 
-ml:HistGradientBoostingClassifier a owl:Class ;
+ml:HistGradientBoostingClassifierMethod a owl:Class ;
     rdfs:comment """Histogram-based Gradient Boosting Classification Tree.
 
 This estimator is much faster than

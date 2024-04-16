@@ -6,162 +6,162 @@
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:BernoulliRBM,
-        ml:MLPClassifier ;
+    rdfs:range ml:BernoulliRBMMethod,
+        ml:MLPClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamActivation a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBatchSize a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliRBM,
-        ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:BernoulliRBMMethod,
+        ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBeta1 a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBeta2 a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEarlyStopping a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEpsilon a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRate a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliRBM,
-        ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:BernoulliRBMMethod,
+        ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRateInit a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxFun a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMomentum a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNComponents a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliRBM ;
+    rdfs:domain ml:BernoulliRBMMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNIter a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliRBM ;
+    rdfs:domain ml:BernoulliRBMMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNIterNoChange a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNesterovsMomentum a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPowerT a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliRBM,
-        ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:BernoulliRBMMethod,
+        ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShuffle a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSolver a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamValidationFraction a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:BernoulliRBM,
-        ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:BernoulliRBMMethod,
+        ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:boolean,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWarmStart a owl:DatatypeProperty ;
-    rdfs:domain ml:MLPClassifier,
-        ml:MLPRegressor ;
+    rdfs:domain ml:MLPClassifierMethod,
+        ml:MLPRegressorMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:RegularizedRegression ;
-    rdfs:range ml:MLPRegressor ;
+    rdfs:range ml:MLPRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:SklearnModule a owl:Class ;
@@ -170,7 +170,7 @@ ml:SklearnModule a owl:Class ;
 ml:NeuralNetworkModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:BernoulliRBM a owl:Class ;
+ml:BernoulliRBMMethod a owl:Class ;
     rdfs:comment """Bernoulli Restricted Boltzmann Machine (RBM).
 
 A Restricted Boltzmann Machine with binary visible units and
@@ -275,7 +275,7 @@ BernoulliRBM(n_components=2)""" ;
         ml:NeuralNetworkModule,
         ml:TrainMethod .
 
-ml:MLPClassifier a owl:Class ;
+ml:MLPClassifierMethod a owl:Class ;
     rdfs:comment """Multi-layer Perceptron classifier.
 
 This model optimizes the log-loss function using LBFGS or stochastic
@@ -550,7 +550,7 @@ array([1, 0, 1, 0, 1])
         ml:NeuralNetworkModule,
         ml:TrainMethod .
 
-ml:MLPRegressor a owl:Class ;
+ml:MLPRegressorMethod a owl:Class ;
     rdfs:comment """Multi-layer Perceptron regressor.
 
 This model optimizes the squared error using LBFGS or stochastic gradient

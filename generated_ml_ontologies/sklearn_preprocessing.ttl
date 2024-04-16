@@ -6,316 +6,316 @@
 
 ml:hasDataProcessingMethod a owl:ObjectProperty ;
     rdfs:domain ml:DataProcessing ;
-    rdfs:range ml:Binarizer,
-        ml:FunctionTransformer,
-        ml:KBinsDiscretizer,
-        ml:KernelCenterer,
-        ml:LabelBinarizer,
-        ml:MaxAbsScaler,
-        ml:MinMaxScaler,
-        ml:MultiLabelBinarizer,
-        ml:Normalizer,
-        ml:OneHotEncoder,
-        ml:OrdinalEncoder,
-        ml:PolynomialFeatures,
-        ml:PowerTransformer,
-        ml:QuantileTransformer,
-        ml:RobustScaler,
-        ml:SplineTransformer,
-        ml:StandardScaler,
-        ml:TargetEncoder ;
+    rdfs:range ml:BinarizerMethod,
+        ml:FunctionTransformerMethod,
+        ml:KBinsDiscretizerMethod,
+        ml:KernelCentererMethod,
+        ml:LabelBinarizerMethod,
+        ml:MaxAbsScalerMethod,
+        ml:MinMaxScalerMethod,
+        ml:MultiLabelBinarizerMethod,
+        ml:NormalizerMethod,
+        ml:OneHotEncoderMethod,
+        ml:OrdinalEncoderMethod,
+        ml:PolynomialFeaturesMethod,
+        ml:PowerTransformerMethod,
+        ml:QuantileTransformerMethod,
+        ml:RobustScalerMethod,
+        ml:SplineTransformerMethod,
+        ml:StandardScalerMethod,
+        ml:TargetEncoderMethod ;
     rdfs:subPropertyOf ml:hasPrepareTransformerMethod .
 
 ml:hasParamAcceptSparse a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCategories a owl:DatatypeProperty ;
-    rdfs:domain ml:OneHotEncoder,
-        ml:OrdinalEncoder,
-        ml:TargetEncoder ;
+    rdfs:domain ml:OneHotEncoderMethod,
+        ml:OrdinalEncoderMethod,
+        ml:TargetEncoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCheckInverse a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClip a owl:DatatypeProperty ;
-    rdfs:domain ml:MinMaxScaler ;
+    rdfs:domain ml:MinMaxScalerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopy a owl:DatatypeProperty ;
-    rdfs:domain ml:Binarizer,
-        ml:MaxAbsScaler,
-        ml:MinMaxScaler,
-        ml:Normalizer,
-        ml:PowerTransformer,
-        ml:QuantileTransformer,
-        ml:RobustScaler,
-        ml:StandardScaler ;
+    rdfs:domain ml:BinarizerMethod,
+        ml:MaxAbsScalerMethod,
+        ml:MinMaxScalerMethod,
+        ml:NormalizerMethod,
+        ml:PowerTransformerMethod,
+        ml:QuantileTransformerMethod,
+        ml:RobustScalerMethod,
+        ml:StandardScalerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCv a owl:DatatypeProperty ;
-    rdfs:domain ml:TargetEncoder ;
+    rdfs:domain ml:TargetEncoderMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDegree a owl:DatatypeProperty ;
-    rdfs:domain ml:PolynomialFeatures,
-        ml:SplineTransformer ;
+    rdfs:domain ml:PolynomialFeaturesMethod,
+        ml:SplineTransformerMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDrop a owl:DatatypeProperty ;
-    rdfs:domain ml:OneHotEncoder ;
+    rdfs:domain ml:OneHotEncoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDtype a owl:DatatypeProperty ;
-    rdfs:domain ml:KBinsDiscretizer,
-        ml:OneHotEncoder,
-        ml:OrdinalEncoder ;
+    rdfs:domain ml:KBinsDiscretizerMethod,
+        ml:OneHotEncoderMethod,
+        ml:OrdinalEncoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEncode a owl:DatatypeProperty ;
-    rdfs:domain ml:KBinsDiscretizer ;
+    rdfs:domain ml:KBinsDiscretizerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEncodedMissingValue a owl:DatatypeProperty ;
-    rdfs:domain ml:OrdinalEncoder ;
+    rdfs:domain ml:OrdinalEncoderMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamExtrapolation a owl:DatatypeProperty ;
-    rdfs:domain ml:SplineTransformer ;
+    rdfs:domain ml:SplineTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFeatureNameCombiner a owl:DatatypeProperty ;
-    rdfs:domain ml:OneHotEncoder ;
+    rdfs:domain ml:OneHotEncoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFeatureNamesOut a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFeatureRange a owl:DatatypeProperty ;
-    rdfs:domain ml:MinMaxScaler ;
+    rdfs:domain ml:MinMaxScalerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFunc a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamHandleUnknown a owl:DatatypeProperty ;
-    rdfs:domain ml:OneHotEncoder,
-        ml:OrdinalEncoder ;
+    rdfs:domain ml:OneHotEncoderMethod,
+        ml:OrdinalEncoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamIgnoreImplicitZeros a owl:DatatypeProperty ;
-    rdfs:domain ml:QuantileTransformer ;
+    rdfs:domain ml:QuantileTransformerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamIncludeBias a owl:DatatypeProperty ;
-    rdfs:domain ml:PolynomialFeatures,
-        ml:SplineTransformer ;
+    rdfs:domain ml:PolynomialFeaturesMethod,
+        ml:SplineTransformerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInteractionOnly a owl:DatatypeProperty ;
-    rdfs:domain ml:PolynomialFeatures ;
+    rdfs:domain ml:PolynomialFeaturesMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInvKwArgs a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInverseFunc a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKnots a owl:DatatypeProperty ;
-    rdfs:domain ml:SplineTransformer ;
+    rdfs:domain ml:SplineTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKwArgs a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxCategories a owl:DatatypeProperty ;
-    rdfs:domain ml:OneHotEncoder,
-        ml:OrdinalEncoder ;
+    rdfs:domain ml:OneHotEncoderMethod,
+        ml:OrdinalEncoderMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMethod a owl:DatatypeProperty ;
-    rdfs:domain ml:PowerTransformer ;
+    rdfs:domain ml:PowerTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinFrequency a owl:DatatypeProperty ;
-    rdfs:domain ml:OneHotEncoder,
-        ml:OrdinalEncoder ;
+    rdfs:domain ml:OneHotEncoderMethod,
+        ml:OrdinalEncoderMethod ;
     rdfs:range xsd:float,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNBins a owl:DatatypeProperty ;
-    rdfs:domain ml:KBinsDiscretizer ;
+    rdfs:domain ml:KBinsDiscretizerMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNKnots a owl:DatatypeProperty ;
-    rdfs:domain ml:SplineTransformer ;
+    rdfs:domain ml:SplineTransformerMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNQuantiles a owl:DatatypeProperty ;
-    rdfs:domain ml:QuantileTransformer ;
+    rdfs:domain ml:QuantileTransformerMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNegLabel a owl:DatatypeProperty ;
-    rdfs:domain ml:LabelBinarizer ;
+    rdfs:domain ml:LabelBinarizerMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNorm a owl:DatatypeProperty ;
-    rdfs:domain ml:Normalizer ;
+    rdfs:domain ml:NormalizerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamOrder a owl:DatatypeProperty ;
-    rdfs:domain ml:PolynomialFeatures,
-        ml:SplineTransformer ;
+    rdfs:domain ml:PolynomialFeaturesMethod,
+        ml:SplineTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamOutputDistribution a owl:DatatypeProperty ;
-    rdfs:domain ml:QuantileTransformer ;
+    rdfs:domain ml:QuantileTransformerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPosLabel a owl:DatatypeProperty ;
-    rdfs:domain ml:LabelBinarizer ;
+    rdfs:domain ml:LabelBinarizerMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamQuantileRange a owl:DatatypeProperty ;
-    rdfs:domain ml:RobustScaler ;
+    rdfs:domain ml:RobustScalerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:KBinsDiscretizer,
-        ml:QuantileTransformer,
-        ml:TargetEncoder ;
+    rdfs:domain ml:KBinsDiscretizerMethod,
+        ml:QuantileTransformerMethod,
+        ml:TargetEncoderMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShuffle a owl:DatatypeProperty ;
-    rdfs:domain ml:TargetEncoder ;
+    rdfs:domain ml:TargetEncoderMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSmooth a owl:DatatypeProperty ;
-    rdfs:domain ml:TargetEncoder ;
+    rdfs:domain ml:TargetEncoderMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSparseOutput a owl:DatatypeProperty ;
-    rdfs:domain ml:LabelBinarizer,
-        ml:MultiLabelBinarizer,
-        ml:OneHotEncoder,
-        ml:SplineTransformer ;
+    rdfs:domain ml:LabelBinarizerMethod,
+        ml:MultiLabelBinarizerMethod,
+        ml:OneHotEncoderMethod,
+        ml:SplineTransformerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStandardize a owl:DatatypeProperty ;
-    rdfs:domain ml:PowerTransformer ;
+    rdfs:domain ml:PowerTransformerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStrategy a owl:DatatypeProperty ;
-    rdfs:domain ml:KBinsDiscretizer ;
+    rdfs:domain ml:KBinsDiscretizerMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSubsample a owl:DatatypeProperty ;
-    rdfs:domain ml:KBinsDiscretizer,
-        ml:QuantileTransformer ;
+    rdfs:domain ml:KBinsDiscretizerMethod,
+        ml:QuantileTransformerMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTargetType a owl:DatatypeProperty ;
-    rdfs:domain ml:TargetEncoder ;
+    rdfs:domain ml:TargetEncoderMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamThreshold a owl:DatatypeProperty ;
-    rdfs:domain ml:Binarizer ;
+    rdfs:domain ml:BinarizerMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamUnitVariance a owl:DatatypeProperty ;
-    rdfs:domain ml:RobustScaler ;
+    rdfs:domain ml:RobustScalerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamUnknownValue a owl:DatatypeProperty ;
-    rdfs:domain ml:OrdinalEncoder ;
+    rdfs:domain ml:OrdinalEncoderMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamValidate a owl:DatatypeProperty ;
-    rdfs:domain ml:FunctionTransformer ;
+    rdfs:domain ml:FunctionTransformerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWithCentering a owl:DatatypeProperty ;
-    rdfs:domain ml:RobustScaler ;
+    rdfs:domain ml:RobustScalerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWithMean a owl:DatatypeProperty ;
-    rdfs:domain ml:StandardScaler ;
+    rdfs:domain ml:StandardScalerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWithScaling a owl:DatatypeProperty ;
-    rdfs:domain ml:RobustScaler ;
+    rdfs:domain ml:RobustScalerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamWithStd a owl:DatatypeProperty ;
-    rdfs:domain ml:StandardScaler ;
+    rdfs:domain ml:StandardScalerMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
-ml:KernelCenterer a owl:Class ;
+ml:KernelCentererMethod a owl:Class ;
     rdfs:comment """Center an arbitrary kernel matrix :math:`K`.
 
 Let define a kernel :math:`K` such that:
@@ -398,7 +398,7 @@ array([[  5.,   0.,  -5.],
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-ml:MaxAbsScaler a owl:Class ;
+ml:MaxAbsScalerMethod a owl:Class ;
     rdfs:comment """Scale each feature by its maximum absolute value.
 
 This estimator scales and translates each feature individually such
@@ -472,7 +472,7 @@ array([[ 0.5, -1. ,  1. ],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:MultiLabelBinarizer a owl:Class ;
+ml:MultiLabelBinarizerMethod a owl:Class ;
     rdfs:comment """Transform between iterable of iterables and a multilabel format.
 
 Although a list of sets or tuples is a very intuitive format for multilabel
@@ -537,7 +537,7 @@ array(['comedy', 'sci-fi', 'thriller'], dtype=object)""" ;
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:Binarizer a owl:Class ;
+ml:BinarizerMethod a owl:Class ;
     rdfs:comment """Binarize data (set feature values to 0 or 1) according to a threshold.
 
 Values greater than the threshold map to 1, while values less than
@@ -610,7 +610,7 @@ array([[1., 0., 1.],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:Normalizer a owl:Class ;
+ml:NormalizerMethod a owl:Class ;
     rdfs:comment """Normalize samples individually to unit norm.
 
 Each sample (i.e. each row of the data matrix) with at least one
@@ -685,7 +685,7 @@ array([[0.8, 0.2, 0.4, 0.4],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:LabelBinarizer a owl:Class ;
+ml:LabelBinarizerMethod a owl:Class ;
     rdfs:comment """Binarize labels in a one-vs-all fashion.
 
 Several regression and binary classification algorithms are
@@ -776,7 +776,7 @@ array([[1, 0, 0],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:MinMaxScaler a owl:Class ;
+ml:MinMaxScalerMethod a owl:Class ;
     rdfs:comment """Transform features by scaling each feature to a given range.
 
 This estimator scales and translates each feature individually such
@@ -892,7 +892,7 @@ MinMaxScaler()
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:PowerTransformer a owl:Class ;
+ml:PowerTransformerMethod a owl:Class ;
     rdfs:comment """Apply a power transform featurewise to make data more Gaussian-like.
 
 Power transforms are a family of parametric, monotonic transformations
@@ -992,7 +992,7 @@ PowerTransformer()
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:StandardScaler a owl:Class ;
+ml:StandardScalerMethod a owl:Class ;
     rdfs:comment """Standardize features by removing the mean and scaling to unit variance.
 
 The standard score of a sample `x` is calculated as:
@@ -1127,7 +1127,7 @@ StandardScaler()
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:PolynomialFeatures a owl:Class ;
+ml:PolynomialFeaturesMethod a owl:Class ;
     rdfs:comment """Generate polynomial and interaction features.
 
 Generate a new feature matrix consisting of all polynomial combinations
@@ -1224,7 +1224,7 @@ array([[ 1.,  0.,  1.,  0.],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:RobustScaler a owl:Class ;
+ml:RobustScalerMethod a owl:Class ;
     rdfs:comment """Scale features using statistics that are robust to outliers.
 
 This Scaler removes the median and scales the data according to
@@ -1334,7 +1334,7 @@ array([[ 0. , -2. ,  0. ],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:KBinsDiscretizer a owl:Class ;
+ml:KBinsDiscretizerMethod a owl:Class ;
     rdfs:comment """Bin continuous data into intervals.
 
 Read more in the :ref:`User Guide <preprocessing_discretization>`.
@@ -1485,7 +1485,7 @@ array([[-1.5,  1.5, -3.5, -0.5],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:QuantileTransformer a owl:Class ;
+ml:QuantileTransformerMethod a owl:Class ;
     rdfs:comment """Transform features using quantiles information.
 
 This method transforms the features to follow a uniform or a normal
@@ -1596,7 +1596,7 @@ array([...])""" ;
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:TargetEncoder a owl:Class ;
+ml:TargetEncoderMethod a owl:Class ;
     rdfs:comment """Target Encoder for regression and classification targets.
 
 Each category is encoded based on a shrunk estimate of the average target
@@ -1765,7 +1765,7 @@ With `smooth="auto"`, the smoothing parameter is set to an empirical Bayes estim
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:OrdinalEncoder a owl:Class ;
+ml:OrdinalEncoderMethod a owl:Class ;
     rdfs:comment """Encode categorical features as an integer array.
 
 The input to this transformer should be an array-like of integers or
@@ -1952,7 +1952,7 @@ array([[2.],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:SplineTransformer a owl:Class ;
+ml:SplineTransformerMethod a owl:Class ;
     rdfs:comment """Generate univariate B-spline bases for features.
 
 Generate a new feature matrix consisting of
@@ -2075,7 +2075,7 @@ array([[0.5 , 0.5 , 0.  , 0.  ],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:FunctionTransformer a owl:Class ;
+ml:FunctionTransformerMethod a owl:Class ;
     rdfs:comment """Constructs a transformer from an arbitrary callable.
 
 A FunctionTransformer forwards its X (and optionally y) arguments to a
@@ -2191,7 +2191,7 @@ array([[0.       , 0.6931...],
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
 
-ml:OneHotEncoder a owl:Class ;
+ml:OneHotEncoderMethod a owl:Class ;
     rdfs:comment """Encode categorical features as a one-hot numeric array.
 
 The input to this transformer should be an array-like of integers or

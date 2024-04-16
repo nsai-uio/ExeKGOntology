@@ -6,200 +6,200 @@
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:LinearSVC,
-        ml:NuSVC,
-        ml:SVC ;
+    rdfs:range ml:LinearSVCMethod,
+        ml:NuSVCMethod,
+        ml:SVCMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasParamBreakTies a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:SVC ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:SVCMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamC a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR,
-        ml:NuSVR,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod,
+        ml:NuSVRMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCacheSize a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:NuSVC,
-        ml:SVC ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:NuSVCMethod,
+        ml:SVCMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCoef0 a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDecisionFunctionShape a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:SVC ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:SVCMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDegree a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDual a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEpsilon a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVR,
-        ml:SVR ;
+    rdfs:domain ml:LinearSVRMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitIntercept a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamGamma a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:float,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInterceptScaling a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKernel a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLoss a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR,
-        ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod,
+        ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMultiClass a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC ;
+    rdfs:domain ml:LinearSVCMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNu a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPenalty a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC ;
+    rdfs:domain ml:LinearSVCMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamProbability a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:SVC ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:SVCMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR,
-        ml:NuSVC,
-        ml:SVC ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod,
+        ml:NuSVCMethod,
+        ml:SVCMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShrinking a owl:DatatypeProperty ;
-    rdfs:domain ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR,
-        ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod,
+        ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;
-    rdfs:domain ml:LinearSVC,
-        ml:LinearSVR,
-        ml:NuSVC,
-        ml:NuSVR,
-        ml:OneClassSVM,
-        ml:SVC,
-        ml:SVR ;
+    rdfs:domain ml:LinearSVCMethod,
+        ml:LinearSVRMethod,
+        ml:NuSVCMethod,
+        ml:NuSVRMethod,
+        ml:OneClassSVMMethod,
+        ml:SVCMethod,
+        ml:SVRMethod ;
     rdfs:range xsd:boolean,
         xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:RegularizedRegression ;
-    rdfs:range ml:OneClassSVM ;
+    rdfs:range ml:OneClassSVMMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:hasSupportVectorRegressionMethod a owl:ObjectProperty ;
     rdfs:domain ml:SupportVectorRegression ;
-    rdfs:range ml:LinearSVR,
-        ml:NuSVR,
-        ml:SVR ;
+    rdfs:range ml:LinearSVRMethod,
+        ml:NuSVRMethod,
+        ml:SVRMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
 ml:SklearnModule a owl:Class ;
@@ -208,7 +208,7 @@ ml:SklearnModule a owl:Class ;
 ml:SvmModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
-ml:LinearSVR a owl:Class ;
+ml:LinearSVRMethod a owl:Class ;
     rdfs:comment """Linear Support Vector Regression.
 
 Similar to SVR with parameter kernel='linear', but implemented in terms of
@@ -356,7 +356,7 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
         ml:SvmModule,
         ml:TrainMethod .
 
-ml:OneClassSVM a owl:Class ;
+ml:OneClassSVMMethod a owl:Class ;
     rdfs:comment """Unsupervised Outlier Detection.
 
 Estimate the support of a high-dimensional distribution.
@@ -490,7 +490,7 @@ array([1.7798..., 2.0547..., 2.0556..., 2.0561..., 1.7332...])""" ;
         ml:SvmModule,
         ml:TrainMethod .
 
-ml:NuSVR a owl:Class ;
+ml:NuSVRMethod a owl:Class ;
     rdfs:comment """Nu Support Vector Regression.
 
 Similar to NuSVC, for regression, uses a parameter nu to control
@@ -634,7 +634,7 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
         ml:SvmModule,
         ml:TrainMethod .
 
-ml:SVR a owl:Class ;
+ml:SVRMethod a owl:Class ;
     rdfs:comment """Epsilon-Support Vector Regression.
 
 The free parameters in the model are C and epsilon.
@@ -785,7 +785,7 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
         ml:SvmModule,
         ml:TrainMethod .
 
-ml:LinearSVC a owl:Class ;
+ml:LinearSVCMethod a owl:Class ;
     rdfs:comment """Linear Support Vector Classification.
 
 Similar to SVC with parameter kernel='linear', but implemented in terms of
@@ -984,7 +984,7 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
         ml:SvmModule,
         ml:TrainMethod .
 
-ml:NuSVC a owl:Class ;
+ml:NuSVCMethod a owl:Class ;
     rdfs:comment """Nu-Support Vector Classification.
 
 Similar to SVC but uses a parameter to control the number of support
@@ -1199,7 +1199,7 @@ Pipeline(steps=[('standardscaler', StandardScaler()), ('nusvc', NuSVC())])
         ml:SvmModule,
         ml:TrainMethod .
 
-ml:SVC a owl:Class ;
+ml:SVCMethod a owl:Class ;
     rdfs:comment """C-Support Vector Classification.
 
 The implementation is based on libsvm. The fit time scales at least

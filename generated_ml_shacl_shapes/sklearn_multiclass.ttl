@@ -1,0 +1,42 @@
+
+visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BinaryClassification ;
+    sh:property [
+        sh:path visu:hasBinaryClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:OneVsRestClassifierMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:OutputCodeClassifierMethod ]
+        ) ;
+        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+    ] .
+
+visu:MulticlassClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:MulticlassClassification ;
+    sh:property [
+        sh:path visu:hasMulticlassClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:OneVsRestClassifierMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:OutputCodeClassifierMethod ]
+        ) ;
+        sh:message "MulticlassClassification must be connected with one compatible atomic method." ;
+    ] .
+
+visu:MultilabelClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:MultilabelClassification ;
+    sh:property [
+        sh:path visu:hasMultilabelClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:OneVsRestClassifierMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:OutputCodeClassifierMethod ]
+        ) ;
+        sh:message "MultilabelClassification must be connected with one compatible atomic method." ;
+    ] .

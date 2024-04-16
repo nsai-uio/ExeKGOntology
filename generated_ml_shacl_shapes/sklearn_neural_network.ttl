@@ -1,0 +1,25 @@
+
+visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BinaryClassification ;
+    sh:property [
+        sh:path visu:hasBinaryClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:BernoulliRBMMethod ]
+            [ sh:class ml:MLPClassifierMethod ]
+        ) ;
+        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+    ] .
+
+visu:RegularizedRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:RegularizedRegression ;
+    sh:property [
+        sh:path visu:hasRegularizedRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:MLPRegressorMethod ]
+        ) ;
+        sh:message "RegularizedRegression must be connected with one compatible atomic method." ;
+    ] .

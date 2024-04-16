@@ -6,125 +6,125 @@
 
 stats:hasCentralTendencyMeasureMethod a owl:ObjectProperty ;
     rdfs:domain stats:CentralTendencyMeasure ;
-    rdfs:range stats:Average,
-        stats:Median ;
+    rdfs:range stats:AverageMethod,
+        stats:MedianMethod ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
 stats:hasDependencyMeasureMethod a owl:ObjectProperty ;
     rdfs:domain stats:DependencyMeasure ;
-    rdfs:range stats:Corrcoef,
-        stats:Cov ;
+    rdfs:range stats:CorrcoefMethod,
+        stats:CovMethod ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
 stats:hasParamAweights a owl:DatatypeProperty ;
-    rdfs:domain stats:Cov ;
+    rdfs:domain stats:CovMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamAxis a owl:DatatypeProperty ;
-    rdfs:domain stats:Average,
-        stats:Median,
-        stats:Percentile,
-        stats:Quantile ;
+    rdfs:domain stats:AverageMethod,
+        stats:MedianMethod,
+        stats:PercentileMethod,
+        stats:QuantileMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamBias a owl:DatatypeProperty ;
-    rdfs:domain stats:Corrcoef,
-        stats:Cov ;
+    rdfs:domain stats:CorrcoefMethod,
+        stats:CovMethod ;
     rdfs:range xsd:boolean,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamDdof a owl:DatatypeProperty ;
-    rdfs:domain stats:Corrcoef,
-        stats:Cov ;
+    rdfs:domain stats:CorrcoefMethod,
+        stats:CovMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamDtype a owl:DatatypeProperty ;
-    rdfs:domain stats:Corrcoef,
-        stats:Cov ;
+    rdfs:domain stats:CorrcoefMethod,
+        stats:CovMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamFweights a owl:DatatypeProperty ;
-    rdfs:domain stats:Cov ;
+    rdfs:domain stats:CovMethod ;
     rdfs:range xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamInterpolation a owl:DatatypeProperty ;
-    rdfs:domain stats:Percentile,
-        stats:Quantile ;
+    rdfs:domain stats:PercentileMethod,
+        stats:QuantileMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamKeepdims a owl:DatatypeProperty ;
-    rdfs:domain stats:Average,
-        stats:Median,
-        stats:Percentile,
-        stats:Quantile ;
+    rdfs:domain stats:AverageMethod,
+        stats:MedianMethod,
+        stats:PercentileMethod,
+        stats:QuantileMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamM a owl:DatatypeProperty ;
-    rdfs:domain stats:Cov ;
+    rdfs:domain stats:CovMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamMethod a owl:DatatypeProperty ;
-    rdfs:domain stats:Percentile,
-        stats:Quantile ;
+    rdfs:domain stats:PercentileMethod,
+        stats:QuantileMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamOverwriteInput a owl:DatatypeProperty ;
-    rdfs:domain stats:Median,
-        stats:Percentile,
-        stats:Quantile ;
+    rdfs:domain stats:MedianMethod,
+        stats:PercentileMethod,
+        stats:QuantileMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamQ a owl:DatatypeProperty ;
-    rdfs:domain stats:Percentile,
-        stats:Quantile ;
+    rdfs:domain stats:PercentileMethod,
+        stats:QuantileMethod ;
     rdfs:range xsd:float ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamReturned a owl:DatatypeProperty ;
-    rdfs:domain stats:Average ;
+    rdfs:domain stats:AverageMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamRowvar a owl:DatatypeProperty ;
-    rdfs:domain stats:Corrcoef,
-        stats:Cov ;
+    rdfs:domain stats:CorrcoefMethod,
+        stats:CovMethod ;
     rdfs:range xsd:boolean ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamWeights a owl:DatatypeProperty ;
-    rdfs:domain stats:Average ;
+    rdfs:domain stats:AverageMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamX a owl:DatatypeProperty ;
-    rdfs:domain stats:Corrcoef ;
+    rdfs:domain stats:CorrcoefMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamY a owl:DatatypeProperty ;
-    rdfs:domain stats:Corrcoef,
-        stats:Cov ;
+    rdfs:domain stats:CorrcoefMethod,
+        stats:CovMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasPositionMeasureMethod a owl:ObjectProperty ;
     rdfs:domain stats:PositionMeasure ;
-    rdfs:range stats:Percentile,
-        stats:Quantile ;
+    rdfs:range stats:PercentileMethod,
+        stats:QuantileMethod ;
     rdfs:subPropertyOf stats:hasStatisticCalculationMethod .
 
 stats:LibModule a owl:Class ;
@@ -133,7 +133,7 @@ stats:LibModule a owl:Class ;
 stats:NumpyModule a owl:Class ;
     rdfs:subClassOf ds:Module .
 
-stats:Median a owl:Class ;
+stats:MedianMethod a owl:Class ;
     rdfs:comment """Compute the median along the specified axis.
 
 Returns the median of the array elements.
@@ -215,7 +215,7 @@ array([7.,  2.])
         stats:FunctionBaseModule,
         stats:StatisticCalculationMethod .
 
-stats:Average a owl:Class ;
+stats:AverageMethod a owl:Class ;
     rdfs:comment """Compute the weighted average along the specified axis.
 
 Parameters
@@ -331,7 +331,7 @@ array([[0.5],
 stats:FunctionBaseModule a owl:Class ;
     rdfs:subClassOf stats:LibModule .
 
-stats:Corrcoef a owl:Class ;
+stats:CorrcoefMethod a owl:Class ;
     rdfs:comment """Return Pearson product-moment correlation coefficients.
 
 Please refer to the documentation for `cov` for more detail.  The
@@ -458,7 +458,7 @@ array([[ 1.        ,  0.77598074, -0.47458546, -0.75078643, -0.9665554 ,
         stats:FunctionBaseModule,
         stats:StatisticCalculationMethod .
 
-stats:Percentile a owl:Class ;
+stats:PercentileMethod a owl:Class ;
     rdfs:comment """Compute the q-th percentile of the data along the specified axis.
 
 Returns the q-th percentile(s) of the array elements.
@@ -729,7 +729,7 @@ References
         stats:FunctionBaseModule,
         stats:StatisticCalculationMethod .
 
-stats:Quantile a owl:Class ;
+stats:QuantileMethod a owl:Class ;
     rdfs:comment """Compute the q-th quantile of the data along the specified axis.
 
 .. versionadded:: 1.15.0
@@ -961,7 +961,7 @@ References
         stats:FunctionBaseModule,
         stats:StatisticCalculationMethod .
 
-stats:Cov a owl:Class ;
+stats:CovMethod a owl:Class ;
     rdfs:comment """Estimate a covariance matrix, given data and weights.
 
 Covariance indicates the level to which two variables vary together.

@@ -1,0 +1,16 @@
+
+visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BinaryClassification ;
+    sh:property [
+        sh:path visu:hasBinaryClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:BernoulliNBMethod ]
+            [ sh:class ml:GaussianNBMethod ]
+            [ sh:class ml:MultinomialNBMethod ]
+            [ sh:class ml:ComplementNBMethod ]
+            [ sh:class ml:CategoricalNBMethod ]
+        ) ;
+        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+    ] .

@@ -1,0 +1,92 @@
+
+visu:BayesianRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BayesianRegression ;
+    sh:property [
+        sh:path visu:hasBayesianRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:ARDRegressionMethod ]
+            [ sh:class ml:BayesianRidgeMethod ]
+        ) ;
+        sh:message "BayesianRegression must be connected with one compatible atomic method." ;
+    ] .
+
+visu:RegularizedRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:RegularizedRegression ;
+    sh:property [
+        sh:path visu:hasRegularizedRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:ElasticNetMethod ]
+            [ sh:class ml:ElasticNetCVMethod ]
+            [ sh:class ml:HuberRegressorMethod ]
+            [ sh:class ml:LarsCVMethod ]
+            [ sh:class ml:LassoMethod ]
+            [ sh:class ml:LassoCVMethod ]
+            [ sh:class ml:LassoLarsCVMethod ]
+            [ sh:class ml:LassoLarsICMethod ]
+            [ sh:class ml:MultiTaskElasticNetMethod ]
+            [ sh:class ml:MultiTaskElasticNetCVMethod ]
+            [ sh:class ml:MultiTaskLassoMethod ]
+            [ sh:class ml:MultiTaskLassoCVMethod ]
+            [ sh:class ml:OrthogonalMatchingPursuitMethod ]
+            [ sh:class ml:OrthogonalMatchingPursuitCVMethod ]
+            [ sh:class ml:PassiveAggressiveRegressorMethod ]
+            [ sh:class ml:QuantileRegressorMethod ]
+            [ sh:class ml:RidgeMethod ]
+            [ sh:class ml:RidgeCVMethod ]
+            [ sh:class ml:SGDRegressorMethod ]
+            [ sh:class ml:SGDOneClassSVMMethod ]
+            [ sh:class ml:TheilSenRegressorMethod ]
+            [ sh:class ml:RANSACRegressorMethod ]
+            [ sh:class ml:PoissonRegressorMethod ]
+            [ sh:class ml:GammaRegressorMethod ]
+            [ sh:class ml:TweedieRegressorMethod ]
+        ) ;
+        sh:message "RegularizedRegression must be connected with one compatible atomic method." ;
+    ] .
+
+visu:LeastAngleRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:LeastAngleRegression ;
+    sh:property [
+        sh:path visu:hasLeastAngleRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:LarsMethod ]
+            [ sh:class ml:LassoLarsMethod ]
+        ) ;
+        sh:message "LeastAngleRegression must be connected with one compatible atomic method." ;
+    ] .
+
+visu:SimpleRegressionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:SimpleRegression ;
+    sh:property [
+        sh:path visu:hasSimpleRegressionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:LinearRegressionMethod ]
+        ) ;
+        sh:message "SimpleRegression must be connected with one compatible atomic method." ;
+    ] .
+
+visu:BinaryClassificationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:BinaryClassification ;
+    sh:property [
+        sh:path visu:hasBinaryClassificationMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:LogisticRegressionMethod ]
+            [ sh:class ml:LogisticRegressionCVMethod ]
+            [ sh:class ml:PassiveAggressiveClassifierMethod ]
+            [ sh:class ml:PerceptronMethod ]
+            [ sh:class ml:RidgeClassifierMethod ]
+            [ sh:class ml:RidgeClassifierCVMethod ]
+            [ sh:class ml:SGDClassifierMethod ]
+        ) ;
+        sh:message "BinaryClassification must be connected with one compatible atomic method." ;
+    ] .

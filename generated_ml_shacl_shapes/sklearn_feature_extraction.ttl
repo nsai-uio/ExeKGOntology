@@ -1,0 +1,13 @@
+
+visu:DataProcessingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:DataProcessing ;
+    sh:property [
+        sh:path visu:hasDataProcessingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:DictVectorizerMethod ]
+            [ sh:class ml:FeatureHasherMethod ]
+        ) ;
+        sh:message "DataProcessing must be connected with one compatible atomic method." ;
+    ] .

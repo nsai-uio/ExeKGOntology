@@ -1,0 +1,36 @@
+
+visu:ClusteringTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Clustering ;
+    sh:property [
+        sh:path visu:hasClusteringMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:AffinityPropagationMethod ]
+            [ sh:class ml:AgglomerativeClusteringMethod ]
+            [ sh:class ml:BirchMethod ]
+            [ sh:class ml:DBSCANMethod ]
+            [ sh:class ml:OPTICSMethod ]
+            [ sh:class ml:KMeansMethod ]
+            [ sh:class ml:BisectingKMeansMethod ]
+            [ sh:class ml:MeanShiftMethod ]
+            [ sh:class ml:MiniBatchKMeansMethod ]
+            [ sh:class ml:SpectralClusteringMethod ]
+            [ sh:class ml:SpectralBiclusteringMethod ]
+            [ sh:class ml:SpectralCoclusteringMethod ]
+            [ sh:class ml:HDBSCANMethod ]
+        ) ;
+        sh:message "Clustering must be connected with one compatible atomic method." ;
+    ] .
+
+visu:DecompositionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Decomposition ;
+    sh:property [
+        sh:path visu:hasDecompositionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:FeatureAgglomerationMethod ]
+        ) ;
+        sh:message "Decomposition must be connected with one compatible atomic method." ;
+    ] .

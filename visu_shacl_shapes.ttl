@@ -1,0 +1,24 @@
+@prefix : <http://weso.es/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix visu: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#> .
+
+:PlotTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass visu:Plot ;
+    # sh:target [
+	# 	a sh:SPARQLTarget ;
+	# 	sh:prefixes visu:, rdfs:, rdf:;
+	# 	sh:select """
+	# 		SELECT ?this
+	# 		WHERE {
+	# 			?this a ?taskType .
+	# 			?taskType rdfs:subClassOf+ visu:Plot .
+	# 		}
+	# 		""" ;
+	# ] ;
+    # input
+    sh:property [
+        sh:path visu:hasPlotInput ;
+        sh:minCount 1 ;
+        sh:class visu:DataInToPlot ;
+        sh:message "Tasks of type Plot must be connected with at least one input of type DataInToPlot." ;
+    ] .
