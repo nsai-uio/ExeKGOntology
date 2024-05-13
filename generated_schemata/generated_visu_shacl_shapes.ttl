@@ -1,50 +1,28 @@
 
-:CanvasCreationTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:CanvasCreation ;
+:AreaPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:AreaPlotting ;
     sh:property [
-        sh:path visu:hasCanvasCreationMethod ;
+        sh:path visu:hasAreaPlottingMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:CanvasMethod ]
+            [ sh:class visu:FillBetweenMethod ]
+            [ sh:class visu:FillMethod ]
         ) ;
-        sh:message "Tasks of type CanvasCreation must be connected with exactly one compatible atomic method." ;
+        sh:message "Tasks of type AreaPlotting must be connected with exactly one compatible atomic method." ;
     ] .
 
-:PolarPlottingTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:PolarPlotting ;
+:BarPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:BarPlotting ;
     sh:property [
-        sh:path visu:hasPolarPlottingMethod ;
+        sh:path visu:hasBarPlottingMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:PolarMethod ]
+            [ sh:class visu:BarMethod ]
+            [ sh:class visu:BarhMethod ]
         ) ;
-        sh:message "Tasks of type PolarPlotting must be connected with exactly one compatible atomic method." ;
-    ] .
-
-:ErrorBarPlottingTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:ErrorBarPlotting ;
-    sh:property [
-        sh:path visu:hasErrorBarPlottingMethod ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:class visu:ErrorbarMethod ]
-        ) ;
-        sh:message "Tasks of type ErrorBarPlotting must be connected with exactly one compatible atomic method." ;
-    ] .
-
-:ViolinPlottingTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:ViolinPlotting ;
-    sh:property [
-        sh:path visu:hasViolinPlottingMethod ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:class visu:ViolinplotMethod ]
-        ) ;
-        sh:message "Tasks of type ViolinPlotting must be connected with exactly one compatible atomic method." ;
+        sh:message "Tasks of type BarPlotting must be connected with exactly one compatible atomic method." ;
     ] .
 
 :BoxPlottingTaskMethodShape a sh:NodeShape ;
@@ -59,16 +37,55 @@
         sh:message "Tasks of type BoxPlotting must be connected with exactly one compatible atomic method." ;
     ] .
 
-:PieChartTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:PieChart ;
+:CanvasCreationTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:CanvasCreation ;
     sh:property [
-        sh:path visu:hasPieChartMethod ;
+        sh:path visu:hasCanvasCreationMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:PieMethod ]
+            [ sh:class visu:CanvasMethod ]
         ) ;
-        sh:message "Tasks of type PieChart must be connected with exactly one compatible atomic method." ;
+        sh:message "Tasks of type CanvasCreation must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ContourPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ContourPlotting ;
+    sh:property [
+        sh:path visu:hasContourPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:ContourMethod ]
+            [ sh:class visu:ContourfMethod ]
+        ) ;
+        sh:message "Tasks of type ContourPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ErrorBarPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ErrorBarPlotting ;
+    sh:property [
+        sh:path visu:hasErrorBarPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:ErrorbarMethod ]
+        ) ;
+        sh:message "Tasks of type ErrorBarPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:HistogramTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:Histogram ;
+    sh:property [
+        sh:path visu:hasHistogramMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:Hist2dMethod ]
+            [ sh:class visu:HexbinMethod ]
+            [ sh:class visu:HistMethod ]
+        ) ;
+        sh:message "Tasks of type Histogram must be connected with exactly one compatible atomic method." ;
     ] .
 
 :ImagePlottingTaskMethodShape a sh:NodeShape ;
@@ -78,8 +95,8 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:PcolorMethod ]
             [ sh:class visu:ImshowMethod ]
+            [ sh:class visu:PcolorMethod ]
             [ sh:class visu:PcolormeshMethod ]
         ) ;
         sh:message "Tasks of type ImagePlotting must be connected with exactly one compatible atomic method." ;
@@ -92,34 +109,57 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:StackplotMethod ]
-            [ sh:class visu:PlotMethod ]
-            [ sh:class visu:XcorrMethod ]
-            [ sh:class visu:StepMethod ]
-            [ sh:class visu:LoglogMethod ]
-            [ sh:class visu:MagnitudeSpectrumMethod ]
-            [ sh:class visu:PhaseSpectrumMethod ]
-            [ sh:class visu:AcorrMethod ]
-            [ sh:class visu:StemMethod ]
             [ sh:class visu:SemilogxMethod ]
+            [ sh:class visu:StepMethod ]
             [ sh:class visu:SemilogyMethod ]
             [ sh:class visu:CohereMethod ]
+            [ sh:class visu:StackplotMethod ]
+            [ sh:class visu:StemMethod ]
+            [ sh:class visu:MagnitudeSpectrumMethod ]
+            [ sh:class visu:AcorrMethod ]
             [ sh:class visu:AngleSpectrumMethod ]
+            [ sh:class visu:PlotMethod ]
+            [ sh:class visu:PhaseSpectrumMethod ]
+            [ sh:class visu:XcorrMethod ]
+            [ sh:class visu:LoglogMethod ]
         ) ;
         sh:message "Tasks of type LinePlotting must be connected with exactly one compatible atomic method." ;
     ] .
 
-:AreaPlottingTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:AreaPlotting ;
+:PieChartTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:PieChart ;
     sh:property [
-        sh:path visu:hasAreaPlottingMethod ;
+        sh:path visu:hasPieChartMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:FillBetweenMethod ]
-            [ sh:class visu:FillMethod ]
+            [ sh:class visu:PieMethod ]
         ) ;
-        sh:message "Tasks of type AreaPlotting must be connected with exactly one compatible atomic method." ;
+        sh:message "Tasks of type PieChart must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:PolarPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:PolarPlotting ;
+    sh:property [
+        sh:path visu:hasPolarPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:PolarMethod ]
+        ) ;
+        sh:message "Tasks of type PolarPlotting must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ScatterPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ScatterPlotting ;
+    sh:property [
+        sh:path visu:hasScatterPlottingMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class visu:ScatterMethod ]
+        ) ;
+        sh:message "Tasks of type ScatterPlotting must be connected with exactly one compatible atomic method." ;
     ] .
 
 :VectorFieldTaskMethodShape a sh:NodeShape ;
@@ -135,54 +175,2165 @@
         sh:message "Tasks of type VectorField must be connected with exactly one compatible atomic method." ;
     ] .
 
-:ContourPlottingTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:ContourPlotting ;
+:ViolinPlottingTaskMethodShape a sh:NodeShape ;
+    sh:targetClass visu:ViolinPlotting ;
     sh:property [
-        sh:path visu:hasContourPlottingMethod ;
+        sh:path visu:hasViolinPlottingMethod ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:ContourfMethod ]
-            [ sh:class visu:ContourMethod ]
+            [ sh:class visu:ViolinplotMethod ]
         ) ;
-        sh:message "Tasks of type ContourPlotting must be connected with exactly one compatible atomic method." ;
+        sh:message "Tasks of type ViolinPlotting must be connected with exactly one compatible atomic method." ;
     ] .
 
-:ScatterPlottingTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:ScatterPlotting ;
+:BarMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:BarMethod ;
+
     sh:property [
-        sh:path visu:hasScatterPlottingMethod ;
-        sh:minCount 1 ;
+        sh:path visu:hasParamAlign ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:ScatterMethod ]
+            [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Tasks of type ScatterPlotting must be connected with exactly one compatible atomic method." ;
+        sh:message "Method BarMethod must have at most one compatible value for parameter hasParamAlign." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBottom ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarMethod must have at most one compatible value for parameter hasParamBottom." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamHeight ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarMethod must have at most one compatible value for parameter hasParamHeight." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWidth ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarMethod must have at most one compatible value for parameter hasParamWidth." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarMethod must have at most one compatible value for parameter hasParamX." ;
     ] .
 
-:HistogramTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:Histogram ;
+:BarhMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:BarhMethod ;
+
     sh:property [
-        sh:path visu:hasHistogramMethod ;
-        sh:minCount 1 ;
+        sh:path visu:hasParamAlign ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:HexbinMethod ]
-            [ sh:class visu:Hist2dMethod ]
-            [ sh:class visu:HistMethod ]
+            [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Tasks of type Histogram must be connected with exactly one compatible atomic method." ;
+        sh:message "Method BarhMethod must have at most one compatible value for parameter hasParamAlign." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamHeight ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarhMethod must have at most one compatible value for parameter hasParamHeight." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLeft ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarhMethod must have at most one compatible value for parameter hasParamLeft." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWidth ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarhMethod must have at most one compatible value for parameter hasParamWidth." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BarhMethod must have at most one compatible value for parameter hasParamY." ;
     ] .
 
-:BarPlottingTaskMethodShape a sh:NodeShape ;
-    sh:targetClass visu:BarPlotting ;
+:HistMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:HistMethod ;
+
     sh:property [
-        sh:path visu:hasBarPlottingMethod ;
-        sh:minCount 1 ;
+        sh:path visu:hasParamAlign ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class visu:BarhMethod ]
-            [ sh:class visu:BarMethod ]
+            [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Tasks of type BarPlotting must be connected with exactly one compatible atomic method." ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamAlign." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBins ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamBins." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBottom ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamBottom." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamColor ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamColor." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCumulative ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamCumulative." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamDensity ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamDensity." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamHisttype ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamHisttype." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLabel ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamLabel." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLog ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamLog." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamOrientation ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamOrientation." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamRange ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamRange." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamRwidth ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamRwidth." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamStacked ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamStacked." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWeights ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamWeights." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HistMethod must have at most one compatible value for parameter hasParamX." ;
+    ] .
+
+:HexbinMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:HexbinMethod ;
+
+    sh:property [
+        sh:path visu:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBins ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamBins." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamC ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamC." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCmap ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamCmap." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamEdgecolors ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamEdgecolors." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamExtent ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamExtent." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamGridsize ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamGridsize." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLinewidths ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamLinewidths." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMarginals ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamMarginals." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMincnt ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamMincnt." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNorm ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamNorm." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamReduceCFunction ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamReduceCFunction." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmax ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamVmax." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmin ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamVmin." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamXscale ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamXscale." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamY." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamYscale ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HexbinMethod must have at most one compatible value for parameter hasParamYscale." ;
+    ] .
+
+:ImshowMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:ImshowMethod ;
+
+    sh:property [
+        sh:path visu:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamAspect ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamAspect." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCmap ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamCmap." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamExtent ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamExtent." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFilternorm ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamFilternorm." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFilterrad ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamFilterrad." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamInterpolation ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamInterpolation." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamInterpolationStage ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamInterpolationStage." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNorm ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamNorm." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamOrigin ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamOrigin." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamResample ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamResample." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamUrl ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamUrl." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmax ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamVmax." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmin ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamVmin." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ImshowMethod must have at most one compatible value for parameter hasParamX." ;
+    ] .
+
+:PcolorMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:PcolorMethod ;
+
+    sh:property [
+        sh:path visu:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolorMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamArgs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolorMethod must have at most one compatible value for parameter hasParamArgs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCmap ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolorMethod must have at most one compatible value for parameter hasParamCmap." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNorm ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolorMethod must have at most one compatible value for parameter hasParamNorm." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShading ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolorMethod must have at most one compatible value for parameter hasParamShading." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmax ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolorMethod must have at most one compatible value for parameter hasParamVmax." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmin ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolorMethod must have at most one compatible value for parameter hasParamVmin." ;
+    ] .
+
+:PcolormeshMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:PcolormeshMethod ;
+
+    sh:property [
+        sh:path visu:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamAntialiased ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamAntialiased." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamArgs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamArgs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCmap ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamCmap." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNorm ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamNorm." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShading ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamShading." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmax ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamVmax." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmin ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PcolormeshMethod must have at most one compatible value for parameter hasParamVmin." ;
+    ] .
+
+:ScatterMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:ScatterMethod ;
+
+    sh:property [
+        sh:path visu:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamC ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamC." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCmap ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamCmap." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamEdgecolors ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamEdgecolors." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLinewidths ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamLinewidths." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMarker ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamMarker." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNorm ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamNorm." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPlotnonfinite ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamPlotnonfinite." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamS ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamS." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmax ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamVmax." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVmin ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamVmin." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ScatterMethod must have at most one compatible value for parameter hasParamY." ;
+    ] .
+
+:PlotMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:PlotMethod ;
+
+    sh:property [
+        sh:path visu:hasParamArgs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PlotMethod must have at most one compatible value for parameter hasParamArgs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamScalex ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PlotMethod must have at most one compatible value for parameter hasParamScalex." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamScaley ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PlotMethod must have at most one compatible value for parameter hasParamScaley." ;
+    ] .
+
+:StemMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:StemMethod ;
+
+    sh:property [
+        sh:path visu:hasParamArgs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StemMethod must have at most one compatible value for parameter hasParamArgs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBasefmt ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StemMethod must have at most one compatible value for parameter hasParamBasefmt." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBottom ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StemMethod must have at most one compatible value for parameter hasParamBottom." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLabel ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StemMethod must have at most one compatible value for parameter hasParamLabel." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLinefmt ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StemMethod must have at most one compatible value for parameter hasParamLinefmt." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMarkerfmt ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StemMethod must have at most one compatible value for parameter hasParamMarkerfmt." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamOrientation ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StemMethod must have at most one compatible value for parameter hasParamOrientation." ;
+    ] .
+
+:StreamplotMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:StreamplotMethod ;
+
+    sh:property [
+        sh:path visu:hasParamArrowsize ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamArrowsize." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamArrowstyle ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamArrowstyle." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBrokenStreamlines ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamBrokenStreamlines." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamColor ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamColor." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamDensity ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamDensity." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamIntegrationDirection ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamIntegrationDirection." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLinewidth ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamLinewidth." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMaxlength ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamMaxlength." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMinlength ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamMinlength." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamStartPoints ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamStartPoints." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamZorder ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StreamplotMethod must have at most one compatible value for parameter hasParamZorder." ;
+    ] .
+
+:PieMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:PieMethod ;
+
+    sh:property [
+        sh:path visu:hasParamAutopct ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamAutopct." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCenter ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamCenter." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamColors ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamColors." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCounterclock ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamCounterclock." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamExplode ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamExplode." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFrame ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamFrame." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamHatch ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamHatch." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLabeldistance ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamLabeldistance." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLabels ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamLabels." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNormalize ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamNormalize." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPctdistance ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamPctdistance." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamRadius ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamRadius." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamRotatelabels ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamRotatelabels." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShadow ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamShadow." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamStartangle ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamStartangle." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamTextprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamTextprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWedgeprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamWedgeprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PieMethod must have at most one compatible value for parameter hasParamX." ;
+    ] .
+
+:BoxplotMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:BoxplotMethod ;
+
+    sh:property [
+        sh:path visu:hasParamAutorange ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamAutorange." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBootstrap ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamBootstrap." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamBoxprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamBoxprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCapprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamCapprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCapwidths ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamCapwidths." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamConfIntervals ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamConfIntervals." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFlierprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamFlierprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLabels ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamLabels." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamManageTicks ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamManageTicks." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMeanline ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamMeanline." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMeanprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamMeanprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMedianprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamMedianprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNotch ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamNotch." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPatchArtist ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamPatchArtist." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPositions ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamPositions." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShowbox ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamShowbox." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShowcaps ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamShowcaps." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShowfliers ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamShowfliers." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShowmeans ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamShowmeans." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamSym ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamSym." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamUsermedians ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamUsermedians." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVert ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamVert." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWhis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamWhis." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWhiskerprops ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamWhiskerprops." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWidths ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamWidths." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamZorder ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method BoxplotMethod must have at most one compatible value for parameter hasParamZorder." ;
+    ] .
+
+:ErrorbarMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:ErrorbarMethod ;
+
+    sh:property [
+        sh:path visu:hasParamBarsabove ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamBarsabove." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCapsize ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamCapsize." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCapthick ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamCapthick." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamEcolor ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamEcolor." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamElinewidth ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamElinewidth." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamErrorevery ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamErrorevery." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFmt ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamFmt." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLolims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamLolims." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamUplims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamUplims." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamXerr ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamXerr." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamXlolims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamXlolims." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamXuplims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamXuplims." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamY." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamYerr ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ErrorbarMethod must have at most one compatible value for parameter hasParamYerr." ;
+    ] .
+
+:StackplotMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:StackplotMethod ;
+
+    sh:property [
+        sh:path visu:hasParamBaseline ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StackplotMethod must have at most one compatible value for parameter hasParamBaseline." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamColors ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StackplotMethod must have at most one compatible value for parameter hasParamColors." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLabels ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StackplotMethod must have at most one compatible value for parameter hasParamLabels." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StackplotMethod must have at most one compatible value for parameter hasParamX." ;
+    ] .
+
+:Hist2dMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:Hist2dMethod ;
+
+    sh:property [
+        sh:path visu:hasParamBins ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamBins." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCmax ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamCmax." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamCmin ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamCmin." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamDensity ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:float ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamDensity." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamRange ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamRange." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWeights ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamWeights." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method Hist2dMethod must have at most one compatible value for parameter hasParamY." ;
+    ] .
+
+:ViolinplotMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:ViolinplotMethod ;
+
+    sh:property [
+        sh:path visu:hasParamBwMethod ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamBwMethod." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamDataset ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamDataset." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPoints ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamPoints." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPositions ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamPositions." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamQuantiles ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamQuantiles." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShowextrema ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamShowextrema." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShowmeans ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamShowmeans." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamShowmedians ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamShowmedians." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamVert ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamVert." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWidths ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method ViolinplotMethod must have at most one compatible value for parameter hasParamWidths." ;
+    ] .
+
+:CohereMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:CohereMethod ;
+
+    sh:property [
+        sh:path visu:hasParamDetrend ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamDetrend." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamFc." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamFs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNfft ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamNfft." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNoverlap ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamNoverlap." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPadTo ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamPadTo." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamScaleByFreq ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamScaleByFreq." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamSides ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamSides." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWindow ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamWindow." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CohereMethod must have at most one compatible value for parameter hasParamY." ;
+    ] .
+
+:XcorrMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:XcorrMethod ;
+
+    sh:property [
+        sh:path visu:hasParamDetrend ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method XcorrMethod must have at most one compatible value for parameter hasParamDetrend." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamMaxlags ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method XcorrMethod must have at most one compatible value for parameter hasParamMaxlags." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamNormed ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method XcorrMethod must have at most one compatible value for parameter hasParamNormed." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamUsevlines ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method XcorrMethod must have at most one compatible value for parameter hasParamUsevlines." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method XcorrMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method XcorrMethod must have at most one compatible value for parameter hasParamY." ;
+    ] .
+
+:AngleSpectrumMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:AngleSpectrumMethod ;
+
+    sh:property [
+        sh:path visu:hasParamFc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method AngleSpectrumMethod must have at most one compatible value for parameter hasParamFc." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method AngleSpectrumMethod must have at most one compatible value for parameter hasParamFs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPadTo ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method AngleSpectrumMethod must have at most one compatible value for parameter hasParamPadTo." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamSides ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method AngleSpectrumMethod must have at most one compatible value for parameter hasParamSides." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWindow ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method AngleSpectrumMethod must have at most one compatible value for parameter hasParamWindow." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method AngleSpectrumMethod must have at most one compatible value for parameter hasParamX." ;
+    ] .
+
+:MagnitudeSpectrumMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:MagnitudeSpectrumMethod ;
+
+    sh:property [
+        sh:path visu:hasParamFc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method MagnitudeSpectrumMethod must have at most one compatible value for parameter hasParamFc." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MagnitudeSpectrumMethod must have at most one compatible value for parameter hasParamFs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPadTo ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method MagnitudeSpectrumMethod must have at most one compatible value for parameter hasParamPadTo." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamScale ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MagnitudeSpectrumMethod must have at most one compatible value for parameter hasParamScale." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamSides ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MagnitudeSpectrumMethod must have at most one compatible value for parameter hasParamSides." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWindow ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MagnitudeSpectrumMethod must have at most one compatible value for parameter hasParamWindow." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MagnitudeSpectrumMethod must have at most one compatible value for parameter hasParamX." ;
+    ] .
+
+:PhaseSpectrumMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:PhaseSpectrumMethod ;
+
+    sh:property [
+        sh:path visu:hasParamFc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method PhaseSpectrumMethod must have at most one compatible value for parameter hasParamFc." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamFs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PhaseSpectrumMethod must have at most one compatible value for parameter hasParamFs." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamPadTo ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method PhaseSpectrumMethod must have at most one compatible value for parameter hasParamPadTo." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamSides ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PhaseSpectrumMethod must have at most one compatible value for parameter hasParamSides." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWindow ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PhaseSpectrumMethod must have at most one compatible value for parameter hasParamWindow." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PhaseSpectrumMethod must have at most one compatible value for parameter hasParamX." ;
+    ] .
+
+:CanvasMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:CanvasMethod ;
+
+    sh:property [
+        sh:path visu:hasParamFigureSize ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CanvasMethod must have at most one compatible value for parameter hasParamFigureSize." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamLayout ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CanvasMethod must have at most one compatible value for parameter hasParamLayout." ;
+    ] .
+
+:FillBetweenMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:FillBetweenMethod ;
+
+    sh:property [
+        sh:path visu:hasParamInterpolate ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method FillBetweenMethod must have at most one compatible value for parameter hasParamInterpolate." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamStep ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method FillBetweenMethod must have at most one compatible value for parameter hasParamStep." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamWhere ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method FillBetweenMethod must have at most one compatible value for parameter hasParamWhere." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method FillBetweenMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method FillBetweenMethod must have at most one compatible value for parameter hasParamY1." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY2 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method FillBetweenMethod must have at most one compatible value for parameter hasParamY2." ;
+    ] .
+
+:PlottingMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:PlottingMethod ;
+
+    sh:property [
+        sh:path visu:hasParamLegendName ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PlottingMethod must have at most one compatible value for parameter hasParamLegendName." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamTitle ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PlottingMethod must have at most one compatible value for parameter hasParamTitle." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamXLabel ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PlottingMethod must have at most one compatible value for parameter hasParamXLabel." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamYLabel ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PlottingMethod must have at most one compatible value for parameter hasParamYLabel." ;
+    ] .
+
+:StepMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:StepMethod ;
+
+    sh:property [
+        sh:path visu:hasParamWhere ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StepMethod must have at most one compatible value for parameter hasParamWhere." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StepMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path visu:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StepMethod must have at most one compatible value for parameter hasParamY." ;
+    ] .
+
+:AcorrMethodParameterShape a sh:NodeShape ;
+    sh:targetClass visu:AcorrMethod ;
+
+    sh:property [
+        sh:path visu:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method AcorrMethod must have at most one compatible value for parameter hasParamX." ;
     ] .
