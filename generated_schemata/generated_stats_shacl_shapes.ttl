@@ -6,9 +6,9 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class stats:MedianMethod ]
             [ sh:class stats:AverageMethod ]
             [ sh:class stats:MeanMethod ]
+            [ sh:class stats:MedianMethod ]
         ) ;
         sh:message "Tasks of type CentralTendencyMeasure must be connected with exactly one compatible atomic method." ;
     ] .
@@ -33,8 +33,8 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class stats:VarMethod ]
             [ sh:class stats:StdMethod ]
+            [ sh:class stats:VarMethod ]
         ) ;
         sh:message "Tasks of type DispersionMeasure must be connected with exactly one compatible atomic method." ;
     ] .
@@ -60,8 +60,8 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:class stats:KurtosisMethod ]
-            [ sh:class stats:SkewMethod ]
             [ sh:class stats:PtpMethod ]
+            [ sh:class stats:SkewMethod ]
         ) ;
         sh:message "Tasks of type ShapeMeasure must be connected with exactly one compatible atomic method." ;
     ] .
@@ -90,8 +90,8 @@
         sh:path stats:hasParamDdof ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CovMethod must have at most one compatible value for parameter hasParamDdof." ;
     ] ;
@@ -107,8 +107,8 @@
         sh:path stats:hasParamFweights ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CovMethod must have at most one compatible value for parameter hasParamFweights." ;
     ] ;
@@ -144,8 +144,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AverageMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -181,8 +181,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KurtosisMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -227,8 +227,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MeanMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -264,8 +264,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MedianMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -293,8 +293,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -346,8 +346,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PtpMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -367,8 +367,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -420,8 +420,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SkewMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -458,8 +458,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StdMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -467,8 +467,8 @@
         sh:path stats:hasParamDdof ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StdMethod must have at most one compatible value for parameter hasParamDdof." ;
     ] ;
@@ -504,8 +504,8 @@
         sh:path stats:hasParamAxis ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method VarMethod must have at most one compatible value for parameter hasParamAxis." ;
     ] ;
@@ -513,8 +513,8 @@
         sh:path stats:hasParamDdof ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method VarMethod must have at most one compatible value for parameter hasParamDdof." ;
     ] ;
@@ -559,8 +559,8 @@
         sh:path stats:hasParamDdof ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CorrcoefMethod must have at most one compatible value for parameter hasParamDdof." ;
     ] ;

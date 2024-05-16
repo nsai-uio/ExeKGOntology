@@ -6,8 +6,8 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:BayesianRidgeMethod ]
             [ sh:class ml:ARDRegressionMethod ]
+            [ sh:class ml:BayesianRidgeMethod ]
         ) ;
         sh:message "Tasks of type BayesianRegression must be connected with exactly one compatible atomic method." ;
     ] .
@@ -19,39 +19,39 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:ExtraTreesClassifierMethod ]
-            [ sh:class ml:NuSVCMethod ]
             [ sh:class ml:AdaBoostClassifierMethod ]
-            [ sh:class ml:SGDClassifierMethod ]
+            [ sh:class ml:BaggingClassifierMethod ]
+            [ sh:class ml:BernoulliNBMethod ]
+            [ sh:class ml:BernoulliRBMMethod ]
+            [ sh:class ml:CategoricalNBMethod ]
+            [ sh:class ml:ComplementNBMethod ]
+            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreesClassifierMethod ]
+            [ sh:class ml:GaussianNBMethod ]
+            [ sh:class ml:GradientBoostingClassifierMethod ]
+            [ sh:class ml:HistGradientBoostingClassifierMethod ]
+            [ sh:class ml:KNeighborsClassifierMethod ]
             [ sh:class ml:LinearSVCMethod ]
             [ sh:class ml:LogisticRegressionCVMethod ]
-            [ sh:class ml:PerceptronMethod ]
-            [ sh:class ml:OneVsRestClassifierMethod ]
-            [ sh:class ml:RidgeClassifierCVMethod ]
-            [ sh:class ml:CategoricalNBMethod ]
-            [ sh:class ml:GradientBoostingClassifierMethod ]
-            [ sh:class ml:PassiveAggressiveClassifierMethod ]
-            [ sh:class ml:NearestCentroidMethod ]
-            [ sh:class ml:BaggingClassifierMethod ]
-            [ sh:class ml:RandomForestClassifierMethod ]
-            [ sh:class ml:VotingClassifierMethod ]
-            [ sh:class ml:ComplementNBMethod ]
-            [ sh:class ml:OneVsOneClassifierMethod ]
-            [ sh:class ml:MLPClassifierMethod ]
-            [ sh:class ml:RidgeClassifierMethod ]
-            [ sh:class ml:KNeighborsClassifierMethod ]
-            [ sh:class ml:RadiusNeighborsClassifierMethod ]
-            [ sh:class ml:BernoulliRBMMethod ]
-            [ sh:class ml:SVCMethod ]
-            [ sh:class ml:GaussianNBMethod ]
-            [ sh:class ml:MultinomialNBMethod ]
             [ sh:class ml:LogisticRegressionMethod ]
-            [ sh:class ml:BernoulliNBMethod ]
+            [ sh:class ml:MLPClassifierMethod ]
+            [ sh:class ml:MultinomialNBMethod ]
+            [ sh:class ml:NearestCentroidMethod ]
+            [ sh:class ml:NuSVCMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:OneVsRestClassifierMethod ]
             [ sh:class ml:OutputCodeClassifierMethod ]
-            [ sh:class ml:HistGradientBoostingClassifierMethod ]
-            [ sh:class ml:ExtraTreeClassifierMethod ]
+            [ sh:class ml:PassiveAggressiveClassifierMethod ]
+            [ sh:class ml:PerceptronMethod ]
+            [ sh:class ml:RadiusNeighborsClassifierMethod ]
+            [ sh:class ml:RandomForestClassifierMethod ]
+            [ sh:class ml:RidgeClassifierCVMethod ]
+            [ sh:class ml:RidgeClassifierMethod ]
+            [ sh:class ml:SGDClassifierMethod ]
+            [ sh:class ml:SVCMethod ]
             [ sh:class ml:StackingClassifierMethod ]
-            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:VotingClassifierMethod ]
         ) ;
         sh:message "Tasks of type BinaryClassification must be connected with exactly one compatible atomic method." ;
     ] .
@@ -64,8 +64,8 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:class ml:AdaBoostRegressorMethod ]
-            [ sh:class ml:HistGradientBoostingRegressorMethod ]
             [ sh:class ml:GradientBoostingRegressorMethod ]
+            [ sh:class ml:HistGradientBoostingRegressorMethod ]
         ) ;
         sh:message "Tasks of type BoostingRegression must be connected with exactly one compatible atomic method." ;
     ] .
@@ -77,25 +77,25 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
+            [ sh:class ml:AffinityPropagationMethod ]
+            [ sh:class ml:AgglomerativeClusteringMethod ]
+            [ sh:class ml:BirchMethod ]
+            [ sh:class ml:BisectingKMeansMethod ]
+            [ sh:class ml:DBSCANMethod ]
+            [ sh:class ml:HDBSCANMethod ]
+            [ sh:class ml:IsolationForestMethod ]
+            [ sh:class ml:KMeansMethod ]
             [ sh:class ml:KNeighborsTransformerMethod ]
-            [ sh:class ml:SpectralBiclusteringMethod ]
             [ sh:class ml:KernelDensityMethod ]
+            [ sh:class ml:LocalOutlierFactorMethod ]
+            [ sh:class ml:MeanShiftMethod ]
+            [ sh:class ml:MiniBatchKMeansMethod ]
             [ sh:class ml:NearestNeighborsMethod ]
             [ sh:class ml:OPTICSMethod ]
-            [ sh:class ml:SpectralClusteringMethod ]
-            [ sh:class ml:AgglomerativeClusteringMethod ]
-            [ sh:class ml:SpectralCoclusteringMethod ]
-            [ sh:class ml:DBSCANMethod ]
             [ sh:class ml:RadiusNeighborsTransformerMethod ]
-            [ sh:class ml:IsolationForestMethod ]
-            [ sh:class ml:HDBSCANMethod ]
-            [ sh:class ml:AffinityPropagationMethod ]
-            [ sh:class ml:BisectingKMeansMethod ]
-            [ sh:class ml:MiniBatchKMeansMethod ]
-            [ sh:class ml:MeanShiftMethod ]
-            [ sh:class ml:LocalOutlierFactorMethod ]
-            [ sh:class ml:KMeansMethod ]
-            [ sh:class ml:BirchMethod ]
+            [ sh:class ml:SpectralBiclusteringMethod ]
+            [ sh:class ml:SpectralClusteringMethod ]
+            [ sh:class ml:SpectralCoclusteringMethod ]
         ) ;
         sh:message "Tasks of type Clustering must be connected with exactly one compatible atomic method." ;
     ] .
@@ -119,27 +119,27 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:FunctionTransformerMethod ]
-            [ sh:class ml:TargetEncoderMethod ]
-            [ sh:class ml:KBinsDiscretizerMethod ]
-            [ sh:class ml:MultiLabelBinarizerMethod ]
-            [ sh:class ml:LabelBinarizerMethod ]
-            [ sh:class ml:RandomTreesEmbeddingMethod ]
-            [ sh:class ml:NormalizerMethod ]
-            [ sh:class ml:StandardScalerMethod ]
-            [ sh:class ml:FeatureHasherMethod ]
-            [ sh:class ml:SplineTransformerMethod ]
-            [ sh:class ml:RobustScalerMethod ]
-            [ sh:class ml:MinMaxScalerMethod ]
-            [ sh:class ml:MaxAbsScalerMethod ]
-            [ sh:class ml:PolynomialFeaturesMethod ]
-            [ sh:class ml:OneHotEncoderMethod ]
-            [ sh:class ml:PowerTransformerMethod ]
-            [ sh:class ml:DictVectorizerMethod ]
-            [ sh:class ml:OrdinalEncoderMethod ]
             [ sh:class ml:BinarizerMethod ]
+            [ sh:class ml:DictVectorizerMethod ]
+            [ sh:class ml:FeatureHasherMethod ]
+            [ sh:class ml:FunctionTransformerMethod ]
+            [ sh:class ml:KBinsDiscretizerMethod ]
             [ sh:class ml:KernelCentererMethod ]
+            [ sh:class ml:LabelBinarizerMethod ]
+            [ sh:class ml:MaxAbsScalerMethod ]
+            [ sh:class ml:MinMaxScalerMethod ]
+            [ sh:class ml:MultiLabelBinarizerMethod ]
+            [ sh:class ml:NormalizerMethod ]
+            [ sh:class ml:OneHotEncoderMethod ]
+            [ sh:class ml:OrdinalEncoderMethod ]
+            [ sh:class ml:PolynomialFeaturesMethod ]
+            [ sh:class ml:PowerTransformerMethod ]
             [ sh:class ml:QuantileTransformerMethod ]
+            [ sh:class ml:RandomTreesEmbeddingMethod ]
+            [ sh:class ml:RobustScalerMethod ]
+            [ sh:class ml:SplineTransformerMethod ]
+            [ sh:class ml:StandardScalerMethod ]
+            [ sh:class ml:TargetEncoderMethod ]
         ) ;
         sh:message "Tasks of type DataProcessing must be connected with exactly one compatible atomic method." ;
     ] .
@@ -151,30 +151,30 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:StratifiedGroupKFoldMethod ]
-            [ sh:class ml:PredefinedSplitMethod ]
-            [ sh:class ml:StratifiedShuffleSplitMethod ]
-            [ sh:class ml:LeavePOutMethod ]
-            [ sh:class ml:CrossValidateMethod ]
-            [ sh:class ml:StratifiedKFoldMethod ]
-            [ sh:class ml:ShuffleSplitMethod ]
-            [ sh:class ml:TrainTestSplitMethod ]
-            [ sh:class ml:GroupShuffleSplitMethod ]
-            [ sh:class ml:GroupKFoldMethod ]
-            [ sh:class ml:RepeatedStratifiedKFoldMethod ]
             [ sh:class ml:CheckCvMethod ]
-            [ sh:class ml:LearningCurveDisplayMethod ]
-            [ sh:class ml:RepeatedKFoldMethod ]
-            [ sh:class ml:DataSplittingMethod ]
-            [ sh:class ml:LeavePGroupsOutMethod ]
-            [ sh:class ml:KFoldMethod ]
-            [ sh:class ml:ValidationCurveMethod ]
-            [ sh:class ml:PermutationTestScoreMethod ]
             [ sh:class ml:CrossValPredictMethod ]
-            [ sh:class ml:LearningCurveMethod ]
             [ sh:class ml:CrossValScoreMethod ]
-            [ sh:class ml:ValidationCurveDisplayMethod ]
+            [ sh:class ml:CrossValidateMethod ]
+            [ sh:class ml:DataSplittingMethod ]
+            [ sh:class ml:GroupKFoldMethod ]
+            [ sh:class ml:GroupShuffleSplitMethod ]
+            [ sh:class ml:KFoldMethod ]
+            [ sh:class ml:LearningCurveDisplayMethod ]
+            [ sh:class ml:LearningCurveMethod ]
+            [ sh:class ml:LeavePGroupsOutMethod ]
+            [ sh:class ml:LeavePOutMethod ]
+            [ sh:class ml:PermutationTestScoreMethod ]
+            [ sh:class ml:PredefinedSplitMethod ]
+            [ sh:class ml:RepeatedKFoldMethod ]
+            [ sh:class ml:RepeatedStratifiedKFoldMethod ]
+            [ sh:class ml:ShuffleSplitMethod ]
+            [ sh:class ml:StratifiedGroupKFoldMethod ]
+            [ sh:class ml:StratifiedKFoldMethod ]
+            [ sh:class ml:StratifiedShuffleSplitMethod ]
             [ sh:class ml:TimeSeriesSplitMethod ]
+            [ sh:class ml:TrainTestSplitMethod ]
+            [ sh:class ml:ValidationCurveDisplayMethod ]
+            [ sh:class ml:ValidationCurveMethod ]
         ) ;
         sh:message "Tasks of type DataSplitting must be connected with exactly one compatible atomic method." ;
     ] .
@@ -199,22 +199,22 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:MiniBatchDictionaryLearningMethod ]
-            [ sh:class ml:PCAMethod ]
-            [ sh:class ml:MiniBatchNMFMethod ]
-            [ sh:class ml:TruncatedSVDMethod ]
-            [ sh:class ml:FactorAnalysisMethod ]
-            [ sh:class ml:SparsePCAMethod ]
-            [ sh:class ml:LatentDirichletAllocationMethod ]
-            [ sh:class ml:KernelPCAMethod ]
-            [ sh:class ml:NMFMethod ]
             [ sh:class ml:DictionaryLearningMethod ]
-            [ sh:class ml:MiniBatchSparsePCAMethod ]
-            [ sh:class ml:FeatureAgglomerationMethod ]
+            [ sh:class ml:FactorAnalysisMethod ]
             [ sh:class ml:FastICAMethod ]
-            [ sh:class ml:SparseCoderMethod ]
-            [ sh:class ml:NeighborhoodComponentsAnalysisMethod ]
+            [ sh:class ml:FeatureAgglomerationMethod ]
             [ sh:class ml:IncrementalPCAMethod ]
+            [ sh:class ml:KernelPCAMethod ]
+            [ sh:class ml:LatentDirichletAllocationMethod ]
+            [ sh:class ml:MiniBatchDictionaryLearningMethod ]
+            [ sh:class ml:MiniBatchNMFMethod ]
+            [ sh:class ml:MiniBatchSparsePCAMethod ]
+            [ sh:class ml:NMFMethod ]
+            [ sh:class ml:NeighborhoodComponentsAnalysisMethod ]
+            [ sh:class ml:PCAMethod ]
+            [ sh:class ml:SparseCoderMethod ]
+            [ sh:class ml:SparsePCAMethod ]
+            [ sh:class ml:TruncatedSVDMethod ]
         ) ;
         sh:message "Tasks of type Decomposition must be connected with exactly one compatible atomic method." ;
     ] .
@@ -252,19 +252,19 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:OneVsRestClassifierMethod ]
-            [ sh:class ml:GradientBoostingClassifierMethod ]
-            [ sh:class ml:NearestCentroidMethod ]
-            [ sh:class ml:RandomForestClassifierMethod ]
-            [ sh:class ml:OneVsOneClassifierMethod ]
-            [ sh:class ml:KNeighborsClassifierMethod ]
-            [ sh:class ml:RadiusNeighborsClassifierMethod ]
-            [ sh:class ml:OutputCodeClassifierMethod ]
-            [ sh:class ml:HistGradientBoostingClassifierMethod ]
-            [ sh:class ml:ExtraTreeClassifierMethod ]
-            [ sh:class ml:DecisionTreeClassifierMethod ]
-            [ sh:class ml:ExtraTreesClassifierMethod ]
             [ sh:class ml:AdaBoostClassifierMethod ]
+            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreesClassifierMethod ]
+            [ sh:class ml:GradientBoostingClassifierMethod ]
+            [ sh:class ml:HistGradientBoostingClassifierMethod ]
+            [ sh:class ml:KNeighborsClassifierMethod ]
+            [ sh:class ml:NearestCentroidMethod ]
+            [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:OneVsRestClassifierMethod ]
+            [ sh:class ml:OutputCodeClassifierMethod ]
+            [ sh:class ml:RadiusNeighborsClassifierMethod ]
+            [ sh:class ml:RandomForestClassifierMethod ]
         ) ;
         sh:message "Tasks of type MulticlassClassification must be connected with exactly one compatible atomic method." ;
     ] .
@@ -276,8 +276,8 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:OneVsRestClassifierMethod ]
             [ sh:class ml:OneVsOneClassifierMethod ]
+            [ sh:class ml:OneVsRestClassifierMethod ]
             [ sh:class ml:OutputCodeClassifierMethod ]
         ) ;
         sh:message "Tasks of type MultilabelClassification must be connected with exactly one compatible atomic method." ;
@@ -290,82 +290,82 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:LabelRankingAveragePrecisionScoreMethod ]
-            [ sh:class ml:ExplainedVarianceScoreMethod ]
-            [ sh:class ml:PrecisionRecallCurveMethod ]
-            [ sh:class ml:FowlkesMallowsScoreMethod ]
-            [ sh:class ml:MeanAbsolutePercentageErrorMethod ]
-            [ sh:class ml:CalinskiHarabaszScoreMethod ]
-            [ sh:class ml:HingeLossMethod ]
-            [ sh:class ml:MutualInfoScoreMethod ]
-            [ sh:class ml:MeanAbsoluteErrorMethod ]
-            [ sh:class ml:CompletenessScoreMethod ]
-            [ sh:class ml:RootMeanSquaredLogErrorMethod ]
-            [ sh:class ml:MedianAbsoluteErrorMethod ]
-            [ sh:class ml:MeanPinballLossMethod ]
-            [ sh:class ml:MeanSquaredLogErrorMethod ]
-            [ sh:class ml:SilhouetteSamplesMethod ]
-            [ sh:class ml:PrecisionRecallFscoreSupportMethod ]
-            [ sh:class ml:MeanGammaDevianceMethod ]
-            [ sh:class ml:AveragePrecisionScoreMethod ]
-            [ sh:class ml:RootMeanSquaredErrorMethod ]
-            [ sh:class ml:RecallScoreMethod ]
-            [ sh:class ml:HomogeneityCompletenessVMeasureMethod ]
-            [ sh:class ml:GetScorerNamesMethod ]
-            [ sh:class ml:D2TweedieScoreMethod ]
-            [ sh:class ml:D2AbsoluteErrorScoreMethod ]
-            [ sh:class ml:RocCurveMethod ]
-            [ sh:class ml:ClassLikelihoodRatiosMethod ]
-            [ sh:class ml:DetCurveMethod ]
-            [ sh:class ml:LogLossMethod ]
-            [ sh:class ml:PairwiseKernelsMethod ]
-            [ sh:class ml:RocAucScoreMethod ]
-            [ sh:class ml:CheckScoringMethod ]
-            [ sh:class ml:PairwiseDistancesArgminMethod ]
-            [ sh:class ml:AdjustedRandScoreMethod ]
-            [ sh:class ml:PerformanceCalculationMethod ]
-            [ sh:class ml:DaviesBouldinScoreMethod ]
-            [ sh:class ml:MakeScorerMethod ]
-            [ sh:class ml:ClassificationReportMethod ]
-            [ sh:class ml:PairwiseDistancesMethod ]
-            [ sh:class ml:SilhouetteScoreMethod ]
-            [ sh:class ml:AdjustedMutualInfoScoreMethod ]
             [ sh:class ml:AccuracyScoreMethod ]
-            [ sh:class ml:JaccardScoreMethod ]
-            [ sh:class ml:ZeroOneLossMethod ]
-            [ sh:class ml:VMeasureScoreMethod ]
-            [ sh:class ml:PairwiseDistancesArgminMinMethod ]
+            [ sh:class ml:AdjustedMutualInfoScoreMethod ]
+            [ sh:class ml:AdjustedRandScoreMethod ]
             [ sh:class ml:AucMethod ]
-            [ sh:class ml:CohenKappaScoreMethod ]
-            [ sh:class ml:HomogeneityScoreMethod ]
-            [ sh:class ml:NanEuclideanDistancesMethod ]
-            [ sh:class ml:D2PinballScoreMethod ]
-            [ sh:class ml:MultilabelConfusionMatrixMethod ]
-            [ sh:class ml:CoverageErrorMethod ]
-            [ sh:class ml:F1ScoreMethod ]
-            [ sh:class ml:PrecisionScoreMethod ]
-            [ sh:class ml:GetScorerMethod ]
-            [ sh:class ml:MeanTweedieDevianceMethod ]
-            [ sh:class ml:NormalizedMutualInfoScoreMethod ]
-            [ sh:class ml:MatthewsCorrcoefMethod ]
-            [ sh:class ml:PairwiseDistancesChunkedMethod ]
-            [ sh:class ml:EuclideanDistancesMethod ]
-            [ sh:class ml:ConfusionMatrixMethod ]
-            [ sh:class ml:NdcgScoreMethod ]
-            [ sh:class ml:TopKAccuracyScoreMethod ]
+            [ sh:class ml:AveragePrecisionScoreMethod ]
             [ sh:class ml:BalancedAccuracyScoreMethod ]
-            [ sh:class ml:LabelRankingLossMethod ]
-            [ sh:class ml:MaxErrorMethod ]
-            [ sh:class ml:R2ScoreMethod ]
-            [ sh:class ml:FbetaScoreMethod ]
-            [ sh:class ml:HammingLossMethod ]
-            [ sh:class ml:RandScoreMethod ]
-            [ sh:class ml:DcgScoreMethod ]
             [ sh:class ml:BrierScoreLossMethod ]
-            [ sh:class ml:MeanSquaredErrorMethod ]
-            [ sh:class ml:PairConfusionMatrixMethod ]
+            [ sh:class ml:CalinskiHarabaszScoreMethod ]
+            [ sh:class ml:CheckScoringMethod ]
+            [ sh:class ml:ClassLikelihoodRatiosMethod ]
+            [ sh:class ml:ClassificationReportMethod ]
+            [ sh:class ml:CohenKappaScoreMethod ]
+            [ sh:class ml:CompletenessScoreMethod ]
+            [ sh:class ml:ConfusionMatrixMethod ]
             [ sh:class ml:ConsensusScoreMethod ]
+            [ sh:class ml:CoverageErrorMethod ]
+            [ sh:class ml:D2AbsoluteErrorScoreMethod ]
+            [ sh:class ml:D2PinballScoreMethod ]
+            [ sh:class ml:D2TweedieScoreMethod ]
+            [ sh:class ml:DaviesBouldinScoreMethod ]
+            [ sh:class ml:DcgScoreMethod ]
+            [ sh:class ml:DetCurveMethod ]
+            [ sh:class ml:EuclideanDistancesMethod ]
+            [ sh:class ml:ExplainedVarianceScoreMethod ]
+            [ sh:class ml:F1ScoreMethod ]
+            [ sh:class ml:FbetaScoreMethod ]
+            [ sh:class ml:FowlkesMallowsScoreMethod ]
+            [ sh:class ml:GetScorerMethod ]
+            [ sh:class ml:GetScorerNamesMethod ]
+            [ sh:class ml:HammingLossMethod ]
+            [ sh:class ml:HingeLossMethod ]
+            [ sh:class ml:HomogeneityCompletenessVMeasureMethod ]
+            [ sh:class ml:HomogeneityScoreMethod ]
+            [ sh:class ml:JaccardScoreMethod ]
+            [ sh:class ml:LabelRankingAveragePrecisionScoreMethod ]
+            [ sh:class ml:LabelRankingLossMethod ]
+            [ sh:class ml:LogLossMethod ]
+            [ sh:class ml:MakeScorerMethod ]
+            [ sh:class ml:MatthewsCorrcoefMethod ]
+            [ sh:class ml:MaxErrorMethod ]
+            [ sh:class ml:MeanAbsoluteErrorMethod ]
+            [ sh:class ml:MeanAbsolutePercentageErrorMethod ]
+            [ sh:class ml:MeanGammaDevianceMethod ]
+            [ sh:class ml:MeanPinballLossMethod ]
             [ sh:class ml:MeanPoissonDevianceMethod ]
+            [ sh:class ml:MeanSquaredErrorMethod ]
+            [ sh:class ml:MeanSquaredLogErrorMethod ]
+            [ sh:class ml:MeanTweedieDevianceMethod ]
+            [ sh:class ml:MedianAbsoluteErrorMethod ]
+            [ sh:class ml:MultilabelConfusionMatrixMethod ]
+            [ sh:class ml:MutualInfoScoreMethod ]
+            [ sh:class ml:NanEuclideanDistancesMethod ]
+            [ sh:class ml:NdcgScoreMethod ]
+            [ sh:class ml:NormalizedMutualInfoScoreMethod ]
+            [ sh:class ml:PairConfusionMatrixMethod ]
+            [ sh:class ml:PairwiseDistancesArgminMethod ]
+            [ sh:class ml:PairwiseDistancesArgminMinMethod ]
+            [ sh:class ml:PairwiseDistancesChunkedMethod ]
+            [ sh:class ml:PairwiseDistancesMethod ]
+            [ sh:class ml:PairwiseKernelsMethod ]
+            [ sh:class ml:PerformanceCalculationMethod ]
+            [ sh:class ml:PrecisionRecallCurveMethod ]
+            [ sh:class ml:PrecisionRecallFscoreSupportMethod ]
+            [ sh:class ml:PrecisionScoreMethod ]
+            [ sh:class ml:R2ScoreMethod ]
+            [ sh:class ml:RandScoreMethod ]
+            [ sh:class ml:RecallScoreMethod ]
+            [ sh:class ml:RocAucScoreMethod ]
+            [ sh:class ml:RocCurveMethod ]
+            [ sh:class ml:RootMeanSquaredErrorMethod ]
+            [ sh:class ml:RootMeanSquaredLogErrorMethod ]
+            [ sh:class ml:SilhouetteSamplesMethod ]
+            [ sh:class ml:SilhouetteScoreMethod ]
+            [ sh:class ml:TopKAccuracyScoreMethod ]
+            [ sh:class ml:VMeasureScoreMethod ]
+            [ sh:class ml:ZeroOneLossMethod ]
         ) ;
         sh:message "Tasks of type PerformanceCalculation must be connected with exactly one compatible atomic method." ;
     ] .
@@ -377,8 +377,8 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:RandomForestRegressorMethod ]
             [ sh:class ml:ExtraTreesRegressorMethod ]
+            [ sh:class ml:RandomForestRegressorMethod ]
         ) ;
         sh:message "Tasks of type RandomForestRegression must be connected with exactly one compatible atomic method." ;
     ] .
@@ -390,36 +390,36 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:StackingRegressorMethod ]
-            [ sh:class ml:OrthogonalMatchingPursuitMethod ]
-            [ sh:class ml:ElasticNetMethod ]
-            [ sh:class ml:MultiTaskLassoCVMethod ]
-            [ sh:class ml:QuantileRegressorMethod ]
-            [ sh:class ml:GammaRegressorMethod ]
-            [ sh:class ml:PassiveAggressiveRegressorMethod ]
-            [ sh:class ml:OrthogonalMatchingPursuitCVMethod ]
-            [ sh:class ml:LassoLarsCVMethod ]
-            [ sh:class ml:ElasticNetCVMethod ]
-            [ sh:class ml:TweedieRegressorMethod ]
-            [ sh:class ml:MultiTaskElasticNetCVMethod ]
-            [ sh:class ml:LassoCVMethod ]
-            [ sh:class ml:LarsCVMethod ]
-            [ sh:class ml:MLPRegressorMethod ]
             [ sh:class ml:BaggingRegressorMethod ]
-            [ sh:class ml:SGDRegressorMethod ]
-            [ sh:class ml:MultiTaskElasticNetMethod ]
-            [ sh:class ml:LassoLarsICMethod ]
-            [ sh:class ml:RANSACRegressorMethod ]
+            [ sh:class ml:ElasticNetCVMethod ]
+            [ sh:class ml:ElasticNetMethod ]
+            [ sh:class ml:GammaRegressorMethod ]
             [ sh:class ml:HuberRegressorMethod ]
-            [ sh:class ml:PoissonRegressorMethod ]
-            [ sh:class ml:RidgeMethod ]
-            [ sh:class ml:RidgeCVMethod ]
-            [ sh:class ml:SGDOneClassSVMMethod ]
+            [ sh:class ml:LarsCVMethod ]
+            [ sh:class ml:LassoCVMethod ]
+            [ sh:class ml:LassoLarsCVMethod ]
+            [ sh:class ml:LassoLarsICMethod ]
             [ sh:class ml:LassoMethod ]
-            [ sh:class ml:VotingRegressorMethod ]
-            [ sh:class ml:TheilSenRegressorMethod ]
+            [ sh:class ml:MLPRegressorMethod ]
+            [ sh:class ml:MultiTaskElasticNetCVMethod ]
+            [ sh:class ml:MultiTaskElasticNetMethod ]
+            [ sh:class ml:MultiTaskLassoCVMethod ]
             [ sh:class ml:MultiTaskLassoMethod ]
             [ sh:class ml:OneClassSVMMethod ]
+            [ sh:class ml:OrthogonalMatchingPursuitCVMethod ]
+            [ sh:class ml:OrthogonalMatchingPursuitMethod ]
+            [ sh:class ml:PassiveAggressiveRegressorMethod ]
+            [ sh:class ml:PoissonRegressorMethod ]
+            [ sh:class ml:QuantileRegressorMethod ]
+            [ sh:class ml:RANSACRegressorMethod ]
+            [ sh:class ml:RidgeCVMethod ]
+            [ sh:class ml:RidgeMethod ]
+            [ sh:class ml:SGDOneClassSVMMethod ]
+            [ sh:class ml:SGDRegressorMethod ]
+            [ sh:class ml:StackingRegressorMethod ]
+            [ sh:class ml:TheilSenRegressorMethod ]
+            [ sh:class ml:TweedieRegressorMethod ]
+            [ sh:class ml:VotingRegressorMethod ]
         ) ;
         sh:message "Tasks of type RegularizedRegression must be connected with exactly one compatible atomic method." ;
     ] .
@@ -443,9 +443,9 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
+            [ sh:class ml:LinearSVRMethod ]
             [ sh:class ml:NuSVRMethod ]
             [ sh:class ml:SVRMethod ]
-            [ sh:class ml:LinearSVRMethod ]
         ) ;
         sh:message "Tasks of type SupportVectorRegression must be connected with exactly one compatible atomic method." ;
     ] .
@@ -573,9 +573,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -688,8 +688,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -722,9 +722,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -761,9 +761,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -876,8 +876,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -910,9 +910,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -1001,8 +1001,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AffinityPropagationMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -1047,9 +1047,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -1090,8 +1090,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -1099,9 +1099,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -1117,8 +1117,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -1134,8 +1134,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -1189,8 +1189,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AdaBoostClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] .
@@ -1242,8 +1242,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BisectingKMeansMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -1259,8 +1259,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BisectingKMeansMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -1338,8 +1338,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DBSCANMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -1392,9 +1392,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FastICAMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -1402,8 +1402,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FastICAMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -1465,9 +1465,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HDBSCANMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -1547,8 +1547,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HDBSCANMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -1600,8 +1600,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KMeansMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -1617,8 +1617,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KMeansMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -1680,8 +1680,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KNeighborsClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -1750,8 +1750,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KNeighborsRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -1828,8 +1828,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KNeighborsTransformerMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -1975,8 +1975,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LocalOutlierFactorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -2045,8 +2045,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NearestNeighborsMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -2138,8 +2138,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OPTICSMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -2200,8 +2200,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RadiusNeighborsClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -2278,8 +2278,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RadiusNeighborsRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -2356,8 +2356,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RadiusNeighborsTransformerMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -2394,9 +2394,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TruncatedSVDMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -2428,8 +2428,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TruncatedSVDMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -2470,9 +2470,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BernoulliNBMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2509,9 +2509,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CategoricalNBMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2547,9 +2547,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ComplementNBMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2586,9 +2586,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method D2PinballScoreMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2608,9 +2608,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DictionaryLearningMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2658,9 +2658,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DictionaryLearningMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -2668,8 +2668,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DictionaryLearningMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -2693,8 +2693,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DictionaryLearningMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -2764,9 +2764,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ElasticNetMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2823,8 +2823,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ElasticNetMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -2861,9 +2861,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GammaRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2925,9 +2925,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -2976,8 +2976,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -2985,9 +2985,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -2995,8 +2995,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -3054,8 +3054,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3063,9 +3063,9 @@
         sh:path ml:hasParamSubsample ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamSubsample." ;
     ] ;
@@ -3082,9 +3082,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -3113,9 +3113,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HuberRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3168,9 +3168,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3194,9 +3194,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -3253,9 +3253,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -3263,8 +3263,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -3272,8 +3272,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3302,9 +3302,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoLarsMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3377,8 +3377,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoLarsMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3399,9 +3399,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3450,8 +3450,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3488,9 +3488,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MeanPinballLossMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3510,9 +3510,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchDictionaryLearningMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3560,8 +3560,8 @@
         sh:path ml:hasParamMaxNoImprovement ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchDictionaryLearningMethod must have at most one compatible value for parameter hasParamMaxNoImprovement." ;
     ] ;
@@ -3569,9 +3569,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchDictionaryLearningMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -3579,8 +3579,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchDictionaryLearningMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -3604,8 +3604,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchDictionaryLearningMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3683,9 +3683,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchSparsePCAMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3717,8 +3717,8 @@
         sh:path ml:hasParamMaxNoImprovement ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchSparsePCAMethod must have at most one compatible value for parameter hasParamMaxNoImprovement." ;
     ] ;
@@ -3734,9 +3734,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchSparsePCAMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -3744,8 +3744,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchSparsePCAMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -3753,8 +3753,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchSparsePCAMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3800,9 +3800,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskElasticNetMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3842,8 +3842,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskElasticNetMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3880,9 +3880,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskLassoMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3914,8 +3914,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskLassoMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -3952,9 +3952,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultinomialNBMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -3982,9 +3982,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PerceptronMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4048,8 +4048,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PerceptronMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -4065,8 +4065,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PerceptronMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -4091,9 +4091,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PerceptronMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -4122,9 +4122,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PoissonRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4186,9 +4186,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method QuantileRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4232,9 +4232,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeClassifierMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4282,8 +4282,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -4312,9 +4312,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4354,8 +4354,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -4384,9 +4384,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4394,9 +4394,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -4485,8 +4485,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -4510,8 +4510,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -4536,9 +4536,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -4567,9 +4567,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4577,9 +4577,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -4676,8 +4676,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -4702,9 +4702,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -4733,9 +4733,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SparsePCAMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -4759,9 +4759,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SparsePCAMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -4769,8 +4769,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SparsePCAMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -4778,8 +4778,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SparsePCAMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -4833,9 +4833,9 @@
         sh:path ml:hasParamAlpha ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TweedieRegressorMethod must have at most one compatible value for parameter hasParamAlpha." ;
     ] ;
@@ -5206,8 +5206,8 @@
         sh:path ml:hasParamMaxNoImprovement ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamMaxNoImprovement." ;
     ] ;
@@ -5215,9 +5215,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -5225,8 +5225,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -5313,9 +5313,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NMFMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -5323,8 +5323,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NMFMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -5378,8 +5378,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -5439,8 +5439,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ElasticNetCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -5488,8 +5488,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ElasticNetCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -5514,8 +5514,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ElasticNetCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -5569,8 +5569,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -5610,8 +5610,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -5636,8 +5636,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -5691,8 +5691,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskElasticNetCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -5740,8 +5740,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskElasticNetCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -5749,8 +5749,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskElasticNetCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -5804,8 +5804,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskLassoCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -5845,8 +5845,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskLassoCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -5854,8 +5854,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskLassoCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -5929,9 +5929,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AveragePrecisionScoreMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -5939,10 +5939,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AveragePrecisionScoreMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] .
@@ -5954,9 +5954,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method F1ScoreMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -5964,10 +5964,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method F1ScoreMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] ;
@@ -5987,9 +5987,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FbetaScoreMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6005,10 +6005,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FbetaScoreMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] ;
@@ -6028,9 +6028,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method JaccardScoreMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6038,10 +6038,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method JaccardScoreMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] ;
@@ -6061,9 +6061,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveClassifierMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6127,8 +6127,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -6136,8 +6136,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -6162,9 +6162,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveClassifierMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -6193,9 +6193,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveRegressorMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6259,8 +6259,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -6285,9 +6285,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveRegressorMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -6316,9 +6316,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PrecisionRecallFscoreSupportMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6334,10 +6334,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PrecisionRecallFscoreSupportMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] ;
@@ -6365,9 +6365,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PrecisionScoreMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6375,10 +6375,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PrecisionScoreMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] ;
@@ -6398,9 +6398,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RecallScoreMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6408,10 +6408,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RecallScoreMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] ;
@@ -6431,9 +6431,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RocAucScoreMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6453,9 +6453,9 @@
         sh:path ml:hasParamAverage ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDOneClassSVMMethod must have at most one compatible value for parameter hasParamAverage." ;
     ] ;
@@ -6512,8 +6512,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDOneClassSVMMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -6680,8 +6680,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MeanShiftMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -6718,9 +6718,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BernoulliRBMMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -6736,8 +6736,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BernoulliRBMMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -6774,9 +6774,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method IncrementalPCAMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -6869,9 +6869,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -6879,8 +6879,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -6896,8 +6896,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -6974,8 +6974,8 @@
         sh:path ml:hasParamMaxNoImprovement ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchKMeansMethod must have at most one compatible value for parameter hasParamMaxNoImprovement." ;
     ] ;
@@ -6983,8 +6983,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchKMeansMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -7000,8 +7000,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchKMeansMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7087,9 +7087,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BaggingClassifierMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -7114,8 +7114,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BaggingClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -7132,8 +7132,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BaggingClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7186,9 +7186,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BaggingRegressorMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -7213,8 +7213,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BaggingRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -7231,8 +7231,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BaggingRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7293,8 +7293,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -7302,9 +7302,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -7312,8 +7312,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -7372,8 +7372,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -7390,8 +7390,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7444,8 +7444,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -7453,9 +7453,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -7463,8 +7463,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -7523,8 +7523,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -7541,8 +7541,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7587,9 +7587,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method IsolationForestMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -7614,8 +7614,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method IsolationForestMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -7623,8 +7623,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method IsolationForestMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7685,8 +7685,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -7694,9 +7694,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -7704,8 +7704,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -7764,8 +7764,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -7782,8 +7782,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7836,8 +7836,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -7845,9 +7845,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -7855,8 +7855,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -7915,8 +7915,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -7933,8 +7933,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -7987,8 +7987,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BirchMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -8048,9 +8048,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NuSVCMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -8099,8 +8099,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NuSVCMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -8186,9 +8186,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SVCMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -8229,8 +8229,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SVCMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -8340,8 +8340,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LinearSVCMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -8427,8 +8427,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LinearSVRMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -8522,8 +8522,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -8539,8 +8539,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -8610,9 +8610,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NuSVRMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -8707,9 +8707,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SVRMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -8796,9 +8796,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OneClassSVMMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -8893,9 +8893,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NeighborhoodComponentsAnalysisMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -8903,8 +8903,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NeighborhoodComponentsAnalysisMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -8966,8 +8966,8 @@
         sh:path ml:hasParamInteractionCst ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamInteractionCst." ;
     ] ;
@@ -9008,8 +9008,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -9017,9 +9017,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -9035,8 +9035,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -9069,8 +9069,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -9095,9 +9095,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -9142,8 +9142,8 @@
         sh:path ml:hasParamInteractionCst ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamInteractionCst." ;
     ] ;
@@ -9184,8 +9184,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -9193,9 +9193,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -9211,8 +9211,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -9253,8 +9253,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -9279,9 +9279,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -9395,8 +9395,8 @@
         sh:path ml:hasParamEncodedMissingValue ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OrdinalEncoderMethod must have at most one compatible value for parameter hasParamEncodedMissingValue." ;
     ] ;
@@ -9429,8 +9429,8 @@
         sh:path ml:hasParamUnknownValue ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OrdinalEncoderMethod must have at most one compatible value for parameter hasParamUnknownValue." ;
     ] .
@@ -9450,8 +9450,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TargetEncoderMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -9459,8 +9459,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TargetEncoderMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -9520,8 +9520,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeClassifierMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -9529,9 +9529,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeClassifierMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -9539,8 +9539,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeClassifierMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -9582,8 +9582,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -9619,8 +9619,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeRegressorMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -9628,9 +9628,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeRegressorMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -9638,8 +9638,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeRegressorMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -9681,8 +9681,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DecisionTreeRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -9726,8 +9726,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeClassifierMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -9735,9 +9735,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeClassifierMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -9745,8 +9745,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeClassifierMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -9788,8 +9788,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -9825,8 +9825,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeRegressorMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -9834,9 +9834,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeRegressorMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -9844,8 +9844,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeRegressorMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -9887,8 +9887,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ExtraTreeRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -9949,8 +9949,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -9958,9 +9958,9 @@
         sh:path ml:hasParamMaxFeatures ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
     ] ;
@@ -9968,8 +9968,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -10027,8 +10027,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -10036,9 +10036,9 @@
         sh:path ml:hasParamSubsample ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamSubsample." ;
     ] ;
@@ -10055,9 +10055,9 @@
         sh:path ml:hasParamValidationFraction ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamValidationFraction." ;
     ] ;
@@ -10094,8 +10094,8 @@
         sh:path ml:hasParamCs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamCs." ;
     ] ;
@@ -10103,8 +10103,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -10160,8 +10160,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -10177,8 +10177,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -10240,8 +10240,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeClassifierCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -10285,8 +10285,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CheckCvMethod must have at most one compatible value for parameter hasParamCv." ;
     ] .
@@ -10342,8 +10342,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OutputCodeClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -10351,8 +10351,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OutputCodeClassifierMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] .
@@ -10420,8 +10420,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AgglomerativeClusteringMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] .
@@ -10489,8 +10489,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FeatureAgglomerationMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -10566,9 +10566,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FactorAnalysisMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -10576,8 +10576,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FactorAnalysisMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -10634,9 +10634,9 @@
         sh:path ml:hasParamMissingValues ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NanEuclideanDistancesMethod must have at most one compatible value for parameter hasParamMissingValues." ;
     ] ;
@@ -10685,8 +10685,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OrthogonalMatchingPursuitCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -10710,8 +10710,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OrthogonalMatchingPursuitCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -10748,9 +10748,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PCAMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -10774,8 +10774,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PCAMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -10873,8 +10873,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method QuantileTransformerMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -10882,9 +10882,9 @@
         sh:path ml:hasParamSubsample ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method QuantileTransformerMethod must have at most one compatible value for parameter hasParamSubsample." ;
     ] .
@@ -10976,8 +10976,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LarsCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11017,8 +11017,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LarsCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11105,8 +11105,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LarsMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -11135,8 +11135,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoLarsCVMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11176,8 +11176,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoLarsCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11309,8 +11309,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LinearRegressionMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11362,8 +11362,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TheilSenRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11379,8 +11379,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TheilSenRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -11410,8 +11410,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11443,8 +11443,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11460,8 +11460,8 @@
         sh:path ml:hasParamPreDispatch ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
     ] ;
@@ -11482,8 +11482,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11507,8 +11507,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11524,8 +11524,8 @@
         sh:path ml:hasParamPreDispatch ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
     ] ;
@@ -11554,8 +11554,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11579,8 +11579,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11596,8 +11596,8 @@
         sh:path ml:hasParamPreDispatch ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
     ] ;
@@ -11650,8 +11650,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11691,8 +11691,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11700,8 +11700,8 @@
         sh:path ml:hasParamPreDispatch ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
     ] ;
@@ -11709,8 +11709,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -11755,8 +11755,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11772,8 +11772,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11789,8 +11789,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -11819,8 +11819,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StackingClassifierMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11844,8 +11844,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StackingClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11882,8 +11882,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StackingRegressorMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11907,8 +11907,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StackingRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11937,8 +11937,8 @@
         sh:path ml:hasParamCv ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamCv." ;
     ] ;
@@ -11970,8 +11970,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -11987,8 +11987,8 @@
         sh:path ml:hasParamPreDispatch ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
     ] ;
@@ -12017,9 +12017,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PolynomialFeaturesMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -12055,9 +12055,9 @@
         sh:path ml:hasParamDegree ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SplineTransformerMethod must have at most one compatible value for parameter hasParamDegree." ;
     ] ;
@@ -12125,8 +12125,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SparseCoderMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -12222,10 +12222,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PrecisionRecallCurveMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] .
@@ -12245,10 +12245,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RocCurveMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] .
@@ -12320,8 +12320,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KBinsDiscretizerMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -12337,9 +12337,9 @@
         sh:path ml:hasParamSubsample ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KBinsDiscretizerMethod must have at most one compatible value for parameter hasParamSubsample." ;
     ] .
@@ -12405,8 +12405,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AdaBoostRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] .
@@ -12426,8 +12426,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OneVsOneClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] .
@@ -12447,8 +12447,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OneVsRestClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -12517,8 +12517,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RANSACRegressorMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -12570,8 +12570,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method VotingClassifierMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -12608,8 +12608,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method VotingRegressorMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -12646,8 +12646,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PairwiseKernelsMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] .
@@ -12713,8 +12713,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PairwiseDistancesMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] .
@@ -12927,8 +12927,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralBiclusteringMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -12936,9 +12936,9 @@
         sh:path ml:hasParamNComponents ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralBiclusteringMethod must have at most one compatible value for parameter hasParamNComponents." ;
     ] ;
@@ -12962,8 +12962,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralBiclusteringMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -12999,8 +12999,8 @@
         sh:path ml:hasParamNClusters ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralCoclusteringMethod must have at most one compatible value for parameter hasParamNClusters." ;
     ] ;
@@ -13024,8 +13024,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralCoclusteringMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13066,8 +13066,8 @@
         sh:path ml:hasParamMaxDepth ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomTreesEmbeddingMethod must have at most one compatible value for parameter hasParamMaxDepth." ;
     ] ;
@@ -13075,8 +13075,8 @@
         sh:path ml:hasParamMaxLeafNodes ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomTreesEmbeddingMethod must have at most one compatible value for parameter hasParamMaxLeafNodes." ;
     ] ;
@@ -13126,8 +13126,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomTreesEmbeddingMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -13135,8 +13135,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RandomTreesEmbeddingMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13201,8 +13201,8 @@
         sh:path ml:hasParamNJobs ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PairwiseDistancesChunkedMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
@@ -13250,8 +13250,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SilhouetteScoreMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13411,8 +13411,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RepeatedKFoldMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] .
@@ -13440,8 +13440,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RepeatedStratifiedKFoldMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] .
@@ -13473,8 +13473,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GroupShuffleSplitMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13512,8 +13512,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KFoldMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13541,8 +13541,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ShuffleSplitMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13580,8 +13580,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StratifiedGroupKFoldMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13609,8 +13609,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StratifiedKFoldMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13638,8 +13638,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method StratifiedShuffleSplitMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
@@ -13677,10 +13677,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LabelBinarizerMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] ;
@@ -13788,10 +13788,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BrierScoreLossMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] .
@@ -13803,10 +13803,10 @@
         sh:path ml:hasParamPosLabel ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:float ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DetCurveMethod must have at most one compatible value for parameter hasParamPosLabel." ;
     ] .
@@ -13866,8 +13866,8 @@
         sh:path ml:hasParamRandomState ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:datatype xsd:string ]
             [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TrainTestSplitMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] ;
