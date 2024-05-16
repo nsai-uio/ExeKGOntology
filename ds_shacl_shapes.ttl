@@ -33,3 +33,26 @@
         sh:class ds:AtomicTask ;
         sh:maxCount 1 ;
     ] .
+
+:DataEntityReferenceShape a sh:NodeShape ;
+    sh:targetSubjectsOf ds:hasReference ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "The referenced data entity's data structure must be a superclass of the referencing data entity's type." ;
+        sh:prefixes ds:, rdfs:, rdf: ;
+        sh:select """
+        SELECT $this
+        WHERE {
+            FILTER NOT EXISTS {
+                SELECT $this
+                WHERE {
+                    $this               ds:hasReference  ?refDataEntity ;
+                                        rdf:type         ?thisType .
+                    ?thisType           rdfs:subClassOf  ?thisTypeSuperclass .
+                    ?thisTypeSuperclass rdfs:subClassOf  ds:DataStructure .
+                    ?refDataEntity      rdf:type         ?thisTypeSuperclass .
+                }
+            }
+        }
+        """ ;
+    ] .
