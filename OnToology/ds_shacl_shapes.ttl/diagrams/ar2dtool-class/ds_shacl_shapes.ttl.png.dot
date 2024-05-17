@@ -1,0 +1,23 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+	"base:DataEntityReferenceShape" -> "6b0dcd3fa8fb5d4e9ff28fd86ca10c74" [ label = "sh:sparql" ];
+	"base:DataEntityReferenceShape" -> "ds:hasReference" [ label = "sh:targetSubjectsOf" ];
+	"NULL" -> "ds:" [ label = "sh:prefixes" ];
+	"NULL" -> "xsd:string" [ label = "sh:dataType" ];
+	"NULL" -> "ds:hasInputDataPath" [ label = "sh:path" ];
+	"NULL" -> "rdf:" [ label = "sh:prefixes" ];
+	"NULL" -> "ds:hasPlotsOutputDir" [ label = "sh:path" ];
+	"NULL" -> "ds:AtomicTask" [ label = "sh:class" ];
+	"NULL" -> "ds:hasNextTask" [ label = "sh:path" ];
+	"NULL" -> "rdfs:" [ label = "sh:prefixes" ];
+	"NULL" -> "ds:hasStartTask" [ label = "sh:path" ];
+	"NULL" -> "base:AtomicTaskShape" [ label = "sh:node" ];
+	"base:Pipeline" -> "7cfd3816b62416cdcd4dc2f8892f0f0a" [ label = "sh:property" ];
+	"base:Pipeline" -> "8ca5370c9541aae73f125379f8166dae" [ label = "sh:property" ];
+	"base:Pipeline" -> "0766d74445a236c9ab36953425a248ce" [ label = "sh:property" ];
+	"base:Pipeline" -> "ds:Pipeline" [ label = "sh:targetClass" ];
+	"base:AtomicTaskShape" -> "29995f923a51e41ca85883afb19158a8" [ label = "sh:property" ];
+	"base:AtomicTaskShape" -> "ds:AtomicTask" [ label = "sh:targetClass" ];
+
+}
