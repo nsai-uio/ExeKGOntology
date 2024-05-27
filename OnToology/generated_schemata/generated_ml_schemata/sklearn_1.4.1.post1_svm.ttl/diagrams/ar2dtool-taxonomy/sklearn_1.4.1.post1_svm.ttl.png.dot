@@ -1,0 +1,29 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:SVCMethod" "ml:NuSVCMethod" "ml:LinearSVCMethod" "ml:SVRMethod" "ml:NuSVRMethod" "ml:OneClassSVMMethod" "ml:LinearSVRMethod" "ml:SvmModule" "ml:SklearnModule" ; /*classes style*/
+	"ml:NuSVRMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVRMethod" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVRMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:SVRMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SVRMethod" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:SVRMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneClassSVMMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneClassSVMMethod" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:OneClassSVMMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVCMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVCMethod" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVCMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVCMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVCMethod" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:NuSVCMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVRMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVRMethod" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:LinearSVRMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SVCMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SVCMethod" -> "ml:SvmModule" [ label = "rdfs:subClassOf" ];
+	"ml:SVCMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SvmModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+
+}

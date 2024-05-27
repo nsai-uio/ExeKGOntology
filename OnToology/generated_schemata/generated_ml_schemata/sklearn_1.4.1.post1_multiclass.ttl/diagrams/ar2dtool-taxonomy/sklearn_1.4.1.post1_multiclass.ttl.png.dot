@@ -1,0 +1,17 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:OutputCodeClassifierMethod" "ml:OneVsRestClassifierMethod" "ml:OneVsOneClassifierMethod" "ml:MulticlassModule" "ml:SklearnModule" ; /*classes style*/
+	"ml:OneVsRestClassifierMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsRestClassifierMethod" -> "ml:MulticlassModule" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsRestClassifierMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsOneClassifierMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsOneClassifierMethod" -> "ml:MulticlassModule" [ label = "rdfs:subClassOf" ];
+	"ml:OneVsOneClassifierMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MulticlassModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:OutputCodeClassifierMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:OutputCodeClassifierMethod" -> "ml:MulticlassModule" [ label = "rdfs:subClassOf" ];
+	"ml:OutputCodeClassifierMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

@@ -1,0 +1,50 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:DictionaryLearningMethod" "ml:NMFMethod" "ml:MiniBatchDictionaryLearningMethod" "ml:MiniBatchNMFMethod" "ml:KernelPCAMethod" "ml:TruncatedSVDMethod" "ml:FastICAMethod" "ml:FactorAnalysisMethod" "ml:SklearnModule" "ml:DecompositionModule" "ml:MiniBatchSparsePCAMethod" "ml:PCAMethod" "ml:IncrementalPCAMethod" "ml:SparseCoderMethod" "ml:SparsePCAMethod" "ml:LatentDirichletAllocationMethod" ; /*classes style*/
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:SparseCoderMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SparseCoderMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SparseCoderMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchNMFMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchNMFMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchNMFMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:IncrementalPCAMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:IncrementalPCAMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:IncrementalPCAMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FactorAnalysisMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FactorAnalysisMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:FactorAnalysisMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NMFMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NMFMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:NMFMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SparsePCAMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SparsePCAMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SparsePCAMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FastICAMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FastICAMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:FastICAMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LatentDirichletAllocationMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:LatentDirichletAllocationMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:LatentDirichletAllocationMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:TruncatedSVDMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:TruncatedSVDMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:TruncatedSVDMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DecompositionModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:PCAMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:PCAMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:PCAMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchDictionaryLearningMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchDictionaryLearningMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchDictionaryLearningMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DictionaryLearningMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:DictionaryLearningMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:DictionaryLearningMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelPCAMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KernelPCAMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:KernelPCAMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchSparsePCAMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchSparsePCAMethod" -> "ml:DecompositionModule" [ label = "rdfs:subClassOf" ];
+	"ml:MiniBatchSparsePCAMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

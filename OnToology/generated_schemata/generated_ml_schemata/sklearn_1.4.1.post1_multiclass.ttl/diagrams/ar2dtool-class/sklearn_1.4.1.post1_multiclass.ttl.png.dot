@@ -1,0 +1,22 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "ml:OutputCodeClassifierMethod" "ml:OneVsRestClassifierMethod" "ml:OneVsOneClassifierMethod" ; /*classes style*/
+	"ml:hasBinaryClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamVerbose" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamNJobs" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamRandomState" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasMulticlassClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamCodeSize" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasMultilabelClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamEstimator" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:MultilabelClassification" -> "ml:OneVsOneClassifierMethod" [ label = "ml:hasMultilabelClassificationMethod" ];
+	"ml:BinaryClassification" -> "ml:OneVsOneClassifierMethod" [ label = "ml:hasBinaryClassificationMethod" ];
+	"ml:OutputCodeClassifierMethod" -> "xsd:float" [ label = "ml:hasParamCodeSize" ];
+	"ml:OneVsOneClassifierMethod" -> "xsd:string" [ label = "ml:hasParamEstimator" ];
+	"ml:OneVsOneClassifierMethod" -> "xsd:int" [ label = "ml:hasParamNJobs" ];
+	"ml:OneVsRestClassifierMethod" -> "xsd:int" [ label = "ml:hasParamVerbose" ];
+	"ml:OutputCodeClassifierMethod" -> "xsd:int" [ label = "ml:hasParamRandomState" ];
+	"ml:MulticlassClassification" -> "ml:OneVsOneClassifierMethod" [ label = "ml:hasMulticlassClassificationMethod" ];
+
+}

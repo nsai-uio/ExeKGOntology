@@ -1,0 +1,119 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#range> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#range> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Transforms lists of feature-value mappings to vectors.\n\nThis transformer turns lists of mappings (dict-like objects) of feature\nnames to feature values into Numpy arrays or scipy.sparse matrices for use\nwith scikit-learn estimators.\n\nWhen feature values are strings, this transformer will do a binary one-hot\n(aka one-of-K) coding: one boolean-valued feature is constructed for each\nof the possible string values that the feature can take on. For instance,\na feature \"f\" that can take on the values \"ham\" and \"spam\" will become two\nfeatures in the output, one signifying \"f=ham\", the other \"f=spam\".\n\nIf a feature value is a sequence or set of strings, this transformer\nwill iterate over the values and will count the occurrences of each string\nvalue.\n\nHowever, note that this transformer will only do a binary one-hot encoding\nwhen feature values are of type string. If categorical features are\nrepresented as numeric values such as int or iterables of strings, the\nDictVectorizer can be followed by\n:class:`~sklearn.preprocessing.OneHotEncoder` to complete\nbinary one-hot encoding.\n\nFeatures that do not occur in a sample (mapping) will have a zero value\nin the resulting array/matrix.\n\nFor an efficiency comparison of the different feature extractors, see\n:ref:`sphx_glr_auto_examples_text_plot_hashing_vs_dict_vectorizer.py`.\n\nRead more in the :ref:`User Guide <dict_feature_extraction>`.\n\nParameters\n----------\ndtype : dtype, default=np.float64\n    The type of feature values. Passed to Numpy array/scipy.sparse matrix\n    constructors as the dtype argument.\nseparator : str, default=\"=\"\n    Separator string used when constructing new features for one-hot\n    coding.\nsparse : bool, default=True\n    Whether transform should produce scipy.sparse matrices.\nsort : bool, default=True\n    Whether ``feature_names_`` and ``vocabulary_`` should be\n    sorted when fitting.\n\nAttributes\n----------\nvocabulary_ : dict\n    A dictionary mapping feature names to feature indices.\n\nfeature_names_ : list\n    A list of length n_features containing the feature names (e.g., \"f=ham\"\n    and \"f=spam\").\n\nSee Also\n--------\nFeatureHasher : Performs vectorization using only a hash function.\nsklearn.preprocessing.OrdinalEncoder : Handles nominal/categorical\n    features encoded as columns of arbitrary data types.\n\nExamples\n--------\n>>> from sklearn.feature_extraction import DictVectorizer\n>>> v = DictVectorizer(sparse=False)\n>>> D = [{'foo': 1, 'bar': 2}, {'foo': 3, 'baz': 1}]\n>>> X = v.fit_transform(D)\n>>> X\narray([[2., 0., 1.],\n       [0., 1., 3.]])\n>>> v.inverse_transform(X) == [{'bar': 2.0, 'foo': 1.0},\n...                            {'baz': 1.0, 'foo': 3.0}]\nTrue\n>>> v.transform({'foo': 4, 'unseen_feature': 3})\narray([[0., 0., 4.]])" .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Implements feature hashing, aka the hashing trick.\n\nThis class turns sequences of symbolic feature names (strings) into\nscipy.sparse matrices, using a hash function to compute the matrix column\ncorresponding to a name. The hash function employed is the signed 32-bit\nversion of Murmurhash3.\n\nFeature names of type byte string are used as-is. Unicode strings are\nconverted to UTF-8 first, but no Unicode normalization is done.\nFeature values must be (finite) numbers.\n\nThis class is a low-memory alternative to DictVectorizer and\nCountVectorizer, intended for large-scale (online) learning and situations\nwhere memory is tight, e.g. when running prediction code on embedded\ndevices.\n\nFor an efficiency comparison of the different feature extractors, see\n:ref:`sphx_glr_auto_examples_text_plot_hashing_vs_dict_vectorizer.py`.\n\nRead more in the :ref:`User Guide <feature_hashing>`.\n\n.. versionadded:: 0.13\n\nParameters\n----------\nn_features : int, default=2**20\n    The number of features (columns) in the output matrices. Small numbers\n    of features are likely to cause hash collisions, but large numbers\n    will cause larger coefficient dimensions in linear learners.\ninput_type : str, default='dict'\n    Choose a string from {'dict', 'pair', 'string'}.\n    Either \"dict\" (the default) to accept dictionaries over\n    (feature_name, value); \"pair\" to accept pairs of (feature_name, value);\n    or \"string\" to accept single strings.\n    feature_name should be a string, while value should be a number.\n    In the case of \"string\", a value of 1 is implied.\n    The feature_name is hashed to find the appropriate column for the\n    feature. The value's sign might be flipped in the output (but see\n    non_negative, below).\ndtype : numpy dtype, default=np.float64\n    The type of feature values. Passed to scipy.sparse matrix constructors\n    as the dtype argument. Do not set this to bool, np.boolean or any\n    unsigned integer type.\nalternate_sign : bool, default=True\n    When True, an alternating sign is added to the features as to\n    approximately conserve the inner product in the hashed space even for\n    small n_features. This approach is similar to sparse random projection.\n\n    .. versionchanged:: 0.19\n        ``alternate_sign`` replaces the now deprecated ``non_negative``\n        parameter.\n\nSee Also\n--------\nDictVectorizer : Vectorizes string-valued features using a hash table.\nsklearn.preprocessing.OneHotEncoder : Handles nominal/categorical features.\n\nNotes\n-----\nThis estimator is :term:`stateless` and does not need to be fitted.\nHowever, we recommend to call :meth:`fit_transform` instead of\n:meth:`transform`, as parameter validation is only performed in\n:meth:`fit`.\n\nExamples\n--------\n>>> from sklearn.feature_extraction import FeatureHasher\n>>> h = FeatureHasher(n_features=10)\n>>> D = [{'dog': 1, 'cat':2, 'elephant':4},{'dog': 2, 'run': 5}]\n>>> f = h.transform(D)\n>>> f.toarray()\narray([[ 0.,  0., -4., -1.,  0.,  0.,  0.,  0.,  0.,  2.],\n       [ 0.,  0.,  0., -2., -5.,  0.,  0.,  0.,  0.,  0.]])\n\nWith `input_type=\"string\"`, the input must be an iterable over iterables of\nstrings:\n\n>>> h = FeatureHasher(n_features=8, input_type=\"string\")\n>>> raw_X = [[\"dog\", \"cat\", \"snake\"], [\"snake\", \"dog\"], [\"cat\", \"bird\"]]\n>>> f = h.transform(raw_X)\n>>> f.toarray()\narray([[ 0.,  0.,  0., -1.,  0., -1.,  0.,  1.],\n       [ 0.,  0.,  0., -1.,  0., -1.,  0.,  0.],\n       [ 0., -1.,  0.,  0.,  0.,  0.,  0.,  1.]])" .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

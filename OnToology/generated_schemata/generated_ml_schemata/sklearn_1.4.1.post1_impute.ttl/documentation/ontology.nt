@@ -1,0 +1,136 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#range> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod> <http://www.w3.org/2000/01/rdf-schema#range> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAddIndicator
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAddIndicator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAddIndicator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAddIndicator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAddIndicator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAddIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFillValue
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFillValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFillValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFillValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFillValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKeepEmptyFeatures
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKeepEmptyFeatures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKeepEmptyFeatures> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKeepEmptyFeatures> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKeepEmptyFeatures> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKeepEmptyFeatures> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStrategy
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStrategy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStrategy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStrategy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStrategy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWeights
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWeights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWeights> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWeights> <http://www.w3.org/2000/01/rdf-schema#domain> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWeights> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ImputeModule
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ImputeModule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ImputeModule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ImputeModule> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KNNImputerMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Imputation for completing missing values using k-Nearest Neighbors.\n\nEach sample's missing values are imputed using the mean value from\n`n_neighbors` nearest neighbors found in the training set. Two samples are\nclose if the features that neither is missing are close.\n\nRead more in the :ref:`User Guide <knnimpute>`.\n\n.. versionadded:: 0.22\n\nParameters\n----------\nmissing_values : int, float, str, np.nan or None, default=np.nan\n    The placeholder for the missing values. All occurrences of\n    `missing_values` will be imputed. For pandas' dataframes with\n    nullable integer dtypes with missing values, `missing_values`\n    should be set to np.nan, since `pd.NA` will be converted to np.nan.\n\nn_neighbors : int, default=5\n    Number of neighboring samples to use for imputation.\n\nweights : {'uniform', 'distance'} or callable, default='uniform'\n    Weight function used in prediction.  Possible values:\n\n    - 'uniform' : uniform weights. All points in each neighborhood are\n      weighted equally.\n    - 'distance' : weight points by the inverse of their distance.\n      in this case, closer neighbors of a query point will have a\n      greater influence than neighbors which are further away.\n    - callable : a user-defined function which accepts an\n      array of distances, and returns an array of the same shape\n      containing the weights.\n\nmetric : {'nan_euclidean'} or callable, default='nan_euclidean'\n    Distance metric for searching neighbors. Possible values:\n\n    - 'nan_euclidean'\n    - callable : a user-defined function which conforms to the definition\n      of ``_pairwise_callable(X, Y, metric, **kwds)``. The function\n      accepts two arrays, X and Y, and a `missing_values` keyword in\n      `kwds` and returns a scalar distance value.\n\ncopy : bool, default=True\n    If True, a copy of X will be created. If False, imputation will\n    be done in-place whenever possible.\n\nadd_indicator : bool, default=False\n    If True, a :class:`MissingIndicator` transform will stack onto the\n    output of the imputer's transform. This allows a predictive estimator\n    to account for missingness despite imputation. If a feature has no\n    missing values at fit/train time, the feature won't appear on the\n    missing indicator even if there are missing values at transform/test\n    time.\n\nkeep_empty_features : bool, default=False\n    If True, features that consist exclusively of missing values when\n    `fit` is called are returned in results when `transform` is called.\n    The imputed value is always `0`.\n\n    .. versionadded:: 1.2\n\nAttributes\n----------\nindicator_ : :class:`~sklearn.impute.MissingIndicator`\n    Indicator used to add binary indicators for missing values.\n    ``None`` if add_indicator is False.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nSimpleImputer : Univariate imputer for completing missing values\n    with simple strategies.\nIterativeImputer : Multivariate imputer that estimates values to impute for\n    each feature with missing values from all the others.\n\nReferences\n----------\n* `Olga Troyanskaya, Michael Cantor, Gavin Sherlock, Pat Brown, Trevor\n  Hastie, Robert Tibshirani, David Botstein and Russ B. Altman, Missing\n  value estimation methods for DNA microarrays, BIOINFORMATICS Vol. 17\n  no. 6, 2001 Pages 520-525.\n  <https://academic.oup.com/bioinformatics/article/17/6/520/272365>`_\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.impute import KNNImputer\n>>> X = [[1, 2, np.nan], [3, 4, 3], [np.nan, 6, 5], [8, 8, 7]]\n>>> imputer = KNNImputer(n_neighbors=2)\n>>> imputer.fit_transform(X)\narray([[1. , 2. , 4. ],\n       [3. , 4. , 3. ],\n       [5.5, 6. , 5. ],\n       [8. , 8. , 7. ]])\n\nFor a more detailed example see\n:ref:`sphx_glr_auto_examples_impute_plot_missing_values.py`." .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ImputeModule> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SimpleImputerMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "Univariate imputer for completing missing values with simple strategies.\n\nReplace missing values using a descriptive statistic (e.g. mean, median, or\nmost frequent) along each column, or using a constant value.\n\nRead more in the :ref:`User Guide <impute>`.\n\n.. versionadded:: 0.20\n   `SimpleImputer` replaces the previous `sklearn.preprocessing.Imputer`\n   estimator which is now removed.\n\nParameters\n----------\nmissing_values : int, float, str, np.nan, None or pandas.NA, default=np.nan\n    The placeholder for the missing values. All occurrences of\n    `missing_values` will be imputed. For pandas' dataframes with\n    nullable integer dtypes with missing values, `missing_values`\n    can be set to either `np.nan` or `pd.NA`.\n\nstrategy : str, default='mean'\n    The imputation strategy.\n\n    - If \"mean\", then replace missing values using the mean along\n      each column. Can only be used with numeric data.\n    - If \"median\", then replace missing values using the median along\n      each column. Can only be used with numeric data.\n    - If \"most_frequent\", then replace missing using the most frequent\n      value along each column. Can be used with strings or numeric data.\n      If there is more than one such value, only the smallest is returned.\n    - If \"constant\", then replace missing values with fill_value. Can be\n      used with strings or numeric data.\n\n    .. versionadded:: 0.20\n       strategy=\"constant\" for fixed value imputation.\n\nfill_value : str or numerical value, default=None\n    When strategy == \"constant\", `fill_value` is used to replace all\n    occurrences of missing_values. For string or object data types,\n    `fill_value` must be a string.\n    If `None`, `fill_value` will be 0 when imputing numerical\n    data and \"missing_value\" for strings or object data types.\n\ncopy : bool, default=True\n    If True, a copy of X will be created. If False, imputation will\n    be done in-place whenever possible. Note that, in the following cases,\n    a new copy will always be made, even if `copy=False`:\n\n    - If `X` is not an array of floating values;\n    - If `X` is encoded as a CSR matrix;\n    - If `add_indicator=True`.\n\nadd_indicator : bool, default=False\n    If True, a :class:`MissingIndicator` transform will stack onto output\n    of the imputer's transform. This allows a predictive estimator\n    to account for missingness despite imputation. If a feature has no\n    missing values at fit/train time, the feature won't appear on\n    the missing indicator even if there are missing values at\n    transform/test time.\n\nkeep_empty_features : bool, default=False\n    If True, features that consist exclusively of missing values when\n    `fit` is called are returned in results when `transform` is called.\n    The imputed value is always `0` except when `strategy=\"constant\"`\n    in which case `fill_value` will be used instead.\n\n    .. versionadded:: 1.2\n\nAttributes\n----------\nstatistics_ : array of shape (n_features,)\n    The imputation fill value for each feature.\n    Computing statistics can result in `np.nan` values.\n    During :meth:`transform`, features corresponding to `np.nan`\n    statistics will be discarded.\n\nindicator_ : :class:`~sklearn.impute.MissingIndicator`\n    Indicator used to add binary indicators for missing values.\n    `None` if `add_indicator=False`.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nIterativeImputer : Multivariate imputer that estimates values to impute for\n    each feature with missing values from all the others.\nKNNImputer : Multivariate imputer that estimates missing features using\n    nearest samples.\n\nNotes\n-----\nColumns which only contained missing values at :meth:`fit` are discarded\nupon :meth:`transform` if strategy is not `\"constant\"`.\n\nIn a prediction context, simple imputation usually performs poorly when\nassociated with a weak learner. However, with a powerful learner, it can\nlead to as good or better performance than complex imputation such as\n:class:`~sklearn.impute.IterativeImputer` or :class:`~sklearn.impute.KNNImputer`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.impute import SimpleImputer\n>>> imp_mean = SimpleImputer(missing_values=np.nan, strategy='mean')\n>>> imp_mean.fit([[7, 2, 3], [4, np.nan, 6], [10, 5, 9]])\nSimpleImputer()\n>>> X = [[np.nan, 2, 3], [4, np.nan, 6], [10, np.nan, 9]]\n>>> print(imp_mean.transform(X))\n[[ 7.   2.   3. ]\n [ 4.   3.5  6. ]\n [10.   3.5  9. ]]\n\nFor a more detailed example see\n:ref:`sphx_glr_auto_examples_impute_plot_missing_values.py`." .
+# 
+# https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

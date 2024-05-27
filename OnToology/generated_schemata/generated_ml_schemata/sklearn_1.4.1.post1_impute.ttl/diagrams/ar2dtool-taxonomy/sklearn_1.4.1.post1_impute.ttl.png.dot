@@ -1,0 +1,14 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:KNNImputerMethod" "ml:SimpleImputerMethod" "ml:ImputeModule" "ml:SklearnModule" ; /*classes style*/
+	"ml:ImputeModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:SimpleImputerMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SimpleImputerMethod" -> "ml:ImputeModule" [ label = "rdfs:subClassOf" ];
+	"ml:SimpleImputerMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:KNNImputerMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:KNNImputerMethod" -> "ml:ImputeModule" [ label = "rdfs:subClassOf" ];
+	"ml:KNNImputerMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}
