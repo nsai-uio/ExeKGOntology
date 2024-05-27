@@ -22,6 +22,12 @@ ml:hasMulticlassClassificationMethod a owl:ObjectProperty ;
         ml:ExtraTreeClassifierMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
+ml:hasMultilabelClassificationMethod a owl:ObjectProperty ;
+    rdfs:domain ml:MultilabelClassification ;
+    rdfs:range ml:DecisionTreeClassifierMethod,
+        ml:ExtraTreeClassifierMethod ;
+    rdfs:subPropertyOf ml:hasTrainMethod .
+
 ml:hasParamCcpAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:DecisionTreeClassifierMethod,
         ml:DecisionTreeRegressorMethod,

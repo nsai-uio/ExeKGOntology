@@ -13,6 +13,12 @@ ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
         ml:MultinomialNBMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
+ml:hasMulticlassClassificationMethod a owl:ObjectProperty ;
+    rdfs:domain ml:MulticlassClassification ;
+    rdfs:range ml:BernoulliNBMethod,
+        ml:GaussianNBMethod ;
+    rdfs:subPropertyOf ml:hasTrainMethod .
+
 ml:hasParamAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:BernoulliNBMethod,
         ml:CategoricalNBMethod,
@@ -238,110 +244,6 @@ MultinomialNB()
         ml:NaiveBayesModule,
         ml:TrainMethod .
 
-ml:BernoulliNBMethod a owl:Class ;
-    rdfs:comment """Naive Bayes classifier for multivariate Bernoulli models.
-
-Like MultinomialNB, this classifier is suitable for discrete data. The
-difference is that while MultinomialNB works with occurrence counts,
-BernoulliNB is designed for binary/boolean features.
-
-Read more in the :ref:`User Guide <bernoulli_naive_bayes>`.
-
-Parameters
-----------
-alpha : float or array-like of shape (n_features,), default=1.0
-    Additive (Laplace/Lidstone) smoothing parameter
-    (set alpha=0 and force_alpha=True, for no smoothing).
-
-force_alpha : bool, default=True
-    If False and alpha is less than 1e-10, it will set alpha to
-    1e-10. If True, alpha will remain unchanged. This may cause
-    numerical errors if alpha is too close to 0.
-
-    .. versionadded:: 1.2
-    .. versionchanged:: 1.4
-       The default value of `force_alpha` changed to `True`.
-
-binarize : float or None, default=0.0
-    Threshold for binarizing (mapping to booleans) of sample features.
-    If None, input is presumed to already consist of binary vectors.
-
-fit_prior : bool, default=True
-    Whether to learn class prior probabilities or not.
-    If false, a uniform prior will be used.
-
-class_prior : array-like of shape (n_classes,), default=None
-    Prior probabilities of the classes. If specified, the priors are not
-    adjusted according to the data.
-
-Attributes
-----------
-class_count_ : ndarray of shape (n_classes,)
-    Number of samples encountered for each class during fitting. This
-    value is weighted by the sample weight when provided.
-
-class_log_prior_ : ndarray of shape (n_classes,)
-    Log probability of each class (smoothed).
-
-classes_ : ndarray of shape (n_classes,)
-    Class labels known to the classifier
-
-feature_count_ : ndarray of shape (n_classes, n_features)
-    Number of samples encountered for each (class, feature)
-    during fitting. This value is weighted by the sample weight when
-    provided.
-
-feature_log_prob_ : ndarray of shape (n_classes, n_features)
-    Empirical log probability of features given a class, P(x_i|y).
-
-n_features_in_ : int
-    Number of features seen during :term:`fit`.
-
-    .. versionadded:: 0.24
-
-feature_names_in_ : ndarray of shape (`n_features_in_`,)
-    Names of features seen during :term:`fit`. Defined only when `X`
-    has feature names that are all strings.
-
-    .. versionadded:: 1.0
-
-See Also
---------
-CategoricalNB : Naive Bayes classifier for categorical features.
-ComplementNB : The Complement Naive Bayes classifier
-    described in Rennie et al. (2003).
-GaussianNB : Gaussian Naive Bayes (GaussianNB).
-MultinomialNB : Naive Bayes classifier for multinomial models.
-
-References
-----------
-C.D. Manning, P. Raghavan and H. Schuetze (2008). Introduction to
-Information Retrieval. Cambridge University Press, pp. 234-265.
-https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html
-
-A. McCallum and K. Nigam (1998). A comparison of event models for naive
-Bayes text classification. Proc. AAAI/ICML-98 Workshop on Learning for
-Text Categorization, pp. 41-48.
-
-V. Metsis, I. Androutsopoulos and G. Paliouras (2006). Spam filtering with
-naive Bayes -- Which naive Bayes? 3rd Conf. on Email and Anti-Spam (CEAS).
-
-Examples
---------
->>> import numpy as np
->>> rng = np.random.RandomState(1)
->>> X = rng.randint(5, size=(6, 100))
->>> Y = np.array([1, 2, 3, 4, 4, 5])
->>> from sklearn.naive_bayes import BernoulliNB
->>> clf = BernoulliNB()
->>> clf.fit(X, Y)
-BernoulliNB()
->>> print(clf.predict(X[2:3]))
-[3]""" ;
-    rdfs:subClassOf ds:AtomicMethod,
-        ml:NaiveBayesModule,
-        ml:TrainMethod .
-
 ml:CategoricalNBMethod a owl:Class ;
     rdfs:comment """Naive Bayes classifier for categorical features.
 
@@ -553,4 +455,108 @@ ComplementNB()
 
 ml:NaiveBayesModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
+
+ml:BernoulliNBMethod a owl:Class ;
+    rdfs:comment """Naive Bayes classifier for multivariate Bernoulli models.
+
+Like MultinomialNB, this classifier is suitable for discrete data. The
+difference is that while MultinomialNB works with occurrence counts,
+BernoulliNB is designed for binary/boolean features.
+
+Read more in the :ref:`User Guide <bernoulli_naive_bayes>`.
+
+Parameters
+----------
+alpha : float or array-like of shape (n_features,), default=1.0
+    Additive (Laplace/Lidstone) smoothing parameter
+    (set alpha=0 and force_alpha=True, for no smoothing).
+
+force_alpha : bool, default=True
+    If False and alpha is less than 1e-10, it will set alpha to
+    1e-10. If True, alpha will remain unchanged. This may cause
+    numerical errors if alpha is too close to 0.
+
+    .. versionadded:: 1.2
+    .. versionchanged:: 1.4
+       The default value of `force_alpha` changed to `True`.
+
+binarize : float or None, default=0.0
+    Threshold for binarizing (mapping to booleans) of sample features.
+    If None, input is presumed to already consist of binary vectors.
+
+fit_prior : bool, default=True
+    Whether to learn class prior probabilities or not.
+    If false, a uniform prior will be used.
+
+class_prior : array-like of shape (n_classes,), default=None
+    Prior probabilities of the classes. If specified, the priors are not
+    adjusted according to the data.
+
+Attributes
+----------
+class_count_ : ndarray of shape (n_classes,)
+    Number of samples encountered for each class during fitting. This
+    value is weighted by the sample weight when provided.
+
+class_log_prior_ : ndarray of shape (n_classes,)
+    Log probability of each class (smoothed).
+
+classes_ : ndarray of shape (n_classes,)
+    Class labels known to the classifier
+
+feature_count_ : ndarray of shape (n_classes, n_features)
+    Number of samples encountered for each (class, feature)
+    during fitting. This value is weighted by the sample weight when
+    provided.
+
+feature_log_prob_ : ndarray of shape (n_classes, n_features)
+    Empirical log probability of features given a class, P(x_i|y).
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+CategoricalNB : Naive Bayes classifier for categorical features.
+ComplementNB : The Complement Naive Bayes classifier
+    described in Rennie et al. (2003).
+GaussianNB : Gaussian Naive Bayes (GaussianNB).
+MultinomialNB : Naive Bayes classifier for multinomial models.
+
+References
+----------
+C.D. Manning, P. Raghavan and H. Schuetze (2008). Introduction to
+Information Retrieval. Cambridge University Press, pp. 234-265.
+https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html
+
+A. McCallum and K. Nigam (1998). A comparison of event models for naive
+Bayes text classification. Proc. AAAI/ICML-98 Workshop on Learning for
+Text Categorization, pp. 41-48.
+
+V. Metsis, I. Androutsopoulos and G. Paliouras (2006). Spam filtering with
+naive Bayes -- Which naive Bayes? 3rd Conf. on Email and Anti-Spam (CEAS).
+
+Examples
+--------
+>>> import numpy as np
+>>> rng = np.random.RandomState(1)
+>>> X = rng.randint(5, size=(6, 100))
+>>> Y = np.array([1, 2, 3, 4, 4, 5])
+>>> from sklearn.naive_bayes import BernoulliNB
+>>> clf = BernoulliNB()
+>>> clf.fit(X, Y)
+BernoulliNB()
+>>> print(clf.predict(X[2:3]))
+[3]""" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:NaiveBayesModule,
+        ml:TrainMethod .
 

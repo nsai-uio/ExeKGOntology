@@ -11,6 +11,13 @@ ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
         ml:SVCMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
+ml:hasMulticlassClassificationMethod a owl:ObjectProperty ;
+    rdfs:domain ml:MulticlassClassification ;
+    rdfs:range ml:LinearSVCMethod,
+        ml:NuSVCMethod,
+        ml:SVCMethod ;
+    rdfs:subPropertyOf ml:hasTrainMethod .
+
 ml:hasParamBreakTies a owl:DatatypeProperty ;
     rdfs:domain ml:NuSVCMethod,
         ml:SVCMethod ;

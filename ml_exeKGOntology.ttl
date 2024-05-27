@@ -60,6 +60,10 @@ ml:Decomposition a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
         ml:PrepareTransformer .
 
+ml:FeatureSelection a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:PrepareTransformer .
+
 ml:Clustering a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
         ml:Train .
@@ -121,6 +125,9 @@ ml:DataSplittingMethod a owl:Class;
     rdfs:subClassOf ds:AtomicMethod.
 
 ml:TestMethod a owl:Class;
+    rdfs:subClassOf ds:AtomicMethod.
+
+ml:TransformMethod a owl:Class;
     rdfs:subClassOf ds:AtomicMethod.
 
 ml:PerformanceCalculationMethod a owl:Class;
@@ -214,6 +221,11 @@ ml:hasTrainMethod a owl:ObjectProperty;
 ml:hasPrepareTransformerMethod a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasMethod;
     rdfs:domain ml:PrepareTransformer.
+
+ml:hasTransformMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:Transform;
+    rdfs:range ml:TransformMethod.
 
 ml:hasTestMethod a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasMethod;

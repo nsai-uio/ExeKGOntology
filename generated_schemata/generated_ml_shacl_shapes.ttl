@@ -124,6 +124,7 @@
             [ sh:class ml:FeatureHasherMethod ]
             [ sh:class ml:FunctionTransformerMethod ]
             [ sh:class ml:KBinsDiscretizerMethod ]
+            [ sh:class ml:KNNImputerMethod ]
             [ sh:class ml:KernelCentererMethod ]
             [ sh:class ml:LabelBinarizerMethod ]
             [ sh:class ml:MaxAbsScalerMethod ]
@@ -137,6 +138,7 @@
             [ sh:class ml:QuantileTransformerMethod ]
             [ sh:class ml:RandomTreesEmbeddingMethod ]
             [ sh:class ml:RobustScalerMethod ]
+            [ sh:class ml:SimpleImputerMethod ]
             [ sh:class ml:SplineTransformerMethod ]
             [ sh:class ml:StandardScalerMethod ]
             [ sh:class ml:TargetEncoderMethod ]
@@ -219,6 +221,33 @@
         sh:message "Tasks of type Decomposition must be connected with exactly one compatible atomic method." ;
     ] .
 
+:FeatureSelectionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:FeatureSelection ;
+    sh:property [
+        sh:path ml:hasFeatureSelectionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:Chi2Method ]
+            [ sh:class ml:FClassifMethod ]
+            [ sh:class ml:FRegressionMethod ]
+            [ sh:class ml:GenericUnivariateSelectMethod ]
+            [ sh:class ml:MutualInfoClassifMethod ]
+            [ sh:class ml:MutualInfoRegressionMethod ]
+            [ sh:class ml:RFECVMethod ]
+            [ sh:class ml:RFEMethod ]
+            [ sh:class ml:SelectFdrMethod ]
+            [ sh:class ml:SelectFprMethod ]
+            [ sh:class ml:SelectFromModelMethod ]
+            [ sh:class ml:SelectFweMethod ]
+            [ sh:class ml:SelectKBestMethod ]
+            [ sh:class ml:SelectPercentileMethod ]
+            [ sh:class ml:SequentialFeatureSelectorMethod ]
+            [ sh:class ml:VarianceThresholdMethod ]
+        ) ;
+        sh:message "Tasks of type FeatureSelection must be connected with exactly one compatible atomic method." ;
+    ] .
+
 :InstanceBasedRegressionTaskMethodShape a sh:NodeShape ;
     sh:targetClass ml:InstanceBasedRegression ;
     sh:property [
@@ -253,18 +282,31 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:class ml:AdaBoostClassifierMethod ]
+            [ sh:class ml:BernoulliNBMethod ]
             [ sh:class ml:DecisionTreeClassifierMethod ]
             [ sh:class ml:ExtraTreeClassifierMethod ]
             [ sh:class ml:ExtraTreesClassifierMethod ]
+            [ sh:class ml:GaussianNBMethod ]
             [ sh:class ml:GradientBoostingClassifierMethod ]
             [ sh:class ml:HistGradientBoostingClassifierMethod ]
             [ sh:class ml:KNeighborsClassifierMethod ]
+            [ sh:class ml:LinearSVCMethod ]
+            [ sh:class ml:LogisticRegressionCVMethod ]
+            [ sh:class ml:LogisticRegressionMethod ]
+            [ sh:class ml:MLPClassifierMethod ]
             [ sh:class ml:NearestCentroidMethod ]
+            [ sh:class ml:NuSVCMethod ]
             [ sh:class ml:OneVsOneClassifierMethod ]
             [ sh:class ml:OneVsRestClassifierMethod ]
             [ sh:class ml:OutputCodeClassifierMethod ]
+            [ sh:class ml:PassiveAggressiveClassifierMethod ]
+            [ sh:class ml:PerceptronMethod ]
             [ sh:class ml:RadiusNeighborsClassifierMethod ]
             [ sh:class ml:RandomForestClassifierMethod ]
+            [ sh:class ml:RidgeClassifierCVMethod ]
+            [ sh:class ml:RidgeClassifierMethod ]
+            [ sh:class ml:SGDClassifierMethod ]
+            [ sh:class ml:SVCMethod ]
         ) ;
         sh:message "Tasks of type MulticlassClassification must be connected with exactly one compatible atomic method." ;
     ] .
@@ -276,9 +318,18 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
+            [ sh:class ml:AdaBoostClassifierMethod ]
+            [ sh:class ml:DecisionTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreeClassifierMethod ]
+            [ sh:class ml:ExtraTreesClassifierMethod ]
+            [ sh:class ml:GradientBoostingClassifierMethod ]
+            [ sh:class ml:HistGradientBoostingClassifierMethod ]
+            [ sh:class ml:KNeighborsClassifierMethod ]
             [ sh:class ml:OneVsOneClassifierMethod ]
             [ sh:class ml:OneVsRestClassifierMethod ]
             [ sh:class ml:OutputCodeClassifierMethod ]
+            [ sh:class ml:RadiusNeighborsClassifierMethod ]
+            [ sh:class ml:RandomForestClassifierMethod ]
         ) ;
         sh:message "Tasks of type MultilabelClassification must be connected with exactly one compatible atomic method." ;
     ] .
@@ -460,6 +511,18 @@
             [ sh:class ml:TestMethod ]
         ) ;
         sh:message "Tasks of type Test must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:TransformTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:Transform ;
+    sh:property [
+        sh:path ml:hasTransformMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:TransformMethod ]
+        ) ;
+        sh:message "Tasks of type Transform must be connected with exactly one compatible atomic method." ;
     ] .
 
 :ConsensusScoreMethodParameterShape a sh:NodeShape ;
@@ -932,6 +995,122 @@
             [ sh:datatype xsd:boolean ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamWarmStart." ;
+    ] .
+
+:KNNImputerMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:KNNImputerMethod ;
+
+    sh:property [
+        sh:path ml:hasParamAddIndicator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method KNNImputerMethod must have at most one compatible value for parameter hasParamAddIndicator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamCopy ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method KNNImputerMethod must have at most one compatible value for parameter hasParamCopy." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamKeepEmptyFeatures ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method KNNImputerMethod must have at most one compatible value for parameter hasParamKeepEmptyFeatures." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMetric ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method KNNImputerMethod must have at most one compatible value for parameter hasParamMetric." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMissingValues ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method KNNImputerMethod must have at most one compatible value for parameter hasParamMissingValues." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNNeighbors ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method KNNImputerMethod must have at most one compatible value for parameter hasParamNNeighbors." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamWeights ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method KNNImputerMethod must have at most one compatible value for parameter hasParamWeights." ;
+    ] .
+
+:SimpleImputerMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SimpleImputerMethod ;
+
+    sh:property [
+        sh:path ml:hasParamAddIndicator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method SimpleImputerMethod must have at most one compatible value for parameter hasParamAddIndicator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamCopy ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method SimpleImputerMethod must have at most one compatible value for parameter hasParamCopy." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamFillValue ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SimpleImputerMethod must have at most one compatible value for parameter hasParamFillValue." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamKeepEmptyFeatures ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method SimpleImputerMethod must have at most one compatible value for parameter hasParamKeepEmptyFeatures." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMissingValues ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SimpleImputerMethod must have at most one compatible value for parameter hasParamMissingValues." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamStrategy ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SimpleImputerMethod must have at most one compatible value for parameter hasParamStrategy." ;
     ] .
 
 :BalancedAccuracyScoreMethodParameterShape a sh:NodeShape ;
@@ -4726,6 +4905,72 @@
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamWarmStart." ;
     ] .
 
+:SelectFdrMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SelectFdrMethod ;
+
+    sh:property [
+        sh:path ml:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFdrMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoreFunc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFdrMethod must have at most one compatible value for parameter hasParamScoreFunc." ;
+    ] .
+
+:SelectFprMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SelectFprMethod ;
+
+    sh:property [
+        sh:path ml:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFprMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoreFunc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFprMethod must have at most one compatible value for parameter hasParamScoreFunc." ;
+    ] .
+
+:SelectFweMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SelectFweMethod ;
+
+    sh:property [
+        sh:path ml:hasParamAlpha ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFweMethod must have at most one compatible value for parameter hasParamAlpha." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoreFunc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFweMethod must have at most one compatible value for parameter hasParamScoreFunc." ;
+    ] .
+
 :SparsePCAMethodParameterShape a sh:NodeShape ;
     sh:targetClass ml:SparsePCAMethod ;
 
@@ -7997,6 +8242,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BirchMethod must have at most one compatible value for parameter hasParamThreshold." ;
     ] .
@@ -10079,6 +10325,26 @@
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamWarmStart." ;
     ] .
 
+:FRegressionMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:FRegressionMethod ;
+
+    sh:property [
+        sh:path ml:hasParamCenter ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method FRegressionMethod must have at most one compatible value for parameter hasParamCenter." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamForceFinite ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method FRegressionMethod must have at most one compatible value for parameter hasParamForceFinite." ;
+    ] .
+
 :LogisticRegressionCVMethodParameterShape a sh:NodeShape ;
     sh:targetClass ml:LogisticRegressionCVMethod ;
 
@@ -10531,6 +10797,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BinarizerMethod must have at most one compatible value for parameter hasParamThreshold." ;
     ] .
@@ -10617,6 +10884,82 @@
             [ sh:datatype xsd:boolean ]
         ) ;
         sh:message "Method MaxAbsScalerMethod must have at most one compatible value for parameter hasParamCopy." ;
+    ] .
+
+:MutualInfoClassifMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:MutualInfoClassifMethod ;
+
+    sh:property [
+        sh:path ml:hasParamCopy ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MutualInfoClassifMethod must have at most one compatible value for parameter hasParamCopy." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamDiscreteFeatures ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MutualInfoClassifMethod must have at most one compatible value for parameter hasParamDiscreteFeatures." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNNeighbors ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method MutualInfoClassifMethod must have at most one compatible value for parameter hasParamNNeighbors." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRandomState ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MutualInfoClassifMethod must have at most one compatible value for parameter hasParamRandomState." ;
+    ] .
+
+:MutualInfoRegressionMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:MutualInfoRegressionMethod ;
+
+    sh:property [
+        sh:path ml:hasParamCopy ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MutualInfoRegressionMethod must have at most one compatible value for parameter hasParamCopy." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamDiscreteFeatures ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MutualInfoRegressionMethod must have at most one compatible value for parameter hasParamDiscreteFeatures." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNNeighbors ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method MutualInfoRegressionMethod must have at most one compatible value for parameter hasParamNNeighbors." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRandomState ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MutualInfoRegressionMethod must have at most one compatible value for parameter hasParamRandomState." ;
     ] .
 
 :NanEuclideanDistancesMethodParameterShape a sh:NodeShape ;
@@ -11812,6 +12155,142 @@
         sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamVerbose." ;
     ] .
 
+:RFECVMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:RFECVMethod ;
+
+    sh:property [
+        sh:path ml:hasParamCv ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamCv." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamEstimator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamEstimator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamImportanceGetter ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamImportanceGetter." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMinFeaturesToSelect ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamMinFeaturesToSelect." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNJobs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamNJobs." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoring ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamScoring." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamStep ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamStep." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamVerbose ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamVerbose." ;
+    ] .
+
+:SequentialFeatureSelectorMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SequentialFeatureSelectorMethod ;
+
+    sh:property [
+        sh:path ml:hasParamCv ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamCv." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamDirection ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamDirection." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamEstimator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamEstimator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNFeaturesToSelect ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamNFeaturesToSelect." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNJobs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamNJobs." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoring ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamScoring." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamTol ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamTol." ;
+    ] .
+
 :StackingClassifierMethodParameterShape a sh:NodeShape ;
     sh:targetClass ml:StackingClassifierMethod ;
 
@@ -12547,6 +13026,109 @@
         sh:message "Method RANSACRegressorMethod must have at most one compatible value for parameter hasParamStopScore." ;
     ] .
 
+:RFEMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:RFEMethod ;
+
+    sh:property [
+        sh:path ml:hasParamEstimator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RFEMethod must have at most one compatible value for parameter hasParamEstimator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamImportanceGetter ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RFEMethod must have at most one compatible value for parameter hasParamImportanceGetter." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNFeaturesToSelect ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RFEMethod must have at most one compatible value for parameter hasParamNFeaturesToSelect." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamStep ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RFEMethod must have at most one compatible value for parameter hasParamStep." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamVerbose ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RFEMethod must have at most one compatible value for parameter hasParamVerbose." ;
+    ] .
+
+:SelectFromModelMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SelectFromModelMethod ;
+
+    sh:property [
+        sh:path ml:hasParamEstimator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFromModelMethod must have at most one compatible value for parameter hasParamEstimator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamImportanceGetter ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFromModelMethod must have at most one compatible value for parameter hasParamImportanceGetter." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMaxFeatures ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFromModelMethod must have at most one compatible value for parameter hasParamMaxFeatures." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNormOrder ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFromModelMethod must have at most one compatible value for parameter hasParamNormOrder." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamPrefit ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method SelectFromModelMethod must have at most one compatible value for parameter hasParamPrefit." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamThreshold ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectFromModelMethod must have at most one compatible value for parameter hasParamThreshold." ;
+    ] .
+
 :VotingClassifierMethodParameterShape a sh:NodeShape ;
     sh:targetClass ml:VotingClassifierMethod ;
 
@@ -13038,6 +13620,26 @@
         sh:message "Method SpectralCoclusteringMethod must have at most one compatible value for parameter hasParamSvdMethod." ;
     ] .
 
+:SelectKBestMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SelectKBestMethod ;
+
+    sh:property [
+        sh:path ml:hasParamK ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method SelectKBestMethod must have at most one compatible value for parameter hasParamK." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoreFunc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectKBestMethod must have at most one compatible value for parameter hasParamScoreFunc." ;
+    ] .
+
 :TopKAccuracyScoreMethodParameterShape a sh:NodeShape ;
     sh:targetClass ml:TopKAccuracyScoreMethod ;
 
@@ -13262,6 +13864,35 @@
             [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SilhouetteScoreMethod must have at most one compatible value for parameter hasParamSampleSize." ;
+    ] .
+
+:GenericUnivariateSelectMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:GenericUnivariateSelectMethod ;
+
+    sh:property [
+        sh:path ml:hasParamMode ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method GenericUnivariateSelectMethod must have at most one compatible value for parameter hasParamMode." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamParam ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method GenericUnivariateSelectMethod must have at most one compatible value for parameter hasParamParam." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoreFunc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method GenericUnivariateSelectMethod must have at most one compatible value for parameter hasParamScoreFunc." ;
     ] .
 
 :D2AbsoluteErrorScoreMethodParameterShape a sh:NodeShape ;
@@ -13781,6 +14412,26 @@
         sh:message "Method ValidationCurveDisplayMethod must have at most one compatible value for parameter hasParamTrainScores." ;
     ] .
 
+:SelectPercentileMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:SelectPercentileMethod ;
+
+    sh:property [
+        sh:path ml:hasParamPercentile ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method SelectPercentileMethod must have at most one compatible value for parameter hasParamPercentile." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoreFunc ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SelectPercentileMethod must have at most one compatible value for parameter hasParamScoreFunc." ;
+    ] .
+
 :BrierScoreLossMethodParameterShape a sh:NodeShape ;
     sh:targetClass ml:BrierScoreLossMethod ;
 
@@ -13992,6 +14643,19 @@
             [ sh:datatype xsd:boolean ]
         ) ;
         sh:message "Method EuclideanDistancesMethod must have at most one compatible value for parameter hasParamSquared." ;
+    ] .
+
+:VarianceThresholdMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:VarianceThresholdMethod ;
+
+    sh:property [
+        sh:path ml:hasParamThreshold ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method VarianceThresholdMethod must have at most one compatible value for parameter hasParamThreshold." ;
     ] .
 
 :GaussianNBMethodParameterShape a sh:NodeShape ;
