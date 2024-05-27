@@ -1,0 +1,2013 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasFeatureSelectionMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasFeatureSelectionMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelection"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Chi2Method"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FClassifMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FRegressionMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GenericUnivariateSelectMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoClassifMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoRegressionMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFdrMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFprMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFweMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectKBestMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectPercentileMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#VarianceThresholdMethod"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFdrMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFprMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFweMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCenter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCenter">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FRegressionMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoClassifMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoRegressionMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCv -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCv">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDirection -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDirection">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDiscreteFeatures -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDiscreteFeatures">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoClassifMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoRegressionMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEstimator -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEstimator">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamForceFinite -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamForceFinite">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FRegressionMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamImportanceGetter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamImportanceGetter">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamK -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamK">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectKBestMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxFeatures -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxFeatures">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinFeaturesToSelect -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinFeaturesToSelect">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMode -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMode">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GenericUnivariateSelectMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeaturesToSelect -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeaturesToSelect">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNNeighbors">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoClassifMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoRegressionMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNormOrder -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNormOrder">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParam -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParam">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GenericUnivariateSelectMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPercentile -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPercentile">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectPercentileMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPrefit -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPrefit">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoClassifMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoRegressionMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoreFunc -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoreFunc">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GenericUnivariateSelectMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFdrMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFprMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFweMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectKBestMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectPercentileMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoring -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoring">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStep -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStep">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamThreshold -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamThreshold">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#VarianceThresholdMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Chi2Method -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Chi2Method">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Compute chi-squared stats between each non-negative feature and class.
+
+This score can be used to select the `n_features` features with the
+highest values for the test chi-squared statistic from X, which must
+contain only **non-negative features** such as booleans or frequencies
+(e.g., term counts in document classification), relative to the classes.
+
+Recall that the chi-square test measures dependence between stochastic
+variables, so using this function &quot;weeds out&quot; the features that are the
+most likely to be independent of class and therefore irrelevant for
+classification.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+X : {array-like, sparse matrix} of shape (n_samples, n_features)
+    Sample vectors.
+
+y : array-like of shape (n_samples,)
+    Target vector (class labels).
+
+Returns
+-------
+chi2 : ndarray of shape (n_features,)
+    Chi2 statistics for each feature.
+
+p_values : ndarray of shape (n_features,)
+    P-values for each feature.
+
+See Also
+--------
+f_classif : ANOVA F-value between label/feature for classification tasks.
+f_regression : F-value between label/feature for regression tasks.
+
+Notes
+-----
+Complexity of this algorithm is O(n_classes * n_features).
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.feature_selection import chi2
+&gt;&gt;&gt; X = np.array([[1, 1, 3],
+...               [0, 1, 5],
+...               [5, 4, 1],
+...               [6, 6, 2],
+...               [1, 4, 0],
+...               [0, 0, 0]])
+&gt;&gt;&gt; y = np.array([1, 1, 0, 0, 2, 2])
+&gt;&gt;&gt; chi2_stats, p_values = chi2(X, y)
+&gt;&gt;&gt; chi2_stats
+array([15.3...,  6.5       ,  8.9...])
+&gt;&gt;&gt; p_values
+array([0.0004..., 0.0387..., 0.0116... ])</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FClassifMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FClassifMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Compute the ANOVA F-value for the provided sample.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+X : {array-like, sparse matrix} of shape (n_samples, n_features)
+    The set of regressors that will be tested sequentially.
+
+y : array-like of shape (n_samples,)
+    The target vector.
+
+Returns
+-------
+f_statistic : ndarray of shape (n_features,)
+    F-statistic for each feature.
+
+p_values : ndarray of shape (n_features,)
+    P-values associated with the F-statistic.
+
+See Also
+--------
+chi2 : Chi-squared stats of non-negative features for classification tasks.
+f_regression : F-value between label/feature for regression tasks.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import make_classification
+&gt;&gt;&gt; from sklearn.feature_selection import f_classif
+&gt;&gt;&gt; X, y = make_classification(
+...     n_samples=100, n_features=10, n_informative=2, n_clusters_per_class=1,
+...     shuffle=False, random_state=42
+... )
+&gt;&gt;&gt; f_statistic, p_values = f_classif(X, y)
+&gt;&gt;&gt; f_statistic
+array([2.2...e+02, 7.0...e-01, 1.6...e+00, 9.3...e-01,
+       5.4...e+00, 3.2...e-01, 4.7...e-02, 5.7...e-01,
+       7.5...e-01, 8.9...e-02])
+&gt;&gt;&gt; p_values
+array([7.1...e-27, 4.0...e-01, 1.9...e-01, 3.3...e-01,
+       2.2...e-02, 5.7...e-01, 8.2...e-01, 4.5...e-01,
+       3.8...e-01, 7.6...e-01])</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FRegressionMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FRegressionMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Univariate linear regression tests returning F-statistic and p-values.
+
+Quick linear model for testing the effect of a single regressor,
+sequentially for many regressors.
+
+This is done in 2 steps:
+
+1. The cross correlation between each regressor and the target is computed
+   using :func:`r_regression` as::
+
+       E[(X[:, i] - mean(X[:, i])) * (y - mean(y))] / (std(X[:, i]) * std(y))
+
+2. It is converted to an F score and then to a p-value.
+
+:func:`f_regression` is derived from :func:`r_regression` and will rank
+features in the same order if all the features are positively correlated
+with the target.
+
+Note however that contrary to :func:`f_regression`, :func:`r_regression`
+values lie in [-1, 1] and can thus be negative. :func:`f_regression` is
+therefore recommended as a feature selection criterion to identify
+potentially predictive feature for a downstream classifier, irrespective of
+the sign of the association with the target variable.
+
+Furthermore :func:`f_regression` returns p-values while
+:func:`r_regression` does not.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+X : {array-like, sparse matrix} of shape (n_samples, n_features)
+    The data matrix.
+
+y : array-like of shape (n_samples,)
+    The target vector.
+
+center : bool, default=True
+    Whether or not to center the data matrix `X` and the target vector `y`.
+    By default, `X` and `y` will be centered.
+
+force_finite : bool, default=True
+    Whether or not to force the F-statistics and associated p-values to
+    be finite. There are two cases where the F-statistic is expected to not
+    be finite:
+
+    - when the target `y` or some features in `X` are constant. In this
+      case, the Pearson&apos;s R correlation is not defined leading to obtain
+      `np.nan` values in the F-statistic and p-value. When
+      `force_finite=True`, the F-statistic is set to `0.0` and the
+      associated p-value is set to `1.0`.
+    - when a feature in `X` is perfectly correlated (or
+      anti-correlated) with the target `y`. In this case, the F-statistic
+      is expected to be `np.inf`. When `force_finite=True`, the F-statistic
+      is set to `np.finfo(dtype).max` and the associated p-value is set to
+      `0.0`.
+
+    .. versionadded:: 1.1
+
+Returns
+-------
+f_statistic : ndarray of shape (n_features,)
+    F-statistic for each feature.
+
+p_values : ndarray of shape (n_features,)
+    P-values associated with the F-statistic.
+
+See Also
+--------
+r_regression: Pearson&apos;s R between label/feature for regression tasks.
+f_classif: ANOVA F-value between label/feature for classification tasks.
+chi2: Chi-squared stats of non-negative features for classification tasks.
+SelectKBest: Select features based on the k highest scores.
+SelectFpr: Select features based on a false positive rate test.
+SelectFdr: Select features based on an estimated false discovery rate.
+SelectFwe: Select features based on family-wise error rate.
+SelectPercentile: Select features based on percentile of the highest
+    scores.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import make_regression
+&gt;&gt;&gt; from sklearn.feature_selection import f_regression
+&gt;&gt;&gt; X, y = make_regression(
+...     n_samples=50, n_features=3, n_informative=1, noise=1e-4, random_state=42
+... )
+&gt;&gt;&gt; f_statistic, p_values = f_regression(X, y)
+&gt;&gt;&gt; f_statistic
+array([1.2...+00, 2.6...+13, 2.6...+00])
+&gt;&gt;&gt; p_values
+array([2.7..., 1.5..., 1.0...])</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelection -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelection"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GenericUnivariateSelectMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GenericUnivariateSelectMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Univariate feature selector with configurable strategy.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+score_func : callable, default=f_classif
+    Function taking two arrays X and y, and returning a pair of arrays
+    (scores, pvalues). For modes &apos;percentile&apos; or &apos;kbest&apos; it can return
+    a single array scores.
+
+mode : {&apos;percentile&apos;, &apos;k_best&apos;, &apos;fpr&apos;, &apos;fdr&apos;, &apos;fwe&apos;}, default=&apos;percentile&apos;
+    Feature selection mode. Note that the `&apos;percentile&apos;` and `&apos;kbest&apos;`
+    modes are supporting unsupervised feature selection (when `y` is `None`).
+
+param : &quot;all&quot;, float or int, default=1e-5
+    Parameter of the corresponding mode.
+
+Attributes
+----------
+scores_ : array-like of shape (n_features,)
+    Scores of features.
+
+pvalues_ : array-like of shape (n_features,)
+    p-values of feature scores, None if `score_func` returned scores only.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+f_classif : ANOVA F-value between label/feature for classification tasks.
+mutual_info_classif : Mutual information for a discrete target.
+chi2 : Chi-squared stats of non-negative features for classification tasks.
+f_regression : F-value between label/feature for regression tasks.
+mutual_info_regression : Mutual information for a continuous target.
+SelectPercentile : Select features based on percentile of the highest
+    scores.
+SelectKBest : Select features based on the k highest scores.
+SelectFpr : Select features based on a false positive rate test.
+SelectFdr : Select features based on an estimated false discovery rate.
+SelectFwe : Select features based on family-wise error rate.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import load_breast_cancer
+&gt;&gt;&gt; from sklearn.feature_selection import GenericUnivariateSelect, chi2
+&gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)
+&gt;&gt;&gt; X.shape
+(569, 30)
+&gt;&gt;&gt; transformer = GenericUnivariateSelect(chi2, mode=&apos;k_best&apos;, param=20)
+&gt;&gt;&gt; X_new = transformer.fit_transform(X, y)
+&gt;&gt;&gt; X_new.shape
+(569, 20)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoClassifMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoClassifMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Estimate mutual information for a discrete target variable.
+
+Mutual information (MI) [1]_ between two random variables is a non-negative
+value, which measures the dependency between the variables. It is equal
+to zero if and only if two random variables are independent, and higher
+values mean higher dependency.
+
+The function relies on nonparametric methods based on entropy estimation
+from k-nearest neighbors distances as described in [2]_ and [3]_. Both
+methods are based on the idea originally proposed in [4]_.
+
+It can be used for univariate features selection, read more in the
+:ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+X : {array-like, sparse matrix} of shape (n_samples, n_features)
+    Feature matrix.
+
+y : array-like of shape (n_samples,)
+    Target vector.
+
+discrete_features : &apos;auto&apos;, bool or array-like, default=&apos;auto&apos;
+    If bool, then determines whether to consider all features discrete
+    or continuous. If array, then it should be either a boolean mask
+    with shape (n_features,) or array with indices of discrete features.
+    If &apos;auto&apos;, it is assigned to False for dense `X` and to True for
+    sparse `X`.
+
+n_neighbors : int, default=3
+    Number of neighbors to use for MI estimation for continuous variables,
+    see [2]_ and [3]_. Higher values reduce variance of the estimation, but
+    could introduce a bias.
+
+copy : bool, default=True
+    Whether to make a copy of the given data. If set to False, the initial
+    data will be overwritten.
+
+random_state : int, RandomState instance or None, default=None
+    Determines random number generation for adding small noise to
+    continuous variables in order to remove repeated values.
+    Pass an int for reproducible results across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Returns
+-------
+mi : ndarray, shape (n_features,)
+    Estimated mutual information between each feature and the target in
+    nat units.
+
+Notes
+-----
+1. The term &quot;discrete features&quot; is used instead of naming them
+   &quot;categorical&quot;, because it describes the essence more accurately.
+   For example, pixel intensities of an image are discrete features
+   (but hardly categorical) and you will get better results if mark them
+   as such. Also note, that treating a continuous variable as discrete and
+   vice versa will usually give incorrect results, so be attentive about
+   that.
+2. True mutual information can&apos;t be negative. If its estimate turns out
+   to be negative, it is replaced by zero.
+
+References
+----------
+.. [1] `Mutual Information
+       &lt;https://en.wikipedia.org/wiki/Mutual_information&gt;`_
+       on Wikipedia.
+.. [2] A. Kraskov, H. Stogbauer and P. Grassberger, &quot;Estimating mutual
+       information&quot;. Phys. Rev. E 69, 2004.
+.. [3] B. C. Ross &quot;Mutual Information between Discrete and Continuous
+       Data Sets&quot;. PLoS ONE 9(2), 2014.
+.. [4] L. F. Kozachenko, N. N. Leonenko, &quot;Sample Estimate of the Entropy
+       of a Random Vector:, Probl. Peredachi Inf., 23:2 (1987), 9-16
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import make_classification
+&gt;&gt;&gt; from sklearn.feature_selection import mutual_info_classif
+&gt;&gt;&gt; X, y = make_classification(
+...     n_samples=100, n_features=10, n_informative=2, n_clusters_per_class=1,
+...     shuffle=False, random_state=42
+... )
+&gt;&gt;&gt; mutual_info_classif(X, y)
+array([0.58..., 0.10..., 0.19..., 0.09... , 0.        ,
+       0.     , 0.     , 0.     , 0.      , 0.        ])</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoRegressionMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoRegressionMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Estimate mutual information for a continuous target variable.
+
+Mutual information (MI) [1]_ between two random variables is a non-negative
+value, which measures the dependency between the variables. It is equal
+to zero if and only if two random variables are independent, and higher
+values mean higher dependency.
+
+The function relies on nonparametric methods based on entropy estimation
+from k-nearest neighbors distances as described in [2]_ and [3]_. Both
+methods are based on the idea originally proposed in [4]_.
+
+It can be used for univariate features selection, read more in the
+:ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+X : array-like or sparse matrix, shape (n_samples, n_features)
+    Feature matrix.
+
+y : array-like of shape (n_samples,)
+    Target vector.
+
+discrete_features : {&apos;auto&apos;, bool, array-like}, default=&apos;auto&apos;
+    If bool, then determines whether to consider all features discrete
+    or continuous. If array, then it should be either a boolean mask
+    with shape (n_features,) or array with indices of discrete features.
+    If &apos;auto&apos;, it is assigned to False for dense `X` and to True for
+    sparse `X`.
+
+n_neighbors : int, default=3
+    Number of neighbors to use for MI estimation for continuous variables,
+    see [2]_ and [3]_. Higher values reduce variance of the estimation, but
+    could introduce a bias.
+
+copy : bool, default=True
+    Whether to make a copy of the given data. If set to False, the initial
+    data will be overwritten.
+
+random_state : int, RandomState instance or None, default=None
+    Determines random number generation for adding small noise to
+    continuous variables in order to remove repeated values.
+    Pass an int for reproducible results across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Returns
+-------
+mi : ndarray, shape (n_features,)
+    Estimated mutual information between each feature and the target in
+    nat units.
+
+Notes
+-----
+1. The term &quot;discrete features&quot; is used instead of naming them
+   &quot;categorical&quot;, because it describes the essence more accurately.
+   For example, pixel intensities of an image are discrete features
+   (but hardly categorical) and you will get better results if mark them
+   as such. Also note, that treating a continuous variable as discrete and
+   vice versa will usually give incorrect results, so be attentive about
+   that.
+2. True mutual information can&apos;t be negative. If its estimate turns out
+   to be negative, it is replaced by zero.
+
+References
+----------
+.. [1] `Mutual Information
+       &lt;https://en.wikipedia.org/wiki/Mutual_information&gt;`_
+       on Wikipedia.
+.. [2] A. Kraskov, H. Stogbauer and P. Grassberger, &quot;Estimating mutual
+       information&quot;. Phys. Rev. E 69, 2004.
+.. [3] B. C. Ross &quot;Mutual Information between Discrete and Continuous
+       Data Sets&quot;. PLoS ONE 9(2), 2014.
+.. [4] L. F. Kozachenko, N. N. Leonenko, &quot;Sample Estimate of the Entropy
+       of a Random Vector&quot;, Probl. Peredachi Inf., 23:2 (1987), 9-16
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import make_regression
+&gt;&gt;&gt; from sklearn.feature_selection import mutual_info_regression
+&gt;&gt;&gt; X, y = make_regression(
+...     n_samples=50, n_features=3, n_informative=1, noise=1e-4, random_state=42
+... )
+&gt;&gt;&gt; mutual_info_regression(X, y)
+array([0.1..., 2.6...  , 0.0...])</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFECVMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Recursive feature elimination with cross-validation to select features.
+
+The number of features selected is tuned automatically by fitting an :class:`RFE`
+selector on the different cross-validation splits (provided by the `cv` parameter).
+The performance of the :class:`RFE` selector are evaluated using `scorer` for
+different number of selected features and aggregated together. Finally, the scores
+are averaged across folds and the number of features selected is set to the number
+of features that maximize the cross-validation score.
+See glossary entry for :term:`cross-validation estimator`.
+
+Read more in the :ref:`User Guide &lt;rfe&gt;`.
+
+Parameters
+----------
+estimator : ``Estimator`` instance
+    A supervised learning estimator with a ``fit`` method that provides
+    information about feature importance either through a ``coef_``
+    attribute or through a ``feature_importances_`` attribute.
+
+step : int or float, default=1
+    If greater than or equal to 1, then ``step`` corresponds to the
+    (integer) number of features to remove at each iteration.
+    If within (0.0, 1.0), then ``step`` corresponds to the percentage
+    (rounded down) of features to remove at each iteration.
+    Note that the last iteration may remove fewer than ``step`` features in
+    order to reach ``min_features_to_select``.
+
+min_features_to_select : int, default=1
+    The minimum number of features to be selected. This number of features
+    will always be scored, even if the difference between the original
+    feature count and ``min_features_to_select`` isn&apos;t divisible by
+    ``step``.
+
+    .. versionadded:: 0.20
+
+cv : int, cross-validation generator or an iterable, default=None
+    Determines the cross-validation splitting strategy.
+    Possible inputs for cv are:
+
+    - None, to use the default 5-fold cross-validation,
+    - integer, to specify the number of folds.
+    - :term:`CV splitter`,
+    - An iterable yielding (train, test) splits as arrays of indices.
+
+    For integer/None inputs, if ``y`` is binary or multiclass,
+    :class:`~sklearn.model_selection.StratifiedKFold` is used. If the
+    estimator is a classifier or if ``y`` is neither binary nor multiclass,
+    :class:`~sklearn.model_selection.KFold` is used.
+
+    Refer :ref:`User Guide &lt;cross_validation&gt;` for the various
+    cross-validation strategies that can be used here.
+
+    .. versionchanged:: 0.22
+        ``cv`` default value of None changed from 3-fold to 5-fold.
+
+scoring : str, callable or None, default=None
+    A string (see model evaluation documentation) or
+    a scorer callable object / function with signature
+    ``scorer(estimator, X, y)``.
+
+verbose : int, default=0
+    Controls verbosity of output.
+
+n_jobs : int or None, default=None
+    Number of cores to run in parallel while fitting across folds.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+    .. versionadded:: 0.18
+
+importance_getter : str or callable, default=&apos;auto&apos;
+    If &apos;auto&apos;, uses the feature importance either through a `coef_`
+    or `feature_importances_` attributes of estimator.
+
+    Also accepts a string that specifies an attribute name/path
+    for extracting feature importance.
+    For example, give `regressor_.coef_` in case of
+    :class:`~sklearn.compose.TransformedTargetRegressor`  or
+    `named_steps.clf.feature_importances_` in case of
+    :class:`~sklearn.pipeline.Pipeline` with its last step named `clf`.
+
+    If `callable`, overrides the default feature importance getter.
+    The callable is passed with the fitted estimator and it should
+    return importance for each feature.
+
+    .. versionadded:: 0.24
+
+Attributes
+----------
+classes_ : ndarray of shape (n_classes,)
+    The classes labels. Only available when `estimator` is a classifier.
+
+estimator_ : ``Estimator`` instance
+    The fitted estimator used to select features.
+
+cv_results_ : dict of ndarrays
+    A dict with keys:
+
+    split(k)_test_score : ndarray of shape (n_subsets_of_features,)
+        The cross-validation scores across (k)th fold.
+
+    mean_test_score : ndarray of shape (n_subsets_of_features,)
+        Mean of scores over the folds.
+
+    std_test_score : ndarray of shape (n_subsets_of_features,)
+        Standard deviation of scores over the folds.
+
+    .. versionadded:: 1.0
+
+n_features_ : int
+    The number of selected features with cross-validation.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if the
+    underlying estimator exposes such an attribute when fit.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+ranking_ : narray of shape (n_features,)
+    The feature ranking, such that `ranking_[i]`
+    corresponds to the ranking
+    position of the i-th feature.
+    Selected (i.e., estimated best)
+    features are assigned rank 1.
+
+support_ : ndarray of shape (n_features,)
+    The mask of selected features.
+
+See Also
+--------
+RFE : Recursive feature elimination.
+
+Notes
+-----
+The size of all values in ``cv_results_`` is equal to
+``ceil((n_features - min_features_to_select) / step) + 1``,
+where step is the number of features removed at each iteration.
+
+Allows NaN/Inf in the input if the underlying estimator does as well.
+
+References
+----------
+
+.. [1] Guyon, I., Weston, J., Barnhill, S., &amp; Vapnik, V., &quot;Gene selection
+       for cancer classification using support vector machines&quot;,
+       Mach. Learn., 46(1-3), 389--422, 2002.
+
+Examples
+--------
+The following example shows how to retrieve the a-priori not known 5
+informative features in the Friedman #1 dataset.
+
+&gt;&gt;&gt; from sklearn.datasets import make_friedman1
+&gt;&gt;&gt; from sklearn.feature_selection import RFECV
+&gt;&gt;&gt; from sklearn.svm import SVR
+&gt;&gt;&gt; X, y = make_friedman1(n_samples=50, n_features=10, random_state=0)
+&gt;&gt;&gt; estimator = SVR(kernel=&quot;linear&quot;)
+&gt;&gt;&gt; selector = RFECV(estimator, step=1, cv=5)
+&gt;&gt;&gt; selector = selector.fit(X, y)
+&gt;&gt;&gt; selector.support_
+array([ True,  True,  True,  True,  True, False, False, False, False,
+       False])
+&gt;&gt;&gt; selector.ranking_
+array([1, 1, 1, 1, 1, 6, 4, 3, 2, 5])</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RFEMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Feature ranking with recursive feature elimination.
+
+Given an external estimator that assigns weights to features (e.g., the
+coefficients of a linear model), the goal of recursive feature elimination
+(RFE) is to select features by recursively considering smaller and smaller
+sets of features. First, the estimator is trained on the initial set of
+features and the importance of each feature is obtained either through
+any specific attribute or callable.
+Then, the least important features are pruned from current set of features.
+That procedure is recursively repeated on the pruned set until the desired
+number of features to select is eventually reached.
+
+Read more in the :ref:`User Guide &lt;rfe&gt;`.
+
+Parameters
+----------
+estimator : ``Estimator`` instance
+    A supervised learning estimator with a ``fit`` method that provides
+    information about feature importance
+    (e.g. `coef_`, `feature_importances_`).
+
+n_features_to_select : int or float, default=None
+    The number of features to select. If `None`, half of the features are
+    selected. If integer, the parameter is the absolute number of features
+    to select. If float between 0 and 1, it is the fraction of features to
+    select.
+
+    .. versionchanged:: 0.24
+       Added float values for fractions.
+
+step : int or float, default=1
+    If greater than or equal to 1, then ``step`` corresponds to the
+    (integer) number of features to remove at each iteration.
+    If within (0.0, 1.0), then ``step`` corresponds to the percentage
+    (rounded down) of features to remove at each iteration.
+
+verbose : int, default=0
+    Controls verbosity of output.
+
+importance_getter : str or callable, default=&apos;auto&apos;
+    If &apos;auto&apos;, uses the feature importance either through a `coef_`
+    or `feature_importances_` attributes of estimator.
+
+    Also accepts a string that specifies an attribute name/path
+    for extracting feature importance (implemented with `attrgetter`).
+    For example, give `regressor_.coef_` in case of
+    :class:`~sklearn.compose.TransformedTargetRegressor`  or
+    `named_steps.clf.feature_importances_` in case of
+    class:`~sklearn.pipeline.Pipeline` with its last step named `clf`.
+
+    If `callable`, overrides the default feature importance getter.
+    The callable is passed with the fitted estimator and it should
+    return importance for each feature.
+
+    .. versionadded:: 0.24
+
+Attributes
+----------
+classes_ : ndarray of shape (n_classes,)
+    The classes labels. Only available when `estimator` is a classifier.
+
+estimator_ : ``Estimator`` instance
+    The fitted estimator used to select features.
+
+n_features_ : int
+    The number of selected features.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if the
+    underlying estimator exposes such an attribute when fit.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+ranking_ : ndarray of shape (n_features,)
+    The feature ranking, such that ``ranking_[i]`` corresponds to the
+    ranking position of the i-th feature. Selected (i.e., estimated
+    best) features are assigned rank 1.
+
+support_ : ndarray of shape (n_features,)
+    The mask of selected features.
+
+See Also
+--------
+RFECV : Recursive feature elimination with built-in cross-validated
+    selection of the best number of features.
+SelectFromModel : Feature selection based on thresholds of importance
+    weights.
+SequentialFeatureSelector : Sequential cross-validation based feature
+    selection. Does not rely on importance weights.
+
+Notes
+-----
+Allows NaN/Inf in the input if the underlying estimator does as well.
+
+References
+----------
+
+.. [1] Guyon, I., Weston, J., Barnhill, S., &amp; Vapnik, V., &quot;Gene selection
+       for cancer classification using support vector machines&quot;,
+       Mach. Learn., 46(1-3), 389--422, 2002.
+
+Examples
+--------
+The following example shows how to retrieve the 5 most informative
+features in the Friedman #1 dataset.
+
+&gt;&gt;&gt; from sklearn.datasets import make_friedman1
+&gt;&gt;&gt; from sklearn.feature_selection import RFE
+&gt;&gt;&gt; from sklearn.svm import SVR
+&gt;&gt;&gt; X, y = make_friedman1(n_samples=50, n_features=10, random_state=0)
+&gt;&gt;&gt; estimator = SVR(kernel=&quot;linear&quot;)
+&gt;&gt;&gt; selector = RFE(estimator, n_features_to_select=5, step=1)
+&gt;&gt;&gt; selector = selector.fit(X, y)
+&gt;&gt;&gt; selector.support_
+array([ True,  True,  True,  True,  True, False, False, False, False,
+       False])
+&gt;&gt;&gt; selector.ranking_
+array([1, 1, 1, 1, 1, 6, 4, 3, 2, 5])</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFdrMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFdrMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Filter: Select the p-values for an estimated false discovery rate.
+
+This uses the Benjamini-Hochberg procedure. ``alpha`` is an upper bound
+on the expected false discovery rate.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+score_func : callable, default=f_classif
+    Function taking two arrays X and y, and returning a pair of arrays
+    (scores, pvalues).
+    Default is f_classif (see below &quot;See Also&quot;). The default function only
+    works with classification tasks.
+
+alpha : float, default=5e-2
+    The highest uncorrected p-value for features to keep.
+
+Attributes
+----------
+scores_ : array-like of shape (n_features,)
+    Scores of features.
+
+pvalues_ : array-like of shape (n_features,)
+    p-values of feature scores.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+f_classif : ANOVA F-value between label/feature for classification tasks.
+mutual_info_classif : Mutual information for a discrete target.
+chi2 : Chi-squared stats of non-negative features for classification tasks.
+f_regression : F-value between label/feature for regression tasks.
+mutual_info_regression : Mutual information for a continuous target.
+SelectPercentile : Select features based on percentile of the highest
+    scores.
+SelectKBest : Select features based on the k highest scores.
+SelectFpr : Select features based on a false positive rate test.
+SelectFwe : Select features based on family-wise error rate.
+GenericUnivariateSelect : Univariate feature selector with configurable
+    mode.
+
+References
+----------
+https://en.wikipedia.org/wiki/False_discovery_rate
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import load_breast_cancer
+&gt;&gt;&gt; from sklearn.feature_selection import SelectFdr, chi2
+&gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)
+&gt;&gt;&gt; X.shape
+(569, 30)
+&gt;&gt;&gt; X_new = SelectFdr(chi2, alpha=0.01).fit_transform(X, y)
+&gt;&gt;&gt; X_new.shape
+(569, 16)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFprMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFprMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Filter: Select the pvalues below alpha based on a FPR test.
+
+FPR test stands for False Positive Rate test. It controls the total
+amount of false detections.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+score_func : callable, default=f_classif
+    Function taking two arrays X and y, and returning a pair of arrays
+    (scores, pvalues).
+    Default is f_classif (see below &quot;See Also&quot;). The default function only
+    works with classification tasks.
+
+alpha : float, default=5e-2
+    Features with p-values less than `alpha` are selected.
+
+Attributes
+----------
+scores_ : array-like of shape (n_features,)
+    Scores of features.
+
+pvalues_ : array-like of shape (n_features,)
+    p-values of feature scores.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+f_classif : ANOVA F-value between label/feature for classification tasks.
+chi2 : Chi-squared stats of non-negative features for classification tasks.
+mutual_info_classif: Mutual information for a discrete target.
+f_regression : F-value between label/feature for regression tasks.
+mutual_info_regression : Mutual information for a continuous target.
+SelectPercentile : Select features based on percentile of the highest
+    scores.
+SelectKBest : Select features based on the k highest scores.
+SelectFdr : Select features based on an estimated false discovery rate.
+SelectFwe : Select features based on family-wise error rate.
+GenericUnivariateSelect : Univariate feature selector with configurable
+    mode.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import load_breast_cancer
+&gt;&gt;&gt; from sklearn.feature_selection import SelectFpr, chi2
+&gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)
+&gt;&gt;&gt; X.shape
+(569, 30)
+&gt;&gt;&gt; X_new = SelectFpr(chi2, alpha=0.01).fit_transform(X, y)
+&gt;&gt;&gt; X_new.shape
+(569, 16)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFromModelMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Meta-transformer for selecting features based on importance weights.
+
+.. versionadded:: 0.17
+
+Read more in the :ref:`User Guide &lt;select_from_model&gt;`.
+
+Parameters
+----------
+estimator : object
+    The base estimator from which the transformer is built.
+    This can be both a fitted (if ``prefit`` is set to True)
+    or a non-fitted estimator. The estimator should have a
+    ``feature_importances_`` or ``coef_`` attribute after fitting.
+    Otherwise, the ``importance_getter`` parameter should be used.
+
+threshold : str or float, default=None
+    The threshold value to use for feature selection. Features whose
+    absolute importance value is greater or equal are kept while the others
+    are discarded. If &quot;median&quot; (resp. &quot;mean&quot;), then the ``threshold`` value
+    is the median (resp. the mean) of the feature importances. A scaling
+    factor (e.g., &quot;1.25*mean&quot;) may also be used. If None and if the
+    estimator has a parameter penalty set to l1, either explicitly
+    or implicitly (e.g, Lasso), the threshold used is 1e-5.
+    Otherwise, &quot;mean&quot; is used by default.
+
+prefit : bool, default=False
+    Whether a prefit model is expected to be passed into the constructor
+    directly or not.
+    If `True`, `estimator` must be a fitted estimator.
+    If `False`, `estimator` is fitted and updated by calling
+    `fit` and `partial_fit`, respectively.
+
+norm_order : non-zero int, inf, -inf, default=1
+    Order of the norm used to filter the vectors of coefficients below
+    ``threshold`` in the case where the ``coef_`` attribute of the
+    estimator is of dimension 2.
+
+max_features : int, callable, default=None
+    The maximum number of features to select.
+
+    - If an integer, then it specifies the maximum number of features to
+      allow.
+    - If a callable, then it specifies how to calculate the maximum number of
+      features allowed by using the output of `max_features(X)`.
+    - If `None`, then all features are kept.
+
+    To only select based on ``max_features``, set ``threshold=-np.inf``.
+
+    .. versionadded:: 0.20
+    .. versionchanged:: 1.1
+       `max_features` accepts a callable.
+
+importance_getter : str or callable, default=&apos;auto&apos;
+    If &apos;auto&apos;, uses the feature importance either through a ``coef_``
+    attribute or ``feature_importances_`` attribute of estimator.
+
+    Also accepts a string that specifies an attribute name/path
+    for extracting feature importance (implemented with `attrgetter`).
+    For example, give `regressor_.coef_` in case of
+    :class:`~sklearn.compose.TransformedTargetRegressor`  or
+    `named_steps.clf.feature_importances_` in case of
+    :class:`~sklearn.pipeline.Pipeline` with its last step named `clf`.
+
+    If `callable`, overrides the default feature importance getter.
+    The callable is passed with the fitted estimator and it should
+    return importance for each feature.
+
+    .. versionadded:: 0.24
+
+Attributes
+----------
+estimator_ : estimator
+    The base estimator from which the transformer is built. This attribute
+    exist only when `fit` has been called.
+
+    - If `prefit=True`, it is a deep copy of `estimator`.
+    - If `prefit=False`, it is a clone of `estimator` and fit on the data
+      passed to `fit` or `partial_fit`.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if the
+    underlying estimator exposes such an attribute when fit.
+
+    .. versionadded:: 0.24
+
+max_features_ : int
+    Maximum number of features calculated during :term:`fit`. Only defined
+    if the ``max_features`` is not `None`.
+
+    - If `max_features` is an `int`, then `max_features_ = max_features`.
+    - If `max_features` is a callable, then `max_features_ = max_features(X)`.
+
+    .. versionadded:: 1.1
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+threshold_ : float
+    The threshold value used for feature selection.
+
+See Also
+--------
+RFE : Recursive feature elimination based on importance weights.
+RFECV : Recursive feature elimination with built-in cross-validated
+    selection of the best number of features.
+SequentialFeatureSelector : Sequential cross-validation based feature
+    selection. Does not rely on importance weights.
+
+Notes
+-----
+Allows NaN/Inf in the input if the underlying estimator does as well.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.feature_selection import SelectFromModel
+&gt;&gt;&gt; from sklearn.linear_model import LogisticRegression
+&gt;&gt;&gt; X = [[ 0.87, -1.34,  0.31 ],
+...      [-2.79, -0.02, -0.85 ],
+...      [-1.34, -0.48, -2.55 ],
+...      [ 1.92,  1.48,  0.65 ]]
+&gt;&gt;&gt; y = [0, 1, 0, 1]
+&gt;&gt;&gt; selector = SelectFromModel(estimator=LogisticRegression()).fit(X, y)
+&gt;&gt;&gt; selector.estimator_.coef_
+array([[-0.3252...,  0.8345...,  0.4976...]])
+&gt;&gt;&gt; selector.threshold_
+0.55249...
+&gt;&gt;&gt; selector.get_support()
+array([False,  True, False])
+&gt;&gt;&gt; selector.transform(X)
+array([[-1.34],
+       [-0.02],
+       [-0.48],
+       [ 1.48]])
+
+Using a callable to create a selector that can use no more than half
+of the input features.
+
+&gt;&gt;&gt; def half_callable(X):
+...     return round(len(X[0]) / 2)
+&gt;&gt;&gt; half_selector = SelectFromModel(estimator=LogisticRegression(),
+...                                 max_features=half_callable)
+&gt;&gt;&gt; _ = half_selector.fit(X, y)
+&gt;&gt;&gt; half_selector.max_features_
+2</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFweMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectFweMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Filter: Select the p-values corresponding to Family-wise error rate.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+score_func : callable, default=f_classif
+    Function taking two arrays X and y, and returning a pair of arrays
+    (scores, pvalues).
+    Default is f_classif (see below &quot;See Also&quot;). The default function only
+    works with classification tasks.
+
+alpha : float, default=5e-2
+    The highest uncorrected p-value for features to keep.
+
+Attributes
+----------
+scores_ : array-like of shape (n_features,)
+    Scores of features.
+
+pvalues_ : array-like of shape (n_features,)
+    p-values of feature scores.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+f_classif : ANOVA F-value between label/feature for classification tasks.
+chi2 : Chi-squared stats of non-negative features for classification tasks.
+f_regression : F-value between label/feature for regression tasks.
+SelectPercentile : Select features based on percentile of the highest
+    scores.
+SelectKBest : Select features based on the k highest scores.
+SelectFpr : Select features based on a false positive rate test.
+SelectFdr : Select features based on an estimated false discovery rate.
+GenericUnivariateSelect : Univariate feature selector with configurable
+    mode.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import load_breast_cancer
+&gt;&gt;&gt; from sklearn.feature_selection import SelectFwe, chi2
+&gt;&gt;&gt; X, y = load_breast_cancer(return_X_y=True)
+&gt;&gt;&gt; X.shape
+(569, 30)
+&gt;&gt;&gt; X_new = SelectFwe(chi2, alpha=0.01).fit_transform(X, y)
+&gt;&gt;&gt; X_new.shape
+(569, 15)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectKBestMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectKBestMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Select features according to the k highest scores.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+score_func : callable, default=f_classif
+    Function taking two arrays X and y, and returning a pair of arrays
+    (scores, pvalues) or a single array with scores.
+    Default is f_classif (see below &quot;See Also&quot;). The default function only
+    works with classification tasks.
+
+    .. versionadded:: 0.18
+
+k : int or &quot;all&quot;, default=10
+    Number of top features to select.
+    The &quot;all&quot; option bypasses selection, for use in a parameter search.
+
+Attributes
+----------
+scores_ : array-like of shape (n_features,)
+    Scores of features.
+
+pvalues_ : array-like of shape (n_features,)
+    p-values of feature scores, None if `score_func` returned only scores.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+f_classif: ANOVA F-value between label/feature for classification tasks.
+mutual_info_classif: Mutual information for a discrete target.
+chi2: Chi-squared stats of non-negative features for classification tasks.
+f_regression: F-value between label/feature for regression tasks.
+mutual_info_regression: Mutual information for a continuous target.
+SelectPercentile: Select features based on percentile of the highest
+    scores.
+SelectFpr : Select features based on a false positive rate test.
+SelectFdr : Select features based on an estimated false discovery rate.
+SelectFwe : Select features based on family-wise error rate.
+GenericUnivariateSelect : Univariate feature selector with configurable
+    mode.
+
+Notes
+-----
+Ties between features with equal scores will be broken in an unspecified
+way.
+
+This filter supports unsupervised feature selection that only requests `X` for
+computing the scores.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import load_digits
+&gt;&gt;&gt; from sklearn.feature_selection import SelectKBest, chi2
+&gt;&gt;&gt; X, y = load_digits(return_X_y=True)
+&gt;&gt;&gt; X.shape
+(1797, 64)
+&gt;&gt;&gt; X_new = SelectKBest(chi2, k=20).fit_transform(X, y)
+&gt;&gt;&gt; X_new.shape
+(1797, 20)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectPercentileMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SelectPercentileMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Select features according to a percentile of the highest scores.
+
+Read more in the :ref:`User Guide &lt;univariate_feature_selection&gt;`.
+
+Parameters
+----------
+score_func : callable, default=f_classif
+    Function taking two arrays X and y, and returning a pair of arrays
+    (scores, pvalues) or a single array with scores.
+    Default is f_classif (see below &quot;See Also&quot;). The default function only
+    works with classification tasks.
+
+    .. versionadded:: 0.18
+
+percentile : int, default=10
+    Percent of features to keep.
+
+Attributes
+----------
+scores_ : array-like of shape (n_features,)
+    Scores of features.
+
+pvalues_ : array-like of shape (n_features,)
+    p-values of feature scores, None if `score_func` returned only scores.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+f_classif : ANOVA F-value between label/feature for classification tasks.
+mutual_info_classif : Mutual information for a discrete target.
+chi2 : Chi-squared stats of non-negative features for classification tasks.
+f_regression : F-value between label/feature for regression tasks.
+mutual_info_regression : Mutual information for a continuous target.
+SelectKBest : Select features based on the k highest scores.
+SelectFpr : Select features based on a false positive rate test.
+SelectFdr : Select features based on an estimated false discovery rate.
+SelectFwe : Select features based on family-wise error rate.
+GenericUnivariateSelect : Univariate feature selector with configurable
+    mode.
+
+Notes
+-----
+Ties between features with equal scores will be broken in an unspecified
+way.
+
+This filter supports unsupervised feature selection that only requests `X` for
+computing the scores.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import load_digits
+&gt;&gt;&gt; from sklearn.feature_selection import SelectPercentile, chi2
+&gt;&gt;&gt; X, y = load_digits(return_X_y=True)
+&gt;&gt;&gt; X.shape
+(1797, 64)
+&gt;&gt;&gt; X_new = SelectPercentile(chi2, percentile=10).fit_transform(X, y)
+&gt;&gt;&gt; X_new.shape
+(1797, 7)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SequentialFeatureSelectorMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Transformer that performs Sequential Feature Selection.
+
+This Sequential Feature Selector adds (forward selection) or
+removes (backward selection) features to form a feature subset in a
+greedy fashion. At each stage, this estimator chooses the best feature to
+add or remove based on the cross-validation score of an estimator. In
+the case of unsupervised learning, this Sequential Feature Selector
+looks only at the features (X), not the desired outputs (y).
+
+Read more in the :ref:`User Guide &lt;sequential_feature_selection&gt;`.
+
+.. versionadded:: 0.24
+
+Parameters
+----------
+estimator : estimator instance
+    An unfitted estimator.
+
+n_features_to_select : &quot;auto&quot;, int or float, default=&quot;auto&quot;
+    If `&quot;auto&quot;`, the behaviour depends on the `tol` parameter:
+
+    - if `tol` is not `None`, then features are selected while the score
+      change does not exceed `tol`.
+    - otherwise, half of the features are selected.
+
+    If integer, the parameter is the absolute number of features to select.
+    If float between 0 and 1, it is the fraction of features to select.
+
+    .. versionadded:: 1.1
+       The option `&quot;auto&quot;` was added in version 1.1.
+
+    .. versionchanged:: 1.3
+       The default changed from `&quot;warn&quot;` to `&quot;auto&quot;` in 1.3.
+
+tol : float, default=None
+    If the score is not incremented by at least `tol` between two
+    consecutive feature additions or removals, stop adding or removing.
+
+    `tol` can be negative when removing features using `direction=&quot;backward&quot;`.
+    It can be useful to reduce the number of features at the cost of a small
+    decrease in the score.
+
+    `tol` is enabled only when `n_features_to_select` is `&quot;auto&quot;`.
+
+    .. versionadded:: 1.1
+
+direction : {&apos;forward&apos;, &apos;backward&apos;}, default=&apos;forward&apos;
+    Whether to perform forward selection or backward selection.
+
+scoring : str or callable, default=None
+    A single str (see :ref:`scoring_parameter`) or a callable
+    (see :ref:`scoring`) to evaluate the predictions on the test set.
+
+    NOTE that when using a custom scorer, it should return a single
+    value.
+
+    If None, the estimator&apos;s score method is used.
+
+cv : int, cross-validation generator or an iterable, default=None
+    Determines the cross-validation splitting strategy.
+    Possible inputs for cv are:
+
+    - None, to use the default 5-fold cross validation,
+    - integer, to specify the number of folds in a `(Stratified)KFold`,
+    - :term:`CV splitter`,
+    - An iterable yielding (train, test) splits as arrays of indices.
+
+    For integer/None inputs, if the estimator is a classifier and ``y`` is
+    either binary or multiclass,
+    :class:`~sklearn.model_selection.StratifiedKFold` is used. In all other
+    cases, :class:`~sklearn.model_selection.KFold` is used. These splitters
+    are instantiated with `shuffle=False` so the splits will be the same
+    across calls.
+
+    Refer :ref:`User Guide &lt;cross_validation&gt;` for the various
+    cross-validation strategies that can be used here.
+
+n_jobs : int, default=None
+    Number of jobs to run in parallel. When evaluating a new feature to
+    add or remove, the cross-validation procedure is parallel over the
+    folds.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+Attributes
+----------
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if the
+    underlying estimator exposes such an attribute when fit.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_features_to_select_ : int
+    The number of features that were selected.
+
+support_ : ndarray of shape (n_features,), dtype=bool
+    The mask of selected features.
+
+See Also
+--------
+GenericUnivariateSelect : Univariate feature selector with configurable
+    strategy.
+RFE : Recursive feature elimination based on importance weights.
+RFECV : Recursive feature elimination based on importance weights, with
+    automatic selection of the number of features.
+SelectFromModel : Feature selection based on thresholds of importance
+    weights.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.feature_selection import SequentialFeatureSelector
+&gt;&gt;&gt; from sklearn.neighbors import KNeighborsClassifier
+&gt;&gt;&gt; from sklearn.datasets import load_iris
+&gt;&gt;&gt; X, y = load_iris(return_X_y=True)
+&gt;&gt;&gt; knn = KNeighborsClassifier(n_neighbors=3)
+&gt;&gt;&gt; sfs = SequentialFeatureSelector(knn, n_features_to_select=3)
+&gt;&gt;&gt; sfs.fit(X, y)
+SequentialFeatureSelector(estimator=KNeighborsClassifier(n_neighbors=3),
+                          n_features_to_select=3)
+&gt;&gt;&gt; sfs.get_support()
+array([ True, False,  True,  True])
+&gt;&gt;&gt; sfs.transform(X).shape
+(150, 3)</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#VarianceThresholdMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#VarianceThresholdMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"/>
+        <rdfs:comment>Feature selector that removes all low-variance features.
+
+This feature selection algorithm looks only at the features (X), not the
+desired outputs (y), and can thus be used for unsupervised learning.
+
+Read more in the :ref:`User Guide &lt;variance_threshold&gt;`.
+
+Parameters
+----------
+threshold : float, default=0
+    Features with a training-set variance lower than this threshold will
+    be removed. The default is to keep all features with non-zero variance,
+    i.e. remove the features that have the same value in all samples.
+
+Attributes
+----------
+variances_ : array, shape (n_features,)
+    Variances of individual features.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+SelectFromModel: Meta-transformer for selecting features based on
+    importance weights.
+SelectPercentile : Select features according to a percentile of the highest
+    scores.
+SequentialFeatureSelector : Transformer that performs Sequential Feature
+    Selection.
+
+Notes
+-----
+Allows NaN in the input.
+Raises ValueError if no feature in X meets the variance threshold.
+
+Examples
+--------
+The following dataset has integer features, two of which are the same
+in every sample. These are removed with the default setting for threshold::
+
+    &gt;&gt;&gt; from sklearn.feature_selection import VarianceThreshold
+    &gt;&gt;&gt; X = [[0, 2, 0, 3], [0, 1, 4, 3], [0, 1, 1, 3]]
+    &gt;&gt;&gt; selector = VarianceThreshold()
+    &gt;&gt;&gt; selector.fit_transform(X)
+    array([[2, 0],
+           [1, 4],
+           [1, 1]])</rdfs:comment>
+    </Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

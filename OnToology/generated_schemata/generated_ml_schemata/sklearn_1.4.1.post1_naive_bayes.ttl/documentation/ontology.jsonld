@@ -1,0 +1,240 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliNBMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Naive Bayes classifier for multivariate Bernoulli models.\n\nLike MultinomialNB, this classifier is suitable for discrete data. The\ndifference is that while MultinomialNB works with occurrence counts,\nBernoulliNB is designed for binary/boolean features.\n\nRead more in the :ref:`User Guide <bernoulli_naive_bayes>`.\n\nParameters\n----------\nalpha : float or array-like of shape (n_features,), default=1.0\n    Additive (Laplace/Lidstone) smoothing parameter\n    (set alpha=0 and force_alpha=True, for no smoothing).\n\nforce_alpha : bool, default=True\n    If False and alpha is less than 1e-10, it will set alpha to\n    1e-10. If True, alpha will remain unchanged. This may cause\n    numerical errors if alpha is too close to 0.\n\n    .. versionadded:: 1.2\n    .. versionchanged:: 1.4\n       The default value of `force_alpha` changed to `True`.\n\nbinarize : float or None, default=0.0\n    Threshold for binarizing (mapping to booleans) of sample features.\n    If None, input is presumed to already consist of binary vectors.\n\nfit_prior : bool, default=True\n    Whether to learn class prior probabilities or not.\n    If false, a uniform prior will be used.\n\nclass_prior : array-like of shape (n_classes,), default=None\n    Prior probabilities of the classes. If specified, the priors are not\n    adjusted according to the data.\n\nAttributes\n----------\nclass_count_ : ndarray of shape (n_classes,)\n    Number of samples encountered for each class during fitting. This\n    value is weighted by the sample weight when provided.\n\nclass_log_prior_ : ndarray of shape (n_classes,)\n    Log probability of each class (smoothed).\n\nclasses_ : ndarray of shape (n_classes,)\n    Class labels known to the classifier\n\nfeature_count_ : ndarray of shape (n_classes, n_features)\n    Number of samples encountered for each (class, feature)\n    during fitting. This value is weighted by the sample weight when\n    provided.\n\nfeature_log_prob_ : ndarray of shape (n_classes, n_features)\n    Empirical log probability of features given a class, P(x_i|y).\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nCategoricalNB : Naive Bayes classifier for categorical features.\nComplementNB : The Complement Naive Bayes classifier\n    described in Rennie et al. (2003).\nGaussianNB : Gaussian Naive Bayes (GaussianNB).\nMultinomialNB : Naive Bayes classifier for multinomial models.\n\nReferences\n----------\nC.D. Manning, P. Raghavan and H. Schuetze (2008). Introduction to\nInformation Retrieval. Cambridge University Press, pp. 234-265.\nhttps://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html\n\nA. McCallum and K. Nigam (1998). A comparison of event models for naive\nBayes text classification. Proc. AAAI/ICML-98 Workshop on Learning for\nText Categorization, pp. 41-48.\n\nV. Metsis, I. Androutsopoulos and G. Paliouras (2006). Spam filtering with\nnaive Bayes -- Which naive Bayes? 3rd Conf. on Email and Anti-Spam (CEAS).\n\nExamples\n--------\n>>> import numpy as np\n>>> rng = np.random.RandomState(1)\n>>> X = rng.randint(5, size=(6, 100))\n>>> Y = np.array([1, 2, 3, 4, 4, 5])\n>>> from sklearn.naive_bayes import BernoulliNB\n>>> clf = BernoulliNB()\n>>> clf.fit(X, Y)\nBernoulliNB()\n>>> print(clf.predict(X[2:3]))\n[3]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NaiveBayesModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CategoricalNBMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Naive Bayes classifier for categorical features.\n\nThe categorical Naive Bayes classifier is suitable for classification with\ndiscrete features that are categorically distributed. The categories of\neach feature are drawn from a categorical distribution.\n\nRead more in the :ref:`User Guide <categorical_naive_bayes>`.\n\nParameters\n----------\nalpha : float, default=1.0\n    Additive (Laplace/Lidstone) smoothing parameter\n    (set alpha=0 and force_alpha=True, for no smoothing).\n\nforce_alpha : bool, default=True\n    If False and alpha is less than 1e-10, it will set alpha to\n    1e-10. If True, alpha will remain unchanged. This may cause\n    numerical errors if alpha is too close to 0.\n\n    .. versionadded:: 1.2\n    .. versionchanged:: 1.4\n       The default value of `force_alpha` changed to `True`.\n\nfit_prior : bool, default=True\n    Whether to learn class prior probabilities or not.\n    If false, a uniform prior will be used.\n\nclass_prior : array-like of shape (n_classes,), default=None\n    Prior probabilities of the classes. If specified, the priors are not\n    adjusted according to the data.\n\nmin_categories : int or array-like of shape (n_features,), default=None\n    Minimum number of categories per feature.\n\n    - integer: Sets the minimum number of categories per feature to\n      `n_categories` for each features.\n    - array-like: shape (n_features,) where `n_categories[i]` holds the\n      minimum number of categories for the ith column of the input.\n    - None (default): Determines the number of categories automatically\n      from the training data.\n\n    .. versionadded:: 0.24\n\nAttributes\n----------\ncategory_count_ : list of arrays of shape (n_features,)\n    Holds arrays of shape (n_classes, n_categories of respective feature)\n    for each feature. Each array provides the number of samples\n    encountered for each class and category of the specific feature.\n\nclass_count_ : ndarray of shape (n_classes,)\n    Number of samples encountered for each class during fitting. This\n    value is weighted by the sample weight when provided.\n\nclass_log_prior_ : ndarray of shape (n_classes,)\n    Smoothed empirical log probability for each class.\n\nclasses_ : ndarray of shape (n_classes,)\n    Class labels known to the classifier\n\nfeature_log_prob_ : list of arrays of shape (n_features,)\n    Holds arrays of shape (n_classes, n_categories of respective feature)\n    for each feature. Each array provides the empirical log probability\n    of categories given the respective feature and class, ``P(x_i|y)``.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_categories_ : ndarray of shape (n_features,), dtype=np.int64\n    Number of categories for each feature. This value is\n    inferred from the data or set by the minimum number of categories.\n\n    .. versionadded:: 0.24\n\nSee Also\n--------\nBernoulliNB : Naive Bayes classifier for multivariate Bernoulli models.\nComplementNB : Complement Naive Bayes classifier.\nGaussianNB : Gaussian Naive Bayes.\nMultinomialNB : Naive Bayes classifier for multinomial models.\n\nExamples\n--------\n>>> import numpy as np\n>>> rng = np.random.RandomState(1)\n>>> X = rng.randint(5, size=(6, 100))\n>>> y = np.array([1, 2, 3, 4, 5, 6])\n>>> from sklearn.naive_bayes import CategoricalNB\n>>> clf = CategoricalNB()\n>>> clf.fit(X, y)\nCategoricalNB()\n>>> print(clf.predict(X[2:3]))\n[3]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NaiveBayesModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ComplementNBMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The Complement Naive Bayes classifier described in Rennie et al. (2003).\n\nThe Complement Naive Bayes classifier was designed to correct the \"severe\nassumptions\" made by the standard Multinomial Naive Bayes classifier. It is\nparticularly suited for imbalanced data sets.\n\nRead more in the :ref:`User Guide <complement_naive_bayes>`.\n\n.. versionadded:: 0.20\n\nParameters\n----------\nalpha : float or array-like of shape (n_features,), default=1.0\n    Additive (Laplace/Lidstone) smoothing parameter\n    (set alpha=0 and force_alpha=True, for no smoothing).\n\nforce_alpha : bool, default=True\n    If False and alpha is less than 1e-10, it will set alpha to\n    1e-10. If True, alpha will remain unchanged. This may cause\n    numerical errors if alpha is too close to 0.\n\n    .. versionadded:: 1.2\n    .. versionchanged:: 1.4\n       The default value of `force_alpha` changed to `True`.\n\nfit_prior : bool, default=True\n    Only used in edge case with a single class in the training set.\n\nclass_prior : array-like of shape (n_classes,), default=None\n    Prior probabilities of the classes. Not used.\n\nnorm : bool, default=False\n    Whether or not a second normalization of the weights is performed. The\n    default behavior mirrors the implementations found in Mahout and Weka,\n    which do not follow the full algorithm described in Table 9 of the\n    paper.\n\nAttributes\n----------\nclass_count_ : ndarray of shape (n_classes,)\n    Number of samples encountered for each class during fitting. This\n    value is weighted by the sample weight when provided.\n\nclass_log_prior_ : ndarray of shape (n_classes,)\n    Smoothed empirical log probability for each class. Only used in edge\n    case with a single class in the training set.\n\nclasses_ : ndarray of shape (n_classes,)\n    Class labels known to the classifier\n\nfeature_all_ : ndarray of shape (n_features,)\n    Number of samples encountered for each feature during fitting. This\n    value is weighted by the sample weight when provided.\n\nfeature_count_ : ndarray of shape (n_classes, n_features)\n    Number of samples encountered for each (class, feature) during fitting.\n    This value is weighted by the sample weight when provided.\n\nfeature_log_prob_ : ndarray of shape (n_classes, n_features)\n    Empirical weights for class complements.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nBernoulliNB : Naive Bayes classifier for multivariate Bernoulli models.\nCategoricalNB : Naive Bayes classifier for categorical features.\nGaussianNB : Gaussian Naive Bayes.\nMultinomialNB : Naive Bayes classifier for multinomial models.\n\nReferences\n----------\nRennie, J. D., Shih, L., Teevan, J., & Karger, D. R. (2003).\nTackling the poor assumptions of naive bayes text classifiers. In ICML\n(Vol. 3, pp. 616-623).\nhttps://people.csail.mit.edu/jrennie/papers/icml03-nb.pdf\n\nExamples\n--------\n>>> import numpy as np\n>>> rng = np.random.RandomState(1)\n>>> X = rng.randint(5, size=(6, 100))\n>>> y = np.array([1, 2, 3, 4, 5, 6])\n>>> from sklearn.naive_bayes import ComplementNB\n>>> clf = ComplementNB()\n>>> clf.fit(X, y)\nComplementNB()\n>>> print(clf.predict(X[2:3]))\n[3]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NaiveBayesModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GaussianNBMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Gaussian Naive Bayes (GaussianNB).\n\nCan perform online updates to model parameters via :meth:`partial_fit`.\nFor details on algorithm used to update feature means and variance online,\nsee Stanford CS tech report STAN-CS-79-773 by Chan, Golub, and LeVeque:\n\n    http://i.stanford.edu/pub/cstr/reports/cs/tr/79/773/CS-TR-79-773.pdf\n\nRead more in the :ref:`User Guide <gaussian_naive_bayes>`.\n\nParameters\n----------\npriors : array-like of shape (n_classes,), default=None\n    Prior probabilities of the classes. If specified, the priors are not\n    adjusted according to the data.\n\nvar_smoothing : float, default=1e-9\n    Portion of the largest variance of all features that is added to\n    variances for calculation stability.\n\n    .. versionadded:: 0.20\n\nAttributes\n----------\nclass_count_ : ndarray of shape (n_classes,)\n    number of training samples observed in each class.\n\nclass_prior_ : ndarray of shape (n_classes,)\n    probability of each class.\n\nclasses_ : ndarray of shape (n_classes,)\n    class labels known to the classifier.\n\nepsilon_ : float\n    absolute additive value to variances.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nvar_ : ndarray of shape (n_classes, n_features)\n    Variance of each feature per class.\n\n    .. versionadded:: 1.0\n\ntheta_ : ndarray of shape (n_classes, n_features)\n    mean of each feature per class.\n\nSee Also\n--------\nBernoulliNB : Naive Bayes classifier for multivariate Bernoulli models.\nCategoricalNB : Naive Bayes classifier for categorical features.\nComplementNB : Complement Naive Bayes classifier.\nMultinomialNB : Naive Bayes classifier for multinomial models.\n\nExamples\n--------\n>>> import numpy as np\n>>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])\n>>> Y = np.array([1, 1, 1, 2, 2, 2])\n>>> from sklearn.naive_bayes import GaussianNB\n>>> clf = GaussianNB()\n>>> clf.fit(X, Y)\nGaussianNB()\n>>> print(clf.predict([[-0.8, -1]]))\n[1]\n>>> clf_pf = GaussianNB()\n>>> clf_pf.partial_fit(X, Y, np.unique(Y))\nGaussianNB()\n>>> print(clf_pf.predict([[-0.8, -1]]))\n[1]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NaiveBayesModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultinomialNBMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Naive Bayes classifier for multinomial models.\n\nThe multinomial Naive Bayes classifier is suitable for classification with\ndiscrete features (e.g., word counts for text classification). The\nmultinomial distribution normally requires integer feature counts. However,\nin practice, fractional counts such as tf-idf may also work.\n\nRead more in the :ref:`User Guide <multinomial_naive_bayes>`.\n\nParameters\n----------\nalpha : float or array-like of shape (n_features,), default=1.0\n    Additive (Laplace/Lidstone) smoothing parameter\n    (set alpha=0 and force_alpha=True, for no smoothing).\n\nforce_alpha : bool, default=True\n    If False and alpha is less than 1e-10, it will set alpha to\n    1e-10. If True, alpha will remain unchanged. This may cause\n    numerical errors if alpha is too close to 0.\n\n    .. versionadded:: 1.2\n    .. versionchanged:: 1.4\n       The default value of `force_alpha` changed to `True`.\n\nfit_prior : bool, default=True\n    Whether to learn class prior probabilities or not.\n    If false, a uniform prior will be used.\n\nclass_prior : array-like of shape (n_classes,), default=None\n    Prior probabilities of the classes. If specified, the priors are not\n    adjusted according to the data.\n\nAttributes\n----------\nclass_count_ : ndarray of shape (n_classes,)\n    Number of samples encountered for each class during fitting. This\n    value is weighted by the sample weight when provided.\n\nclass_log_prior_ : ndarray of shape (n_classes,)\n    Smoothed empirical log probability for each class.\n\nclasses_ : ndarray of shape (n_classes,)\n    Class labels known to the classifier\n\nfeature_count_ : ndarray of shape (n_classes, n_features)\n    Number of samples encountered for each (class, feature)\n    during fitting. This value is weighted by the sample weight when\n    provided.\n\nfeature_log_prob_ : ndarray of shape (n_classes, n_features)\n    Empirical log probability of features\n    given a class, ``P(x_i|y)``.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nBernoulliNB : Naive Bayes classifier for multivariate Bernoulli models.\nCategoricalNB : Naive Bayes classifier for categorical features.\nComplementNB : Complement Naive Bayes classifier.\nGaussianNB : Gaussian Naive Bayes.\n\nReferences\n----------\nC.D. Manning, P. Raghavan and H. Schuetze (2008). Introduction to\nInformation Retrieval. Cambridge University Press, pp. 234-265.\nhttps://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html\n\nExamples\n--------\n>>> import numpy as np\n>>> rng = np.random.RandomState(1)\n>>> X = rng.randint(5, size=(6, 100))\n>>> y = np.array([1, 2, 3, 4, 5, 6])\n>>> from sklearn.naive_bayes import MultinomialNB\n>>> clf = MultinomialNB()\n>>> clf.fit(X, y)\nMultinomialNB()\n>>> print(clf.predict(X[2:3]))\n[3]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NaiveBayesModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NaiveBayesModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CategoricalNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ComplementNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GaussianNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultinomialNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GaussianNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CategoricalNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ComplementNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultinomialNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBinarize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitPrior",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CategoricalNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ComplementNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultinomialNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamForceAlpha",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BernoulliNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CategoricalNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ComplementNBMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultinomialNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinCategories",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CategoricalNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNorm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ComplementNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVarSmoothing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GaussianNBMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

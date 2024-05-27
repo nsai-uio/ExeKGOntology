@@ -1,0 +1,21 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "stats:VarMethod" "stats:StdMethod" "stats:MeanMethod" "stats:FromnumericModule" "stats:PtpMethod" "stats:NumpyModule" "stats:CoreModule" ; /*classes style*/
+	"stats:MeanMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:MeanMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:MeanMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:FromnumericModule" -> "stats:CoreModule" [ label = "rdfs:subClassOf" ];
+	"stats:PtpMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:PtpMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:PtpMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:NumpyModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"stats:StdMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:StdMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:StdMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:VarMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:VarMethod" -> "stats:FromnumericModule" [ label = "rdfs:subClassOf" ];
+	"stats:VarMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CoreModule" -> "stats:NumpyModule" [ label = "rdfs:subClassOf" ];
+
+}

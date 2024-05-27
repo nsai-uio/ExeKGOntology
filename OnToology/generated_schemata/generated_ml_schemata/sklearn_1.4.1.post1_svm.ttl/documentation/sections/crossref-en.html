@@ -1,0 +1,3090 @@
+<h2 id="crossreference" class="list">Cross-reference for [Ontology Name] classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by [Ontology Name].
+<div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">
+            <span>linear s v c method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">
+            <span>linear s v r method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">
+            <span>nu s v c method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">
+            <span>nu s v r method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">
+            <span>one class s v m method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">
+            <span>s v c method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">
+            <span>s v r method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+            <span>sklearn module</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">
+            <span>svm module</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">
+      <h3>linear s v c method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod</p>
+      <div class="comment">
+         <span class="markdown">Linear Support Vector Classification.
+
+Similar to SVC with parameter kernel='linear', but implemented in terms of
+liblinear rather than libsvm, so it has more flexibility in the choice of
+penalties and loss functions and should scale better to large numbers of
+samples.
+
+The main differences between :class:`~sklearn.svm.LinearSVC` and
+:class:`~sklearn.svm.SVC` lie in the loss function used by default, and in
+the handling of intercept regularization between those two implementations.
+
+This class supports both dense and sparse input and the multiclass support
+is handled according to a one-vs-the-rest scheme.
+
+Read more in the :ref:`User Guide &lt;svm_classification&gt;`.
+
+Parameters
+----------
+penalty : {'l1', 'l2'}, default='l2'
+    Specifies the norm used in the penalization. The 'l2'
+    penalty is the standard used in SVC. The 'l1' leads to ``coef_``
+    vectors that are sparse.
+
+loss : {'hinge', 'squared_hinge'}, default='squared_hinge'
+    Specifies the loss function. 'hinge' is the standard SVM loss
+    (used e.g. by the SVC class) while 'squared_hinge' is the
+    square of the hinge loss. The combination of ``penalty='l1'``
+    and ``loss='hinge'`` is not supported.
+
+dual : "auto" or bool, default=True
+    Select the algorithm to either solve the dual or primal
+    optimization problem. Prefer dual=False when n_samples &gt; n_features.
+    `dual="auto"` will choose the value of the parameter automatically,
+    based on the values of `n_samples`, `n_features`, `loss`, `multi_class`
+    and `penalty`. If `n_samples` &lt; `n_features` and optimizer supports
+    chosen `loss`, `multi_class` and `penalty`, then dual will be set to True,
+    otherwise it will be set to False.
+
+    .. versionchanged:: 1.3
+       The `"auto"` option is added in version 1.3 and will be the default
+       in version 1.5.
+
+tol : float, default=1e-4
+    Tolerance for stopping criteria.
+
+C : float, default=1.0
+    Regularization parameter. The strength of the regularization is
+    inversely proportional to C. Must be strictly positive.
+
+multi_class : {'ovr', 'crammer_singer'}, default='ovr'
+    Determines the multi-class strategy if `y` contains more than
+    two classes.
+    ``"ovr"`` trains n_classes one-vs-rest classifiers, while
+    ``"crammer_singer"`` optimizes a joint objective over all classes.
+    While `crammer_singer` is interesting from a theoretical perspective
+    as it is consistent, it is seldom used in practice as it rarely leads
+    to better accuracy and is more expensive to compute.
+    If ``"crammer_singer"`` is chosen, the options loss, penalty and dual
+    will be ignored.
+
+fit_intercept : bool, default=True
+    Whether or not to fit an intercept. If set to True, the feature vector
+    is extended to include an intercept term: `[x_1, ..., x_n, 1]`, where
+    1 corresponds to the intercept. If set to False, no intercept will be
+    used in calculations (i.e. data is expected to be already centered).
+
+intercept_scaling : float, default=1.0
+    When `fit_intercept` is True, the instance vector x becomes ``[x_1,
+    ..., x_n, intercept_scaling]``, i.e. a "synthetic" feature with a
+    constant value equal to `intercept_scaling` is appended to the instance
+    vector. The intercept becomes intercept_scaling * synthetic feature
+    weight. Note that liblinear internally penalizes the intercept,
+    treating it like any other term in the feature vector. To reduce the
+    impact of the regularization on the intercept, the `intercept_scaling`
+    parameter can be set to a value greater than 1; the higher the value of
+    `intercept_scaling`, the lower the impact of regularization on it.
+    Then, the weights become `[w_x_1, ..., w_x_n,
+    w_intercept*intercept_scaling]`, where `w_x_1, ..., w_x_n` represent
+    the feature weights and the intercept weight is scaled by
+    `intercept_scaling`. This scaling allows the intercept term to have a
+    different regularization behavior compared to the other features.
+
+class_weight : dict or 'balanced', default=None
+    Set the parameter C of class i to ``class_weight[i]*C`` for
+    SVC. If not given, all classes are supposed to have
+    weight one.
+    The "balanced" mode uses the values of y to automatically adjust
+    weights inversely proportional to class frequencies in the input data
+    as ``n_samples / (n_classes * np.bincount(y))``.
+
+verbose : int, default=0
+    Enable verbose output. Note that this setting takes advantage of a
+    per-process runtime setting in liblinear that, if enabled, may not work
+    properly in a multithreaded context.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the pseudo random number generation for shuffling the data for
+    the dual coordinate descent (if ``dual=True``). When ``dual=False`` the
+    underlying implementation of :class:`LinearSVC` is not random and
+    ``random_state`` has no effect on the results.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+max_iter : int, default=1000
+    The maximum number of iterations to be run.
+
+Attributes
+----------
+coef_ : ndarray of shape (1, n_features) if n_classes == 2             else (n_classes, n_features)
+    Weights assigned to the features (coefficients in the primal
+    problem).
+
+    ``coef_`` is a readonly property derived from ``raw_coef_`` that
+    follows the internal memory layout of liblinear.
+
+intercept_ : ndarray of shape (1,) if n_classes == 2 else (n_classes,)
+    Constants in decision function.
+
+classes_ : ndarray of shape (n_classes,)
+    The unique classes labels.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Maximum number of iterations run across all classes.
+
+See Also
+--------
+SVC : Implementation of Support Vector Machine classifier using libsvm:
+    the kernel can be non-linear but its SMO algorithm does not
+    scale to large number of samples as LinearSVC does.
+
+    Furthermore SVC multi-class mode is implemented using one
+    vs one scheme while LinearSVC uses one vs the rest. It is
+    possible to implement one vs the rest with SVC by using the
+    :class:`~sklearn.multiclass.OneVsRestClassifier` wrapper.
+
+    Finally SVC can fit dense data without memory copy if the input
+    is C-contiguous. Sparse data will still incur memory copy though.
+
+sklearn.linear_model.SGDClassifier : SGDClassifier can optimize the same
+    cost function as LinearSVC
+    by adjusting the penalty and loss parameters. In addition it requires
+    less memory, allows incremental (online) learning, and implements
+    various loss functions and regularization regimes.
+
+Notes
+-----
+The underlying C implementation uses a random number generator to
+select features when fitting the model. It is thus not uncommon
+to have slightly different results for the same input data. If
+that happens, try with a smaller ``tol`` parameter.
+
+The underlying implementation, liblinear, uses a sparse internal
+representation for the data that will incur a memory copy.
+
+Predict output may not match that of standalone liblinear in certain
+cases. See :ref:`differences from liblinear &lt;liblinear_differences&gt;`
+in the narrative documentation.
+
+References
+----------
+`LIBLINEAR: A Library for Large Linear Classification
+&lt;https://www.csie.ntu.edu.tw/~cjlin/liblinear/&gt;`__
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.svm import LinearSVC
+&gt;&gt;&gt; from sklearn.pipeline import make_pipeline
+&gt;&gt;&gt; from sklearn.preprocessing import StandardScaler
+&gt;&gt;&gt; from sklearn.datasets import make_classification
+&gt;&gt;&gt; X, y = make_classification(n_features=4, random_state=0)
+&gt;&gt;&gt; clf = make_pipeline(StandardScaler(),
+...                     LinearSVC(dual="auto", random_state=0, tol=1e-5))
+&gt;&gt;&gt; clf.fit(X, y)
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('linearsvc', LinearSVC(dual='auto', random_state=0, tol=1e-05))])
+
+&gt;&gt;&gt; print(clf.named_steps['linearsvc'].coef_)
+[[0.141...   0.526... 0.679... 0.493...]]
+
+&gt;&gt;&gt; print(clf.named_steps['linearsvc'].intercept_)
+[0.1693...]
+&gt;&gt;&gt; print(clf.predict([[0, 0, 0, 0]]))
+[1]</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod">train method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC">has param c</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight">has param class weight</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual">has param dual</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept">has param fit intercept</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling">has param intercept scaling</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss">has param loss</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">has param max iter</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass">has param multi class</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPenalty"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPenalty">has param penalty</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">has param random state</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">has param tol</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">has param verbose</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod">has binary classification method</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod">has multiclass classification method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">
+      <h3>linear s v r method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod</p>
+      <div class="comment">
+         <span class="markdown">Linear Support Vector Regression.
+
+Similar to SVR with parameter kernel='linear', but implemented in terms of
+liblinear rather than libsvm, so it has more flexibility in the choice of
+penalties and loss functions and should scale better to large numbers of
+samples.
+
+The main differences between :class:`~sklearn.svm.LinearSVR` and
+:class:`~sklearn.svm.SVR` lie in the loss function used by default, and in
+the handling of intercept regularization between those two implementations.
+
+This class supports both dense and sparse input.
+
+Read more in the :ref:`User Guide &lt;svm_regression&gt;`.
+
+.. versionadded:: 0.16
+
+Parameters
+----------
+epsilon : float, default=0.0
+    Epsilon parameter in the epsilon-insensitive loss function. Note
+    that the value of this parameter depends on the scale of the target
+    variable y. If unsure, set ``epsilon=0``.
+
+tol : float, default=1e-4
+    Tolerance for stopping criteria.
+
+C : float, default=1.0
+    Regularization parameter. The strength of the regularization is
+    inversely proportional to C. Must be strictly positive.
+
+loss : {'epsilon_insensitive', 'squared_epsilon_insensitive'},             default='epsilon_insensitive'
+    Specifies the loss function. The epsilon-insensitive loss
+    (standard SVR) is the L1 loss, while the squared epsilon-insensitive
+    loss ('squared_epsilon_insensitive') is the L2 loss.
+
+fit_intercept : bool, default=True
+    Whether or not to fit an intercept. If set to True, the feature vector
+    is extended to include an intercept term: `[x_1, ..., x_n, 1]`, where
+    1 corresponds to the intercept. If set to False, no intercept will be
+    used in calculations (i.e. data is expected to be already centered).
+
+intercept_scaling : float, default=1.0
+    When `fit_intercept` is True, the instance vector x becomes `[x_1, ...,
+    x_n, intercept_scaling]`, i.e. a "synthetic" feature with a constant
+    value equal to `intercept_scaling` is appended to the instance vector.
+    The intercept becomes intercept_scaling * synthetic feature weight.
+    Note that liblinear internally penalizes the intercept, treating it
+    like any other term in the feature vector. To reduce the impact of the
+    regularization on the intercept, the `intercept_scaling` parameter can
+    be set to a value greater than 1; the higher the value of
+    `intercept_scaling`, the lower the impact of regularization on it.
+    Then, the weights become `[w_x_1, ..., w_x_n,
+    w_intercept*intercept_scaling]`, where `w_x_1, ..., w_x_n` represent
+    the feature weights and the intercept weight is scaled by
+    `intercept_scaling`. This scaling allows the intercept term to have a
+    different regularization behavior compared to the other features.
+
+dual : "auto" or bool, default=True
+    Select the algorithm to either solve the dual or primal
+    optimization problem. Prefer dual=False when n_samples &gt; n_features.
+    `dual="auto"` will choose the value of the parameter automatically,
+    based on the values of `n_samples`, `n_features` and `loss`. If
+    `n_samples` &lt; `n_features` and optimizer supports chosen `loss`,
+    then dual will be set to True, otherwise it will be set to False.
+
+    .. versionchanged:: 1.3
+       The `"auto"` option is added in version 1.3 and will be the default
+       in version 1.5.
+
+verbose : int, default=0
+    Enable verbose output. Note that this setting takes advantage of a
+    per-process runtime setting in liblinear that, if enabled, may not work
+    properly in a multithreaded context.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the pseudo random number generation for shuffling the data.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+max_iter : int, default=1000
+    The maximum number of iterations to be run.
+
+Attributes
+----------
+coef_ : ndarray of shape (n_features) if n_classes == 2             else (n_classes, n_features)
+    Weights assigned to the features (coefficients in the primal
+    problem).
+
+    `coef_` is a readonly property derived from `raw_coef_` that
+    follows the internal memory layout of liblinear.
+
+intercept_ : ndarray of shape (1) if n_classes == 2 else (n_classes)
+    Constants in decision function.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Maximum number of iterations run across all classes.
+
+See Also
+--------
+LinearSVC : Implementation of Support Vector Machine classifier using the
+    same library as this class (liblinear).
+
+SVR : Implementation of Support Vector Machine regression using libsvm:
+    the kernel can be non-linear but its SMO algorithm does not scale to
+    large number of samples as :class:`~sklearn.svm.LinearSVR` does.
+
+sklearn.linear_model.SGDRegressor : SGDRegressor can optimize the same cost
+    function as LinearSVR
+    by adjusting the penalty and loss parameters. In addition it requires
+    less memory, allows incremental (online) learning, and implements
+    various loss functions and regularization regimes.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.svm import LinearSVR
+&gt;&gt;&gt; from sklearn.pipeline import make_pipeline
+&gt;&gt;&gt; from sklearn.preprocessing import StandardScaler
+&gt;&gt;&gt; from sklearn.datasets import make_regression
+&gt;&gt;&gt; X, y = make_regression(n_features=4, random_state=0)
+&gt;&gt;&gt; regr = make_pipeline(StandardScaler(),
+...                      LinearSVR(dual="auto", random_state=0, tol=1e-5))
+&gt;&gt;&gt; regr.fit(X, y)
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('linearsvr', LinearSVR(dual='auto', random_state=0, tol=1e-05))])
+
+&gt;&gt;&gt; print(regr.named_steps['linearsvr'].coef_)
+[18.582... 27.023... 44.357... 64.522...]
+&gt;&gt;&gt; print(regr.named_steps['linearsvr'].intercept_)
+[-4...]
+&gt;&gt;&gt; print(regr.predict([[0, 0, 0, 0]]))
+[-2.384...]</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod">train method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC">has param c</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual">has param dual</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon">has param epsilon</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept">has param fit intercept</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling">has param intercept scaling</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss">has param loss</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">has param max iter</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">has param random state</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">has param tol</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">has param verbose</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod">has support vector regression method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">
+      <h3>nu s v c method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod</p>
+      <div class="comment">
+         <span class="markdown">Nu-Support Vector Classification.
+
+Similar to SVC but uses a parameter to control the number of support
+vectors.
+
+The implementation is based on libsvm.
+
+Read more in the :ref:`User Guide &lt;svm_classification&gt;`.
+
+Parameters
+----------
+nu : float, default=0.5
+    An upper bound on the fraction of margin errors (see :ref:`User Guide
+    &lt;nu_svc&gt;`) and a lower bound of the fraction of support vectors.
+    Should be in the interval (0, 1].
+
+kernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'
+    Specifies the kernel type to be used in the algorithm.
+    If none is given, 'rbf' will be used. If a callable is given it is
+    used to precompute the kernel matrix. For an intuitive
+    visualization of different kernel types see
+    :ref:`sphx_glr_auto_examples_svm_plot_svm_kernels.py`.
+
+degree : int, default=3
+    Degree of the polynomial kernel function ('poly').
+    Must be non-negative. Ignored by all other kernels.
+
+gamma : {'scale', 'auto'} or float, default='scale'
+    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.
+
+    - if ``gamma='scale'`` (default) is passed then it uses
+      1 / (n_features * X.var()) as value of gamma,
+    - if 'auto', uses 1 / n_features
+    - if float, must be non-negative.
+
+    .. versionchanged:: 0.22
+       The default value of ``gamma`` changed from 'auto' to 'scale'.
+
+coef0 : float, default=0.0
+    Independent term in kernel function.
+    It is only significant in 'poly' and 'sigmoid'.
+
+shrinking : bool, default=True
+    Whether to use the shrinking heuristic.
+    See the :ref:`User Guide &lt;shrinking_svm&gt;`.
+
+probability : bool, default=False
+    Whether to enable probability estimates. This must be enabled prior
+    to calling `fit`, will slow down that method as it internally uses
+    5-fold cross-validation, and `predict_proba` may be inconsistent with
+    `predict`. Read more in the :ref:`User Guide &lt;scores_probabilities&gt;`.
+
+tol : float, default=1e-3
+    Tolerance for stopping criterion.
+
+cache_size : float, default=200
+    Specify the size of the kernel cache (in MB).
+
+class_weight : {dict, 'balanced'}, default=None
+    Set the parameter C of class i to class_weight[i]*C for
+    SVC. If not given, all classes are supposed to have
+    weight one. The "balanced" mode uses the values of y to automatically
+    adjust weights inversely proportional to class frequencies as
+    ``n_samples / (n_classes * np.bincount(y))``.
+
+verbose : bool, default=False
+    Enable verbose output. Note that this setting takes advantage of a
+    per-process runtime setting in libsvm that, if enabled, may not work
+    properly in a multithreaded context.
+
+max_iter : int, default=-1
+    Hard limit on iterations within solver, or -1 for no limit.
+
+decision_function_shape : {'ovo', 'ovr'}, default='ovr'
+    Whether to return a one-vs-rest ('ovr') decision function of shape
+    (n_samples, n_classes) as all other classifiers, or the original
+    one-vs-one ('ovo') decision function of libsvm which has shape
+    (n_samples, n_classes * (n_classes - 1) / 2). However, one-vs-one
+    ('ovo') is always used as multi-class strategy. The parameter is
+    ignored for binary classification.
+
+    .. versionchanged:: 0.19
+        decision_function_shape is 'ovr' by default.
+
+    .. versionadded:: 0.17
+       *decision_function_shape='ovr'* is recommended.
+
+    .. versionchanged:: 0.17
+       Deprecated *decision_function_shape='ovo' and None*.
+
+break_ties : bool, default=False
+    If true, ``decision_function_shape='ovr'``, and number of classes &gt; 2,
+    :term:`predict` will break ties according to the confidence values of
+    :term:`decision_function`; otherwise the first class among the tied
+    classes is returned. Please note that breaking ties comes at a
+    relatively high computational cost compared to a simple predict.
+
+    .. versionadded:: 0.22
+
+random_state : int, RandomState instance or None, default=None
+    Controls the pseudo random number generation for shuffling the data for
+    probability estimates. Ignored when `probability` is False.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Attributes
+----------
+class_weight_ : ndarray of shape (n_classes,)
+    Multipliers of parameter C of each class.
+    Computed based on the ``class_weight`` parameter.
+
+classes_ : ndarray of shape (n_classes,)
+    The unique classes labels.
+
+coef_ : ndarray of shape (n_classes * (n_classes -1) / 2, n_features)
+    Weights assigned to the features (coefficients in the primal
+    problem). This is only available in the case of a linear kernel.
+
+    `coef_` is readonly property derived from `dual_coef_` and
+    `support_vectors_`.
+
+dual_coef_ : ndarray of shape (n_classes - 1, n_SV)
+    Dual coefficients of the support vector in the decision
+    function (see :ref:`sgd_mathematical_formulation`), multiplied by
+    their targets.
+    For multiclass, coefficient for all 1-vs-1 classifiers.
+    The layout of the coefficients in the multiclass case is somewhat
+    non-trivial. See the :ref:`multi-class section of the User Guide
+    &lt;svm_multi_class&gt;` for details.
+
+fit_status_ : int
+    0 if correctly fitted, 1 if the algorithm did not converge.
+
+intercept_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)
+    Constants in decision function.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : ndarray of shape (n_classes * (n_classes - 1) // 2,)
+    Number of iterations run by the optimization routine to fit the model.
+    The shape of this attribute depends on the number of models optimized
+    which in turn depends on the number of classes.
+
+    .. versionadded:: 1.1
+
+support_ : ndarray of shape (n_SV,)
+    Indices of support vectors.
+
+support_vectors_ : ndarray of shape (n_SV, n_features)
+    Support vectors.
+
+n_support_ : ndarray of shape (n_classes,), dtype=int32
+    Number of support vectors for each class.
+
+fit_status_ : int
+    0 if correctly fitted, 1 if the algorithm did not converge.
+
+probA_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)
+
+probB_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)
+    If `probability=True`, it corresponds to the parameters learned in
+    Platt scaling to produce probability estimates from decision values.
+    If `probability=False`, it's an empty array. Platt scaling uses the
+    logistic function
+    ``1 / (1 + exp(decision_value * probA_ + probB_))``
+    where ``probA_`` and ``probB_`` are learned from the dataset [2]_. For
+    more information on the multiclass case and training procedure see
+    section 8 of [1]_.
+
+shape_fit_ : tuple of int of shape (n_dimensions_of_X,)
+    Array dimensions of training vector ``X``.
+
+See Also
+--------
+SVC : Support Vector Machine for classification using libsvm.
+
+LinearSVC : Scalable linear Support Vector Machine for classification using
+    liblinear.
+
+References
+----------
+.. [1] `LIBSVM: A Library for Support Vector Machines
+    &lt;http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf&gt;`_
+
+.. [2] `Platt, John (1999). "Probabilistic Outputs for Support Vector
+    Machines and Comparisons to Regularized Likelihood Methods"
+    &lt;https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393&gt;`_
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; X = np.array([[-1, -1], [-2, -1], [1, 1], [2, 1]])
+&gt;&gt;&gt; y = np.array([1, 1, 2, 2])
+&gt;&gt;&gt; from sklearn.pipeline import make_pipeline
+&gt;&gt;&gt; from sklearn.preprocessing import StandardScaler
+&gt;&gt;&gt; from sklearn.svm import NuSVC
+&gt;&gt;&gt; clf = make_pipeline(StandardScaler(), NuSVC())
+&gt;&gt;&gt; clf.fit(X, y)
+Pipeline(steps=[('standardscaler', StandardScaler()), ('nusvc', NuSVC())])
+&gt;&gt;&gt; print(clf.predict([[-0.8, -1]]))
+[1]</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod">train method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies">has param break ties</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize">has param cache size</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight">has param class weight</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">has param coef0</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape">has param decision function shape</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">has param degree</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">has param gamma</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel">has param kernel</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">has param max iter</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu">has param nu</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability">has param probability</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">has param random state</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking">has param shrinking</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">has param tol</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">has param verbose</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod">has binary classification method</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod">has multiclass classification method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">
+      <h3>nu s v r method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod</p>
+      <div class="comment">
+         <span class="markdown">Nu Support Vector Regression.
+
+Similar to NuSVC, for regression, uses a parameter nu to control
+the number of support vectors. However, unlike NuSVC, where nu
+replaces C, here nu replaces the parameter epsilon of epsilon-SVR.
+
+The implementation is based on libsvm.
+
+Read more in the :ref:`User Guide &lt;svm_regression&gt;`.
+
+Parameters
+----------
+nu : float, default=0.5
+    An upper bound on the fraction of training errors and a lower bound of
+    the fraction of support vectors. Should be in the interval (0, 1].  By
+    default 0.5 will be taken.
+
+C : float, default=1.0
+    Penalty parameter C of the error term.
+
+kernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'
+     Specifies the kernel type to be used in the algorithm.
+     If none is given, 'rbf' will be used. If a callable is given it is
+     used to precompute the kernel matrix.
+
+degree : int, default=3
+    Degree of the polynomial kernel function ('poly').
+    Must be non-negative. Ignored by all other kernels.
+
+gamma : {'scale', 'auto'} or float, default='scale'
+    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.
+
+    - if ``gamma='scale'`` (default) is passed then it uses
+      1 / (n_features * X.var()) as value of gamma,
+    - if 'auto', uses 1 / n_features
+    - if float, must be non-negative.
+
+    .. versionchanged:: 0.22
+       The default value of ``gamma`` changed from 'auto' to 'scale'.
+
+coef0 : float, default=0.0
+    Independent term in kernel function.
+    It is only significant in 'poly' and 'sigmoid'.
+
+shrinking : bool, default=True
+    Whether to use the shrinking heuristic.
+    See the :ref:`User Guide &lt;shrinking_svm&gt;`.
+
+tol : float, default=1e-3
+    Tolerance for stopping criterion.
+
+cache_size : float, default=200
+    Specify the size of the kernel cache (in MB).
+
+verbose : bool, default=False
+    Enable verbose output. Note that this setting takes advantage of a
+    per-process runtime setting in libsvm that, if enabled, may not work
+    properly in a multithreaded context.
+
+max_iter : int, default=-1
+    Hard limit on iterations within solver, or -1 for no limit.
+
+Attributes
+----------
+coef_ : ndarray of shape (1, n_features)
+    Weights assigned to the features (coefficients in the primal
+    problem). This is only available in the case of a linear kernel.
+
+    `coef_` is readonly property derived from `dual_coef_` and
+    `support_vectors_`.
+
+dual_coef_ : ndarray of shape (1, n_SV)
+    Coefficients of the support vector in the decision function.
+
+fit_status_ : int
+    0 if correctly fitted, 1 otherwise (will raise warning)
+
+intercept_ : ndarray of shape (1,)
+    Constants in decision function.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Number of iterations run by the optimization routine to fit the model.
+
+    .. versionadded:: 1.1
+
+n_support_ : ndarray of shape (1,), dtype=int32
+    Number of support vectors.
+
+shape_fit_ : tuple of int of shape (n_dimensions_of_X,)
+    Array dimensions of training vector ``X``.
+
+support_ : ndarray of shape (n_SV,)
+    Indices of support vectors.
+
+support_vectors_ : ndarray of shape (n_SV, n_features)
+    Support vectors.
+
+See Also
+--------
+NuSVC : Support Vector Machine for classification implemented with libsvm
+    with a parameter to control the number of support vectors.
+
+SVR : Epsilon Support Vector Machine for regression implemented with
+    libsvm.
+
+References
+----------
+.. [1] `LIBSVM: A Library for Support Vector Machines
+    &lt;http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf&gt;`_
+
+.. [2] `Platt, John (1999). "Probabilistic Outputs for Support Vector
+    Machines and Comparisons to Regularized Likelihood Methods"
+    &lt;https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393&gt;`_
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.svm import NuSVR
+&gt;&gt;&gt; from sklearn.pipeline import make_pipeline
+&gt;&gt;&gt; from sklearn.preprocessing import StandardScaler
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; n_samples, n_features = 10, 5
+&gt;&gt;&gt; np.random.seed(0)
+&gt;&gt;&gt; y = np.random.randn(n_samples)
+&gt;&gt;&gt; X = np.random.randn(n_samples, n_features)
+&gt;&gt;&gt; regr = make_pipeline(StandardScaler(), NuSVR(C=1.0, nu=0.1))
+&gt;&gt;&gt; regr.fit(X, y)
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('nusvr', NuSVR(nu=0.1))])</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod">train method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC">has param c</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize">has param cache size</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">has param coef0</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">has param degree</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">has param gamma</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel">has param kernel</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">has param max iter</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu">has param nu</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking">has param shrinking</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">has param tol</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">has param verbose</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod">has support vector regression method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">
+      <h3>one class s v m method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod</p>
+      <div class="comment">
+         <span class="markdown">Unsupervised Outlier Detection.
+
+Estimate the support of a high-dimensional distribution.
+
+The implementation is based on libsvm.
+
+Read more in the :ref:`User Guide &lt;outlier_detection&gt;`.
+
+Parameters
+----------
+kernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'
+     Specifies the kernel type to be used in the algorithm.
+     If none is given, 'rbf' will be used. If a callable is given it is
+     used to precompute the kernel matrix.
+
+degree : int, default=3
+    Degree of the polynomial kernel function ('poly').
+    Must be non-negative. Ignored by all other kernels.
+
+gamma : {'scale', 'auto'} or float, default='scale'
+    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.
+
+    - if ``gamma='scale'`` (default) is passed then it uses
+      1 / (n_features * X.var()) as value of gamma,
+    - if 'auto', uses 1 / n_features
+    - if float, must be non-negative.
+
+    .. versionchanged:: 0.22
+       The default value of ``gamma`` changed from 'auto' to 'scale'.
+
+coef0 : float, default=0.0
+    Independent term in kernel function.
+    It is only significant in 'poly' and 'sigmoid'.
+
+tol : float, default=1e-3
+    Tolerance for stopping criterion.
+
+nu : float, default=0.5
+    An upper bound on the fraction of training
+    errors and a lower bound of the fraction of support
+    vectors. Should be in the interval (0, 1]. By default 0.5
+    will be taken.
+
+shrinking : bool, default=True
+    Whether to use the shrinking heuristic.
+    See the :ref:`User Guide &lt;shrinking_svm&gt;`.
+
+cache_size : float, default=200
+    Specify the size of the kernel cache (in MB).
+
+verbose : bool, default=False
+    Enable verbose output. Note that this setting takes advantage of a
+    per-process runtime setting in libsvm that, if enabled, may not work
+    properly in a multithreaded context.
+
+max_iter : int, default=-1
+    Hard limit on iterations within solver, or -1 for no limit.
+
+Attributes
+----------
+coef_ : ndarray of shape (1, n_features)
+    Weights assigned to the features (coefficients in the primal
+    problem). This is only available in the case of a linear kernel.
+
+    `coef_` is readonly property derived from `dual_coef_` and
+    `support_vectors_`.
+
+dual_coef_ : ndarray of shape (1, n_SV)
+    Coefficients of the support vectors in the decision function.
+
+fit_status_ : int
+    0 if correctly fitted, 1 otherwise (will raise warning)
+
+intercept_ : ndarray of shape (1,)
+    Constant in the decision function.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Number of iterations run by the optimization routine to fit the model.
+
+    .. versionadded:: 1.1
+
+n_support_ : ndarray of shape (n_classes,), dtype=int32
+    Number of support vectors for each class.
+
+offset_ : float
+    Offset used to define the decision function from the raw scores.
+    We have the relation: decision_function = score_samples - `offset_`.
+    The offset is the opposite of `intercept_` and is provided for
+    consistency with other outlier detection algorithms.
+
+    .. versionadded:: 0.20
+
+shape_fit_ : tuple of int of shape (n_dimensions_of_X,)
+    Array dimensions of training vector ``X``.
+
+support_ : ndarray of shape (n_SV,)
+    Indices of support vectors.
+
+support_vectors_ : ndarray of shape (n_SV, n_features)
+    Support vectors.
+
+See Also
+--------
+sklearn.linear_model.SGDOneClassSVM : Solves linear One-Class SVM using
+    Stochastic Gradient Descent.
+sklearn.neighbors.LocalOutlierFactor : Unsupervised Outlier Detection using
+    Local Outlier Factor (LOF).
+sklearn.ensemble.IsolationForest : Isolation Forest Algorithm.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.svm import OneClassSVM
+&gt;&gt;&gt; X = [[0], [0.44], [0.45], [0.46], [1]]
+&gt;&gt;&gt; clf = OneClassSVM(gamma='auto').fit(X)
+&gt;&gt;&gt; clf.predict(X)
+array([-1,  1,  1,  1, -1])
+&gt;&gt;&gt; clf.score_samples(X)
+array([1.7798..., 2.0547..., 2.0556..., 2.0561..., 1.7332...])</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod">train method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize">has param cache size</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">has param coef0</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">has param degree</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">has param gamma</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel">has param kernel</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">has param max iter</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu">has param nu</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking">has param shrinking</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">has param tol</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">has param verbose</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod">has regularized regression method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">
+      <h3>s v c method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod</p>
+      <div class="comment">
+         <span class="markdown">C-Support Vector Classification.
+
+The implementation is based on libsvm. The fit time scales at least
+quadratically with the number of samples and may be impractical
+beyond tens of thousands of samples. For large datasets
+consider using :class:`~sklearn.svm.LinearSVC` or
+:class:`~sklearn.linear_model.SGDClassifier` instead, possibly after a
+:class:`~sklearn.kernel_approximation.Nystroem` transformer or
+other :ref:`kernel_approximation`.
+
+The multiclass support is handled according to a one-vs-one scheme.
+
+For details on the precise mathematical formulation of the provided
+kernel functions and how `gamma`, `coef0` and `degree` affect each
+other, see the corresponding section in the narrative documentation:
+:ref:`svm_kernels`.
+
+To learn how to tune SVC's hyperparameters, see the following example:
+:ref:`sphx_glr_auto_examples_model_selection_plot_nested_cross_validation_iris.py`
+
+Read more in the :ref:`User Guide &lt;svm_classification&gt;`.
+
+Parameters
+----------
+C : float, default=1.0
+    Regularization parameter. The strength of the regularization is
+    inversely proportional to C. Must be strictly positive. The penalty
+    is a squared l2 penalty.
+
+kernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'
+    Specifies the kernel type to be used in the algorithm. If
+    none is given, 'rbf' will be used. If a callable is given it is used to
+    pre-compute the kernel matrix from data matrices; that matrix should be
+    an array of shape ``(n_samples, n_samples)``. For an intuitive
+    visualization of different kernel types see
+    :ref:`sphx_glr_auto_examples_svm_plot_svm_kernels.py`.
+
+degree : int, default=3
+    Degree of the polynomial kernel function ('poly').
+    Must be non-negative. Ignored by all other kernels.
+
+gamma : {'scale', 'auto'} or float, default='scale'
+    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.
+
+    - if ``gamma='scale'`` (default) is passed then it uses
+      1 / (n_features * X.var()) as value of gamma,
+    - if 'auto', uses 1 / n_features
+    - if float, must be non-negative.
+
+    .. versionchanged:: 0.22
+       The default value of ``gamma`` changed from 'auto' to 'scale'.
+
+coef0 : float, default=0.0
+    Independent term in kernel function.
+    It is only significant in 'poly' and 'sigmoid'.
+
+shrinking : bool, default=True
+    Whether to use the shrinking heuristic.
+    See the :ref:`User Guide &lt;shrinking_svm&gt;`.
+
+probability : bool, default=False
+    Whether to enable probability estimates. This must be enabled prior
+    to calling `fit`, will slow down that method as it internally uses
+    5-fold cross-validation, and `predict_proba` may be inconsistent with
+    `predict`. Read more in the :ref:`User Guide &lt;scores_probabilities&gt;`.
+
+tol : float, default=1e-3
+    Tolerance for stopping criterion.
+
+cache_size : float, default=200
+    Specify the size of the kernel cache (in MB).
+
+class_weight : dict or 'balanced', default=None
+    Set the parameter C of class i to class_weight[i]*C for
+    SVC. If not given, all classes are supposed to have
+    weight one.
+    The "balanced" mode uses the values of y to automatically adjust
+    weights inversely proportional to class frequencies in the input data
+    as ``n_samples / (n_classes * np.bincount(y))``.
+
+verbose : bool, default=False
+    Enable verbose output. Note that this setting takes advantage of a
+    per-process runtime setting in libsvm that, if enabled, may not work
+    properly in a multithreaded context.
+
+max_iter : int, default=-1
+    Hard limit on iterations within solver, or -1 for no limit.
+
+decision_function_shape : {'ovo', 'ovr'}, default='ovr'
+    Whether to return a one-vs-rest ('ovr') decision function of shape
+    (n_samples, n_classes) as all other classifiers, or the original
+    one-vs-one ('ovo') decision function of libsvm which has shape
+    (n_samples, n_classes * (n_classes - 1) / 2). However, note that
+    internally, one-vs-one ('ovo') is always used as a multi-class strategy
+    to train models; an ovr matrix is only constructed from the ovo matrix.
+    The parameter is ignored for binary classification.
+
+    .. versionchanged:: 0.19
+        decision_function_shape is 'ovr' by default.
+
+    .. versionadded:: 0.17
+       *decision_function_shape='ovr'* is recommended.
+
+    .. versionchanged:: 0.17
+       Deprecated *decision_function_shape='ovo' and None*.
+
+break_ties : bool, default=False
+    If true, ``decision_function_shape='ovr'``, and number of classes &gt; 2,
+    :term:`predict` will break ties according to the confidence values of
+    :term:`decision_function`; otherwise the first class among the tied
+    classes is returned. Please note that breaking ties comes at a
+    relatively high computational cost compared to a simple predict.
+
+    .. versionadded:: 0.22
+
+random_state : int, RandomState instance or None, default=None
+    Controls the pseudo random number generation for shuffling the data for
+    probability estimates. Ignored when `probability` is False.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Attributes
+----------
+class_weight_ : ndarray of shape (n_classes,)
+    Multipliers of parameter C for each class.
+    Computed based on the ``class_weight`` parameter.
+
+classes_ : ndarray of shape (n_classes,)
+    The classes labels.
+
+coef_ : ndarray of shape (n_classes * (n_classes - 1) / 2, n_features)
+    Weights assigned to the features (coefficients in the primal
+    problem). This is only available in the case of a linear kernel.
+
+    `coef_` is a readonly property derived from `dual_coef_` and
+    `support_vectors_`.
+
+dual_coef_ : ndarray of shape (n_classes -1, n_SV)
+    Dual coefficients of the support vector in the decision
+    function (see :ref:`sgd_mathematical_formulation`), multiplied by
+    their targets.
+    For multiclass, coefficient for all 1-vs-1 classifiers.
+    The layout of the coefficients in the multiclass case is somewhat
+    non-trivial. See the :ref:`multi-class section of the User Guide
+    &lt;svm_multi_class&gt;` for details.
+
+fit_status_ : int
+    0 if correctly fitted, 1 otherwise (will raise warning)
+
+intercept_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)
+    Constants in decision function.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : ndarray of shape (n_classes * (n_classes - 1) // 2,)
+    Number of iterations run by the optimization routine to fit the model.
+    The shape of this attribute depends on the number of models optimized
+    which in turn depends on the number of classes.
+
+    .. versionadded:: 1.1
+
+support_ : ndarray of shape (n_SV)
+    Indices of support vectors.
+
+support_vectors_ : ndarray of shape (n_SV, n_features)
+    Support vectors. An empty array if kernel is precomputed.
+
+n_support_ : ndarray of shape (n_classes,), dtype=int32
+    Number of support vectors for each class.
+
+probA_ : ndarray of shape (n_classes * (n_classes - 1) / 2)
+probB_ : ndarray of shape (n_classes * (n_classes - 1) / 2)
+    If `probability=True`, it corresponds to the parameters learned in
+    Platt scaling to produce probability estimates from decision values.
+    If `probability=False`, it's an empty array. Platt scaling uses the
+    logistic function
+    ``1 / (1 + exp(decision_value * probA_ + probB_))``
+    where ``probA_`` and ``probB_`` are learned from the dataset [2]_. For
+    more information on the multiclass case and training procedure see
+    section 8 of [1]_.
+
+shape_fit_ : tuple of int of shape (n_dimensions_of_X,)
+    Array dimensions of training vector ``X``.
+
+See Also
+--------
+SVR : Support Vector Machine for Regression implemented using libsvm.
+
+LinearSVC : Scalable Linear Support Vector Machine for classification
+    implemented using liblinear. Check the See Also section of
+    LinearSVC for more comparison element.
+
+References
+----------
+.. [1] `LIBSVM: A Library for Support Vector Machines
+    &lt;http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf&gt;`_
+
+.. [2] `Platt, John (1999). "Probabilistic Outputs for Support Vector
+    Machines and Comparisons to Regularized Likelihood Methods"
+    &lt;https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393&gt;`_
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.pipeline import make_pipeline
+&gt;&gt;&gt; from sklearn.preprocessing import StandardScaler
+&gt;&gt;&gt; X = np.array([[-1, -1], [-2, -1], [1, 1], [2, 1]])
+&gt;&gt;&gt; y = np.array([1, 1, 2, 2])
+&gt;&gt;&gt; from sklearn.svm import SVC
+&gt;&gt;&gt; clf = make_pipeline(StandardScaler(), SVC(gamma='auto'))
+&gt;&gt;&gt; clf.fit(X, y)
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('svc', SVC(gamma='auto'))])
+
+&gt;&gt;&gt; print(clf.predict([[-0.8, -1]]))
+[1]</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod">train method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies">has param break ties</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC">has param c</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize">has param cache size</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight">has param class weight</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">has param coef0</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape">has param decision function shape</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">has param degree</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">has param gamma</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel">has param kernel</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">has param max iter</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability">has param probability</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">has param random state</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking">has param shrinking</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">has param tol</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">has param verbose</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod">has binary classification method</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod">has multiclass classification method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">
+      <h3>s v r method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod</p>
+      <div class="comment">
+         <span class="markdown">Epsilon-Support Vector Regression.
+
+The free parameters in the model are C and epsilon.
+
+The implementation is based on libsvm. The fit time complexity
+is more than quadratic with the number of samples which makes it hard
+to scale to datasets with more than a couple of 10000 samples. For large
+datasets consider using :class:`~sklearn.svm.LinearSVR` or
+:class:`~sklearn.linear_model.SGDRegressor` instead, possibly after a
+:class:`~sklearn.kernel_approximation.Nystroem` transformer or
+other :ref:`kernel_approximation`.
+
+Read more in the :ref:`User Guide &lt;svm_regression&gt;`.
+
+Parameters
+----------
+kernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'
+     Specifies the kernel type to be used in the algorithm.
+     If none is given, 'rbf' will be used. If a callable is given it is
+     used to precompute the kernel matrix.
+
+degree : int, default=3
+    Degree of the polynomial kernel function ('poly').
+    Must be non-negative. Ignored by all other kernels.
+
+gamma : {'scale', 'auto'} or float, default='scale'
+    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.
+
+    - if ``gamma='scale'`` (default) is passed then it uses
+      1 / (n_features * X.var()) as value of gamma,
+    - if 'auto', uses 1 / n_features
+    - if float, must be non-negative.
+
+    .. versionchanged:: 0.22
+       The default value of ``gamma`` changed from 'auto' to 'scale'.
+
+coef0 : float, default=0.0
+    Independent term in kernel function.
+    It is only significant in 'poly' and 'sigmoid'.
+
+tol : float, default=1e-3
+    Tolerance for stopping criterion.
+
+C : float, default=1.0
+    Regularization parameter. The strength of the regularization is
+    inversely proportional to C. Must be strictly positive.
+    The penalty is a squared l2 penalty.
+
+epsilon : float, default=0.1
+     Epsilon in the epsilon-SVR model. It specifies the epsilon-tube
+     within which no penalty is associated in the training loss function
+     with points predicted within a distance epsilon from the actual
+     value. Must be non-negative.
+
+shrinking : bool, default=True
+    Whether to use the shrinking heuristic.
+    See the :ref:`User Guide &lt;shrinking_svm&gt;`.
+
+cache_size : float, default=200
+    Specify the size of the kernel cache (in MB).
+
+verbose : bool, default=False
+    Enable verbose output. Note that this setting takes advantage of a
+    per-process runtime setting in libsvm that, if enabled, may not work
+    properly in a multithreaded context.
+
+max_iter : int, default=-1
+    Hard limit on iterations within solver, or -1 for no limit.
+
+Attributes
+----------
+coef_ : ndarray of shape (1, n_features)
+    Weights assigned to the features (coefficients in the primal
+    problem). This is only available in the case of a linear kernel.
+
+    `coef_` is readonly property derived from `dual_coef_` and
+    `support_vectors_`.
+
+dual_coef_ : ndarray of shape (1, n_SV)
+    Coefficients of the support vector in the decision function.
+
+fit_status_ : int
+    0 if correctly fitted, 1 otherwise (will raise warning)
+
+intercept_ : ndarray of shape (1,)
+    Constants in decision function.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Defined only when `X`
+    has feature names that are all strings.
+
+    .. versionadded:: 1.0
+
+n_iter_ : int
+    Number of iterations run by the optimization routine to fit the model.
+
+    .. versionadded:: 1.1
+
+n_support_ : ndarray of shape (1,), dtype=int32
+    Number of support vectors.
+
+shape_fit_ : tuple of int of shape (n_dimensions_of_X,)
+    Array dimensions of training vector ``X``.
+
+support_ : ndarray of shape (n_SV,)
+    Indices of support vectors.
+
+support_vectors_ : ndarray of shape (n_SV, n_features)
+    Support vectors.
+
+See Also
+--------
+NuSVR : Support Vector Machine for regression implemented using libsvm
+    using a parameter to control the number of support vectors.
+
+LinearSVR : Scalable Linear Support Vector Machine for regression
+    implemented using liblinear.
+
+References
+----------
+.. [1] `LIBSVM: A Library for Support Vector Machines
+    &lt;http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf&gt;`_
+
+.. [2] `Platt, John (1999). "Probabilistic Outputs for Support Vector
+    Machines and Comparisons to Regularized Likelihood Methods"
+    &lt;https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393&gt;`_
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.svm import SVR
+&gt;&gt;&gt; from sklearn.pipeline import make_pipeline
+&gt;&gt;&gt; from sklearn.preprocessing import StandardScaler
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; n_samples, n_features = 10, 5
+&gt;&gt;&gt; rng = np.random.RandomState(0)
+&gt;&gt;&gt; y = rng.randn(n_samples)
+&gt;&gt;&gt; X = rng.randn(n_samples, n_features)
+&gt;&gt;&gt; regr = make_pipeline(StandardScaler(), SVR(C=1.0, epsilon=0.2))
+&gt;&gt;&gt; regr.fit(X, y)
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('svr', SVR(epsilon=0.2))])</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod">train method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC">has param c</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize">has param cache size</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">has param coef0</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">has param degree</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon">has param epsilon</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">has param gamma</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel">has param kernel</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">has param max iter</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking">has param shrinking</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">has param tol</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">has param verbose</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod">has support vector regression method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+      <h3>sklearn module<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module">module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">svm module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule">
+      <h3>svm module<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">sklearn module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod">
+            <span>has binary classification method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod">
+            <span>has multiclass classification method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod">
+            <span>has regularized regression method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod">
+            <span>has support vector regression method</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod">
+      <h3>has binary classification method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod">has train method</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification">binary classification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod">
+      <h3>has multiclass classification method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod">has train method</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification">multiclass classification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod">
+      <h3>has regularized regression method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod">has train method</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RegularizedRegression"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RegularizedRegression">regularized regression</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod">
+      <h3>has support vector regression method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod">has train method</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SupportVectorRegression"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SupportVectorRegression">support vector regression</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies">
+            <span>has param break ties</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC">
+            <span>has param c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize">
+            <span>has param cache size</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight">
+            <span>has param class weight</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">
+            <span>has param coef0</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape">
+            <span>has param decision function shape</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">
+            <span>has param degree</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual">
+            <span>has param dual</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon">
+            <span>has param epsilon</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept">
+            <span>has param fit intercept</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">
+            <span>has param gamma</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling">
+            <span>has param intercept scaling</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel">
+            <span>has param kernel</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss">
+            <span>has param loss</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">
+            <span>has param max iter</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass">
+            <span>has param multi class</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu">
+            <span>has param nu</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPenalty"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPenalty">
+            <span>has param penalty</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability">
+            <span>has param probability</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">
+            <span>has param random state</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking">
+            <span>has param shrinking</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">
+            <span>has param tol</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">
+            <span>has param verbose</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies">
+      <h3>has param break ties<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC">
+      <h3>has param c<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize">
+      <h3>has param cache size<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight">
+      <h3>has param class weight<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0">
+      <h3>has param coef0<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape">
+      <h3>has param decision function shape<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree">
+      <h3>has param degree<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual">
+      <h3>has param dual<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon">
+      <h3>has param epsilon<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept">
+      <h3>has param fit intercept<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma">
+      <h3>has param gamma<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling">
+      <h3>has param intercept scaling<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel">
+      <h3>has param kernel<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss">
+      <h3>has param loss<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter">
+      <h3>has param max iter<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass">
+      <h3>has param multi class<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu">
+      <h3>has param nu<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPenalty">
+      <h3>has param penalty<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPenalty</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability">
+      <h3>has param probability<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">
+      <h3>has param random state<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking">
+      <h3>has param shrinking<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol">
+      <h3>has param tol<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">
+      <h3>has param verbose<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod">linear s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod">linear s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod">nu s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod">nu s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod">one class s v m method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod">s v c method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod">s v r method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>

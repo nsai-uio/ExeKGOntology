@@ -1,0 +1,26 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "ml:KNNImputerMethod" "ml:SimpleImputerMethod" ; /*classes style*/
+	"ml:hasParamFillValue" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMissingValues" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamStrategy" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamAddIndicator" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamKeepEmptyFeatures" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamNNeighbors" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamWeights" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMetric" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasDataProcessingMethod" -> "ml:hasPrepareTransformerMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamCopy" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:KNNImputerMethod" -> "xsd:boolean" [ label = "ml:hasParamAddIndicator" ];
+	"ml:KNNImputerMethod" -> "xsd:boolean" [ label = "ml:hasParamCopy" ];
+	"ml:KNNImputerMethod" -> "xsd:float" [ label = "ml:hasParamMissingValues" ];
+	"ml:KNNImputerMethod" -> "xsd:int" [ label = "ml:hasParamNNeighbors" ];
+	"ml:KNNImputerMethod" -> "xsd:boolean" [ label = "ml:hasParamKeepEmptyFeatures" ];
+	"ml:KNNImputerMethod" -> "xsd:string" [ label = "ml:hasParamWeights" ];
+	"ml:KNNImputerMethod" -> "xsd:string" [ label = "ml:hasParamMetric" ];
+	"ml:SimpleImputerMethod" -> "xsd:string" [ label = "ml:hasParamFillValue" ];
+	"ml:SimpleImputerMethod" -> "xsd:string" [ label = "ml:hasParamStrategy" ];
+	"ml:DataProcessing" -> "ml:KNNImputerMethod" [ label = "ml:hasDataProcessingMethod" ];
+
+}

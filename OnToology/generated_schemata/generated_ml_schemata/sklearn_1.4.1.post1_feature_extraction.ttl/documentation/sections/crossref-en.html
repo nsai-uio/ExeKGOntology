@@ -1,0 +1,648 @@
+<h2 id="crossreference" class="list">Cross-reference for [Ontology Name] classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by [Ontology Name].
+<div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">
+            <span>dict vectorizer method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule">
+            <span>feature extraction module</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">
+            <span>feature hasher method</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+            <span>sklearn module</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">
+      <h3>dict vectorizer method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod</p>
+      <div class="comment">
+         <span class="markdown">Transforms lists of feature-value mappings to vectors.
+
+This transformer turns lists of mappings (dict-like objects) of feature
+names to feature values into Numpy arrays or scipy.sparse matrices for use
+with scikit-learn estimators.
+
+When feature values are strings, this transformer will do a binary one-hot
+(aka one-of-K) coding: one boolean-valued feature is constructed for each
+of the possible string values that the feature can take on. For instance,
+a feature "f" that can take on the values "ham" and "spam" will become two
+features in the output, one signifying "f=ham", the other "f=spam".
+
+If a feature value is a sequence or set of strings, this transformer
+will iterate over the values and will count the occurrences of each string
+value.
+
+However, note that this transformer will only do a binary one-hot encoding
+when feature values are of type string. If categorical features are
+represented as numeric values such as int or iterables of strings, the
+DictVectorizer can be followed by
+:class:`~sklearn.preprocessing.OneHotEncoder` to complete
+binary one-hot encoding.
+
+Features that do not occur in a sample (mapping) will have a zero value
+in the resulting array/matrix.
+
+For an efficiency comparison of the different feature extractors, see
+:ref:`sphx_glr_auto_examples_text_plot_hashing_vs_dict_vectorizer.py`.
+
+Read more in the :ref:`User Guide &lt;dict_feature_extraction&gt;`.
+
+Parameters
+----------
+dtype : dtype, default=np.float64
+    The type of feature values. Passed to Numpy array/scipy.sparse matrix
+    constructors as the dtype argument.
+separator : str, default="="
+    Separator string used when constructing new features for one-hot
+    coding.
+sparse : bool, default=True
+    Whether transform should produce scipy.sparse matrices.
+sort : bool, default=True
+    Whether ``feature_names_`` and ``vocabulary_`` should be
+    sorted when fitting.
+
+Attributes
+----------
+vocabulary_ : dict
+    A dictionary mapping feature names to feature indices.
+
+feature_names_ : list
+    A list of length n_features containing the feature names (e.g., "f=ham"
+    and "f=spam").
+
+See Also
+--------
+FeatureHasher : Performs vectorization using only a hash function.
+sklearn.preprocessing.OrdinalEncoder : Handles nominal/categorical
+    features encoded as columns of arbitrary data types.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.feature_extraction import DictVectorizer
+&gt;&gt;&gt; v = DictVectorizer(sparse=False)
+&gt;&gt;&gt; D = [{'foo': 1, 'bar': 2}, {'foo': 3, 'baz': 1}]
+&gt;&gt;&gt; X = v.fit_transform(D)
+&gt;&gt;&gt; X
+array([[2., 0., 1.],
+       [0., 1., 3.]])
+&gt;&gt;&gt; v.inverse_transform(X) == [{'bar': 2.0, 'foo': 1.0},
+...                            {'baz': 1.0, 'foo': 3.0}]
+True
+&gt;&gt;&gt; v.transform({'foo': 4, 'unseen_feature': 3})
+array([[0., 0., 4.]])</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule">feature extraction module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod">prepare transformer method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype">has param dtype</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator">has param separator</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort">has param sort</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse">has param sparse</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod">has data processing method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule">
+      <h3>feature extraction module<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">sklearn module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">dict vectorizer method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">feature hasher method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">
+      <h3>feature hasher method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod</p>
+      <div class="comment">
+         <span class="markdown">Implements feature hashing, aka the hashing trick.
+
+This class turns sequences of symbolic feature names (strings) into
+scipy.sparse matrices, using a hash function to compute the matrix column
+corresponding to a name. The hash function employed is the signed 32-bit
+version of Murmurhash3.
+
+Feature names of type byte string are used as-is. Unicode strings are
+converted to UTF-8 first, but no Unicode normalization is done.
+Feature values must be (finite) numbers.
+
+This class is a low-memory alternative to DictVectorizer and
+CountVectorizer, intended for large-scale (online) learning and situations
+where memory is tight, e.g. when running prediction code on embedded
+devices.
+
+For an efficiency comparison of the different feature extractors, see
+:ref:`sphx_glr_auto_examples_text_plot_hashing_vs_dict_vectorizer.py`.
+
+Read more in the :ref:`User Guide &lt;feature_hashing&gt;`.
+
+.. versionadded:: 0.13
+
+Parameters
+----------
+n_features : int, default=2**20
+    The number of features (columns) in the output matrices. Small numbers
+    of features are likely to cause hash collisions, but large numbers
+    will cause larger coefficient dimensions in linear learners.
+input_type : str, default='dict'
+    Choose a string from {'dict', 'pair', 'string'}.
+    Either "dict" (the default) to accept dictionaries over
+    (feature_name, value); "pair" to accept pairs of (feature_name, value);
+    or "string" to accept single strings.
+    feature_name should be a string, while value should be a number.
+    In the case of "string", a value of 1 is implied.
+    The feature_name is hashed to find the appropriate column for the
+    feature. The value's sign might be flipped in the output (but see
+    non_negative, below).
+dtype : numpy dtype, default=np.float64
+    The type of feature values. Passed to scipy.sparse matrix constructors
+    as the dtype argument. Do not set this to bool, np.boolean or any
+    unsigned integer type.
+alternate_sign : bool, default=True
+    When True, an alternating sign is added to the features as to
+    approximately conserve the inner product in the hashed space even for
+    small n_features. This approach is similar to sparse random projection.
+
+    .. versionchanged:: 0.19
+        ``alternate_sign`` replaces the now deprecated ``non_negative``
+        parameter.
+
+See Also
+--------
+DictVectorizer : Vectorizes string-valued features using a hash table.
+sklearn.preprocessing.OneHotEncoder : Handles nominal/categorical features.
+
+Notes
+-----
+This estimator is :term:`stateless` and does not need to be fitted.
+However, we recommend to call :meth:`fit_transform` instead of
+:meth:`transform`, as parameter validation is only performed in
+:meth:`fit`.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.feature_extraction import FeatureHasher
+&gt;&gt;&gt; h = FeatureHasher(n_features=10)
+&gt;&gt;&gt; D = [{'dog': 1, 'cat':2, 'elephant':4},{'dog': 2, 'run': 5}]
+&gt;&gt;&gt; f = h.transform(D)
+&gt;&gt;&gt; f.toarray()
+array([[ 0.,  0., -4., -1.,  0.,  0.,  0.,  0.,  0.,  2.],
+       [ 0.,  0.,  0., -2., -5.,  0.,  0.,  0.,  0.,  0.]])
+
+With `input_type="string"`, the input must be an iterable over iterables of
+strings:
+
+&gt;&gt;&gt; h = FeatureHasher(n_features=8, input_type="string")
+&gt;&gt;&gt; raw_X = [["dog", "cat", "snake"], ["snake", "dog"], ["cat", "bird"]]
+&gt;&gt;&gt; f = h.transform(raw_X)
+&gt;&gt;&gt; f.toarray()
+array([[ 0.,  0.,  0., -1.,  0., -1.,  0.,  1.],
+       [ 0.,  0.,  0., -1.,  0., -1.,  0.,  0.],
+       [ 0., -1.,  0.,  0.,  0.,  0.,  0.,  1.]])</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod">atomic method</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule">feature extraction module</a>
+            <sup class="type-c" title="class">c</sup>, <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod">prepare transformer method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign">has param alternate sign</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype">has param dtype</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType">has param input type</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures">has param n features</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod">has data processing method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+      <h3>sklearn module<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+               target="_blank"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module">module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule"
+               title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureExtractionModule">feature extraction module</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod">
+            <span>has data processing method</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod">
+      <h3>has data processing method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod">has prepare transformer method</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing">data processing</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">dict vectorizer method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">feature hasher method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign">
+            <span>has param alternate sign</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype">
+            <span>has param dtype</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType">
+            <span>has param input type</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures">
+            <span>has param n features</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator">
+            <span>has param separator</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort">
+            <span>has param sort</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse"
+            title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse">
+            <span>has param sparse</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign">
+      <h3>has param alternate sign<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlternateSign</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">feature hasher method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype">
+      <h3>has param dtype<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">dict vectorizer method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">feature hasher method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType">
+      <h3>has param input type<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInputType</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">feature hasher method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures">
+      <h3>has param n features<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNFeatures</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FeatureHasherMethod">feature hasher method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator">
+      <h3>has param separator<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSeparator</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">dict vectorizer method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort">
+      <h3>has param sort<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSort</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">dict vectorizer method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse">
+      <h3>has param sparse<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+                  target="_blank"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter">has parameter</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod"
+                  title="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DictVectorizerMethod">dict vectorizer method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
