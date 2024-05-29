@@ -129,6 +129,7 @@
             [ sh:class ml:LabelBinarizerMethod ]
             [ sh:class ml:MaxAbsScalerMethod ]
             [ sh:class ml:MinMaxScalerMethod ]
+            [ sh:class ml:MissingIndicatorMethod ]
             [ sh:class ml:MultiLabelBinarizerMethod ]
             [ sh:class ml:NormalizerMethod ]
             [ sh:class ml:OneHotEncoderMethod ]
@@ -12842,6 +12843,44 @@
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogLossMethod must have at most one compatible value for parameter hasParamNormalize." ;
+    ] .
+
+:MissingIndicatorMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:MissingIndicatorMethod ;
+
+    sh:property [
+        sh:path ml:hasParamErrorOnNew ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MissingIndicatorMethod must have at most one compatible value for parameter hasParamErrorOnNew." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamFeatures ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MissingIndicatorMethod must have at most one compatible value for parameter hasParamFeatures." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMissingValues ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MissingIndicatorMethod must have at most one compatible value for parameter hasParamMissingValues." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamSparse ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MissingIndicatorMethod must have at most one compatible value for parameter hasParamSparse." ;
     ] .
 
 :AdaBoostRegressorMethodParameterShape a sh:NodeShape ;
