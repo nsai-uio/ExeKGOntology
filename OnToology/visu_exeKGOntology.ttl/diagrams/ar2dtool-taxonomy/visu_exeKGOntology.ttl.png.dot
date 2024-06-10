@@ -1,17 +1,42 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "visu:DataInVector" "visu:BarplotMethod" "visu:ScatterplotMethod" "visu:LineplotMethod" "visu:PlotTask" "visu:PlotMethod" "visu:CanvasTask" "visu:CanvasMethod" ; /*classes style*/
-	"visu:LineplotMethod" -> "visu:PlotMethod" [ label = "rdfs:subClassOf" ];
-	"visu:LineplotMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"visu:BarplotMethod" -> "visu:PlotMethod" [ label = "rdfs:subClassOf" ];
-	"visu:BarplotMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "visu:PieChart" "visu:ErrorBarPlotting" "visu:BarPlotting" "visu:Histogram" "visu:DataInToPlot" "visu:ContourPlotting" "visu:ImagePlotting" "visu:BoxPlotting" "visu:LinePlotting" "visu:PlottingMethod" "visu:PolarPlotting" "visu:AreaPlotting" "visu:CanvasCreation" "visu:ScatterPlotting" "visu:VectorField" "visu:CanvasMethod" "visu:Plotting" "visu:ViolinPlotting" ; /*classes style*/
+	"visu:VectorField" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:VectorField" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:PolarPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:PolarPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:BoxPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:BoxPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:AreaPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:AreaPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:Plotting" -> "ds:Task" [ label = "rdfs:subClassOf" ];
+	"visu:Histogram" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:Histogram" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
 	"visu:CanvasMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"visu:PlotMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
-	"visu:PlotTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
-	"visu:ScatterplotMethod" -> "visu:PlotMethod" [ label = "rdfs:subClassOf" ];
-	"visu:ScatterplotMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
-	"visu:DataInVector" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
-	"visu:CanvasTask" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:PieChart" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:PieChart" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:SingleValue" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Tabular" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Vector" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Matrix" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:Tensor" [ label = "rdfs:subClassOf" ];
+	"visu:DataInToPlot" -> "ds:DataEntity" [ label = "rdfs:subClassOf" ];
+	"visu:ErrorBarPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:ErrorBarPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:CanvasCreation" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:ContourPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:ContourPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:BarPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:BarPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:LinePlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:LinePlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:ViolinPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:ViolinPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:PlottingMethod" -> "ds:Method" [ label = "rdfs:subClassOf" ];
+	"visu:ScatterPlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:ScatterPlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
+	"visu:ImagePlotting" -> "visu:Plotting" [ label = "rdfs:subClassOf" ];
+	"visu:ImagePlotting" -> "ds:AtomicTask" [ label = "rdfs:subClassOf" ];
 
 }

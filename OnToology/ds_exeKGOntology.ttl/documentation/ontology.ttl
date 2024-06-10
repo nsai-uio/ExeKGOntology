@@ -12,34 +12,17 @@
 #    Object Properties
 #################################################################
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#allowedDataStructure
-:allowedDataStructure rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Method ;
-                      rdfs:range :DataStructure .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataSemantics
-:hasDataSemantics rdf:type owl:ObjectProperty ;
-                  rdfs:domain :DataEntity ;
-                  rdfs:range :DataSemantics .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasDataStructure
-:hasDataStructure rdf:type owl:ObjectProperty ;
-                  rdfs:domain :DataEntity ;
-                  rdfs:range :DataStructure .
-
-
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInput
 :hasInput rdf:type owl:ObjectProperty ;
           rdfs:domain :Task ;
-          rdfs:range :DataEntity .
+          rdfs:range :DataEntity ,
+                     :Method .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasMethod
 :hasMethod rdf:type owl:ObjectProperty ;
            rdfs:domain :AtomicTask ;
-           rdfs:range :Method .
+           rdfs:range :AtomicMethod .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasNextTask
@@ -56,7 +39,7 @@
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasReference
 :hasReference rdf:type owl:ObjectProperty ;
-              rdfs:domain :Data ;
+              rdfs:domain :DataEntity ;
               rdfs:range :DataEntity .
 
 
@@ -76,13 +59,28 @@
                   rdfs:range xsd:string .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter
+:hasParameter rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AtomicMethod ;
+              rdfs:range xsd:boolean ,
+                         xsd:float ,
+                         xsd:integer ,
+                         xsd:string .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasPlotsOutputDir
+:hasPlotsOutputDir rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Pipeline ;
+                   rdfs:range xsd:string .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasReference
 :hasReference rdf:type owl:DatatypeProperty .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasSource
 :hasSource rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Data ;
+           rdfs:domain :DataEntity ;
            rdfs:range xsd:string .
 
 
@@ -90,19 +88,20 @@
 #    Classes
 #################################################################
 
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Array
-:Array rdf:type owl:Class ;
-       rdfs:subClassOf :DataStructure .
-
-
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod
 :AtomicMethod rdf:type owl:Class ;
-              rdfs:subClassOf :Method .
+              rdfs:subClassOf :Method ,
+                              :Module .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask
 :AtomicTask rdf:type owl:Class ;
             rdfs:subClassOf :Task .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Categorical
+:Categorical rdf:type owl:Class ;
+             rdfs:subClassOf :DataSemantics .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Data
@@ -125,6 +124,26 @@
                rdfs:subClassOf :Data .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#DataTransformer
+:DataTransformer rdf:type owl:Class ;
+                 rdfs:subClassOf :DataStructure .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Date
+:Date rdf:type owl:Class ;
+      rdfs:subClassOf :DataSemantics .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Image
+:Image rdf:type owl:Class ;
+       rdfs:subClassOf :DataSemantics .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Mapping
+:Mapping rdf:type owl:Class ;
+         rdfs:subClassOf :DataStructure .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Matrix
 :Matrix rdf:type owl:Class ;
         rdfs:subClassOf :DataStructure .
@@ -134,15 +153,23 @@
 :Method rdf:type owl:Class .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Model
+:Model rdf:type owl:Class ;
+       rdfs:subClassOf :DataStructure .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module
+:Module rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Numerical
+:Numerical rdf:type owl:Class ;
+           rdfs:subClassOf :DataSemantics .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Pipeline
 :Pipeline rdf:type owl:Class ;
           rdfs:subClassOf :Task .
-
-
-###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleFeature
-:SingleFeature rdf:type owl:Class ;
-               rdfs:subClassOf :DataEntity ,
-                               :SingleValue .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#SingleValue
@@ -150,8 +177,28 @@
              rdfs:subClassOf :DataStructure .
 
 
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Spatial
+:Spatial rdf:type owl:Class ;
+         rdfs:subClassOf :DataSemantics .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tabular
+:Tabular rdf:type owl:Class ;
+         rdfs:subClassOf :DataStructure .
+
+
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Task
 :Task rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Tensor
+:Tensor rdf:type owl:Class ;
+        rdfs:subClassOf :DataStructure .
+
+
+###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Text
+:Text rdf:type owl:Class ;
+      rdfs:subClassOf :DataSemantics .
 
 
 ###  https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#TimeSeries
