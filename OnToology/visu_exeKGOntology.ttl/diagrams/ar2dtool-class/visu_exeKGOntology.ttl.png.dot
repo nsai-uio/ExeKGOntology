@@ -1,20 +1,26 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "visu:DataInVector" "visu:ScatterplotMethod" "visu:LineplotMethod" "visu:PlotTask" "visu:PlotMethod" "visu:CanvasTask" "visu:CanvasMethod" ; /*classes style*/
-	"visu:hasVectorInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
-	"visu:hasPlotMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"visu:DataInVector" -> "ds:Vector" [ label = "ds:hasDataStructure" ];
-	"visu:hasCanvasMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
-	"visu:LineplotMethod" -> "xsd:string" [ label = "visu:hasLineStyle" ];
-	"visu:ScatterplotMethod" -> "xsd:string" [ label = "visu:hasScatterStyle" ];
-	"visu:PlotTask" -> "visu:DataInVector" [ label = "visu:hasVectorInput" ];
-	"visu:PlotTask" -> "visu:LineplotMethod" [ label = "visu:hasPlotMethod" ];
-	"visu:ScatterplotMethod" -> "xsd:int" [ label = "visu:hasScatterSize" ];
-	"visu:CanvasMethod" -> "xsd:string" [ label = "visu:hasLayout" ];
-	"visu:CanvasTask" -> "visu:CanvasMethod" [ label = "visu:hasCanvasMethod" ];
-	"visu:CanvasMethod" -> "xsd:string" [ label = "visu:hasCanvasName" ];
-	"visu:LineplotMethod" -> "xsd:int" [ label = "visu:hasLineWidth" ];
-	"visu:PlotMethod" -> "xsd:string" [ label = "visu:hasLegendName" ];
+node [shape = rectangle, color="orange"]; "visu:DataInToPlot" "visu:PlottingMethod" "visu:CanvasCreation" "visu:CanvasMethod" "visu:Plotting" ; /*classes style*/
+	"visu:hasPlottingMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasCanvasCreationMethod" -> "ds:hasMethod" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasParamAnnotate" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasParamLayout" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasPlottingInput" -> "ds:hasInput" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasParamFigureSize" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasParamXLabel" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasParamLegendName" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasParamYLabel" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"visu:hasParamTitle" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"visu:CanvasMethod" -> "xsd:string" [ label = "visu:hasParamLayout" ];
+	"visu:PlottingMethod" -> "xsd:string" [ label = "visu:hasParamLegendName" ];
+	"visu:PlottingMethod" -> "xsd:string" [ label = "visu:hasParamTitle" ];
+	"visu:CanvasMethod" -> "xsd:string" [ label = "visu:hasParamFigureSize" ];
+	"visu:PlottingMethod" -> "xsd:string" [ label = "visu:hasParamXLabel" ];
+	"visu:CanvasCreation" -> "visu:CanvasMethod" [ label = "visu:hasCanvasCreationMethod" ];
+	"visu:PlottingMethod" -> "xsd:boolean" [ label = "visu:hasParamAnnotate" ];
+	"visu:Plotting" -> "visu:DataInToPlot" [ label = "visu:hasPlottingInput" ];
+	"visu:PlottingMethod" -> "xsd:string" [ label = "visu:hasParamYLabel" ];
+	"visu:Plotting" -> "owl:Thing" [ label = "visu:hasPlottingMethod" ];
 
 }
