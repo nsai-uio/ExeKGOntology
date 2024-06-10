@@ -139,3 +139,9 @@ visu:hasParamYLabel a owl:DatatypeProperty ;
     rdfs:subPropertyOf ds:hasParameter;
     rdfs:domain visu:PlottingMethod ;
     rdfs:range  xsd:string .
+
+visu:hasParamAnnotate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlottingMethod ;
+    rdfs:range  xsd:boolean .
+

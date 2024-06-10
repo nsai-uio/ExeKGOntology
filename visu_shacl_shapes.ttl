@@ -8,17 +8,6 @@
 
 :PlottingTaskInputOutputShape a sh:NodeShape ;
     sh:targetClass visu:Plotting ;
-    # sh:target [
-	# 	a sh:SPARQLTarget ;
-	# 	sh:prefixes visu:, rdfs:, rdf:;
-	# 	sh:select """
-	# 		SELECT ?this
-	# 		WHERE {
-	# 			?this a ?taskType .
-	# 			?taskType rdfs:subClassOf+ visu:Plot .
-	# 		}
-	# 		""" ;
-	# ] ;
     # input
     sh:property [
         sh:path visu:hasPlottingInput ;
