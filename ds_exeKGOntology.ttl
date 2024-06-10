@@ -39,7 +39,7 @@ ds:hasParameter a owl:DatatypeProperty ;
 
 ds:hasInput a owl:ObjectProperty ;
     rdfs:domain ds:Task ;
-    rdfs:range  ds:DataEntity .
+    rdfs:range  ds:DataEntity, ds:Method .
 
 
 ds:hasMethod a owl:ObjectProperty ;

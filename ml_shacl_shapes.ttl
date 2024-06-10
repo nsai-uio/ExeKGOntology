@@ -36,6 +36,17 @@
         sh:message "Tasks of type Train must be connected with exactly one output of type DataOutTrainModel." ;
     ] .
 
+:ModelSelectionTaskInputShape a sh:NodeShape ;
+    sh:targetClass ml:ModelSelection ;
+    # input
+    sh:property [
+        sh:path ml:hasModelSelectionInput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:TrainMethod ;
+        sh:message "Tasks of type ModelSelection must be connected with exactly one input of type TrainMethod." ;
+    ] .
+
 :TestTaskInputOutputShape a sh:NodeShape ;
     sh:targetClass ml:Test ;
     # input

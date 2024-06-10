@@ -64,6 +64,10 @@ ml:FeatureSelection a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
         ml:PrepareTransformer .
 
+ml:ModelSelection a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Train .
+
 ml:Clustering a owl:Class ;
     rdfs:subClassOf ds:AtomicTask,
         ml:Train .
@@ -135,6 +139,10 @@ ml:PerformanceCalculationMethod a owl:Class;
 
 ml:ConcatenationMethod a owl:Class;
     rdfs:subClassOf ds:AtomicMethod.
+
+## Input Method subclasses
+ml:InputModelAsMethod a owl:Class;
+    rdfs:subClassOf ml:TrainMethod.
 
 ## Input DataEntity subclasses
 ml:DataInTestModel a owl:Class;
@@ -217,10 +225,12 @@ ml:hasConcatenationMethod a owl:ObjectProperty;
 ml:hasTrainMethod a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasMethod;
     rdfs:domain ml:Train.
+    # range defined by subproperties in generated_schemata/generated_ml_schemata.ttl 
 
 ml:hasPrepareTransformerMethod a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasMethod;
     rdfs:domain ml:PrepareTransformer.
+    # range defined by subproperties in generated_schemata/generated_ml_schemata.ttl 
 
 ml:hasTransformMethod a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasMethod;
@@ -257,6 +267,12 @@ ml:hasTrainInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
     rdfs:domain ml:Train;
     rdfs:range ml:DataInTrainX, ml:DataInTrainY.
+
+ml:hasModelSelectionInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ml:hasTrainInput;
+    rdfs:domain ml:ModelSelection;
+    rdfs:range ml:InputModelAsMethod.
+    # range defined in generated_schemata/generated_ml_schemata.ttl 
 
 ml:hasPerformanceCalculationInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;

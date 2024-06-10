@@ -154,19 +154,13 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:or (
-            [ sh:class ml:CheckCvMethod ]
-            [ sh:class ml:CrossValPredictMethod ]
-            [ sh:class ml:CrossValScoreMethod ]
-            [ sh:class ml:CrossValidateMethod ]
             [ sh:class ml:DataSplittingMethod ]
             [ sh:class ml:GroupKFoldMethod ]
             [ sh:class ml:GroupShuffleSplitMethod ]
             [ sh:class ml:KFoldMethod ]
             [ sh:class ml:LearningCurveDisplayMethod ]
-            [ sh:class ml:LearningCurveMethod ]
             [ sh:class ml:LeavePGroupsOutMethod ]
             [ sh:class ml:LeavePOutMethod ]
-            [ sh:class ml:PermutationTestScoreMethod ]
             [ sh:class ml:PredefinedSplitMethod ]
             [ sh:class ml:RepeatedKFoldMethod ]
             [ sh:class ml:RepeatedStratifiedKFoldMethod ]
@@ -177,7 +171,6 @@
             [ sh:class ml:TimeSeriesSplitMethod ]
             [ sh:class ml:TrainTestSplitMethod ]
             [ sh:class ml:ValidationCurveDisplayMethod ]
-            [ sh:class ml:ValidationCurveMethod ]
         ) ;
         sh:message "Tasks of type DataSplitting must be connected with exactly one compatible atomic method." ;
     ] .
@@ -273,6 +266,19 @@
             [ sh:class ml:LassoLarsMethod ]
         ) ;
         sh:message "Tasks of type LeastAngleRegression must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ModelSelectionTaskMethodShape a sh:NodeShape ;
+    sh:targetClass ml:ModelSelection ;
+    sh:property [
+        sh:path ml:hasModelSelectionMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class ml:GridSearchCVMethod ]
+            [ sh:class ml:RandomizedSearchCVMethod ]
+        ) ;
+        sh:message "Tasks of type ModelSelection must be connected with exactly one compatible atomic method." ;
     ] .
 
 :MulticlassClassificationTaskMethodShape a sh:NodeShape ;
@@ -10454,6 +10460,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamRefit." ;
     ] ;
@@ -10535,27 +10542,6 @@
             [ sh:datatype xsd:boolean ]
         ) ;
         sh:message "Method RidgeClassifierCVMethod must have at most one compatible value for parameter hasParamStoreCvValues." ;
-    ] .
-
-:CheckCvMethodParameterShape a sh:NodeShape ;
-    sh:targetClass ml:CheckCvMethod ;
-
-    sh:property [
-        sh:path ml:hasParamClassifier ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-        ) ;
-        sh:message "Method CheckCvMethod must have at most one compatible value for parameter hasParamClassifier." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamCv ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CheckCvMethod must have at most one compatible value for parameter hasParamCv." ;
     ] .
 
 :MinMaxScalerMethodParameterShape a sh:NodeShape ;
@@ -11747,8 +11733,8 @@
         sh:message "Method TheilSenRegressorMethod must have at most one compatible value for parameter hasParamVerbose." ;
     ] .
 
-:CrossValPredictMethodParameterShape a sh:NodeShape ;
-    sh:targetClass ml:CrossValPredictMethod ;
+:GridSearchCVMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:GridSearchCVMethod ;
 
     sh:property [
         sh:path ml:hasParamCv ;
@@ -11757,7 +11743,15 @@
             [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamCv." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamCv." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamErrorScore ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamErrorScore." ;
     ] ;
     sh:property [
         sh:path ml:hasParamEstimator ;
@@ -11765,23 +11759,7 @@
         sh:or (
             [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamEstimator." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamFitParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamFitParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamMethod ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamMethod." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamEstimator." ;
     ] ;
     sh:property [
         sh:path ml:hasParamNJobs ;
@@ -11790,15 +11768,15 @@
             [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamNJobs." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
     ] ;
     sh:property [
-        sh:path ml:hasParamParams ;
+        sh:path ml:hasParamParamGrid ;
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamParams." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamParamGrid." ;
     ] ;
     sh:property [
         sh:path ml:hasParamPreDispatch ;
@@ -11807,159 +11785,16 @@
             [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
     ] ;
     sh:property [
-        sh:path ml:hasParamVerbose ;
+        sh:path ml:hasParamRefit ;
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:boolean ]
-            [ sh:datatype xsd:int ]
-        ) ;
-        sh:message "Method CrossValPredictMethod must have at most one compatible value for parameter hasParamVerbose." ;
-    ] .
-
-:CrossValScoreMethodParameterShape a sh:NodeShape ;
-    sh:targetClass ml:CrossValScoreMethod ;
-
-    sh:property [
-        sh:path ml:hasParamCv ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamCv." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamErrorScore ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamErrorScore." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamFitParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamFitParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamNJobs ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamNJobs." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamPreDispatch ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamScoring ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamScoring." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamVerbose ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-            [ sh:datatype xsd:int ]
-        ) ;
-        sh:message "Method CrossValScoreMethod must have at most one compatible value for parameter hasParamVerbose." ;
-    ] .
-
-:CrossValidateMethodParameterShape a sh:NodeShape ;
-    sh:targetClass ml:CrossValidateMethod ;
-
-    sh:property [
-        sh:path ml:hasParamCv ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamCv." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamErrorScore ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamErrorScore." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamFitParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamFitParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamNJobs ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamNJobs." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamPreDispatch ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamReturnEstimator ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamReturnEstimator." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamReturnIndices ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-        ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamReturnIndices." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamRefit." ;
     ] ;
     sh:property [
         sh:path ml:hasParamReturnTrainScore ;
@@ -11967,7 +11802,7 @@
         sh:or (
             [ sh:datatype xsd:boolean ]
         ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamReturnTrainScore." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamReturnTrainScore." ;
     ] ;
     sh:property [
         sh:path ml:hasParamScoring ;
@@ -11975,7 +11810,7 @@
         sh:or (
             [ sh:datatype xsd:string ]
         ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamScoring." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamScoring." ;
     ] ;
     sh:property [
         sh:path ml:hasParamVerbose ;
@@ -11984,176 +11819,7 @@
             [ sh:datatype xsd:boolean ]
             [ sh:datatype xsd:int ]
         ) ;
-        sh:message "Method CrossValidateMethod must have at most one compatible value for parameter hasParamVerbose." ;
-    ] .
-
-:LearningCurveMethodParameterShape a sh:NodeShape ;
-    sh:targetClass ml:LearningCurveMethod ;
-
-    sh:property [
-        sh:path ml:hasParamCv ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamCv." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamErrorScore ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamErrorScore." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamEstimator ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamEstimator." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamExploitIncrementalLearning ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamExploitIncrementalLearning." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamFitParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamFitParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamNJobs ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamNJobs." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamPreDispatch ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamRandomState ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamRandomState." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamReturnTimes ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamReturnTimes." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamScoring ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamScoring." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamShuffle ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamShuffle." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamVerbose ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-            [ sh:datatype xsd:int ]
-        ) ;
-        sh:message "Method LearningCurveMethod must have at most one compatible value for parameter hasParamVerbose." ;
-    ] .
-
-:PermutationTestScoreMethodParameterShape a sh:NodeShape ;
-    sh:targetClass ml:PermutationTestScoreMethod ;
-
-    sh:property [
-        sh:path ml:hasParamCv ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamCv." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamFitParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamFitParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamNJobs ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamNJobs." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamNPermutations ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-        ) ;
-        sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamNPermutations." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamRandomState ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamRandomState." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamScoring ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamScoring." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamVerbose ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-            [ sh:datatype xsd:int ]
-        ) ;
-        sh:message "Method PermutationTestScoreMethod must have at most one compatible value for parameter hasParamVerbose." ;
+        sh:message "Method GridSearchCVMethod must have at most one compatible value for parameter hasParamVerbose." ;
     ] .
 
 :RFECVMethodParameterShape a sh:NodeShape ;
@@ -12226,6 +11892,112 @@
             [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RFECVMethod must have at most one compatible value for parameter hasParamVerbose." ;
+    ] .
+
+:RandomizedSearchCVMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:RandomizedSearchCVMethod ;
+
+    sh:property [
+        sh:path ml:hasParamCv ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamCv." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamErrorScore ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamErrorScore." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamEstimator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamEstimator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNIter ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamNIter." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNJobs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamParamDistributions ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamParamDistributions." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamPreDispatch ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRandomState ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRefit ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamRefit." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamReturnTrainScore ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamReturnTrainScore." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoring ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamScoring." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamVerbose ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method RandomizedSearchCVMethod must have at most one compatible value for parameter hasParamVerbose." ;
     ] .
 
 :SequentialFeatureSelectorMethodParameterShape a sh:NodeShape ;
@@ -12408,86 +12180,6 @@
             [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method StackingRegressorMethod must have at most one compatible value for parameter hasParamVerbose." ;
-    ] .
-
-:ValidationCurveMethodParameterShape a sh:NodeShape ;
-    sh:targetClass ml:ValidationCurveMethod ;
-
-    sh:property [
-        sh:path ml:hasParamCv ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamCv." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamErrorScore ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamErrorScore." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamEstimator ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamEstimator." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamFitParams ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamFitParams." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamNJobs ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamNJobs." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamParamName ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamParamName." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamPreDispatch ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:int ]
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamPreDispatch." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamScoring ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:string ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamScoring." ;
-    ] ;
-    sh:property [
-        sh:path ml:hasParamVerbose ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:boolean ]
-            [ sh:datatype xsd:int ]
-        ) ;
-        sh:message "Method ValidationCurveMethod must have at most one compatible value for parameter hasParamVerbose." ;
     ] .
 
 :PolynomialFeaturesMethodParameterShape a sh:NodeShape ;
