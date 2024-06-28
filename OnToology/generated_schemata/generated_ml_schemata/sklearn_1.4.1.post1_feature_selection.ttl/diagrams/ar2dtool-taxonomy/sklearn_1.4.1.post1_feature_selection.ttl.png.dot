@@ -1,0 +1,56 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:RFEMethod" "ml:Chi2Method" "ml:SelectFromModelMethod" "ml:SelectPercentileMethod" "ml:GenericUnivariateSelectMethod" "ml:MutualInfoRegressionMethod" "ml:SelectFdrMethod" "ml:SklearnModule" "ml:SelectKBestMethod" "ml:FClassifMethod" "ml:SequentialFeatureSelectorMethod" "ml:SelectFweMethod" "ml:RFECVMethod" "ml:MutualInfoClassifMethod" "ml:FeatureSelectionModule" "ml:SelectFprMethod" "ml:FRegressionMethod" "ml:VarianceThresholdMethod" ; /*classes style*/
+	"ml:RFECVMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RFECVMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:RFECVMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectKBestMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectKBestMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SelectKBestMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SequentialFeatureSelectorMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SequentialFeatureSelectorMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SequentialFeatureSelectorMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FRegressionMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FRegressionMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:FRegressionMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RFEMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:RFEMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:RFEMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Chi2Method" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:Chi2Method" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:Chi2Method" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FeatureSelectionModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:VarianceThresholdMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:VarianceThresholdMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:VarianceThresholdMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFromModelMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFromModelMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFromModelMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectPercentileMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectPercentileMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SelectPercentileMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:MutualInfoRegressionMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MutualInfoRegressionMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:MutualInfoRegressionMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFdrMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFdrMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFdrMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFweMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFweMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFweMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:GenericUnivariateSelectMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:GenericUnivariateSelectMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:GenericUnivariateSelectMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MutualInfoClassifMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MutualInfoClassifMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:MutualInfoClassifMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFprMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFprMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:SelectFprMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FClassifMethod" -> "ml:PrepareTransformerMethod" [ label = "rdfs:subClassOf" ];
+	"ml:FClassifMethod" -> "ml:FeatureSelectionModule" [ label = "rdfs:subClassOf" ];
+	"ml:FClassifMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

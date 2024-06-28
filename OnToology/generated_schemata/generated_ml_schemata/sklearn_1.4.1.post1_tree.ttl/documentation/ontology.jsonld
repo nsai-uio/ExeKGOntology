@@ -1,0 +1,379 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A decision tree classifier.\n\nRead more in the :ref:`User Guide <tree>`.\n\nParameters\n----------\ncriterion : {\"gini\", \"entropy\", \"log_loss\"}, default=\"gini\"\n    The function to measure the quality of a split. Supported criteria are\n    \"gini\" for the Gini impurity and \"log_loss\" and \"entropy\" both for the\n    Shannon information gain, see :ref:`tree_mathematical_formulation`.\n\nsplitter : {\"best\", \"random\"}, default=\"best\"\n    The strategy used to choose the split at each node. Supported\n    strategies are \"best\" to choose the best split and \"random\" to choose\n    the best random split.\n\nmax_depth : int, default=None\n    The maximum depth of the tree. If None, then nodes are expanded until\n    all leaves are pure or until all leaves contain less than\n    min_samples_split samples.\n\nmin_samples_split : int or float, default=2\n    The minimum number of samples required to split an internal node:\n\n    - If int, then consider `min_samples_split` as the minimum number.\n    - If float, then `min_samples_split` is a fraction and\n      `ceil(min_samples_split * n_samples)` are the minimum\n      number of samples for each split.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_samples_leaf : int or float, default=1\n    The minimum number of samples required to be at a leaf node.\n    A split point at any depth will only be considered if it leaves at\n    least ``min_samples_leaf`` training samples in each of the left and\n    right branches.  This may have the effect of smoothing the model,\n    especially in regression.\n\n    - If int, then consider `min_samples_leaf` as the minimum number.\n    - If float, then `min_samples_leaf` is a fraction and\n      `ceil(min_samples_leaf * n_samples)` are the minimum\n      number of samples for each node.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_weight_fraction_leaf : float, default=0.0\n    The minimum weighted fraction of the sum total of weights (of all\n    the input samples) required to be at a leaf node. Samples have\n    equal weight when sample_weight is not provided.\n\nmax_features : int, float or {\"sqrt\", \"log2\"}, default=None\n    The number of features to consider when looking for the best split:\n\n        - If int, then consider `max_features` features at each split.\n        - If float, then `max_features` is a fraction and\n          `max(1, int(max_features * n_features_in_))` features are considered at\n          each split.\n        - If \"sqrt\", then `max_features=sqrt(n_features)`.\n        - If \"log2\", then `max_features=log2(n_features)`.\n        - If None, then `max_features=n_features`.\n\n    Note: the search for a split does not stop until at least one\n    valid partition of the node samples is found, even if it requires to\n    effectively inspect more than ``max_features`` features.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the randomness of the estimator. The features are always\n    randomly permuted at each split, even if ``splitter`` is set to\n    ``\"best\"``. When ``max_features < n_features``, the algorithm will\n    select ``max_features`` at random at each split before finding the best\n    split among them. But the best found split may vary across different\n    runs, even if ``max_features=n_features``. That is the case, if the\n    improvement of the criterion is identical for several splits and one\n    split has to be selected at random. To obtain a deterministic behaviour\n    during fitting, ``random_state`` has to be fixed to an integer.\n    See :term:`Glossary <random_state>` for details.\n\nmax_leaf_nodes : int, default=None\n    Grow a tree with ``max_leaf_nodes`` in best-first fashion.\n    Best nodes are defined as relative reduction in impurity.\n    If None then unlimited number of leaf nodes.\n\nmin_impurity_decrease : float, default=0.0\n    A node will be split if this split induces a decrease of the impurity\n    greater than or equal to this value.\n\n    The weighted impurity decrease equation is the following::\n\n        N_t / N * (impurity - N_t_R / N_t * right_impurity\n                            - N_t_L / N_t * left_impurity)\n\n    where ``N`` is the total number of samples, ``N_t`` is the number of\n    samples at the current node, ``N_t_L`` is the number of samples in the\n    left child, and ``N_t_R`` is the number of samples in the right child.\n\n    ``N``, ``N_t``, ``N_t_R`` and ``N_t_L`` all refer to the weighted sum,\n    if ``sample_weight`` is passed.\n\n    .. versionadded:: 0.19\n\nclass_weight : dict, list of dict or \"balanced\", default=None\n    Weights associated with classes in the form ``{class_label: weight}``.\n    If None, all classes are supposed to have weight one. For\n    multi-output problems, a list of dicts can be provided in the same\n    order as the columns of y.\n\n    Note that for multioutput (including multilabel) weights should be\n    defined for each class of every column in its own dict. For example,\n    for four-class multilabel classification weights should be\n    [{0: 1, 1: 1}, {0: 1, 1: 5}, {0: 1, 1: 1}, {0: 1, 1: 1}] instead of\n    [{1:1}, {2:5}, {3:1}, {4:1}].\n\n    The \"balanced\" mode uses the values of y to automatically adjust\n    weights inversely proportional to class frequencies in the input data\n    as ``n_samples / (n_classes * np.bincount(y))``\n\n    For multi-output, the weights of each column of y will be multiplied.\n\n    Note that these weights will be multiplied with sample_weight (passed\n    through the fit method) if sample_weight is specified.\n\nccp_alpha : non-negative float, default=0.0\n    Complexity parameter used for Minimal Cost-Complexity Pruning. The\n    subtree with the largest cost complexity that is smaller than\n    ``ccp_alpha`` will be chosen. By default, no pruning is performed. See\n    :ref:`minimal_cost_complexity_pruning` for details.\n\n    .. versionadded:: 0.22\n\nmonotonic_cst : array-like of int of shape (n_features), default=None\n    Indicates the monotonicity constraint to enforce on each feature.\n      - 1: monotonic increase\n      - 0: no constraint\n      - -1: monotonic decrease\n\n    If monotonic_cst is None, no constraints are applied.\n\n    Monotonicity constraints are not supported for:\n      - multiclass classifications (i.e. when `n_classes > 2`),\n      - multioutput classifications (i.e. when `n_outputs_ > 1`),\n      - classifications trained on data with missing values.\n\n    The constraints hold over the probability of the positive class.\n\n    Read more in the :ref:`User Guide <monotonic_cst_gbdt>`.\n\n    .. versionadded:: 1.4\n\nAttributes\n----------\nclasses_ : ndarray of shape (n_classes,) or list of ndarray\n    The classes labels (single output problem),\n    or a list of arrays of class labels (multi-output problem).\n\nfeature_importances_ : ndarray of shape (n_features,)\n    The impurity-based feature importances.\n    The higher, the more important the feature.\n    The importance of a feature is computed as the (normalized)\n    total reduction of the criterion brought by that feature.  It is also\n    known as the Gini importance [4]_.\n\n    Warning: impurity-based feature importances can be misleading for\n    high cardinality features (many unique values). See\n    :func:`sklearn.inspection.permutation_importance` as an alternative.\n\nmax_features_ : int\n    The inferred value of max_features.\n\nn_classes_ : int or list of int\n    The number of classes (for single output problems),\n    or a list containing the number of classes for each\n    output (for multi-output problems).\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_outputs_ : int\n    The number of outputs when ``fit`` is performed.\n\ntree_ : Tree instance\n    The underlying Tree object. Please refer to\n    ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and\n    :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`\n    for basic usage of these attributes.\n\nSee Also\n--------\nDecisionTreeRegressor : A decision tree regressor.\n\nNotes\n-----\nThe default values for the parameters controlling the size of the trees\n(e.g. ``max_depth``, ``min_samples_leaf``, etc.) lead to fully grown and\nunpruned trees which can potentially be very large on some data sets. To\nreduce memory consumption, the complexity and size of the trees should be\ncontrolled by setting those parameter values.\n\nThe :meth:`predict` method operates using the :func:`numpy.argmax`\nfunction on the outputs of :meth:`predict_proba`. This means that in\ncase the highest predicted probabilities are tied, the classifier will\npredict the tied class with the lowest index in :term:`classes_`.\n\nReferences\n----------\n\n.. [1] https://en.wikipedia.org/wiki/Decision_tree_learning\n\n.. [2] L. Breiman, J. Friedman, R. Olshen, and C. Stone, \"Classification\n       and Regression Trees\", Wadsworth, Belmont, CA, 1984.\n\n.. [3] T. Hastie, R. Tibshirani and J. Friedman. \"Elements of Statistical\n       Learning\", Springer, 2009.\n\n.. [4] L. Breiman, and A. Cutler, \"Random Forests\",\n       https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm\n\nExamples\n--------\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.model_selection import cross_val_score\n>>> from sklearn.tree import DecisionTreeClassifier\n>>> clf = DecisionTreeClassifier(random_state=0)\n>>> iris = load_iris()\n>>> cross_val_score(clf, iris.data, iris.target, cv=10)\n...                             # doctest: +SKIP\n...\narray([ 1.     ,  0.93...,  0.86...,  0.93...,  0.93...,\n        0.93...,  0.93...,  1.     ,  0.93...,  1.      ])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TreeModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegression",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A decision tree regressor.\n\nRead more in the :ref:`User Guide <tree>`.\n\nParameters\n----------\ncriterion : {\"squared_error\", \"friedman_mse\", \"absolute_error\",             \"poisson\"}, default=\"squared_error\"\n    The function to measure the quality of a split. Supported criteria\n    are \"squared_error\" for the mean squared error, which is equal to\n    variance reduction as feature selection criterion and minimizes the L2\n    loss using the mean of each terminal node, \"friedman_mse\", which uses\n    mean squared error with Friedman's improvement score for potential\n    splits, \"absolute_error\" for the mean absolute error, which minimizes\n    the L1 loss using the median of each terminal node, and \"poisson\" which\n    uses reduction in Poisson deviance to find splits.\n\n    .. versionadded:: 0.18\n       Mean Absolute Error (MAE) criterion.\n\n    .. versionadded:: 0.24\n        Poisson deviance criterion.\n\nsplitter : {\"best\", \"random\"}, default=\"best\"\n    The strategy used to choose the split at each node. Supported\n    strategies are \"best\" to choose the best split and \"random\" to choose\n    the best random split.\n\nmax_depth : int, default=None\n    The maximum depth of the tree. If None, then nodes are expanded until\n    all leaves are pure or until all leaves contain less than\n    min_samples_split samples.\n\nmin_samples_split : int or float, default=2\n    The minimum number of samples required to split an internal node:\n\n    - If int, then consider `min_samples_split` as the minimum number.\n    - If float, then `min_samples_split` is a fraction and\n      `ceil(min_samples_split * n_samples)` are the minimum\n      number of samples for each split.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_samples_leaf : int or float, default=1\n    The minimum number of samples required to be at a leaf node.\n    A split point at any depth will only be considered if it leaves at\n    least ``min_samples_leaf`` training samples in each of the left and\n    right branches.  This may have the effect of smoothing the model,\n    especially in regression.\n\n    - If int, then consider `min_samples_leaf` as the minimum number.\n    - If float, then `min_samples_leaf` is a fraction and\n      `ceil(min_samples_leaf * n_samples)` are the minimum\n      number of samples for each node.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_weight_fraction_leaf : float, default=0.0\n    The minimum weighted fraction of the sum total of weights (of all\n    the input samples) required to be at a leaf node. Samples have\n    equal weight when sample_weight is not provided.\n\nmax_features : int, float or {\"sqrt\", \"log2\"}, default=None\n    The number of features to consider when looking for the best split:\n\n    - If int, then consider `max_features` features at each split.\n    - If float, then `max_features` is a fraction and\n      `max(1, int(max_features * n_features_in_))` features are considered at each\n      split.\n    - If \"sqrt\", then `max_features=sqrt(n_features)`.\n    - If \"log2\", then `max_features=log2(n_features)`.\n    - If None, then `max_features=n_features`.\n\n    Note: the search for a split does not stop until at least one\n    valid partition of the node samples is found, even if it requires to\n    effectively inspect more than ``max_features`` features.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the randomness of the estimator. The features are always\n    randomly permuted at each split, even if ``splitter`` is set to\n    ``\"best\"``. When ``max_features < n_features``, the algorithm will\n    select ``max_features`` at random at each split before finding the best\n    split among them. But the best found split may vary across different\n    runs, even if ``max_features=n_features``. That is the case, if the\n    improvement of the criterion is identical for several splits and one\n    split has to be selected at random. To obtain a deterministic behaviour\n    during fitting, ``random_state`` has to be fixed to an integer.\n    See :term:`Glossary <random_state>` for details.\n\nmax_leaf_nodes : int, default=None\n    Grow a tree with ``max_leaf_nodes`` in best-first fashion.\n    Best nodes are defined as relative reduction in impurity.\n    If None then unlimited number of leaf nodes.\n\nmin_impurity_decrease : float, default=0.0\n    A node will be split if this split induces a decrease of the impurity\n    greater than or equal to this value.\n\n    The weighted impurity decrease equation is the following::\n\n        N_t / N * (impurity - N_t_R / N_t * right_impurity\n                            - N_t_L / N_t * left_impurity)\n\n    where ``N`` is the total number of samples, ``N_t`` is the number of\n    samples at the current node, ``N_t_L`` is the number of samples in the\n    left child, and ``N_t_R`` is the number of samples in the right child.\n\n    ``N``, ``N_t``, ``N_t_R`` and ``N_t_L`` all refer to the weighted sum,\n    if ``sample_weight`` is passed.\n\n    .. versionadded:: 0.19\n\nccp_alpha : non-negative float, default=0.0\n    Complexity parameter used for Minimal Cost-Complexity Pruning. The\n    subtree with the largest cost complexity that is smaller than\n    ``ccp_alpha`` will be chosen. By default, no pruning is performed. See\n    :ref:`minimal_cost_complexity_pruning` for details.\n\n    .. versionadded:: 0.22\n\nmonotonic_cst : array-like of int of shape (n_features), default=None\n    Indicates the monotonicity constraint to enforce on each feature.\n      - 1: monotonic increase\n      - 0: no constraint\n      - -1: monotonic decrease\n\n    If monotonic_cst is None, no constraints are applied.\n\n    Monotonicity constraints are not supported for:\n      - multioutput regressions (i.e. when `n_outputs_ > 1`),\n      - regressions trained on data with missing values.\n\n    Read more in the :ref:`User Guide <monotonic_cst_gbdt>`.\n\n    .. versionadded:: 1.4\n\nAttributes\n----------\nfeature_importances_ : ndarray of shape (n_features,)\n    The feature importances.\n    The higher, the more important the feature.\n    The importance of a feature is computed as the\n    (normalized) total reduction of the criterion brought\n    by that feature. It is also known as the Gini importance [4]_.\n\n    Warning: impurity-based feature importances can be misleading for\n    high cardinality features (many unique values). See\n    :func:`sklearn.inspection.permutation_importance` as an alternative.\n\nmax_features_ : int\n    The inferred value of max_features.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_outputs_ : int\n    The number of outputs when ``fit`` is performed.\n\ntree_ : Tree instance\n    The underlying Tree object. Please refer to\n    ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and\n    :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`\n    for basic usage of these attributes.\n\nSee Also\n--------\nDecisionTreeClassifier : A decision tree classifier.\n\nNotes\n-----\nThe default values for the parameters controlling the size of the trees\n(e.g. ``max_depth``, ``min_samples_leaf``, etc.) lead to fully grown and\nunpruned trees which can potentially be very large on some data sets. To\nreduce memory consumption, the complexity and size of the trees should be\ncontrolled by setting those parameter values.\n\nReferences\n----------\n\n.. [1] https://en.wikipedia.org/wiki/Decision_tree_learning\n\n.. [2] L. Breiman, J. Friedman, R. Olshen, and C. Stone, \"Classification\n       and Regression Trees\", Wadsworth, Belmont, CA, 1984.\n\n.. [3] T. Hastie, R. Tibshirani and J. Friedman. \"Elements of Statistical\n       Learning\", Springer, 2009.\n\n.. [4] L. Breiman, and A. Cutler, \"Random Forests\",\n       https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm\n\nExamples\n--------\n>>> from sklearn.datasets import load_diabetes\n>>> from sklearn.model_selection import cross_val_score\n>>> from sklearn.tree import DecisionTreeRegressor\n>>> X, y = load_diabetes(return_X_y=True)\n>>> regressor = DecisionTreeRegressor(random_state=0)\n>>> cross_val_score(regressor, X, y, cv=10)\n...                    # doctest: +SKIP\n...\narray([-0.39..., -0.46...,  0.02...,  0.06..., -0.50...,\n       0.16...,  0.11..., -0.73..., -0.30..., -0.00...])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TreeModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An extremely randomized tree classifier.\n\nExtra-trees differ from classic decision trees in the way they are built.\nWhen looking for the best split to separate the samples of a node into two\ngroups, random splits are drawn for each of the `max_features` randomly\nselected features and the best split among those is chosen. When\n`max_features` is set 1, this amounts to building a totally random\ndecision tree.\n\nWarning: Extra-trees should only be used within ensemble methods.\n\nRead more in the :ref:`User Guide <tree>`.\n\nParameters\n----------\ncriterion : {\"gini\", \"entropy\", \"log_loss\"}, default=\"gini\"\n    The function to measure the quality of a split. Supported criteria are\n    \"gini\" for the Gini impurity and \"log_loss\" and \"entropy\" both for the\n    Shannon information gain, see :ref:`tree_mathematical_formulation`.\n\nsplitter : {\"random\", \"best\"}, default=\"random\"\n    The strategy used to choose the split at each node. Supported\n    strategies are \"best\" to choose the best split and \"random\" to choose\n    the best random split.\n\nmax_depth : int, default=None\n    The maximum depth of the tree. If None, then nodes are expanded until\n    all leaves are pure or until all leaves contain less than\n    min_samples_split samples.\n\nmin_samples_split : int or float, default=2\n    The minimum number of samples required to split an internal node:\n\n    - If int, then consider `min_samples_split` as the minimum number.\n    - If float, then `min_samples_split` is a fraction and\n      `ceil(min_samples_split * n_samples)` are the minimum\n      number of samples for each split.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_samples_leaf : int or float, default=1\n    The minimum number of samples required to be at a leaf node.\n    A split point at any depth will only be considered if it leaves at\n    least ``min_samples_leaf`` training samples in each of the left and\n    right branches.  This may have the effect of smoothing the model,\n    especially in regression.\n\n    - If int, then consider `min_samples_leaf` as the minimum number.\n    - If float, then `min_samples_leaf` is a fraction and\n      `ceil(min_samples_leaf * n_samples)` are the minimum\n      number of samples for each node.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_weight_fraction_leaf : float, default=0.0\n    The minimum weighted fraction of the sum total of weights (of all\n    the input samples) required to be at a leaf node. Samples have\n    equal weight when sample_weight is not provided.\n\nmax_features : int, float, {\"sqrt\", \"log2\"} or None, default=\"sqrt\"\n    The number of features to consider when looking for the best split:\n\n    - If int, then consider `max_features` features at each split.\n    - If float, then `max_features` is a fraction and\n      `max(1, int(max_features * n_features_in_))` features are considered at\n      each split.\n    - If \"sqrt\", then `max_features=sqrt(n_features)`.\n    - If \"log2\", then `max_features=log2(n_features)`.\n    - If None, then `max_features=n_features`.\n\n    .. versionchanged:: 1.1\n        The default of `max_features` changed from `\"auto\"` to `\"sqrt\"`.\n\n    Note: the search for a split does not stop until at least one\n    valid partition of the node samples is found, even if it requires to\n    effectively inspect more than ``max_features`` features.\n\nrandom_state : int, RandomState instance or None, default=None\n    Used to pick randomly the `max_features` used at each split.\n    See :term:`Glossary <random_state>` for details.\n\nmax_leaf_nodes : int, default=None\n    Grow a tree with ``max_leaf_nodes`` in best-first fashion.\n    Best nodes are defined as relative reduction in impurity.\n    If None then unlimited number of leaf nodes.\n\nmin_impurity_decrease : float, default=0.0\n    A node will be split if this split induces a decrease of the impurity\n    greater than or equal to this value.\n\n    The weighted impurity decrease equation is the following::\n\n        N_t / N * (impurity - N_t_R / N_t * right_impurity\n                            - N_t_L / N_t * left_impurity)\n\n    where ``N`` is the total number of samples, ``N_t`` is the number of\n    samples at the current node, ``N_t_L`` is the number of samples in the\n    left child, and ``N_t_R`` is the number of samples in the right child.\n\n    ``N``, ``N_t``, ``N_t_R`` and ``N_t_L`` all refer to the weighted sum,\n    if ``sample_weight`` is passed.\n\n    .. versionadded:: 0.19\n\nclass_weight : dict, list of dict or \"balanced\", default=None\n    Weights associated with classes in the form ``{class_label: weight}``.\n    If None, all classes are supposed to have weight one. For\n    multi-output problems, a list of dicts can be provided in the same\n    order as the columns of y.\n\n    Note that for multioutput (including multilabel) weights should be\n    defined for each class of every column in its own dict. For example,\n    for four-class multilabel classification weights should be\n    [{0: 1, 1: 1}, {0: 1, 1: 5}, {0: 1, 1: 1}, {0: 1, 1: 1}] instead of\n    [{1:1}, {2:5}, {3:1}, {4:1}].\n\n    The \"balanced\" mode uses the values of y to automatically adjust\n    weights inversely proportional to class frequencies in the input data\n    as ``n_samples / (n_classes * np.bincount(y))``\n\n    For multi-output, the weights of each column of y will be multiplied.\n\n    Note that these weights will be multiplied with sample_weight (passed\n    through the fit method) if sample_weight is specified.\n\nccp_alpha : non-negative float, default=0.0\n    Complexity parameter used for Minimal Cost-Complexity Pruning. The\n    subtree with the largest cost complexity that is smaller than\n    ``ccp_alpha`` will be chosen. By default, no pruning is performed. See\n    :ref:`minimal_cost_complexity_pruning` for details.\n\n    .. versionadded:: 0.22\n\nmonotonic_cst : array-like of int of shape (n_features), default=None\n    Indicates the monotonicity constraint to enforce on each feature.\n      - 1: monotonic increase\n      - 0: no constraint\n      - -1: monotonic decrease\n\n    If monotonic_cst is None, no constraints are applied.\n\n    Monotonicity constraints are not supported for:\n      - multiclass classifications (i.e. when `n_classes > 2`),\n      - multioutput classifications (i.e. when `n_outputs_ > 1`),\n      - classifications trained on data with missing values.\n\n    The constraints hold over the probability of the positive class.\n\n    Read more in the :ref:`User Guide <monotonic_cst_gbdt>`.\n\n    .. versionadded:: 1.4\n\nAttributes\n----------\nclasses_ : ndarray of shape (n_classes,) or list of ndarray\n    The classes labels (single output problem),\n    or a list of arrays of class labels (multi-output problem).\n\nmax_features_ : int\n    The inferred value of max_features.\n\nn_classes_ : int or list of int\n    The number of classes (for single output problems),\n    or a list containing the number of classes for each\n    output (for multi-output problems).\n\nfeature_importances_ : ndarray of shape (n_features,)\n    The impurity-based feature importances.\n    The higher, the more important the feature.\n    The importance of a feature is computed as the (normalized)\n    total reduction of the criterion brought by that feature.  It is also\n    known as the Gini importance.\n\n    Warning: impurity-based feature importances can be misleading for\n    high cardinality features (many unique values). See\n    :func:`sklearn.inspection.permutation_importance` as an alternative.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_outputs_ : int\n    The number of outputs when ``fit`` is performed.\n\ntree_ : Tree instance\n    The underlying Tree object. Please refer to\n    ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and\n    :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`\n    for basic usage of these attributes.\n\nSee Also\n--------\nExtraTreeRegressor : An extremely randomized tree regressor.\nsklearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.\nsklearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.\nsklearn.ensemble.RandomForestClassifier : A random forest classifier.\nsklearn.ensemble.RandomForestRegressor : A random forest regressor.\nsklearn.ensemble.RandomTreesEmbedding : An ensemble of\n    totally random trees.\n\nNotes\n-----\nThe default values for the parameters controlling the size of the trees\n(e.g. ``max_depth``, ``min_samples_leaf``, etc.) lead to fully grown and\nunpruned trees which can potentially be very large on some data sets. To\nreduce memory consumption, the complexity and size of the trees should be\ncontrolled by setting those parameter values.\n\nReferences\n----------\n\n.. [1] P. Geurts, D. Ernst., and L. Wehenkel, \"Extremely randomized trees\",\n       Machine Learning, 63(1), 3-42, 2006.\n\nExamples\n--------\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.model_selection import train_test_split\n>>> from sklearn.ensemble import BaggingClassifier\n>>> from sklearn.tree import ExtraTreeClassifier\n>>> X, y = load_iris(return_X_y=True)\n>>> X_train, X_test, y_train, y_test = train_test_split(\n...    X, y, random_state=0)\n>>> extra_tree = ExtraTreeClassifier(random_state=0)\n>>> cls = BaggingClassifier(extra_tree, random_state=0).fit(\n...    X_train, y_train)\n>>> cls.score(X_test, y_test)\n0.8947..."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TreeModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "An extremely randomized tree regressor.\n\nExtra-trees differ from classic decision trees in the way they are built.\nWhen looking for the best split to separate the samples of a node into two\ngroups, random splits are drawn for each of the `max_features` randomly\nselected features and the best split among those is chosen. When\n`max_features` is set 1, this amounts to building a totally random\ndecision tree.\n\nWarning: Extra-trees should only be used within ensemble methods.\n\nRead more in the :ref:`User Guide <tree>`.\n\nParameters\n----------\ncriterion : {\"squared_error\", \"friedman_mse\", \"absolute_error\", \"poisson\"},             default=\"squared_error\"\n    The function to measure the quality of a split. Supported criteria\n    are \"squared_error\" for the mean squared error, which is equal to\n    variance reduction as feature selection criterion and minimizes the L2\n    loss using the mean of each terminal node, \"friedman_mse\", which uses\n    mean squared error with Friedman's improvement score for potential\n    splits, \"absolute_error\" for the mean absolute error, which minimizes\n    the L1 loss using the median of each terminal node, and \"poisson\" which\n    uses reduction in Poisson deviance to find splits.\n\n    .. versionadded:: 0.18\n       Mean Absolute Error (MAE) criterion.\n\n    .. versionadded:: 0.24\n        Poisson deviance criterion.\n\nsplitter : {\"random\", \"best\"}, default=\"random\"\n    The strategy used to choose the split at each node. Supported\n    strategies are \"best\" to choose the best split and \"random\" to choose\n    the best random split.\n\nmax_depth : int, default=None\n    The maximum depth of the tree. If None, then nodes are expanded until\n    all leaves are pure or until all leaves contain less than\n    min_samples_split samples.\n\nmin_samples_split : int or float, default=2\n    The minimum number of samples required to split an internal node:\n\n    - If int, then consider `min_samples_split` as the minimum number.\n    - If float, then `min_samples_split` is a fraction and\n      `ceil(min_samples_split * n_samples)` are the minimum\n      number of samples for each split.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_samples_leaf : int or float, default=1\n    The minimum number of samples required to be at a leaf node.\n    A split point at any depth will only be considered if it leaves at\n    least ``min_samples_leaf`` training samples in each of the left and\n    right branches.  This may have the effect of smoothing the model,\n    especially in regression.\n\n    - If int, then consider `min_samples_leaf` as the minimum number.\n    - If float, then `min_samples_leaf` is a fraction and\n      `ceil(min_samples_leaf * n_samples)` are the minimum\n      number of samples for each node.\n\n    .. versionchanged:: 0.18\n       Added float values for fractions.\n\nmin_weight_fraction_leaf : float, default=0.0\n    The minimum weighted fraction of the sum total of weights (of all\n    the input samples) required to be at a leaf node. Samples have\n    equal weight when sample_weight is not provided.\n\nmax_features : int, float, {\"sqrt\", \"log2\"} or None, default=1.0\n    The number of features to consider when looking for the best split:\n\n    - If int, then consider `max_features` features at each split.\n    - If float, then `max_features` is a fraction and\n      `max(1, int(max_features * n_features_in_))` features are considered at each\n      split.\n    - If \"sqrt\", then `max_features=sqrt(n_features)`.\n    - If \"log2\", then `max_features=log2(n_features)`.\n    - If None, then `max_features=n_features`.\n\n    .. versionchanged:: 1.1\n        The default of `max_features` changed from `\"auto\"` to `1.0`.\n\n    Note: the search for a split does not stop until at least one\n    valid partition of the node samples is found, even if it requires to\n    effectively inspect more than ``max_features`` features.\n\nrandom_state : int, RandomState instance or None, default=None\n    Used to pick randomly the `max_features` used at each split.\n    See :term:`Glossary <random_state>` for details.\n\nmin_impurity_decrease : float, default=0.0\n    A node will be split if this split induces a decrease of the impurity\n    greater than or equal to this value.\n\n    The weighted impurity decrease equation is the following::\n\n        N_t / N * (impurity - N_t_R / N_t * right_impurity\n                            - N_t_L / N_t * left_impurity)\n\n    where ``N`` is the total number of samples, ``N_t`` is the number of\n    samples at the current node, ``N_t_L`` is the number of samples in the\n    left child, and ``N_t_R`` is the number of samples in the right child.\n\n    ``N``, ``N_t``, ``N_t_R`` and ``N_t_L`` all refer to the weighted sum,\n    if ``sample_weight`` is passed.\n\n    .. versionadded:: 0.19\n\nmax_leaf_nodes : int, default=None\n    Grow a tree with ``max_leaf_nodes`` in best-first fashion.\n    Best nodes are defined as relative reduction in impurity.\n    If None then unlimited number of leaf nodes.\n\nccp_alpha : non-negative float, default=0.0\n    Complexity parameter used for Minimal Cost-Complexity Pruning. The\n    subtree with the largest cost complexity that is smaller than\n    ``ccp_alpha`` will be chosen. By default, no pruning is performed. See\n    :ref:`minimal_cost_complexity_pruning` for details.\n\n    .. versionadded:: 0.22\n\nmonotonic_cst : array-like of int of shape (n_features), default=None\n    Indicates the monotonicity constraint to enforce on each feature.\n      - 1: monotonic increase\n      - 0: no constraint\n      - -1: monotonic decrease\n\n    If monotonic_cst is None, no constraints are applied.\n\n    Monotonicity constraints are not supported for:\n      - multioutput regressions (i.e. when `n_outputs_ > 1`),\n      - regressions trained on data with missing values.\n\n    Read more in the :ref:`User Guide <monotonic_cst_gbdt>`.\n\n    .. versionadded:: 1.4\n\nAttributes\n----------\nmax_features_ : int\n    The inferred value of max_features.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nfeature_importances_ : ndarray of shape (n_features,)\n    Return impurity-based feature importances (the higher, the more\n    important the feature).\n\n    Warning: impurity-based feature importances can be misleading for\n    high cardinality features (many unique values). See\n    :func:`sklearn.inspection.permutation_importance` as an alternative.\n\nn_outputs_ : int\n    The number of outputs when ``fit`` is performed.\n\ntree_ : Tree instance\n    The underlying Tree object. Please refer to\n    ``help(sklearn.tree._tree.Tree)`` for attributes of Tree object and\n    :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py`\n    for basic usage of these attributes.\n\nSee Also\n--------\nExtraTreeClassifier : An extremely randomized tree classifier.\nsklearn.ensemble.ExtraTreesClassifier : An extra-trees classifier.\nsklearn.ensemble.ExtraTreesRegressor : An extra-trees regressor.\n\nNotes\n-----\nThe default values for the parameters controlling the size of the trees\n(e.g. ``max_depth``, ``min_samples_leaf``, etc.) lead to fully grown and\nunpruned trees which can potentially be very large on some data sets. To\nreduce memory consumption, the complexity and size of the trees should be\ncontrolled by setting those parameter values.\n\nReferences\n----------\n\n.. [1] P. Geurts, D. Ernst., and L. Wehenkel, \"Extremely randomized trees\",\n       Machine Learning, 63(1), 3-42, 2006.\n\nExamples\n--------\n>>> from sklearn.datasets import load_diabetes\n>>> from sklearn.model_selection import train_test_split\n>>> from sklearn.ensemble import BaggingRegressor\n>>> from sklearn.tree import ExtraTreeRegressor\n>>> X, y = load_diabetes(return_X_y=True)\n>>> X_train, X_test, y_train, y_test = train_test_split(\n...     X, y, random_state=0)\n>>> extra_tree = ExtraTreeRegressor(random_state=0)\n>>> reg = BaggingRegressor(extra_tree, random_state=0).fit(\n...     X_train, y_train)\n>>> reg.score(X_test, y_test)\n0.33..."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TreeModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultilabelClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TreeModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDecisionTreeRegressionMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMultilabelClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultilabelClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCcpAlpha",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCriterion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxDepth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxFeatures",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxLeafNodes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinImpurityDecrease",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinSamplesLeaf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinSamplesSplit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinWeightFractionLeaf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSplitter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DecisionTreeRegressorMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeClassifierMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExtraTreeRegressorMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

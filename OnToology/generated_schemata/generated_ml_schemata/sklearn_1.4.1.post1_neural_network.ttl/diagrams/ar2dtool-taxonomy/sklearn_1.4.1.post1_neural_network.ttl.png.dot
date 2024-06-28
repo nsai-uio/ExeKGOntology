@@ -1,0 +1,17 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ml:MLPClassifierMethod" "ml:MLPRegressorMethod" "ml:BernoulliRBMMethod" "ml:NeuralNetworkModule" "ml:SklearnModule" ; /*classes style*/
+	"ml:SklearnModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"ml:MLPRegressorMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MLPRegressorMethod" -> "ml:NeuralNetworkModule" [ label = "rdfs:subClassOf" ];
+	"ml:MLPRegressorMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliRBMMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliRBMMethod" -> "ml:NeuralNetworkModule" [ label = "rdfs:subClassOf" ];
+	"ml:BernoulliRBMMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"ml:NeuralNetworkModule" -> "ml:SklearnModule" [ label = "rdfs:subClassOf" ];
+	"ml:MLPClassifierMethod" -> "ml:TrainMethod" [ label = "rdfs:subClassOf" ];
+	"ml:MLPClassifierMethod" -> "ml:NeuralNetworkModule" [ label = "rdfs:subClassOf" ];
+	"ml:MLPClassifierMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}

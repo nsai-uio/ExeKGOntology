@@ -1,0 +1,614 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Linear Support Vector Classification.\n\nSimilar to SVC with parameter kernel='linear', but implemented in terms of\nliblinear rather than libsvm, so it has more flexibility in the choice of\npenalties and loss functions and should scale better to large numbers of\nsamples.\n\nThe main differences between :class:`~sklearn.svm.LinearSVC` and\n:class:`~sklearn.svm.SVC` lie in the loss function used by default, and in\nthe handling of intercept regularization between those two implementations.\n\nThis class supports both dense and sparse input and the multiclass support\nis handled according to a one-vs-the-rest scheme.\n\nRead more in the :ref:`User Guide <svm_classification>`.\n\nParameters\n----------\npenalty : {'l1', 'l2'}, default='l2'\n    Specifies the norm used in the penalization. The 'l2'\n    penalty is the standard used in SVC. The 'l1' leads to ``coef_``\n    vectors that are sparse.\n\nloss : {'hinge', 'squared_hinge'}, default='squared_hinge'\n    Specifies the loss function. 'hinge' is the standard SVM loss\n    (used e.g. by the SVC class) while 'squared_hinge' is the\n    square of the hinge loss. The combination of ``penalty='l1'``\n    and ``loss='hinge'`` is not supported.\n\ndual : \"auto\" or bool, default=True\n    Select the algorithm to either solve the dual or primal\n    optimization problem. Prefer dual=False when n_samples > n_features.\n    `dual=\"auto\"` will choose the value of the parameter automatically,\n    based on the values of `n_samples`, `n_features`, `loss`, `multi_class`\n    and `penalty`. If `n_samples` < `n_features` and optimizer supports\n    chosen `loss`, `multi_class` and `penalty`, then dual will be set to True,\n    otherwise it will be set to False.\n\n    .. versionchanged:: 1.3\n       The `\"auto\"` option is added in version 1.3 and will be the default\n       in version 1.5.\n\ntol : float, default=1e-4\n    Tolerance for stopping criteria.\n\nC : float, default=1.0\n    Regularization parameter. The strength of the regularization is\n    inversely proportional to C. Must be strictly positive.\n\nmulti_class : {'ovr', 'crammer_singer'}, default='ovr'\n    Determines the multi-class strategy if `y` contains more than\n    two classes.\n    ``\"ovr\"`` trains n_classes one-vs-rest classifiers, while\n    ``\"crammer_singer\"`` optimizes a joint objective over all classes.\n    While `crammer_singer` is interesting from a theoretical perspective\n    as it is consistent, it is seldom used in practice as it rarely leads\n    to better accuracy and is more expensive to compute.\n    If ``\"crammer_singer\"`` is chosen, the options loss, penalty and dual\n    will be ignored.\n\nfit_intercept : bool, default=True\n    Whether or not to fit an intercept. If set to True, the feature vector\n    is extended to include an intercept term: `[x_1, ..., x_n, 1]`, where\n    1 corresponds to the intercept. If set to False, no intercept will be\n    used in calculations (i.e. data is expected to be already centered).\n\nintercept_scaling : float, default=1.0\n    When `fit_intercept` is True, the instance vector x becomes ``[x_1,\n    ..., x_n, intercept_scaling]``, i.e. a \"synthetic\" feature with a\n    constant value equal to `intercept_scaling` is appended to the instance\n    vector. The intercept becomes intercept_scaling * synthetic feature\n    weight. Note that liblinear internally penalizes the intercept,\n    treating it like any other term in the feature vector. To reduce the\n    impact of the regularization on the intercept, the `intercept_scaling`\n    parameter can be set to a value greater than 1; the higher the value of\n    `intercept_scaling`, the lower the impact of regularization on it.\n    Then, the weights become `[w_x_1, ..., w_x_n,\n    w_intercept*intercept_scaling]`, where `w_x_1, ..., w_x_n` represent\n    the feature weights and the intercept weight is scaled by\n    `intercept_scaling`. This scaling allows the intercept term to have a\n    different regularization behavior compared to the other features.\n\nclass_weight : dict or 'balanced', default=None\n    Set the parameter C of class i to ``class_weight[i]*C`` for\n    SVC. If not given, all classes are supposed to have\n    weight one.\n    The \"balanced\" mode uses the values of y to automatically adjust\n    weights inversely proportional to class frequencies in the input data\n    as ``n_samples / (n_classes * np.bincount(y))``.\n\nverbose : int, default=0\n    Enable verbose output. Note that this setting takes advantage of a\n    per-process runtime setting in liblinear that, if enabled, may not work\n    properly in a multithreaded context.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the pseudo random number generation for shuffling the data for\n    the dual coordinate descent (if ``dual=True``). When ``dual=False`` the\n    underlying implementation of :class:`LinearSVC` is not random and\n    ``random_state`` has no effect on the results.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nmax_iter : int, default=1000\n    The maximum number of iterations to be run.\n\nAttributes\n----------\ncoef_ : ndarray of shape (1, n_features) if n_classes == 2             else (n_classes, n_features)\n    Weights assigned to the features (coefficients in the primal\n    problem).\n\n    ``coef_`` is a readonly property derived from ``raw_coef_`` that\n    follows the internal memory layout of liblinear.\n\nintercept_ : ndarray of shape (1,) if n_classes == 2 else (n_classes,)\n    Constants in decision function.\n\nclasses_ : ndarray of shape (n_classes,)\n    The unique classes labels.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_iter_ : int\n    Maximum number of iterations run across all classes.\n\nSee Also\n--------\nSVC : Implementation of Support Vector Machine classifier using libsvm:\n    the kernel can be non-linear but its SMO algorithm does not\n    scale to large number of samples as LinearSVC does.\n\n    Furthermore SVC multi-class mode is implemented using one\n    vs one scheme while LinearSVC uses one vs the rest. It is\n    possible to implement one vs the rest with SVC by using the\n    :class:`~sklearn.multiclass.OneVsRestClassifier` wrapper.\n\n    Finally SVC can fit dense data without memory copy if the input\n    is C-contiguous. Sparse data will still incur memory copy though.\n\nsklearn.linear_model.SGDClassifier : SGDClassifier can optimize the same\n    cost function as LinearSVC\n    by adjusting the penalty and loss parameters. In addition it requires\n    less memory, allows incremental (online) learning, and implements\n    various loss functions and regularization regimes.\n\nNotes\n-----\nThe underlying C implementation uses a random number generator to\nselect features when fitting the model. It is thus not uncommon\nto have slightly different results for the same input data. If\nthat happens, try with a smaller ``tol`` parameter.\n\nThe underlying implementation, liblinear, uses a sparse internal\nrepresentation for the data that will incur a memory copy.\n\nPredict output may not match that of standalone liblinear in certain\ncases. See :ref:`differences from liblinear <liblinear_differences>`\nin the narrative documentation.\n\nReferences\n----------\n`LIBLINEAR: A Library for Large Linear Classification\n<https://www.csie.ntu.edu.tw/~cjlin/liblinear/>`__\n\nExamples\n--------\n>>> from sklearn.svm import LinearSVC\n>>> from sklearn.pipeline import make_pipeline\n>>> from sklearn.preprocessing import StandardScaler\n>>> from sklearn.datasets import make_classification\n>>> X, y = make_classification(n_features=4, random_state=0)\n>>> clf = make_pipeline(StandardScaler(),\n...                     LinearSVC(dual=\"auto\", random_state=0, tol=1e-5))\n>>> clf.fit(X, y)\nPipeline(steps=[('standardscaler', StandardScaler()),\n                ('linearsvc', LinearSVC(dual='auto', random_state=0, tol=1e-05))])\n\n>>> print(clf.named_steps['linearsvc'].coef_)\n[[0.141...   0.526... 0.679... 0.493...]]\n\n>>> print(clf.named_steps['linearsvc'].intercept_)\n[0.1693...]\n>>> print(clf.predict([[0, 0, 0, 0]]))\n[1]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Linear Support Vector Regression.\n\nSimilar to SVR with parameter kernel='linear', but implemented in terms of\nliblinear rather than libsvm, so it has more flexibility in the choice of\npenalties and loss functions and should scale better to large numbers of\nsamples.\n\nThe main differences between :class:`~sklearn.svm.LinearSVR` and\n:class:`~sklearn.svm.SVR` lie in the loss function used by default, and in\nthe handling of intercept regularization between those two implementations.\n\nThis class supports both dense and sparse input.\n\nRead more in the :ref:`User Guide <svm_regression>`.\n\n.. versionadded:: 0.16\n\nParameters\n----------\nepsilon : float, default=0.0\n    Epsilon parameter in the epsilon-insensitive loss function. Note\n    that the value of this parameter depends on the scale of the target\n    variable y. If unsure, set ``epsilon=0``.\n\ntol : float, default=1e-4\n    Tolerance for stopping criteria.\n\nC : float, default=1.0\n    Regularization parameter. The strength of the regularization is\n    inversely proportional to C. Must be strictly positive.\n\nloss : {'epsilon_insensitive', 'squared_epsilon_insensitive'},             default='epsilon_insensitive'\n    Specifies the loss function. The epsilon-insensitive loss\n    (standard SVR) is the L1 loss, while the squared epsilon-insensitive\n    loss ('squared_epsilon_insensitive') is the L2 loss.\n\nfit_intercept : bool, default=True\n    Whether or not to fit an intercept. If set to True, the feature vector\n    is extended to include an intercept term: `[x_1, ..., x_n, 1]`, where\n    1 corresponds to the intercept. If set to False, no intercept will be\n    used in calculations (i.e. data is expected to be already centered).\n\nintercept_scaling : float, default=1.0\n    When `fit_intercept` is True, the instance vector x becomes `[x_1, ...,\n    x_n, intercept_scaling]`, i.e. a \"synthetic\" feature with a constant\n    value equal to `intercept_scaling` is appended to the instance vector.\n    The intercept becomes intercept_scaling * synthetic feature weight.\n    Note that liblinear internally penalizes the intercept, treating it\n    like any other term in the feature vector. To reduce the impact of the\n    regularization on the intercept, the `intercept_scaling` parameter can\n    be set to a value greater than 1; the higher the value of\n    `intercept_scaling`, the lower the impact of regularization on it.\n    Then, the weights become `[w_x_1, ..., w_x_n,\n    w_intercept*intercept_scaling]`, where `w_x_1, ..., w_x_n` represent\n    the feature weights and the intercept weight is scaled by\n    `intercept_scaling`. This scaling allows the intercept term to have a\n    different regularization behavior compared to the other features.\n\ndual : \"auto\" or bool, default=True\n    Select the algorithm to either solve the dual or primal\n    optimization problem. Prefer dual=False when n_samples > n_features.\n    `dual=\"auto\"` will choose the value of the parameter automatically,\n    based on the values of `n_samples`, `n_features` and `loss`. If\n    `n_samples` < `n_features` and optimizer supports chosen `loss`,\n    then dual will be set to True, otherwise it will be set to False.\n\n    .. versionchanged:: 1.3\n       The `\"auto\"` option is added in version 1.3 and will be the default\n       in version 1.5.\n\nverbose : int, default=0\n    Enable verbose output. Note that this setting takes advantage of a\n    per-process runtime setting in liblinear that, if enabled, may not work\n    properly in a multithreaded context.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the pseudo random number generation for shuffling the data.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nmax_iter : int, default=1000\n    The maximum number of iterations to be run.\n\nAttributes\n----------\ncoef_ : ndarray of shape (n_features) if n_classes == 2             else (n_classes, n_features)\n    Weights assigned to the features (coefficients in the primal\n    problem).\n\n    `coef_` is a readonly property derived from `raw_coef_` that\n    follows the internal memory layout of liblinear.\n\nintercept_ : ndarray of shape (1) if n_classes == 2 else (n_classes)\n    Constants in decision function.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_iter_ : int\n    Maximum number of iterations run across all classes.\n\nSee Also\n--------\nLinearSVC : Implementation of Support Vector Machine classifier using the\n    same library as this class (liblinear).\n\nSVR : Implementation of Support Vector Machine regression using libsvm:\n    the kernel can be non-linear but its SMO algorithm does not scale to\n    large number of samples as :class:`~sklearn.svm.LinearSVR` does.\n\nsklearn.linear_model.SGDRegressor : SGDRegressor can optimize the same cost\n    function as LinearSVR\n    by adjusting the penalty and loss parameters. In addition it requires\n    less memory, allows incremental (online) learning, and implements\n    various loss functions and regularization regimes.\n\nExamples\n--------\n>>> from sklearn.svm import LinearSVR\n>>> from sklearn.pipeline import make_pipeline\n>>> from sklearn.preprocessing import StandardScaler\n>>> from sklearn.datasets import make_regression\n>>> X, y = make_regression(n_features=4, random_state=0)\n>>> regr = make_pipeline(StandardScaler(),\n...                      LinearSVR(dual=\"auto\", random_state=0, tol=1e-5))\n>>> regr.fit(X, y)\nPipeline(steps=[('standardscaler', StandardScaler()),\n                ('linearsvr', LinearSVR(dual='auto', random_state=0, tol=1e-05))])\n\n>>> print(regr.named_steps['linearsvr'].coef_)\n[18.582... 27.023... 44.357... 64.522...]\n>>> print(regr.named_steps['linearsvr'].intercept_)\n[-4...]\n>>> print(regr.predict([[0, 0, 0, 0]]))\n[-2.384...]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Nu-Support Vector Classification.\n\nSimilar to SVC but uses a parameter to control the number of support\nvectors.\n\nThe implementation is based on libsvm.\n\nRead more in the :ref:`User Guide <svm_classification>`.\n\nParameters\n----------\nnu : float, default=0.5\n    An upper bound on the fraction of margin errors (see :ref:`User Guide\n    <nu_svc>`) and a lower bound of the fraction of support vectors.\n    Should be in the interval (0, 1].\n\nkernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'\n    Specifies the kernel type to be used in the algorithm.\n    If none is given, 'rbf' will be used. If a callable is given it is\n    used to precompute the kernel matrix. For an intuitive\n    visualization of different kernel types see\n    :ref:`sphx_glr_auto_examples_svm_plot_svm_kernels.py`.\n\ndegree : int, default=3\n    Degree of the polynomial kernel function ('poly').\n    Must be non-negative. Ignored by all other kernels.\n\ngamma : {'scale', 'auto'} or float, default='scale'\n    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.\n\n    - if ``gamma='scale'`` (default) is passed then it uses\n      1 / (n_features * X.var()) as value of gamma,\n    - if 'auto', uses 1 / n_features\n    - if float, must be non-negative.\n\n    .. versionchanged:: 0.22\n       The default value of ``gamma`` changed from 'auto' to 'scale'.\n\ncoef0 : float, default=0.0\n    Independent term in kernel function.\n    It is only significant in 'poly' and 'sigmoid'.\n\nshrinking : bool, default=True\n    Whether to use the shrinking heuristic.\n    See the :ref:`User Guide <shrinking_svm>`.\n\nprobability : bool, default=False\n    Whether to enable probability estimates. This must be enabled prior\n    to calling `fit`, will slow down that method as it internally uses\n    5-fold cross-validation, and `predict_proba` may be inconsistent with\n    `predict`. Read more in the :ref:`User Guide <scores_probabilities>`.\n\ntol : float, default=1e-3\n    Tolerance for stopping criterion.\n\ncache_size : float, default=200\n    Specify the size of the kernel cache (in MB).\n\nclass_weight : {dict, 'balanced'}, default=None\n    Set the parameter C of class i to class_weight[i]*C for\n    SVC. If not given, all classes are supposed to have\n    weight one. The \"balanced\" mode uses the values of y to automatically\n    adjust weights inversely proportional to class frequencies as\n    ``n_samples / (n_classes * np.bincount(y))``.\n\nverbose : bool, default=False\n    Enable verbose output. Note that this setting takes advantage of a\n    per-process runtime setting in libsvm that, if enabled, may not work\n    properly in a multithreaded context.\n\nmax_iter : int, default=-1\n    Hard limit on iterations within solver, or -1 for no limit.\n\ndecision_function_shape : {'ovo', 'ovr'}, default='ovr'\n    Whether to return a one-vs-rest ('ovr') decision function of shape\n    (n_samples, n_classes) as all other classifiers, or the original\n    one-vs-one ('ovo') decision function of libsvm which has shape\n    (n_samples, n_classes * (n_classes - 1) / 2). However, one-vs-one\n    ('ovo') is always used as multi-class strategy. The parameter is\n    ignored for binary classification.\n\n    .. versionchanged:: 0.19\n        decision_function_shape is 'ovr' by default.\n\n    .. versionadded:: 0.17\n       *decision_function_shape='ovr'* is recommended.\n\n    .. versionchanged:: 0.17\n       Deprecated *decision_function_shape='ovo' and None*.\n\nbreak_ties : bool, default=False\n    If true, ``decision_function_shape='ovr'``, and number of classes > 2,\n    :term:`predict` will break ties according to the confidence values of\n    :term:`decision_function`; otherwise the first class among the tied\n    classes is returned. Please note that breaking ties comes at a\n    relatively high computational cost compared to a simple predict.\n\n    .. versionadded:: 0.22\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the pseudo random number generation for shuffling the data for\n    probability estimates. Ignored when `probability` is False.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nAttributes\n----------\nclass_weight_ : ndarray of shape (n_classes,)\n    Multipliers of parameter C of each class.\n    Computed based on the ``class_weight`` parameter.\n\nclasses_ : ndarray of shape (n_classes,)\n    The unique classes labels.\n\ncoef_ : ndarray of shape (n_classes * (n_classes -1) / 2, n_features)\n    Weights assigned to the features (coefficients in the primal\n    problem). This is only available in the case of a linear kernel.\n\n    `coef_` is readonly property derived from `dual_coef_` and\n    `support_vectors_`.\n\ndual_coef_ : ndarray of shape (n_classes - 1, n_SV)\n    Dual coefficients of the support vector in the decision\n    function (see :ref:`sgd_mathematical_formulation`), multiplied by\n    their targets.\n    For multiclass, coefficient for all 1-vs-1 classifiers.\n    The layout of the coefficients in the multiclass case is somewhat\n    non-trivial. See the :ref:`multi-class section of the User Guide\n    <svm_multi_class>` for details.\n\nfit_status_ : int\n    0 if correctly fitted, 1 if the algorithm did not converge.\n\nintercept_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)\n    Constants in decision function.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_iter_ : ndarray of shape (n_classes * (n_classes - 1) // 2,)\n    Number of iterations run by the optimization routine to fit the model.\n    The shape of this attribute depends on the number of models optimized\n    which in turn depends on the number of classes.\n\n    .. versionadded:: 1.1\n\nsupport_ : ndarray of shape (n_SV,)\n    Indices of support vectors.\n\nsupport_vectors_ : ndarray of shape (n_SV, n_features)\n    Support vectors.\n\nn_support_ : ndarray of shape (n_classes,), dtype=int32\n    Number of support vectors for each class.\n\nfit_status_ : int\n    0 if correctly fitted, 1 if the algorithm did not converge.\n\nprobA_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)\n\nprobB_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)\n    If `probability=True`, it corresponds to the parameters learned in\n    Platt scaling to produce probability estimates from decision values.\n    If `probability=False`, it's an empty array. Platt scaling uses the\n    logistic function\n    ``1 / (1 + exp(decision_value * probA_ + probB_))``\n    where ``probA_`` and ``probB_`` are learned from the dataset [2]_. For\n    more information on the multiclass case and training procedure see\n    section 8 of [1]_.\n\nshape_fit_ : tuple of int of shape (n_dimensions_of_X,)\n    Array dimensions of training vector ``X``.\n\nSee Also\n--------\nSVC : Support Vector Machine for classification using libsvm.\n\nLinearSVC : Scalable linear Support Vector Machine for classification using\n    liblinear.\n\nReferences\n----------\n.. [1] `LIBSVM: A Library for Support Vector Machines\n    <http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf>`_\n\n.. [2] `Platt, John (1999). \"Probabilistic Outputs for Support Vector\n    Machines and Comparisons to Regularized Likelihood Methods\"\n    <https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393>`_\n\nExamples\n--------\n>>> import numpy as np\n>>> X = np.array([[-1, -1], [-2, -1], [1, 1], [2, 1]])\n>>> y = np.array([1, 1, 2, 2])\n>>> from sklearn.pipeline import make_pipeline\n>>> from sklearn.preprocessing import StandardScaler\n>>> from sklearn.svm import NuSVC\n>>> clf = make_pipeline(StandardScaler(), NuSVC())\n>>> clf.fit(X, y)\nPipeline(steps=[('standardscaler', StandardScaler()), ('nusvc', NuSVC())])\n>>> print(clf.predict([[-0.8, -1]]))\n[1]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Nu Support Vector Regression.\n\nSimilar to NuSVC, for regression, uses a parameter nu to control\nthe number of support vectors. However, unlike NuSVC, where nu\nreplaces C, here nu replaces the parameter epsilon of epsilon-SVR.\n\nThe implementation is based on libsvm.\n\nRead more in the :ref:`User Guide <svm_regression>`.\n\nParameters\n----------\nnu : float, default=0.5\n    An upper bound on the fraction of training errors and a lower bound of\n    the fraction of support vectors. Should be in the interval (0, 1].  By\n    default 0.5 will be taken.\n\nC : float, default=1.0\n    Penalty parameter C of the error term.\n\nkernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'\n     Specifies the kernel type to be used in the algorithm.\n     If none is given, 'rbf' will be used. If a callable is given it is\n     used to precompute the kernel matrix.\n\ndegree : int, default=3\n    Degree of the polynomial kernel function ('poly').\n    Must be non-negative. Ignored by all other kernels.\n\ngamma : {'scale', 'auto'} or float, default='scale'\n    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.\n\n    - if ``gamma='scale'`` (default) is passed then it uses\n      1 / (n_features * X.var()) as value of gamma,\n    - if 'auto', uses 1 / n_features\n    - if float, must be non-negative.\n\n    .. versionchanged:: 0.22\n       The default value of ``gamma`` changed from 'auto' to 'scale'.\n\ncoef0 : float, default=0.0\n    Independent term in kernel function.\n    It is only significant in 'poly' and 'sigmoid'.\n\nshrinking : bool, default=True\n    Whether to use the shrinking heuristic.\n    See the :ref:`User Guide <shrinking_svm>`.\n\ntol : float, default=1e-3\n    Tolerance for stopping criterion.\n\ncache_size : float, default=200\n    Specify the size of the kernel cache (in MB).\n\nverbose : bool, default=False\n    Enable verbose output. Note that this setting takes advantage of a\n    per-process runtime setting in libsvm that, if enabled, may not work\n    properly in a multithreaded context.\n\nmax_iter : int, default=-1\n    Hard limit on iterations within solver, or -1 for no limit.\n\nAttributes\n----------\ncoef_ : ndarray of shape (1, n_features)\n    Weights assigned to the features (coefficients in the primal\n    problem). This is only available in the case of a linear kernel.\n\n    `coef_` is readonly property derived from `dual_coef_` and\n    `support_vectors_`.\n\ndual_coef_ : ndarray of shape (1, n_SV)\n    Coefficients of the support vector in the decision function.\n\nfit_status_ : int\n    0 if correctly fitted, 1 otherwise (will raise warning)\n\nintercept_ : ndarray of shape (1,)\n    Constants in decision function.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_iter_ : int\n    Number of iterations run by the optimization routine to fit the model.\n\n    .. versionadded:: 1.1\n\nn_support_ : ndarray of shape (1,), dtype=int32\n    Number of support vectors.\n\nshape_fit_ : tuple of int of shape (n_dimensions_of_X,)\n    Array dimensions of training vector ``X``.\n\nsupport_ : ndarray of shape (n_SV,)\n    Indices of support vectors.\n\nsupport_vectors_ : ndarray of shape (n_SV, n_features)\n    Support vectors.\n\nSee Also\n--------\nNuSVC : Support Vector Machine for classification implemented with libsvm\n    with a parameter to control the number of support vectors.\n\nSVR : Epsilon Support Vector Machine for regression implemented with\n    libsvm.\n\nReferences\n----------\n.. [1] `LIBSVM: A Library for Support Vector Machines\n    <http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf>`_\n\n.. [2] `Platt, John (1999). \"Probabilistic Outputs for Support Vector\n    Machines and Comparisons to Regularized Likelihood Methods\"\n    <https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393>`_\n\nExamples\n--------\n>>> from sklearn.svm import NuSVR\n>>> from sklearn.pipeline import make_pipeline\n>>> from sklearn.preprocessing import StandardScaler\n>>> import numpy as np\n>>> n_samples, n_features = 10, 5\n>>> np.random.seed(0)\n>>> y = np.random.randn(n_samples)\n>>> X = np.random.randn(n_samples, n_features)\n>>> regr = make_pipeline(StandardScaler(), NuSVR(C=1.0, nu=0.1))\n>>> regr.fit(X, y)\nPipeline(steps=[('standardscaler', StandardScaler()),\n                ('nusvr', NuSVR(nu=0.1))])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Unsupervised Outlier Detection.\n\nEstimate the support of a high-dimensional distribution.\n\nThe implementation is based on libsvm.\n\nRead more in the :ref:`User Guide <outlier_detection>`.\n\nParameters\n----------\nkernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'\n     Specifies the kernel type to be used in the algorithm.\n     If none is given, 'rbf' will be used. If a callable is given it is\n     used to precompute the kernel matrix.\n\ndegree : int, default=3\n    Degree of the polynomial kernel function ('poly').\n    Must be non-negative. Ignored by all other kernels.\n\ngamma : {'scale', 'auto'} or float, default='scale'\n    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.\n\n    - if ``gamma='scale'`` (default) is passed then it uses\n      1 / (n_features * X.var()) as value of gamma,\n    - if 'auto', uses 1 / n_features\n    - if float, must be non-negative.\n\n    .. versionchanged:: 0.22\n       The default value of ``gamma`` changed from 'auto' to 'scale'.\n\ncoef0 : float, default=0.0\n    Independent term in kernel function.\n    It is only significant in 'poly' and 'sigmoid'.\n\ntol : float, default=1e-3\n    Tolerance for stopping criterion.\n\nnu : float, default=0.5\n    An upper bound on the fraction of training\n    errors and a lower bound of the fraction of support\n    vectors. Should be in the interval (0, 1]. By default 0.5\n    will be taken.\n\nshrinking : bool, default=True\n    Whether to use the shrinking heuristic.\n    See the :ref:`User Guide <shrinking_svm>`.\n\ncache_size : float, default=200\n    Specify the size of the kernel cache (in MB).\n\nverbose : bool, default=False\n    Enable verbose output. Note that this setting takes advantage of a\n    per-process runtime setting in libsvm that, if enabled, may not work\n    properly in a multithreaded context.\n\nmax_iter : int, default=-1\n    Hard limit on iterations within solver, or -1 for no limit.\n\nAttributes\n----------\ncoef_ : ndarray of shape (1, n_features)\n    Weights assigned to the features (coefficients in the primal\n    problem). This is only available in the case of a linear kernel.\n\n    `coef_` is readonly property derived from `dual_coef_` and\n    `support_vectors_`.\n\ndual_coef_ : ndarray of shape (1, n_SV)\n    Coefficients of the support vectors in the decision function.\n\nfit_status_ : int\n    0 if correctly fitted, 1 otherwise (will raise warning)\n\nintercept_ : ndarray of shape (1,)\n    Constant in the decision function.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_iter_ : int\n    Number of iterations run by the optimization routine to fit the model.\n\n    .. versionadded:: 1.1\n\nn_support_ : ndarray of shape (n_classes,), dtype=int32\n    Number of support vectors for each class.\n\noffset_ : float\n    Offset used to define the decision function from the raw scores.\n    We have the relation: decision_function = score_samples - `offset_`.\n    The offset is the opposite of `intercept_` and is provided for\n    consistency with other outlier detection algorithms.\n\n    .. versionadded:: 0.20\n\nshape_fit_ : tuple of int of shape (n_dimensions_of_X,)\n    Array dimensions of training vector ``X``.\n\nsupport_ : ndarray of shape (n_SV,)\n    Indices of support vectors.\n\nsupport_vectors_ : ndarray of shape (n_SV, n_features)\n    Support vectors.\n\nSee Also\n--------\nsklearn.linear_model.SGDOneClassSVM : Solves linear One-Class SVM using\n    Stochastic Gradient Descent.\nsklearn.neighbors.LocalOutlierFactor : Unsupervised Outlier Detection using\n    Local Outlier Factor (LOF).\nsklearn.ensemble.IsolationForest : Isolation Forest Algorithm.\n\nExamples\n--------\n>>> from sklearn.svm import OneClassSVM\n>>> X = [[0], [0.44], [0.45], [0.46], [1]]\n>>> clf = OneClassSVM(gamma='auto').fit(X)\n>>> clf.predict(X)\narray([-1,  1,  1,  1, -1])\n>>> clf.score_samples(X)\narray([1.7798..., 2.0547..., 2.0556..., 2.0561..., 1.7332...])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RegularizedRegression",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "C-Support Vector Classification.\n\nThe implementation is based on libsvm. The fit time scales at least\nquadratically with the number of samples and may be impractical\nbeyond tens of thousands of samples. For large datasets\nconsider using :class:`~sklearn.svm.LinearSVC` or\n:class:`~sklearn.linear_model.SGDClassifier` instead, possibly after a\n:class:`~sklearn.kernel_approximation.Nystroem` transformer or\nother :ref:`kernel_approximation`.\n\nThe multiclass support is handled according to a one-vs-one scheme.\n\nFor details on the precise mathematical formulation of the provided\nkernel functions and how `gamma`, `coef0` and `degree` affect each\nother, see the corresponding section in the narrative documentation:\n:ref:`svm_kernels`.\n\nTo learn how to tune SVC's hyperparameters, see the following example:\n:ref:`sphx_glr_auto_examples_model_selection_plot_nested_cross_validation_iris.py`\n\nRead more in the :ref:`User Guide <svm_classification>`.\n\nParameters\n----------\nC : float, default=1.0\n    Regularization parameter. The strength of the regularization is\n    inversely proportional to C. Must be strictly positive. The penalty\n    is a squared l2 penalty.\n\nkernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'\n    Specifies the kernel type to be used in the algorithm. If\n    none is given, 'rbf' will be used. If a callable is given it is used to\n    pre-compute the kernel matrix from data matrices; that matrix should be\n    an array of shape ``(n_samples, n_samples)``. For an intuitive\n    visualization of different kernel types see\n    :ref:`sphx_glr_auto_examples_svm_plot_svm_kernels.py`.\n\ndegree : int, default=3\n    Degree of the polynomial kernel function ('poly').\n    Must be non-negative. Ignored by all other kernels.\n\ngamma : {'scale', 'auto'} or float, default='scale'\n    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.\n\n    - if ``gamma='scale'`` (default) is passed then it uses\n      1 / (n_features * X.var()) as value of gamma,\n    - if 'auto', uses 1 / n_features\n    - if float, must be non-negative.\n\n    .. versionchanged:: 0.22\n       The default value of ``gamma`` changed from 'auto' to 'scale'.\n\ncoef0 : float, default=0.0\n    Independent term in kernel function.\n    It is only significant in 'poly' and 'sigmoid'.\n\nshrinking : bool, default=True\n    Whether to use the shrinking heuristic.\n    See the :ref:`User Guide <shrinking_svm>`.\n\nprobability : bool, default=False\n    Whether to enable probability estimates. This must be enabled prior\n    to calling `fit`, will slow down that method as it internally uses\n    5-fold cross-validation, and `predict_proba` may be inconsistent with\n    `predict`. Read more in the :ref:`User Guide <scores_probabilities>`.\n\ntol : float, default=1e-3\n    Tolerance for stopping criterion.\n\ncache_size : float, default=200\n    Specify the size of the kernel cache (in MB).\n\nclass_weight : dict or 'balanced', default=None\n    Set the parameter C of class i to class_weight[i]*C for\n    SVC. If not given, all classes are supposed to have\n    weight one.\n    The \"balanced\" mode uses the values of y to automatically adjust\n    weights inversely proportional to class frequencies in the input data\n    as ``n_samples / (n_classes * np.bincount(y))``.\n\nverbose : bool, default=False\n    Enable verbose output. Note that this setting takes advantage of a\n    per-process runtime setting in libsvm that, if enabled, may not work\n    properly in a multithreaded context.\n\nmax_iter : int, default=-1\n    Hard limit on iterations within solver, or -1 for no limit.\n\ndecision_function_shape : {'ovo', 'ovr'}, default='ovr'\n    Whether to return a one-vs-rest ('ovr') decision function of shape\n    (n_samples, n_classes) as all other classifiers, or the original\n    one-vs-one ('ovo') decision function of libsvm which has shape\n    (n_samples, n_classes * (n_classes - 1) / 2). However, note that\n    internally, one-vs-one ('ovo') is always used as a multi-class strategy\n    to train models; an ovr matrix is only constructed from the ovo matrix.\n    The parameter is ignored for binary classification.\n\n    .. versionchanged:: 0.19\n        decision_function_shape is 'ovr' by default.\n\n    .. versionadded:: 0.17\n       *decision_function_shape='ovr'* is recommended.\n\n    .. versionchanged:: 0.17\n       Deprecated *decision_function_shape='ovo' and None*.\n\nbreak_ties : bool, default=False\n    If true, ``decision_function_shape='ovr'``, and number of classes > 2,\n    :term:`predict` will break ties according to the confidence values of\n    :term:`decision_function`; otherwise the first class among the tied\n    classes is returned. Please note that breaking ties comes at a\n    relatively high computational cost compared to a simple predict.\n\n    .. versionadded:: 0.22\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the pseudo random number generation for shuffling the data for\n    probability estimates. Ignored when `probability` is False.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nAttributes\n----------\nclass_weight_ : ndarray of shape (n_classes,)\n    Multipliers of parameter C for each class.\n    Computed based on the ``class_weight`` parameter.\n\nclasses_ : ndarray of shape (n_classes,)\n    The classes labels.\n\ncoef_ : ndarray of shape (n_classes * (n_classes - 1) / 2, n_features)\n    Weights assigned to the features (coefficients in the primal\n    problem). This is only available in the case of a linear kernel.\n\n    `coef_` is a readonly property derived from `dual_coef_` and\n    `support_vectors_`.\n\ndual_coef_ : ndarray of shape (n_classes -1, n_SV)\n    Dual coefficients of the support vector in the decision\n    function (see :ref:`sgd_mathematical_formulation`), multiplied by\n    their targets.\n    For multiclass, coefficient for all 1-vs-1 classifiers.\n    The layout of the coefficients in the multiclass case is somewhat\n    non-trivial. See the :ref:`multi-class section of the User Guide\n    <svm_multi_class>` for details.\n\nfit_status_ : int\n    0 if correctly fitted, 1 otherwise (will raise warning)\n\nintercept_ : ndarray of shape (n_classes * (n_classes - 1) / 2,)\n    Constants in decision function.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_iter_ : ndarray of shape (n_classes * (n_classes - 1) // 2,)\n    Number of iterations run by the optimization routine to fit the model.\n    The shape of this attribute depends on the number of models optimized\n    which in turn depends on the number of classes.\n\n    .. versionadded:: 1.1\n\nsupport_ : ndarray of shape (n_SV)\n    Indices of support vectors.\n\nsupport_vectors_ : ndarray of shape (n_SV, n_features)\n    Support vectors. An empty array if kernel is precomputed.\n\nn_support_ : ndarray of shape (n_classes,), dtype=int32\n    Number of support vectors for each class.\n\nprobA_ : ndarray of shape (n_classes * (n_classes - 1) / 2)\nprobB_ : ndarray of shape (n_classes * (n_classes - 1) / 2)\n    If `probability=True`, it corresponds to the parameters learned in\n    Platt scaling to produce probability estimates from decision values.\n    If `probability=False`, it's an empty array. Platt scaling uses the\n    logistic function\n    ``1 / (1 + exp(decision_value * probA_ + probB_))``\n    where ``probA_`` and ``probB_`` are learned from the dataset [2]_. For\n    more information on the multiclass case and training procedure see\n    section 8 of [1]_.\n\nshape_fit_ : tuple of int of shape (n_dimensions_of_X,)\n    Array dimensions of training vector ``X``.\n\nSee Also\n--------\nSVR : Support Vector Machine for Regression implemented using libsvm.\n\nLinearSVC : Scalable Linear Support Vector Machine for classification\n    implemented using liblinear. Check the See Also section of\n    LinearSVC for more comparison element.\n\nReferences\n----------\n.. [1] `LIBSVM: A Library for Support Vector Machines\n    <http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf>`_\n\n.. [2] `Platt, John (1999). \"Probabilistic Outputs for Support Vector\n    Machines and Comparisons to Regularized Likelihood Methods\"\n    <https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393>`_\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.pipeline import make_pipeline\n>>> from sklearn.preprocessing import StandardScaler\n>>> X = np.array([[-1, -1], [-2, -1], [1, 1], [2, 1]])\n>>> y = np.array([1, 1, 2, 2])\n>>> from sklearn.svm import SVC\n>>> clf = make_pipeline(StandardScaler(), SVC(gamma='auto'))\n>>> clf.fit(X, y)\nPipeline(steps=[('standardscaler', StandardScaler()),\n                ('svc', SVC(gamma='auto'))])\n\n>>> print(clf.predict([[-0.8, -1]]))\n[1]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Epsilon-Support Vector Regression.\n\nThe free parameters in the model are C and epsilon.\n\nThe implementation is based on libsvm. The fit time complexity\nis more than quadratic with the number of samples which makes it hard\nto scale to datasets with more than a couple of 10000 samples. For large\ndatasets consider using :class:`~sklearn.svm.LinearSVR` or\n:class:`~sklearn.linear_model.SGDRegressor` instead, possibly after a\n:class:`~sklearn.kernel_approximation.Nystroem` transformer or\nother :ref:`kernel_approximation`.\n\nRead more in the :ref:`User Guide <svm_regression>`.\n\nParameters\n----------\nkernel : {'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'} or callable,          default='rbf'\n     Specifies the kernel type to be used in the algorithm.\n     If none is given, 'rbf' will be used. If a callable is given it is\n     used to precompute the kernel matrix.\n\ndegree : int, default=3\n    Degree of the polynomial kernel function ('poly').\n    Must be non-negative. Ignored by all other kernels.\n\ngamma : {'scale', 'auto'} or float, default='scale'\n    Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.\n\n    - if ``gamma='scale'`` (default) is passed then it uses\n      1 / (n_features * X.var()) as value of gamma,\n    - if 'auto', uses 1 / n_features\n    - if float, must be non-negative.\n\n    .. versionchanged:: 0.22\n       The default value of ``gamma`` changed from 'auto' to 'scale'.\n\ncoef0 : float, default=0.0\n    Independent term in kernel function.\n    It is only significant in 'poly' and 'sigmoid'.\n\ntol : float, default=1e-3\n    Tolerance for stopping criterion.\n\nC : float, default=1.0\n    Regularization parameter. The strength of the regularization is\n    inversely proportional to C. Must be strictly positive.\n    The penalty is a squared l2 penalty.\n\nepsilon : float, default=0.1\n     Epsilon in the epsilon-SVR model. It specifies the epsilon-tube\n     within which no penalty is associated in the training loss function\n     with points predicted within a distance epsilon from the actual\n     value. Must be non-negative.\n\nshrinking : bool, default=True\n    Whether to use the shrinking heuristic.\n    See the :ref:`User Guide <shrinking_svm>`.\n\ncache_size : float, default=200\n    Specify the size of the kernel cache (in MB).\n\nverbose : bool, default=False\n    Enable verbose output. Note that this setting takes advantage of a\n    per-process runtime setting in libsvm that, if enabled, may not work\n    properly in a multithreaded context.\n\nmax_iter : int, default=-1\n    Hard limit on iterations within solver, or -1 for no limit.\n\nAttributes\n----------\ncoef_ : ndarray of shape (1, n_features)\n    Weights assigned to the features (coefficients in the primal\n    problem). This is only available in the case of a linear kernel.\n\n    `coef_` is readonly property derived from `dual_coef_` and\n    `support_vectors_`.\n\ndual_coef_ : ndarray of shape (1, n_SV)\n    Coefficients of the support vector in the decision function.\n\nfit_status_ : int\n    0 if correctly fitted, 1 otherwise (will raise warning)\n\nintercept_ : ndarray of shape (1,)\n    Constants in decision function.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_iter_ : int\n    Number of iterations run by the optimization routine to fit the model.\n\n    .. versionadded:: 1.1\n\nn_support_ : ndarray of shape (1,), dtype=int32\n    Number of support vectors.\n\nshape_fit_ : tuple of int of shape (n_dimensions_of_X,)\n    Array dimensions of training vector ``X``.\n\nsupport_ : ndarray of shape (n_SV,)\n    Indices of support vectors.\n\nsupport_vectors_ : ndarray of shape (n_SV, n_features)\n    Support vectors.\n\nSee Also\n--------\nNuSVR : Support Vector Machine for regression implemented using libsvm\n    using a parameter to control the number of support vectors.\n\nLinearSVR : Scalable Linear Support Vector Machine for regression\n    implemented using liblinear.\n\nReferences\n----------\n.. [1] `LIBSVM: A Library for Support Vector Machines\n    <http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf>`_\n\n.. [2] `Platt, John (1999). \"Probabilistic Outputs for Support Vector\n    Machines and Comparisons to Regularized Likelihood Methods\"\n    <https://citeseerx.ist.psu.edu/doc_view/pid/42e5ed832d4310ce4378c44d05570439df28a393>`_\n\nExamples\n--------\n>>> from sklearn.svm import SVR\n>>> from sklearn.pipeline import make_pipeline\n>>> from sklearn.preprocessing import StandardScaler\n>>> import numpy as np\n>>> n_samples, n_features = 10, 5\n>>> rng = np.random.RandomState(0)\n>>> y = rng.randn(n_samples)\n>>> X = rng.randn(n_samples, n_features)\n>>> regr = make_pipeline(StandardScaler(), SVR(C=1.0, epsilon=0.2))\n>>> regr.fit(X, y)\nPipeline(steps=[('standardscaler', StandardScaler()),\n                ('svr', SVR(epsilon=0.2))])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SupportVectorRegression",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SvmModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasBinaryClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinaryClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasMulticlassClassificationMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MulticlassClassification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBreakTies",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCacheSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClassWeight",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCoef0",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDecisionFunctionShape",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDual",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEpsilon",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFitIntercept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGamma",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInterceptScaling",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKernel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLoss",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxIter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPenalty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamProbability",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShrinking",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTol",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVCMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasRegularizedRegressionMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RegularizedRegression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneClassSVMMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasSupportVectorRegressionMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SupportVectorRegression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LinearSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NuSVRMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SVRMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

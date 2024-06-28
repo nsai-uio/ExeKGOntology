@@ -1,0 +1,27 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "stats:CovMethod" "stats:QuantileMethod" "stats:PercentileMethod" "stats:CorrcoefMethod" "stats:FunctionBaseModule" "stats:AverageMethod" "stats:MedianMethod" "stats:NumpyModule" "stats:LibModule" ; /*classes style*/
+	"stats:LibModule" -> "stats:NumpyModule" [ label = "rdfs:subClassOf" ];
+	"stats:CorrcoefMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CorrcoefMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:CorrcoefMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:PercentileMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:PercentileMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:PercentileMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:QuantileMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:QuantileMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:QuantileMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:NumpyModule" -> "ds:Module" [ label = "rdfs:subClassOf" ];
+	"stats:AverageMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:AverageMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:AverageMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:FunctionBaseModule" -> "stats:LibModule" [ label = "rdfs:subClassOf" ];
+	"stats:CovMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:CovMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:CovMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+	"stats:MedianMethod" -> "stats:StatisticCalculationMethod" [ label = "rdfs:subClassOf" ];
+	"stats:MedianMethod" -> "stats:FunctionBaseModule" [ label = "rdfs:subClassOf" ];
+	"stats:MedianMethod" -> "ds:AtomicMethod" [ label = "rdfs:subClassOf" ];
+
+}
