@@ -1,0 +1,443 @@
+{
+  "@context" : {
+    "CalinskiHarabaszScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CalinskiHarabaszScoreMethod"
+    },
+    "SklearnModule" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+    },
+    "hasParamWorkingMemory" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWorkingMemory"
+    },
+    "MeanSquaredLogErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanSquaredLogErrorMethod"
+    },
+    "hasParamContingency" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamContingency",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "RecallScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RecallScoreMethod"
+    },
+    "hasParamMultiClass" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultiClass",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "AdjustedMutualInfoScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AdjustedMutualInfoScoreMethod"
+    },
+    "hasParamPower" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPower"
+    },
+    "hasParamOutputDict" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamOutputDict",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "HammingLossMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HammingLossMethod"
+    },
+    "hasParamAverage" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAverage",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "HomogeneityCompletenessVMeasureMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HomogeneityCompletenessVMeasureMethod"
+    },
+    "PairConfusionMatrixMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PairConfusionMatrixMethod"
+    },
+    "MaxErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MaxErrorMethod"
+    },
+    "hasParamNeedsThreshold" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNeedsThreshold",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "MatthewsCorrcoefMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MatthewsCorrcoefMethod"
+    },
+    "hasParamSamplewise" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSamplewise",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamScoreFunc" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoreFunc",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "MeanTweedieDevianceMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanTweedieDevianceMethod"
+    },
+    "LogLossMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LogLossMethod"
+    },
+    "PairwiseDistancesMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PairwiseDistancesMethod"
+    },
+    "PairwiseDistancesArgminMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PairwiseDistancesArgminMethod"
+    },
+    "DcgScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DcgScoreMethod"
+    },
+    "PrecisionRecallCurveMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrecisionRecallCurveMethod"
+    },
+    "GetScorerNamesMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GetScorerNamesMethod"
+    },
+    "MedianAbsoluteErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MedianAbsoluteErrorMethod"
+    },
+    "CoverageErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CoverageErrorMethod"
+    },
+    "hasParamPredDecision" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPredDecision",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamAlpha" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAlpha"
+    },
+    "hasParamFilterParams" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFilterParams",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "F1ScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#F1ScoreMethod"
+    },
+    "RootMeanSquaredLogErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RootMeanSquaredLogErrorMethod"
+    },
+    "BalancedAccuracyScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BalancedAccuracyScoreMethod"
+    },
+    "hasParamPosLabel" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPosLabel"
+    },
+    "PrecisionScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrecisionScoreMethod"
+    },
+    "hasParamAllowNone" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAllowNone",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "MeanPoissonDevianceMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanPoissonDevianceMethod"
+    },
+    "hasParamLogBase" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamLogBase"
+    },
+    "MeanSquaredErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanSquaredErrorMethod"
+    },
+    "NanEuclideanDistancesMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NanEuclideanDistancesMethod"
+    },
+    "ConsensusScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ConsensusScoreMethod"
+    },
+    "AccuracyScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AccuracyScoreMethod"
+    },
+    "D2PinballScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#D2PinballScoreMethod"
+    },
+    "BrierScoreLossMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BrierScoreLossMethod"
+    },
+    "AucMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AucMethod"
+    },
+    "Module" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+    },
+    "RocAucScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RocAucScoreMethod"
+    },
+    "hasParamNeedsProba" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNeedsProba",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "DaviesBouldinScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DaviesBouldinScoreMethod"
+    },
+    "MultilabelConfusionMatrixMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultilabelConfusionMatrixMethod"
+    },
+    "SilhouetteScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SilhouetteScoreMethod"
+    },
+    "PairwiseKernelsMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PairwiseKernelsMethod"
+    },
+    "hasParamMetricKwargs" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetricKwargs",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "VMeasureScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#VMeasureScoreMethod"
+    },
+    "PairwiseDistancesArgminMinMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PairwiseDistancesArgminMinMethod"
+    },
+    "hasParamAverageMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAverageMethod",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "LabelRankingLossMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelRankingLossMethod"
+    },
+    "hasParamEps" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEps"
+    },
+    "PrecisionRecallFscoreSupportMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrecisionRecallFscoreSupportMethod"
+    },
+    "hasParamNormalize" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNormalize"
+    },
+    "hasParamRandomState" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState"
+    },
+    "NormalizedMutualInfoScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NormalizedMutualInfoScoreMethod"
+    },
+    "hasParamAdjusted" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAdjusted",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "GetScorerMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GetScorerMethod"
+    },
+    "PerformanceCalculationMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PerformanceCalculationMethod"
+    },
+    "hasParamSimilarity" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSimilarity",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamZeroDivision" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamZeroDivision",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamGreaterIsBetter" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGreaterIsBetter",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamSampleSize" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSampleSize",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "TopKAccuracyScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TopKAccuracyScoreMethod"
+    },
+    "AveragePrecisionScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AveragePrecisionScoreMethod"
+    },
+    "hasParamForceAllFinite" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamForceAllFinite",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "LabelRankingAveragePrecisionScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelRankingAveragePrecisionScoreMethod"
+    },
+    "hasParamCopy" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "MeanAbsoluteErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanAbsoluteErrorMethod"
+    },
+    "AdjustedRandScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#AdjustedRandScoreMethod"
+    },
+    "SilhouetteSamplesMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SilhouetteSamplesMethod"
+    },
+    "hasParamIgnoreTies" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamIgnoreTies",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamAxis" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAxis",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "CompletenessScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CompletenessScoreMethod"
+    },
+    "hasParamRaiseWarning" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRaiseWarning",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamWarnFor" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWarnFor",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamMultioutput" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMultioutput",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "FbetaScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FbetaScoreMethod"
+    },
+    "hasParamScoring" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoring",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamBeta" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamBeta"
+    },
+    "ClassificationReportMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClassificationReportMethod"
+    },
+    "hasParamK" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamK",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "CheckScoringMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CheckScoringMethod"
+    },
+    "ZeroOneLossMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ZeroOneLossMethod"
+    },
+    "PerformanceCalculation" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PerformanceCalculation"
+    },
+    "hasParamForceFinite" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamForceFinite",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "ClassLikelihoodRatiosMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ClassLikelihoodRatiosMethod"
+    },
+    "ExplainedVarianceScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ExplainedVarianceScoreMethod"
+    },
+    "JaccardScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#JaccardScoreMethod"
+    },
+    "PairwiseDistancesChunkedMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PairwiseDistancesChunkedMethod"
+    },
+    "MetricsModule" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MetricsModule"
+    },
+    "hasParameter" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+    },
+    "hasParamDigits" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDigits",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "EuclideanDistancesMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#EuclideanDistancesMethod"
+    },
+    "RootMeanSquaredErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RootMeanSquaredErrorMethod"
+    },
+    "HingeLossMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HingeLossMethod"
+    },
+    "FowlkesMallowsScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FowlkesMallowsScoreMethod"
+    },
+    "hasParamA" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamA",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "RandScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandScoreMethod"
+    },
+    "MeanGammaDevianceMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanGammaDevianceMethod"
+    },
+    "hasParamDropIntermediate" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDropIntermediate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "hasParamSparse" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparse",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasParamNJobs" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "HomogeneityScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HomogeneityScoreMethod"
+    },
+    "MeanAbsolutePercentageErrorMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanAbsolutePercentageErrorMethod"
+    },
+    "MeanPinballLossMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MeanPinballLossMethod"
+    },
+    "CohenKappaScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#CohenKappaScoreMethod"
+    },
+    "hasParamMetric" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMetric",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "MakeScorerMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MakeScorerMethod"
+    },
+    "hasParamB" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamB",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ConfusionMatrixMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ConfusionMatrixMethod"
+    },
+    "hasParamSquared" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSquared",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasPerformanceCalculationMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationMethod",
+      "@type" : "@id"
+    },
+    "DetCurveMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DetCurveMethod"
+    },
+    "NdcgScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NdcgScoreMethod"
+    },
+    "hasParamReduceFunc" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamReduceFunc",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "RocCurveMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RocCurveMethod"
+    },
+    "hasParamWeights" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWeights",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasParamResponseMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamResponseMethod",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "AtomicMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+    },
+    "D2TweedieScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#D2TweedieScoreMethod"
+    },
+    "MutualInfoScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MutualInfoScoreMethod"
+    },
+    "hasParamMissingValues" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMissingValues"
+    },
+    "D2AbsoluteErrorScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#D2AbsoluteErrorScoreMethod"
+    },
+    "R2ScoreMethod" : {
+      "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#R2ScoreMethod"
+    }
+  }
+}

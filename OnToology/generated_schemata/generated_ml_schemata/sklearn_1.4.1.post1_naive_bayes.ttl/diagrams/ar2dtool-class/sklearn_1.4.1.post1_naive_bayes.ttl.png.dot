@@ -1,0 +1,24 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "ml:BernoulliNBMethod" "ml:ComplementNBMethod" "ml:CategoricalNBMethod" "ml:GaussianNBMethod" ; /*classes style*/
+	"ml:hasBinaryClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamVarSmoothing" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamMinCategories" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamAlpha" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamNorm" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasMulticlassClassificationMethod" -> "ml:hasTrainMethod" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamForceAlpha" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamBinarize" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:hasParamFitPrior" -> "ds:hasParameter" [ label = "rdfs:subPropertyOf" ];
+	"ml:BinaryClassification" -> "ml:BernoulliNBMethod" [ label = "ml:hasBinaryClassificationMethod" ];
+	"ml:ComplementNBMethod" -> "xsd:boolean" [ label = "ml:hasParamNorm" ];
+	"ml:CategoricalNBMethod" -> "xsd:int" [ label = "ml:hasParamMinCategories" ];
+	"ml:BernoulliNBMethod" -> "xsd:float" [ label = "ml:hasParamBinarize" ];
+	"ml:BernoulliNBMethod" -> "xsd:boolean" [ label = "ml:hasParamFitPrior" ];
+	"ml:BernoulliNBMethod" -> "xsd:float" [ label = "ml:hasParamAlpha" ];
+	"ml:GaussianNBMethod" -> "xsd:float" [ label = "ml:hasParamVarSmoothing" ];
+	"ml:MulticlassClassification" -> "ml:BernoulliNBMethod" [ label = "ml:hasMulticlassClassificationMethod" ];
+	"ml:BernoulliNBMethod" -> "xsd:boolean" [ label = "ml:hasParamForceAlpha" ];
+
+}
