@@ -77,6 +77,7 @@ visu:hasParamAlpha a owl:DatatypeProperty ;
         visu:PcolormeshMethod,
         visu:ScatterMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -91,12 +92,14 @@ visu:hasParamArgs a owl:DatatypeProperty ;
         visu:PlotMethod,
         visu:StemMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamArrowsize a owl:DatatypeProperty ;
     rdfs:domain visu:StreamplotMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamArrowstyle a owl:DatatypeProperty ;
@@ -107,6 +110,7 @@ visu:hasParamArrowstyle a owl:DatatypeProperty ;
 visu:hasParamAspect a owl:DatatypeProperty ;
     rdfs:domain visu:ImshowMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -154,6 +158,7 @@ visu:hasParamBottom a owl:DatatypeProperty ;
         visu:HistMethod,
         visu:StemMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -170,6 +175,7 @@ visu:hasParamBrokenStreamlines a owl:DatatypeProperty ;
 visu:hasParamBwMethod a owl:DatatypeProperty ;
     rdfs:domain visu:ViolinplotMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -187,18 +193,21 @@ visu:hasParamCapprops a owl:DatatypeProperty ;
 visu:hasParamCapsize a owl:DatatypeProperty ;
     rdfs:domain visu:ErrorbarMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamCapthick a owl:DatatypeProperty ;
     rdfs:domain visu:ErrorbarMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamCapwidths a owl:DatatypeProperty ;
     rdfs:domain visu:BoxplotMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -219,12 +228,14 @@ visu:hasParamCmap a owl:DatatypeProperty ;
 visu:hasParamCmax a owl:DatatypeProperty ;
     rdfs:domain visu:Hist2dMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamCmin a owl:DatatypeProperty ;
     rdfs:domain visu:Hist2dMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -253,7 +264,8 @@ visu:hasParamCounterclock a owl:DatatypeProperty ;
 visu:hasParamCumulative a owl:DatatypeProperty ;
     rdfs:domain visu:HistMethod ;
     rdfs:range xsd:boolean,
-        xsd:float ;
+        xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamDataset a owl:DatatypeProperty ;
@@ -266,7 +278,8 @@ visu:hasParamDensity a owl:DatatypeProperty ;
         visu:HistMethod,
         visu:StreamplotMethod ;
     rdfs:range xsd:boolean,
-        xsd:float ;
+        xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamDetrend a owl:DatatypeProperty ;
@@ -289,6 +302,7 @@ visu:hasParamEdgecolors a owl:DatatypeProperty ;
 visu:hasParamElinewidth a owl:DatatypeProperty ;
     rdfs:domain visu:ErrorbarMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -325,7 +339,8 @@ visu:hasParamFilternorm a owl:DatatypeProperty ;
 
 visu:hasParamFilterrad a owl:DatatypeProperty ;
     rdfs:domain visu:ImshowMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamFlierprops a owl:DatatypeProperty ;
@@ -349,6 +364,7 @@ visu:hasParamFs a owl:DatatypeProperty ;
         visu:MagnitudeSpectrumMethod,
         visu:PhaseSpectrumMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -367,6 +383,7 @@ visu:hasParamHeight a owl:DatatypeProperty ;
     rdfs:domain visu:BarMethod,
         visu:BarhMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -404,6 +421,7 @@ visu:hasParamLabel a owl:DatatypeProperty ;
 visu:hasParamLabeldistance a owl:DatatypeProperty ;
     rdfs:domain visu:PieMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -417,6 +435,7 @@ visu:hasParamLabels a owl:DatatypeProperty ;
 visu:hasParamLeft a owl:DatatypeProperty ;
     rdfs:domain visu:BarhMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -428,6 +447,7 @@ visu:hasParamLinefmt a owl:DatatypeProperty ;
 visu:hasParamLinewidth a owl:DatatypeProperty ;
     rdfs:domain visu:StreamplotMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -435,6 +455,7 @@ visu:hasParamLinewidths a owl:DatatypeProperty ;
     rdfs:domain visu:HexbinMethod,
         visu:ScatterMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -476,7 +497,8 @@ visu:hasParamMaxlags a owl:DatatypeProperty ;
 
 visu:hasParamMaxlength a owl:DatatypeProperty ;
     rdfs:domain visu:StreamplotMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamMeanline a owl:DatatypeProperty ;
@@ -503,7 +525,8 @@ visu:hasParamMincnt a owl:DatatypeProperty ;
 
 visu:hasParamMinlength a owl:DatatypeProperty ;
     rdfs:domain visu:StreamplotMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamNfft a owl:DatatypeProperty ;
@@ -569,7 +592,8 @@ visu:hasParamPatchArtist a owl:DatatypeProperty ;
 
 visu:hasParamPctdistance a owl:DatatypeProperty ;
     rdfs:domain visu:PieMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamPlotnonfinite a owl:DatatypeProperty ;
@@ -595,7 +619,8 @@ visu:hasParamQuantiles a owl:DatatypeProperty ;
 
 visu:hasParamRadius a owl:DatatypeProperty ;
     rdfs:domain visu:PieMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamRange a owl:DatatypeProperty ;
@@ -623,12 +648,14 @@ visu:hasParamRotatelabels a owl:DatatypeProperty ;
 visu:hasParamRwidth a owl:DatatypeProperty ;
     rdfs:domain visu:HistMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamS a owl:DatatypeProperty ;
     rdfs:domain visu:ScatterMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -719,7 +746,8 @@ visu:hasParamStartPoints a owl:DatatypeProperty ;
 
 visu:hasParamStartangle a owl:DatatypeProperty ;
     rdfs:domain visu:PieMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamStep a owl:DatatypeProperty ;
@@ -772,6 +800,7 @@ visu:hasParamVmax a owl:DatatypeProperty ;
         visu:PcolormeshMethod,
         visu:ScatterMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -782,6 +811,7 @@ visu:hasParamVmin a owl:DatatypeProperty ;
         visu:PcolormeshMethod,
         visu:ScatterMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -805,6 +835,7 @@ visu:hasParamWhere a owl:DatatypeProperty ;
 visu:hasParamWhis a owl:DatatypeProperty ;
     rdfs:domain visu:BoxplotMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -817,6 +848,7 @@ visu:hasParamWidth a owl:DatatypeProperty ;
     rdfs:domain visu:BarMethod,
         visu:BarhMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -824,6 +856,7 @@ visu:hasParamWidths a owl:DatatypeProperty ;
     rdfs:domain visu:BoxplotMethod,
         visu:ViolinplotMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -855,12 +888,14 @@ visu:hasParamX a owl:DatatypeProperty ;
         visu:StepMethod,
         visu:XcorrMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamXerr a owl:DatatypeProperty ;
     rdfs:domain visu:ErrorbarMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -891,24 +926,28 @@ visu:hasParamY a owl:DatatypeProperty ;
         visu:StepMethod,
         visu:XcorrMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamY1 a owl:DatatypeProperty ;
     rdfs:domain visu:FillBetweenMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamY2 a owl:DatatypeProperty ;
     rdfs:domain visu:FillBetweenMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 visu:hasParamYerr a owl:DatatypeProperty ;
     rdfs:domain visu:ErrorbarMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -921,6 +960,7 @@ visu:hasParamZorder a owl:DatatypeProperty ;
     rdfs:domain visu:BoxplotMethod,
         visu:StreamplotMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 

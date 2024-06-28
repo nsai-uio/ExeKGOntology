@@ -58,7 +58,8 @@ ml:hasParamAlgorithm a owl:DatatypeProperty ;
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:GradientBoostingRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBootstrap a owl:DatatypeProperty ;
@@ -91,7 +92,8 @@ ml:hasParamCcpAlpha a owl:DatatypeProperty ;
         ml:GradientBoostingRegressorMethod,
         ml:RandomForestClassifierMethod,
         ml:RandomForestRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
@@ -103,7 +105,8 @@ ml:hasParamClassWeight a owl:DatatypeProperty ;
 
 ml:hasParamContamination a owl:DatatypeProperty ;
     rdfs:domain ml:IsolationForestMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCriterion a owl:DatatypeProperty ;
@@ -172,7 +175,8 @@ ml:hasParamInteractionCst a owl:DatatypeProperty ;
 ml:hasParamL2Regularization a owl:DatatypeProperty ;
     rdfs:domain ml:HistGradientBoostingClassifierMethod,
         ml:HistGradientBoostingRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRate a owl:DatatypeProperty ;
@@ -182,7 +186,8 @@ ml:hasParamLearningRate a owl:DatatypeProperty ;
         ml:GradientBoostingRegressorMethod,
         ml:HistGradientBoostingClassifierMethod,
         ml:HistGradientBoostingRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLoss a owl:DatatypeProperty ;
@@ -271,7 +276,8 @@ ml:hasParamMinImpurityDecrease a owl:DatatypeProperty ;
         ml:RandomForestClassifierMethod,
         ml:RandomForestRegressorMethod,
         ml:RandomTreesEmbeddingMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinSamplesLeaf a owl:DatatypeProperty ;
@@ -308,7 +314,8 @@ ml:hasParamMinWeightFractionLeaf a owl:DatatypeProperty ;
         ml:RandomForestClassifierMethod,
         ml:RandomForestRegressorMethod,
         ml:RandomTreesEmbeddingMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMonotonicCst a owl:DatatypeProperty ;
@@ -376,7 +383,8 @@ ml:hasParamPassthrough a owl:DatatypeProperty ;
 
 ml:hasParamQuantile a owl:DatatypeProperty ;
     rdfs:domain ml:HistGradientBoostingRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
@@ -417,7 +425,8 @@ ml:hasParamStackMethod a owl:DatatypeProperty ;
 ml:hasParamSubsample a owl:DatatypeProperty ;
     rdfs:domain ml:GradientBoostingClassifierMethod,
         ml:GradientBoostingRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
@@ -425,7 +434,8 @@ ml:hasParamTol a owl:DatatypeProperty ;
         ml:GradientBoostingRegressorMethod,
         ml:HistGradientBoostingClassifierMethod,
         ml:HistGradientBoostingRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamValidationFraction a owl:DatatypeProperty ;

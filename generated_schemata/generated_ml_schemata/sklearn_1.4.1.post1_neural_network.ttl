@@ -24,7 +24,8 @@ ml:hasParamActivation a owl:DatatypeProperty ;
 ml:hasParamAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBatchSize a owl:DatatypeProperty ;
@@ -37,13 +38,15 @@ ml:hasParamBatchSize a owl:DatatypeProperty ;
 ml:hasParamBeta1 a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBeta2 a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEarlyStopping a owl:DatatypeProperty ;
@@ -55,7 +58,8 @@ ml:hasParamEarlyStopping a owl:DatatypeProperty ;
 ml:hasParamEpsilon a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRate a owl:DatatypeProperty ;
@@ -63,13 +67,15 @@ ml:hasParamLearningRate a owl:DatatypeProperty ;
         ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRateInit a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxFun a owl:DatatypeProperty ;
@@ -87,7 +93,8 @@ ml:hasParamMaxIter a owl:DatatypeProperty ;
 ml:hasParamMomentum a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNComponents a owl:DatatypeProperty ;
@@ -115,7 +122,8 @@ ml:hasParamNesterovsMomentum a owl:DatatypeProperty ;
 ml:hasParamPowerT a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
@@ -141,13 +149,15 @@ ml:hasParamSolver a owl:DatatypeProperty ;
 ml:hasParamTol a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamValidationFraction a owl:DatatypeProperty ;
     rdfs:domain ml:MLPClassifierMethod,
         ml:MLPRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;

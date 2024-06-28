@@ -24,12 +24,14 @@ ml:hasParamAlpha a owl:DatatypeProperty ;
         ml:CategoricalNBMethod,
         ml:ComplementNBMethod,
         ml:MultinomialNBMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBinarize a owl:DatatypeProperty ;
     rdfs:domain ml:BernoulliNBMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -61,7 +63,8 @@ ml:hasParamNorm a owl:DatatypeProperty ;
 
 ml:hasParamVarSmoothing a owl:DatatypeProperty ;
     rdfs:domain ml:GaussianNBMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:SklearnModule a owl:Class ;

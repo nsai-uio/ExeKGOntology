@@ -662,6 +662,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamBeta1." ;
     ] ;
@@ -670,6 +671,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamBeta2." ;
     ] ;
@@ -686,6 +688,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -694,6 +697,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -703,6 +707,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamLearningRateInit." ;
     ] ;
@@ -727,6 +732,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamMomentum." ;
     ] ;
@@ -751,6 +757,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamPowerT." ;
     ] ;
@@ -784,6 +791,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPClassifierMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -850,6 +858,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamBeta1." ;
     ] ;
@@ -858,6 +867,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamBeta2." ;
     ] ;
@@ -874,6 +884,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -882,6 +893,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -891,6 +903,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamLearningRateInit." ;
     ] ;
@@ -915,6 +928,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamMomentum." ;
     ] ;
@@ -939,6 +953,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamPowerT." ;
     ] ;
@@ -972,6 +987,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MLPRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -1164,6 +1180,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method AffinityPropagationMethod must have at most one compatible value for parameter hasParamDamping." ;
     ] ;
@@ -1180,6 +1197,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method AffinityPropagationMethod must have at most one compatible value for parameter hasParamPreference." ;
     ] ;
@@ -1226,6 +1244,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamCoef0." ;
     ] ;
@@ -1252,6 +1271,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamEigenTol." ;
     ] ;
@@ -1260,6 +1280,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamGamma." ;
@@ -1359,6 +1380,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AdaBoostClassifierMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -1455,6 +1477,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BisectingKMeansMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -1485,6 +1508,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DBSCANMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -1598,6 +1622,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FastICAMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -1662,6 +1687,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method HDBSCANMethod must have at most one compatible value for parameter hasParamClusterSelectionEpsilon." ;
     ] ;
@@ -1813,6 +1839,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KMeansMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -2053,6 +2080,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method KernelDensityMethod must have at most one compatible value for parameter hasParamAtol." ;
     ] ;
@@ -2061,6 +2089,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelDensityMethod must have at most one compatible value for parameter hasParamBandwidth." ;
@@ -2110,6 +2139,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method KernelDensityMethod must have at most one compatible value for parameter hasParamRtol." ;
     ] .
@@ -2130,6 +2160,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LocalOutlierFactorMethod must have at most one compatible value for parameter hasParamContamination." ;
     ] ;
@@ -2249,6 +2280,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NearestNeighborsMethod must have at most one compatible value for parameter hasParamRadius." ;
     ] .
@@ -2277,6 +2309,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method OPTICSMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -2293,6 +2326,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method OPTICSMethod must have at most one compatible value for parameter hasParamMaxEps." ;
     ] ;
@@ -2413,6 +2447,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RadiusNeighborsClassifierMethod must have at most one compatible value for parameter hasParamRadius." ;
     ] ;
@@ -2483,6 +2518,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RadiusNeighborsRegressorMethod must have at most one compatible value for parameter hasParamRadius." ;
     ] ;
@@ -2561,6 +2597,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RadiusNeighborsTransformerMethod must have at most one compatible value for parameter hasParamRadius." ;
     ] .
@@ -2624,6 +2661,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TruncatedSVDMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -2667,6 +2705,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BernoulliNBMethod must have at most one compatible value for parameter hasParamBinarize." ;
@@ -2897,6 +2936,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method DictionaryLearningMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -2914,6 +2954,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DictionaryLearningMethod must have at most one compatible value for parameter hasParamTransformAlpha." ;
     ] ;
@@ -2977,6 +3018,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ElasticNetMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -3027,6 +3069,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ElasticNetMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -3082,6 +3125,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GammaRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -3122,6 +3166,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -3146,6 +3191,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -3191,6 +3237,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -3217,6 +3264,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -3260,6 +3308,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -3310,6 +3359,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method HuberRegressorMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -3334,6 +3384,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HuberRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -3365,6 +3416,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamCoef0." ;
     ] ;
@@ -3407,6 +3459,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamGamma." ;
@@ -3476,6 +3529,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method KernelPCAMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -3507,6 +3561,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LassoLarsMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -3531,6 +3586,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LassoLarsMethod must have at most one compatible value for parameter hasParamJitter." ;
     ] ;
@@ -3654,6 +3710,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -3816,6 +3873,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchDictionaryLearningMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -3833,6 +3891,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MiniBatchDictionaryLearningMethod must have at most one compatible value for parameter hasParamTransformAlpha." ;
     ] ;
@@ -3949,6 +4008,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MiniBatchSparsePCAMethod must have at most one compatible value for parameter hasParamRidgeAlpha." ;
     ] ;
@@ -3965,6 +4025,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchSparsePCAMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4013,6 +4074,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MultiTaskElasticNetMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -4046,6 +4108,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskElasticNetMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4118,6 +4181,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskLassoMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4195,6 +4259,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PerceptronMethod must have at most one compatible value for parameter hasParamEta0." ;
     ] ;
@@ -4211,6 +4276,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PerceptronMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -4269,6 +4335,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PerceptronMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4343,6 +4410,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PoissonRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4391,6 +4459,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method QuantileRegressorMethod must have at most one compatible value for parameter hasParamQuantile." ;
     ] ;
@@ -4486,6 +4555,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeClassifierMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4558,6 +4628,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method RidgeMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4607,6 +4678,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -4615,6 +4687,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamEta0." ;
     ] ;
@@ -4631,6 +4704,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -4639,6 +4713,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -4689,6 +4764,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamPowerT." ;
     ] ;
@@ -4714,6 +4790,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDClassifierMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -4782,6 +4859,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -4790,6 +4868,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamEta0." ;
     ] ;
@@ -4806,6 +4885,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -4814,6 +4894,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -4855,6 +4936,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamPowerT." ;
     ] ;
@@ -4880,6 +4962,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5040,6 +5123,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SparsePCAMethod must have at most one compatible value for parameter hasParamRidgeAlpha." ;
     ] ;
@@ -5048,6 +5132,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SparsePCAMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5120,6 +5205,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method TweedieRegressorMethod must have at most one compatible value for parameter hasParamPower." ;
     ] ;
@@ -5136,6 +5222,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TweedieRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5166,6 +5253,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ARDRegressionMethod must have at most one compatible value for parameter hasParamAlpha1." ;
     ] ;
@@ -5174,6 +5262,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ARDRegressionMethod must have at most one compatible value for parameter hasParamAlpha2." ;
     ] ;
@@ -5206,6 +5295,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ARDRegressionMethod must have at most one compatible value for parameter hasParamLambda1." ;
     ] ;
@@ -5214,6 +5304,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ARDRegressionMethod must have at most one compatible value for parameter hasParamLambda2." ;
     ] ;
@@ -5238,6 +5329,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ARDRegressionMethod must have at most one compatible value for parameter hasParamThresholdLambda." ;
     ] ;
@@ -5246,6 +5338,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ARDRegressionMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5268,6 +5361,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method BayesianRidgeMethod must have at most one compatible value for parameter hasParamAlpha1." ;
     ] ;
@@ -5276,6 +5370,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method BayesianRidgeMethod must have at most one compatible value for parameter hasParamAlpha2." ;
     ] ;
@@ -5284,6 +5379,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method BayesianRidgeMethod must have at most one compatible value for parameter hasParamAlphaInit." ;
     ] ;
@@ -5316,6 +5412,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method BayesianRidgeMethod must have at most one compatible value for parameter hasParamLambda1." ;
     ] ;
@@ -5324,6 +5421,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method BayesianRidgeMethod must have at most one compatible value for parameter hasParamLambda2." ;
     ] ;
@@ -5332,6 +5430,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method BayesianRidgeMethod must have at most one compatible value for parameter hasParamLambdaInit." ;
     ] ;
@@ -5356,6 +5455,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BayesianRidgeMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5378,6 +5478,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamAlphaH." ;
     ] ;
@@ -5386,6 +5487,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamAlphaW." ;
     ] ;
@@ -5402,6 +5504,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamBetaLoss." ;
@@ -5411,6 +5514,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamForgetFactor." ;
     ] ;
@@ -5443,6 +5547,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -5487,6 +5592,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchNMFMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5517,6 +5623,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NMFMethod must have at most one compatible value for parameter hasParamAlphaH." ;
     ] ;
@@ -5525,6 +5632,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NMFMethod must have at most one compatible value for parameter hasParamAlphaW." ;
     ] ;
@@ -5533,6 +5641,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NMFMethod must have at most one compatible value for parameter hasParamBetaLoss." ;
@@ -5550,6 +5659,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NMFMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -5601,6 +5711,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NMFMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5701,6 +5812,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ElasticNetCVMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -5717,6 +5829,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ElasticNetCVMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -5784,6 +5897,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method ElasticNetCVMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5831,6 +5945,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LassoCVMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -5906,6 +6021,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LassoCVMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -5953,6 +6069,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MultiTaskElasticNetCVMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -5969,6 +6086,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MultiTaskElasticNetCVMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -6019,6 +6137,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskElasticNetCVMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -6066,6 +6185,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MultiTaskLassoCVMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -6124,6 +6244,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MultiTaskLassoCVMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -6250,6 +6371,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method FbetaScoreMethod must have at most one compatible value for parameter hasParamBeta." ;
     ] ;
@@ -6324,6 +6446,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PassiveAggressiveClassifierMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -6406,6 +6529,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveClassifierMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -6456,6 +6580,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PassiveAggressiveRegressorMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -6472,6 +6597,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PassiveAggressiveRegressorMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -6529,6 +6655,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PassiveAggressiveRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -6579,6 +6706,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PrecisionRecallFscoreSupportMethod must have at most one compatible value for parameter hasParamBeta." ;
     ] ;
@@ -6716,6 +6844,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDOneClassSVMMethod must have at most one compatible value for parameter hasParamEta0." ;
     ] ;
@@ -6732,6 +6861,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDOneClassSVMMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -6749,6 +6879,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDOneClassSVMMethod must have at most one compatible value for parameter hasParamNu." ;
     ] ;
@@ -6757,6 +6888,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SGDOneClassSVMMethod must have at most one compatible value for parameter hasParamPowerT." ;
     ] ;
@@ -6782,6 +6914,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SGDOneClassSVMMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -6892,6 +7025,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MeanShiftMethod must have at most one compatible value for parameter hasParamBandwidth." ;
@@ -6962,6 +7096,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BernoulliRBMMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -7058,6 +7193,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamDocTopicPrior." ;
     ] ;
@@ -7074,6 +7210,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamLearningDecay." ;
     ] ;
@@ -7090,6 +7227,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamLearningOffset." ;
     ] ;
@@ -7114,6 +7252,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamMeanChangeTol." ;
     ] ;
@@ -7141,6 +7280,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamPerpTol." ;
     ] ;
@@ -7158,6 +7298,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LatentDirichletAllocationMethod must have at most one compatible value for parameter hasParamTopicWordPrior." ;
     ] ;
@@ -7262,6 +7403,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MiniBatchKMeansMethod must have at most one compatible value for parameter hasParamReassignmentRatio." ;
     ] ;
@@ -7270,6 +7412,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method MiniBatchKMeansMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -7292,6 +7435,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method HomogeneityCompletenessVMeasureMethod must have at most one compatible value for parameter hasParamBeta." ;
     ] .
@@ -7304,6 +7448,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method VMeasureScoreMethod must have at most one compatible value for parameter hasParamBeta." ;
     ] .
@@ -7522,6 +7667,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -7583,6 +7729,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -7609,6 +7756,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreesClassifierMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -7681,6 +7829,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -7734,6 +7883,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -7760,6 +7910,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreesRegressorMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -7832,6 +7983,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method IsolationForestMethod must have at most one compatible value for parameter hasParamContamination." ;
     ] ;
@@ -7914,6 +8066,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -7975,6 +8128,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -8001,6 +8155,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomForestClassifierMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -8073,6 +8228,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -8126,6 +8282,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -8152,6 +8309,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomForestRegressorMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -8249,6 +8407,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BirchMethod must have at most one compatible value for parameter hasParamThreshold." ;
@@ -8270,6 +8429,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NuSVCMethod must have at most one compatible value for parameter hasParamCacheSize." ;
     ] ;
@@ -8286,6 +8446,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NuSVCMethod must have at most one compatible value for parameter hasParamCoef0." ;
     ] ;
@@ -8312,6 +8473,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NuSVCMethod must have at most one compatible value for parameter hasParamGamma." ;
@@ -8337,6 +8499,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NuSVCMethod must have at most one compatible value for parameter hasParamNu." ;
     ] ;
@@ -8370,6 +8533,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NuSVCMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -8400,6 +8564,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SVCMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -8408,6 +8573,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SVCMethod must have at most one compatible value for parameter hasParamCacheSize." ;
     ] ;
@@ -8424,6 +8590,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SVCMethod must have at most one compatible value for parameter hasParamCoef0." ;
     ] ;
@@ -8450,6 +8617,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SVCMethod must have at most one compatible value for parameter hasParamGamma." ;
@@ -8500,6 +8668,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SVCMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -8522,6 +8691,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LinearSVCMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -8554,6 +8724,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LinearSVCMethod must have at most one compatible value for parameter hasParamInterceptScaling." ;
     ] ;
@@ -8603,6 +8774,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LinearSVCMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -8625,6 +8797,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LinearSVRMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -8641,6 +8814,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LinearSVRMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -8657,6 +8831,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LinearSVRMethod must have at most one compatible value for parameter hasParamInterceptScaling." ;
     ] ;
@@ -8690,6 +8865,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LinearSVRMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -8712,6 +8888,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LogisticRegressionMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -8744,6 +8921,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LogisticRegressionMethod must have at most one compatible value for parameter hasParamInterceptScaling." ;
     ] ;
@@ -8752,6 +8930,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LogisticRegressionMethod must have at most one compatible value for parameter hasParamL1Ratio." ;
     ] ;
@@ -8810,6 +8989,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -8840,6 +9020,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NuSVRMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -8848,6 +9029,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NuSVRMethod must have at most one compatible value for parameter hasParamCacheSize." ;
     ] ;
@@ -8856,6 +9038,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NuSVRMethod must have at most one compatible value for parameter hasParamCoef0." ;
     ] ;
@@ -8874,6 +9057,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NuSVRMethod must have at most one compatible value for parameter hasParamGamma." ;
@@ -8899,6 +9083,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NuSVRMethod must have at most one compatible value for parameter hasParamNu." ;
     ] ;
@@ -8915,6 +9100,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NuSVRMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -8937,6 +9123,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SVRMethod must have at most one compatible value for parameter hasParamC." ;
     ] ;
@@ -8945,6 +9132,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SVRMethod must have at most one compatible value for parameter hasParamCacheSize." ;
     ] ;
@@ -8953,6 +9141,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SVRMethod must have at most one compatible value for parameter hasParamCoef0." ;
     ] ;
@@ -8971,6 +9160,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SVRMethod must have at most one compatible value for parameter hasParamEpsilon." ;
     ] ;
@@ -8979,6 +9169,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SVRMethod must have at most one compatible value for parameter hasParamGamma." ;
@@ -9012,6 +9203,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SVRMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -9034,6 +9226,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method OneClassSVMMethod must have at most one compatible value for parameter hasParamCacheSize." ;
     ] ;
@@ -9042,6 +9235,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method OneClassSVMMethod must have at most one compatible value for parameter hasParamCoef0." ;
     ] ;
@@ -9060,6 +9254,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OneClassSVMMethod must have at most one compatible value for parameter hasParamGamma." ;
@@ -9085,6 +9280,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method OneClassSVMMethod must have at most one compatible value for parameter hasParamNu." ;
     ] ;
@@ -9101,6 +9297,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OneClassSVMMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -9166,6 +9363,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method NeighborhoodComponentsAnalysisMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -9229,6 +9427,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamL2Regularization." ;
     ] ;
@@ -9237,6 +9436,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -9340,6 +9540,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -9405,6 +9606,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamL2Regularization." ;
     ] ;
@@ -9413,6 +9615,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -9499,6 +9702,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamQuantile." ;
     ] ;
@@ -9524,6 +9728,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method HistGradientBoostingRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -9730,6 +9935,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method TargetEncoderMethod must have at most one compatible value for parameter hasParamSmooth." ;
     ] ;
@@ -9750,6 +9956,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DecisionTreeClassifierMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -9802,6 +10009,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DecisionTreeClassifierMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -9828,6 +10036,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DecisionTreeClassifierMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -9857,6 +10066,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DecisionTreeRegressorMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -9901,6 +10111,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DecisionTreeRegressorMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -9927,6 +10138,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DecisionTreeRegressorMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -9956,6 +10168,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreeClassifierMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -10008,6 +10221,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreeClassifierMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -10034,6 +10248,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreeClassifierMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -10063,6 +10278,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreeRegressorMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -10107,6 +10323,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreeRegressorMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -10133,6 +10350,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method ExtraTreeRegressorMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -10162,6 +10380,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamCcpAlpha." ;
     ] ;
@@ -10186,6 +10405,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -10231,6 +10451,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -10257,6 +10478,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -10300,6 +10522,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method GradientBoostingClassifierMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -10402,6 +10625,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamInterceptScaling." ;
     ] ;
@@ -10410,6 +10634,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamL1Ratios." ;
     ] ;
@@ -10485,6 +10710,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method LogisticRegressionCVMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -10580,6 +10806,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method OutputCodeClassifierMethod must have at most one compatible value for parameter hasParamCodeSize." ;
     ] ;
@@ -10642,6 +10869,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method AgglomerativeClusteringMethod must have at most one compatible value for parameter hasParamDistanceThreshold." ;
     ] ;
@@ -10711,6 +10939,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method FeatureAgglomerationMethod must have at most one compatible value for parameter hasParamDistanceThreshold." ;
     ] ;
@@ -10784,6 +11013,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method BinarizerMethod must have at most one compatible value for parameter hasParamThreshold." ;
@@ -10856,6 +11086,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method FactorAnalysisMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -11122,6 +11353,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method PCAMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -11316,6 +11548,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LarsCVMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -11387,6 +11620,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LarsMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -11411,6 +11645,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LarsMethod must have at most one compatible value for parameter hasParamJitter." ;
     ] ;
@@ -11475,6 +11710,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LassoLarsCVMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -11562,6 +11798,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LassoLarsICMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -11586,6 +11823,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LassoLarsICMethod must have at most one compatible value for parameter hasParamNoiseVariance." ;
     ] ;
@@ -11719,6 +11957,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method TheilSenRegressorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -12059,6 +12298,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SequentialFeatureSelectorMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -12331,6 +12571,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SparseCoderMethod must have at most one compatible value for parameter hasParamTransformAlpha." ;
     ] ;
@@ -12524,6 +12765,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method LogLossMethod must have at most one compatible value for parameter hasParamEps." ;
     ] ;
@@ -12591,6 +12833,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method AdaBoostRegressorMethod must have at most one compatible value for parameter hasParamLearningRate." ;
@@ -12737,6 +12980,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RANSACRegressorMethod must have at most one compatible value for parameter hasParamResidualThreshold." ;
     ] ;
@@ -12753,6 +12997,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RANSACRegressorMethod must have at most one compatible value for parameter hasParamStopScore." ;
     ] .
@@ -12855,6 +13100,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method SelectFromModelMethod must have at most one compatible value for parameter hasParamThreshold." ;
@@ -12998,6 +13244,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method OrthogonalMatchingPursuitMethod must have at most one compatible value for parameter hasParamTol." ;
@@ -13177,6 +13424,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method DcgScoreMethod must have at most one compatible value for parameter hasParamLogBase." ;
     ] .
@@ -13418,6 +13666,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomTreesEmbeddingMethod must have at most one compatible value for parameter hasParamMinImpurityDecrease." ;
     ] ;
@@ -13444,6 +13693,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method RandomTreesEmbeddingMethod must have at most one compatible value for parameter hasParamMinWeightFractionLeaf." ;
     ] ;
@@ -13515,6 +13765,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method NearestCentroidMethod must have at most one compatible value for parameter hasParamShrinkThreshold." ;
     ] .
@@ -13552,6 +13803,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PairwiseDistancesChunkedMethod must have at most one compatible value for parameter hasParamWorkingMemory." ;
     ] .
@@ -14201,6 +14453,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method D2TweedieScoreMethod must have at most one compatible value for parameter hasParamPower." ;
     ] .
@@ -14213,6 +14466,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method MeanTweedieDevianceMethod must have at most one compatible value for parameter hasParamPower." ;
     ] .
@@ -14384,6 +14638,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
             [ sh:datatype xsd:string ]
         ) ;
         sh:message "Method VarianceThresholdMethod must have at most one compatible value for parameter hasParamThreshold." ;
@@ -14397,6 +14652,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method GaussianNBMethod must have at most one compatible value for parameter hasParamVarSmoothing." ;
     ] .

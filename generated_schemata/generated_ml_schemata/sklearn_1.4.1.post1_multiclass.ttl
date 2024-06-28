@@ -27,7 +27,8 @@ ml:hasMultilabelClassificationMethod a owl:ObjectProperty ;
 
 ml:hasParamCodeSize a owl:DatatypeProperty ;
     rdfs:domain ml:OutputCodeClassifierMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEstimator a owl:DatatypeProperty ;

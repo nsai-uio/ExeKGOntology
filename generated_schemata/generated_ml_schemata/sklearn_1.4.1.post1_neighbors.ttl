@@ -59,12 +59,14 @@ ml:hasParamAlgorithm a owl:DatatypeProperty ;
 
 ml:hasParamAtol a owl:DatatypeProperty ;
     rdfs:domain ml:KernelDensityMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBandwidth a owl:DatatypeProperty ;
     rdfs:domain ml:KernelDensityMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -80,7 +82,8 @@ ml:hasParamCallback a owl:DatatypeProperty ;
 
 ml:hasParamContamination a owl:DatatypeProperty ;
     rdfs:domain ml:LocalOutlierFactorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInit a owl:DatatypeProperty ;
@@ -188,7 +191,8 @@ ml:hasParamP a owl:DatatypeProperty ;
         ml:RadiusNeighborsClassifierMethod,
         ml:RadiusNeighborsRegressorMethod,
         ml:RadiusNeighborsTransformerMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRadius a owl:DatatypeProperty ;
@@ -196,7 +200,8 @@ ml:hasParamRadius a owl:DatatypeProperty ;
         ml:RadiusNeighborsClassifierMethod,
         ml:RadiusNeighborsRegressorMethod,
         ml:RadiusNeighborsTransformerMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
@@ -207,17 +212,20 @@ ml:hasParamRandomState a owl:DatatypeProperty ;
 
 ml:hasParamRtol a owl:DatatypeProperty ;
     rdfs:domain ml:KernelDensityMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamShrinkThreshold a owl:DatatypeProperty ;
     rdfs:domain ml:NearestCentroidMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
     rdfs:domain ml:NeighborhoodComponentsAnalysisMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;

@@ -55,24 +55,28 @@ ml:hasParamAlpha a owl:DatatypeProperty ;
         ml:SGDRegressorMethod,
         ml:TweedieRegressorMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha1 a owl:DatatypeProperty ;
     rdfs:domain ml:ARDRegressionMethod,
         ml:BayesianRidgeMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlpha2 a owl:DatatypeProperty ;
     rdfs:domain ml:ARDRegressionMethod,
         ml:BayesianRidgeMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphaInit a owl:DatatypeProperty ;
     rdfs:domain ml:BayesianRidgeMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphaPerTarget a owl:DatatypeProperty ;
@@ -102,7 +106,8 @@ ml:hasParamC a owl:DatatypeProperty ;
     rdfs:domain ml:LogisticRegressionMethod,
         ml:PassiveAggressiveClassifierMethod,
         ml:PassiveAggressiveRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
@@ -201,7 +206,8 @@ ml:hasParamEps a owl:DatatypeProperty ;
         ml:LassoLarsMethod,
         ml:MultiTaskElasticNetCVMethod,
         ml:MultiTaskLassoCVMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEpsilon a owl:DatatypeProperty ;
@@ -209,7 +215,8 @@ ml:hasParamEpsilon a owl:DatatypeProperty ;
         ml:PassiveAggressiveRegressorMethod,
         ml:SGDClassifierMethod,
         ml:SGDRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEstimator a owl:DatatypeProperty ;
@@ -222,7 +229,8 @@ ml:hasParamEta0 a owl:DatatypeProperty ;
         ml:SGDClassifierMethod,
         ml:SGDOneClassSVMMethod,
         ml:SGDRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitIntercept a owl:DatatypeProperty ;
@@ -279,7 +287,8 @@ ml:hasParamGcvMode a owl:DatatypeProperty ;
 ml:hasParamInterceptScaling a owl:DatatypeProperty ;
     rdfs:domain ml:LogisticRegressionCVMethod,
         ml:LogisticRegressionMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamIsDataValid a owl:DatatypeProperty ;
@@ -295,7 +304,8 @@ ml:hasParamIsModelValid a owl:DatatypeProperty ;
 ml:hasParamJitter a owl:DatatypeProperty ;
     rdfs:domain ml:LarsMethod,
         ml:LassoLarsMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamL1Ratio a owl:DatatypeProperty ;
@@ -307,29 +317,34 @@ ml:hasParamL1Ratio a owl:DatatypeProperty ;
         ml:PerceptronMethod,
         ml:SGDClassifierMethod,
         ml:SGDRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamL1Ratios a owl:DatatypeProperty ;
     rdfs:domain ml:LogisticRegressionCVMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLambda1 a owl:DatatypeProperty ;
     rdfs:domain ml:ARDRegressionMethod,
         ml:BayesianRidgeMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLambda2 a owl:DatatypeProperty ;
     rdfs:domain ml:ARDRegressionMethod,
         ml:BayesianRidgeMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLambdaInit a owl:DatatypeProperty ;
     rdfs:domain ml:BayesianRidgeMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningRate a owl:DatatypeProperty ;
@@ -469,12 +484,14 @@ ml:hasParamNSubsamples a owl:DatatypeProperty ;
 
 ml:hasParamNoiseVariance a owl:DatatypeProperty ;
     rdfs:domain ml:LassoLarsICMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamNu a owl:DatatypeProperty ;
     rdfs:domain ml:SGDOneClassSVMMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPenalty a owl:DatatypeProperty ;
@@ -502,14 +519,16 @@ ml:hasParamPositive a owl:DatatypeProperty ;
 
 ml:hasParamPower a owl:DatatypeProperty ;
     rdfs:domain ml:TweedieRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPowerT a owl:DatatypeProperty ;
     rdfs:domain ml:SGDClassifierMethod,
         ml:SGDOneClassSVMMethod,
         ml:SGDRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPrecompute a owl:DatatypeProperty ;
@@ -529,7 +548,8 @@ ml:hasParamPrecompute a owl:DatatypeProperty ;
 
 ml:hasParamQuantile a owl:DatatypeProperty ;
     rdfs:domain ml:QuantileRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
@@ -566,7 +586,8 @@ ml:hasParamRefit a owl:DatatypeProperty ;
 
 ml:hasParamResidualThreshold a owl:DatatypeProperty ;
     rdfs:domain ml:RANSACRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamScoring a owl:DatatypeProperty ;
@@ -622,7 +643,8 @@ ml:hasParamStopNInliers a owl:DatatypeProperty ;
 
 ml:hasParamStopScore a owl:DatatypeProperty ;
     rdfs:domain ml:RANSACRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamStoreCvValues a owl:DatatypeProperty ;
@@ -633,7 +655,8 @@ ml:hasParamStoreCvValues a owl:DatatypeProperty ;
 
 ml:hasParamThresholdLambda a owl:DatatypeProperty ;
     rdfs:domain ml:ARDRegressionMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
@@ -664,6 +687,7 @@ ml:hasParamTol a owl:DatatypeProperty ;
         ml:TheilSenRegressorMethod,
         ml:TweedieRegressorMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -673,7 +697,8 @@ ml:hasParamValidationFraction a owl:DatatypeProperty ;
         ml:PerceptronMethod,
         ml:SGDClassifierMethod,
         ml:SGDRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;

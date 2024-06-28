@@ -23,6 +23,7 @@ ml:hasParamAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:D2PinballScoreMethod,
         ml:MeanPinballLossMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -60,7 +61,8 @@ ml:hasParamBeta a owl:DatatypeProperty ;
         ml:HomogeneityCompletenessVMeasureMethod,
         ml:PrecisionRecallFscoreSupportMethod,
         ml:VMeasureScoreMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamContingency a owl:DatatypeProperty ;
@@ -86,7 +88,8 @@ ml:hasParamDropIntermediate a owl:DatatypeProperty ;
 
 ml:hasParamEps a owl:DatatypeProperty ;
     rdfs:domain ml:LogLossMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFilterParams a owl:DatatypeProperty ;
@@ -125,7 +128,8 @@ ml:hasParamK a owl:DatatypeProperty ;
 
 ml:hasParamLogBase a owl:DatatypeProperty ;
     rdfs:domain ml:DcgScoreMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMetric a owl:DatatypeProperty ;
@@ -226,7 +230,8 @@ ml:hasParamPosLabel a owl:DatatypeProperty ;
 ml:hasParamPower a owl:DatatypeProperty ;
     rdfs:domain ml:D2TweedieScoreMethod,
         ml:MeanTweedieDevianceMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPredDecision a owl:DatatypeProperty ;
@@ -306,7 +311,8 @@ ml:hasParamWeights a owl:DatatypeProperty ;
 
 ml:hasParamWorkingMemory a owl:DatatypeProperty ;
     rdfs:domain ml:PairwiseDistancesChunkedMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamZeroDivision a owl:DatatypeProperty ;

@@ -335,6 +335,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamQ." ;
     ] .
@@ -409,6 +410,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamQ." ;
     ] .

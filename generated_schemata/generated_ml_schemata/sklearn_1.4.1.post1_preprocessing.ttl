@@ -241,7 +241,8 @@ ml:hasParamShuffle a owl:DatatypeProperty ;
 
 ml:hasParamSmooth a owl:DatatypeProperty ;
     rdfs:domain ml:TargetEncoderMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSparseOutput a owl:DatatypeProperty ;
@@ -276,7 +277,8 @@ ml:hasParamTargetType a owl:DatatypeProperty ;
 
 ml:hasParamThreshold a owl:DatatypeProperty ;
     rdfs:domain ml:BinarizerMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamUnitVariance a owl:DatatypeProperty ;

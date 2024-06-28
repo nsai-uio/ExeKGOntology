@@ -91,7 +91,8 @@ stats:hasParamOverwriteInput a owl:DatatypeProperty ;
 stats:hasParamQ a owl:DatatypeProperty ;
     rdfs:domain stats:PercentileMethod,
         stats:QuantileMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 stats:hasParamReturned a owl:DatatypeProperty ;

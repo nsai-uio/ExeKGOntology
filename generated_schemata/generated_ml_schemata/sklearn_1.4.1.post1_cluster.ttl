@@ -48,7 +48,8 @@ ml:hasParamAllowSingleCluster a owl:DatatypeProperty ;
 
 ml:hasParamAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:HDBSCANMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAssignLabels a owl:DatatypeProperty ;
@@ -58,7 +59,8 @@ ml:hasParamAssignLabels a owl:DatatypeProperty ;
 
 ml:hasParamBandwidth a owl:DatatypeProperty ;
     rdfs:domain ml:MeanShiftMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBatchSize a owl:DatatypeProperty ;
@@ -93,7 +95,8 @@ ml:hasParamClusterMethod a owl:DatatypeProperty ;
 
 ml:hasParamClusterSelectionEpsilon a owl:DatatypeProperty ;
     rdfs:domain ml:HDBSCANMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClusterSelectionMethod a owl:DatatypeProperty ;
@@ -103,7 +106,8 @@ ml:hasParamClusterSelectionMethod a owl:DatatypeProperty ;
 
 ml:hasParamCoef0 a owl:DatatypeProperty ;
     rdfs:domain ml:SpectralClusteringMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamComputeDistances a owl:DatatypeProperty ;
@@ -150,18 +154,21 @@ ml:hasParamCopyX a owl:DatatypeProperty ;
 
 ml:hasParamDamping a owl:DatatypeProperty ;
     rdfs:domain ml:AffinityPropagationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDegree a owl:DatatypeProperty ;
     rdfs:domain ml:SpectralClusteringMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDistanceThreshold a owl:DatatypeProperty ;
     rdfs:domain ml:AgglomerativeClusteringMethod,
         ml:FeatureAgglomerationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEigenSolver a owl:DatatypeProperty ;
@@ -171,18 +178,21 @@ ml:hasParamEigenSolver a owl:DatatypeProperty ;
 
 ml:hasParamEigenTol a owl:DatatypeProperty ;
     rdfs:domain ml:SpectralClusteringMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEps a owl:DatatypeProperty ;
     rdfs:domain ml:DBSCANMethod,
         ml:OPTICSMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamGamma a owl:DatatypeProperty ;
     rdfs:domain ml:SpectralClusteringMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInit a owl:DatatypeProperty ;
@@ -224,7 +234,8 @@ ml:hasParamMaxClusterSize a owl:DatatypeProperty ;
 
 ml:hasParamMaxEps a owl:DatatypeProperty ;
     rdfs:domain ml:OPTICSMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxIter a owl:DatatypeProperty ;
@@ -349,7 +360,8 @@ ml:hasParamNSvdVecs a owl:DatatypeProperty ;
 ml:hasParamP a owl:DatatypeProperty ;
     rdfs:domain ml:DBSCANMethod,
         ml:OPTICSMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPoolingFunc a owl:DatatypeProperty ;
@@ -364,7 +376,8 @@ ml:hasParamPredecessorCorrection a owl:DatatypeProperty ;
 
 ml:hasParamPreference a owl:DatatypeProperty ;
     rdfs:domain ml:AffinityPropagationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
@@ -381,7 +394,8 @@ ml:hasParamRandomState a owl:DatatypeProperty ;
 
 ml:hasParamReassignmentRatio a owl:DatatypeProperty ;
     rdfs:domain ml:MiniBatchKMeansMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamSeeds a owl:DatatypeProperty ;
@@ -402,14 +416,16 @@ ml:hasParamSvdMethod a owl:DatatypeProperty ;
 
 ml:hasParamThreshold a owl:DatatypeProperty ;
     rdfs:domain ml:BirchMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
     rdfs:domain ml:BisectingKMeansMethod,
         ml:KMeansMethod,
         ml:MiniBatchKMeansMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;

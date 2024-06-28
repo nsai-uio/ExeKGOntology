@@ -41,13 +41,15 @@ ml:hasParamAlpha a owl:DatatypeProperty ;
 ml:hasParamAlphaH a owl:DatatypeProperty ;
     rdfs:domain ml:MiniBatchNMFMethod,
         ml:NMFMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamAlphaW a owl:DatatypeProperty ;
     rdfs:domain ml:MiniBatchNMFMethod,
         ml:NMFMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamBatchSize a owl:DatatypeProperty ;
@@ -63,6 +65,7 @@ ml:hasParamBetaLoss a owl:DatatypeProperty ;
     rdfs:domain ml:MiniBatchNMFMethod,
         ml:NMFMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
@@ -80,7 +83,8 @@ ml:hasParamCodeInit a owl:DatatypeProperty ;
 
 ml:hasParamCoef0 a owl:DatatypeProperty ;
     rdfs:domain ml:KernelPCAMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCopy a owl:DatatypeProperty ;
@@ -97,7 +101,8 @@ ml:hasParamCopyX a owl:DatatypeProperty ;
 
 ml:hasParamDegree a owl:DatatypeProperty ;
     rdfs:domain ml:KernelPCAMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDictInit a owl:DatatypeProperty ;
@@ -113,7 +118,8 @@ ml:hasParamDictionary a owl:DatatypeProperty ;
 
 ml:hasParamDocTopicPrior a owl:DatatypeProperty ;
     rdfs:domain ml:LatentDirichletAllocationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamEigenSolver a owl:DatatypeProperty ;
@@ -139,7 +145,8 @@ ml:hasParamFitInverseTransform a owl:DatatypeProperty ;
 
 ml:hasParamForgetFactor a owl:DatatypeProperty ;
     rdfs:domain ml:MiniBatchNMFMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFreshRestarts a owl:DatatypeProperty ;
@@ -164,7 +171,8 @@ ml:hasParamFunArgs a owl:DatatypeProperty ;
 
 ml:hasParamGamma a owl:DatatypeProperty ;
     rdfs:domain ml:KernelPCAMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInit a owl:DatatypeProperty ;
@@ -192,12 +200,14 @@ ml:hasParamKernelParams a owl:DatatypeProperty ;
 ml:hasParamL1Ratio a owl:DatatypeProperty ;
     rdfs:domain ml:MiniBatchNMFMethod,
         ml:NMFMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningDecay a owl:DatatypeProperty ;
     rdfs:domain ml:LatentDirichletAllocationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamLearningMethod a owl:DatatypeProperty ;
@@ -207,7 +217,8 @@ ml:hasParamLearningMethod a owl:DatatypeProperty ;
 
 ml:hasParamLearningOffset a owl:DatatypeProperty ;
     rdfs:domain ml:LatentDirichletAllocationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMaxDocUpdateIter a owl:DatatypeProperty ;
@@ -239,7 +250,8 @@ ml:hasParamMaxNoImprovement a owl:DatatypeProperty ;
 
 ml:hasParamMeanChangeTol a owl:DatatypeProperty ;
     rdfs:domain ml:LatentDirichletAllocationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMethod a owl:DatatypeProperty ;
@@ -292,7 +304,8 @@ ml:hasParamNOversamples a owl:DatatypeProperty ;
 
 ml:hasParamPerpTol a owl:DatatypeProperty ;
     rdfs:domain ml:LatentDirichletAllocationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPositiveCode a owl:DatatypeProperty ;
@@ -339,7 +352,8 @@ ml:hasParamRemoveZeroEig a owl:DatatypeProperty ;
 ml:hasParamRidgeAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:MiniBatchSparsePCAMethod,
         ml:SparsePCAMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRotation a owl:DatatypeProperty ;
@@ -388,12 +402,14 @@ ml:hasParamTol a owl:DatatypeProperty ;
         ml:PCAMethod,
         ml:SparsePCAMethod,
         ml:TruncatedSVDMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTopicWordPrior a owl:DatatypeProperty ;
     rdfs:domain ml:LatentDirichletAllocationMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTotalSamples a owl:DatatypeProperty ;
@@ -412,7 +428,8 @@ ml:hasParamTransformAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:DictionaryLearningMethod,
         ml:MiniBatchDictionaryLearningMethod,
         ml:SparseCoderMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTransformMaxIter a owl:DatatypeProperty ;

@@ -30,7 +30,8 @@ ml:hasParamC a owl:DatatypeProperty ;
         ml:NuSVRMethod,
         ml:SVCMethod,
         ml:SVRMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCacheSize a owl:DatatypeProperty ;
@@ -39,7 +40,8 @@ ml:hasParamCacheSize a owl:DatatypeProperty ;
         ml:OneClassSVMMethod,
         ml:SVCMethod,
         ml:SVRMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
@@ -55,7 +57,8 @@ ml:hasParamCoef0 a owl:DatatypeProperty ;
         ml:OneClassSVMMethod,
         ml:SVCMethod,
         ml:SVRMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamDecisionFunctionShape a owl:DatatypeProperty ;
@@ -82,7 +85,8 @@ ml:hasParamDual a owl:DatatypeProperty ;
 ml:hasParamEpsilon a owl:DatatypeProperty ;
     rdfs:domain ml:LinearSVRMethod,
         ml:SVRMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamFitIntercept a owl:DatatypeProperty ;
@@ -98,13 +102,15 @@ ml:hasParamGamma a owl:DatatypeProperty ;
         ml:SVCMethod,
         ml:SVRMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamInterceptScaling a owl:DatatypeProperty ;
     rdfs:domain ml:LinearSVCMethod,
         ml:LinearSVRMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamKernel a owl:DatatypeProperty ;
@@ -142,7 +148,8 @@ ml:hasParamNu a owl:DatatypeProperty ;
     rdfs:domain ml:NuSVCMethod,
         ml:NuSVRMethod,
         ml:OneClassSVMMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamPenalty a owl:DatatypeProperty ;
@@ -182,7 +189,8 @@ ml:hasParamTol a owl:DatatypeProperty ;
         ml:OneClassSVMMethod,
         ml:SVCMethod,
         ml:SVRMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;

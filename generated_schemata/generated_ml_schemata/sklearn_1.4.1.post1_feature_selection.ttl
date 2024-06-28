@@ -28,7 +28,8 @@ ml:hasParamAlpha a owl:DatatypeProperty ;
     rdfs:domain ml:SelectFdrMethod,
         ml:SelectFprMethod,
         ml:SelectFweMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamCenter a owl:DatatypeProperty ;
@@ -178,12 +179,14 @@ ml:hasParamThreshold a owl:DatatypeProperty ;
     rdfs:domain ml:SelectFromModelMethod,
         ml:VarianceThresholdMethod ;
     rdfs:range xsd:float,
+        xsd:int,
         xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamTol a owl:DatatypeProperty ;
     rdfs:domain ml:SequentialFeatureSelectorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamVerbose a owl:DatatypeProperty ;

@@ -33,7 +33,8 @@ ml:hasParamCcpAlpha a owl:DatatypeProperty ;
         ml:DecisionTreeRegressorMethod,
         ml:ExtraTreeClassifierMethod,
         ml:ExtraTreeRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamClassWeight a owl:DatatypeProperty ;
@@ -81,7 +82,8 @@ ml:hasParamMinImpurityDecrease a owl:DatatypeProperty ;
         ml:DecisionTreeRegressorMethod,
         ml:ExtraTreeClassifierMethod,
         ml:ExtraTreeRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamMinSamplesLeaf a owl:DatatypeProperty ;
@@ -107,7 +109,8 @@ ml:hasParamMinWeightFractionLeaf a owl:DatatypeProperty ;
         ml:DecisionTreeRegressorMethod,
         ml:ExtraTreeClassifierMethod,
         ml:ExtraTreeRegressorMethod ;
-    rdfs:range xsd:float ;
+    rdfs:range xsd:float,
+        xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
 ml:hasParamRandomState a owl:DatatypeProperty ;
