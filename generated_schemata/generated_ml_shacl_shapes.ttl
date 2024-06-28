@@ -276,6 +276,8 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:class ml:GridSearchCVMethod ]
+            [ sh:class ml:HalvingGridSearchCVMethod ]
+            [ sh:class ml:HalvingRandomSearchCVMethod ]
             [ sh:class ml:RandomizedSearchCVMethod ]
         ) ;
         sh:message "Tasks of type ModelSelection must be connected with exactly one compatible atomic method." ;
@@ -1354,6 +1356,276 @@
             [ sh:datatype xsd:int ]
         ) ;
         sh:message "Method SpectralClusteringMethod must have at most one compatible value for parameter hasParamVerbose." ;
+    ] .
+
+:HalvingGridSearchCVMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:HalvingGridSearchCVMethod ;
+
+    sh:property [
+        sh:path ml:hasParamAggressiveElimination ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamAggressiveElimination." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamCv ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamCv." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamErrorScore ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamErrorScore." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamEstimator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamEstimator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamFactor ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamFactor." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMaxResources ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamMaxResources." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMinResources ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamMinResources." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNJobs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamParamGrid ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamParamGrid." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRandomState ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRefit ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamRefit." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamResource ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamResource." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamReturnTrainScore ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamReturnTrainScore." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoring ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamScoring." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamVerbose ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HalvingGridSearchCVMethod must have at most one compatible value for parameter hasParamVerbose." ;
+    ] .
+
+:HalvingRandomSearchCVMethodParameterShape a sh:NodeShape ;
+    sh:targetClass ml:HalvingRandomSearchCVMethod ;
+
+    sh:property [
+        sh:path ml:hasParamAggressiveElimination ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamAggressiveElimination." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamCv ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamCv." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamErrorScore ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamErrorScore." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamEstimator ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamEstimator." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamFactor ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamFactor." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMaxResources ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamMaxResources." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamMinResources ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamMinResources." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNCandidates ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamNCandidates." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamNJobs ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamNJobs." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamParamDistributions ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamParamDistributions." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRandomState ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamRandomState." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamRefit ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamRefit." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamResource ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamResource." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamReturnTrainScore ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamReturnTrainScore." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamScoring ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamScoring." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasParamVerbose ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method HalvingRandomSearchCVMethod must have at most one compatible value for parameter hasParamVerbose." ;
     ] .
 
 :AdaBoostClassifierMethodParameterShape a sh:NodeShape ;
