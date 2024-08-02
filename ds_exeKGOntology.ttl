@@ -33,6 +33,11 @@ ds:hasParameter a owl:DatatypeProperty ;
     rdfs:domain ds:AtomicMethod ;
     rdfs:range  xsd:boolean, xsd:string, xsd:integer, xsd:float .
 
+# mainly for ml:DataOutScore, to log the performance score for the ML model
+ds:hasValue a owl:DatatypeProperty ;
+    rdfs:domain ds:SingleValue ;
+    rdfs:range  xsd:boolean, xsd:string, xsd:integer, xsd:float .
+
 #################################################################
 #    Object Properties
 #################################################################
