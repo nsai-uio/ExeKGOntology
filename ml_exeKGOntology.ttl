@@ -266,13 +266,7 @@ ml:hasConcatenationInput a owl:ObjectProperty;
 ml:hasTrainInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
     rdfs:domain ml:Train;
-    rdfs:range ml:DataInTrainX, ml:DataInTrainY.
-
-ml:hasModelSelectionInput a owl:ObjectProperty;
-    rdfs:subPropertyOf ml:hasTrainInput;
-    rdfs:domain ml:ModelSelection;
-    rdfs:range ml:InputModelAsMethod.
-    # range defined in generated_schemata/generated_ml_schemata.ttl 
+    rdfs:range ml:DataInTrainX, ml:DataInTrainY, ml:InputModelAsMethod.
 
 ml:hasPerformanceCalculationInput a owl:ObjectProperty;
     rdfs:subPropertyOf ds:hasInput;
