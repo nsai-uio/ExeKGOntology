@@ -1,0 +1,248 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/ns/shacl#class
+<http://www.w3.org/ns/shacl#class> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#maxCount
+<http://www.w3.org/ns/shacl#maxCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#message
+<http://www.w3.org/ns/shacl#message> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#minCount
+<http://www.w3.org/ns/shacl#minCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#path
+<http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#property
+<http://www.w3.org/ns/shacl#property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#qualifiedMaxCount
+<http://www.w3.org/ns/shacl#qualifiedMaxCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#qualifiedMinCount
+<http://www.w3.org/ns/shacl#qualifiedMinCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#qualifiedValueShape
+<http://www.w3.org/ns/shacl#qualifiedValueShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/shacl#targetClass
+<http://www.w3.org/ns/shacl#targetClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/ns/shacl#NodeShape
+<http://www.w3.org/ns/shacl#NodeShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://weso.es/shapes/ConcatenationTaskInputOutputShape
+<http://weso.es/shapes/ConcatenationTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://weso.es/shapes/ConcatenationTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://weso.es/shapes/ConcatenationTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid2 .
+_:genid2 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasConcatenationOutput> .
+_:genid2 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid2 <http://www.w3.org/ns/shacl#message> "Tasks of type Concatenation must be connected with exactly one output of type DataOutConcatenatedData." .
+_:genid2 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid2 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutConcatenatedData> .
+<http://weso.es/shapes/ConcatenationTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid3 .
+_:genid3 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasConcatenationInput> .
+_:genid3 <http://www.w3.org/ns/shacl#minCount> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid3 <http://www.w3.org/ns/shacl#message> "Tasks of type Concatenation must be connected with at least two inputs of type DataInConcatenation." .
+_:genid3 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInConcatenation> .
+<http://weso.es/shapes/ConcatenationTaskInputOutputShape> <http://www.w3.org/ns/shacl#targetClass> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Concatenation> .
+# 
+# http://weso.es/shapes/DataSplittingTaskInputOutputShape
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid4 .
+_:genid4 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid5 .
+_:genid5 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingY> .
+_:genid4 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid4 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid4 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingInput> .
+_:genid4 <http://www.w3.org/ns/shacl#message> "Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingY." .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid6 .
+_:genid6 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid7 .
+_:genid7 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInDataSplittingX> .
+_:genid6 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid6 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid6 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingInput> .
+_:genid6 <http://www.w3.org/ns/shacl#message> "Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingX." .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid8 .
+_:genid8 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid9 .
+_:genid9 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataX> .
+_:genid8 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid8 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid8 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput> .
+_:genid8 <http://www.w3.org/ns/shacl#message> "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataX." .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid10 .
+_:genid10 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid11 .
+_:genid11 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataY> .
+_:genid10 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid10 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid10 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput> .
+_:genid10 <http://www.w3.org/ns/shacl#message> "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataY." .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid12 .
+_:genid12 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid13 .
+_:genid13 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTestDataX> .
+_:genid12 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid12 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid12 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput> .
+_:genid12 <http://www.w3.org/ns/shacl#message> "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataX." .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid14 .
+_:genid14 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid15 .
+_:genid15 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutSplittedTrainDataY> .
+_:genid14 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid14 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid14 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingOutput> .
+_:genid14 <http://www.w3.org/ns/shacl#message> "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataY." .
+<http://weso.es/shapes/DataSplittingTaskInputOutputShape> <http://www.w3.org/ns/shacl#targetClass> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting> .
+# 
+# http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape
+<http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid16 .
+_:genid16 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid17 .
+_:genid17 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInPredictedY> .
+_:genid16 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid16 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid16 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationInput> .
+_:genid16 <http://www.w3.org/ns/shacl#message> "Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInPredictedY." .
+<http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid18 .
+_:genid18 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid19 .
+_:genid19 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInRealY> .
+_:genid18 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid18 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid18 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationInput> .
+_:genid18 <http://www.w3.org/ns/shacl#message> "Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInRealY." .
+<http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid20 .
+_:genid20 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPerformanceCalculationOutput> .
+_:genid20 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid20 <http://www.w3.org/ns/shacl#message> "Tasks of type PerformanceCalculation must be connected with exactly one output of type DataOutScore." .
+_:genid20 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid20 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutScore> .
+<http://weso.es/shapes/PerformanceCalculationTaskInputOutputShape> <http://www.w3.org/ns/shacl#targetClass> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PerformanceCalculation> .
+# 
+# http://weso.es/shapes/PrepareTransformerTaskInputOutputShape
+<http://weso.es/shapes/PrepareTransformerTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://weso.es/shapes/PrepareTransformerTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://weso.es/shapes/PrepareTransformerTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid21 .
+_:genid21 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerOutput> .
+_:genid21 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid21 <http://www.w3.org/ns/shacl#message> "Tasks of type PrepareTransformer must be connected with exactly one output of type DataOutTransformer." .
+_:genid21 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid21 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTransformer> .
+<http://weso.es/shapes/PrepareTransformerTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid22 .
+_:genid22 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerInput> .
+_:genid22 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid22 <http://www.w3.org/ns/shacl#message> "Tasks of type PrepareTransformer must be connected with exactly one input of type DataInToPrepareTransformer." .
+_:genid22 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid22 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInToPrepareTransformer> .
+<http://weso.es/shapes/PrepareTransformerTaskInputOutputShape> <http://www.w3.org/ns/shacl#targetClass> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformer> .
+# 
+# http://weso.es/shapes/TestTaskInputOutputShape
+<http://weso.es/shapes/TestTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://weso.es/shapes/TestTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://weso.es/shapes/TestTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid23 .
+_:genid23 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid24 .
+_:genid24 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestX> .
+_:genid23 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid23 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid23 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestInput> .
+_:genid23 <http://www.w3.org/ns/shacl#message> "Tasks of type Test must be connected with exactly one input of type DataInTestX." .
+<http://weso.es/shapes/TestTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid25 .
+_:genid25 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid26 .
+_:genid26 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTestModel> .
+_:genid25 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid25 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid25 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestInput> .
+_:genid25 <http://www.w3.org/ns/shacl#message> "Tasks of type Test must be connected with exactly one input of type DataInTestModel." .
+<http://weso.es/shapes/TestTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid27 .
+_:genid27 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTestOutput> .
+_:genid27 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid27 <http://www.w3.org/ns/shacl#message> "Tasks of type Test must be connected with exactly one output of type DataOutPredictedValueTest." .
+_:genid27 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid27 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutPredictedValueTest> .
+<http://weso.es/shapes/TestTaskInputOutputShape> <http://www.w3.org/ns/shacl#targetClass> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Test> .
+# 
+# http://weso.es/shapes/TrainTaskInputOutputShape
+<http://weso.es/shapes/TrainTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://weso.es/shapes/TrainTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://weso.es/shapes/TrainTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid28 .
+_:genid28 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid29 .
+_:genid29 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainX> .
+_:genid28 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid28 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid28 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput> .
+_:genid28 <http://www.w3.org/ns/shacl#message> "Tasks of type Train must be connected with exactly one input of type DataInTrainX." .
+<http://weso.es/shapes/TrainTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid30 .
+_:genid30 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid31 .
+_:genid31 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTrainY> .
+_:genid30 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid30 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid30 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput> .
+_:genid30 <http://www.w3.org/ns/shacl#message> "Tasks of type Train must be connected with exactly one input of type DataInTrainY." .
+<http://weso.es/shapes/TrainTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid32 .
+_:genid32 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid33 .
+_:genid33 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#InputModelAsMethod> .
+_:genid32 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid32 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainInput> .
+_:genid32 <http://www.w3.org/ns/shacl#message> "Tasks of type Train must be connected with at most one input of type InputModelAsMethod." .
+<http://weso.es/shapes/TrainTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid34 .
+_:genid34 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainOutput> .
+_:genid34 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid34 <http://www.w3.org/ns/shacl#message> "Tasks of type Train must be connected with exactly one output of type DataOutTrainModel." .
+_:genid34 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid34 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTrainModel> .
+<http://weso.es/shapes/TrainTaskInputOutputShape> <http://www.w3.org/ns/shacl#targetClass> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Train> .
+# 
+# http://weso.es/shapes/TransformTaskInputOutputShape
+<http://weso.es/shapes/TransformTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://weso.es/shapes/TransformTaskInputOutputShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://weso.es/shapes/TransformTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid35 .
+_:genid35 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformOutput> .
+_:genid35 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid35 <http://www.w3.org/ns/shacl#message> "Tasks of type Transform must be connected with exactly one output of type DataOutTransformed." .
+_:genid35 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid35 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataOutTransformed> .
+<http://weso.es/shapes/TransformTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid36 .
+_:genid36 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid37 .
+_:genid37 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInTransformer> .
+_:genid36 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid36 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid36 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformInput> .
+_:genid36 <http://www.w3.org/ns/shacl#message> "Tasks of type Transform must be connected with exactly one input of type DataInTransformer." .
+<http://weso.es/shapes/TransformTaskInputOutputShape> <http://www.w3.org/ns/shacl#property> _:genid38 .
+_:genid38 <http://www.w3.org/ns/shacl#qualifiedValueShape> _:genid39 .
+_:genid39 <http://www.w3.org/ns/shacl#class> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataInToTransform> .
+_:genid38 <http://www.w3.org/ns/shacl#qualifiedMinCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid38 <http://www.w3.org/ns/shacl#qualifiedMaxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid38 <http://www.w3.org/ns/shacl#path> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTransformInput> .
+_:genid38 <http://www.w3.org/ns/shacl#message> "Tasks of type Transform must be connected with exactly one input of type DataInToTransform." .
+<http://weso.es/shapes/TransformTaskInputOutputShape> <http://www.w3.org/ns/shacl#targetClass> <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#Transform> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
