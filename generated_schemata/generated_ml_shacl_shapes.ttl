@@ -291,6 +291,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:class ml:AdaBoostClassifierMethod ]
+            [ sh:class ml:BaggingClassifierMethod ]
             [ sh:class ml:BernoulliNBMethod ]
             [ sh:class ml:DecisionTreeClassifierMethod ]
             [ sh:class ml:ExtraTreeClassifierMethod ]
@@ -303,6 +304,7 @@
             [ sh:class ml:LogisticRegressionCVMethod ]
             [ sh:class ml:LogisticRegressionMethod ]
             [ sh:class ml:MLPClassifierMethod ]
+            [ sh:class ml:MultinomialNBMethod ]
             [ sh:class ml:NearestCentroidMethod ]
             [ sh:class ml:NuSVCMethod ]
             [ sh:class ml:OneVsOneClassifierMethod ]
@@ -328,6 +330,7 @@
         sh:maxCount 1 ;
         sh:or (
             [ sh:class ml:AdaBoostClassifierMethod ]
+            [ sh:class ml:BaggingClassifierMethod ]
             [ sh:class ml:DecisionTreeClassifierMethod ]
             [ sh:class ml:ExtraTreeClassifierMethod ]
             [ sh:class ml:ExtraTreesClassifierMethod ]
