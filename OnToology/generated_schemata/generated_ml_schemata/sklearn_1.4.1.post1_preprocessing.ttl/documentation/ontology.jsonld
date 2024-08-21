@@ -1,0 +1,1015 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinarizerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Binarize data (set feature values to 0 or 1) according to a threshold.\n\nValues greater than the threshold map to 1, while values less than\nor equal to the threshold map to 0. With the default threshold of 0,\nonly positive values map to 1.\n\nBinarization is a common operation on text count data where the\nanalyst can decide to only consider the presence or absence of a\nfeature rather than a quantified number of occurrences for instance.\n\nIt can also be used as a pre-processing step for estimators that\nconsider boolean random variables (e.g. modelled using the Bernoulli\ndistribution in a Bayesian setting).\n\nRead more in the :ref:`User Guide <preprocessing_binarization>`.\n\nParameters\n----------\nthreshold : float, default=0.0\n    Feature values below or equal to this are replaced by 0, above it by 1.\n    Threshold may not be less than 0 for operations on sparse matrices.\n\ncopy : bool, default=True\n    Set to False to perform inplace binarization and avoid a copy (if\n    the input is already a numpy array or a scipy.sparse CSR matrix).\n\nAttributes\n----------\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nbinarize : Equivalent function without the estimator API.\nKBinsDiscretizer : Bin continuous data into intervals.\nOneHotEncoder : Encode categorical features as a one-hot numeric array.\n\nNotes\n-----\nIf the input is a sparse matrix, only the non-zero values are subject\nto update by the :class:`Binarizer` class.\n\nThis estimator is :term:`stateless` and does not need to be fitted.\nHowever, we recommend to call :meth:`fit_transform` instead of\n:meth:`transform`, as parameter validation is only performed in\n:meth:`fit`.\n\nExamples\n--------\n>>> from sklearn.preprocessing import Binarizer\n>>> X = [[ 1., -1.,  2.],\n...      [ 2.,  0.,  0.],\n...      [ 0.,  1., -1.]]\n>>> transformer = Binarizer().fit(X)  # fit does nothing.\n>>> transformer\nBinarizer()\n>>> transformer.transform(X)\narray([[1., 0., 1.],\n       [1., 0., 0.],\n       [0., 1., 0.]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Constructs a transformer from an arbitrary callable.\n\nA FunctionTransformer forwards its X (and optionally y) arguments to a\nuser-defined function or function object and returns the result of this\nfunction. This is useful for stateless transformations such as taking the\nlog of frequencies, doing custom scaling, etc.\n\nNote: If a lambda is used as the function, then the resulting\ntransformer will not be pickleable.\n\n.. versionadded:: 0.17\n\nRead more in the :ref:`User Guide <function_transformer>`.\n\nParameters\n----------\nfunc : callable, default=None\n    The callable to use for the transformation. This will be passed\n    the same arguments as transform, with args and kwargs forwarded.\n    If func is None, then func will be the identity function.\n\ninverse_func : callable, default=None\n    The callable to use for the inverse transformation. This will be\n    passed the same arguments as inverse transform, with args and\n    kwargs forwarded. If inverse_func is None, then inverse_func\n    will be the identity function.\n\nvalidate : bool, default=False\n    Indicate that the input X array should be checked before calling\n    ``func``. The possibilities are:\n\n    - If False, there is no input validation.\n    - If True, then X will be converted to a 2-dimensional NumPy array or\n      sparse matrix. If the conversion is not possible an exception is\n      raised.\n\n    .. versionchanged:: 0.22\n       The default of ``validate`` changed from True to False.\n\naccept_sparse : bool, default=False\n    Indicate that func accepts a sparse matrix as input. If validate is\n    False, this has no effect. Otherwise, if accept_sparse is false,\n    sparse matrix inputs will cause an exception to be raised.\n\ncheck_inverse : bool, default=True\n   Whether to check that or ``func`` followed by ``inverse_func`` leads to\n   the original inputs. It can be used for a sanity check, raising a\n   warning when the condition is not fulfilled.\n\n   .. versionadded:: 0.20\n\nfeature_names_out : callable, 'one-to-one' or None, default=None\n    Determines the list of feature names that will be returned by the\n    `get_feature_names_out` method. If it is 'one-to-one', then the output\n    feature names will be equal to the input feature names. If it is a\n    callable, then it must take two positional arguments: this\n    `FunctionTransformer` (`self`) and an array-like of input feature names\n    (`input_features`). It must return an array-like of output feature\n    names. The `get_feature_names_out` method is only defined if\n    `feature_names_out` is not None.\n\n    See ``get_feature_names_out`` for more details.\n\n    .. versionadded:: 1.1\n\nkw_args : dict, default=None\n    Dictionary of additional keyword arguments to pass to func.\n\n    .. versionadded:: 0.18\n\ninv_kw_args : dict, default=None\n    Dictionary of additional keyword arguments to pass to inverse_func.\n\n    .. versionadded:: 0.18\n\nAttributes\n----------\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X` has feature\n    names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nMaxAbsScaler : Scale each feature by its maximum absolute value.\nStandardScaler : Standardize features by removing the mean and\n    scaling to unit variance.\nLabelBinarizer : Binarize labels in a one-vs-all fashion.\nMultiLabelBinarizer : Transform between iterable of iterables\n    and a multilabel format.\n\nNotes\n-----\nIf `func` returns an output with a `columns` attribute, then the columns is enforced\nto be consistent with the output of `get_feature_names_out`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.preprocessing import FunctionTransformer\n>>> transformer = FunctionTransformer(np.log1p)\n>>> X = np.array([[0, 1], [2, 3]])\n>>> transformer.transform(X)\narray([[0.       , 0.6931...],\n       [1.0986..., 1.3862...]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Bin continuous data into intervals.\n\nRead more in the :ref:`User Guide <preprocessing_discretization>`.\n\n.. versionadded:: 0.20\n\nParameters\n----------\nn_bins : int or array-like of shape (n_features,), default=5\n    The number of bins to produce. Raises ValueError if ``n_bins < 2``.\n\nencode : {'onehot', 'onehot-dense', 'ordinal'}, default='onehot'\n    Method used to encode the transformed result.\n\n    - 'onehot': Encode the transformed result with one-hot encoding\n      and return a sparse matrix. Ignored features are always\n      stacked to the right.\n    - 'onehot-dense': Encode the transformed result with one-hot encoding\n      and return a dense array. Ignored features are always\n      stacked to the right.\n    - 'ordinal': Return the bin identifier encoded as an integer value.\n\nstrategy : {'uniform', 'quantile', 'kmeans'}, default='quantile'\n    Strategy used to define the widths of the bins.\n\n    - 'uniform': All bins in each feature have identical widths.\n    - 'quantile': All bins in each feature have the same number of points.\n    - 'kmeans': Values in each bin have the same nearest center of a 1D\n      k-means cluster.\n\n    For an example of the different strategies see:\n    :ref:`sphx_glr_auto_examples_preprocessing_plot_discretization_strategies.py`.\n\ndtype : {np.float32, np.float64}, default=None\n    The desired data-type for the output. If None, output dtype is\n    consistent with input dtype. Only np.float32 and np.float64 are\n    supported.\n\n    .. versionadded:: 0.24\n\nsubsample : int or None, default='warn'\n    Maximum number of samples, used to fit the model, for computational\n    efficiency. Defaults to 200_000 when `strategy='quantile'` and to `None`\n    when `strategy='uniform'` or `strategy='kmeans'`.\n    `subsample=None` means that all the training samples are used when\n    computing the quantiles that determine the binning thresholds.\n    Since quantile computation relies on sorting each column of `X` and\n    that sorting has an `n log(n)` time complexity,\n    it is recommended to use subsampling on datasets with a\n    very large number of samples.\n\n    .. versionchanged:: 1.3\n        The default value of `subsample` changed from `None` to `200_000` when\n        `strategy=\"quantile\"`.\n\n    .. versionchanged:: 1.5\n        The default value of `subsample` changed from `None` to `200_000` when\n        `strategy=\"uniform\"` or `strategy=\"kmeans\"`.\n\nrandom_state : int, RandomState instance or None, default=None\n    Determines random number generation for subsampling.\n    Pass an int for reproducible results across multiple function calls.\n    See the `subsample` parameter for more details.\n    See :term:`Glossary <random_state>`.\n\n    .. versionadded:: 1.1\n\nAttributes\n----------\nbin_edges_ : ndarray of ndarray of shape (n_features,)\n    The edges of each bin. Contain arrays of varying shapes ``(n_bins_, )``\n    Ignored features will have empty arrays.\n\nn_bins_ : ndarray of shape (n_features,), dtype=np.int64\n    Number of bins per feature. Bins whose width are too small\n    (i.e., <= 1e-8) are removed with a warning.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nBinarizer : Class used to bin values as ``0`` or\n    ``1`` based on a parameter ``threshold``.\n\nNotes\n-----\n\nFor a visualization of discretization on different datasets refer to\n:ref:`sphx_glr_auto_examples_preprocessing_plot_discretization_classification.py`.\nOn the effect of discretization on linear models see:\n:ref:`sphx_glr_auto_examples_preprocessing_plot_discretization.py`.\n\nIn bin edges for feature ``i``, the first and last values are used only for\n``inverse_transform``. During transform, bin edges are extended to::\n\n  np.concatenate([-np.inf, bin_edges_[i][1:-1], np.inf])\n\nYou can combine ``KBinsDiscretizer`` with\n:class:`~sklearn.compose.ColumnTransformer` if you only want to preprocess\npart of the features.\n\n``KBinsDiscretizer`` might produce constant features (e.g., when\n``encode = 'onehot'`` and certain bins do not contain any data).\nThese features can be removed with feature selection algorithms\n(e.g., :class:`~sklearn.feature_selection.VarianceThreshold`).\n\nExamples\n--------\n>>> from sklearn.preprocessing import KBinsDiscretizer\n>>> X = [[-2, 1, -4,   -1],\n...      [-1, 2, -3, -0.5],\n...      [ 0, 3, -2,  0.5],\n...      [ 1, 4, -1,    2]]\n>>> est = KBinsDiscretizer(\n...     n_bins=3, encode='ordinal', strategy='uniform', subsample=None\n... )\n>>> est.fit(X)\nKBinsDiscretizer(...)\n>>> Xt = est.transform(X)\n>>> Xt  # doctest: +SKIP\narray([[ 0., 0., 0., 0.],\n       [ 1., 1., 1., 0.],\n       [ 2., 2., 2., 1.],\n       [ 2., 2., 2., 2.]])\n\nSometimes it may be useful to convert the data back into the original\nfeature space. The ``inverse_transform`` function converts the binned\ndata into the original feature space. Each value will be equal to the mean\nof the two bin edges.\n\n>>> est.bin_edges_[0]\narray([-2., -1.,  0.,  1.])\n>>> est.inverse_transform(Xt)\narray([[-1.5,  1.5, -3.5, -0.5],\n       [-0.5,  2.5, -2.5, -0.5],\n       [ 0.5,  3.5, -1.5,  0.5],\n       [ 0.5,  3.5, -1.5,  1.5]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelCentererMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Center an arbitrary kernel matrix :math:`K`.\n\nLet define a kernel :math:`K` such that:\n\n.. math::\n    K(X, Y) = \\phi(X) . \\phi(Y)^{T}\n\n:math:`\\phi(X)` is a function mapping of rows of :math:`X` to a\nHilbert space and :math:`K` is of shape `(n_samples, n_samples)`.\n\nThis class allows to compute :math:`\\tilde{K}(X, Y)` such that:\n\n.. math::\n    \\tilde{K(X, Y)} = \\tilde{\\phi}(X) . \\tilde{\\phi}(Y)^{T}\n\n:math:`\\tilde{\\phi}(X)` is the centered mapped data in the Hilbert\nspace.\n\n`KernelCenterer` centers the features without explicitly computing the\nmapping :math:`\\phi(\\cdot)`. Working with centered kernels is sometime\nexpected when dealing with algebra computation such as eigendecomposition\nfor :class:`~sklearn.decomposition.KernelPCA` for instance.\n\nRead more in the :ref:`User Guide <kernel_centering>`.\n\nAttributes\n----------\nK_fit_rows_ : ndarray of shape (n_samples,)\n    Average of each column of kernel matrix.\n\nK_fit_all_ : float\n    Average of kernel matrix.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nsklearn.kernel_approximation.Nystroem : Approximate a kernel map\n    using a subset of the training data.\n\nReferences\n----------\n.. [1] `Schölkopf, Bernhard, Alexander Smola, and Klaus-Robert Müller.\n   \"Nonlinear component analysis as a kernel eigenvalue problem.\"\n   Neural computation 10.5 (1998): 1299-1319.\n   <https://www.mlpack.org/papers/kpca.pdf>`_\n\nExamples\n--------\n>>> from sklearn.preprocessing import KernelCenterer\n>>> from sklearn.metrics.pairwise import pairwise_kernels\n>>> X = [[ 1., -2.,  2.],\n...      [ -2.,  1.,  3.],\n...      [ 4.,  1., -2.]]\n>>> K = pairwise_kernels(X, metric='linear')\n>>> K\narray([[  9.,   2.,  -2.],\n       [  2.,  14., -13.],\n       [ -2., -13.,  21.]])\n>>> transformer = KernelCenterer().fit(K)\n>>> transformer\nKernelCenterer()\n>>> transformer.transform(K)\narray([[  5.,   0.,  -5.],\n       [  0.,  14., -14.],\n       [ -5., -14.,  19.]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelBinarizerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Binarize labels in a one-vs-all fashion.\n\nSeveral regression and binary classification algorithms are\navailable in scikit-learn. A simple way to extend these algorithms\nto the multi-class classification case is to use the so-called\none-vs-all scheme.\n\nAt learning time, this simply consists in learning one regressor\nor binary classifier per class. In doing so, one needs to convert\nmulti-class labels to binary labels (belong or does not belong\nto the class). `LabelBinarizer` makes this process easy with the\ntransform method.\n\nAt prediction time, one assigns the class for which the corresponding\nmodel gave the greatest confidence. `LabelBinarizer` makes this easy\nwith the :meth:`inverse_transform` method.\n\nRead more in the :ref:`User Guide <preprocessing_targets>`.\n\nParameters\n----------\nneg_label : int, default=0\n    Value with which negative labels must be encoded.\n\npos_label : int, default=1\n    Value with which positive labels must be encoded.\n\nsparse_output : bool, default=False\n    True if the returned array from transform is desired to be in sparse\n    CSR format.\n\nAttributes\n----------\nclasses_ : ndarray of shape (n_classes,)\n    Holds the label for each class.\n\ny_type_ : str\n    Represents the type of the target data as evaluated by\n    :func:`~sklearn.utils.multiclass.type_of_target`. Possible type are\n    'continuous', 'continuous-multioutput', 'binary', 'multiclass',\n    'multiclass-multioutput', 'multilabel-indicator', and 'unknown'.\n\nsparse_input_ : bool\n    `True` if the input data to transform is given as a sparse matrix,\n     `False` otherwise.\n\nSee Also\n--------\nlabel_binarize : Function to perform the transform operation of\n    LabelBinarizer with fixed classes.\nOneHotEncoder : Encode categorical features using a one-hot aka one-of-K\n    scheme.\n\nExamples\n--------\n>>> from sklearn.preprocessing import LabelBinarizer\n>>> lb = LabelBinarizer()\n>>> lb.fit([1, 2, 6, 4, 2])\nLabelBinarizer()\n>>> lb.classes_\narray([1, 2, 4, 6])\n>>> lb.transform([1, 6])\narray([[1, 0, 0, 0],\n       [0, 0, 0, 1]])\n\nBinary targets transform to a column vector\n\n>>> lb = LabelBinarizer()\n>>> lb.fit_transform(['yes', 'no', 'no', 'yes'])\narray([[1],\n       [0],\n       [0],\n       [1]])\n\nPassing a 2D matrix for multilabel classification\n\n>>> import numpy as np\n>>> lb.fit(np.array([[0, 1, 1], [1, 0, 0]]))\nLabelBinarizer()\n>>> lb.classes_\narray([0, 1, 2])\n>>> lb.transform([0, 1, 2, 1])\narray([[1, 0, 0],\n       [0, 1, 0],\n       [0, 0, 1],\n       [0, 1, 0]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelEncoderMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : ""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MaxAbsScalerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Scale each feature by its maximum absolute value.\n\nThis estimator scales and translates each feature individually such\nthat the maximal absolute value of each feature in the\ntraining set will be 1.0. It does not shift/center the data, and\nthus does not destroy any sparsity.\n\nThis scaler can also be applied to sparse CSR or CSC matrices.\n\n`MaxAbsScaler` doesn't reduce the effect of outliers; it only linearly\nscales them down. For an example visualization, refer to :ref:`Compare\nMaxAbsScaler with other scalers <plot_all_scaling_max_abs_scaler_section>`.\n\n.. versionadded:: 0.17\n\nParameters\n----------\ncopy : bool, default=True\n    Set to False to perform inplace scaling and avoid a copy (if the input\n    is already a numpy array).\n\nAttributes\n----------\nscale_ : ndarray of shape (n_features,)\n    Per feature relative scaling of the data.\n\n    .. versionadded:: 0.17\n       *scale_* attribute.\n\nmax_abs_ : ndarray of shape (n_features,)\n    Per feature maximum absolute value.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_samples_seen_ : int\n    The number of samples processed by the estimator. Will be reset on\n    new calls to fit, but increments across ``partial_fit`` calls.\n\nSee Also\n--------\nmaxabs_scale : Equivalent function without the estimator API.\n\nNotes\n-----\nNaNs are treated as missing values: disregarded in fit, and maintained in\ntransform.\n\nExamples\n--------\n>>> from sklearn.preprocessing import MaxAbsScaler\n>>> X = [[ 1., -1.,  2.],\n...      [ 2.,  0.,  0.],\n...      [ 0.,  1., -1.]]\n>>> transformer = MaxAbsScaler().fit(X)\n>>> transformer\nMaxAbsScaler()\n>>> transformer.transform(X)\narray([[ 0.5, -1. ,  1. ],\n       [ 1. ,  0. ,  0. ],\n       [ 0. ,  1. , -0.5]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MinMaxScalerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Transform features by scaling each feature to a given range.\n\nThis estimator scales and translates each feature individually such\nthat it is in the given range on the training set, e.g. between\nzero and one.\n\nThe transformation is given by::\n\n    X_std = (X - X.min(axis=0)) / (X.max(axis=0) - X.min(axis=0))\n    X_scaled = X_std * (max - min) + min\n\nwhere min, max = feature_range.\n\nThis transformation is often used as an alternative to zero mean,\nunit variance scaling.\n\n`MinMaxScaler` doesn't reduce the effect of outliers, but it linearly\nscales them down into a fixed range, where the largest occurring data point\ncorresponds to the maximum value and the smallest one corresponds to the\nminimum value. For an example visualization, refer to :ref:`Compare\nMinMaxScaler with other scalers <plot_all_scaling_minmax_scaler_section>`.\n\nRead more in the :ref:`User Guide <preprocessing_scaler>`.\n\nParameters\n----------\nfeature_range : tuple (min, max), default=(0, 1)\n    Desired range of transformed data.\n\ncopy : bool, default=True\n    Set to False to perform inplace row normalization and avoid a\n    copy (if the input is already a numpy array).\n\nclip : bool, default=False\n    Set to True to clip transformed values of held-out data to\n    provided `feature range`.\n\n    .. versionadded:: 0.24\n\nAttributes\n----------\nmin_ : ndarray of shape (n_features,)\n    Per feature adjustment for minimum. Equivalent to\n    ``min - X.min(axis=0) * self.scale_``\n\nscale_ : ndarray of shape (n_features,)\n    Per feature relative scaling of the data. Equivalent to\n    ``(max - min) / (X.max(axis=0) - X.min(axis=0))``\n\n    .. versionadded:: 0.17\n       *scale_* attribute.\n\ndata_min_ : ndarray of shape (n_features,)\n    Per feature minimum seen in the data\n\n    .. versionadded:: 0.17\n       *data_min_*\n\ndata_max_ : ndarray of shape (n_features,)\n    Per feature maximum seen in the data\n\n    .. versionadded:: 0.17\n       *data_max_*\n\ndata_range_ : ndarray of shape (n_features,)\n    Per feature range ``(data_max_ - data_min_)`` seen in the data\n\n    .. versionadded:: 0.17\n       *data_range_*\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nn_samples_seen_ : int\n    The number of samples processed by the estimator.\n    It will be reset on new calls to fit, but increments across\n    ``partial_fit`` calls.\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nminmax_scale : Equivalent function without the estimator API.\n\nNotes\n-----\nNaNs are treated as missing values: disregarded in fit, and maintained in\ntransform.\n\nExamples\n--------\n>>> from sklearn.preprocessing import MinMaxScaler\n>>> data = [[-1, 2], [-0.5, 6], [0, 10], [1, 18]]\n>>> scaler = MinMaxScaler()\n>>> print(scaler.fit(data))\nMinMaxScaler()\n>>> print(scaler.data_max_)\n[ 1. 18.]\n>>> print(scaler.transform(data))\n[[0.   0.  ]\n [0.25 0.25]\n [0.5  0.5 ]\n [1.   1.  ]]\n>>> print(scaler.transform([[2, 2]]))\n[[1.5 0. ]]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultiLabelBinarizerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Transform between iterable of iterables and a multilabel format.\n\nAlthough a list of sets or tuples is a very intuitive format for multilabel\ndata, it is unwieldy to process. This transformer converts between this\nintuitive format and the supported multilabel format: a (samples x classes)\nbinary matrix indicating the presence of a class label.\n\nParameters\n----------\nclasses : array-like of shape (n_classes,), default=None\n    Indicates an ordering for the class labels.\n    All entries should be unique (cannot contain duplicate classes).\n\nsparse_output : bool, default=False\n    Set to True if output binary array is desired in CSR sparse format.\n\nAttributes\n----------\nclasses_ : ndarray of shape (n_classes,)\n    A copy of the `classes` parameter when provided.\n    Otherwise it corresponds to the sorted set of classes found\n    when fitting.\n\nSee Also\n--------\nOneHotEncoder : Encode categorical features using a one-hot aka one-of-K\n    scheme.\n\nExamples\n--------\n>>> from sklearn.preprocessing import MultiLabelBinarizer\n>>> mlb = MultiLabelBinarizer()\n>>> mlb.fit_transform([(1, 2), (3,)])\narray([[1, 1, 0],\n       [0, 0, 1]])\n>>> mlb.classes_\narray([1, 2, 3])\n\n>>> mlb.fit_transform([{'sci-fi', 'thriller'}, {'comedy'}])\narray([[0, 1, 1],\n       [1, 0, 0]])\n>>> list(mlb.classes_)\n['comedy', 'sci-fi', 'thriller']\n\nA common mistake is to pass in a list, which leads to the following issue:\n\n>>> mlb = MultiLabelBinarizer()\n>>> mlb.fit(['sci-fi', 'thriller', 'comedy'])\nMultiLabelBinarizer()\n>>> mlb.classes_\narray(['-', 'c', 'd', 'e', 'f', 'h', 'i', 'l', 'm', 'o', 'r', 's', 't',\n    'y'], dtype=object)\n\nTo correct this, the list of labels should be passed in as:\n\n>>> mlb = MultiLabelBinarizer()\n>>> mlb.fit([['sci-fi', 'thriller', 'comedy']])\nMultiLabelBinarizer()\n>>> mlb.classes_\narray(['comedy', 'sci-fi', 'thriller'], dtype=object)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NormalizerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Normalize samples individually to unit norm.\n\nEach sample (i.e. each row of the data matrix) with at least one\nnon zero component is rescaled independently of other samples so\nthat its norm (l1, l2 or inf) equals one.\n\nThis transformer is able to work both with dense numpy arrays and\nscipy.sparse matrix (use CSR format if you want to avoid the burden of\na copy / conversion).\n\nScaling inputs to unit norms is a common operation for text\nclassification or clustering for instance. For instance the dot\nproduct of two l2-normalized TF-IDF vectors is the cosine similarity\nof the vectors and is the base similarity metric for the Vector\nSpace Model commonly used by the Information Retrieval community.\n\nFor an example visualization, refer to :ref:`Compare Normalizer with other\nscalers <plot_all_scaling_normalizer_section>`.\n\nRead more in the :ref:`User Guide <preprocessing_normalization>`.\n\nParameters\n----------\nnorm : {'l1', 'l2', 'max'}, default='l2'\n    The norm to use to normalize each non zero sample. If norm='max'\n    is used, values will be rescaled by the maximum of the absolute\n    values.\n\ncopy : bool, default=True\n    Set to False to perform inplace row normalization and avoid a\n    copy (if the input is already a numpy array or a scipy.sparse\n    CSR matrix).\n\nAttributes\n----------\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nnormalize : Equivalent function without the estimator API.\n\nNotes\n-----\nThis estimator is :term:`stateless` and does not need to be fitted.\nHowever, we recommend to call :meth:`fit_transform` instead of\n:meth:`transform`, as parameter validation is only performed in\n:meth:`fit`.\n\nExamples\n--------\n>>> from sklearn.preprocessing import Normalizer\n>>> X = [[4, 1, 2, 2],\n...      [1, 3, 9, 3],\n...      [5, 7, 5, 1]]\n>>> transformer = Normalizer().fit(X)  # fit does nothing.\n>>> transformer\nNormalizer()\n>>> transformer.transform(X)\narray([[0.8, 0.2, 0.4, 0.4],\n       [0.1, 0.3, 0.9, 0.3],\n       [0.5, 0.7, 0.5, 0.1]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Encode categorical features as a one-hot numeric array.\n\nThe input to this transformer should be an array-like of integers or\nstrings, denoting the values taken on by categorical (discrete) features.\nThe features are encoded using a one-hot (aka 'one-of-K' or 'dummy')\nencoding scheme. This creates a binary column for each category and\nreturns a sparse matrix or dense array (depending on the ``sparse_output``\nparameter).\n\nBy default, the encoder derives the categories based on the unique values\nin each feature. Alternatively, you can also specify the `categories`\nmanually.\n\nThis encoding is needed for feeding categorical data to many scikit-learn\nestimators, notably linear models and SVMs with the standard kernels.\n\nNote: a one-hot encoding of y labels should use a LabelBinarizer\ninstead.\n\nRead more in the :ref:`User Guide <preprocessing_categorical_features>`.\nFor a comparison of different encoders, refer to:\n:ref:`sphx_glr_auto_examples_preprocessing_plot_target_encoder.py`.\n\nParameters\n----------\ncategories : 'auto' or a list of array-like, default='auto'\n    Categories (unique values) per feature:\n\n    - 'auto' : Determine categories automatically from the training data.\n    - list : ``categories[i]`` holds the categories expected in the ith\n      column. The passed categories should not mix strings and numeric\n      values within a single feature, and should be sorted in case of\n      numeric values.\n\n    The used categories can be found in the ``categories_`` attribute.\n\n    .. versionadded:: 0.20\n\ndrop : {'first', 'if_binary'} or an array-like of shape (n_features,),             default=None\n    Specifies a methodology to use to drop one of the categories per\n    feature. This is useful in situations where perfectly collinear\n    features cause problems, such as when feeding the resulting data\n    into an unregularized linear regression model.\n\n    However, dropping one category breaks the symmetry of the original\n    representation and can therefore induce a bias in downstream models,\n    for instance for penalized linear classification or regression models.\n\n    - None : retain all features (the default).\n    - 'first' : drop the first category in each feature. If only one\n      category is present, the feature will be dropped entirely.\n    - 'if_binary' : drop the first category in each feature with two\n      categories. Features with 1 or more than 2 categories are\n      left intact.\n    - array : ``drop[i]`` is the category in feature ``X[:, i]`` that\n      should be dropped.\n\n    When `max_categories` or `min_frequency` is configured to group\n    infrequent categories, the dropping behavior is handled after the\n    grouping.\n\n    .. versionadded:: 0.21\n       The parameter `drop` was added in 0.21.\n\n    .. versionchanged:: 0.23\n       The option `drop='if_binary'` was added in 0.23.\n\n    .. versionchanged:: 1.1\n        Support for dropping infrequent categories.\n\nsparse_output : bool, default=True\n    When ``True``, it returns a :class:`scipy.sparse.csr_matrix`,\n    i.e. a sparse matrix in \"Compressed Sparse Row\" (CSR) format.\n\n    .. versionadded:: 1.2\n       `sparse` was renamed to `sparse_output`\n\ndtype : number type, default=np.float64\n    Desired dtype of output.\n\nhandle_unknown : {'error', 'ignore', 'infrequent_if_exist'},                      default='error'\n    Specifies the way unknown categories are handled during :meth:`transform`.\n\n    - 'error' : Raise an error if an unknown category is present during transform.\n    - 'ignore' : When an unknown category is encountered during\n      transform, the resulting one-hot encoded columns for this feature\n      will be all zeros. In the inverse transform, an unknown category\n      will be denoted as None.\n    - 'infrequent_if_exist' : When an unknown category is encountered\n      during transform, the resulting one-hot encoded columns for this\n      feature will map to the infrequent category if it exists. The\n      infrequent category will be mapped to the last position in the\n      encoding. During inverse transform, an unknown category will be\n      mapped to the category denoted `'infrequent'` if it exists. If the\n      `'infrequent'` category does not exist, then :meth:`transform` and\n      :meth:`inverse_transform` will handle an unknown category as with\n      `handle_unknown='ignore'`. Infrequent categories exist based on\n      `min_frequency` and `max_categories`. Read more in the\n      :ref:`User Guide <encoder_infrequent_categories>`.\n\n    .. versionchanged:: 1.1\n        `'infrequent_if_exist'` was added to automatically handle unknown\n        categories and infrequent categories.\n\nmin_frequency : int or float, default=None\n    Specifies the minimum frequency below which a category will be\n    considered infrequent.\n\n    - If `int`, categories with a smaller cardinality will be considered\n      infrequent.\n\n    - If `float`, categories with a smaller cardinality than\n      `min_frequency * n_samples`  will be considered infrequent.\n\n    .. versionadded:: 1.1\n        Read more in the :ref:`User Guide <encoder_infrequent_categories>`.\n\nmax_categories : int, default=None\n    Specifies an upper limit to the number of output features for each input\n    feature when considering infrequent categories. If there are infrequent\n    categories, `max_categories` includes the category representing the\n    infrequent categories along with the frequent categories. If `None`,\n    there is no limit to the number of output features.\n\n    .. versionadded:: 1.1\n        Read more in the :ref:`User Guide <encoder_infrequent_categories>`.\n\nfeature_name_combiner : \"concat\" or callable, default=\"concat\"\n    Callable with signature `def callable(input_feature, category)` that returns a\n    string. This is used to create feature names to be returned by\n    :meth:`get_feature_names_out`.\n\n    `\"concat\"` concatenates encoded feature name and category with\n    `feature + \"_\" + str(category)`.E.g. feature X with values 1, 6, 7 create\n    feature names `X_1, X_6, X_7`.\n\n    .. versionadded:: 1.3\n\nAttributes\n----------\ncategories_ : list of arrays\n    The categories of each feature determined during fitting\n    (in order of the features in X and corresponding with the output\n    of ``transform``). This includes the category specified in ``drop``\n    (if any).\n\ndrop_idx_ : array of shape (n_features,)\n    - ``drop_idx_[i]`` is the index in ``categories_[i]`` of the category\n      to be dropped for each feature.\n    - ``drop_idx_[i] = None`` if no category is to be dropped from the\n      feature with index ``i``, e.g. when `drop='if_binary'` and the\n      feature isn't binary.\n    - ``drop_idx_ = None`` if all the transformed features will be\n      retained.\n\n    If infrequent categories are enabled by setting `min_frequency` or\n    `max_categories` to a non-default value and `drop_idx[i]` corresponds\n    to a infrequent category, then the entire infrequent category is\n    dropped.\n\n    .. versionchanged:: 0.23\n       Added the possibility to contain `None` values.\n\ninfrequent_categories_ : list of ndarray\n    Defined only if infrequent categories are enabled by setting\n    `min_frequency` or `max_categories` to a non-default value.\n    `infrequent_categories_[i]` are the infrequent categories for feature\n    `i`. If the feature `i` has no infrequent categories\n    `infrequent_categories_[i]` is None.\n\n    .. versionadded:: 1.1\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 1.0\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nfeature_name_combiner : callable or None\n    Callable with signature `def callable(input_feature, category)` that returns a\n    string. This is used to create feature names to be returned by\n    :meth:`get_feature_names_out`.\n\n    .. versionadded:: 1.3\n\nSee Also\n--------\nOrdinalEncoder : Performs an ordinal (integer)\n  encoding of the categorical features.\nTargetEncoder : Encodes categorical features using the target.\nsklearn.feature_extraction.DictVectorizer : Performs a one-hot encoding of\n  dictionary items (also handles string-valued features).\nsklearn.feature_extraction.FeatureHasher : Performs an approximate one-hot\n  encoding of dictionary items or strings.\nLabelBinarizer : Binarizes labels in a one-vs-all\n  fashion.\nMultiLabelBinarizer : Transforms between iterable of\n  iterables and a multilabel format, e.g. a (samples x classes) binary\n  matrix indicating the presence of a class label.\n\nExamples\n--------\nGiven a dataset with two features, we let the encoder find the unique\nvalues per feature and transform the data to a binary one-hot encoding.\n\n>>> from sklearn.preprocessing import OneHotEncoder\n\nOne can discard categories not seen during `fit`:\n\n>>> enc = OneHotEncoder(handle_unknown='ignore')\n>>> X = [['Male', 1], ['Female', 3], ['Female', 2]]\n>>> enc.fit(X)\nOneHotEncoder(handle_unknown='ignore')\n>>> enc.categories_\n[array(['Female', 'Male'], dtype=object), array([1, 2, 3], dtype=object)]\n>>> enc.transform([['Female', 1], ['Male', 4]]).toarray()\narray([[1., 0., 1., 0., 0.],\n       [0., 1., 0., 0., 0.]])\n>>> enc.inverse_transform([[0, 1, 1, 0, 0], [0, 0, 0, 1, 0]])\narray([['Male', 1],\n       [None, 2]], dtype=object)\n>>> enc.get_feature_names_out(['gender', 'group'])\narray(['gender_Female', 'gender_Male', 'group_1', 'group_2', 'group_3'], ...)\n\nOne can always drop the first column for each feature:\n\n>>> drop_enc = OneHotEncoder(drop='first').fit(X)\n>>> drop_enc.categories_\n[array(['Female', 'Male'], dtype=object), array([1, 2, 3], dtype=object)]\n>>> drop_enc.transform([['Female', 1], ['Male', 2]]).toarray()\narray([[0., 0., 0.],\n       [1., 1., 0.]])\n\nOr drop a column for feature only having 2 categories:\n\n>>> drop_binary_enc = OneHotEncoder(drop='if_binary').fit(X)\n>>> drop_binary_enc.transform([['Female', 1], ['Male', 2]]).toarray()\narray([[0., 1., 0., 0.],\n       [1., 0., 1., 0.]])\n\nOne can change the way feature names are created.\n\n>>> def custom_combiner(feature, category):\n...     return str(feature) + \"_\" + type(category).__name__ + \"_\" + str(category)\n>>> custom_fnames_enc = OneHotEncoder(feature_name_combiner=custom_combiner).fit(X)\n>>> custom_fnames_enc.get_feature_names_out()\narray(['x0_str_Female', 'x0_str_Male', 'x1_int_1', 'x1_int_2', 'x1_int_3'],\n      dtype=object)\n\nInfrequent categories are enabled by setting `max_categories` or `min_frequency`.\n\n>>> import numpy as np\n>>> X = np.array([[\"a\"] * 5 + [\"b\"] * 20 + [\"c\"] * 10 + [\"d\"] * 3], dtype=object).T\n>>> ohe = OneHotEncoder(max_categories=3, sparse_output=False).fit(X)\n>>> ohe.infrequent_categories_\n[array(['a', 'd'], dtype=object)]\n>>> ohe.transform([[\"a\"], [\"b\"]])\narray([[0., 0., 1.],\n       [1., 0., 0.]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Encode categorical features as an integer array.\n\nThe input to this transformer should be an array-like of integers or\nstrings, denoting the values taken on by categorical (discrete) features.\nThe features are converted to ordinal integers. This results in\na single column of integers (0 to n_categories - 1) per feature.\n\nRead more in the :ref:`User Guide <preprocessing_categorical_features>`.\nFor a comparison of different encoders, refer to:\n:ref:`sphx_glr_auto_examples_preprocessing_plot_target_encoder.py`.\n\n.. versionadded:: 0.20\n\nParameters\n----------\ncategories : 'auto' or a list of array-like, default='auto'\n    Categories (unique values) per feature:\n\n    - 'auto' : Determine categories automatically from the training data.\n    - list : ``categories[i]`` holds the categories expected in the ith\n      column. The passed categories should not mix strings and numeric\n      values, and should be sorted in case of numeric values.\n\n    The used categories can be found in the ``categories_`` attribute.\n\ndtype : number type, default=np.float64\n    Desired dtype of output.\n\nhandle_unknown : {'error', 'use_encoded_value'}, default='error'\n    When set to 'error' an error will be raised in case an unknown\n    categorical feature is present during transform. When set to\n    'use_encoded_value', the encoded value of unknown categories will be\n    set to the value given for the parameter `unknown_value`. In\n    :meth:`inverse_transform`, an unknown category will be denoted as None.\n\n    .. versionadded:: 0.24\n\nunknown_value : int or np.nan, default=None\n    When the parameter handle_unknown is set to 'use_encoded_value', this\n    parameter is required and will set the encoded value of unknown\n    categories. It has to be distinct from the values used to encode any of\n    the categories in `fit`. If set to np.nan, the `dtype` parameter must\n    be a float dtype.\n\n    .. versionadded:: 0.24\n\nencoded_missing_value : int or np.nan, default=np.nan\n    Encoded value of missing categories. If set to `np.nan`, then the `dtype`\n    parameter must be a float dtype.\n\n    .. versionadded:: 1.1\n\nmin_frequency : int or float, default=None\n    Specifies the minimum frequency below which a category will be\n    considered infrequent.\n\n    - If `int`, categories with a smaller cardinality will be considered\n      infrequent.\n\n    - If `float`, categories with a smaller cardinality than\n      `min_frequency * n_samples`  will be considered infrequent.\n\n    .. versionadded:: 1.3\n        Read more in the :ref:`User Guide <encoder_infrequent_categories>`.\n\nmax_categories : int, default=None\n    Specifies an upper limit to the number of output categories for each input\n    feature when considering infrequent categories. If there are infrequent\n    categories, `max_categories` includes the category representing the\n    infrequent categories along with the frequent categories. If `None`,\n    there is no limit to the number of output features.\n\n    `max_categories` do **not** take into account missing or unknown\n    categories. Setting `unknown_value` or `encoded_missing_value` to an\n    integer will increase the number of unique integer codes by one each.\n    This can result in up to `max_categories + 2` integer codes.\n\n    .. versionadded:: 1.3\n        Read more in the :ref:`User Guide <encoder_infrequent_categories>`.\n\nAttributes\n----------\ncategories_ : list of arrays\n    The categories of each feature determined during ``fit`` (in order of\n    the features in X and corresponding with the output of ``transform``).\n    This does not include categories that weren't seen during ``fit``.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 1.0\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\ninfrequent_categories_ : list of ndarray\n    Defined only if infrequent categories are enabled by setting\n    `min_frequency` or `max_categories` to a non-default value.\n    `infrequent_categories_[i]` are the infrequent categories for feature\n    `i`. If the feature `i` has no infrequent categories\n    `infrequent_categories_[i]` is None.\n\n    .. versionadded:: 1.3\n\nSee Also\n--------\nOneHotEncoder : Performs a one-hot encoding of categorical features. This encoding\n    is suitable for low to medium cardinality categorical variables, both in\n    supervised and unsupervised settings.\nTargetEncoder : Encodes categorical features using supervised signal\n    in a classification or regression pipeline. This encoding is typically\n    suitable for high cardinality categorical variables.\nLabelEncoder : Encodes target labels with values between 0 and\n    ``n_classes-1``.\n\nNotes\n-----\nWith a high proportion of `nan` values, inferring categories becomes slow with\nPython versions before 3.10. The handling of `nan` values was improved\nfrom Python 3.10 onwards, (c.f.\n`bpo-43475 <https://github.com/python/cpython/issues/87641>`_).\n\nExamples\n--------\nGiven a dataset with two features, we let the encoder find the unique\nvalues per feature and transform the data to an ordinal encoding.\n\n>>> from sklearn.preprocessing import OrdinalEncoder\n>>> enc = OrdinalEncoder()\n>>> X = [['Male', 1], ['Female', 3], ['Female', 2]]\n>>> enc.fit(X)\nOrdinalEncoder()\n>>> enc.categories_\n[array(['Female', 'Male'], dtype=object), array([1, 2, 3], dtype=object)]\n>>> enc.transform([['Female', 3], ['Male', 1]])\narray([[0., 2.],\n       [1., 0.]])\n\n>>> enc.inverse_transform([[1, 0], [0, 1]])\narray([['Male', 1],\n       ['Female', 2]], dtype=object)\n\nBy default, :class:`OrdinalEncoder` is lenient towards missing values by\npropagating them.\n\n>>> import numpy as np\n>>> X = [['Male', 1], ['Female', 3], ['Female', np.nan]]\n>>> enc.fit_transform(X)\narray([[ 1.,  0.],\n       [ 0.,  1.],\n       [ 0., nan]])\n\nYou can use the parameter `encoded_missing_value` to encode missing values.\n\n>>> enc.set_params(encoded_missing_value=-1).fit_transform(X)\narray([[ 1.,  0.],\n       [ 0.,  1.],\n       [ 0., -1.]])\n\nInfrequent categories are enabled by setting `max_categories` or `min_frequency`.\nIn the following example, \"a\" and \"d\" are considered infrequent and grouped\ntogether into a single category, \"b\" and \"c\" are their own categories, unknown\nvalues are encoded as 3 and missing values are encoded as 4.\n\n>>> X_train = np.array(\n...     [[\"a\"] * 5 + [\"b\"] * 20 + [\"c\"] * 10 + [\"d\"] * 3 + [np.nan]],\n...     dtype=object).T\n>>> enc = OrdinalEncoder(\n...     handle_unknown=\"use_encoded_value\", unknown_value=3,\n...     max_categories=3, encoded_missing_value=4)\n>>> _ = enc.fit(X_train)\n>>> X_test = np.array([[\"a\"], [\"b\"], [\"c\"], [\"d\"], [\"e\"], [np.nan]], dtype=object)\n>>> enc.transform(X_test)\narray([[2.],\n       [0.],\n       [1.],\n       [2.],\n       [3.],\n       [4.]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PolynomialFeaturesMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Generate polynomial and interaction features.\n\nGenerate a new feature matrix consisting of all polynomial combinations\nof the features with degree less than or equal to the specified degree.\nFor example, if an input sample is two dimensional and of the form\n[a, b], the degree-2 polynomial features are [1, a, b, a^2, ab, b^2].\n\nRead more in the :ref:`User Guide <polynomial_features>`.\n\nParameters\n----------\ndegree : int or tuple (min_degree, max_degree), default=2\n    If a single int is given, it specifies the maximal degree of the\n    polynomial features. If a tuple `(min_degree, max_degree)` is passed,\n    then `min_degree` is the minimum and `max_degree` is the maximum\n    polynomial degree of the generated features. Note that `min_degree=0`\n    and `min_degree=1` are equivalent as outputting the degree zero term is\n    determined by `include_bias`.\n\ninteraction_only : bool, default=False\n    If `True`, only interaction features are produced: features that are\n    products of at most `degree` *distinct* input features, i.e. terms with\n    power of 2 or higher of the same input feature are excluded:\n\n        - included: `x[0]`, `x[1]`, `x[0] * x[1]`, etc.\n        - excluded: `x[0] ** 2`, `x[0] ** 2 * x[1]`, etc.\n\ninclude_bias : bool, default=True\n    If `True` (default), then include a bias column, the feature in which\n    all polynomial powers are zero (i.e. a column of ones - acts as an\n    intercept term in a linear model).\n\norder : {'C', 'F'}, default='C'\n    Order of output array in the dense case. `'F'` order is faster to\n    compute, but may slow down subsequent estimators.\n\n    .. versionadded:: 0.21\n\nAttributes\n----------\npowers_ : ndarray of shape (`n_output_features_`, `n_features_in_`)\n    `powers_[i, j]` is the exponent of the jth input in the ith output.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_output_features_ : int\n    The total number of polynomial output features. The number of output\n    features is computed by iterating over all suitably sized combinations\n    of input features.\n\nSee Also\n--------\nSplineTransformer : Transformer that generates univariate B-spline bases\n    for features.\n\nNotes\n-----\nBe aware that the number of features in the output array scales\npolynomially in the number of features of the input array, and\nexponentially in the degree. High degrees can cause overfitting.\n\nSee :ref:`examples/linear_model/plot_polynomial_interpolation.py\n<sphx_glr_auto_examples_linear_model_plot_polynomial_interpolation.py>`\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.preprocessing import PolynomialFeatures\n>>> X = np.arange(6).reshape(3, 2)\n>>> X\narray([[0, 1],\n       [2, 3],\n       [4, 5]])\n>>> poly = PolynomialFeatures(2)\n>>> poly.fit_transform(X)\narray([[ 1.,  0.,  1.,  0.,  0.,  1.],\n       [ 1.,  2.,  3.,  4.,  6.,  9.],\n       [ 1.,  4.,  5., 16., 20., 25.]])\n>>> poly = PolynomialFeatures(interaction_only=True)\n>>> poly.fit_transform(X)\narray([[ 1.,  0.,  1.,  0.],\n       [ 1.,  2.,  3.,  6.],\n       [ 1.,  4.,  5., 20.]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PowerTransformerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Apply a power transform featurewise to make data more Gaussian-like.\n\nPower transforms are a family of parametric, monotonic transformations\nthat are applied to make data more Gaussian-like. This is useful for\nmodeling issues related to heteroscedasticity (non-constant variance),\nor other situations where normality is desired.\n\nCurrently, PowerTransformer supports the Box-Cox transform and the\nYeo-Johnson transform. The optimal parameter for stabilizing variance and\nminimizing skewness is estimated through maximum likelihood.\n\nBox-Cox requires input data to be strictly positive, while Yeo-Johnson\nsupports both positive or negative data.\n\nBy default, zero-mean, unit-variance normalization is applied to the\ntransformed data.\n\nFor an example visualization, refer to :ref:`Compare PowerTransformer with\nother scalers <plot_all_scaling_power_transformer_section>`. To see the\neffect of Box-Cox and Yeo-Johnson transformations on different\ndistributions, see:\n:ref:`sphx_glr_auto_examples_preprocessing_plot_map_data_to_normal.py`.\n\nRead more in the :ref:`User Guide <preprocessing_transformer>`.\n\n.. versionadded:: 0.20\n\nParameters\n----------\nmethod : {'yeo-johnson', 'box-cox'}, default='yeo-johnson'\n    The power transform method. Available methods are:\n\n    - 'yeo-johnson' [1]_, works with positive and negative values\n    - 'box-cox' [2]_, only works with strictly positive values\n\nstandardize : bool, default=True\n    Set to True to apply zero-mean, unit-variance normalization to the\n    transformed output.\n\ncopy : bool, default=True\n    Set to False to perform inplace computation during transformation.\n\nAttributes\n----------\nlambdas_ : ndarray of float of shape (n_features,)\n    The parameters of the power transformation for the selected features.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\npower_transform : Equivalent function without the estimator API.\n\nQuantileTransformer : Maps data to a standard normal distribution with\n    the parameter `output_distribution='normal'`.\n\nNotes\n-----\nNaNs are treated as missing values: disregarded in ``fit``, and maintained\nin ``transform``.\n\nReferences\n----------\n\n.. [1] :doi:`I.K. Yeo and R.A. Johnson, \"A new family of power\n       transformations to improve normality or symmetry.\" Biometrika,\n       87(4), pp.954-959, (2000). <10.1093/biomet/87.4.954>`\n\n.. [2] :doi:`G.E.P. Box and D.R. Cox, \"An Analysis of Transformations\",\n       Journal of the Royal Statistical Society B, 26, 211-252 (1964).\n       <10.1111/j.2517-6161.1964.tb00553.x>`\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.preprocessing import PowerTransformer\n>>> pt = PowerTransformer()\n>>> data = [[1, 2], [3, 2], [4, 5]]\n>>> print(pt.fit(data))\nPowerTransformer()\n>>> print(pt.lambdas_)\n[ 1.386... -3.100...]\n>>> print(pt.transform(data))\n[[-1.316... -0.707...]\n [ 0.209... -0.707...]\n [ 1.106...  1.414...]]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Transform features using quantiles information.\n\nThis method transforms the features to follow a uniform or a normal\ndistribution. Therefore, for a given feature, this transformation tends\nto spread out the most frequent values. It also reduces the impact of\n(marginal) outliers: this is therefore a robust preprocessing scheme.\n\nThe transformation is applied on each feature independently. First an\nestimate of the cumulative distribution function of a feature is\nused to map the original values to a uniform distribution. The obtained\nvalues are then mapped to the desired output distribution using the\nassociated quantile function. Features values of new/unseen data that fall\nbelow or above the fitted range will be mapped to the bounds of the output\ndistribution. Note that this transform is non-linear. It may distort linear\ncorrelations between variables measured at the same scale but renders\nvariables measured at different scales more directly comparable.\n\nFor example visualizations, refer to :ref:`Compare QuantileTransformer with\nother scalers <plot_all_scaling_quantile_transformer_section>`.\n\nRead more in the :ref:`User Guide <preprocessing_transformer>`.\n\n.. versionadded:: 0.19\n\nParameters\n----------\nn_quantiles : int, default=1000 or n_samples\n    Number of quantiles to be computed. It corresponds to the number\n    of landmarks used to discretize the cumulative distribution function.\n    If n_quantiles is larger than the number of samples, n_quantiles is set\n    to the number of samples as a larger number of quantiles does not give\n    a better approximation of the cumulative distribution function\n    estimator.\n\noutput_distribution : {'uniform', 'normal'}, default='uniform'\n    Marginal distribution for the transformed data. The choices are\n    'uniform' (default) or 'normal'.\n\nignore_implicit_zeros : bool, default=False\n    Only applies to sparse matrices. If True, the sparse entries of the\n    matrix are discarded to compute the quantile statistics. If False,\n    these entries are treated as zeros.\n\nsubsample : int, default=10_000\n    Maximum number of samples used to estimate the quantiles for\n    computational efficiency. Note that the subsampling procedure may\n    differ for value-identical sparse and dense matrices.\n\nrandom_state : int, RandomState instance or None, default=None\n    Determines random number generation for subsampling and smoothing\n    noise.\n    Please see ``subsample`` for more details.\n    Pass an int for reproducible results across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\ncopy : bool, default=True\n    Set to False to perform inplace transformation and avoid a copy (if the\n    input is already a numpy array).\n\nAttributes\n----------\nn_quantiles_ : int\n    The actual number of quantiles used to discretize the cumulative\n    distribution function.\n\nquantiles_ : ndarray of shape (n_quantiles, n_features)\n    The values corresponding the quantiles of reference.\n\nreferences_ : ndarray of shape (n_quantiles, )\n    Quantiles of references.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nquantile_transform : Equivalent function without the estimator API.\nPowerTransformer : Perform mapping to a normal distribution using a power\n    transform.\nStandardScaler : Perform standardization that is faster, but less robust\n    to outliers.\nRobustScaler : Perform robust standardization that removes the influence\n    of outliers but does not put outliers and inliers on the same scale.\n\nNotes\n-----\nNaNs are treated as missing values: disregarded in fit, and maintained in\ntransform.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.preprocessing import QuantileTransformer\n>>> rng = np.random.RandomState(0)\n>>> X = np.sort(rng.normal(loc=0.5, scale=0.25, size=(25, 1)), axis=0)\n>>> qt = QuantileTransformer(n_quantiles=10, random_state=0)\n>>> qt.fit_transform(X)\narray([...])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RobustScalerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Scale features using statistics that are robust to outliers.\n\nThis Scaler removes the median and scales the data according to\nthe quantile range (defaults to IQR: Interquartile Range).\nThe IQR is the range between the 1st quartile (25th quantile)\nand the 3rd quartile (75th quantile).\n\nCentering and scaling happen independently on each feature by\ncomputing the relevant statistics on the samples in the training\nset. Median and interquartile range are then stored to be used on\nlater data using the :meth:`transform` method.\n\nStandardization of a dataset is a common preprocessing for many machine\nlearning estimators. Typically this is done by removing the mean and\nscaling to unit variance. However, outliers can often influence the sample\nmean / variance in a negative way. In such cases, using the median and the\ninterquartile range often give better results. For an example visualization\nand comparison to other scalers, refer to :ref:`Compare RobustScaler with\nother scalers <plot_all_scaling_robust_scaler_section>`.\n\n.. versionadded:: 0.17\n\nRead more in the :ref:`User Guide <preprocessing_scaler>`.\n\nParameters\n----------\nwith_centering : bool, default=True\n    If `True`, center the data before scaling.\n    This will cause :meth:`transform` to raise an exception when attempted\n    on sparse matrices, because centering them entails building a dense\n    matrix which in common use cases is likely to be too large to fit in\n    memory.\n\nwith_scaling : bool, default=True\n    If `True`, scale the data to interquartile range.\n\nquantile_range : tuple (q_min, q_max), 0.0 < q_min < q_max < 100.0,         default=(25.0, 75.0)\n    Quantile range used to calculate `scale_`. By default this is equal to\n    the IQR, i.e., `q_min` is the first quantile and `q_max` is the third\n    quantile.\n\n    .. versionadded:: 0.18\n\ncopy : bool, default=True\n    If `False`, try to avoid a copy and do inplace scaling instead.\n    This is not guaranteed to always work inplace; e.g. if the data is\n    not a NumPy array or scipy.sparse CSR matrix, a copy may still be\n    returned.\n\nunit_variance : bool, default=False\n    If `True`, scale data so that normally distributed features have a\n    variance of 1. In general, if the difference between the x-values of\n    `q_max` and `q_min` for a standard normal distribution is greater\n    than 1, the dataset will be scaled down. If less than 1, the dataset\n    will be scaled up.\n\n    .. versionadded:: 0.24\n\nAttributes\n----------\ncenter_ : array of floats\n    The median value for each feature in the training set.\n\nscale_ : array of floats\n    The (scaled) interquartile range for each feature in the training set.\n\n    .. versionadded:: 0.17\n       *scale_* attribute.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nrobust_scale : Equivalent function without the estimator API.\nsklearn.decomposition.PCA : Further removes the linear correlation across\n    features with 'whiten=True'.\n\nNotes\n-----\n\nhttps://en.wikipedia.org/wiki/Median\nhttps://en.wikipedia.org/wiki/Interquartile_range\n\nExamples\n--------\n>>> from sklearn.preprocessing import RobustScaler\n>>> X = [[ 1., -2.,  2.],\n...      [ -2.,  1.,  3.],\n...      [ 4.,  1., -2.]]\n>>> transformer = RobustScaler().fit(X)\n>>> transformer\nRobustScaler()\n>>> transformer.transform(X)\narray([[ 0. , -2. ,  0. ],\n       [-1. ,  0. ,  0.4],\n       [ 1. ,  0. , -1.6]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Generate univariate B-spline bases for features.\n\nGenerate a new feature matrix consisting of\n`n_splines=n_knots + degree - 1` (`n_knots - 1` for\n`extrapolation=\"periodic\"`) spline basis functions\n(B-splines) of polynomial order=`degree` for each feature.\n\nIn order to learn more about the SplineTransformer class go to:\n:ref:`sphx_glr_auto_examples_applications_plot_cyclical_feature_engineering.py`\n\nRead more in the :ref:`User Guide <spline_transformer>`.\n\n.. versionadded:: 1.0\n\nParameters\n----------\nn_knots : int, default=5\n    Number of knots of the splines if `knots` equals one of\n    {'uniform', 'quantile'}. Must be larger or equal 2. Ignored if `knots`\n    is array-like.\n\ndegree : int, default=3\n    The polynomial degree of the spline basis. Must be a non-negative\n    integer.\n\nknots : {'uniform', 'quantile'} or array-like of shape         (n_knots, n_features), default='uniform'\n    Set knot positions such that first knot <= features <= last knot.\n\n    - If 'uniform', `n_knots` number of knots are distributed uniformly\n      from min to max values of the features.\n    - If 'quantile', they are distributed uniformly along the quantiles of\n      the features.\n    - If an array-like is given, it directly specifies the sorted knot\n      positions including the boundary knots. Note that, internally,\n      `degree` number of knots are added before the first knot, the same\n      after the last knot.\n\nextrapolation : {'error', 'constant', 'linear', 'continue', 'periodic'},         default='constant'\n    If 'error', values outside the min and max values of the training\n    features raises a `ValueError`. If 'constant', the value of the\n    splines at minimum and maximum value of the features is used as\n    constant extrapolation. If 'linear', a linear extrapolation is used.\n    If 'continue', the splines are extrapolated as is, i.e. option\n    `extrapolate=True` in :class:`scipy.interpolate.BSpline`. If\n    'periodic', periodic splines with a periodicity equal to the distance\n    between the first and last knot are used. Periodic splines enforce\n    equal function values and derivatives at the first and last knot.\n    For example, this makes it possible to avoid introducing an arbitrary\n    jump between Dec 31st and Jan 1st in spline features derived from a\n    naturally periodic \"day-of-year\" input feature. In this case it is\n    recommended to manually set the knot values to control the period.\n\ninclude_bias : bool, default=True\n    If False, then the last spline element inside the data range\n    of a feature is dropped. As B-splines sum to one over the spline basis\n    functions for each data point, they implicitly include a bias term,\n    i.e. a column of ones. It acts as an intercept term in a linear models.\n\norder : {'C', 'F'}, default='C'\n    Order of output array in the dense case. `'F'` order is faster to compute, but\n    may slow down subsequent estimators.\n\nsparse_output : bool, default=False\n    Will return sparse CSR matrix if set True else will return an array. This\n    option is only available with `scipy>=1.8`.\n\n    .. versionadded:: 1.2\n\nAttributes\n----------\nbsplines_ : list of shape (n_features,)\n    List of BSplines objects, one for each feature.\n\nn_features_in_ : int\n    The total number of input features.\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_features_out_ : int\n    The total number of output features, which is computed as\n    `n_features * n_splines`, where `n_splines` is\n    the number of bases elements of the B-splines,\n    `n_knots + degree - 1` for non-periodic splines and\n    `n_knots - 1` for periodic ones.\n    If `include_bias=False`, then it is only\n    `n_features * (n_splines - 1)`.\n\nSee Also\n--------\nKBinsDiscretizer : Transformer that bins continuous data into intervals.\n\nPolynomialFeatures : Transformer that generates polynomial and interaction\n    features.\n\nNotes\n-----\nHigh degrees and a high number of knots can cause overfitting.\n\nSee :ref:`examples/linear_model/plot_polynomial_interpolation.py\n<sphx_glr_auto_examples_linear_model_plot_polynomial_interpolation.py>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.preprocessing import SplineTransformer\n>>> X = np.arange(6).reshape(6, 1)\n>>> spline = SplineTransformer(degree=2, n_knots=3)\n>>> spline.fit_transform(X)\narray([[0.5 , 0.5 , 0.  , 0.  ],\n       [0.18, 0.74, 0.08, 0.  ],\n       [0.02, 0.66, 0.32, 0.  ],\n       [0.  , 0.32, 0.66, 0.02],\n       [0.  , 0.08, 0.74, 0.18],\n       [0.  , 0.  , 0.5 , 0.5 ]])"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StandardScalerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Standardize features by removing the mean and scaling to unit variance.\n\nThe standard score of a sample `x` is calculated as:\n\n    z = (x - u) / s\n\nwhere `u` is the mean of the training samples or zero if `with_mean=False`,\nand `s` is the standard deviation of the training samples or one if\n`with_std=False`.\n\nCentering and scaling happen independently on each feature by computing\nthe relevant statistics on the samples in the training set. Mean and\nstandard deviation are then stored to be used on later data using\n:meth:`transform`.\n\nStandardization of a dataset is a common requirement for many\nmachine learning estimators: they might behave badly if the\nindividual features do not more or less look like standard normally\ndistributed data (e.g. Gaussian with 0 mean and unit variance).\n\nFor instance many elements used in the objective function of\na learning algorithm (such as the RBF kernel of Support Vector\nMachines or the L1 and L2 regularizers of linear models) assume that\nall features are centered around 0 and have variance in the same\norder. If a feature has a variance that is orders of magnitude larger\nthan others, it might dominate the objective function and make the\nestimator unable to learn from other features correctly as expected.\n\n`StandardScaler` is sensitive to outliers, and the features may scale\ndifferently from each other in the presence of outliers. For an example\nvisualization, refer to :ref:`Compare StandardScaler with other scalers\n<plot_all_scaling_standard_scaler_section>`.\n\nThis scaler can also be applied to sparse CSR or CSC matrices by passing\n`with_mean=False` to avoid breaking the sparsity structure of the data.\n\nRead more in the :ref:`User Guide <preprocessing_scaler>`.\n\nParameters\n----------\ncopy : bool, default=True\n    If False, try to avoid a copy and do inplace scaling instead.\n    This is not guaranteed to always work inplace; e.g. if the data is\n    not a NumPy array or scipy.sparse CSR matrix, a copy may still be\n    returned.\n\nwith_mean : bool, default=True\n    If True, center the data before scaling.\n    This does not work (and will raise an exception) when attempted on\n    sparse matrices, because centering them entails building a dense\n    matrix which in common use cases is likely to be too large to fit in\n    memory.\n\nwith_std : bool, default=True\n    If True, scale the data to unit variance (or equivalently,\n    unit standard deviation).\n\nAttributes\n----------\nscale_ : ndarray of shape (n_features,) or None\n    Per feature relative scaling of the data to achieve zero mean and unit\n    variance. Generally this is calculated using `np.sqrt(var_)`. If a\n    variance is zero, we can't achieve unit variance, and the data is left\n    as-is, giving a scaling factor of 1. `scale_` is equal to `None`\n    when `with_std=False`.\n\n    .. versionadded:: 0.17\n       *scale_*\n\nmean_ : ndarray of shape (n_features,) or None\n    The mean value for each feature in the training set.\n    Equal to ``None`` when ``with_mean=False`` and ``with_std=False``.\n\nvar_ : ndarray of shape (n_features,) or None\n    The variance for each feature in the training set. Used to compute\n    `scale_`. Equal to ``None`` when ``with_mean=False`` and\n    ``with_std=False``.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\n    .. versionadded:: 1.0\n\nn_samples_seen_ : int or ndarray of shape (n_features,)\n    The number of samples processed by the estimator for each feature.\n    If there are no missing samples, the ``n_samples_seen`` will be an\n    integer, otherwise it will be an array of dtype int. If\n    `sample_weights` are used it will be a float (if no missing data)\n    or an array of dtype float that sums the weights seen so far.\n    Will be reset on new calls to fit, but increments across\n    ``partial_fit`` calls.\n\nSee Also\n--------\nscale : Equivalent function without the estimator API.\n\n:class:`~sklearn.decomposition.PCA` : Further removes the linear\n    correlation across features with 'whiten=True'.\n\nNotes\n-----\nNaNs are treated as missing values: disregarded in fit, and maintained in\ntransform.\n\nWe use a biased estimator for the standard deviation, equivalent to\n`numpy.std(x, ddof=0)`. Note that the choice of `ddof` is unlikely to\naffect model performance.\n\nExamples\n--------\n>>> from sklearn.preprocessing import StandardScaler\n>>> data = [[0, 0], [0, 0], [1, 1], [1, 1]]\n>>> scaler = StandardScaler()\n>>> print(scaler.fit(data))\nStandardScaler()\n>>> print(scaler.mean_)\n[0.5 0.5]\n>>> print(scaler.transform(data))\n[[-1. -1.]\n [-1. -1.]\n [ 1.  1.]\n [ 1.  1.]]\n>>> print(scaler.transform([[2, 2]]))\n[[3. 3.]]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Target Encoder for regression and classification targets.\n\nEach category is encoded based on a shrunk estimate of the average target\nvalues for observations belonging to the category. The encoding scheme mixes\nthe global target mean with the target mean conditioned on the value of the\ncategory (see [MIC]_).\n\nWhen the target type is \"multiclass\", encodings are based\non the conditional probability estimate for each class. The target is first\nbinarized using the \"one-vs-all\" scheme via\n:class:`~sklearn.preprocessing.LabelBinarizer`, then the average target\nvalue for each class and each category is used for encoding, resulting in\n`n_features` * `n_classes` encoded output features.\n\n:class:`TargetEncoder` considers missing values, such as `np.nan` or `None`,\nas another category and encodes them like any other category. Categories\nthat are not seen during :meth:`fit` are encoded with the target mean, i.e.\n`target_mean_`.\n\nFor a demo on the importance of the `TargetEncoder` internal cross-fitting,\nsee\n:ref:`sphx_glr_auto_examples_preprocessing_plot_target_encoder_cross_val.py`.\nFor a comparison of different encoders, refer to\n:ref:`sphx_glr_auto_examples_preprocessing_plot_target_encoder.py`. Read\nmore in the :ref:`User Guide <target_encoder>`.\n\n.. note::\n    `fit(X, y).transform(X)` does not equal `fit_transform(X, y)` because a\n    :term:`cross fitting` scheme is used in `fit_transform` for encoding.\n    See the :ref:`User Guide <target_encoder>` for details.\n\n.. versionadded:: 1.3\n\nParameters\n----------\ncategories : \"auto\" or list of shape (n_features,) of array-like, default=\"auto\"\n    Categories (unique values) per feature:\n\n    - `\"auto\"` : Determine categories automatically from the training data.\n    - list : `categories[i]` holds the categories expected in the i-th column. The\n      passed categories should not mix strings and numeric values within a single\n      feature, and should be sorted in case of numeric values.\n\n    The used categories are stored in the `categories_` fitted attribute.\n\ntarget_type : {\"auto\", \"continuous\", \"binary\", \"multiclass\"}, default=\"auto\"\n    Type of target.\n\n    - `\"auto\"` : Type of target is inferred with\n      :func:`~sklearn.utils.multiclass.type_of_target`.\n    - `\"continuous\"` : Continuous target\n    - `\"binary\"` : Binary target\n    - `\"multiclass\"` : Multiclass target\n\n    .. note::\n        The type of target inferred with `\"auto\"` may not be the desired target\n        type used for modeling. For example, if the target consisted of integers\n        between 0 and 100, then :func:`~sklearn.utils.multiclass.type_of_target`\n        will infer the target as `\"multiclass\"`. In this case, setting\n        `target_type=\"continuous\"` will specify the target as a regression\n        problem. The `target_type_` attribute gives the target type used by the\n        encoder.\n\n    .. versionchanged:: 1.4\n       Added the option 'multiclass'.\n\nsmooth : \"auto\" or float, default=\"auto\"\n    The amount of mixing of the target mean conditioned on the value of the\n    category with the global target mean. A larger `smooth` value will put\n    more weight on the global target mean.\n    If `\"auto\"`, then `smooth` is set to an empirical Bayes estimate.\n\ncv : int, default=5\n    Determines the number of folds in the :term:`cross fitting` strategy used in\n    :meth:`fit_transform`. For classification targets, `StratifiedKFold` is used\n    and for continuous targets, `KFold` is used.\n\nshuffle : bool, default=True\n    Whether to shuffle the data in :meth:`fit_transform` before splitting into\n    folds. Note that the samples within each split will not be shuffled.\n\nrandom_state : int, RandomState instance or None, default=None\n    When `shuffle` is True, `random_state` affects the ordering of the\n    indices, which controls the randomness of each fold. Otherwise, this\n    parameter has no effect.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nAttributes\n----------\nencodings_ : list of shape (n_features,) or (n_features * n_classes) of                     ndarray\n    Encodings learnt on all of `X`.\n    For feature `i`, `encodings_[i]` are the encodings matching the\n    categories listed in `categories_[i]`. When `target_type_` is\n    \"multiclass\", the encoding for feature `i` and class `j` is stored in\n    `encodings_[j + (i * len(classes_))]`. E.g., for 2 features (f) and\n    3 classes (c), encodings are ordered:\n    f0_c0, f0_c1, f0_c2, f1_c0, f1_c1, f1_c2,\n\ncategories_ : list of shape (n_features,) of ndarray\n    The categories of each input feature determined during fitting or\n    specified in `categories`\n    (in order of the features in `X` and corresponding with the output\n    of :meth:`transform`).\n\ntarget_type_ : str\n    Type of target.\n\ntarget_mean_ : float\n    The overall mean of the target. This value is only used in :meth:`transform`\n    to encode categories.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`.\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Defined only when `X`\n    has feature names that are all strings.\n\nclasses_ : ndarray or None\n    If `target_type_` is 'binary' or 'multiclass', holds the label for each class,\n    otherwise `None`.\n\nSee Also\n--------\nOrdinalEncoder : Performs an ordinal (integer) encoding of the categorical features.\n    Contrary to TargetEncoder, this encoding is not supervised. Treating the\n    resulting encoding as a numerical features therefore lead arbitrarily\n    ordered values and therefore typically lead to lower predictive performance\n    when used as preprocessing for a classifier or regressor.\nOneHotEncoder : Performs a one-hot encoding of categorical features. This\n    unsupervised encoding is better suited for low cardinality categorical\n    variables as it generate one new feature per unique category.\n\nReferences\n----------\n.. [MIC] :doi:`Micci-Barreca, Daniele. \"A preprocessing scheme for high-cardinality\n   categorical attributes in classification and prediction problems\"\n   SIGKDD Explor. Newsl. 3, 1 (July 2001), 27–32. <10.1145/507533.507538>`\n\nExamples\n--------\nWith `smooth=\"auto\"`, the smoothing parameter is set to an empirical Bayes estimate:\n\n>>> import numpy as np\n>>> from sklearn.preprocessing import TargetEncoder\n>>> X = np.array([[\"dog\"] * 20 + [\"cat\"] * 30 + [\"snake\"] * 38], dtype=object).T\n>>> y = [90.3] * 5 + [80.1] * 15 + [20.4] * 5 + [20.1] * 25 + [21.2] * 8 + [49] * 30\n>>> enc_auto = TargetEncoder(smooth=\"auto\")\n>>> X_trans = enc_auto.fit_transform(X, y)\n\n>>> # A high `smooth` parameter puts more weight on global mean on the categorical\n>>> # encodings:\n>>> enc_high_smooth = TargetEncoder(smooth=5000.0).fit(X, y)\n>>> enc_high_smooth.target_mean_\n44...\n>>> enc_high_smooth.encodings_\n[array([44..., 44..., 44...])]\n\n>>> # On the other hand, a low `smooth` parameter puts more weight on target\n>>> # conditioned on the value of the categorical:\n>>> enc_low_smooth = TargetEncoder(smooth=1.0).fit(X, y)\n>>> enc_low_smooth.encodings_\n[array([20..., 80..., 43...])]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PrepareTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PreprocessingModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataProcessingMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataProcessing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinarizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KernelCentererMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelBinarizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MaxAbsScalerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MinMaxScalerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultiLabelBinarizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NormalizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PolynomialFeaturesMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PowerTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RobustScalerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StandardScalerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAcceptSparse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCategories",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCheckInverse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamClip",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MinMaxScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCopy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinarizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MaxAbsScalerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MinMaxScalerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NormalizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PowerTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RobustScalerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StandardScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCv",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDegree",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PolynomialFeaturesMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDrop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamDtype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEncode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEncodedMissingValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamExtrapolation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFeatureNameCombiner",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFeatureNamesOut",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFeatureRange",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MinMaxScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFunc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamHandleUnknown",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamIgnoreImplicitZeros",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamIncludeBias",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PolynomialFeaturesMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInteractionOnly",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PolynomialFeaturesMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInvKwArgs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamInverseFunc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKnots",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamKwArgs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxCategories",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PowerTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinFrequency",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNBins",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNKnots",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNQuantiles",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNegLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelBinarizerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNorm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#NormalizerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamOrder",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PolynomialFeaturesMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamOutputDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPosLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelBinarizerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamQuantileRange",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RobustScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSmooth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSparseOutput",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LabelBinarizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#MultiLabelBinarizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OneHotEncoderMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SplineTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStandardize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PowerTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStrategy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamSubsample",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KBinsDiscretizerMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#QuantileTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTargetType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TargetEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamThreshold",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#BinarizerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamUnitVariance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RobustScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamUnknownValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#OrdinalEncoderMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamValidate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#FunctionTransformerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWithCentering",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RobustScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWithMean",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StandardScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWithScaling",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RobustScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamWithStd",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StandardScalerMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasPrepareTransformerMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]
