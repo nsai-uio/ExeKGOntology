@@ -11,6 +11,7 @@ ml:hasDataProcessingMethod a owl:ObjectProperty ;
         ml:KBinsDiscretizerMethod,
         ml:KernelCentererMethod,
         ml:LabelBinarizerMethod,
+        ml:LabelEncoderMethod,
         ml:MaxAbsScalerMethod,
         ml:MinMaxScalerMethod,
         ml:MultiLabelBinarizerMethod,
@@ -393,6 +394,12 @@ KernelCenterer()
 array([[  5.,   0.,  -5.],
        [  0.,  14., -14.],
        [ -5., -14.,  19.]])""" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
+
+ml:LabelEncoderMethod a owl:Class ;
+    rdfs:comment "" ;
     rdfs:subClassOf ds:AtomicMethod,
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .

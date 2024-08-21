@@ -23,9 +23,11 @@ ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
         ml:ExtraTreesClassifierMethod,
         ml:GaussianNBMethod,
         ml:GradientBoostingClassifierMethod,
+        ml:HingeMethod,
         ml:HistGradientBoostingClassifierMethod,
         ml:KNeighborsClassifierMethod,
         ml:LinearSVCMethod,
+        ml:LogMethod,
         ml:LogisticRegressionCVMethod,
         ml:LogisticRegressionMethod,
         ml:MLPClassifierMethod,
@@ -58,11 +60,13 @@ ml:hasClusteringMethod a owl:ObjectProperty ;
     rdfs:domain ml:Clustering ;
     rdfs:range ml:AffinityPropagationMethod,
         ml:AgglomerativeClusteringMethod,
+        ml:BallTreeMethod,
         ml:BirchMethod,
         ml:BisectingKMeansMethod,
         ml:DBSCANMethod,
         ml:HDBSCANMethod,
         ml:IsolationForestMethod,
+        ml:KDTreeMethod,
         ml:KMeansMethod,
         ml:KNeighborsTransformerMethod,
         ml:KernelDensityMethod,
@@ -87,6 +91,7 @@ ml:hasDataProcessingMethod a owl:ObjectProperty ;
         ml:KNNImputerMethod,
         ml:KernelCentererMethod,
         ml:LabelBinarizerMethod,
+        ml:LabelEncoderMethod,
         ml:MaxAbsScalerMethod,
         ml:MinMaxScalerMethod,
         ml:MissingIndicatorMethod,
@@ -3329,6 +3334,7 @@ ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
         ml:ElasticNetCVMethod,
         ml:ElasticNetMethod,
         ml:GammaRegressorMethod,
+        ml:HuberMethod,
         ml:HuberRegressorMethod,
         ml:LarsCVMethod,
         ml:LassoCVMethod,
@@ -3336,6 +3342,7 @@ ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
         ml:LassoLarsICMethod,
         ml:LassoMethod,
         ml:MLPRegressorMethod,
+        ml:ModifiedHuberMethod,
         ml:MultiTaskElasticNetCVMethod,
         ml:MultiTaskElasticNetMethod,
         ml:MultiTaskLassoCVMethod,
@@ -3351,6 +3358,7 @@ ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
         ml:RidgeMethod,
         ml:SGDOneClassSVMMethod,
         ml:SGDRegressorMethod,
+        ml:SquaredLossMethod,
         ml:StackingRegressorMethod,
         ml:TheilSenRegressorMethod,
         ml:TweedieRegressorMethod,
@@ -3503,6 +3511,12 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
+
+ml:BallTreeMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:CalinskiHarabaszScoreMethod a owl:Class ;
     rdfs:comment """Compute the Calinski and Harabasz score.
@@ -3927,6 +3941,12 @@ In the multilabel case with binary label indicators:
 ml:HdbscanModule a owl:Class ;
     rdfs:subClassOf ml:ClusterModule .
 
+ml:HingeMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
 ml:HomogeneityScoreMethod a owl:Class ;
     rdfs:comment """Homogeneity metric of a cluster labeling given a ground truth.
 
@@ -3995,6 +4015,18 @@ homogeneous labeling::
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
+
+ml:HuberMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
+ml:KDTreeMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:KernelCentererMethod a owl:Class ;
     rdfs:comment """Center an arbitrary kernel matrix :math:`K`.
@@ -4072,6 +4104,12 @@ KernelCenterer()
 array([[  5.,   0.,  -5.],
        [  0.,  14., -14.],
        [ -5., -14.,  19.]])""" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:PrepareTransformerMethod,
+        ml:PreprocessingModule .
+
+ml:LabelEncoderMethod a owl:Class ;
+    rdfs:comment "" ;
     rdfs:subClassOf ds:AtomicMethod,
         ml:PrepareTransformerMethod,
         ml:PreprocessingModule .
@@ -4175,6 +4213,24 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
+
+ml:LeaveOneGroupOutMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
+
+ml:LeaveOneOutMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
+
+ml:LogMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:MatthewsCorrcoefMethod a owl:Class ;
     rdfs:comment """Compute the Matthews correlation coefficient (MCC).
@@ -4341,6 +4397,12 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
+
+ml:ModifiedHuberMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:PairConfusionMatrixMethod a owl:Class ;
     rdfs:comment """Pair confusion matrix arising from two clusterings [1]_.
@@ -4510,12 +4572,20 @@ are complete but may not always be pure, hence penalized:
         ml:MetricsModule,
         ml:PerformanceCalculationMethod .
 
+ml:SquaredLossMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
 ml:hasDataSplittingMethod a owl:ObjectProperty ;
     rdfs:domain ml:DataSplitting ;
     rdfs:range ml:GroupKFoldMethod,
         ml:GroupShuffleSplitMethod,
         ml:KFoldMethod,
         ml:LearningCurveDisplayMethod,
+        ml:LeaveOneGroupOutMethod,
+        ml:LeaveOneOutMethod,
         ml:LeavePGroupsOutMethod,
         ml:LeavePOutMethod,
         ml:PredefinedSplitMethod,
@@ -23005,9 +23075,6 @@ Pipeline(steps=[('standardscaler', StandardScaler()),
         ml:SvmModule,
         ml:TrainMethod .
 
-ml:NeighborsModule a owl:Class ;
-    rdfs:subClassOf ml:SklearnModule .
-
 ml:OneClassSVMMethod a owl:Class ;
     rdfs:comment """Unsupervised Outlier Detection.
 
@@ -25962,6 +26029,9 @@ Examples
     rdfs:subClassOf ds:AtomicMethod,
         ml:DecompositionModule,
         ml:PrepareTransformerMethod .
+
+ml:NeighborsModule a owl:Class ;
+    rdfs:subClassOf ml:SklearnModule .
 
 ml:RandomTreesEmbeddingMethod a owl:Class ;
     rdfs:comment """An ensemble of totally random trees.
@@ -31450,9 +31520,6 @@ Perceptron()
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:PreprocessingModule a owl:Class ;
-    rdfs:subClassOf ml:SklearnModule .
-
 ml:RandomForestRegressorMethod a owl:Class ;
     rdfs:comment """A random forest regressor.
 
@@ -32223,7 +32290,7 @@ array([0, 0])
         ml:LinearModelModule,
         ml:TrainMethod .
 
-ml:ModelSelectionModule a owl:Class ;
+ml:PreprocessingModule a owl:Class ;
     rdfs:subClassOf ml:SklearnModule .
 
 ml:SGDRegressorMethod a owl:Class ;
@@ -33844,6 +33911,9 @@ Examples
         ml:EnsembleModule,
         ml:GradientBoostingModule,
         ml:TrainMethod .
+
+ml:ModelSelectionModule a owl:Class ;
+    rdfs:subClassOf ml:SklearnModule .
 
 ml:GradientBoostingClassifierMethod a owl:Class ;
     rdfs:comment """Gradient Boosting for classification.

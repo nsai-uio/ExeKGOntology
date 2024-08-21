@@ -12,7 +12,9 @@ ml:hasBayesianRegressionMethod a owl:ObjectProperty ;
 
 ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
     rdfs:domain ml:BinaryClassification ;
-    rdfs:range ml:LogisticRegressionCVMethod,
+    rdfs:range ml:HingeMethod,
+        ml:LogMethod,
+        ml:LogisticRegressionCVMethod,
         ml:LogisticRegressionMethod,
         ml:PassiveAggressiveClassifierMethod,
         ml:PerceptronMethod,
@@ -754,12 +756,14 @@ ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
     rdfs:range ml:ElasticNetCVMethod,
         ml:ElasticNetMethod,
         ml:GammaRegressorMethod,
+        ml:HuberMethod,
         ml:HuberRegressorMethod,
         ml:LarsCVMethod,
         ml:LassoCVMethod,
         ml:LassoLarsCVMethod,
         ml:LassoLarsICMethod,
         ml:LassoMethod,
+        ml:ModifiedHuberMethod,
         ml:MultiTaskElasticNetCVMethod,
         ml:MultiTaskElasticNetMethod,
         ml:MultiTaskLassoCVMethod,
@@ -774,6 +778,7 @@ ml:hasRegularizedRegressionMethod a owl:ObjectProperty ;
         ml:RidgeMethod,
         ml:SGDOneClassSVMMethod,
         ml:SGDRegressorMethod,
+        ml:SquaredLossMethod,
         ml:TheilSenRegressorMethod,
         ml:TweedieRegressorMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
@@ -783,8 +788,38 @@ ml:hasSimpleRegressionMethod a owl:ObjectProperty ;
     rdfs:range ml:LinearRegressionMethod ;
     rdfs:subPropertyOf ml:hasTrainMethod .
 
+ml:HingeMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
+ml:HuberMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
+ml:LogMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
+ml:ModifiedHuberMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
+
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
+
+ml:SquaredLossMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:LinearModelModule,
+        ml:TrainMethod .
 
 ml:GlmModule a owl:Class ;
     rdfs:subClassOf ml:LinearModelModule .

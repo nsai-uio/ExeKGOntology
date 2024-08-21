@@ -252,6 +252,18 @@ ml:hasParamVerbose a owl:DatatypeProperty ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ds:hasParameter .
 
+ml:LeaveOneGroupOutMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
+
+ml:LeaveOneOutMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:DataSplittingMethod,
+        ml:ModelSelectionModule .
+
 ml:PredefinedSplitMethod a owl:Class ;
     rdfs:comment """Predefined split cross-validator.
 
@@ -305,6 +317,8 @@ ml:hasDataSplittingMethod a owl:ObjectProperty ;
         ml:GroupShuffleSplitMethod,
         ml:KFoldMethod,
         ml:LearningCurveDisplayMethod,
+        ml:LeaveOneGroupOutMethod,
+        ml:LeaveOneOutMethod,
         ml:LeavePGroupsOutMethod,
         ml:LeavePOutMethod,
         ml:PredefinedSplitMethod,

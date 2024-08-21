@@ -13,7 +13,9 @@ ml:hasBinaryClassificationMethod a owl:ObjectProperty ;
 
 ml:hasClusteringMethod a owl:ObjectProperty ;
     rdfs:domain ml:Clustering ;
-    rdfs:range ml:KNeighborsTransformerMethod,
+    rdfs:range ml:BallTreeMethod,
+        ml:KDTreeMethod,
+        ml:KNeighborsTransformerMethod,
         ml:KernelDensityMethod,
         ml:LocalOutlierFactorMethod,
         ml:NearestNeighborsMethod,
@@ -245,6 +247,18 @@ ml:hasParamWeights a owl:DatatypeProperty ;
         ml:RadiusNeighborsRegressorMethod ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ds:hasParameter .
+
+ml:BallTreeMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:NeighborsModule,
+        ml:TrainMethod .
+
+ml:KDTreeMethod a owl:Class ;
+    rdfs:comment "" ;
+    rdfs:subClassOf ds:AtomicMethod,
+        ml:NeighborsModule,
+        ml:TrainMethod .
 
 ml:SklearnModule a owl:Class ;
     rdfs:subClassOf ds:Module .
@@ -1554,9 +1568,6 @@ KNeighborsClassifier(...)
         ml:NeighborsModule,
         ml:TrainMethod .
 
-ml:NeighborsModule a owl:Class ;
-    rdfs:subClassOf ml:SklearnModule .
-
 ml:RadiusNeighborsClassifierMethod a owl:Class ;
     rdfs:comment """Classifier implementing a vote among neighbors within a given radius.
 
@@ -1715,4 +1726,7 @@ RadiusNeighborsClassifier(...)
     rdfs:subClassOf ds:AtomicMethod,
         ml:NeighborsModule,
         ml:TrainMethod .
+
+ml:NeighborsModule a owl:Class ;
+    rdfs:subClassOf ml:SklearnModule .
 
