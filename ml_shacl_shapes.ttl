@@ -1,0 +1,243 @@
+@prefix : <http://weso.es/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ml: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#> .
+
+:TrainTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass ml:Train ;
+    # input
+    sh:property [
+        sh:path ml:hasTrainInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInTrainX ;
+        ] ;
+        sh:message "Tasks of type Train must be connected with exactly one input of type DataInTrainX." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasTrainInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInTrainY ;
+        ] ;
+        sh:message "Tasks of type Train must be connected with exactly one input of type DataInTrainY." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasTrainInput ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:InputModelAsMethod ;
+        ] ;
+        sh:message "Tasks of type Train must be connected with at most one input of type InputModelAsMethod." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path ml:hasTrainOutput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:DataOutTrainModel ;
+        sh:message "Tasks of type Train must be connected with exactly one output of type DataOutTrainModel." ;
+    ] .
+
+# :ModelSelectionTaskInputShape a sh:NodeShape ;
+#     sh:targetClass ml:ModelSelection ;
+#     # input
+#     sh:property [
+#         sh:path ml:hasModelSelectionInput ;
+#         sh:minCount 1 ;
+#         sh:maxCount 1 ;
+#         sh:class ml:TrainMethod ;
+#         sh:message "Tasks of type ModelSelection must be connected with exactly one input of type TrainMethod." ;
+#     ] .
+
+:TestTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass ml:Test ;
+    # input
+    sh:property [
+        sh:path ml:hasTestInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInTestX ;
+        ] ;
+        sh:message "Tasks of type Test must be connected with exactly one input of type DataInTestX." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasTestInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInTestModel ;
+        ] ;
+        sh:message "Tasks of type Test must be connected with exactly one input of type DataInTestModel." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path ml:hasTestOutput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:DataOutPredictedValueTest ;
+        sh:message "Tasks of type Test must be connected with exactly one output of type DataOutPredictedValueTest." ;
+    ] .
+
+:PrepareTransformerTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass ml:PrepareTransformer ;
+    # input
+    sh:property [
+        sh:path ml:hasPrepareTransformerInput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:DataInToPrepareTransformer ;
+        sh:message "Tasks of type PrepareTransformer must be connected with exactly one input of type DataInToPrepareTransformer." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path ml:hasPrepareTransformerOutput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:DataOutTransformer ;
+        sh:message "Tasks of type PrepareTransformer must be connected with exactly one output of type DataOutTransformer." ;
+    ] .
+
+:TransformTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass ml:Transform ;
+    # input
+    sh:property [
+        sh:path ml:hasTransformInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInToTransform ;
+        ] ;
+        sh:message "Tasks of type Transform must be connected with exactly one input of type DataInToTransform." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasTransformInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInTransformer ;
+        ] ;
+        sh:message "Tasks of type Transform must be connected with exactly one input of type DataInTransformer." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path ml:hasTransformOutput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:DataOutTransformed ;
+        sh:message "Tasks of type Transform must be connected with exactly one output of type DataOutTransformed." ;
+    ] .
+
+:DataSplittingTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass ml:DataSplitting ;
+    # input
+    sh:property [
+        sh:path ml:hasDataSplittingInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInDataSplittingX ;
+        ] ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingX." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasDataSplittingInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInDataSplittingY ;
+        ] ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one input of type DataInDataSplittingY." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path ml:hasDataSplittingOutput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataOutSplittedTestDataX ;
+        ] ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataX." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasDataSplittingOutput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataOutSplittedTestDataY ;
+        ] ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTestDataY." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasDataSplittingOutput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataOutSplittedTrainDataX ;
+        ] ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataX." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasDataSplittingOutput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataOutSplittedTrainDataY ;
+        ] ;
+        sh:message "Tasks of type DataSplitting must be connected with exactly one output of type DataOutSplittedTrainDataY." ;
+    ] .
+
+ 
+:ConcatenationTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass ml:Concatenation ;
+    # input
+    sh:property [
+        sh:path ml:hasConcatenationInput ;
+        sh:minCount 2 ;
+        sh:class ml:DataInConcatenation ;
+        sh:message "Tasks of type Concatenation must be connected with at least two inputs of type DataInConcatenation." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path ml:hasConcatenationOutput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:DataOutConcatenatedData ;
+        sh:message "Tasks of type Concatenation must be connected with exactly one output of type DataOutConcatenatedData." ;
+    ] .
+
+:PerformanceCalculationTaskInputOutputShape a sh:NodeShape ;
+    sh:targetClass ml:PerformanceCalculation ;
+    # input
+    sh:property [
+        sh:path ml:hasPerformanceCalculationInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInPredictedY ;
+        ] ;
+        sh:message "Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInPredictedY." ;
+    ] ;
+    sh:property [
+        sh:path ml:hasPerformanceCalculationInput ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [
+            sh:class ml:DataInRealY ;
+        ] ;
+        sh:message "Tasks of type PerformanceCalculation must be connected with exactly one input of type DataInRealY." ;
+    ] ;
+    # output
+    sh:property [
+        sh:path ml:hasPerformanceCalculationOutput ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ml:DataOutScore ;
+        sh:message "Tasks of type PerformanceCalculation must be connected with exactly one output of type DataOutScore." ;
+    ] .

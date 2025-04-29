@@ -1,0 +1,600 @@
+
+:CentralTendencyMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:CentralTendencyMeasure ;
+    sh:property [
+        sh:path stats:hasCentralTendencyMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:AverageMethod ]
+            [ sh:class stats:MeanMethod ]
+            [ sh:class stats:MedianMethod ]
+        ) ;
+        sh:message "Tasks of type CentralTendencyMeasure must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:DependencyMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:DependencyMeasure ;
+    sh:property [
+        sh:path stats:hasDependencyMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:CorrcoefMethod ]
+            [ sh:class stats:CovMethod ]
+        ) ;
+        sh:message "Tasks of type DependencyMeasure must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:DispersionMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:DispersionMeasure ;
+    sh:property [
+        sh:path stats:hasDispersionMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:StdMethod ]
+            [ sh:class stats:VarMethod ]
+        ) ;
+        sh:message "Tasks of type DispersionMeasure must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:PositionMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:PositionMeasure ;
+    sh:property [
+        sh:path stats:hasPositionMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:PercentileMethod ]
+            [ sh:class stats:QuantileMethod ]
+        ) ;
+        sh:message "Tasks of type PositionMeasure must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:ShapeMeasureTaskMethodShape a sh:NodeShape ;
+    sh:targetClass stats:ShapeMeasure ;
+    sh:property [
+        sh:path stats:hasShapeMeasureMethod ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class stats:KurtosisMethod ]
+            [ sh:class stats:PtpMethod ]
+            [ sh:class stats:SkewMethod ]
+        ) ;
+        sh:message "Tasks of type ShapeMeasure must be connected with exactly one compatible atomic method." ;
+    ] .
+
+:CovMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:CovMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAweights ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamAweights." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamBias ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamBias." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDdof ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamDdof." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDtype ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamDtype." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamFweights ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamFweights." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamM ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamM." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamRowvar ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamRowvar." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CovMethod must have at most one compatible value for parameter hasParamY." ;
+    ] .
+
+:AverageMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:AverageMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method AverageMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method AverageMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamReturned ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method AverageMethod must have at most one compatible value for parameter hasParamReturned." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamWeights ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method AverageMethod must have at most one compatible value for parameter hasParamWeights." ;
+    ] .
+
+:KurtosisMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:KurtosisMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method KurtosisMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamBias ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method KurtosisMethod must have at most one compatible value for parameter hasParamBias." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamFisher ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method KurtosisMethod must have at most one compatible value for parameter hasParamFisher." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method KurtosisMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamNanPolicy ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method KurtosisMethod must have at most one compatible value for parameter hasParamNanPolicy." ;
+    ] .
+
+:MeanMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:MeanMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MeanMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDtype ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MeanMethod must have at most one compatible value for parameter hasParamDtype." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MeanMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamWhere ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MeanMethod must have at most one compatible value for parameter hasParamWhere." ;
+    ] .
+
+:MedianMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:MedianMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method MedianMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MedianMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamOverwriteInput ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method MedianMethod must have at most one compatible value for parameter hasParamOverwriteInput." ;
+    ] .
+
+:PercentileMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:PercentileMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamInterpolation ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamInterpolation." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamMethod ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamMethod." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamOverwriteInput ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamOverwriteInput." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamQ ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method PercentileMethod must have at most one compatible value for parameter hasParamQ." ;
+    ] .
+
+:PtpMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:PtpMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method PtpMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method PtpMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] .
+
+:QuantileMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:QuantileMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamInterpolation ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamInterpolation." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamMethod ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamMethod." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamOverwriteInput ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamOverwriteInput." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamQ ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:float ]
+            [ sh:datatype xsd:int ]
+        ) ;
+        sh:message "Method QuantileMethod must have at most one compatible value for parameter hasParamQ." ;
+    ] .
+
+:SkewMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:SkewMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SkewMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamBias ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SkewMethod must have at most one compatible value for parameter hasParamBias." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method SkewMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamNanPolicy ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method SkewMethod must have at most one compatible value for parameter hasParamNanPolicy." ;
+    ] .
+
+:StdMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:StdMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StdMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDdof ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StdMethod must have at most one compatible value for parameter hasParamDdof." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDtype ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method StdMethod must have at most one compatible value for parameter hasParamDtype." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method StdMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamWhere ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method StdMethod must have at most one compatible value for parameter hasParamWhere." ;
+    ] .
+
+:VarMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:VarMethod ;
+
+    sh:property [
+        sh:path stats:hasParamAxis ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method VarMethod must have at most one compatible value for parameter hasParamAxis." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDdof ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method VarMethod must have at most one compatible value for parameter hasParamDdof." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDtype ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method VarMethod must have at most one compatible value for parameter hasParamDtype." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamKeepdims ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method VarMethod must have at most one compatible value for parameter hasParamKeepdims." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamWhere ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method VarMethod must have at most one compatible value for parameter hasParamWhere." ;
+    ] .
+
+:CorrcoefMethodParameterShape a sh:NodeShape ;
+    sh:targetClass stats:CorrcoefMethod ;
+
+    sh:property [
+        sh:path stats:hasParamBias ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CorrcoefMethod must have at most one compatible value for parameter hasParamBias." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDdof ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:int ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CorrcoefMethod must have at most one compatible value for parameter hasParamDdof." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamDtype ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CorrcoefMethod must have at most one compatible value for parameter hasParamDtype." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamRowvar ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:boolean ]
+        ) ;
+        sh:message "Method CorrcoefMethod must have at most one compatible value for parameter hasParamRowvar." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamX ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CorrcoefMethod must have at most one compatible value for parameter hasParamX." ;
+    ] ;
+    sh:property [
+        sh:path stats:hasParamY ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:message "Method CorrcoefMethod must have at most one compatible value for parameter hasParamY." ;
+    ] .

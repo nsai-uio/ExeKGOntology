@@ -1,0 +1,3257 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupKFoldMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneGroupOutMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneOutMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePGroupsOutMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePOutMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PredefinedSplitMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasModelSelectionMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasModelSelectionMethod">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelection"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod -->
+
+
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAggressiveElimination -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAggressiveElimination">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCv -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCv">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamErrorScore -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamErrorScore">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEstimator -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEstimator">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFactor -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFactor">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGap -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGap">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxResources -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxResources">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxTrainSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxTrainSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinResources -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinResources">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNCandidates -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNCandidates">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNGroups -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNGroups">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePGroupsOutMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIter -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIter">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNRepeats -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNRepeats">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNSplits -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNSplits">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamP -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamP">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePOutMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamDistributions -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamDistributions">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamGrid -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamGrid">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamName -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamName">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPreDispatch -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPreDispatch">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRefit -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRefit">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamResource -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamResource">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamReturnTrainScore -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamReturnTrainScore">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoreName -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoreName">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoring -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoring">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStratify -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStratify">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTestScores -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTestScores">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTestSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTestSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTrainScores -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTrainScores">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTrainSize -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTrainSize">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose -->
+
+
+    <DatatypeProperty rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Exhaustive search over specified parameter values for an estimator.
+
+Important members are fit, predict.
+
+GridSearchCV implements a &quot;fit&quot; and a &quot;score&quot; method.
+It also implements &quot;score_samples&quot;, &quot;predict&quot;, &quot;predict_proba&quot;,
+&quot;decision_function&quot;, &quot;transform&quot; and &quot;inverse_transform&quot; if they are
+implemented in the estimator used.
+
+The parameters of the estimator used to apply these methods are optimized
+by cross-validated grid-search over a parameter grid.
+
+Read more in the :ref:`User Guide &lt;grid_search&gt;`.
+
+Parameters
+----------
+estimator : estimator object
+    This is assumed to implement the scikit-learn estimator interface.
+    Either estimator needs to provide a ``score`` function,
+    or ``scoring`` must be passed.
+
+param_grid : dict or list of dictionaries
+    Dictionary with parameters names (`str`) as keys and lists of
+    parameter settings to try as values, or a list of such
+    dictionaries, in which case the grids spanned by each dictionary
+    in the list are explored. This enables searching over any sequence
+    of parameter settings.
+
+scoring : str, callable, list, tuple or dict, default=None
+    Strategy to evaluate the performance of the cross-validated model on
+    the test set.
+
+    If `scoring` represents a single score, one can use:
+
+    - a single string (see :ref:`scoring_parameter`);
+    - a callable (see :ref:`scoring`) that returns a single value.
+
+    If `scoring` represents multiple scores, one can use:
+
+    - a list or tuple of unique strings;
+    - a callable returning a dictionary where the keys are the metric
+      names and the values are the metric scores;
+    - a dictionary with metric names as keys and callables a values.
+
+    See :ref:`multimetric_grid_search` for an example.
+
+n_jobs : int, default=None
+    Number of jobs to run in parallel.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+    .. versionchanged:: v0.20
+       `n_jobs` default changed from 1 to None
+
+refit : bool, str, or callable, default=True
+    Refit an estimator using the best found parameters on the whole
+    dataset.
+
+    For multiple metric evaluation, this needs to be a `str` denoting the
+    scorer that would be used to find the best parameters for refitting
+    the estimator at the end.
+
+    Where there are considerations other than maximum score in
+    choosing a best estimator, ``refit`` can be set to a function which
+    returns the selected ``best_index_`` given ``cv_results_``. In that
+    case, the ``best_estimator_`` and ``best_params_`` will be set
+    according to the returned ``best_index_`` while the ``best_score_``
+    attribute will not be available.
+
+    The refitted estimator is made available at the ``best_estimator_``
+    attribute and permits using ``predict`` directly on this
+    ``GridSearchCV`` instance.
+
+    Also for multiple metric evaluation, the attributes ``best_index_``,
+    ``best_score_`` and ``best_params_`` will only be available if
+    ``refit`` is set and all of them will be determined w.r.t this specific
+    scorer.
+
+    See ``scoring`` parameter to know more about multiple metric
+    evaluation.
+
+    See :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_digits.py`
+    to see how to design a custom selection strategy using a callable
+    via `refit`.
+
+    .. versionchanged:: 0.20
+        Support for callable added.
+
+cv : int, cross-validation generator or an iterable, default=None
+    Determines the cross-validation splitting strategy.
+    Possible inputs for cv are:
+
+    - None, to use the default 5-fold cross validation,
+    - integer, to specify the number of folds in a `(Stratified)KFold`,
+    - :term:`CV splitter`,
+    - An iterable yielding (train, test) splits as arrays of indices.
+
+    For integer/None inputs, if the estimator is a classifier and ``y`` is
+    either binary or multiclass, :class:`StratifiedKFold` is used. In all
+    other cases, :class:`KFold` is used. These splitters are instantiated
+    with `shuffle=False` so the splits will be the same across calls.
+
+    Refer :ref:`User Guide &lt;cross_validation&gt;` for the various
+    cross-validation strategies that can be used here.
+
+    .. versionchanged:: 0.22
+        ``cv`` default value if None changed from 3-fold to 5-fold.
+
+verbose : int
+    Controls the verbosity: the higher, the more messages.
+
+    - &gt;1 : the computation time for each fold and parameter candidate is
+      displayed;
+    - &gt;2 : the score is also displayed;
+    - &gt;3 : the fold and candidate parameter indexes are also displayed
+      together with the starting time of the computation.
+
+pre_dispatch : int, or str, default=&apos;2*n_jobs&apos;
+    Controls the number of jobs that get dispatched during parallel
+    execution. Reducing this number can be useful to avoid an
+    explosion of memory consumption when more jobs get dispatched
+    than CPUs can process. This parameter can be:
+
+        - None, in which case all the jobs are immediately
+          created and spawned. Use this for lightweight and
+          fast-running jobs, to avoid delays due to on-demand
+          spawning of the jobs
+
+        - An int, giving the exact number of total jobs that are
+          spawned
+
+        - A str, giving an expression as a function of n_jobs,
+          as in &apos;2*n_jobs&apos;
+
+error_score : &apos;raise&apos; or numeric, default=np.nan
+    Value to assign to the score if an error occurs in estimator fitting.
+    If set to &apos;raise&apos;, the error is raised. If a numeric value is given,
+    FitFailedWarning is raised. This parameter does not affect the refit
+    step, which will always raise the error.
+
+return_train_score : bool, default=False
+    If ``False``, the ``cv_results_`` attribute will not include training
+    scores.
+    Computing training scores is used to get insights on how different
+    parameter settings impact the overfitting/underfitting trade-off.
+    However computing the scores on the training set can be computationally
+    expensive and is not strictly required to select the parameters that
+    yield the best generalization performance.
+
+    .. versionadded:: 0.19
+
+    .. versionchanged:: 0.21
+        Default value was changed from ``True`` to ``False``
+
+Attributes
+----------
+cv_results_ : dict of numpy (masked) ndarrays
+    A dict with keys as column headers and values as columns, that can be
+    imported into a pandas ``DataFrame``.
+
+    For instance the below given table
+
+    +------------+-----------+------------+-----------------+---+---------+
+    |param_kernel|param_gamma|param_degree|split0_test_score|...|rank_t...|
+    +============+===========+============+=================+===+=========+
+    |  &apos;poly&apos;    |     --    |      2     |       0.80      |...|    2    |
+    +------------+-----------+------------+-----------------+---+---------+
+    |  &apos;poly&apos;    |     --    |      3     |       0.70      |...|    4    |
+    +------------+-----------+------------+-----------------+---+---------+
+    |  &apos;rbf&apos;     |     0.1   |     --     |       0.80      |...|    3    |
+    +------------+-----------+------------+-----------------+---+---------+
+    |  &apos;rbf&apos;     |     0.2   |     --     |       0.93      |...|    1    |
+    +------------+-----------+------------+-----------------+---+---------+
+
+    will be represented by a ``cv_results_`` dict of::
+
+        {
+        &apos;param_kernel&apos;: masked_array(data = [&apos;poly&apos;, &apos;poly&apos;, &apos;rbf&apos;, &apos;rbf&apos;],
+                                     mask = [False False False False]...)
+        &apos;param_gamma&apos;: masked_array(data = [-- -- 0.1 0.2],
+                                    mask = [ True  True False False]...),
+        &apos;param_degree&apos;: masked_array(data = [2.0 3.0 -- --],
+                                     mask = [False False  True  True]...),
+        &apos;split0_test_score&apos;  : [0.80, 0.70, 0.80, 0.93],
+        &apos;split1_test_score&apos;  : [0.82, 0.50, 0.70, 0.78],
+        &apos;mean_test_score&apos;    : [0.81, 0.60, 0.75, 0.85],
+        &apos;std_test_score&apos;     : [0.01, 0.10, 0.05, 0.08],
+        &apos;rank_test_score&apos;    : [2, 4, 3, 1],
+        &apos;split0_train_score&apos; : [0.80, 0.92, 0.70, 0.93],
+        &apos;split1_train_score&apos; : [0.82, 0.55, 0.70, 0.87],
+        &apos;mean_train_score&apos;   : [0.81, 0.74, 0.70, 0.90],
+        &apos;std_train_score&apos;    : [0.01, 0.19, 0.00, 0.03],
+        &apos;mean_fit_time&apos;      : [0.73, 0.63, 0.43, 0.49],
+        &apos;std_fit_time&apos;       : [0.01, 0.02, 0.01, 0.01],
+        &apos;mean_score_time&apos;    : [0.01, 0.06, 0.04, 0.04],
+        &apos;std_score_time&apos;     : [0.00, 0.00, 0.00, 0.01],
+        &apos;params&apos;             : [{&apos;kernel&apos;: &apos;poly&apos;, &apos;degree&apos;: 2}, ...],
+        }
+
+    NOTE
+
+    The key ``&apos;params&apos;`` is used to store a list of parameter
+    settings dicts for all the parameter candidates.
+
+    The ``mean_fit_time``, ``std_fit_time``, ``mean_score_time`` and
+    ``std_score_time`` are all in seconds.
+
+    For multi-metric evaluation, the scores for all the scorers are
+    available in the ``cv_results_`` dict at the keys ending with that
+    scorer&apos;s name (``&apos;_&lt;scorer_name&gt;&apos;``) instead of ``&apos;_score&apos;`` shown
+    above. (&apos;split0_test_precision&apos;, &apos;mean_train_precision&apos; etc.)
+
+best_estimator_ : estimator
+    Estimator that was chosen by the search, i.e. estimator
+    which gave highest score (or smallest loss if specified)
+    on the left out data. Not available if ``refit=False``.
+
+    See ``refit`` parameter for more information on allowed values.
+
+best_score_ : float
+    Mean cross-validated score of the best_estimator
+
+    For multi-metric evaluation, this is present only if ``refit`` is
+    specified.
+
+    This attribute is not available if ``refit`` is a function.
+
+best_params_ : dict
+    Parameter setting that gave the best results on the hold out data.
+
+    For multi-metric evaluation, this is present only if ``refit`` is
+    specified.
+
+best_index_ : int
+    The index (of the ``cv_results_`` arrays) which corresponds to the best
+    candidate parameter setting.
+
+    The dict at ``search.cv_results_[&apos;params&apos;][search.best_index_]`` gives
+    the parameter setting for the best model, that gives the highest
+    mean score (``search.best_score_``).
+
+    For multi-metric evaluation, this is present only if ``refit`` is
+    specified.
+
+scorer_ : function or a dict
+    Scorer function used on the held out data to choose the best
+    parameters for the model.
+
+    For multi-metric evaluation, this attribute holds the validated
+    ``scoring`` dict which maps the scorer key to the scorer callable.
+
+n_splits_ : int
+    The number of cross-validation splits (folds/iterations).
+
+refit_time_ : float
+    Seconds used for refitting the best model on the whole dataset.
+
+    This is present only if ``refit`` is not False.
+
+    .. versionadded:: 0.20
+
+multimetric_ : bool
+    Whether or not the scorers compute several metrics.
+
+classes_ : ndarray of shape (n_classes,)
+    The classes labels. This is present only if ``refit`` is specified and
+    the underlying estimator is a classifier.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `n_features_in_` when fit.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `feature_names_in_` when fit.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+ParameterGrid : Generates all the combinations of a hyperparameter grid.
+train_test_split : Utility function to split the data into a development
+    set usable for fitting a GridSearchCV instance and an evaluation set
+    for its final evaluation.
+sklearn.metrics.make_scorer : Make a scorer from a performance metric or
+    loss function.
+
+Notes
+-----
+The parameters selected are those that maximize the score of the left out
+data, unless an explicit score is passed in which case it is used instead.
+
+If `n_jobs` was set to a value higher than one, the data is copied for each
+point in the grid (and not `n_jobs` times). This is done for efficiency
+reasons if individual jobs take very little time, but may raise errors if
+the dataset is large and not enough memory is available.  A workaround in
+this case is to set `pre_dispatch`. Then, the memory is copied only
+`pre_dispatch` many times. A reasonable value for `pre_dispatch` is `2 *
+n_jobs`.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn import svm, datasets
+&gt;&gt;&gt; from sklearn.model_selection import GridSearchCV
+&gt;&gt;&gt; iris = datasets.load_iris()
+&gt;&gt;&gt; parameters = {&apos;kernel&apos;:(&apos;linear&apos;, &apos;rbf&apos;), &apos;C&apos;:[1, 10]}
+&gt;&gt;&gt; svc = svm.SVC()
+&gt;&gt;&gt; clf = GridSearchCV(svc, parameters)
+&gt;&gt;&gt; clf.fit(iris.data, iris.target)
+GridSearchCV(estimator=SVC(),
+             param_grid={&apos;C&apos;: [1, 10], &apos;kernel&apos;: (&apos;linear&apos;, &apos;rbf&apos;)})
+&gt;&gt;&gt; sorted(clf.cv_results_.keys())
+[&apos;mean_fit_time&apos;, &apos;mean_score_time&apos;, &apos;mean_test_score&apos;,...
+ &apos;param_C&apos;, &apos;param_kernel&apos;, &apos;params&apos;,...
+ &apos;rank_test_score&apos;, &apos;split0_test_score&apos;,...
+ &apos;split2_test_score&apos;, ...
+ &apos;std_fit_time&apos;, &apos;std_score_time&apos;, &apos;std_test_score&apos;]</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupKFoldMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupKFoldMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>K-fold iterator variant with non-overlapping groups.
+
+Each group will appear exactly once in the test set across all folds (the
+number of distinct groups has to be at least equal to the number of folds).
+
+The folds are approximately balanced in the sense that the number of
+distinct groups is approximately the same in each fold.
+
+Read more in the :ref:`User Guide &lt;group_k_fold&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of folds. Must be at least 2.
+
+    .. versionchanged:: 0.22
+        ``n_splits`` default value changed from 3 to 5.
+
+Notes
+-----
+Groups appear in an arbitrary order throughout the folds.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import GroupKFold
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
+&gt;&gt;&gt; y = np.array([1, 2, 3, 4, 5, 6])
+&gt;&gt;&gt; groups = np.array([0, 0, 2, 2, 3, 3])
+&gt;&gt;&gt; group_kfold = GroupKFold(n_splits=2)
+&gt;&gt;&gt; group_kfold.get_n_splits(X, y, groups)
+2
+&gt;&gt;&gt; print(group_kfold)
+GroupKFold(n_splits=2)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(group_kfold.split(X, y, groups)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}, group={groups[train_index]}&quot;)
+...     print(f&quot;  Test:  index={test_index}, group={groups[test_index]}&quot;)
+Fold 0:
+  Train: index=[2 3], group=[2 2]
+  Test:  index=[0 1 4 5], group=[0 0 3 3]
+Fold 1:
+  Train: index=[0 1 4 5], group=[0 0 3 3]
+  Test:  index=[2 3], group=[2 2]
+
+See Also
+--------
+LeaveOneGroupOut : For splitting the data according to explicit
+    domain-specific stratification of the dataset.
+
+StratifiedKFold : Takes class information into account to avoid building
+    folds with imbalanced class proportions (for binary or multiclass
+    classification tasks).</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Shuffle-Group(s)-Out cross-validation iterator.
+
+Provides randomized train/test indices to split data according to a
+third-party provided group. This group information can be used to encode
+arbitrary domain specific stratifications of the samples as integers.
+
+For instance the groups could be the year of collection of the samples
+and thus allow for cross-validation against time-based splits.
+
+The difference between LeavePGroupsOut and GroupShuffleSplit is that
+the former generates splits using all subsets of size ``p`` unique groups,
+whereas GroupShuffleSplit generates a user-determined number of random
+test splits, each with a user-determined fraction of unique groups.
+
+For example, a less computationally intensive alternative to
+``LeavePGroupsOut(p=10)`` would be
+``GroupShuffleSplit(test_size=10, n_splits=100)``.
+
+Note: The parameters ``test_size`` and ``train_size`` refer to groups, and
+not to samples, as in ShuffleSplit.
+
+Read more in the :ref:`User Guide &lt;group_shuffle_split&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of re-shuffling &amp; splitting iterations.
+
+test_size : float, int, default=0.2
+    If float, should be between 0.0 and 1.0 and represent the proportion
+    of groups to include in the test split (rounded up). If int,
+    represents the absolute number of test groups. If None, the value is
+    set to the complement of the train size.
+    The default will change in version 0.21. It will remain 0.2 only
+    if ``train_size`` is unspecified, otherwise it will complement
+    the specified ``train_size``.
+
+train_size : float or int, default=None
+    If float, should be between 0.0 and 1.0 and represent the
+    proportion of the groups to include in the train split. If
+    int, represents the absolute number of train groups. If None,
+    the value is automatically set to the complement of the test size.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the randomness of the training and testing indices produced.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import GroupShuffleSplit
+&gt;&gt;&gt; X = np.ones(shape=(8, 2))
+&gt;&gt;&gt; y = np.ones(shape=(8, 1))
+&gt;&gt;&gt; groups = np.array([1, 1, 2, 2, 2, 3, 3, 3])
+&gt;&gt;&gt; print(groups.shape)
+(8,)
+&gt;&gt;&gt; gss = GroupShuffleSplit(n_splits=2, train_size=.7, random_state=42)
+&gt;&gt;&gt; gss.get_n_splits()
+2
+&gt;&gt;&gt; print(gss)
+GroupShuffleSplit(n_splits=2, random_state=42, test_size=None, train_size=0.7)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(gss.split(X, y, groups)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}, group={groups[train_index]}&quot;)
+...     print(f&quot;  Test:  index={test_index}, group={groups[test_index]}&quot;)
+Fold 0:
+  Train: index=[2 3 4 5 6 7], group=[2 2 2 3 3 3]
+  Test:  index=[0 1], group=[1 1]
+Fold 1:
+  Train: index=[0 1 5 6 7], group=[1 1 3 3 3]
+  Test:  index=[2 3 4], group=[2 2 2]
+
+See Also
+--------
+ShuffleSplit : Shuffles samples to create independent test/train sets.
+
+LeavePGroupsOut : Train set leaves out all possible subsets of `p` groups.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Search over specified parameter values with successive halving.
+
+The search strategy starts evaluating all the candidates with a small
+amount of resources and iteratively selects the best candidates, using
+more and more resources.
+
+Read more in the :ref:`User guide &lt;successive_halving_user_guide&gt;`.
+
+.. note::
+
+  This estimator is still **experimental** for now: the predictions
+  and the API might change without any deprecation cycle. To use it,
+  you need to explicitly import ``enable_halving_search_cv``::
+
+    &gt;&gt;&gt; # explicitly require this experimental feature
+    &gt;&gt;&gt; from sklearn.experimental import enable_halving_search_cv # noqa
+    &gt;&gt;&gt; # now you can import normally from model_selection
+    &gt;&gt;&gt; from sklearn.model_selection import HalvingGridSearchCV
+
+Parameters
+----------
+estimator : estimator object
+    This is assumed to implement the scikit-learn estimator interface.
+    Either estimator needs to provide a ``score`` function,
+    or ``scoring`` must be passed.
+
+param_grid : dict or list of dictionaries
+    Dictionary with parameters names (string) as keys and lists of
+    parameter settings to try as values, or a list of such
+    dictionaries, in which case the grids spanned by each dictionary
+    in the list are explored. This enables searching over any sequence
+    of parameter settings.
+
+factor : int or float, default=3
+    The &apos;halving&apos; parameter, which determines the proportion of candidates
+    that are selected for each subsequent iteration. For example,
+    ``factor=3`` means that only one third of the candidates are selected.
+
+resource : ``&apos;n_samples&apos;`` or str, default=&apos;n_samples&apos;
+    Defines the resource that increases with each iteration. By default,
+    the resource is the number of samples. It can also be set to any
+    parameter of the base estimator that accepts positive integer
+    values, e.g. &apos;n_iterations&apos; or &apos;n_estimators&apos; for a gradient
+    boosting estimator. In this case ``max_resources`` cannot be &apos;auto&apos;
+    and must be set explicitly.
+
+max_resources : int, default=&apos;auto&apos;
+    The maximum amount of resource that any candidate is allowed to use
+    for a given iteration. By default, this is set to ``n_samples`` when
+    ``resource=&apos;n_samples&apos;`` (default), else an error is raised.
+
+min_resources : {&apos;exhaust&apos;, &apos;smallest&apos;} or int, default=&apos;exhaust&apos;
+    The minimum amount of resource that any candidate is allowed to use
+    for a given iteration. Equivalently, this defines the amount of
+    resources `r0` that are allocated for each candidate at the first
+    iteration.
+
+    - &apos;smallest&apos; is a heuristic that sets `r0` to a small value:
+
+        - ``n_splits * 2`` when ``resource=&apos;n_samples&apos;`` for a regression
+          problem
+        - ``n_classes * n_splits * 2`` when ``resource=&apos;n_samples&apos;`` for a
+          classification problem
+        - ``1`` when ``resource != &apos;n_samples&apos;``
+
+    - &apos;exhaust&apos; will set `r0` such that the **last** iteration uses as
+      much resources as possible. Namely, the last iteration will use the
+      highest value smaller than ``max_resources`` that is a multiple of
+      both ``min_resources`` and ``factor``. In general, using &apos;exhaust&apos;
+      leads to a more accurate estimator, but is slightly more time
+      consuming.
+
+    Note that the amount of resources used at each iteration is always a
+    multiple of ``min_resources``.
+
+aggressive_elimination : bool, default=False
+    This is only relevant in cases where there isn&apos;t enough resources to
+    reduce the remaining candidates to at most `factor` after the last
+    iteration. If ``True``, then the search process will &apos;replay&apos; the
+    first iteration for as long as needed until the number of candidates
+    is small enough. This is ``False`` by default, which means that the
+    last iteration may evaluate more than ``factor`` candidates. See
+    :ref:`aggressive_elimination` for more details.
+
+cv : int, cross-validation generator or iterable, default=5
+    Determines the cross-validation splitting strategy.
+    Possible inputs for cv are:
+
+    - integer, to specify the number of folds in a `(Stratified)KFold`,
+    - :term:`CV splitter`,
+    - An iterable yielding (train, test) splits as arrays of indices.
+
+    For integer/None inputs, if the estimator is a classifier and ``y`` is
+    either binary or multiclass, :class:`StratifiedKFold` is used. In all
+    other cases, :class:`KFold` is used. These splitters are instantiated
+    with `shuffle=False` so the splits will be the same across calls.
+
+    Refer :ref:`User Guide &lt;cross_validation&gt;` for the various
+    cross-validation strategies that can be used here.
+
+    .. note::
+        Due to implementation details, the folds produced by `cv` must be
+        the same across multiple calls to `cv.split()`. For
+        built-in `scikit-learn` iterators, this can be achieved by
+        deactivating shuffling (`shuffle=False`), or by setting the
+        `cv`&apos;s `random_state` parameter to an integer.
+
+scoring : str, callable, or None, default=None
+    A single string (see :ref:`scoring_parameter`) or a callable
+    (see :ref:`scoring`) to evaluate the predictions on the test set.
+    If None, the estimator&apos;s score method is used.
+
+refit : bool, default=True
+    If True, refit an estimator using the best found parameters on the
+    whole dataset.
+
+    The refitted estimator is made available at the ``best_estimator_``
+    attribute and permits using ``predict`` directly on this
+    ``HalvingGridSearchCV`` instance.
+
+error_score : &apos;raise&apos; or numeric
+    Value to assign to the score if an error occurs in estimator fitting.
+    If set to &apos;raise&apos;, the error is raised. If a numeric value is given,
+    FitFailedWarning is raised. This parameter does not affect the refit
+    step, which will always raise the error. Default is ``np.nan``.
+
+return_train_score : bool, default=False
+    If ``False``, the ``cv_results_`` attribute will not include training
+    scores.
+    Computing training scores is used to get insights on how different
+    parameter settings impact the overfitting/underfitting trade-off.
+    However computing the scores on the training set can be computationally
+    expensive and is not strictly required to select the parameters that
+    yield the best generalization performance.
+
+random_state : int, RandomState instance or None, default=None
+    Pseudo random number generator state used for subsampling the dataset
+    when `resources != &apos;n_samples&apos;`. Ignored otherwise.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+n_jobs : int or None, default=None
+    Number of jobs to run in parallel.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+verbose : int
+    Controls the verbosity: the higher, the more messages.
+
+Attributes
+----------
+n_resources_ : list of int
+    The amount of resources used at each iteration.
+
+n_candidates_ : list of int
+    The number of candidate parameters that were evaluated at each
+    iteration.
+
+n_remaining_candidates_ : int
+    The number of candidate parameters that are left after the last
+    iteration. It corresponds to `ceil(n_candidates[-1] / factor)`
+
+max_resources_ : int
+    The maximum number of resources that any candidate is allowed to use
+    for a given iteration. Note that since the number of resources used
+    at each iteration must be a multiple of ``min_resources_``, the
+    actual number of resources used at the last iteration may be smaller
+    than ``max_resources_``.
+
+min_resources_ : int
+    The amount of resources that are allocated for each candidate at the
+    first iteration.
+
+n_iterations_ : int
+    The actual number of iterations that were run. This is equal to
+    ``n_required_iterations_`` if ``aggressive_elimination`` is ``True``.
+    Else, this is equal to ``min(n_possible_iterations_,
+    n_required_iterations_)``.
+
+n_possible_iterations_ : int
+    The number of iterations that are possible starting with
+    ``min_resources_`` resources and without exceeding
+    ``max_resources_``.
+
+n_required_iterations_ : int
+    The number of iterations that are required to end up with less than
+    ``factor`` candidates at the last iteration, starting with
+    ``min_resources_`` resources. This will be smaller than
+    ``n_possible_iterations_`` when there isn&apos;t enough resources.
+
+cv_results_ : dict of numpy (masked) ndarrays
+    A dict with keys as column headers and values as columns, that can be
+    imported into a pandas ``DataFrame``. It contains lots of information
+    for analysing the results of a search.
+    Please refer to the :ref:`User guide&lt;successive_halving_cv_results&gt;`
+    for details.
+
+best_estimator_ : estimator or dict
+    Estimator that was chosen by the search, i.e. estimator
+    which gave highest score (or smallest loss if specified)
+    on the left out data. Not available if ``refit=False``.
+
+best_score_ : float
+    Mean cross-validated score of the best_estimator.
+
+best_params_ : dict
+    Parameter setting that gave the best results on the hold out data.
+
+best_index_ : int
+    The index (of the ``cv_results_`` arrays) which corresponds to the best
+    candidate parameter setting.
+
+    The dict at ``search.cv_results_[&apos;params&apos;][search.best_index_]`` gives
+    the parameter setting for the best model, that gives the highest
+    mean score (``search.best_score_``).
+
+scorer_ : function or a dict
+    Scorer function used on the held out data to choose the best
+    parameters for the model.
+
+n_splits_ : int
+    The number of cross-validation splits (folds/iterations).
+
+refit_time_ : float
+    Seconds used for refitting the best model on the whole dataset.
+
+    This is present only if ``refit`` is not False.
+
+multimetric_ : bool
+    Whether or not the scorers compute several metrics.
+
+classes_ : ndarray of shape (n_classes,)
+    The classes labels. This is present only if ``refit`` is specified and
+    the underlying estimator is a classifier.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `n_features_in_` when fit.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `feature_names_in_` when fit.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+:class:`HalvingRandomSearchCV`:
+    Random search over a set of parameters using successive halving.
+
+Notes
+-----
+The parameters selected are those that maximize the score of the held-out
+data, according to the scoring parameter.
+
+All parameter combinations scored with a NaN will share the lowest rank.
+
+Examples
+--------
+
+&gt;&gt;&gt; from sklearn.datasets import load_iris
+&gt;&gt;&gt; from sklearn.ensemble import RandomForestClassifier
+&gt;&gt;&gt; from sklearn.experimental import enable_halving_search_cv  # noqa
+&gt;&gt;&gt; from sklearn.model_selection import HalvingGridSearchCV
+...
+&gt;&gt;&gt; X, y = load_iris(return_X_y=True)
+&gt;&gt;&gt; clf = RandomForestClassifier(random_state=0)
+...
+&gt;&gt;&gt; param_grid = {&quot;max_depth&quot;: [3, None],
+...               &quot;min_samples_split&quot;: [5, 10]}
+&gt;&gt;&gt; search = HalvingGridSearchCV(clf, param_grid, resource=&apos;n_estimators&apos;,
+...                              max_resources=10,
+...                              random_state=0).fit(X, y)
+&gt;&gt;&gt; search.best_params_  # doctest: +SKIP
+{&apos;max_depth&apos;: None, &apos;min_samples_split&apos;: 10, &apos;n_estimators&apos;: 9}</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Randomized search on hyper parameters.
+
+The search strategy starts evaluating all the candidates with a small
+amount of resources and iteratively selects the best candidates, using more
+and more resources.
+
+The candidates are sampled at random from the parameter space and the
+number of sampled candidates is determined by ``n_candidates``.
+
+Read more in the :ref:`User guide&lt;successive_halving_user_guide&gt;`.
+
+.. note::
+
+  This estimator is still **experimental** for now: the predictions
+  and the API might change without any deprecation cycle. To use it,
+  you need to explicitly import ``enable_halving_search_cv``::
+
+    &gt;&gt;&gt; # explicitly require this experimental feature
+    &gt;&gt;&gt; from sklearn.experimental import enable_halving_search_cv # noqa
+    &gt;&gt;&gt; # now you can import normally from model_selection
+    &gt;&gt;&gt; from sklearn.model_selection import HalvingRandomSearchCV
+
+Parameters
+----------
+estimator : estimator object
+    This is assumed to implement the scikit-learn estimator interface.
+    Either estimator needs to provide a ``score`` function,
+    or ``scoring`` must be passed.
+
+param_distributions : dict or list of dicts
+    Dictionary with parameters names (`str`) as keys and distributions
+    or lists of parameters to try. Distributions must provide a ``rvs``
+    method for sampling (such as those from scipy.stats.distributions).
+    If a list is given, it is sampled uniformly.
+    If a list of dicts is given, first a dict is sampled uniformly, and
+    then a parameter is sampled using that dict as above.
+
+n_candidates : &quot;exhaust&quot; or int, default=&quot;exhaust&quot;
+    The number of candidate parameters to sample, at the first
+    iteration. Using &apos;exhaust&apos; will sample enough candidates so that the
+    last iteration uses as many resources as possible, based on
+    `min_resources`, `max_resources` and `factor`. In this case,
+    `min_resources` cannot be &apos;exhaust&apos;.
+
+factor : int or float, default=3
+    The &apos;halving&apos; parameter, which determines the proportion of candidates
+    that are selected for each subsequent iteration. For example,
+    ``factor=3`` means that only one third of the candidates are selected.
+
+resource : ``&apos;n_samples&apos;`` or str, default=&apos;n_samples&apos;
+    Defines the resource that increases with each iteration. By default,
+    the resource is the number of samples. It can also be set to any
+    parameter of the base estimator that accepts positive integer
+    values, e.g. &apos;n_iterations&apos; or &apos;n_estimators&apos; for a gradient
+    boosting estimator. In this case ``max_resources`` cannot be &apos;auto&apos;
+    and must be set explicitly.
+
+max_resources : int, default=&apos;auto&apos;
+    The maximum number of resources that any candidate is allowed to use
+    for a given iteration. By default, this is set ``n_samples`` when
+    ``resource=&apos;n_samples&apos;`` (default), else an error is raised.
+
+min_resources : {&apos;exhaust&apos;, &apos;smallest&apos;} or int, default=&apos;smallest&apos;
+    The minimum amount of resource that any candidate is allowed to use
+    for a given iteration. Equivalently, this defines the amount of
+    resources `r0` that are allocated for each candidate at the first
+    iteration.
+
+    - &apos;smallest&apos; is a heuristic that sets `r0` to a small value:
+
+        - ``n_splits * 2`` when ``resource=&apos;n_samples&apos;`` for a regression
+          problem
+        - ``n_classes * n_splits * 2`` when ``resource=&apos;n_samples&apos;`` for a
+          classification problem
+        - ``1`` when ``resource != &apos;n_samples&apos;``
+
+    - &apos;exhaust&apos; will set `r0` such that the **last** iteration uses as
+      much resources as possible. Namely, the last iteration will use the
+      highest value smaller than ``max_resources`` that is a multiple of
+      both ``min_resources`` and ``factor``. In general, using &apos;exhaust&apos;
+      leads to a more accurate estimator, but is slightly more time
+      consuming. &apos;exhaust&apos; isn&apos;t available when `n_candidates=&apos;exhaust&apos;`.
+
+    Note that the amount of resources used at each iteration is always a
+    multiple of ``min_resources``.
+
+aggressive_elimination : bool, default=False
+    This is only relevant in cases where there isn&apos;t enough resources to
+    reduce the remaining candidates to at most `factor` after the last
+    iteration. If ``True``, then the search process will &apos;replay&apos; the
+    first iteration for as long as needed until the number of candidates
+    is small enough. This is ``False`` by default, which means that the
+    last iteration may evaluate more than ``factor`` candidates. See
+    :ref:`aggressive_elimination` for more details.
+
+cv : int, cross-validation generator or an iterable, default=5
+    Determines the cross-validation splitting strategy.
+    Possible inputs for cv are:
+
+    - integer, to specify the number of folds in a `(Stratified)KFold`,
+    - :term:`CV splitter`,
+    - An iterable yielding (train, test) splits as arrays of indices.
+
+    For integer/None inputs, if the estimator is a classifier and ``y`` is
+    either binary or multiclass, :class:`StratifiedKFold` is used. In all
+    other cases, :class:`KFold` is used. These splitters are instantiated
+    with `shuffle=False` so the splits will be the same across calls.
+
+    Refer :ref:`User Guide &lt;cross_validation&gt;` for the various
+    cross-validation strategies that can be used here.
+
+    .. note::
+        Due to implementation details, the folds produced by `cv` must be
+        the same across multiple calls to `cv.split()`. For
+        built-in `scikit-learn` iterators, this can be achieved by
+        deactivating shuffling (`shuffle=False`), or by setting the
+        `cv`&apos;s `random_state` parameter to an integer.
+
+scoring : str, callable, or None, default=None
+    A single string (see :ref:`scoring_parameter`) or a callable
+    (see :ref:`scoring`) to evaluate the predictions on the test set.
+    If None, the estimator&apos;s score method is used.
+
+refit : bool, default=True
+    If True, refit an estimator using the best found parameters on the
+    whole dataset.
+
+    The refitted estimator is made available at the ``best_estimator_``
+    attribute and permits using ``predict`` directly on this
+    ``HalvingRandomSearchCV`` instance.
+
+error_score : &apos;raise&apos; or numeric
+    Value to assign to the score if an error occurs in estimator fitting.
+    If set to &apos;raise&apos;, the error is raised. If a numeric value is given,
+    FitFailedWarning is raised. This parameter does not affect the refit
+    step, which will always raise the error. Default is ``np.nan``.
+
+return_train_score : bool, default=False
+    If ``False``, the ``cv_results_`` attribute will not include training
+    scores.
+    Computing training scores is used to get insights on how different
+    parameter settings impact the overfitting/underfitting trade-off.
+    However computing the scores on the training set can be computationally
+    expensive and is not strictly required to select the parameters that
+    yield the best generalization performance.
+
+random_state : int, RandomState instance or None, default=None
+    Pseudo random number generator state used for subsampling the dataset
+    when `resources != &apos;n_samples&apos;`. Also used for random uniform
+    sampling from lists of possible values instead of scipy.stats
+    distributions.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+n_jobs : int or None, default=None
+    Number of jobs to run in parallel.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+verbose : int
+    Controls the verbosity: the higher, the more messages.
+
+Attributes
+----------
+n_resources_ : list of int
+    The amount of resources used at each iteration.
+
+n_candidates_ : list of int
+    The number of candidate parameters that were evaluated at each
+    iteration.
+
+n_remaining_candidates_ : int
+    The number of candidate parameters that are left after the last
+    iteration. It corresponds to `ceil(n_candidates[-1] / factor)`
+
+max_resources_ : int
+    The maximum number of resources that any candidate is allowed to use
+    for a given iteration. Note that since the number of resources used at
+    each iteration must be a multiple of ``min_resources_``, the actual
+    number of resources used at the last iteration may be smaller than
+    ``max_resources_``.
+
+min_resources_ : int
+    The amount of resources that are allocated for each candidate at the
+    first iteration.
+
+n_iterations_ : int
+    The actual number of iterations that were run. This is equal to
+    ``n_required_iterations_`` if ``aggressive_elimination`` is ``True``.
+    Else, this is equal to ``min(n_possible_iterations_,
+    n_required_iterations_)``.
+
+n_possible_iterations_ : int
+    The number of iterations that are possible starting with
+    ``min_resources_`` resources and without exceeding
+    ``max_resources_``.
+
+n_required_iterations_ : int
+    The number of iterations that are required to end up with less than
+    ``factor`` candidates at the last iteration, starting with
+    ``min_resources_`` resources. This will be smaller than
+    ``n_possible_iterations_`` when there isn&apos;t enough resources.
+
+cv_results_ : dict of numpy (masked) ndarrays
+    A dict with keys as column headers and values as columns, that can be
+    imported into a pandas ``DataFrame``. It contains lots of information
+    for analysing the results of a search.
+    Please refer to the :ref:`User guide&lt;successive_halving_cv_results&gt;`
+    for details.
+
+best_estimator_ : estimator or dict
+    Estimator that was chosen by the search, i.e. estimator
+    which gave highest score (or smallest loss if specified)
+    on the left out data. Not available if ``refit=False``.
+
+best_score_ : float
+    Mean cross-validated score of the best_estimator.
+
+best_params_ : dict
+    Parameter setting that gave the best results on the hold out data.
+
+best_index_ : int
+    The index (of the ``cv_results_`` arrays) which corresponds to the best
+    candidate parameter setting.
+
+    The dict at ``search.cv_results_[&apos;params&apos;][search.best_index_]`` gives
+    the parameter setting for the best model, that gives the highest
+    mean score (``search.best_score_``).
+
+scorer_ : function or a dict
+    Scorer function used on the held out data to choose the best
+    parameters for the model.
+
+n_splits_ : int
+    The number of cross-validation splits (folds/iterations).
+
+refit_time_ : float
+    Seconds used for refitting the best model on the whole dataset.
+
+    This is present only if ``refit`` is not False.
+
+multimetric_ : bool
+    Whether or not the scorers compute several metrics.
+
+classes_ : ndarray of shape (n_classes,)
+    The classes labels. This is present only if ``refit`` is specified and
+    the underlying estimator is a classifier.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `n_features_in_` when fit.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `feature_names_in_` when fit.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+:class:`HalvingGridSearchCV`:
+    Search over a grid of parameters using successive halving.
+
+Notes
+-----
+The parameters selected are those that maximize the score of the held-out
+data, according to the scoring parameter.
+
+All parameter combinations scored with a NaN will share the lowest rank.
+
+Examples
+--------
+
+&gt;&gt;&gt; from sklearn.datasets import load_iris
+&gt;&gt;&gt; from sklearn.ensemble import RandomForestClassifier
+&gt;&gt;&gt; from sklearn.experimental import enable_halving_search_cv  # noqa
+&gt;&gt;&gt; from sklearn.model_selection import HalvingRandomSearchCV
+&gt;&gt;&gt; from scipy.stats import randint
+&gt;&gt;&gt; import numpy as np
+...
+&gt;&gt;&gt; X, y = load_iris(return_X_y=True)
+&gt;&gt;&gt; clf = RandomForestClassifier(random_state=0)
+&gt;&gt;&gt; np.random.seed(0)
+...
+&gt;&gt;&gt; param_distributions = {&quot;max_depth&quot;: [3, None],
+...                        &quot;min_samples_split&quot;: randint(2, 11)}
+&gt;&gt;&gt; search = HalvingRandomSearchCV(clf, param_distributions,
+...                                resource=&apos;n_estimators&apos;,
+...                                max_resources=10,
+...                                random_state=0).fit(X, y)
+&gt;&gt;&gt; search.best_params_  # doctest: +SKIP
+{&apos;max_depth&apos;: None, &apos;min_samples_split&apos;: 10, &apos;n_estimators&apos;: 9}</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>K-Fold cross-validator.
+
+Provides train/test indices to split data in train/test sets. Split
+dataset into k consecutive folds (without shuffling by default).
+
+Each fold is then used once as a validation while the k - 1 remaining
+folds form the training set.
+
+Read more in the :ref:`User Guide &lt;k_fold&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of folds. Must be at least 2.
+
+    .. versionchanged:: 0.22
+        ``n_splits`` default value changed from 3 to 5.
+
+shuffle : bool, default=False
+    Whether to shuffle the data before splitting into batches.
+    Note that the samples within each split will not be shuffled.
+
+random_state : int, RandomState instance or None, default=None
+    When `shuffle` is True, `random_state` affects the ordering of the
+    indices, which controls the randomness of each fold. Otherwise, this
+    parameter has no effect.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import KFold
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
+&gt;&gt;&gt; y = np.array([1, 2, 3, 4])
+&gt;&gt;&gt; kf = KFold(n_splits=2)
+&gt;&gt;&gt; kf.get_n_splits(X)
+2
+&gt;&gt;&gt; print(kf)
+KFold(n_splits=2, random_state=None, shuffle=False)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(kf.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[2 3]
+  Test:  index=[0 1]
+Fold 1:
+  Train: index=[0 1]
+  Test:  index=[2 3]
+
+Notes
+-----
+The first ``n_samples % n_splits`` folds have size
+``n_samples // n_splits + 1``, other folds have size
+``n_samples // n_splits``, where ``n_samples`` is the number of samples.
+
+Randomized CV splitters may return different results for each call of
+split. You can make the results identical by setting `random_state`
+to an integer.
+
+See Also
+--------
+StratifiedKFold : Takes class information into account to avoid building
+    folds with imbalanced class distributions (for binary or multiclass
+    classification tasks).
+
+GroupKFold : K-fold iterator variant with non-overlapping groups.
+
+RepeatedKFold : Repeats K-Fold n times.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Learning Curve visualization.
+
+It is recommended to use
+:meth:`~sklearn.model_selection.LearningCurveDisplay.from_estimator` to
+create a :class:`~sklearn.model_selection.LearningCurveDisplay` instance.
+All parameters are stored as attributes.
+
+Read more in the :ref:`User Guide &lt;visualizations&gt;` for general information
+about the visualization API and
+:ref:`detailed documentation &lt;learning_curve&gt;` regarding the learning
+curve visualization.
+
+.. versionadded:: 1.2
+
+Parameters
+----------
+train_sizes : ndarray of shape (n_unique_ticks,)
+    Numbers of training examples that has been used to generate the
+    learning curve.
+
+train_scores : ndarray of shape (n_ticks, n_cv_folds)
+    Scores on training sets.
+
+test_scores : ndarray of shape (n_ticks, n_cv_folds)
+    Scores on test set.
+
+score_name : str, default=None
+    The name of the score used in `learning_curve`. It will override the name
+    inferred from the `scoring` parameter. If `score` is `None`, we use `&quot;Score&quot;` if
+    `negate_score` is `False` and `&quot;Negative score&quot;` otherwise. If `scoring` is a
+    string or a callable, we infer the name. We replace `_` by spaces and capitalize
+    the first letter. We remove `neg_` and replace it by `&quot;Negative&quot;` if
+    `negate_score` is `False` or just remove it otherwise.
+
+Attributes
+----------
+ax_ : matplotlib Axes
+    Axes with the learning curve.
+
+figure_ : matplotlib Figure
+    Figure containing the learning curve.
+
+errorbar_ : list of matplotlib Artist or None
+    When the `std_display_style` is `&quot;errorbar&quot;`, this is a list of
+    `matplotlib.container.ErrorbarContainer` objects. If another style is
+    used, `errorbar_` is `None`.
+
+lines_ : list of matplotlib Artist or None
+    When the `std_display_style` is `&quot;fill_between&quot;`, this is a list of
+    `matplotlib.lines.Line2D` objects corresponding to the mean train and
+    test scores. If another style is used, `line_` is `None`.
+
+fill_between_ : list of matplotlib Artist or None
+    When the `std_display_style` is `&quot;fill_between&quot;`, this is a list of
+    `matplotlib.collections.PolyCollection` objects. If another style is
+    used, `fill_between_` is `None`.
+
+See Also
+--------
+sklearn.model_selection.learning_curve : Compute the learning curve.
+
+Examples
+--------
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; from sklearn.datasets import load_iris
+&gt;&gt;&gt; from sklearn.model_selection import LearningCurveDisplay, learning_curve
+&gt;&gt;&gt; from sklearn.tree import DecisionTreeClassifier
+&gt;&gt;&gt; X, y = load_iris(return_X_y=True)
+&gt;&gt;&gt; tree = DecisionTreeClassifier(random_state=0)
+&gt;&gt;&gt; train_sizes, train_scores, test_scores = learning_curve(
+...     tree, X, y)
+&gt;&gt;&gt; display = LearningCurveDisplay(train_sizes=train_sizes,
+...     train_scores=train_scores, test_scores=test_scores, score_name=&quot;Score&quot;)
+&gt;&gt;&gt; display.plot()
+&lt;...&gt;
+&gt;&gt;&gt; plt.show()</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneGroupOutMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneGroupOutMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment></rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneOutMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneOutMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment></rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePGroupsOutMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePGroupsOutMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Leave P Group(s) Out cross-validator.
+
+Provides train/test indices to split data according to a third-party
+provided group. This group information can be used to encode arbitrary
+domain specific stratifications of the samples as integers.
+
+For instance the groups could be the year of collection of the samples
+and thus allow for cross-validation against time-based splits.
+
+The difference between LeavePGroupsOut and LeaveOneGroupOut is that
+the former builds the test sets with all the samples assigned to
+``p`` different values of the groups while the latter uses samples
+all assigned the same groups.
+
+Read more in the :ref:`User Guide &lt;leave_p_groups_out&gt;`.
+
+Parameters
+----------
+n_groups : int
+    Number of groups (``p``) to leave out in the test split.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import LeavePGroupsOut
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [5, 6]])
+&gt;&gt;&gt; y = np.array([1, 2, 1])
+&gt;&gt;&gt; groups = np.array([1, 2, 3])
+&gt;&gt;&gt; lpgo = LeavePGroupsOut(n_groups=2)
+&gt;&gt;&gt; lpgo.get_n_splits(X, y, groups)
+3
+&gt;&gt;&gt; lpgo.get_n_splits(groups=groups)  # &apos;groups&apos; is always required
+3
+&gt;&gt;&gt; print(lpgo)
+LeavePGroupsOut(n_groups=2)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(lpgo.split(X, y, groups)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}, group={groups[train_index]}&quot;)
+...     print(f&quot;  Test:  index={test_index}, group={groups[test_index]}&quot;)
+Fold 0:
+  Train: index=[2], group=[3]
+  Test:  index=[0 1], group=[1 2]
+Fold 1:
+  Train: index=[1], group=[2]
+  Test:  index=[0 2], group=[1 3]
+Fold 2:
+  Train: index=[0], group=[1]
+  Test:  index=[1 2], group=[2 3]
+
+See Also
+--------
+GroupKFold : K-fold iterator variant with non-overlapping groups.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePOutMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePOutMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Leave-P-Out cross-validator.
+
+Provides train/test indices to split data in train/test sets. This results
+in testing on all distinct samples of size p, while the remaining n - p
+samples form the training set in each iteration.
+
+Note: ``LeavePOut(p)`` is NOT equivalent to
+``KFold(n_splits=n_samples // p)`` which creates non-overlapping test sets.
+
+Due to the high number of iterations which grows combinatorically with the
+number of samples this cross-validation method can be very costly. For
+large datasets one should favor :class:`KFold`, :class:`StratifiedKFold`
+or :class:`ShuffleSplit`.
+
+Read more in the :ref:`User Guide &lt;leave_p_out&gt;`.
+
+Parameters
+----------
+p : int
+    Size of the test sets. Must be strictly less than the number of
+    samples.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import LeavePOut
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])
+&gt;&gt;&gt; y = np.array([1, 2, 3, 4])
+&gt;&gt;&gt; lpo = LeavePOut(2)
+&gt;&gt;&gt; lpo.get_n_splits(X)
+6
+&gt;&gt;&gt; print(lpo)
+LeavePOut(p=2)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(lpo.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[2 3]
+  Test:  index=[0 1]
+Fold 1:
+  Train: index=[1 3]
+  Test:  index=[0 2]
+Fold 2:
+  Train: index=[1 2]
+  Test:  index=[0 3]
+Fold 3:
+  Train: index=[0 3]
+  Test:  index=[1 2]
+Fold 4:
+  Train: index=[0 2]
+  Test:  index=[1 3]
+Fold 5:
+  Train: index=[0 1]
+  Test:  index=[2 3]</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelection -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelection"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PredefinedSplitMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PredefinedSplitMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Predefined split cross-validator.
+
+Provides train/test indices to split data into train/test sets using a
+predefined scheme specified by the user with the ``test_fold`` parameter.
+
+Read more in the :ref:`User Guide &lt;predefined_split&gt;`.
+
+.. versionadded:: 0.16
+
+Parameters
+----------
+test_fold : array-like of shape (n_samples,)
+    The entry ``test_fold[i]`` represents the index of the test set that
+    sample ``i`` belongs to. It is possible to exclude sample ``i`` from
+    any test set (i.e. include sample ``i`` in every training set) by
+    setting ``test_fold[i]`` equal to -1.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import PredefinedSplit
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
+&gt;&gt;&gt; y = np.array([0, 0, 1, 1])
+&gt;&gt;&gt; test_fold = [0, 1, -1, 1]
+&gt;&gt;&gt; ps = PredefinedSplit(test_fold)
+&gt;&gt;&gt; ps.get_n_splits()
+2
+&gt;&gt;&gt; print(ps)
+PredefinedSplit(test_fold=array([ 0,  1, -1,  1]))
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(ps.split()):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[1 2 3]
+  Test:  index=[0]
+Fold 1:
+  Train: index=[0 2]
+  Test:  index=[1 3]</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+        <rdfs:comment>Randomized search on hyper parameters.
+
+RandomizedSearchCV implements a &quot;fit&quot; and a &quot;score&quot; method.
+It also implements &quot;score_samples&quot;, &quot;predict&quot;, &quot;predict_proba&quot;,
+&quot;decision_function&quot;, &quot;transform&quot; and &quot;inverse_transform&quot; if they are
+implemented in the estimator used.
+
+The parameters of the estimator used to apply these methods are optimized
+by cross-validated search over parameter settings.
+
+In contrast to GridSearchCV, not all parameter values are tried out, but
+rather a fixed number of parameter settings is sampled from the specified
+distributions. The number of parameter settings that are tried is
+given by n_iter.
+
+If all parameters are presented as a list,
+sampling without replacement is performed. If at least one parameter
+is given as a distribution, sampling with replacement is used.
+It is highly recommended to use continuous distributions for continuous
+parameters.
+
+Read more in the :ref:`User Guide &lt;randomized_parameter_search&gt;`.
+
+.. versionadded:: 0.14
+
+Parameters
+----------
+estimator : estimator object
+    An object of that type is instantiated for each grid point.
+    This is assumed to implement the scikit-learn estimator interface.
+    Either estimator needs to provide a ``score`` function,
+    or ``scoring`` must be passed.
+
+param_distributions : dict or list of dicts
+    Dictionary with parameters names (`str`) as keys and distributions
+    or lists of parameters to try. Distributions must provide a ``rvs``
+    method for sampling (such as those from scipy.stats.distributions).
+    If a list is given, it is sampled uniformly.
+    If a list of dicts is given, first a dict is sampled uniformly, and
+    then a parameter is sampled using that dict as above.
+
+n_iter : int, default=10
+    Number of parameter settings that are sampled. n_iter trades
+    off runtime vs quality of the solution.
+
+scoring : str, callable, list, tuple or dict, default=None
+    Strategy to evaluate the performance of the cross-validated model on
+    the test set.
+
+    If `scoring` represents a single score, one can use:
+
+    - a single string (see :ref:`scoring_parameter`);
+    - a callable (see :ref:`scoring`) that returns a single value.
+
+    If `scoring` represents multiple scores, one can use:
+
+    - a list or tuple of unique strings;
+    - a callable returning a dictionary where the keys are the metric
+      names and the values are the metric scores;
+    - a dictionary with metric names as keys and callables a values.
+
+    See :ref:`multimetric_grid_search` for an example.
+
+    If None, the estimator&apos;s score method is used.
+
+n_jobs : int, default=None
+    Number of jobs to run in parallel.
+    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+    ``-1`` means using all processors. See :term:`Glossary &lt;n_jobs&gt;`
+    for more details.
+
+    .. versionchanged:: v0.20
+       `n_jobs` default changed from 1 to None
+
+refit : bool, str, or callable, default=True
+    Refit an estimator using the best found parameters on the whole
+    dataset.
+
+    For multiple metric evaluation, this needs to be a `str` denoting the
+    scorer that would be used to find the best parameters for refitting
+    the estimator at the end.
+
+    Where there are considerations other than maximum score in
+    choosing a best estimator, ``refit`` can be set to a function which
+    returns the selected ``best_index_`` given the ``cv_results``. In that
+    case, the ``best_estimator_`` and ``best_params_`` will be set
+    according to the returned ``best_index_`` while the ``best_score_``
+    attribute will not be available.
+
+    The refitted estimator is made available at the ``best_estimator_``
+    attribute and permits using ``predict`` directly on this
+    ``RandomizedSearchCV`` instance.
+
+    Also for multiple metric evaluation, the attributes ``best_index_``,
+    ``best_score_`` and ``best_params_`` will only be available if
+    ``refit`` is set and all of them will be determined w.r.t this specific
+    scorer.
+
+    See ``scoring`` parameter to know more about multiple metric
+    evaluation.
+
+    .. versionchanged:: 0.20
+        Support for callable added.
+
+cv : int, cross-validation generator or an iterable, default=None
+    Determines the cross-validation splitting strategy.
+    Possible inputs for cv are:
+
+    - None, to use the default 5-fold cross validation,
+    - integer, to specify the number of folds in a `(Stratified)KFold`,
+    - :term:`CV splitter`,
+    - An iterable yielding (train, test) splits as arrays of indices.
+
+    For integer/None inputs, if the estimator is a classifier and ``y`` is
+    either binary or multiclass, :class:`StratifiedKFold` is used. In all
+    other cases, :class:`KFold` is used. These splitters are instantiated
+    with `shuffle=False` so the splits will be the same across calls.
+
+    Refer :ref:`User Guide &lt;cross_validation&gt;` for the various
+    cross-validation strategies that can be used here.
+
+    .. versionchanged:: 0.22
+        ``cv`` default value if None changed from 3-fold to 5-fold.
+
+verbose : int
+    Controls the verbosity: the higher, the more messages.
+
+    - &gt;1 : the computation time for each fold and parameter candidate is
+      displayed;
+    - &gt;2 : the score is also displayed;
+    - &gt;3 : the fold and candidate parameter indexes are also displayed
+      together with the starting time of the computation.
+
+pre_dispatch : int, or str, default=&apos;2*n_jobs&apos;
+    Controls the number of jobs that get dispatched during parallel
+    execution. Reducing this number can be useful to avoid an
+    explosion of memory consumption when more jobs get dispatched
+    than CPUs can process. This parameter can be:
+
+        - None, in which case all the jobs are immediately
+          created and spawned. Use this for lightweight and
+          fast-running jobs, to avoid delays due to on-demand
+          spawning of the jobs
+
+        - An int, giving the exact number of total jobs that are
+          spawned
+
+        - A str, giving an expression as a function of n_jobs,
+          as in &apos;2*n_jobs&apos;
+
+random_state : int, RandomState instance or None, default=None
+    Pseudo random number generator state used for random uniform sampling
+    from lists of possible values instead of scipy.stats distributions.
+    Pass an int for reproducible output across multiple
+    function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+error_score : &apos;raise&apos; or numeric, default=np.nan
+    Value to assign to the score if an error occurs in estimator fitting.
+    If set to &apos;raise&apos;, the error is raised. If a numeric value is given,
+    FitFailedWarning is raised. This parameter does not affect the refit
+    step, which will always raise the error.
+
+return_train_score : bool, default=False
+    If ``False``, the ``cv_results_`` attribute will not include training
+    scores.
+    Computing training scores is used to get insights on how different
+    parameter settings impact the overfitting/underfitting trade-off.
+    However computing the scores on the training set can be computationally
+    expensive and is not strictly required to select the parameters that
+    yield the best generalization performance.
+
+    .. versionadded:: 0.19
+
+    .. versionchanged:: 0.21
+        Default value was changed from ``True`` to ``False``
+
+Attributes
+----------
+cv_results_ : dict of numpy (masked) ndarrays
+    A dict with keys as column headers and values as columns, that can be
+    imported into a pandas ``DataFrame``.
+
+    For instance the below given table
+
+    +--------------+-------------+-------------------+---+---------------+
+    | param_kernel | param_gamma | split0_test_score |...|rank_test_score|
+    +==============+=============+===================+===+===============+
+    |    &apos;rbf&apos;     |     0.1     |       0.80        |...|       1       |
+    +--------------+-------------+-------------------+---+---------------+
+    |    &apos;rbf&apos;     |     0.2     |       0.84        |...|       3       |
+    +--------------+-------------+-------------------+---+---------------+
+    |    &apos;rbf&apos;     |     0.3     |       0.70        |...|       2       |
+    +--------------+-------------+-------------------+---+---------------+
+
+    will be represented by a ``cv_results_`` dict of::
+
+        {
+        &apos;param_kernel&apos; : masked_array(data = [&apos;rbf&apos;, &apos;rbf&apos;, &apos;rbf&apos;],
+                                      mask = False),
+        &apos;param_gamma&apos;  : masked_array(data = [0.1 0.2 0.3], mask = False),
+        &apos;split0_test_score&apos;  : [0.80, 0.84, 0.70],
+        &apos;split1_test_score&apos;  : [0.82, 0.50, 0.70],
+        &apos;mean_test_score&apos;    : [0.81, 0.67, 0.70],
+        &apos;std_test_score&apos;     : [0.01, 0.24, 0.00],
+        &apos;rank_test_score&apos;    : [1, 3, 2],
+        &apos;split0_train_score&apos; : [0.80, 0.92, 0.70],
+        &apos;split1_train_score&apos; : [0.82, 0.55, 0.70],
+        &apos;mean_train_score&apos;   : [0.81, 0.74, 0.70],
+        &apos;std_train_score&apos;    : [0.01, 0.19, 0.00],
+        &apos;mean_fit_time&apos;      : [0.73, 0.63, 0.43],
+        &apos;std_fit_time&apos;       : [0.01, 0.02, 0.01],
+        &apos;mean_score_time&apos;    : [0.01, 0.06, 0.04],
+        &apos;std_score_time&apos;     : [0.00, 0.00, 0.00],
+        &apos;params&apos;             : [{&apos;kernel&apos; : &apos;rbf&apos;, &apos;gamma&apos; : 0.1}, ...],
+        }
+
+    NOTE
+
+    The key ``&apos;params&apos;`` is used to store a list of parameter
+    settings dicts for all the parameter candidates.
+
+    The ``mean_fit_time``, ``std_fit_time``, ``mean_score_time`` and
+    ``std_score_time`` are all in seconds.
+
+    For multi-metric evaluation, the scores for all the scorers are
+    available in the ``cv_results_`` dict at the keys ending with that
+    scorer&apos;s name (``&apos;_&lt;scorer_name&gt;&apos;``) instead of ``&apos;_score&apos;`` shown
+    above. (&apos;split0_test_precision&apos;, &apos;mean_train_precision&apos; etc.)
+
+best_estimator_ : estimator
+    Estimator that was chosen by the search, i.e. estimator
+    which gave highest score (or smallest loss if specified)
+    on the left out data. Not available if ``refit=False``.
+
+    For multi-metric evaluation, this attribute is present only if
+    ``refit`` is specified.
+
+    See ``refit`` parameter for more information on allowed values.
+
+best_score_ : float
+    Mean cross-validated score of the best_estimator.
+
+    For multi-metric evaluation, this is not available if ``refit`` is
+    ``False``. See ``refit`` parameter for more information.
+
+    This attribute is not available if ``refit`` is a function.
+
+best_params_ : dict
+    Parameter setting that gave the best results on the hold out data.
+
+    For multi-metric evaluation, this is not available if ``refit`` is
+    ``False``. See ``refit`` parameter for more information.
+
+best_index_ : int
+    The index (of the ``cv_results_`` arrays) which corresponds to the best
+    candidate parameter setting.
+
+    The dict at ``search.cv_results_[&apos;params&apos;][search.best_index_]`` gives
+    the parameter setting for the best model, that gives the highest
+    mean score (``search.best_score_``).
+
+    For multi-metric evaluation, this is not available if ``refit`` is
+    ``False``. See ``refit`` parameter for more information.
+
+scorer_ : function or a dict
+    Scorer function used on the held out data to choose the best
+    parameters for the model.
+
+    For multi-metric evaluation, this attribute holds the validated
+    ``scoring`` dict which maps the scorer key to the scorer callable.
+
+n_splits_ : int
+    The number of cross-validation splits (folds/iterations).
+
+refit_time_ : float
+    Seconds used for refitting the best model on the whole dataset.
+
+    This is present only if ``refit`` is not False.
+
+    .. versionadded:: 0.20
+
+multimetric_ : bool
+    Whether or not the scorers compute several metrics.
+
+classes_ : ndarray of shape (n_classes,)
+    The classes labels. This is present only if ``refit`` is specified and
+    the underlying estimator is a classifier.
+
+n_features_in_ : int
+    Number of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `n_features_in_` when fit.
+
+    .. versionadded:: 0.24
+
+feature_names_in_ : ndarray of shape (`n_features_in_`,)
+    Names of features seen during :term:`fit`. Only defined if
+    `best_estimator_` is defined (see the documentation for the `refit`
+    parameter for more details) and that `best_estimator_` exposes
+    `feature_names_in_` when fit.
+
+    .. versionadded:: 1.0
+
+See Also
+--------
+GridSearchCV : Does exhaustive search over a grid of parameters.
+ParameterSampler : A generator over parameter settings, constructed from
+    param_distributions.
+
+Notes
+-----
+The parameters selected are those that maximize the score of the held-out
+data, according to the scoring parameter.
+
+If `n_jobs` was set to a value higher than one, the data is copied for each
+parameter setting(and not `n_jobs` times). This is done for efficiency
+reasons if individual jobs take very little time, but may raise errors if
+the dataset is large and not enough memory is available.  A workaround in
+this case is to set `pre_dispatch`. Then, the memory is copied only
+`pre_dispatch` many times. A reasonable value for `pre_dispatch` is `2 *
+n_jobs`.
+
+Examples
+--------
+&gt;&gt;&gt; from sklearn.datasets import load_iris
+&gt;&gt;&gt; from sklearn.linear_model import LogisticRegression
+&gt;&gt;&gt; from sklearn.model_selection import RandomizedSearchCV
+&gt;&gt;&gt; from scipy.stats import uniform
+&gt;&gt;&gt; iris = load_iris()
+&gt;&gt;&gt; logistic = LogisticRegression(solver=&apos;saga&apos;, tol=1e-2, max_iter=200,
+...                               random_state=0)
+&gt;&gt;&gt; distributions = dict(C=uniform(loc=0, scale=4),
+...                      penalty=[&apos;l2&apos;, &apos;l1&apos;])
+&gt;&gt;&gt; clf = RandomizedSearchCV(logistic, distributions, random_state=0)
+&gt;&gt;&gt; search = clf.fit(iris.data, iris.target)
+&gt;&gt;&gt; search.best_params_
+{&apos;C&apos;: 2..., &apos;penalty&apos;: &apos;l1&apos;}</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Repeated K-Fold cross validator.
+
+Repeats K-Fold n times with different randomization in each repetition.
+
+Read more in the :ref:`User Guide &lt;repeated_k_fold&gt;`.
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of folds. Must be at least 2.
+
+n_repeats : int, default=10
+    Number of times cross-validator needs to be repeated.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the randomness of each repeated cross-validation instance.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import RepeatedKFold
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
+&gt;&gt;&gt; y = np.array([0, 0, 1, 1])
+&gt;&gt;&gt; rkf = RepeatedKFold(n_splits=2, n_repeats=2, random_state=2652124)
+&gt;&gt;&gt; rkf.get_n_splits(X, y)
+4
+&gt;&gt;&gt; print(rkf)
+RepeatedKFold(n_repeats=2, n_splits=2, random_state=2652124)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(rkf.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+...
+Fold 0:
+  Train: index=[0 1]
+  Test:  index=[2 3]
+Fold 1:
+  Train: index=[2 3]
+  Test:  index=[0 1]
+Fold 2:
+  Train: index=[1 2]
+  Test:  index=[0 3]
+Fold 3:
+  Train: index=[0 3]
+  Test:  index=[1 2]
+
+Notes
+-----
+Randomized CV splitters may return different results for each call of
+split. You can make the results identical by setting `random_state`
+to an integer.
+
+See Also
+--------
+RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Repeated Stratified K-Fold cross validator.
+
+Repeats Stratified K-Fold n times with different randomization in each
+repetition.
+
+Read more in the :ref:`User Guide &lt;repeated_k_fold&gt;`.
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of folds. Must be at least 2.
+
+n_repeats : int, default=10
+    Number of times cross-validator needs to be repeated.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the generation of the random states for each repetition.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import RepeatedStratifiedKFold
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
+&gt;&gt;&gt; y = np.array([0, 0, 1, 1])
+&gt;&gt;&gt; rskf = RepeatedStratifiedKFold(n_splits=2, n_repeats=2,
+...     random_state=36851234)
+&gt;&gt;&gt; rskf.get_n_splits(X, y)
+4
+&gt;&gt;&gt; print(rskf)
+RepeatedStratifiedKFold(n_repeats=2, n_splits=2, random_state=36851234)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(rskf.split(X, y)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+...
+Fold 0:
+  Train: index=[1 2]
+  Test:  index=[0 3]
+Fold 1:
+  Train: index=[0 3]
+  Test:  index=[1 2]
+Fold 2:
+  Train: index=[1 3]
+  Test:  index=[0 2]
+Fold 3:
+  Train: index=[0 2]
+  Test:  index=[1 3]
+
+Notes
+-----
+Randomized CV splitters may return different results for each call of
+split. You can make the results identical by setting `random_state`
+to an integer.
+
+See Also
+--------
+RepeatedKFold : Repeats K-Fold n times.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Random permutation cross-validator.
+
+Yields indices to split data into training and test sets.
+
+Note: contrary to other cross-validation strategies, random splits
+do not guarantee that all folds will be different, although this is
+still very likely for sizeable datasets.
+
+Read more in the :ref:`User Guide &lt;ShuffleSplit&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+Parameters
+----------
+n_splits : int, default=10
+    Number of re-shuffling &amp; splitting iterations.
+
+test_size : float or int, default=None
+    If float, should be between 0.0 and 1.0 and represent the proportion
+    of the dataset to include in the test split. If int, represents the
+    absolute number of test samples. If None, the value is set to the
+    complement of the train size. If ``train_size`` is also None, it will
+    be set to 0.1.
+
+train_size : float or int, default=None
+    If float, should be between 0.0 and 1.0 and represent the
+    proportion of the dataset to include in the train split. If
+    int, represents the absolute number of train samples. If None,
+    the value is automatically set to the complement of the test size.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the randomness of the training and testing indices produced.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import ShuffleSplit
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [5, 6], [7, 8], [3, 4], [5, 6]])
+&gt;&gt;&gt; y = np.array([1, 2, 1, 2, 1, 2])
+&gt;&gt;&gt; rs = ShuffleSplit(n_splits=5, test_size=.25, random_state=0)
+&gt;&gt;&gt; rs.get_n_splits(X)
+5
+&gt;&gt;&gt; print(rs)
+ShuffleSplit(n_splits=5, random_state=0, test_size=0.25, train_size=None)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(rs.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[1 3 0 4]
+  Test:  index=[5 2]
+Fold 1:
+  Train: index=[4 0 2 5]
+  Test:  index=[1 3]
+Fold 2:
+  Train: index=[1 2 4 0]
+  Test:  index=[3 5]
+Fold 3:
+  Train: index=[3 4 1 0]
+  Test:  index=[5 2]
+Fold 4:
+  Train: index=[3 5 1 0]
+  Test:  index=[2 4]
+&gt;&gt;&gt; # Specify train and test size
+&gt;&gt;&gt; rs = ShuffleSplit(n_splits=5, train_size=0.5, test_size=.25,
+...                   random_state=0)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(rs.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[1 3 0]
+  Test:  index=[5 2]
+Fold 1:
+  Train: index=[4 0 2]
+  Test:  index=[1 3]
+Fold 2:
+  Train: index=[1 2 4]
+  Test:  index=[3 5]
+Fold 3:
+  Train: index=[3 4 1]
+  Test:  index=[5 2]
+Fold 4:
+  Train: index=[3 5 1]
+  Test:  index=[2 4]</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"/>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Stratified K-Fold iterator variant with non-overlapping groups.
+
+This cross-validation object is a variation of StratifiedKFold attempts to
+return stratified folds with non-overlapping groups. The folds are made by
+preserving the percentage of samples for each class.
+
+Each group will appear exactly once in the test set across all folds (the
+number of distinct groups has to be at least equal to the number of folds).
+
+The difference between :class:`~sklearn.model_selection.GroupKFold`
+and :class:`~sklearn.model_selection.StratifiedGroupKFold` is that
+the former attempts to create balanced folds such that the number of
+distinct groups is approximately the same in each fold, whereas
+StratifiedGroupKFold attempts to create folds which preserve the
+percentage of samples for each class as much as possible given the
+constraint of non-overlapping groups between splits.
+
+Read more in the :ref:`User Guide &lt;cross_validation&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of folds. Must be at least 2.
+
+shuffle : bool, default=False
+    Whether to shuffle each class&apos;s samples before splitting into batches.
+    Note that the samples within each split will not be shuffled.
+    This implementation can only shuffle groups that have approximately the
+    same y distribution, no global shuffle will be performed.
+
+random_state : int or RandomState instance, default=None
+    When `shuffle` is True, `random_state` affects the ordering of the
+    indices, which controls the randomness of each fold for each class.
+    Otherwise, leave `random_state` as `None`.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import StratifiedGroupKFold
+&gt;&gt;&gt; X = np.ones((17, 2))
+&gt;&gt;&gt; y = np.array([0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+&gt;&gt;&gt; groups = np.array([1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 6, 6, 7, 8, 8])
+&gt;&gt;&gt; sgkf = StratifiedGroupKFold(n_splits=3)
+&gt;&gt;&gt; sgkf.get_n_splits(X, y)
+3
+&gt;&gt;&gt; print(sgkf)
+StratifiedGroupKFold(n_splits=3, random_state=None, shuffle=False)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(sgkf.split(X, y, groups)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;         group={groups[train_index]}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+...     print(f&quot;         group={groups[test_index]}&quot;)
+Fold 0:
+  Train: index=[ 0  1  2  3  7  8  9 10 11 15 16]
+         group=[1 1 2 2 4 5 5 5 5 8 8]
+  Test:  index=[ 4  5  6 12 13 14]
+         group=[3 3 3 6 6 7]
+Fold 1:
+  Train: index=[ 4  5  6  7  8  9 10 11 12 13 14]
+         group=[3 3 3 4 5 5 5 5 6 6 7]
+  Test:  index=[ 0  1  2  3 15 16]
+         group=[1 1 2 2 8 8]
+Fold 2:
+  Train: index=[ 0  1  2  3  4  5  6 12 13 14 15 16]
+         group=[1 1 2 2 3 3 3 6 6 7 8 8]
+  Test:  index=[ 7  8  9 10 11]
+         group=[4 5 5 5 5]
+
+Notes
+-----
+The implementation is designed to:
+
+* Mimic the behavior of StratifiedKFold as much as possible for trivial
+  groups (e.g. when each group contains only one sample).
+* Be invariant to class label: relabelling ``y = [&quot;Happy&quot;, &quot;Sad&quot;]`` to
+  ``y = [1, 0]`` should not change the indices generated.
+* Stratify based on samples as much as possible while keeping
+  non-overlapping groups constraint. That means that in some cases when
+  there is a small number of groups containing a large number of samples
+  the stratification will not be possible and the behavior will be close
+  to GroupKFold.
+
+See also
+--------
+StratifiedKFold: Takes class information into account to build folds which
+    retain class distributions (for binary or multiclass classification
+    tasks).
+
+GroupKFold: K-fold iterator variant with non-overlapping groups.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Stratified K-Fold cross-validator.
+
+Provides train/test indices to split data in train/test sets.
+
+This cross-validation object is a variation of KFold that returns
+stratified folds. The folds are made by preserving the percentage of
+samples for each class.
+
+Read more in the :ref:`User Guide &lt;stratified_k_fold&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of folds. Must be at least 2.
+
+    .. versionchanged:: 0.22
+        ``n_splits`` default value changed from 3 to 5.
+
+shuffle : bool, default=False
+    Whether to shuffle each class&apos;s samples before splitting into batches.
+    Note that the samples within each split will not be shuffled.
+
+random_state : int, RandomState instance or None, default=None
+    When `shuffle` is True, `random_state` affects the ordering of the
+    indices, which controls the randomness of each fold for each class.
+    Otherwise, leave `random_state` as `None`.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import StratifiedKFold
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
+&gt;&gt;&gt; y = np.array([0, 0, 1, 1])
+&gt;&gt;&gt; skf = StratifiedKFold(n_splits=2)
+&gt;&gt;&gt; skf.get_n_splits(X, y)
+2
+&gt;&gt;&gt; print(skf)
+StratifiedKFold(n_splits=2, random_state=None, shuffle=False)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(skf.split(X, y)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[1 3]
+  Test:  index=[0 2]
+Fold 1:
+  Train: index=[0 2]
+  Test:  index=[1 3]
+
+Notes
+-----
+The implementation is designed to:
+
+* Generate test sets such that all contain the same distribution of
+  classes, or as close as possible.
+* Be invariant to class label: relabelling ``y = [&quot;Happy&quot;, &quot;Sad&quot;]`` to
+  ``y = [1, 0]`` should not change the indices generated.
+* Preserve order dependencies in the dataset ordering, when
+  ``shuffle=False``: all samples from class k in some test set were
+  contiguous in y, or separated in y by samples from classes other than k.
+* Generate test sets where the smallest and largest differ by at most one
+  sample.
+
+.. versionchanged:: 0.22
+    The previous implementation did not follow the last constraint.
+
+See Also
+--------
+RepeatedStratifiedKFold : Repeats Stratified K-Fold n times.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Stratified ShuffleSplit cross-validator.
+
+Provides train/test indices to split data in train/test sets.
+
+This cross-validation object is a merge of StratifiedKFold and
+ShuffleSplit, which returns stratified randomized folds. The folds
+are made by preserving the percentage of samples for each class.
+
+Note: like the ShuffleSplit strategy, stratified random splits
+do not guarantee that all folds will be different, although this is
+still very likely for sizeable datasets.
+
+Read more in the :ref:`User Guide &lt;stratified_shuffle_split&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+Parameters
+----------
+n_splits : int, default=10
+    Number of re-shuffling &amp; splitting iterations.
+
+test_size : float or int, default=None
+    If float, should be between 0.0 and 1.0 and represent the proportion
+    of the dataset to include in the test split. If int, represents the
+    absolute number of test samples. If None, the value is set to the
+    complement of the train size. If ``train_size`` is also None, it will
+    be set to 0.1.
+
+train_size : float or int, default=None
+    If float, should be between 0.0 and 1.0 and represent the
+    proportion of the dataset to include in the train split. If
+    int, represents the absolute number of train samples. If None,
+    the value is automatically set to the complement of the test size.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the randomness of the training and testing indices produced.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import StratifiedShuffleSplit
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [1, 2], [3, 4], [1, 2], [3, 4]])
+&gt;&gt;&gt; y = np.array([0, 0, 0, 1, 1, 1])
+&gt;&gt;&gt; sss = StratifiedShuffleSplit(n_splits=5, test_size=0.5, random_state=0)
+&gt;&gt;&gt; sss.get_n_splits(X, y)
+5
+&gt;&gt;&gt; print(sss)
+StratifiedShuffleSplit(n_splits=5, random_state=0, ...)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(sss.split(X, y)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[5 2 3]
+  Test:  index=[4 1 0]
+Fold 1:
+  Train: index=[5 1 4]
+  Test:  index=[0 2 3]
+Fold 2:
+  Train: index=[5 0 2]
+  Test:  index=[4 3 1]
+Fold 3:
+  Train: index=[4 1 0]
+  Test:  index=[2 3 5]
+Fold 4:
+  Train: index=[0 5 1]
+  Test:  index=[3 4 2]</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Time Series cross-validator.
+
+Provides train/test indices to split time series data samples
+that are observed at fixed time intervals, in train/test sets.
+In each split, test indices must be higher than before, and thus shuffling
+in cross validator is inappropriate.
+
+This cross-validation object is a variation of :class:`KFold`.
+In the kth split, it returns first k folds as train set and the
+(k+1)th fold as test set.
+
+Note that unlike standard cross-validation methods, successive
+training sets are supersets of those that come before them.
+
+Read more in the :ref:`User Guide &lt;time_series_split&gt;`.
+
+For visualisation of cross-validation behaviour and
+comparison between common scikit-learn split methods
+refer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`
+
+.. versionadded:: 0.18
+
+Parameters
+----------
+n_splits : int, default=5
+    Number of splits. Must be at least 2.
+
+    .. versionchanged:: 0.22
+        ``n_splits`` default value changed from 3 to 5.
+
+max_train_size : int, default=None
+    Maximum size for a single training set.
+
+test_size : int, default=None
+    Used to limit the size of the test set. Defaults to
+    ``n_samples // (n_splits + 1)``, which is the maximum allowed value
+    with ``gap=0``.
+
+    .. versionadded:: 0.24
+
+gap : int, default=0
+    Number of samples to exclude from the end of each train set before
+    the test set.
+
+    .. versionadded:: 0.24
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import TimeSeriesSplit
+&gt;&gt;&gt; X = np.array([[1, 2], [3, 4], [1, 2], [3, 4], [1, 2], [3, 4]])
+&gt;&gt;&gt; y = np.array([1, 2, 3, 4, 5, 6])
+&gt;&gt;&gt; tscv = TimeSeriesSplit()
+&gt;&gt;&gt; print(tscv)
+TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(tscv.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[0]
+  Test:  index=[1]
+Fold 1:
+  Train: index=[0 1]
+  Test:  index=[2]
+Fold 2:
+  Train: index=[0 1 2]
+  Test:  index=[3]
+Fold 3:
+  Train: index=[0 1 2 3]
+  Test:  index=[4]
+Fold 4:
+  Train: index=[0 1 2 3 4]
+  Test:  index=[5]
+&gt;&gt;&gt; # Fix test_size to 2 with 12 samples
+&gt;&gt;&gt; X = np.random.randn(12, 2)
+&gt;&gt;&gt; y = np.random.randint(0, 2, 12)
+&gt;&gt;&gt; tscv = TimeSeriesSplit(n_splits=3, test_size=2)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(tscv.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[0 1 2 3 4 5]
+  Test:  index=[6 7]
+Fold 1:
+  Train: index=[0 1 2 3 4 5 6 7]
+  Test:  index=[8 9]
+Fold 2:
+  Train: index=[0 1 2 3 4 5 6 7 8 9]
+  Test:  index=[10 11]
+&gt;&gt;&gt; # Add in a 2 period gap
+&gt;&gt;&gt; tscv = TimeSeriesSplit(n_splits=3, test_size=2, gap=2)
+&gt;&gt;&gt; for i, (train_index, test_index) in enumerate(tscv.split(X)):
+...     print(f&quot;Fold {i}:&quot;)
+...     print(f&quot;  Train: index={train_index}&quot;)
+...     print(f&quot;  Test:  index={test_index}&quot;)
+Fold 0:
+  Train: index=[0 1 2 3]
+  Test:  index=[6 7]
+Fold 1:
+  Train: index=[0 1 2 3 4 5]
+  Test:  index=[8 9]
+Fold 2:
+  Train: index=[0 1 2 3 4 5 6 7]
+  Test:  index=[10 11]
+
+For a more extended example see
+:ref:`sphx_glr_auto_examples_applications_plot_cyclical_feature_engineering.py`.
+
+Notes
+-----
+The training set has size ``i * n_samples // (n_splits + 1)
++ n_samples % (n_splits + 1)`` in the ``i`` th split,
+with a test set of size ``n_samples//(n_splits + 1)`` by default,
+where ``n_samples`` is the number of samples.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Split arrays or matrices into random train and test subsets.
+
+Quick utility that wraps input validation,
+``next(ShuffleSplit().split(X, y))``, and application to input data
+into a single call for splitting (and optionally subsampling) data into a
+one-liner.
+
+Read more in the :ref:`User Guide &lt;cross_validation&gt;`.
+
+Parameters
+----------
+*arrays : sequence of indexables with same length / shape[0]
+    Allowed inputs are lists, numpy arrays, scipy-sparse
+    matrices or pandas dataframes.
+
+test_size : float or int, default=None
+    If float, should be between 0.0 and 1.0 and represent the proportion
+    of the dataset to include in the test split. If int, represents the
+    absolute number of test samples. If None, the value is set to the
+    complement of the train size. If ``train_size`` is also None, it will
+    be set to 0.25.
+
+train_size : float or int, default=None
+    If float, should be between 0.0 and 1.0 and represent the
+    proportion of the dataset to include in the train split. If
+    int, represents the absolute number of train samples. If None,
+    the value is automatically set to the complement of the test size.
+
+random_state : int, RandomState instance or None, default=None
+    Controls the shuffling applied to the data before applying the split.
+    Pass an int for reproducible output across multiple function calls.
+    See :term:`Glossary &lt;random_state&gt;`.
+
+shuffle : bool, default=True
+    Whether or not to shuffle the data before splitting. If shuffle=False
+    then stratify must be None.
+
+stratify : array-like, default=None
+    If not None, data is split in a stratified fashion, using this as
+    the class labels.
+    Read more in the :ref:`User Guide &lt;stratification&gt;`.
+
+Returns
+-------
+splitting : list, length=2 * len(arrays)
+    List containing train-test split of inputs.
+
+    .. versionadded:: 0.16
+        If the input is sparse, the output will be a
+        ``scipy.sparse.csr_matrix``. Else, output type is the same as the
+        input type.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn.model_selection import train_test_split
+&gt;&gt;&gt; X, y = np.arange(10).reshape((5, 2)), range(5)
+&gt;&gt;&gt; X
+array([[0, 1],
+       [2, 3],
+       [4, 5],
+       [6, 7],
+       [8, 9]])
+&gt;&gt;&gt; list(y)
+[0, 1, 2, 3, 4]
+
+&gt;&gt;&gt; X_train, X_test, y_train, y_test = train_test_split(
+...     X, y, test_size=0.33, random_state=42)
+...
+&gt;&gt;&gt; X_train
+array([[4, 5],
+       [0, 1],
+       [6, 7]])
+&gt;&gt;&gt; y_train
+[2, 0, 3]
+&gt;&gt;&gt; X_test
+array([[2, 3],
+       [8, 9]])
+&gt;&gt;&gt; y_test
+[1, 4]
+
+&gt;&gt;&gt; train_test_split(y, shuffle=False)
+[[0, 1, 2], [3, 4]]</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod -->
+
+
+    <Class rdf:about="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"/>
+        <rdfs:comment>Validation Curve visualization.
+
+It is recommended to use
+:meth:`~sklearn.model_selection.ValidationCurveDisplay.from_estimator` to
+create a :class:`~sklearn.model_selection.ValidationCurveDisplay` instance.
+All parameters are stored as attributes.
+
+Read more in the :ref:`User Guide &lt;visualizations&gt;` for general information
+about the visualization API and :ref:`detailed documentation
+&lt;validation_curve&gt;` regarding the validation curve visualization.
+
+.. versionadded:: 1.3
+
+Parameters
+----------
+param_name : str
+    Name of the parameter that has been varied.
+
+param_range : array-like of shape (n_ticks,)
+    The values of the parameter that have been evaluated.
+
+train_scores : ndarray of shape (n_ticks, n_cv_folds)
+    Scores on training sets.
+
+test_scores : ndarray of shape (n_ticks, n_cv_folds)
+    Scores on test set.
+
+score_name : str, default=None
+    The name of the score used in `validation_curve`. It will override the name
+    inferred from the `scoring` parameter. If `score` is `None`, we use `&quot;Score&quot;` if
+    `negate_score` is `False` and `&quot;Negative score&quot;` otherwise. If `scoring` is a
+    string or a callable, we infer the name. We replace `_` by spaces and capitalize
+    the first letter. We remove `neg_` and replace it by `&quot;Negative&quot;` if
+    `negate_score` is `False` or just remove it otherwise.
+
+Attributes
+----------
+ax_ : matplotlib Axes
+    Axes with the validation curve.
+
+figure_ : matplotlib Figure
+    Figure containing the validation curve.
+
+errorbar_ : list of matplotlib Artist or None
+    When the `std_display_style` is `&quot;errorbar&quot;`, this is a list of
+    `matplotlib.container.ErrorbarContainer` objects. If another style is
+    used, `errorbar_` is `None`.
+
+lines_ : list of matplotlib Artist or None
+    When the `std_display_style` is `&quot;fill_between&quot;`, this is a list of
+    `matplotlib.lines.Line2D` objects corresponding to the mean train and
+    test scores. If another style is used, `line_` is `None`.
+
+fill_between_ : list of matplotlib Artist or None
+    When the `std_display_style` is `&quot;fill_between&quot;`, this is a list of
+    `matplotlib.collections.PolyCollection` objects. If another style is
+    used, `fill_between_` is `None`.
+
+See Also
+--------
+sklearn.model_selection.validation_curve : Compute the validation curve.
+
+Examples
+--------
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; from sklearn.datasets import make_classification
+&gt;&gt;&gt; from sklearn.model_selection import ValidationCurveDisplay, validation_curve
+&gt;&gt;&gt; from sklearn.linear_model import LogisticRegression
+&gt;&gt;&gt; X, y = make_classification(n_samples=1_000, random_state=0)
+&gt;&gt;&gt; logistic_regression = LogisticRegression()
+&gt;&gt;&gt; param_name, param_range = &quot;C&quot;, np.logspace(-8, 3, 10)
+&gt;&gt;&gt; train_scores, test_scores = validation_curve(
+...     logistic_regression, X, y, param_name=param_name, param_range=param_range
+... )
+&gt;&gt;&gt; display = ValidationCurveDisplay(
+...     param_name=param_name, param_range=param_range,
+...     train_scores=train_scores, test_scores=test_scores, score_name=&quot;Score&quot;
+... )
+&gt;&gt;&gt; display.plot()
+&lt;...&gt;
+&gt;&gt;&gt; plt.show()</rdfs:comment>
+    </Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

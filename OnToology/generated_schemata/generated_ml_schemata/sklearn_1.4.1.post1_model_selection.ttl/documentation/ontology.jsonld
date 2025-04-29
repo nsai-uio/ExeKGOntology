@@ -1,0 +1,936 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Exhaustive search over specified parameter values for an estimator.\n\nImportant members are fit, predict.\n\nGridSearchCV implements a \"fit\" and a \"score\" method.\nIt also implements \"score_samples\", \"predict\", \"predict_proba\",\n\"decision_function\", \"transform\" and \"inverse_transform\" if they are\nimplemented in the estimator used.\n\nThe parameters of the estimator used to apply these methods are optimized\nby cross-validated grid-search over a parameter grid.\n\nRead more in the :ref:`User Guide <grid_search>`.\n\nParameters\n----------\nestimator : estimator object\n    This is assumed to implement the scikit-learn estimator interface.\n    Either estimator needs to provide a ``score`` function,\n    or ``scoring`` must be passed.\n\nparam_grid : dict or list of dictionaries\n    Dictionary with parameters names (`str`) as keys and lists of\n    parameter settings to try as values, or a list of such\n    dictionaries, in which case the grids spanned by each dictionary\n    in the list are explored. This enables searching over any sequence\n    of parameter settings.\n\nscoring : str, callable, list, tuple or dict, default=None\n    Strategy to evaluate the performance of the cross-validated model on\n    the test set.\n\n    If `scoring` represents a single score, one can use:\n\n    - a single string (see :ref:`scoring_parameter`);\n    - a callable (see :ref:`scoring`) that returns a single value.\n\n    If `scoring` represents multiple scores, one can use:\n\n    - a list or tuple of unique strings;\n    - a callable returning a dictionary where the keys are the metric\n      names and the values are the metric scores;\n    - a dictionary with metric names as keys and callables a values.\n\n    See :ref:`multimetric_grid_search` for an example.\n\nn_jobs : int, default=None\n    Number of jobs to run in parallel.\n    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.\n    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n    for more details.\n\n    .. versionchanged:: v0.20\n       `n_jobs` default changed from 1 to None\n\nrefit : bool, str, or callable, default=True\n    Refit an estimator using the best found parameters on the whole\n    dataset.\n\n    For multiple metric evaluation, this needs to be a `str` denoting the\n    scorer that would be used to find the best parameters for refitting\n    the estimator at the end.\n\n    Where there are considerations other than maximum score in\n    choosing a best estimator, ``refit`` can be set to a function which\n    returns the selected ``best_index_`` given ``cv_results_``. In that\n    case, the ``best_estimator_`` and ``best_params_`` will be set\n    according to the returned ``best_index_`` while the ``best_score_``\n    attribute will not be available.\n\n    The refitted estimator is made available at the ``best_estimator_``\n    attribute and permits using ``predict`` directly on this\n    ``GridSearchCV`` instance.\n\n    Also for multiple metric evaluation, the attributes ``best_index_``,\n    ``best_score_`` and ``best_params_`` will only be available if\n    ``refit`` is set and all of them will be determined w.r.t this specific\n    scorer.\n\n    See ``scoring`` parameter to know more about multiple metric\n    evaluation.\n\n    See :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_digits.py`\n    to see how to design a custom selection strategy using a callable\n    via `refit`.\n\n    .. versionchanged:: 0.20\n        Support for callable added.\n\ncv : int, cross-validation generator or an iterable, default=None\n    Determines the cross-validation splitting strategy.\n    Possible inputs for cv are:\n\n    - None, to use the default 5-fold cross validation,\n    - integer, to specify the number of folds in a `(Stratified)KFold`,\n    - :term:`CV splitter`,\n    - An iterable yielding (train, test) splits as arrays of indices.\n\n    For integer/None inputs, if the estimator is a classifier and ``y`` is\n    either binary or multiclass, :class:`StratifiedKFold` is used. In all\n    other cases, :class:`KFold` is used. These splitters are instantiated\n    with `shuffle=False` so the splits will be the same across calls.\n\n    Refer :ref:`User Guide <cross_validation>` for the various\n    cross-validation strategies that can be used here.\n\n    .. versionchanged:: 0.22\n        ``cv`` default value if None changed from 3-fold to 5-fold.\n\nverbose : int\n    Controls the verbosity: the higher, the more messages.\n\n    - >1 : the computation time for each fold and parameter candidate is\n      displayed;\n    - >2 : the score is also displayed;\n    - >3 : the fold and candidate parameter indexes are also displayed\n      together with the starting time of the computation.\n\npre_dispatch : int, or str, default='2*n_jobs'\n    Controls the number of jobs that get dispatched during parallel\n    execution. Reducing this number can be useful to avoid an\n    explosion of memory consumption when more jobs get dispatched\n    than CPUs can process. This parameter can be:\n\n        - None, in which case all the jobs are immediately\n          created and spawned. Use this for lightweight and\n          fast-running jobs, to avoid delays due to on-demand\n          spawning of the jobs\n\n        - An int, giving the exact number of total jobs that are\n          spawned\n\n        - A str, giving an expression as a function of n_jobs,\n          as in '2*n_jobs'\n\nerror_score : 'raise' or numeric, default=np.nan\n    Value to assign to the score if an error occurs in estimator fitting.\n    If set to 'raise', the error is raised. If a numeric value is given,\n    FitFailedWarning is raised. This parameter does not affect the refit\n    step, which will always raise the error.\n\nreturn_train_score : bool, default=False\n    If ``False``, the ``cv_results_`` attribute will not include training\n    scores.\n    Computing training scores is used to get insights on how different\n    parameter settings impact the overfitting/underfitting trade-off.\n    However computing the scores on the training set can be computationally\n    expensive and is not strictly required to select the parameters that\n    yield the best generalization performance.\n\n    .. versionadded:: 0.19\n\n    .. versionchanged:: 0.21\n        Default value was changed from ``True`` to ``False``\n\nAttributes\n----------\ncv_results_ : dict of numpy (masked) ndarrays\n    A dict with keys as column headers and values as columns, that can be\n    imported into a pandas ``DataFrame``.\n\n    For instance the below given table\n\n    +------------+-----------+------------+-----------------+---+---------+\n    |param_kernel|param_gamma|param_degree|split0_test_score|...|rank_t...|\n    +============+===========+============+=================+===+=========+\n    |  'poly'    |     --    |      2     |       0.80      |...|    2    |\n    +------------+-----------+------------+-----------------+---+---------+\n    |  'poly'    |     --    |      3     |       0.70      |...|    4    |\n    +------------+-----------+------------+-----------------+---+---------+\n    |  'rbf'     |     0.1   |     --     |       0.80      |...|    3    |\n    +------------+-----------+------------+-----------------+---+---------+\n    |  'rbf'     |     0.2   |     --     |       0.93      |...|    1    |\n    +------------+-----------+------------+-----------------+---+---------+\n\n    will be represented by a ``cv_results_`` dict of::\n\n        {\n        'param_kernel': masked_array(data = ['poly', 'poly', 'rbf', 'rbf'],\n                                     mask = [False False False False]...)\n        'param_gamma': masked_array(data = [-- -- 0.1 0.2],\n                                    mask = [ True  True False False]...),\n        'param_degree': masked_array(data = [2.0 3.0 -- --],\n                                     mask = [False False  True  True]...),\n        'split0_test_score'  : [0.80, 0.70, 0.80, 0.93],\n        'split1_test_score'  : [0.82, 0.50, 0.70, 0.78],\n        'mean_test_score'    : [0.81, 0.60, 0.75, 0.85],\n        'std_test_score'     : [0.01, 0.10, 0.05, 0.08],\n        'rank_test_score'    : [2, 4, 3, 1],\n        'split0_train_score' : [0.80, 0.92, 0.70, 0.93],\n        'split1_train_score' : [0.82, 0.55, 0.70, 0.87],\n        'mean_train_score'   : [0.81, 0.74, 0.70, 0.90],\n        'std_train_score'    : [0.01, 0.19, 0.00, 0.03],\n        'mean_fit_time'      : [0.73, 0.63, 0.43, 0.49],\n        'std_fit_time'       : [0.01, 0.02, 0.01, 0.01],\n        'mean_score_time'    : [0.01, 0.06, 0.04, 0.04],\n        'std_score_time'     : [0.00, 0.00, 0.00, 0.01],\n        'params'             : [{'kernel': 'poly', 'degree': 2}, ...],\n        }\n\n    NOTE\n\n    The key ``'params'`` is used to store a list of parameter\n    settings dicts for all the parameter candidates.\n\n    The ``mean_fit_time``, ``std_fit_time``, ``mean_score_time`` and\n    ``std_score_time`` are all in seconds.\n\n    For multi-metric evaluation, the scores for all the scorers are\n    available in the ``cv_results_`` dict at the keys ending with that\n    scorer's name (``'_<scorer_name>'``) instead of ``'_score'`` shown\n    above. ('split0_test_precision', 'mean_train_precision' etc.)\n\nbest_estimator_ : estimator\n    Estimator that was chosen by the search, i.e. estimator\n    which gave highest score (or smallest loss if specified)\n    on the left out data. Not available if ``refit=False``.\n\n    See ``refit`` parameter for more information on allowed values.\n\nbest_score_ : float\n    Mean cross-validated score of the best_estimator\n\n    For multi-metric evaluation, this is present only if ``refit`` is\n    specified.\n\n    This attribute is not available if ``refit`` is a function.\n\nbest_params_ : dict\n    Parameter setting that gave the best results on the hold out data.\n\n    For multi-metric evaluation, this is present only if ``refit`` is\n    specified.\n\nbest_index_ : int\n    The index (of the ``cv_results_`` arrays) which corresponds to the best\n    candidate parameter setting.\n\n    The dict at ``search.cv_results_['params'][search.best_index_]`` gives\n    the parameter setting for the best model, that gives the highest\n    mean score (``search.best_score_``).\n\n    For multi-metric evaluation, this is present only if ``refit`` is\n    specified.\n\nscorer_ : function or a dict\n    Scorer function used on the held out data to choose the best\n    parameters for the model.\n\n    For multi-metric evaluation, this attribute holds the validated\n    ``scoring`` dict which maps the scorer key to the scorer callable.\n\nn_splits_ : int\n    The number of cross-validation splits (folds/iterations).\n\nrefit_time_ : float\n    Seconds used for refitting the best model on the whole dataset.\n\n    This is present only if ``refit`` is not False.\n\n    .. versionadded:: 0.20\n\nmultimetric_ : bool\n    Whether or not the scorers compute several metrics.\n\nclasses_ : ndarray of shape (n_classes,)\n    The classes labels. This is present only if ``refit`` is specified and\n    the underlying estimator is a classifier.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `n_features_in_` when fit.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `feature_names_in_` when fit.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nParameterGrid : Generates all the combinations of a hyperparameter grid.\ntrain_test_split : Utility function to split the data into a development\n    set usable for fitting a GridSearchCV instance and an evaluation set\n    for its final evaluation.\nsklearn.metrics.make_scorer : Make a scorer from a performance metric or\n    loss function.\n\nNotes\n-----\nThe parameters selected are those that maximize the score of the left out\ndata, unless an explicit score is passed in which case it is used instead.\n\nIf `n_jobs` was set to a value higher than one, the data is copied for each\npoint in the grid (and not `n_jobs` times). This is done for efficiency\nreasons if individual jobs take very little time, but may raise errors if\nthe dataset is large and not enough memory is available.  A workaround in\nthis case is to set `pre_dispatch`. Then, the memory is copied only\n`pre_dispatch` many times. A reasonable value for `pre_dispatch` is `2 *\nn_jobs`.\n\nExamples\n--------\n>>> from sklearn import svm, datasets\n>>> from sklearn.model_selection import GridSearchCV\n>>> iris = datasets.load_iris()\n>>> parameters = {'kernel':('linear', 'rbf'), 'C':[1, 10]}\n>>> svc = svm.SVC()\n>>> clf = GridSearchCV(svc, parameters)\n>>> clf.fit(iris.data, iris.target)\nGridSearchCV(estimator=SVC(),\n             param_grid={'C': [1, 10], 'kernel': ('linear', 'rbf')})\n>>> sorted(clf.cv_results_.keys())\n['mean_fit_time', 'mean_score_time', 'mean_test_score',...\n 'param_C', 'param_kernel', 'params',...\n 'rank_test_score', 'split0_test_score',...\n 'split2_test_score', ...\n 'std_fit_time', 'std_score_time', 'std_test_score']"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupKFoldMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "K-fold iterator variant with non-overlapping groups.\n\nEach group will appear exactly once in the test set across all folds (the\nnumber of distinct groups has to be at least equal to the number of folds).\n\nThe folds are approximately balanced in the sense that the number of\ndistinct groups is approximately the same in each fold.\n\nRead more in the :ref:`User Guide <group_k_fold>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\nParameters\n----------\nn_splits : int, default=5\n    Number of folds. Must be at least 2.\n\n    .. versionchanged:: 0.22\n        ``n_splits`` default value changed from 3 to 5.\n\nNotes\n-----\nGroups appear in an arbitrary order throughout the folds.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import GroupKFold\n>>> X = np.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])\n>>> y = np.array([1, 2, 3, 4, 5, 6])\n>>> groups = np.array([0, 0, 2, 2, 3, 3])\n>>> group_kfold = GroupKFold(n_splits=2)\n>>> group_kfold.get_n_splits(X, y, groups)\n2\n>>> print(group_kfold)\nGroupKFold(n_splits=2)\n>>> for i, (train_index, test_index) in enumerate(group_kfold.split(X, y, groups)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}, group={groups[train_index]}\")\n...     print(f\"  Test:  index={test_index}, group={groups[test_index]}\")\nFold 0:\n  Train: index=[2 3], group=[2 2]\n  Test:  index=[0 1 4 5], group=[0 0 3 3]\nFold 1:\n  Train: index=[0 1 4 5], group=[0 0 3 3]\n  Test:  index=[2 3], group=[2 2]\n\nSee Also\n--------\nLeaveOneGroupOut : For splitting the data according to explicit\n    domain-specific stratification of the dataset.\n\nStratifiedKFold : Takes class information into account to avoid building\n    folds with imbalanced class proportions (for binary or multiclass\n    classification tasks)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Shuffle-Group(s)-Out cross-validation iterator.\n\nProvides randomized train/test indices to split data according to a\nthird-party provided group. This group information can be used to encode\narbitrary domain specific stratifications of the samples as integers.\n\nFor instance the groups could be the year of collection of the samples\nand thus allow for cross-validation against time-based splits.\n\nThe difference between LeavePGroupsOut and GroupShuffleSplit is that\nthe former generates splits using all subsets of size ``p`` unique groups,\nwhereas GroupShuffleSplit generates a user-determined number of random\ntest splits, each with a user-determined fraction of unique groups.\n\nFor example, a less computationally intensive alternative to\n``LeavePGroupsOut(p=10)`` would be\n``GroupShuffleSplit(test_size=10, n_splits=100)``.\n\nNote: The parameters ``test_size`` and ``train_size`` refer to groups, and\nnot to samples, as in ShuffleSplit.\n\nRead more in the :ref:`User Guide <group_shuffle_split>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\nParameters\n----------\nn_splits : int, default=5\n    Number of re-shuffling & splitting iterations.\n\ntest_size : float, int, default=0.2\n    If float, should be between 0.0 and 1.0 and represent the proportion\n    of groups to include in the test split (rounded up). If int,\n    represents the absolute number of test groups. If None, the value is\n    set to the complement of the train size.\n    The default will change in version 0.21. It will remain 0.2 only\n    if ``train_size`` is unspecified, otherwise it will complement\n    the specified ``train_size``.\n\ntrain_size : float or int, default=None\n    If float, should be between 0.0 and 1.0 and represent the\n    proportion of the groups to include in the train split. If\n    int, represents the absolute number of train groups. If None,\n    the value is automatically set to the complement of the test size.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the randomness of the training and testing indices produced.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import GroupShuffleSplit\n>>> X = np.ones(shape=(8, 2))\n>>> y = np.ones(shape=(8, 1))\n>>> groups = np.array([1, 1, 2, 2, 2, 3, 3, 3])\n>>> print(groups.shape)\n(8,)\n>>> gss = GroupShuffleSplit(n_splits=2, train_size=.7, random_state=42)\n>>> gss.get_n_splits()\n2\n>>> print(gss)\nGroupShuffleSplit(n_splits=2, random_state=42, test_size=None, train_size=0.7)\n>>> for i, (train_index, test_index) in enumerate(gss.split(X, y, groups)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}, group={groups[train_index]}\")\n...     print(f\"  Test:  index={test_index}, group={groups[test_index]}\")\nFold 0:\n  Train: index=[2 3 4 5 6 7], group=[2 2 2 3 3 3]\n  Test:  index=[0 1], group=[1 1]\nFold 1:\n  Train: index=[0 1 5 6 7], group=[1 1 3 3 3]\n  Test:  index=[2 3 4], group=[2 2 2]\n\nSee Also\n--------\nShuffleSplit : Shuffles samples to create independent test/train sets.\n\nLeavePGroupsOut : Train set leaves out all possible subsets of `p` groups."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Search over specified parameter values with successive halving.\n\nThe search strategy starts evaluating all the candidates with a small\namount of resources and iteratively selects the best candidates, using\nmore and more resources.\n\nRead more in the :ref:`User guide <successive_halving_user_guide>`.\n\n.. note::\n\n  This estimator is still **experimental** for now: the predictions\n  and the API might change without any deprecation cycle. To use it,\n  you need to explicitly import ``enable_halving_search_cv``::\n\n    >>> # explicitly require this experimental feature\n    >>> from sklearn.experimental import enable_halving_search_cv # noqa\n    >>> # now you can import normally from model_selection\n    >>> from sklearn.model_selection import HalvingGridSearchCV\n\nParameters\n----------\nestimator : estimator object\n    This is assumed to implement the scikit-learn estimator interface.\n    Either estimator needs to provide a ``score`` function,\n    or ``scoring`` must be passed.\n\nparam_grid : dict or list of dictionaries\n    Dictionary with parameters names (string) as keys and lists of\n    parameter settings to try as values, or a list of such\n    dictionaries, in which case the grids spanned by each dictionary\n    in the list are explored. This enables searching over any sequence\n    of parameter settings.\n\nfactor : int or float, default=3\n    The 'halving' parameter, which determines the proportion of candidates\n    that are selected for each subsequent iteration. For example,\n    ``factor=3`` means that only one third of the candidates are selected.\n\nresource : ``'n_samples'`` or str, default='n_samples'\n    Defines the resource that increases with each iteration. By default,\n    the resource is the number of samples. It can also be set to any\n    parameter of the base estimator that accepts positive integer\n    values, e.g. 'n_iterations' or 'n_estimators' for a gradient\n    boosting estimator. In this case ``max_resources`` cannot be 'auto'\n    and must be set explicitly.\n\nmax_resources : int, default='auto'\n    The maximum amount of resource that any candidate is allowed to use\n    for a given iteration. By default, this is set to ``n_samples`` when\n    ``resource='n_samples'`` (default), else an error is raised.\n\nmin_resources : {'exhaust', 'smallest'} or int, default='exhaust'\n    The minimum amount of resource that any candidate is allowed to use\n    for a given iteration. Equivalently, this defines the amount of\n    resources `r0` that are allocated for each candidate at the first\n    iteration.\n\n    - 'smallest' is a heuristic that sets `r0` to a small value:\n\n        - ``n_splits * 2`` when ``resource='n_samples'`` for a regression\n          problem\n        - ``n_classes * n_splits * 2`` when ``resource='n_samples'`` for a\n          classification problem\n        - ``1`` when ``resource != 'n_samples'``\n\n    - 'exhaust' will set `r0` such that the **last** iteration uses as\n      much resources as possible. Namely, the last iteration will use the\n      highest value smaller than ``max_resources`` that is a multiple of\n      both ``min_resources`` and ``factor``. In general, using 'exhaust'\n      leads to a more accurate estimator, but is slightly more time\n      consuming.\n\n    Note that the amount of resources used at each iteration is always a\n    multiple of ``min_resources``.\n\naggressive_elimination : bool, default=False\n    This is only relevant in cases where there isn't enough resources to\n    reduce the remaining candidates to at most `factor` after the last\n    iteration. If ``True``, then the search process will 'replay' the\n    first iteration for as long as needed until the number of candidates\n    is small enough. This is ``False`` by default, which means that the\n    last iteration may evaluate more than ``factor`` candidates. See\n    :ref:`aggressive_elimination` for more details.\n\ncv : int, cross-validation generator or iterable, default=5\n    Determines the cross-validation splitting strategy.\n    Possible inputs for cv are:\n\n    - integer, to specify the number of folds in a `(Stratified)KFold`,\n    - :term:`CV splitter`,\n    - An iterable yielding (train, test) splits as arrays of indices.\n\n    For integer/None inputs, if the estimator is a classifier and ``y`` is\n    either binary or multiclass, :class:`StratifiedKFold` is used. In all\n    other cases, :class:`KFold` is used. These splitters are instantiated\n    with `shuffle=False` so the splits will be the same across calls.\n\n    Refer :ref:`User Guide <cross_validation>` for the various\n    cross-validation strategies that can be used here.\n\n    .. note::\n        Due to implementation details, the folds produced by `cv` must be\n        the same across multiple calls to `cv.split()`. For\n        built-in `scikit-learn` iterators, this can be achieved by\n        deactivating shuffling (`shuffle=False`), or by setting the\n        `cv`'s `random_state` parameter to an integer.\n\nscoring : str, callable, or None, default=None\n    A single string (see :ref:`scoring_parameter`) or a callable\n    (see :ref:`scoring`) to evaluate the predictions on the test set.\n    If None, the estimator's score method is used.\n\nrefit : bool, default=True\n    If True, refit an estimator using the best found parameters on the\n    whole dataset.\n\n    The refitted estimator is made available at the ``best_estimator_``\n    attribute and permits using ``predict`` directly on this\n    ``HalvingGridSearchCV`` instance.\n\nerror_score : 'raise' or numeric\n    Value to assign to the score if an error occurs in estimator fitting.\n    If set to 'raise', the error is raised. If a numeric value is given,\n    FitFailedWarning is raised. This parameter does not affect the refit\n    step, which will always raise the error. Default is ``np.nan``.\n\nreturn_train_score : bool, default=False\n    If ``False``, the ``cv_results_`` attribute will not include training\n    scores.\n    Computing training scores is used to get insights on how different\n    parameter settings impact the overfitting/underfitting trade-off.\n    However computing the scores on the training set can be computationally\n    expensive and is not strictly required to select the parameters that\n    yield the best generalization performance.\n\nrandom_state : int, RandomState instance or None, default=None\n    Pseudo random number generator state used for subsampling the dataset\n    when `resources != 'n_samples'`. Ignored otherwise.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nn_jobs : int or None, default=None\n    Number of jobs to run in parallel.\n    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.\n    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n    for more details.\n\nverbose : int\n    Controls the verbosity: the higher, the more messages.\n\nAttributes\n----------\nn_resources_ : list of int\n    The amount of resources used at each iteration.\n\nn_candidates_ : list of int\n    The number of candidate parameters that were evaluated at each\n    iteration.\n\nn_remaining_candidates_ : int\n    The number of candidate parameters that are left after the last\n    iteration. It corresponds to `ceil(n_candidates[-1] / factor)`\n\nmax_resources_ : int\n    The maximum number of resources that any candidate is allowed to use\n    for a given iteration. Note that since the number of resources used\n    at each iteration must be a multiple of ``min_resources_``, the\n    actual number of resources used at the last iteration may be smaller\n    than ``max_resources_``.\n\nmin_resources_ : int\n    The amount of resources that are allocated for each candidate at the\n    first iteration.\n\nn_iterations_ : int\n    The actual number of iterations that were run. This is equal to\n    ``n_required_iterations_`` if ``aggressive_elimination`` is ``True``.\n    Else, this is equal to ``min(n_possible_iterations_,\n    n_required_iterations_)``.\n\nn_possible_iterations_ : int\n    The number of iterations that are possible starting with\n    ``min_resources_`` resources and without exceeding\n    ``max_resources_``.\n\nn_required_iterations_ : int\n    The number of iterations that are required to end up with less than\n    ``factor`` candidates at the last iteration, starting with\n    ``min_resources_`` resources. This will be smaller than\n    ``n_possible_iterations_`` when there isn't enough resources.\n\ncv_results_ : dict of numpy (masked) ndarrays\n    A dict with keys as column headers and values as columns, that can be\n    imported into a pandas ``DataFrame``. It contains lots of information\n    for analysing the results of a search.\n    Please refer to the :ref:`User guide<successive_halving_cv_results>`\n    for details.\n\nbest_estimator_ : estimator or dict\n    Estimator that was chosen by the search, i.e. estimator\n    which gave highest score (or smallest loss if specified)\n    on the left out data. Not available if ``refit=False``.\n\nbest_score_ : float\n    Mean cross-validated score of the best_estimator.\n\nbest_params_ : dict\n    Parameter setting that gave the best results on the hold out data.\n\nbest_index_ : int\n    The index (of the ``cv_results_`` arrays) which corresponds to the best\n    candidate parameter setting.\n\n    The dict at ``search.cv_results_['params'][search.best_index_]`` gives\n    the parameter setting for the best model, that gives the highest\n    mean score (``search.best_score_``).\n\nscorer_ : function or a dict\n    Scorer function used on the held out data to choose the best\n    parameters for the model.\n\nn_splits_ : int\n    The number of cross-validation splits (folds/iterations).\n\nrefit_time_ : float\n    Seconds used for refitting the best model on the whole dataset.\n\n    This is present only if ``refit`` is not False.\n\nmultimetric_ : bool\n    Whether or not the scorers compute several metrics.\n\nclasses_ : ndarray of shape (n_classes,)\n    The classes labels. This is present only if ``refit`` is specified and\n    the underlying estimator is a classifier.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `n_features_in_` when fit.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `feature_names_in_` when fit.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\n:class:`HalvingRandomSearchCV`:\n    Random search over a set of parameters using successive halving.\n\nNotes\n-----\nThe parameters selected are those that maximize the score of the held-out\ndata, according to the scoring parameter.\n\nAll parameter combinations scored with a NaN will share the lowest rank.\n\nExamples\n--------\n\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.ensemble import RandomForestClassifier\n>>> from sklearn.experimental import enable_halving_search_cv  # noqa\n>>> from sklearn.model_selection import HalvingGridSearchCV\n...\n>>> X, y = load_iris(return_X_y=True)\n>>> clf = RandomForestClassifier(random_state=0)\n...\n>>> param_grid = {\"max_depth\": [3, None],\n...               \"min_samples_split\": [5, 10]}\n>>> search = HalvingGridSearchCV(clf, param_grid, resource='n_estimators',\n...                              max_resources=10,\n...                              random_state=0).fit(X, y)\n>>> search.best_params_  # doctest: +SKIP\n{'max_depth': None, 'min_samples_split': 10, 'n_estimators': 9}"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Randomized search on hyper parameters.\n\nThe search strategy starts evaluating all the candidates with a small\namount of resources and iteratively selects the best candidates, using more\nand more resources.\n\nThe candidates are sampled at random from the parameter space and the\nnumber of sampled candidates is determined by ``n_candidates``.\n\nRead more in the :ref:`User guide<successive_halving_user_guide>`.\n\n.. note::\n\n  This estimator is still **experimental** for now: the predictions\n  and the API might change without any deprecation cycle. To use it,\n  you need to explicitly import ``enable_halving_search_cv``::\n\n    >>> # explicitly require this experimental feature\n    >>> from sklearn.experimental import enable_halving_search_cv # noqa\n    >>> # now you can import normally from model_selection\n    >>> from sklearn.model_selection import HalvingRandomSearchCV\n\nParameters\n----------\nestimator : estimator object\n    This is assumed to implement the scikit-learn estimator interface.\n    Either estimator needs to provide a ``score`` function,\n    or ``scoring`` must be passed.\n\nparam_distributions : dict or list of dicts\n    Dictionary with parameters names (`str`) as keys and distributions\n    or lists of parameters to try. Distributions must provide a ``rvs``\n    method for sampling (such as those from scipy.stats.distributions).\n    If a list is given, it is sampled uniformly.\n    If a list of dicts is given, first a dict is sampled uniformly, and\n    then a parameter is sampled using that dict as above.\n\nn_candidates : \"exhaust\" or int, default=\"exhaust\"\n    The number of candidate parameters to sample, at the first\n    iteration. Using 'exhaust' will sample enough candidates so that the\n    last iteration uses as many resources as possible, based on\n    `min_resources`, `max_resources` and `factor`. In this case,\n    `min_resources` cannot be 'exhaust'.\n\nfactor : int or float, default=3\n    The 'halving' parameter, which determines the proportion of candidates\n    that are selected for each subsequent iteration. For example,\n    ``factor=3`` means that only one third of the candidates are selected.\n\nresource : ``'n_samples'`` or str, default='n_samples'\n    Defines the resource that increases with each iteration. By default,\n    the resource is the number of samples. It can also be set to any\n    parameter of the base estimator that accepts positive integer\n    values, e.g. 'n_iterations' or 'n_estimators' for a gradient\n    boosting estimator. In this case ``max_resources`` cannot be 'auto'\n    and must be set explicitly.\n\nmax_resources : int, default='auto'\n    The maximum number of resources that any candidate is allowed to use\n    for a given iteration. By default, this is set ``n_samples`` when\n    ``resource='n_samples'`` (default), else an error is raised.\n\nmin_resources : {'exhaust', 'smallest'} or int, default='smallest'\n    The minimum amount of resource that any candidate is allowed to use\n    for a given iteration. Equivalently, this defines the amount of\n    resources `r0` that are allocated for each candidate at the first\n    iteration.\n\n    - 'smallest' is a heuristic that sets `r0` to a small value:\n\n        - ``n_splits * 2`` when ``resource='n_samples'`` for a regression\n          problem\n        - ``n_classes * n_splits * 2`` when ``resource='n_samples'`` for a\n          classification problem\n        - ``1`` when ``resource != 'n_samples'``\n\n    - 'exhaust' will set `r0` such that the **last** iteration uses as\n      much resources as possible. Namely, the last iteration will use the\n      highest value smaller than ``max_resources`` that is a multiple of\n      both ``min_resources`` and ``factor``. In general, using 'exhaust'\n      leads to a more accurate estimator, but is slightly more time\n      consuming. 'exhaust' isn't available when `n_candidates='exhaust'`.\n\n    Note that the amount of resources used at each iteration is always a\n    multiple of ``min_resources``.\n\naggressive_elimination : bool, default=False\n    This is only relevant in cases where there isn't enough resources to\n    reduce the remaining candidates to at most `factor` after the last\n    iteration. If ``True``, then the search process will 'replay' the\n    first iteration for as long as needed until the number of candidates\n    is small enough. This is ``False`` by default, which means that the\n    last iteration may evaluate more than ``factor`` candidates. See\n    :ref:`aggressive_elimination` for more details.\n\ncv : int, cross-validation generator or an iterable, default=5\n    Determines the cross-validation splitting strategy.\n    Possible inputs for cv are:\n\n    - integer, to specify the number of folds in a `(Stratified)KFold`,\n    - :term:`CV splitter`,\n    - An iterable yielding (train, test) splits as arrays of indices.\n\n    For integer/None inputs, if the estimator is a classifier and ``y`` is\n    either binary or multiclass, :class:`StratifiedKFold` is used. In all\n    other cases, :class:`KFold` is used. These splitters are instantiated\n    with `shuffle=False` so the splits will be the same across calls.\n\n    Refer :ref:`User Guide <cross_validation>` for the various\n    cross-validation strategies that can be used here.\n\n    .. note::\n        Due to implementation details, the folds produced by `cv` must be\n        the same across multiple calls to `cv.split()`. For\n        built-in `scikit-learn` iterators, this can be achieved by\n        deactivating shuffling (`shuffle=False`), or by setting the\n        `cv`'s `random_state` parameter to an integer.\n\nscoring : str, callable, or None, default=None\n    A single string (see :ref:`scoring_parameter`) or a callable\n    (see :ref:`scoring`) to evaluate the predictions on the test set.\n    If None, the estimator's score method is used.\n\nrefit : bool, default=True\n    If True, refit an estimator using the best found parameters on the\n    whole dataset.\n\n    The refitted estimator is made available at the ``best_estimator_``\n    attribute and permits using ``predict`` directly on this\n    ``HalvingRandomSearchCV`` instance.\n\nerror_score : 'raise' or numeric\n    Value to assign to the score if an error occurs in estimator fitting.\n    If set to 'raise', the error is raised. If a numeric value is given,\n    FitFailedWarning is raised. This parameter does not affect the refit\n    step, which will always raise the error. Default is ``np.nan``.\n\nreturn_train_score : bool, default=False\n    If ``False``, the ``cv_results_`` attribute will not include training\n    scores.\n    Computing training scores is used to get insights on how different\n    parameter settings impact the overfitting/underfitting trade-off.\n    However computing the scores on the training set can be computationally\n    expensive and is not strictly required to select the parameters that\n    yield the best generalization performance.\n\nrandom_state : int, RandomState instance or None, default=None\n    Pseudo random number generator state used for subsampling the dataset\n    when `resources != 'n_samples'`. Also used for random uniform\n    sampling from lists of possible values instead of scipy.stats\n    distributions.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nn_jobs : int or None, default=None\n    Number of jobs to run in parallel.\n    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.\n    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n    for more details.\n\nverbose : int\n    Controls the verbosity: the higher, the more messages.\n\nAttributes\n----------\nn_resources_ : list of int\n    The amount of resources used at each iteration.\n\nn_candidates_ : list of int\n    The number of candidate parameters that were evaluated at each\n    iteration.\n\nn_remaining_candidates_ : int\n    The number of candidate parameters that are left after the last\n    iteration. It corresponds to `ceil(n_candidates[-1] / factor)`\n\nmax_resources_ : int\n    The maximum number of resources that any candidate is allowed to use\n    for a given iteration. Note that since the number of resources used at\n    each iteration must be a multiple of ``min_resources_``, the actual\n    number of resources used at the last iteration may be smaller than\n    ``max_resources_``.\n\nmin_resources_ : int\n    The amount of resources that are allocated for each candidate at the\n    first iteration.\n\nn_iterations_ : int\n    The actual number of iterations that were run. This is equal to\n    ``n_required_iterations_`` if ``aggressive_elimination`` is ``True``.\n    Else, this is equal to ``min(n_possible_iterations_,\n    n_required_iterations_)``.\n\nn_possible_iterations_ : int\n    The number of iterations that are possible starting with\n    ``min_resources_`` resources and without exceeding\n    ``max_resources_``.\n\nn_required_iterations_ : int\n    The number of iterations that are required to end up with less than\n    ``factor`` candidates at the last iteration, starting with\n    ``min_resources_`` resources. This will be smaller than\n    ``n_possible_iterations_`` when there isn't enough resources.\n\ncv_results_ : dict of numpy (masked) ndarrays\n    A dict with keys as column headers and values as columns, that can be\n    imported into a pandas ``DataFrame``. It contains lots of information\n    for analysing the results of a search.\n    Please refer to the :ref:`User guide<successive_halving_cv_results>`\n    for details.\n\nbest_estimator_ : estimator or dict\n    Estimator that was chosen by the search, i.e. estimator\n    which gave highest score (or smallest loss if specified)\n    on the left out data. Not available if ``refit=False``.\n\nbest_score_ : float\n    Mean cross-validated score of the best_estimator.\n\nbest_params_ : dict\n    Parameter setting that gave the best results on the hold out data.\n\nbest_index_ : int\n    The index (of the ``cv_results_`` arrays) which corresponds to the best\n    candidate parameter setting.\n\n    The dict at ``search.cv_results_['params'][search.best_index_]`` gives\n    the parameter setting for the best model, that gives the highest\n    mean score (``search.best_score_``).\n\nscorer_ : function or a dict\n    Scorer function used on the held out data to choose the best\n    parameters for the model.\n\nn_splits_ : int\n    The number of cross-validation splits (folds/iterations).\n\nrefit_time_ : float\n    Seconds used for refitting the best model on the whole dataset.\n\n    This is present only if ``refit`` is not False.\n\nmultimetric_ : bool\n    Whether or not the scorers compute several metrics.\n\nclasses_ : ndarray of shape (n_classes,)\n    The classes labels. This is present only if ``refit`` is specified and\n    the underlying estimator is a classifier.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `n_features_in_` when fit.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `feature_names_in_` when fit.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\n:class:`HalvingGridSearchCV`:\n    Search over a grid of parameters using successive halving.\n\nNotes\n-----\nThe parameters selected are those that maximize the score of the held-out\ndata, according to the scoring parameter.\n\nAll parameter combinations scored with a NaN will share the lowest rank.\n\nExamples\n--------\n\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.ensemble import RandomForestClassifier\n>>> from sklearn.experimental import enable_halving_search_cv  # noqa\n>>> from sklearn.model_selection import HalvingRandomSearchCV\n>>> from scipy.stats import randint\n>>> import numpy as np\n...\n>>> X, y = load_iris(return_X_y=True)\n>>> clf = RandomForestClassifier(random_state=0)\n>>> np.random.seed(0)\n...\n>>> param_distributions = {\"max_depth\": [3, None],\n...                        \"min_samples_split\": randint(2, 11)}\n>>> search = HalvingRandomSearchCV(clf, param_distributions,\n...                                resource='n_estimators',\n...                                max_resources=10,\n...                                random_state=0).fit(X, y)\n>>> search.best_params_  # doctest: +SKIP\n{'max_depth': None, 'min_samples_split': 10, 'n_estimators': 9}"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "K-Fold cross-validator.\n\nProvides train/test indices to split data in train/test sets. Split\ndataset into k consecutive folds (without shuffling by default).\n\nEach fold is then used once as a validation while the k - 1 remaining\nfolds form the training set.\n\nRead more in the :ref:`User Guide <k_fold>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\nParameters\n----------\nn_splits : int, default=5\n    Number of folds. Must be at least 2.\n\n    .. versionchanged:: 0.22\n        ``n_splits`` default value changed from 3 to 5.\n\nshuffle : bool, default=False\n    Whether to shuffle the data before splitting into batches.\n    Note that the samples within each split will not be shuffled.\n\nrandom_state : int, RandomState instance or None, default=None\n    When `shuffle` is True, `random_state` affects the ordering of the\n    indices, which controls the randomness of each fold. Otherwise, this\n    parameter has no effect.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import KFold\n>>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])\n>>> y = np.array([1, 2, 3, 4])\n>>> kf = KFold(n_splits=2)\n>>> kf.get_n_splits(X)\n2\n>>> print(kf)\nKFold(n_splits=2, random_state=None, shuffle=False)\n>>> for i, (train_index, test_index) in enumerate(kf.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[2 3]\n  Test:  index=[0 1]\nFold 1:\n  Train: index=[0 1]\n  Test:  index=[2 3]\n\nNotes\n-----\nThe first ``n_samples % n_splits`` folds have size\n``n_samples // n_splits + 1``, other folds have size\n``n_samples // n_splits``, where ``n_samples`` is the number of samples.\n\nRandomized CV splitters may return different results for each call of\nsplit. You can make the results identical by setting `random_state`\nto an integer.\n\nSee Also\n--------\nStratifiedKFold : Takes class information into account to avoid building\n    folds with imbalanced class distributions (for binary or multiclass\n    classification tasks).\n\nGroupKFold : K-fold iterator variant with non-overlapping groups.\n\nRepeatedKFold : Repeats K-Fold n times."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Learning Curve visualization.\n\nIt is recommended to use\n:meth:`~sklearn.model_selection.LearningCurveDisplay.from_estimator` to\ncreate a :class:`~sklearn.model_selection.LearningCurveDisplay` instance.\nAll parameters are stored as attributes.\n\nRead more in the :ref:`User Guide <visualizations>` for general information\nabout the visualization API and\n:ref:`detailed documentation <learning_curve>` regarding the learning\ncurve visualization.\n\n.. versionadded:: 1.2\n\nParameters\n----------\ntrain_sizes : ndarray of shape (n_unique_ticks,)\n    Numbers of training examples that has been used to generate the\n    learning curve.\n\ntrain_scores : ndarray of shape (n_ticks, n_cv_folds)\n    Scores on training sets.\n\ntest_scores : ndarray of shape (n_ticks, n_cv_folds)\n    Scores on test set.\n\nscore_name : str, default=None\n    The name of the score used in `learning_curve`. It will override the name\n    inferred from the `scoring` parameter. If `score` is `None`, we use `\"Score\"` if\n    `negate_score` is `False` and `\"Negative score\"` otherwise. If `scoring` is a\n    string or a callable, we infer the name. We replace `_` by spaces and capitalize\n    the first letter. We remove `neg_` and replace it by `\"Negative\"` if\n    `negate_score` is `False` or just remove it otherwise.\n\nAttributes\n----------\nax_ : matplotlib Axes\n    Axes with the learning curve.\n\nfigure_ : matplotlib Figure\n    Figure containing the learning curve.\n\nerrorbar_ : list of matplotlib Artist or None\n    When the `std_display_style` is `\"errorbar\"`, this is a list of\n    `matplotlib.container.ErrorbarContainer` objects. If another style is\n    used, `errorbar_` is `None`.\n\nlines_ : list of matplotlib Artist or None\n    When the `std_display_style` is `\"fill_between\"`, this is a list of\n    `matplotlib.lines.Line2D` objects corresponding to the mean train and\n    test scores. If another style is used, `line_` is `None`.\n\nfill_between_ : list of matplotlib Artist or None\n    When the `std_display_style` is `\"fill_between\"`, this is a list of\n    `matplotlib.collections.PolyCollection` objects. If another style is\n    used, `fill_between_` is `None`.\n\nSee Also\n--------\nsklearn.model_selection.learning_curve : Compute the learning curve.\n\nExamples\n--------\n>>> import matplotlib.pyplot as plt\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.model_selection import LearningCurveDisplay, learning_curve\n>>> from sklearn.tree import DecisionTreeClassifier\n>>> X, y = load_iris(return_X_y=True)\n>>> tree = DecisionTreeClassifier(random_state=0)\n>>> train_sizes, train_scores, test_scores = learning_curve(\n...     tree, X, y)\n>>> display = LearningCurveDisplay(train_sizes=train_sizes,\n...     train_scores=train_scores, test_scores=test_scores, score_name=\"Score\")\n>>> display.plot()\n<...>\n>>> plt.show()"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneGroupOutMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : ""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneOutMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : ""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePGroupsOutMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Leave P Group(s) Out cross-validator.\n\nProvides train/test indices to split data according to a third-party\nprovided group. This group information can be used to encode arbitrary\ndomain specific stratifications of the samples as integers.\n\nFor instance the groups could be the year of collection of the samples\nand thus allow for cross-validation against time-based splits.\n\nThe difference between LeavePGroupsOut and LeaveOneGroupOut is that\nthe former builds the test sets with all the samples assigned to\n``p`` different values of the groups while the latter uses samples\nall assigned the same groups.\n\nRead more in the :ref:`User Guide <leave_p_groups_out>`.\n\nParameters\n----------\nn_groups : int\n    Number of groups (``p``) to leave out in the test split.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import LeavePGroupsOut\n>>> X = np.array([[1, 2], [3, 4], [5, 6]])\n>>> y = np.array([1, 2, 1])\n>>> groups = np.array([1, 2, 3])\n>>> lpgo = LeavePGroupsOut(n_groups=2)\n>>> lpgo.get_n_splits(X, y, groups)\n3\n>>> lpgo.get_n_splits(groups=groups)  # 'groups' is always required\n3\n>>> print(lpgo)\nLeavePGroupsOut(n_groups=2)\n>>> for i, (train_index, test_index) in enumerate(lpgo.split(X, y, groups)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}, group={groups[train_index]}\")\n...     print(f\"  Test:  index={test_index}, group={groups[test_index]}\")\nFold 0:\n  Train: index=[2], group=[3]\n  Test:  index=[0 1], group=[1 2]\nFold 1:\n  Train: index=[1], group=[2]\n  Test:  index=[0 2], group=[1 3]\nFold 2:\n  Train: index=[0], group=[1]\n  Test:  index=[1 2], group=[2 3]\n\nSee Also\n--------\nGroupKFold : K-fold iterator variant with non-overlapping groups."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePOutMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Leave-P-Out cross-validator.\n\nProvides train/test indices to split data in train/test sets. This results\nin testing on all distinct samples of size p, while the remaining n - p\nsamples form the training set in each iteration.\n\nNote: ``LeavePOut(p)`` is NOT equivalent to\n``KFold(n_splits=n_samples // p)`` which creates non-overlapping test sets.\n\nDue to the high number of iterations which grows combinatorically with the\nnumber of samples this cross-validation method can be very costly. For\nlarge datasets one should favor :class:`KFold`, :class:`StratifiedKFold`\nor :class:`ShuffleSplit`.\n\nRead more in the :ref:`User Guide <leave_p_out>`.\n\nParameters\n----------\np : int\n    Size of the test sets. Must be strictly less than the number of\n    samples.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import LeavePOut\n>>> X = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])\n>>> y = np.array([1, 2, 3, 4])\n>>> lpo = LeavePOut(2)\n>>> lpo.get_n_splits(X)\n6\n>>> print(lpo)\nLeavePOut(p=2)\n>>> for i, (train_index, test_index) in enumerate(lpo.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[2 3]\n  Test:  index=[0 1]\nFold 1:\n  Train: index=[1 3]\n  Test:  index=[0 2]\nFold 2:\n  Train: index=[1 2]\n  Test:  index=[0 3]\nFold 3:\n  Train: index=[0 3]\n  Test:  index=[1 2]\nFold 4:\n  Train: index=[0 2]\n  Test:  index=[1 3]\nFold 5:\n  Train: index=[0 1]\n  Test:  index=[2 3]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PredefinedSplitMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Predefined split cross-validator.\n\nProvides train/test indices to split data into train/test sets using a\npredefined scheme specified by the user with the ``test_fold`` parameter.\n\nRead more in the :ref:`User Guide <predefined_split>`.\n\n.. versionadded:: 0.16\n\nParameters\n----------\ntest_fold : array-like of shape (n_samples,)\n    The entry ``test_fold[i]`` represents the index of the test set that\n    sample ``i`` belongs to. It is possible to exclude sample ``i`` from\n    any test set (i.e. include sample ``i`` in every training set) by\n    setting ``test_fold[i]`` equal to -1.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import PredefinedSplit\n>>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])\n>>> y = np.array([0, 0, 1, 1])\n>>> test_fold = [0, 1, -1, 1]\n>>> ps = PredefinedSplit(test_fold)\n>>> ps.get_n_splits()\n2\n>>> print(ps)\nPredefinedSplit(test_fold=array([ 0,  1, -1,  1]))\n>>> for i, (train_index, test_index) in enumerate(ps.split()):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[1 2 3]\n  Test:  index=[0]\nFold 1:\n  Train: index=[0 2]\n  Test:  index=[1 3]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Randomized search on hyper parameters.\n\nRandomizedSearchCV implements a \"fit\" and a \"score\" method.\nIt also implements \"score_samples\", \"predict\", \"predict_proba\",\n\"decision_function\", \"transform\" and \"inverse_transform\" if they are\nimplemented in the estimator used.\n\nThe parameters of the estimator used to apply these methods are optimized\nby cross-validated search over parameter settings.\n\nIn contrast to GridSearchCV, not all parameter values are tried out, but\nrather a fixed number of parameter settings is sampled from the specified\ndistributions. The number of parameter settings that are tried is\ngiven by n_iter.\n\nIf all parameters are presented as a list,\nsampling without replacement is performed. If at least one parameter\nis given as a distribution, sampling with replacement is used.\nIt is highly recommended to use continuous distributions for continuous\nparameters.\n\nRead more in the :ref:`User Guide <randomized_parameter_search>`.\n\n.. versionadded:: 0.14\n\nParameters\n----------\nestimator : estimator object\n    An object of that type is instantiated for each grid point.\n    This is assumed to implement the scikit-learn estimator interface.\n    Either estimator needs to provide a ``score`` function,\n    or ``scoring`` must be passed.\n\nparam_distributions : dict or list of dicts\n    Dictionary with parameters names (`str`) as keys and distributions\n    or lists of parameters to try. Distributions must provide a ``rvs``\n    method for sampling (such as those from scipy.stats.distributions).\n    If a list is given, it is sampled uniformly.\n    If a list of dicts is given, first a dict is sampled uniformly, and\n    then a parameter is sampled using that dict as above.\n\nn_iter : int, default=10\n    Number of parameter settings that are sampled. n_iter trades\n    off runtime vs quality of the solution.\n\nscoring : str, callable, list, tuple or dict, default=None\n    Strategy to evaluate the performance of the cross-validated model on\n    the test set.\n\n    If `scoring` represents a single score, one can use:\n\n    - a single string (see :ref:`scoring_parameter`);\n    - a callable (see :ref:`scoring`) that returns a single value.\n\n    If `scoring` represents multiple scores, one can use:\n\n    - a list or tuple of unique strings;\n    - a callable returning a dictionary where the keys are the metric\n      names and the values are the metric scores;\n    - a dictionary with metric names as keys and callables a values.\n\n    See :ref:`multimetric_grid_search` for an example.\n\n    If None, the estimator's score method is used.\n\nn_jobs : int, default=None\n    Number of jobs to run in parallel.\n    ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.\n    ``-1`` means using all processors. See :term:`Glossary <n_jobs>`\n    for more details.\n\n    .. versionchanged:: v0.20\n       `n_jobs` default changed from 1 to None\n\nrefit : bool, str, or callable, default=True\n    Refit an estimator using the best found parameters on the whole\n    dataset.\n\n    For multiple metric evaluation, this needs to be a `str` denoting the\n    scorer that would be used to find the best parameters for refitting\n    the estimator at the end.\n\n    Where there are considerations other than maximum score in\n    choosing a best estimator, ``refit`` can be set to a function which\n    returns the selected ``best_index_`` given the ``cv_results``. In that\n    case, the ``best_estimator_`` and ``best_params_`` will be set\n    according to the returned ``best_index_`` while the ``best_score_``\n    attribute will not be available.\n\n    The refitted estimator is made available at the ``best_estimator_``\n    attribute and permits using ``predict`` directly on this\n    ``RandomizedSearchCV`` instance.\n\n    Also for multiple metric evaluation, the attributes ``best_index_``,\n    ``best_score_`` and ``best_params_`` will only be available if\n    ``refit`` is set and all of them will be determined w.r.t this specific\n    scorer.\n\n    See ``scoring`` parameter to know more about multiple metric\n    evaluation.\n\n    .. versionchanged:: 0.20\n        Support for callable added.\n\ncv : int, cross-validation generator or an iterable, default=None\n    Determines the cross-validation splitting strategy.\n    Possible inputs for cv are:\n\n    - None, to use the default 5-fold cross validation,\n    - integer, to specify the number of folds in a `(Stratified)KFold`,\n    - :term:`CV splitter`,\n    - An iterable yielding (train, test) splits as arrays of indices.\n\n    For integer/None inputs, if the estimator is a classifier and ``y`` is\n    either binary or multiclass, :class:`StratifiedKFold` is used. In all\n    other cases, :class:`KFold` is used. These splitters are instantiated\n    with `shuffle=False` so the splits will be the same across calls.\n\n    Refer :ref:`User Guide <cross_validation>` for the various\n    cross-validation strategies that can be used here.\n\n    .. versionchanged:: 0.22\n        ``cv`` default value if None changed from 3-fold to 5-fold.\n\nverbose : int\n    Controls the verbosity: the higher, the more messages.\n\n    - >1 : the computation time for each fold and parameter candidate is\n      displayed;\n    - >2 : the score is also displayed;\n    - >3 : the fold and candidate parameter indexes are also displayed\n      together with the starting time of the computation.\n\npre_dispatch : int, or str, default='2*n_jobs'\n    Controls the number of jobs that get dispatched during parallel\n    execution. Reducing this number can be useful to avoid an\n    explosion of memory consumption when more jobs get dispatched\n    than CPUs can process. This parameter can be:\n\n        - None, in which case all the jobs are immediately\n          created and spawned. Use this for lightweight and\n          fast-running jobs, to avoid delays due to on-demand\n          spawning of the jobs\n\n        - An int, giving the exact number of total jobs that are\n          spawned\n\n        - A str, giving an expression as a function of n_jobs,\n          as in '2*n_jobs'\n\nrandom_state : int, RandomState instance or None, default=None\n    Pseudo random number generator state used for random uniform sampling\n    from lists of possible values instead of scipy.stats distributions.\n    Pass an int for reproducible output across multiple\n    function calls.\n    See :term:`Glossary <random_state>`.\n\nerror_score : 'raise' or numeric, default=np.nan\n    Value to assign to the score if an error occurs in estimator fitting.\n    If set to 'raise', the error is raised. If a numeric value is given,\n    FitFailedWarning is raised. This parameter does not affect the refit\n    step, which will always raise the error.\n\nreturn_train_score : bool, default=False\n    If ``False``, the ``cv_results_`` attribute will not include training\n    scores.\n    Computing training scores is used to get insights on how different\n    parameter settings impact the overfitting/underfitting trade-off.\n    However computing the scores on the training set can be computationally\n    expensive and is not strictly required to select the parameters that\n    yield the best generalization performance.\n\n    .. versionadded:: 0.19\n\n    .. versionchanged:: 0.21\n        Default value was changed from ``True`` to ``False``\n\nAttributes\n----------\ncv_results_ : dict of numpy (masked) ndarrays\n    A dict with keys as column headers and values as columns, that can be\n    imported into a pandas ``DataFrame``.\n\n    For instance the below given table\n\n    +--------------+-------------+-------------------+---+---------------+\n    | param_kernel | param_gamma | split0_test_score |...|rank_test_score|\n    +==============+=============+===================+===+===============+\n    |    'rbf'     |     0.1     |       0.80        |...|       1       |\n    +--------------+-------------+-------------------+---+---------------+\n    |    'rbf'     |     0.2     |       0.84        |...|       3       |\n    +--------------+-------------+-------------------+---+---------------+\n    |    'rbf'     |     0.3     |       0.70        |...|       2       |\n    +--------------+-------------+-------------------+---+---------------+\n\n    will be represented by a ``cv_results_`` dict of::\n\n        {\n        'param_kernel' : masked_array(data = ['rbf', 'rbf', 'rbf'],\n                                      mask = False),\n        'param_gamma'  : masked_array(data = [0.1 0.2 0.3], mask = False),\n        'split0_test_score'  : [0.80, 0.84, 0.70],\n        'split1_test_score'  : [0.82, 0.50, 0.70],\n        'mean_test_score'    : [0.81, 0.67, 0.70],\n        'std_test_score'     : [0.01, 0.24, 0.00],\n        'rank_test_score'    : [1, 3, 2],\n        'split0_train_score' : [0.80, 0.92, 0.70],\n        'split1_train_score' : [0.82, 0.55, 0.70],\n        'mean_train_score'   : [0.81, 0.74, 0.70],\n        'std_train_score'    : [0.01, 0.19, 0.00],\n        'mean_fit_time'      : [0.73, 0.63, 0.43],\n        'std_fit_time'       : [0.01, 0.02, 0.01],\n        'mean_score_time'    : [0.01, 0.06, 0.04],\n        'std_score_time'     : [0.00, 0.00, 0.00],\n        'params'             : [{'kernel' : 'rbf', 'gamma' : 0.1}, ...],\n        }\n\n    NOTE\n\n    The key ``'params'`` is used to store a list of parameter\n    settings dicts for all the parameter candidates.\n\n    The ``mean_fit_time``, ``std_fit_time``, ``mean_score_time`` and\n    ``std_score_time`` are all in seconds.\n\n    For multi-metric evaluation, the scores for all the scorers are\n    available in the ``cv_results_`` dict at the keys ending with that\n    scorer's name (``'_<scorer_name>'``) instead of ``'_score'`` shown\n    above. ('split0_test_precision', 'mean_train_precision' etc.)\n\nbest_estimator_ : estimator\n    Estimator that was chosen by the search, i.e. estimator\n    which gave highest score (or smallest loss if specified)\n    on the left out data. Not available if ``refit=False``.\n\n    For multi-metric evaluation, this attribute is present only if\n    ``refit`` is specified.\n\n    See ``refit`` parameter for more information on allowed values.\n\nbest_score_ : float\n    Mean cross-validated score of the best_estimator.\n\n    For multi-metric evaluation, this is not available if ``refit`` is\n    ``False``. See ``refit`` parameter for more information.\n\n    This attribute is not available if ``refit`` is a function.\n\nbest_params_ : dict\n    Parameter setting that gave the best results on the hold out data.\n\n    For multi-metric evaluation, this is not available if ``refit`` is\n    ``False``. See ``refit`` parameter for more information.\n\nbest_index_ : int\n    The index (of the ``cv_results_`` arrays) which corresponds to the best\n    candidate parameter setting.\n\n    The dict at ``search.cv_results_['params'][search.best_index_]`` gives\n    the parameter setting for the best model, that gives the highest\n    mean score (``search.best_score_``).\n\n    For multi-metric evaluation, this is not available if ``refit`` is\n    ``False``. See ``refit`` parameter for more information.\n\nscorer_ : function or a dict\n    Scorer function used on the held out data to choose the best\n    parameters for the model.\n\n    For multi-metric evaluation, this attribute holds the validated\n    ``scoring`` dict which maps the scorer key to the scorer callable.\n\nn_splits_ : int\n    The number of cross-validation splits (folds/iterations).\n\nrefit_time_ : float\n    Seconds used for refitting the best model on the whole dataset.\n\n    This is present only if ``refit`` is not False.\n\n    .. versionadded:: 0.20\n\nmultimetric_ : bool\n    Whether or not the scorers compute several metrics.\n\nclasses_ : ndarray of shape (n_classes,)\n    The classes labels. This is present only if ``refit`` is specified and\n    the underlying estimator is a classifier.\n\nn_features_in_ : int\n    Number of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `n_features_in_` when fit.\n\n    .. versionadded:: 0.24\n\nfeature_names_in_ : ndarray of shape (`n_features_in_`,)\n    Names of features seen during :term:`fit`. Only defined if\n    `best_estimator_` is defined (see the documentation for the `refit`\n    parameter for more details) and that `best_estimator_` exposes\n    `feature_names_in_` when fit.\n\n    .. versionadded:: 1.0\n\nSee Also\n--------\nGridSearchCV : Does exhaustive search over a grid of parameters.\nParameterSampler : A generator over parameter settings, constructed from\n    param_distributions.\n\nNotes\n-----\nThe parameters selected are those that maximize the score of the held-out\ndata, according to the scoring parameter.\n\nIf `n_jobs` was set to a value higher than one, the data is copied for each\nparameter setting(and not `n_jobs` times). This is done for efficiency\nreasons if individual jobs take very little time, but may raise errors if\nthe dataset is large and not enough memory is available.  A workaround in\nthis case is to set `pre_dispatch`. Then, the memory is copied only\n`pre_dispatch` many times. A reasonable value for `pre_dispatch` is `2 *\nn_jobs`.\n\nExamples\n--------\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.linear_model import LogisticRegression\n>>> from sklearn.model_selection import RandomizedSearchCV\n>>> from scipy.stats import uniform\n>>> iris = load_iris()\n>>> logistic = LogisticRegression(solver='saga', tol=1e-2, max_iter=200,\n...                               random_state=0)\n>>> distributions = dict(C=uniform(loc=0, scale=4),\n...                      penalty=['l2', 'l1'])\n>>> clf = RandomizedSearchCV(logistic, distributions, random_state=0)\n>>> search = clf.fit(iris.data, iris.target)\n>>> search.best_params_\n{'C': 2..., 'penalty': 'l1'}"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Repeated K-Fold cross validator.\n\nRepeats K-Fold n times with different randomization in each repetition.\n\nRead more in the :ref:`User Guide <repeated_k_fold>`.\n\nParameters\n----------\nn_splits : int, default=5\n    Number of folds. Must be at least 2.\n\nn_repeats : int, default=10\n    Number of times cross-validator needs to be repeated.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the randomness of each repeated cross-validation instance.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import RepeatedKFold\n>>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])\n>>> y = np.array([0, 0, 1, 1])\n>>> rkf = RepeatedKFold(n_splits=2, n_repeats=2, random_state=2652124)\n>>> rkf.get_n_splits(X, y)\n4\n>>> print(rkf)\nRepeatedKFold(n_repeats=2, n_splits=2, random_state=2652124)\n>>> for i, (train_index, test_index) in enumerate(rkf.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\n...\nFold 0:\n  Train: index=[0 1]\n  Test:  index=[2 3]\nFold 1:\n  Train: index=[2 3]\n  Test:  index=[0 1]\nFold 2:\n  Train: index=[1 2]\n  Test:  index=[0 3]\nFold 3:\n  Train: index=[0 3]\n  Test:  index=[1 2]\n\nNotes\n-----\nRandomized CV splitters may return different results for each call of\nsplit. You can make the results identical by setting `random_state`\nto an integer.\n\nSee Also\n--------\nRepeatedStratifiedKFold : Repeats Stratified K-Fold n times."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Repeated Stratified K-Fold cross validator.\n\nRepeats Stratified K-Fold n times with different randomization in each\nrepetition.\n\nRead more in the :ref:`User Guide <repeated_k_fold>`.\n\nParameters\n----------\nn_splits : int, default=5\n    Number of folds. Must be at least 2.\n\nn_repeats : int, default=10\n    Number of times cross-validator needs to be repeated.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the generation of the random states for each repetition.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import RepeatedStratifiedKFold\n>>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])\n>>> y = np.array([0, 0, 1, 1])\n>>> rskf = RepeatedStratifiedKFold(n_splits=2, n_repeats=2,\n...     random_state=36851234)\n>>> rskf.get_n_splits(X, y)\n4\n>>> print(rskf)\nRepeatedStratifiedKFold(n_repeats=2, n_splits=2, random_state=36851234)\n>>> for i, (train_index, test_index) in enumerate(rskf.split(X, y)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\n...\nFold 0:\n  Train: index=[1 2]\n  Test:  index=[0 3]\nFold 1:\n  Train: index=[0 3]\n  Test:  index=[1 2]\nFold 2:\n  Train: index=[1 3]\n  Test:  index=[0 2]\nFold 3:\n  Train: index=[0 2]\n  Test:  index=[1 3]\n\nNotes\n-----\nRandomized CV splitters may return different results for each call of\nsplit. You can make the results identical by setting `random_state`\nto an integer.\n\nSee Also\n--------\nRepeatedKFold : Repeats K-Fold n times."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Random permutation cross-validator.\n\nYields indices to split data into training and test sets.\n\nNote: contrary to other cross-validation strategies, random splits\ndo not guarantee that all folds will be different, although this is\nstill very likely for sizeable datasets.\n\nRead more in the :ref:`User Guide <ShuffleSplit>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\nParameters\n----------\nn_splits : int, default=10\n    Number of re-shuffling & splitting iterations.\n\ntest_size : float or int, default=None\n    If float, should be between 0.0 and 1.0 and represent the proportion\n    of the dataset to include in the test split. If int, represents the\n    absolute number of test samples. If None, the value is set to the\n    complement of the train size. If ``train_size`` is also None, it will\n    be set to 0.1.\n\ntrain_size : float or int, default=None\n    If float, should be between 0.0 and 1.0 and represent the\n    proportion of the dataset to include in the train split. If\n    int, represents the absolute number of train samples. If None,\n    the value is automatically set to the complement of the test size.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the randomness of the training and testing indices produced.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import ShuffleSplit\n>>> X = np.array([[1, 2], [3, 4], [5, 6], [7, 8], [3, 4], [5, 6]])\n>>> y = np.array([1, 2, 1, 2, 1, 2])\n>>> rs = ShuffleSplit(n_splits=5, test_size=.25, random_state=0)\n>>> rs.get_n_splits(X)\n5\n>>> print(rs)\nShuffleSplit(n_splits=5, random_state=0, test_size=0.25, train_size=None)\n>>> for i, (train_index, test_index) in enumerate(rs.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[1 3 0 4]\n  Test:  index=[5 2]\nFold 1:\n  Train: index=[4 0 2 5]\n  Test:  index=[1 3]\nFold 2:\n  Train: index=[1 2 4 0]\n  Test:  index=[3 5]\nFold 3:\n  Train: index=[3 4 1 0]\n  Test:  index=[5 2]\nFold 4:\n  Train: index=[3 5 1 0]\n  Test:  index=[2 4]\n>>> # Specify train and test size\n>>> rs = ShuffleSplit(n_splits=5, train_size=0.5, test_size=.25,\n...                   random_state=0)\n>>> for i, (train_index, test_index) in enumerate(rs.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[1 3 0]\n  Test:  index=[5 2]\nFold 1:\n  Train: index=[4 0 2]\n  Test:  index=[1 3]\nFold 2:\n  Train: index=[1 2 4]\n  Test:  index=[3 5]\nFold 3:\n  Train: index=[3 4 1]\n  Test:  index=[5 2]\nFold 4:\n  Train: index=[3 5 1]\n  Test:  index=[2 4]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#SklearnModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Module"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Stratified K-Fold iterator variant with non-overlapping groups.\n\nThis cross-validation object is a variation of StratifiedKFold attempts to\nreturn stratified folds with non-overlapping groups. The folds are made by\npreserving the percentage of samples for each class.\n\nEach group will appear exactly once in the test set across all folds (the\nnumber of distinct groups has to be at least equal to the number of folds).\n\nThe difference between :class:`~sklearn.model_selection.GroupKFold`\nand :class:`~sklearn.model_selection.StratifiedGroupKFold` is that\nthe former attempts to create balanced folds such that the number of\ndistinct groups is approximately the same in each fold, whereas\nStratifiedGroupKFold attempts to create folds which preserve the\npercentage of samples for each class as much as possible given the\nconstraint of non-overlapping groups between splits.\n\nRead more in the :ref:`User Guide <cross_validation>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\nParameters\n----------\nn_splits : int, default=5\n    Number of folds. Must be at least 2.\n\nshuffle : bool, default=False\n    Whether to shuffle each class's samples before splitting into batches.\n    Note that the samples within each split will not be shuffled.\n    This implementation can only shuffle groups that have approximately the\n    same y distribution, no global shuffle will be performed.\n\nrandom_state : int or RandomState instance, default=None\n    When `shuffle` is True, `random_state` affects the ordering of the\n    indices, which controls the randomness of each fold for each class.\n    Otherwise, leave `random_state` as `None`.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import StratifiedGroupKFold\n>>> X = np.ones((17, 2))\n>>> y = np.array([0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0])\n>>> groups = np.array([1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 6, 6, 7, 8, 8])\n>>> sgkf = StratifiedGroupKFold(n_splits=3)\n>>> sgkf.get_n_splits(X, y)\n3\n>>> print(sgkf)\nStratifiedGroupKFold(n_splits=3, random_state=None, shuffle=False)\n>>> for i, (train_index, test_index) in enumerate(sgkf.split(X, y, groups)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"         group={groups[train_index]}\")\n...     print(f\"  Test:  index={test_index}\")\n...     print(f\"         group={groups[test_index]}\")\nFold 0:\n  Train: index=[ 0  1  2  3  7  8  9 10 11 15 16]\n         group=[1 1 2 2 4 5 5 5 5 8 8]\n  Test:  index=[ 4  5  6 12 13 14]\n         group=[3 3 3 6 6 7]\nFold 1:\n  Train: index=[ 4  5  6  7  8  9 10 11 12 13 14]\n         group=[3 3 3 4 5 5 5 5 6 6 7]\n  Test:  index=[ 0  1  2  3 15 16]\n         group=[1 1 2 2 8 8]\nFold 2:\n  Train: index=[ 0  1  2  3  4  5  6 12 13 14 15 16]\n         group=[1 1 2 2 3 3 3 6 6 7 8 8]\n  Test:  index=[ 7  8  9 10 11]\n         group=[4 5 5 5 5]\n\nNotes\n-----\nThe implementation is designed to:\n\n* Mimic the behavior of StratifiedKFold as much as possible for trivial\n  groups (e.g. when each group contains only one sample).\n* Be invariant to class label: relabelling ``y = [\"Happy\", \"Sad\"]`` to\n  ``y = [1, 0]`` should not change the indices generated.\n* Stratify based on samples as much as possible while keeping\n  non-overlapping groups constraint. That means that in some cases when\n  there is a small number of groups containing a large number of samples\n  the stratification will not be possible and the behavior will be close\n  to GroupKFold.\n\nSee also\n--------\nStratifiedKFold: Takes class information into account to build folds which\n    retain class distributions (for binary or multiclass classification\n    tasks).\n\nGroupKFold: K-fold iterator variant with non-overlapping groups."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Stratified K-Fold cross-validator.\n\nProvides train/test indices to split data in train/test sets.\n\nThis cross-validation object is a variation of KFold that returns\nstratified folds. The folds are made by preserving the percentage of\nsamples for each class.\n\nRead more in the :ref:`User Guide <stratified_k_fold>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\nParameters\n----------\nn_splits : int, default=5\n    Number of folds. Must be at least 2.\n\n    .. versionchanged:: 0.22\n        ``n_splits`` default value changed from 3 to 5.\n\nshuffle : bool, default=False\n    Whether to shuffle each class's samples before splitting into batches.\n    Note that the samples within each split will not be shuffled.\n\nrandom_state : int, RandomState instance or None, default=None\n    When `shuffle` is True, `random_state` affects the ordering of the\n    indices, which controls the randomness of each fold for each class.\n    Otherwise, leave `random_state` as `None`.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import StratifiedKFold\n>>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])\n>>> y = np.array([0, 0, 1, 1])\n>>> skf = StratifiedKFold(n_splits=2)\n>>> skf.get_n_splits(X, y)\n2\n>>> print(skf)\nStratifiedKFold(n_splits=2, random_state=None, shuffle=False)\n>>> for i, (train_index, test_index) in enumerate(skf.split(X, y)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[1 3]\n  Test:  index=[0 2]\nFold 1:\n  Train: index=[0 2]\n  Test:  index=[1 3]\n\nNotes\n-----\nThe implementation is designed to:\n\n* Generate test sets such that all contain the same distribution of\n  classes, or as close as possible.\n* Be invariant to class label: relabelling ``y = [\"Happy\", \"Sad\"]`` to\n  ``y = [1, 0]`` should not change the indices generated.\n* Preserve order dependencies in the dataset ordering, when\n  ``shuffle=False``: all samples from class k in some test set were\n  contiguous in y, or separated in y by samples from classes other than k.\n* Generate test sets where the smallest and largest differ by at most one\n  sample.\n\n.. versionchanged:: 0.22\n    The previous implementation did not follow the last constraint.\n\nSee Also\n--------\nRepeatedStratifiedKFold : Repeats Stratified K-Fold n times."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Stratified ShuffleSplit cross-validator.\n\nProvides train/test indices to split data in train/test sets.\n\nThis cross-validation object is a merge of StratifiedKFold and\nShuffleSplit, which returns stratified randomized folds. The folds\nare made by preserving the percentage of samples for each class.\n\nNote: like the ShuffleSplit strategy, stratified random splits\ndo not guarantee that all folds will be different, although this is\nstill very likely for sizeable datasets.\n\nRead more in the :ref:`User Guide <stratified_shuffle_split>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\nParameters\n----------\nn_splits : int, default=10\n    Number of re-shuffling & splitting iterations.\n\ntest_size : float or int, default=None\n    If float, should be between 0.0 and 1.0 and represent the proportion\n    of the dataset to include in the test split. If int, represents the\n    absolute number of test samples. If None, the value is set to the\n    complement of the train size. If ``train_size`` is also None, it will\n    be set to 0.1.\n\ntrain_size : float or int, default=None\n    If float, should be between 0.0 and 1.0 and represent the\n    proportion of the dataset to include in the train split. If\n    int, represents the absolute number of train samples. If None,\n    the value is automatically set to the complement of the test size.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the randomness of the training and testing indices produced.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import StratifiedShuffleSplit\n>>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4], [1, 2], [3, 4]])\n>>> y = np.array([0, 0, 0, 1, 1, 1])\n>>> sss = StratifiedShuffleSplit(n_splits=5, test_size=0.5, random_state=0)\n>>> sss.get_n_splits(X, y)\n5\n>>> print(sss)\nStratifiedShuffleSplit(n_splits=5, random_state=0, ...)\n>>> for i, (train_index, test_index) in enumerate(sss.split(X, y)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[5 2 3]\n  Test:  index=[4 1 0]\nFold 1:\n  Train: index=[5 1 4]\n  Test:  index=[0 2 3]\nFold 2:\n  Train: index=[5 0 2]\n  Test:  index=[4 3 1]\nFold 3:\n  Train: index=[4 1 0]\n  Test:  index=[2 3 5]\nFold 4:\n  Train: index=[0 5 1]\n  Test:  index=[3 4 2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Time Series cross-validator.\n\nProvides train/test indices to split time series data samples\nthat are observed at fixed time intervals, in train/test sets.\nIn each split, test indices must be higher than before, and thus shuffling\nin cross validator is inappropriate.\n\nThis cross-validation object is a variation of :class:`KFold`.\nIn the kth split, it returns first k folds as train set and the\n(k+1)th fold as test set.\n\nNote that unlike standard cross-validation methods, successive\ntraining sets are supersets of those that come before them.\n\nRead more in the :ref:`User Guide <time_series_split>`.\n\nFor visualisation of cross-validation behaviour and\ncomparison between common scikit-learn split methods\nrefer to :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py`\n\n.. versionadded:: 0.18\n\nParameters\n----------\nn_splits : int, default=5\n    Number of splits. Must be at least 2.\n\n    .. versionchanged:: 0.22\n        ``n_splits`` default value changed from 3 to 5.\n\nmax_train_size : int, default=None\n    Maximum size for a single training set.\n\ntest_size : int, default=None\n    Used to limit the size of the test set. Defaults to\n    ``n_samples // (n_splits + 1)``, which is the maximum allowed value\n    with ``gap=0``.\n\n    .. versionadded:: 0.24\n\ngap : int, default=0\n    Number of samples to exclude from the end of each train set before\n    the test set.\n\n    .. versionadded:: 0.24\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import TimeSeriesSplit\n>>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4], [1, 2], [3, 4]])\n>>> y = np.array([1, 2, 3, 4, 5, 6])\n>>> tscv = TimeSeriesSplit()\n>>> print(tscv)\nTimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)\n>>> for i, (train_index, test_index) in enumerate(tscv.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[0]\n  Test:  index=[1]\nFold 1:\n  Train: index=[0 1]\n  Test:  index=[2]\nFold 2:\n  Train: index=[0 1 2]\n  Test:  index=[3]\nFold 3:\n  Train: index=[0 1 2 3]\n  Test:  index=[4]\nFold 4:\n  Train: index=[0 1 2 3 4]\n  Test:  index=[5]\n>>> # Fix test_size to 2 with 12 samples\n>>> X = np.random.randn(12, 2)\n>>> y = np.random.randint(0, 2, 12)\n>>> tscv = TimeSeriesSplit(n_splits=3, test_size=2)\n>>> for i, (train_index, test_index) in enumerate(tscv.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[0 1 2 3 4 5]\n  Test:  index=[6 7]\nFold 1:\n  Train: index=[0 1 2 3 4 5 6 7]\n  Test:  index=[8 9]\nFold 2:\n  Train: index=[0 1 2 3 4 5 6 7 8 9]\n  Test:  index=[10 11]\n>>> # Add in a 2 period gap\n>>> tscv = TimeSeriesSplit(n_splits=3, test_size=2, gap=2)\n>>> for i, (train_index, test_index) in enumerate(tscv.split(X)):\n...     print(f\"Fold {i}:\")\n...     print(f\"  Train: index={train_index}\")\n...     print(f\"  Test:  index={test_index}\")\nFold 0:\n  Train: index=[0 1 2 3]\n  Test:  index=[6 7]\nFold 1:\n  Train: index=[0 1 2 3 4 5]\n  Test:  index=[8 9]\nFold 2:\n  Train: index=[0 1 2 3 4 5 6 7]\n  Test:  index=[10 11]\n\nFor a more extended example see\n:ref:`sphx_glr_auto_examples_applications_plot_cyclical_feature_engineering.py`.\n\nNotes\n-----\nThe training set has size ``i * n_samples // (n_splits + 1)\n+ n_samples % (n_splits + 1)`` in the ``i`` th split,\nwith a test set of size ``n_samples//(n_splits + 1)`` by default,\nwhere ``n_samples`` is the number of samples."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Split arrays or matrices into random train and test subsets.\n\nQuick utility that wraps input validation,\n``next(ShuffleSplit().split(X, y))``, and application to input data\ninto a single call for splitting (and optionally subsampling) data into a\none-liner.\n\nRead more in the :ref:`User Guide <cross_validation>`.\n\nParameters\n----------\n*arrays : sequence of indexables with same length / shape[0]\n    Allowed inputs are lists, numpy arrays, scipy-sparse\n    matrices or pandas dataframes.\n\ntest_size : float or int, default=None\n    If float, should be between 0.0 and 1.0 and represent the proportion\n    of the dataset to include in the test split. If int, represents the\n    absolute number of test samples. If None, the value is set to the\n    complement of the train size. If ``train_size`` is also None, it will\n    be set to 0.25.\n\ntrain_size : float or int, default=None\n    If float, should be between 0.0 and 1.0 and represent the\n    proportion of the dataset to include in the train split. If\n    int, represents the absolute number of train samples. If None,\n    the value is automatically set to the complement of the test size.\n\nrandom_state : int, RandomState instance or None, default=None\n    Controls the shuffling applied to the data before applying the split.\n    Pass an int for reproducible output across multiple function calls.\n    See :term:`Glossary <random_state>`.\n\nshuffle : bool, default=True\n    Whether or not to shuffle the data before splitting. If shuffle=False\n    then stratify must be None.\n\nstratify : array-like, default=None\n    If not None, data is split in a stratified fashion, using this as\n    the class labels.\n    Read more in the :ref:`User Guide <stratification>`.\n\nReturns\n-------\nsplitting : list, length=2 * len(arrays)\n    List containing train-test split of inputs.\n\n    .. versionadded:: 0.16\n        If the input is sparse, the output will be a\n        ``scipy.sparse.csr_matrix``. Else, output type is the same as the\n        input type.\n\nExamples\n--------\n>>> import numpy as np\n>>> from sklearn.model_selection import train_test_split\n>>> X, y = np.arange(10).reshape((5, 2)), range(5)\n>>> X\narray([[0, 1],\n       [2, 3],\n       [4, 5],\n       [6, 7],\n       [8, 9]])\n>>> list(y)\n[0, 1, 2, 3, 4]\n\n>>> X_train, X_test, y_train, y_test = train_test_split(\n...     X, y, test_size=0.33, random_state=42)\n...\n>>> X_train\narray([[4, 5],\n       [0, 1],\n       [6, 7]])\n>>> y_train\n[2, 0, 3]\n>>> X_test\narray([[2, 3],\n       [8, 9]])\n>>> y_test\n[1, 4]\n\n>>> train_test_split(y, shuffle=False)\n[[0, 1, 2], [3, 4]]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Validation Curve visualization.\n\nIt is recommended to use\n:meth:`~sklearn.model_selection.ValidationCurveDisplay.from_estimator` to\ncreate a :class:`~sklearn.model_selection.ValidationCurveDisplay` instance.\nAll parameters are stored as attributes.\n\nRead more in the :ref:`User Guide <visualizations>` for general information\nabout the visualization API and :ref:`detailed documentation\n<validation_curve>` regarding the validation curve visualization.\n\n.. versionadded:: 1.3\n\nParameters\n----------\nparam_name : str\n    Name of the parameter that has been varied.\n\nparam_range : array-like of shape (n_ticks,)\n    The values of the parameter that have been evaluated.\n\ntrain_scores : ndarray of shape (n_ticks, n_cv_folds)\n    Scores on training sets.\n\ntest_scores : ndarray of shape (n_ticks, n_cv_folds)\n    Scores on test set.\n\nscore_name : str, default=None\n    The name of the score used in `validation_curve`. It will override the name\n    inferred from the `scoring` parameter. If `score` is `None`, we use `\"Score\"` if\n    `negate_score` is `False` and `\"Negative score\"` otherwise. If `scoring` is a\n    string or a callable, we infer the name. We replace `_` by spaces and capitalize\n    the first letter. We remove `neg_` and replace it by `\"Negative\"` if\n    `negate_score` is `False` or just remove it otherwise.\n\nAttributes\n----------\nax_ : matplotlib Axes\n    Axes with the validation curve.\n\nfigure_ : matplotlib Figure\n    Figure containing the validation curve.\n\nerrorbar_ : list of matplotlib Artist or None\n    When the `std_display_style` is `\"errorbar\"`, this is a list of\n    `matplotlib.container.ErrorbarContainer` objects. If another style is\n    used, `errorbar_` is `None`.\n\nlines_ : list of matplotlib Artist or None\n    When the `std_display_style` is `\"fill_between\"`, this is a list of\n    `matplotlib.lines.Line2D` objects corresponding to the mean train and\n    test scores. If another style is used, `line_` is `None`.\n\nfill_between_ : list of matplotlib Artist or None\n    When the `std_display_style` is `\"fill_between\"`, this is a list of\n    `matplotlib.collections.PolyCollection` objects. If another style is\n    used, `fill_between_` is `None`.\n\nSee Also\n--------\nsklearn.model_selection.validation_curve : Compute the validation curve.\n\nExamples\n--------\n>>> import numpy as np\n>>> import matplotlib.pyplot as plt\n>>> from sklearn.datasets import make_classification\n>>> from sklearn.model_selection import ValidationCurveDisplay, validation_curve\n>>> from sklearn.linear_model import LogisticRegression\n>>> X, y = make_classification(n_samples=1_000, random_state=0)\n>>> logistic_regression = LogisticRegression()\n>>> param_name, param_range = \"C\", np.logspace(-8, 3, 10)\n>>> train_scores, test_scores = validation_curve(\n...     logistic_regression, X, y, param_name=param_name, param_range=param_range\n... )\n>>> display = ValidationCurveDisplay(\n...     param_name=param_name, param_range=param_range,\n...     train_scores=train_scores, test_scores=test_scores, score_name=\"Score\"\n... )\n>>> display.plot()\n<...>\n>>> plt.show()"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplittingMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelectionModule"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#DataSplitting"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneGroupOutMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeaveOneOutMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePGroupsOutMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePOutMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#PredefinedSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasDataSplittingMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasModelSelectionMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ModelSelection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamAggressiveElimination",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamCv",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamErrorScore",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamEstimator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamFactor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamGap",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxResources",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMaxTrainSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamMinResources",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNCandidates",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNGroups",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePGroupsOutMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNIter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNJobs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNRepeats",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamNSplits",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LeavePOutMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamDistributions",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamGrid",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamParamName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamPreDispatch",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRandomState",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RepeatedStratifiedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamRefit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamReturnTrainScore",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoreName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamScoring",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamShuffle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#KFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedGroupKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedKFoldMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamStratify",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTestScores",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTestSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TimeSeriesSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTrainScores",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#LearningCurveDisplayMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ValidationCurveDisplayMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamTrainSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GroupShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#ShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#StratifiedShuffleSplitMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#TrainTestSplitMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasParamVerbose",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#GridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingGridSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#HalvingRandomSearchCVMethod"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#RandomizedSearchCVMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasParameter"
+  } ]
+}, {
+  "@id" : "https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#hasTrainMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

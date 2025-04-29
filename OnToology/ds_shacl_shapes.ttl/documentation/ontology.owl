@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:shacl="http://www.w3.org/ns/shacl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#class -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#class"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#dataType -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#dataType"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#maxCount -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#maxCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#message -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#message"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#minCount -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#minCount"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#node -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#node"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#path -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#path"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#prefixes -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#prefixes"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#property -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#property"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#select -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#select"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#sparql -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#sparql"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#targetClass -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#targetClass"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#targetSubjectsOf -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#targetSubjectsOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#NodeShape -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shacl#NodeShape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#PropertyShape -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shacl#PropertyShape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#SPARQLConstraint -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://weso.es/shapes/AtomicTaskShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/AtomicTaskShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid2"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid2">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+        <shacl:class rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#AtomicTask"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasNextTask"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/DataEntityReferenceShape -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/DataEntityReferenceShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:sparql rdf:nodeID="genid3"/>
+        <shacl:targetSubjectsOf rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasReference"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid3">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#SPARQLConstraint"/>
+        <shacl:message>The referenced data entity&apos;s data structure must be a superclass of the referencing data entity&apos;s type.</shacl:message>
+        <shacl:prefixes rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+        <shacl:prefixes rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <shacl:prefixes rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#"/>
+        <shacl:select>
+        SELECT $this
+        WHERE {
+            FILTER NOT EXISTS {
+                SELECT $this
+                WHERE {
+                    $this               ds:hasReference  ?refDataEntity ;
+                                        rdf:type         ?thisType .
+                    ?thisType           rdfs:subClassOf  ?thisTypeSuperclass .
+                    ?thisTypeSuperclass rdfs:subClassOf  ds:DataStructure .
+                    ?refDataEntity      rdf:type         ?thisTypeSuperclass .
+                }
+            }
+        }
+        </shacl:select>
+    </rdf:Description>
+    
+
+
+    <!-- http://weso.es/shapes/Pipeline -->
+
+
+    <NamedIndividual rdf:about="http://weso.es/shapes/Pipeline">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <shacl:property rdf:nodeID="genid4"/>
+        <shacl:property rdf:nodeID="genid5"/>
+        <shacl:property rdf:nodeID="genid6"/>
+        <shacl:targetClass rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#Pipeline"/>
+    </NamedIndividual>
+    <rdf:Description rdf:nodeID="genid4">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+        <shacl:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasInputDataPath"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid5">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+        <shacl:dataType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasPlotsOutputDir"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid6">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+        <shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+        <shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+        <shacl:node rdf:resource="http://weso.es/shapes/AtomicTaskShape"/>
+        <shacl:path rdf:resource="https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#hasStartTask"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

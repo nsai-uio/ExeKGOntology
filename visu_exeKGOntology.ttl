@@ -8,119 +8,140 @@
 @base <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#> .
 
 visu:
-    rdf:type owl:Ontology .
-
-#################################################################
-#    Datatypes
-#################################################################
-
-#################################################################
-#    Object Properties
-#################################################################
-
-visu:hasCanvasMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        visu:CanvasTask ;
-    rdfs:range         visu:CanvasMethod .
-
-visu:hasPlotMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        visu:PlotTask ;
-    rdfs:range         visu:LineplotMethod, visu:ScatterplotMethod .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-visu:hasCanvasName
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:CanvasMethod ;
-    rdfs:range  xsd:string .
-
-
-visu:hasLayout
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:CanvasMethod ;
-    rdfs:range  xsd:string .
-
-
-visu:hasLineStyle
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:LineplotMethod, visu:ScatterplotMethod ;
-    rdfs:range  xsd:string .
-
-
-visu:hasLineWidth
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:LineplotMethod, visu:ScatterplotMethod ;
-    rdfs:range  xsd:int .
-
-
-visu:hasScatterSize
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:ScatterplotMethod ;
-    rdfs:range  xsd:int .
-
-
-visu:hasScatterStyle
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:ScatterplotMethod ;
-    rdfs:range  xsd:string .
-
-
-visu:hasLegendName
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain visu:PlotMethod ;
-    rdfs:range  xsd:string .
-
+    a owl:Ontology.
 
 #################################################################
 #    Classes
 #################################################################
 
-visu:CanvasMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod .
+## Task subclasses
+visu:Plotting a owl:Class ;
+    rdfs:subClassOf ds:Task .
 
-
-visu:CanvasTask
-    rdf:type        owl:Class ;
+## AtomicTask subclasses
+visu:CanvasCreation a owl:Class ;
     rdfs:subClassOf ds:AtomicTask .
 
+visu:LinePlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
 
-visu:PlotMethod
-    rdf:type        owl:Class ;
+visu:ScatterPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:BarPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:Histogram a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:PieChart a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:BoxPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:ViolinPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:ContourPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:ImagePlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:AreaPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:VectorField a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:ErrorBarPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+visu:PolarPlotting a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+                    visu:Plotting .
+
+## Method subclasses
+visu:PlottingMethod a owl:Class ;
     rdfs:subClassOf ds:Method .
 
+## AtomicMethod subclasses
+visu:CanvasMethod a owl:Class ;
+    rdfs:subClassOf ds:AtomicMethod .
 
-visu:PlotTask
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
+## Input DataEntity subclasses
+visu:DataInToPlot a owl:Class ;
+    rdfs:subClassOf ds:DataEntity, ds:Tensor, ds:Matrix, ds:Vector, ds:Tabular, ds:SingleValue .
 
-visu:LineplotMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
+#################################################################
+#    Object Properties
+#################################################################
 
-visu:ScatterplotMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
+## hasMethod subproperties
+visu:hasCanvasCreationMethod a owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasMethod ;
+    rdfs:domain        visu:CanvasCreation ;
+    rdfs:range         visu:CanvasMethod .
 
-visu:BarplotMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod, visu:PlotMethod .
+visu:hasPlottingMethod a owl:ObjectProperty ;
+    rdfs:subPropertyOf ds:hasMethod ;
+    rdfs:domain        visu:Plotting .
 
-visu:hasVectorInput
-    rdf:type           owl:ObjectProperty ;
+## hasInput subproperties
+visu:hasPlottingInput a owl:ObjectProperty ;
     rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        visu:PlotTask ;
-    rdfs:range         visu:DataInVector .
+    rdfs:domain        visu:Plotting ;
+    rdfs:range         visu:DataInToPlot .
 
-visu:DataInVector
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Vector .
+#################################################################
+#    Datatype properties
+#################################################################
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+visu:hasParamLayout a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:CanvasMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamFigureSize a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:CanvasMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamLegendName a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlottingMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamTitle a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlottingMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamXLabel a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlottingMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamYLabel a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlottingMethod ;
+    rdfs:range  xsd:string .
+
+visu:hasParamAnnotate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ds:hasParameter;
+    rdfs:domain visu:PlottingMethod ;
+    rdfs:range  xsd:boolean .
+

@@ -1,306 +1,326 @@
-@prefix ml:   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#> .
-@prefix ds:   <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml:  <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#> .
+@prefix ds: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix stats: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/stats_exeKGOntology.ttl#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix ml: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ml_exeKGOntology.ttl#> .
+@prefix visu: <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/visu_exeKGOntology.ttl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 ml:
-    rdf:type owl:Ontology .
-
-#################################################################
-#    Datatypes
-#################################################################
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-ml:hasDataSplittingMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        ml:DataSplitting ;
-    rdfs:range         ml:DataSplittingMethod .
-
-ml:hasConcatenationMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        ml:Concatenation ;
-    rdfs:range         ml:ConcatenationMethod .
-
-ml:hasPerformanceCalculationMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        ml:PerformanceCalculation ;
-    rdfs:range         ml:PerformanceCalculationMethod .
-
-ml:hasTrainMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        ml:Train ;
-    rdfs:range         ml:KNNTrain, ml:MLPTrain, ml:LRTrain .
-
-ml:hasTestMethod
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasMethod ;
-    rdfs:domain        ml:Test ;
-    rdfs:range         ml:KNNTest, ml:MLPTest, ml:LRTest .
-
-ml:hasPerformanceCalculationOutput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasOutput ;
-    rdfs:domain        ml:PerformanceCalculation ;
-    rdfs:range         ml:DataOutMLTestErr, ml:DataOutMLTrainErr .
-
-ml:hasDataSplittingOutput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasOutput ;
-    rdfs:domain        ml:DataSplitting ;
-    rdfs:range         ml:DataOutSplittedTestDataX, ml:DataOutSplittedTestDataY, ml:DataOutSplittedTrainDataX,
-                       ml:DataOutSplittedTrainDataY .
-
-ml:hasConcatenationOutput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasOutput ;
-    rdfs:domain        ml:Concatenation ;
-    rdfs:range         ml:DataOutConcatenatedData .
-
-ml:hasTrainOutput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasOutput ;
-    rdfs:domain        ml:Train ;
-    rdfs:range         ml:DataOutTrainModel, ml:DataOutPredictedValueTrain .
-
-ml:hasTestOutput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasOutput ;
-    rdfs:domain        ml:Test ;
-    rdfs:range         ml:DataOutPredictedValueTest .
-
-ml:hasConcatenationInput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        ml:Concatenation ;
-    rdfs:range         ml:DataInConcatenation .
-
-ml:hasPerformanceCalculationInput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        ml:PerformanceCalculation ;
-    rdfs:range         ml:DataInTrainRealY, ml:DataInTrainPredictedY, ml:DataInTestRealY, ml:DataInTestPredictedY .
-
-ml:hasTrainInput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        ml:Train ;
-    rdfs:range         ml:DataInTrainX, ml:DataInTrainY .
-
-ml:hasTestInput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        ml:Test ;
-    rdfs:range         ml:DataInTestX, ml:DataInTestModel .
-
-ml:hasDataSplittingInput
-    rdf:type           owl:ObjectProperty ;
-    rdfs:subPropertyOf ds:hasInput ;
-    rdfs:domain        ml:DataSplitting ;
-    rdfs:range         ml:DataInDataSplittingX, ml:DataInDataSplittingY .
-
-#################################################################
-#    Data properties
-#################################################################
-
-ml:hasSplitRatio
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain ml:DataSplittingMethod ;
-    rdfs:range  xsd:float .
+    a owl:Ontology.
 
 #################################################################
 #    Classes
 #################################################################
 
+## Task subclasses
+ml:Train a owl:Class;
+    rdfs:subClassOf ds:Task.
 
-ml:KNNTest
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
+ml:PrepareTransformer a owl:Class;
+    rdfs:subClassOf ds:Task.
 
+ml:TrainAndTest a owl:Class;
+    rdfs:subClassOf ds:Task, ml:Test, ml:Train.
 
-ml:KNNTrain
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
+ml:PrepareTransformerAndTransform a owl:Class;
+    rdfs:subClassOf ds:Task, ml:PrepareTransformer, ml:Transform.
 
+ml:Classification a owl:Class ;
+    rdfs:subClassOf ml:Train .
 
-ml:LRTest
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
+ml:Regression a owl:Class ;
+    rdfs:subClassOf ml:Train .
 
+## AtomicTask subclasses
+ml:Concatenation a owl:Class;
+    rdfs:subClassOf ds:AtomicTask.
 
-ml:LRTrain
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
+ml:DataSplitting a owl:Class;
+    rdfs:subClassOf ds:AtomicTask.
 
+ml:Test a owl:Class;
+    rdfs:subClassOf ds:AtomicTask.
 
-ml:MLPTest
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TestMethod, ds:AtomicMethod .
+ml:Transform a owl:Class;
+    rdfs:subClassOf ds:AtomicTask.
 
+ml:PerformanceCalculation a owl:Class;
+    rdfs:subClassOf ds:AtomicTask.
 
-ml:MLPTrain
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ml:TrainMethod, ds:AtomicMethod .
+ml:DataProcessing a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:PrepareTransformer .
 
+ml:Decomposition a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:PrepareTransformer .
 
-ml:TestMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:Method .
+ml:FeatureSelection a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:PrepareTransformer .
 
+ml:ModelSelection a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Train .
 
-ml:TrainMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:Method .
+ml:Clustering a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Train .
 
-ml:Test
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
+ml:BinaryClassification a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Classification .
 
-ml:Train
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
+ml:MulticlassClassification a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Classification .
 
-ml:Concatenation
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
+ml:MultilabelClassification a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Classification .
 
-ml:DataSplitting
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
+ml:SimpleRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
-ml:PerformanceCalculation
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicTask .
+ml:RegularizedRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
-ml:PerformanceCalculationMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod .
+ml:LeastAngleRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
-ml:ConcatenationMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod .
+ml:BayesianRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
+ml:InstanceBasedRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
-ml:DataSplittingMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:AtomicMethod .
+ml:SupportVectorRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
+ml:DecisionTreeRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
-ml:DataOutSplittedTestDataX
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:RandomForestRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
-ml:DataOutSplittedTestDataY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:BoostingRegression a owl:Class ;
+    rdfs:subClassOf ds:AtomicTask,
+        ml:Regression .
 
-ml:DataOutSplittedTrainDataX
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+## Method subclasses
+ml:TrainMethod a owl:Class;
+    rdfs:subClassOf ds:Method.
 
-ml:DataOutSplittedTrainDataY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+## AtomicMethod subclasses
+ml:DataSplittingMethod a owl:Class;
+    rdfs:subClassOf ds:AtomicMethod.
 
-ml:DataOutConcatenatedData
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix .
+ml:TestMethod a owl:Class;
+    rdfs:subClassOf ds:AtomicMethod.
 
-ml:DataOutTrainModel
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:SingleValue .
+ml:TransformMethod a owl:Class;
+    rdfs:subClassOf ds:AtomicMethod.
 
-ml:DataOutMLTestErr
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Vector .
+ml:PerformanceCalculationMethod a owl:Class;
+    rdfs:subClassOf ds:AtomicMethod.
 
-ml:DataOutMLTrainErr
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Vector .
+ml:ConcatenationMethod a owl:Class;
+    rdfs:subClassOf ds:AtomicMethod.
 
-ml:DataOutPredictedValueTest
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+## Input Method subclasses
+ml:InputModelAsMethod a owl:Class;
+    rdfs:subClassOf ml:TrainMethod.
 
-ml:DataOutPredictedValueTrain
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+## Input DataEntity subclasses
+ml:DataInTestModel a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Model.
 
-ml:DataInTrainX
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInTestX a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
-ml:DataInTestX
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInConcatenation a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Vector.
 
-ml:DataInDataSplittingX
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInTrainX a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
-ml:DataInTrainY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInTrainY a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
-ml:DataInDataSplittingY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInDataSplittingX a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
-ml:DataInTrainRealY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInDataSplittingY a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
-ml:DataInTrainPredictedY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInPredictedY a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector.
 
-ml:DataInTestRealY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInRealY a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
-ml:DataInTestPredictedY
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Matrix, ds:Vector .
+ml:DataInToTransform a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
-ml:DataInConcatenation
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:Vector .
+ml:DataInTransformer a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:DataTransformer.
 
-ml:DataInTestModel
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity ;
-    ds:hasDataStructure ds:SingleValue .
+ml:DataInToPrepareTransformer a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
 
+## Output DataEntity subclasses
+ml:DataOutConcatenatedData a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Tabular.
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+ml:DataOutSplittedTestDataX a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
+
+ml:DataOutSplittedTestDataY a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
+
+ml:DataOutSplittedTrainDataX a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
+
+ml:DataOutSplittedTrainDataY a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
+
+ml:DataOutTrainModel a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Model.
+
+ml:DataOutPredictedValueTest a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector.
+
+ml:DataOutScore a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:SingleValue.
+
+ml:DataOutTransformer a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:DataTransformer.
+
+ml:DataOutTransformed a owl:Class;
+    rdfs:subClassOf ds:DataEntity, ds:Matrix, ds:Vector, ds:Tabular.
+
+#################################################################
+#    Object properties
+#################################################################
+
+## hasMethod subproperties
+ml:hasConcatenationMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:Concatenation;
+    rdfs:range ml:ConcatenationMethod.
+
+ml:hasTrainMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:Train.
+    # range defined by subproperties in generated_schemata/generated_ml_schemata.ttl 
+
+ml:hasPrepareTransformerMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:PrepareTransformer.
+    # range defined by subproperties in generated_schemata/generated_ml_schemata.ttl 
+
+ml:hasTransformMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:Transform;
+    rdfs:range ml:TransformMethod.
+
+ml:hasTestMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:Test;
+    rdfs:range ml:TestMethod.
+
+ml:hasDataSplittingMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:DataSplitting;
+    rdfs:range ml:DataSplittingMethod.
+
+ml:hasPerformanceCalculationMethod a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasMethod;
+    rdfs:domain ml:PerformanceCalculation;
+    rdfs:range ml:PerformanceCalculationMethod.
+
+## hasInput subproperties
+ml:hasTestInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasInput;
+    rdfs:domain ml:Test;
+    rdfs:range ml:DataInTestModel, ml:DataInTestX.
+
+ml:hasConcatenationInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasInput;
+    rdfs:domain ml:Concatenation;
+    rdfs:range ml:DataInConcatenation.
+
+ml:hasTrainInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasInput;
+    rdfs:domain ml:Train;
+    rdfs:range ml:DataInTrainX, ml:DataInTrainY, ml:InputModelAsMethod.
+
+ml:hasPerformanceCalculationInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasInput;
+    rdfs:domain ml:PerformanceCalculation;
+    rdfs:range ml:DataInPredictedY, ml:DataInRealY.
+
+ml:hasDataSplittingInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasInput;
+    rdfs:domain ml:DataSplitting;
+    rdfs:range ml:DataInDataSplittingX, ml:DataInDataSplittingY.
+
+ml:hasPrepareTransformerInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasInput;
+    rdfs:domain ml:PrepareTransformer;
+    rdfs:range ml:DataInToPrepareTransformer.
+
+ml:hasTransformInput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasInput;
+    rdfs:domain ml:Transform;
+    rdfs:range ml:DataInToTransform, ml:DataInTransformer.
+
+## hasOutput subproperties
+ml:hasConcatenationOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
+    rdfs:domain ml:Concatenation;
+    rdfs:range ml:DataOutConcatenatedData.
+
+ml:hasDataSplittingOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
+    rdfs:domain ml:DataSplitting;
+    rdfs:range ml:DataOutSplittedTestDataX, ml:DataOutSplittedTestDataY, ml:DataOutSplittedTrainDataX,
+        ml:DataOutSplittedTrainDataY.
+
+ml:hasTrainOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
+    rdfs:domain ml:Train;
+    rdfs:range ml:DataOutTrainModel.
+
+ml:hasTestOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
+    rdfs:domain ml:Test;
+    rdfs:range ml:DataOutPredictedValueTest.
+
+ml:hasPerformanceCalculationOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
+    rdfs:domain ml:PerformanceCalculation;
+    rdfs:range ml:DataOutScore.
+
+ml:hasPrepareTransformerOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
+    rdfs:domain ml:PrepareTransformer;
+    rdfs:range ml:DataOutTransformer.
+
+ml:hasTransformOutput a owl:ObjectProperty;
+    rdfs:subPropertyOf ds:hasOutput;
+    rdfs:domain ml:Transform;
+    rdfs:range ml:DataOutTransformed.

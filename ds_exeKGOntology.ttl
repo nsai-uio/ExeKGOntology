@@ -7,80 +7,62 @@
 @base <https://raw.githubusercontent.com/nsai-uio/ExeKGOntology/main/ds_exeKGOntology.ttl#> .
 
 ds:
-    rdf:type owl:Ontology .
-
-#################################################################
-#    Datatypes
-#################################################################
-
+    a owl:Ontology .
 
 #################################################################
 #    Data properties
 #################################################################
 
-ds:hasSource
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain ds:Data ;
+ds:hasSource a owl:DatatypeProperty ;
+    rdfs:domain ds:DataEntity ;
     rdfs:range  xsd:string .
 
-ds:hasReference
-    rdf:type    owl:DatatypeProperty ;
-    rdfs:domain ds:Data ;
+ds:hasReference a owl:DatatypeProperty ;
+    rdfs:domain ds:DataEntity ;
     rdfs:range  ds:DataEntity .
 
-ds:hasInputDataPath
-    rdf:type    owl:DatatypeProperty ;
+ds:hasInputDataPath a owl:DatatypeProperty ;
     rdfs:domain ds:Pipeline ;
     rdfs:range  xsd:string .
+
+ds:hasPlotsOutputDir a owl:DatatypeProperty ;
+    rdfs:domain ds:Pipeline ;
+    rdfs:range  xsd:string .
+
+ds:hasParameter a owl:DatatypeProperty ;
+    rdfs:domain ds:AtomicMethod ;
+    rdfs:range  xsd:boolean, xsd:string, xsd:integer, xsd:float .
+
+# mainly for ml:DataOutScore, to log the performance score for the ML model
+ds:hasValue a owl:DatatypeProperty ;
+    rdfs:domain ds:SingleValue ;
+    rdfs:range  xsd:boolean, xsd:string, xsd:integer, xsd:float .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-ds:allowedDataStructure
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain ds:Method ;
-    rdfs:range  ds:DataStructure .
-
-
-ds:hasDataSemantics
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain ds:DataEntity ;
-    rdfs:range  ds:DataSemantics .
-
-
-ds:hasDataStructure
-    rdf:type    owl:ObjectProperty ;
-    rdfs:domain ds:DataEntity ;
-    rdfs:range  ds:DataStructure .
-
-
-ds:hasInput
-    rdf:type    owl:ObjectProperty ;
+ds:hasInput a owl:ObjectProperty ;
     rdfs:domain ds:Task ;
-    rdfs:range  ds:DataEntity .
+    rdfs:range  ds:DataEntity, ds:Method .
 
 
-ds:hasMethod
-    rdf:type    owl:ObjectProperty ;
+ds:hasMethod a owl:ObjectProperty ;
     rdfs:domain ds:AtomicTask ;
-    rdfs:range  ds:Method .
+    rdfs:range  ds:AtomicMethod .
 
 
-ds:hasNextTask
-    rdf:type    owl:ObjectProperty ;
+ds:hasNextTask a owl:ObjectProperty ;
     rdfs:domain ds:AtomicTask ;
     rdfs:range  ds:AtomicTask .
 
 
-ds:hasOutput
-    rdf:type    owl:ObjectProperty ;
+ds:hasOutput a owl:ObjectProperty ;
     rdfs:domain ds:Task ;
     rdfs:range  ds:DataEntity .
 
 
-ds:hasStartTask
-    rdf:type    owl:ObjectProperty ;
+ds:hasStartTask a owl:ObjectProperty ;
     rdfs:domain ds:Pipeline ;
     rdfs:range  ds:AtomicTask .
 
@@ -88,71 +70,79 @@ ds:hasStartTask
 #    Classes
 #################################################################
 
-ds:Array
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataStructure .
-
-
-ds:AtomicTask
-    rdf:type        owl:Class ;
+ds:AtomicTask a owl:Class ;
     rdfs:subClassOf ds:Task .
 
-ds:AtomicMethod
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:Method .
+ds:AtomicMethod a owl:Class ;
+    rdfs:subClassOf ds:Method, ds:Module.
 
 ds:Data
-    rdf:type owl:Class .
+    a owl:Class .
 
 
-ds:DataEntity
-    rdf:type        owl:Class ;
+ds:DataEntity a owl:Class ;
     rdfs:subClassOf ds:DataSemantics, ds:DataStructure .
 
 
-ds:DataSemantics
-    rdf:type        owl:Class ;
+ds:DataSemantics a owl:Class ;
     rdfs:subClassOf ds:Data .
 
+ds:Numerical a owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
 
-ds:DataStructure
-    rdf:type        owl:Class ;
+ds:Categorical a owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
+
+ds:Text a owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
+
+ds:Image a owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
+
+ds:Spatial a owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
+
+ds:Date a owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
+
+ds:TimeSeries a owl:Class ;
+    rdfs:subClassOf ds:DataSemantics .
+
+ds:DataStructure a owl:Class ;
     rdfs:subClassOf ds:Data .
 
-
-ds:Matrix
-    rdf:type        owl:Class ;
+ds:Matrix a owl:Class ;
     rdfs:subClassOf ds:DataStructure .
 
-ds:Vector
-    rdf:type        owl:Class ;
+ds:Vector a owl:Class ;
     rdfs:subClassOf ds:DataStructure .
 
-ds:SingleValue
-    rdf:type        owl:Class ;
+ds:Tensor a owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
+
+ds:Mapping a owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
+
+ds:Tabular a owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
+
+ds:Model a owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
+
+ds:DataTransformer a owl:Class ;
+    rdfs:subClassOf ds:DataStructure .
+
+ds:SingleValue a owl:Class ;
     rdfs:subClassOf ds:DataStructure .
 
 ds:Method
-    rdf:type owl:Class .
+    a owl:Class .
 
+ds:Module
+    a owl:Class .
 
-ds:Pipeline
-    rdf:type        owl:Class ;
+ds:Pipeline a owl:Class ;
     rdfs:subClassOf ds:Task .
 
-
-ds:SingleFeature
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataEntity, ds:SingleValue .
-
-
 ds:Task
-    rdf:type owl:Class .
-
-
-ds:TimeSeries
-    rdf:type        owl:Class ;
-    rdfs:subClassOf ds:DataSemantics .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+    a owl:Class .
